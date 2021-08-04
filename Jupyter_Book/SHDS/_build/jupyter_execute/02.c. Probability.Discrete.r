@@ -6,3 +6,5 @@ px <- dbinom(x, 8, pi)
 # Create bar chart of PDF
 options(repr.plot.width=4, repr.plot.height=4)
 barplot(height=px, names=x)
+
+

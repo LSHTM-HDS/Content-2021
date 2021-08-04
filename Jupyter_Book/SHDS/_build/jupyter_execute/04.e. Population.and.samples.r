@@ -17,13 +17,15 @@ bootstrap_samples[500]
 r.mean <- sapply(bootstrap_samples, mean)
 
 # Draw a histogram with a red vertical line indicating the original sample mean age
-hist(r.mean, freq=FALSE, main="Distribution of sample means across the bootstrap samples", xlab="Bootstrap sample means")
+options(repr.plot.width=4.5, repr.plot.height=4.5)
+hist(r.mean, freq=FALSE, main="Distribution of sample means \n across the bootstrap samples", xlab="Bootstrap sample means")
 abline(v=mean(ages),col="red")
 
 sqrt(var(r.mean))
 
 # Histogram of estimates (sample means) in bootstrap samples
-hist(r.mean, freq=FALSE, main="Distribution of sample means across the bootstrap samples", xlab="Bootstrap sample means")
+options(repr.plot.width=4.5, repr.plot.height=4.5)
+hist(r.mean, freq=FALSE, main="Distribution of sample means \n across the bootstrap samples", xlab="Bootstrap sample means")
 
 # Add the normal distribution which most closely follows the histogram
 lines(seq(25, 35, by=.5), dnorm(seq(25, 35, by=.5), mean(ages), 1.52), col="orange",lwd=2)

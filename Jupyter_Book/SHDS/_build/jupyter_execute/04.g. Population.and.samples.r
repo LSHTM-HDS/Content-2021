@@ -14,6 +14,7 @@ for (i in 1:different_studies) {
 sample.props   <- sapply(study_measurements_ed, mean)
 
 # Draw graphs
+options(repr.plot.width=5, repr.plot.height=5)
 hist(sample.props[1:10000], 
      freq=FALSE, breaks=seq(-0.05, 0.95, 0.05), col="green4",
      ylim=c(0, 6), xlab="Sample proportion with emotional distress", 

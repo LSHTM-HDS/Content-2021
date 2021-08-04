@@ -234,27 +234,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5. Likelihood
+     5.1 Introduction to maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.c.%20Likelihood.html">
-     5. Likelihood
+     5.2 The likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.d.%20Likelihood.html">
-     5. Likelihood
+     5.3 Log likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.f.%20Likelihood.html">
-     5. Likelihood
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.g.%20Likelihood.html">
-     5. Likelihood
+     5.5 Summary
     </a>
    </li>
   </ul>
@@ -384,10 +379,22 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09.%20Bayesian%20Statistics%20I.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="09.a.%20Bayesian%20Statistics%20I.html">
    9. Bayesian Statistics I
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
+     Part 1: 9.1 Introduction to Bayesian Inference
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
@@ -564,7 +571,7 @@
   <div class="section" id="bayes-theorem">
 <h1>2.1 Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h1>
 <p>Suppose we have an event <span class="math notranslate nohighlight">\(A\)</span> and a set of events <span class="math notranslate nohighlight">\(B_1, B_2, ..., B_n\)</span> that partition the sample space. Suppose that we have information about the conditional probability of <span class="math notranslate nohighlight">\(A\)</span> conditional on event <span class="math notranslate nohighlight">\(B_j\)</span>, i.e. we know <span class="math notranslate nohighlight">\(P(A | B_j)\)</span>, for each <span class="math notranslate nohighlight">\(j\)</span>. However, what we actually want to know about is <span class="math notranslate nohighlight">\(P(B_j | A)\)</span>.</p>
-<p>Bayes’ Theorem provides a way of reversing the conditioning. Specifically:</p>
+<p>Bayes’ Theorem provides a way of reversing the conditioning.</p>
 <div class="alert alert-success">
 <p><b> Bayes’ Theorem:</b></p>
 <div class="math notranslate nohighlight">
@@ -583,13 +590,14 @@ P(B_{j}|A) = \frac{P(A|B_{j}) P(B_{j})}{P(A)} = \frac{P(A|B_{j}) P(B_{j})}{\sum^
 <p>In a population, 10% of people develop a particular childhood cancer.  Of those who develop the cancer (<span class="math notranslate nohighlight">\(C\)</span>), 1 in 4 carry a genetic marker, <span class="math notranslate nohighlight">\(M\)</span>, whereas of those who don’t develop the cancer, 1 in 10 carry <span class="math notranslate nohighlight">\(M\)</span>.  A newly born infant is tested for the genetic marker and is found to carry it. What is the probability that this infant will develop cancer?</p>
 <p>The first couple of sentences tell us that <span class="math notranslate nohighlight">\(P(C) = 0.1\)</span>, <span class="math notranslate nohighlight">\(P(M|C) = 0.25\)</span>  and <span class="math notranslate nohighlight">\(P(M | \bar{C})=0.1.\)</span> Our interest lies in <span class="math notranslate nohighlight">\(P(C|M)\)</span>. So we wish to reverse the conditioning. We can obtain this by applying Bayes’ Theorem:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}
-P(C|M) = \frac{P(M|C)P(C)}{P(M|C)P(C) + P(M|\bar{C})P(\bar{C})}\\
-\end{split}\]</div>
-<p>Substituting in the values above gives
-$<span class="math notranslate nohighlight">\(
+\[
+P(C|M) = \frac{P(M|C)P(C)}{P(M|C)P(C) + P(M|\bar{C})P(\bar{C})}
+\]</div>
+<p>Substituting in the values above gives</p>
+<div class="math notranslate nohighlight">
+\[
 P(C|M) = \frac{0.25\times 0.1}{0.25\times 0.1 + 0.1\times 0.9}=0.22
-\)</span>$</p>
+\]</div>
 <p><span class="math notranslate nohighlight">\(P(C|M)\)</span> is called the <strong>positive predictive value</strong> (PPV) of the test.  It is the probability, given a positive test result, that the individual actually will develop the disease.  i.e. in this case there is a 22% chance that the infant will develop the disease if they tested positive.</p>
 </div>
 <div class="section" id="the-confusion-matrix">

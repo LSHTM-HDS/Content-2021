@@ -234,27 +234,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5. Likelihood
+     5.1 Introduction to maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.c.%20Likelihood.html">
-     5. Likelihood
+     5.2 The likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.d.%20Likelihood.html">
-     5. Likelihood
+     5.3 Log likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.f.%20Likelihood.html">
-     5. Likelihood
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.g.%20Likelihood.html">
-     5. Likelihood
+     5.5 Summary
     </a>
    </li>
   </ul>
@@ -384,10 +379,22 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09.%20Bayesian%20Statistics%20I.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="09.a.%20Bayesian%20Statistics%20I.html">
    9. Bayesian Statistics I
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
+     Part 1: 9.1 Introduction to Bayesian Inference
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
@@ -536,28 +543,23 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#simulated-data-sampling-distribution-of-a-mean">
-   4.4.1 Simulated data: sampling distribution of a mean
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation">
-   4.4.2 Example: the sampling distribution for the sample mean age - algebraic calculation
+   4.4.1 Example: the sampling distribution for the sample mean age - algebraic calculation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-central-limit-theorem">
-   4.4.3 The Central Limit Theorem
+   4.4.2 The Central Limit Theorem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#resampling">
-   4.4.4 Resampling
+   4.4.3 Resampling
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
     <a class="reference internal nav-link" href="#example-the-sampling-distribution-for-the-sample-mean-age-resampling">
-     4.4.4.1 Example: the sampling distribution for the sample mean age - resampling
+     4.4.3.1 Example: the sampling distribution for the sample mean age - resampling
     </a>
    </li>
   </ul>
@@ -594,17 +596,9 @@
 </ul>
 <p>The first question asks whether the sampling distribution is centred at the right value (i.e. the population parameter being estimated). If it is, we say the estimator is <strong>unbiased</strong>. In the epidemiology module and earlier in this module, you have already come across how <em>measurements</em> can be biased. Here, we are referring to whether the estimator is biased, which is sometimes referred to as <em>statistical bias</em>. Most estimators are unbiased, and this can be shown using statistical theory. For a small number of estimators it can be shown that they are in fact biased, and sometimes a correction can be applied to account for this. An example of illustrating whether estimators are biased are given in the Appendix.</p>
 <p>The second question will be examined when looking at the standard error and forms the basis for constructing 95% confidence intervals.</p>
-<div class="section" id="simulated-data-sampling-distribution-of-a-mean">
-<h2>4.4.1 Simulated data: sampling distribution of a mean<a class="headerlink" href="#simulated-data-sampling-distribution-of-a-mean" title="Permalink to this headline">¶</a></h2>
-<p>We will continue with the emotional distress study, assuming that in truth,</p>
-<div class="math notranslate nohighlight">
-\[
-X \sim(30, 4.8^2)
-\]</div>
-<p>where <span class="math notranslate nohighlight">\(X\)</span> denotes the researcher’s age.</p>
-</div>
 <div class="section" id="example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation">
-<h2>4.4.2 Example: the sampling distribution for the sample mean age - algebraic calculation<a class="headerlink" href="#example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.1 Example: the sampling distribution for the sample mean age - algebraic calculation<a class="headerlink" href="#example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation" title="Permalink to this headline">¶</a></h2>
+<p>We will continue with the emotional distress study, assuming that in truth, ages follow a normal distribution with population mean <span class="math notranslate nohighlight">\(\mu=30\)</span> and population standard deviation <span class="math notranslate nohighlight">\(\sigma=4.8\)</span>.</p>
 <p>Our model for the emotional distress study states that:</p>
 <div class="math notranslate nohighlight">
 \[ 
@@ -632,7 +626,7 @@ X_i \overset{\small{iid}}{\sim} N(\mu, \sigma^2), \qquad i=1,2,...,10
 </ul>
 </div>
 <div class="section" id="the-central-limit-theorem">
-<h2>4.4.3 The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.2 The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this headline">¶</a></h2>
 <p>The Central Limit Theorem (CLT) is a key concept in statistics and in estimation. When we use the mean from a sample to estimate a parameter, we already acknowledge that there will be some error around this estimate, as described above. The CLT takes this further;</p>
 <div class="alert alert-block alert-info">
 <b> The Central Limit Theorem</b> 
@@ -641,7 +635,7 @@ X_i \overset{\small{iid}}{\sim} N(\mu, \sigma^2), \qquad i=1,2,...,10
 <p>This theorem is hugely powerful. Even for models that don’t assume data are normally distributed, for sufficiently large samples the mean will follow a normal distribution. We will see that this allows us to conduct large-sample inference fairly easily on any type of data. An example using a binary variable is given in the Appendix.</p>
 </div>
 <div class="section" id="resampling">
-<h2>4.4.4 Resampling<a class="headerlink" href="#resampling" title="Permalink to this headline">¶</a></h2>
+<h2>4.4.3 Resampling<a class="headerlink" href="#resampling" title="Permalink to this headline">¶</a></h2>
 <p>For a population of interest, we want to estimate a parameter <span class="math notranslate nohighlight">\(\theta\)</span> using a sample <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(n\)</span> individuals (for our example <span class="math notranslate nohighlight">\(n=10\)</span>) from the population. We have an estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> from our sample <span class="math notranslate nohighlight">\(S\)</span>. We want to know about the sampling distribution of the estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>.</p>
 <p>We discussed above the idea that we could obtain the sampling distribution by repeatedly sampling from the population and calculating our estimate in each sample. Then a histogram of those many estimates would give us (approximately) the sampling distribution. In practice, it is logistically impossible to repeat the study a large number of times. However, we can mimic this process by using resampling.</p>
 <p>The basic idea is to pretend that the observed data are the population and repeatedly sample from the data to learn about the relationship between <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> and the estimates obtained from the re-sampled data, which we will call <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span>.</p>
@@ -679,7 +673,7 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <p>We do this a very large number of times to obtain lots of estimates from different bootstrap samples. Then we can draw a histogram of these many bootstrap estimates to see the shape and dispersion of the distribution.</p>
 <p>The <strong>bootstrap principle</strong> says that the distribution of <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> given <span class="math notranslate nohighlight">\(\theta\)</span> (i.e. the sampling distribution) is approximated by the distribution of <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span> given <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>.  For example, if we find that our values of <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span> are approximately normally distributed and centred around <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> then the bootstrap principle tells us that <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> follows a normal distribution centred around <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <div class="section" id="example-the-sampling-distribution-for-the-sample-mean-age-resampling">
-<h3>4.4.4.1 Example: the sampling distribution for the sample mean age - resampling<a class="headerlink" href="#example-the-sampling-distribution-for-the-sample-mean-age-resampling" title="Permalink to this headline">¶</a></h3>
+<h3>4.4.3.1 Example: the sampling distribution for the sample mean age - resampling<a class="headerlink" href="#example-the-sampling-distribution-for-the-sample-mean-age-resampling" title="Permalink to this headline">¶</a></h3>
 <p>Suppose our data - the 10 sampled ages - are the set: <span class="math notranslate nohighlight">\(\{ 28.1, 27.5, 25, 29.9, 29.7, 29.9, 39.9, 33.6, 21.3, 30.8 \}\)</span>. Our estimate of the population age is the sample mean age, which is: <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>.</p>
 <p>To obtain an approximation to the sampling distribution for the sample mean age, using a resampling approach, we first take a large number of bootstrap samples from the data. The code below does this.</p>
 <div class="cell docutils container">
@@ -765,7 +759,8 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <span class="n">r.mean</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">bootstrap_samples</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
 
 <span class="c1"># Draw a histogram with a red vertical line indicating the original sample mean age</span>
-<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4.5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -804,7 +799,8 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram of estimates (sample means) in bootstrap samples</span>
-<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4.5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
 
 <span class="c1"># Add the normal distribution which most closely follows the histogram</span>
 <span class="nf">lines</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">),</span> <span class="nf">dnorm</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">),</span> <span class="nf">mean</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span> <span class="m">1.52</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;orange&quot;</span><span class="p">,</span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>

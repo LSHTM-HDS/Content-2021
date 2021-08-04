@@ -234,27 +234,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5. Likelihood
+     5.1 Introduction to maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.c.%20Likelihood.html">
-     5. Likelihood
+     5.2 The likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.d.%20Likelihood.html">
-     5. Likelihood
+     5.3 Log likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.f.%20Likelihood.html">
-     5. Likelihood
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.g.%20Likelihood.html">
-     5. Likelihood
+     5.5 Summary
     </a>
    </li>
   </ul>
@@ -396,7 +391,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1:
+     Part 1: 9.1 Introduction to Bayesian Inference
     </a>
    </li>
   </ul>
@@ -581,11 +576,9 @@
   <div class="section" id="the-binomial-distribution">
 <h1>2.2 The binomial distribution<a class="headerlink" href="#the-binomial-distribution" title="Permalink to this headline">¶</a></h1>
 <p>The binomial distribution is used to model the number of successes out of a fixed number of trials.</p>
-<p>Note on terminology:</p>
-<ul class="simple">
-<li><p>Do not confuse the word “trial” here with the idea of a clinical trial or randomised controlled trial. In our discussion of the binomial distribution, we simply mean a Bernoulli trial, which is a statistical experiment which results in a binary outcome. So the trial in question could be whether or not a baby is a male; whether or not someone is alive in 30 days time; whether or not someone experiences a side effect.</p></li>
-<li><p>Similarly, the word “success” can be confusing. We use the word success to denote having the event of interest. It does not imply that this is a good event. In fact, the event we are interested in, in health applications, is often a bad one. It might be diagnosis of cancer or death, in which case a success would refer to someone having cancer or dying. Conversely, if our study was looking at treatments for improving pregnancy rates, our event, and thus the definition of success, might be a couple becoming pregnant. So the word success, in this context, does not necessarily refer to a good event (although sometimes it does!).</p></li>
-</ul>
+<blockquote>
+<div><p>Note on terminology:  <br> <br> - Do not confuse the word “trial” here with the idea of a clinical trial or randomised controlled trial. In our discussion of the binomial distribution, we simply mean a Bernoulli trial, which is a statistical experiment which results in a binary outcome. So the trial in question could be whether or not a baby is a male; whether or not someone is alive in 30 days time; whether or not someone experiences a side effect.  <br> <br> - Similarly, the word “success” can be confusing. We use the word success to denote having the event of interest. It does not imply that this is a good event. In fact, the event we are interested in, in health applications, is often a bad one. It might be diagnosis of cancer or death, in which case a success would refer to someone having cancer or dying. Conversely, if our study was looking at treatments for improving pregnancy rates, our event, and thus the definition of success, might be a couple becoming pregnant. So the word success, in this context, does not necessarily refer to a good event (although sometimes it does!).</p>
+</div></blockquote>
 <div class="section" id="example-of-a-binomial-distribution">
 <h2>2.2.1 Example of a binomial distribution<a class="headerlink" href="#example-of-a-binomial-distribution" title="Permalink to this headline">¶</a></h2>
 <p>A small study of 8 participants is being run. All 8 participants will be given an experimental drug. The aim of this study is to obtain data about how many people will experience a side-effect of the drug.</p>
@@ -707,11 +700,9 @@ P(X=x) = \begin{pmatrix}n \\ x \end{pmatrix} \pi^{x} (1-\pi)^{n-x}, \mbox{ for }
 <p><em>Applications</em></p>
 <p>Suppose we are interested in a particular disease within a large population of <span class="math notranslate nohighlight">\(N\)</span> individuals. If, in the population, <span class="math notranslate nohighlight">\(M\)</span> is the number of individuals with the disease of interest, then the probability of “success” (i.e. an individual having the disease) is <span class="math notranslate nohighlight">\(\pi = M/N\)</span>.</p>
 <p>Suppose we take a random sample of <span class="math notranslate nohighlight">\(n\)</span> individuals from the large population. We will use <span class="math notranslate nohighlight">\(X\)</span> to be the random variable for the number of “successes” out of the <span class="math notranslate nohighlight">\(n\)</span> individuals. Then we might be happy to assume that <span class="math notranslate nohighlight">\(X\)</span> follows a Binomial distribution.</p>
-<p>Notes</p>
-<ul class="simple">
-<li><p>In order for the probability <span class="math notranslate nohighlight">\(\pi\)</span> to remain constant, if we took another sample of <span class="math notranslate nohighlight">\(n\)</span> we would have to “replace” the original <span class="math notranslate nohighlight">\(n\)</span> individuals, so there would be some small possibility of picking the same person twice. In practice, people are not sampled twice. But populations are usually so large that we can ignore this.</p></li>
-<li><p>We also need to assume that individual outcomes (here, having the disease or not) are independent. There are many ways in which this could be violated. People within the same family have shared genetics, shared environments, etc. all of which might lead to outcomes that are more similar between family members than between individuals from different families.</p></li>
-</ul>
+<blockquote>
+<div><p>Notes <br> <br>  - In order for the probability <span class="math notranslate nohighlight">\(\pi\)</span> to remain constant, if we took another sample of <span class="math notranslate nohighlight">\(n\)</span> we would have to “replace” the original <span class="math notranslate nohighlight">\(n\)</span> individuals, so there would be some small possibility of picking the same person twice. In practice, people are not sampled twice. But populations are usually so large that we can ignore this. <br> <br> - We also need to assume that individual outcomes (here, having the disease or not) are independent. There are many ways in which this could be violated. People within the same family have shared genetics, shared environments, etc. all of which might lead to outcomes that are more similar between family members than between individuals from different families.</p>
+</div></blockquote>
 </div>
 </div>
 

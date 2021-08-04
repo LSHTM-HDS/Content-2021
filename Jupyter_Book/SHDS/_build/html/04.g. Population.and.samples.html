@@ -234,27 +234,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5. Likelihood
+     5.1 Introduction to maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.c.%20Likelihood.html">
-     5. Likelihood
+     5.2 The likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.d.%20Likelihood.html">
-     5. Likelihood
+     5.3 Log likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.f.%20Likelihood.html">
-     5. Likelihood
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.g.%20Likelihood.html">
-     5. Likelihood
+     5.5 Summary
     </a>
    </li>
   </ul>
@@ -384,10 +379,22 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="09.%20Bayesian%20Statistics%20I.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="09.a.%20Bayesian%20Statistics%20I.html">
    9. Bayesian Statistics I
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
+     Part 1: 9.1 Introduction to Bayesian Inference
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toctree-l1">
   <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
@@ -621,6 +628,7 @@
 <span class="n">sample.props</span>   <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">study_measurements_ed</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
 
 <span class="c1"># Draw graphs</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
 <span class="nf">hist</span><span class="p">(</span><span class="n">sample.props</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10000</span><span class="p">],</span> 
      <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="m">-0.05</span><span class="p">,</span> <span class="m">0.95</span><span class="p">,</span> <span class="m">0.05</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;green4&quot;</span><span class="p">,</span>
      <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Sample proportion with emotional distress&quot;</span><span class="p">,</span> 

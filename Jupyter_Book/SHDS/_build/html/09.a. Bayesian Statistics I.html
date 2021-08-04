@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Part 1:" href="09.b.%20Bayesian%20Statistics%20I.html" />
+    <link rel="next" title="Part 1: 9.1 Introduction to Bayesian Inference" href="09.b.%20Bayesian%20Statistics%20I.html" />
     <link rel="prev" title="Further resources" href="08.g.%20Frequentist%20II.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -95,6 +95,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -232,27 +237,27 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5. Likelihood
+     5.1 Introduction to maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.c.%20Likelihood.html">
-     5. Likelihood
+     5.2 The likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.d.%20Likelihood.html">
-     5. Likelihood
+     5.3 Log likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.e.%20Likelihood.html">
+     5.4 Finding the MLE
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.f.%20Likelihood.html">
-     5. Likelihood
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.g.%20Likelihood.html">
-     5. Likelihood
+     5.5 Summary
     </a>
    </li>
   </ul>
@@ -394,15 +399,87 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1:
+     Part 1: 9.1 Introduction to Bayesian Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.c.%20Bayesian%20Statistics%20I.html">
+     9.2 Bayes Theorem (recap)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.d.%20Bayesian%20Statistics%20I.html">
+     9.3 The Bayesian paradigm in Health data science problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
+     Part 2:  9.4 Bayes thorem for discrete and continous data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.f.%20Bayesian%20Statistics%20I.html">
+     9.5 Bayesian inference on proportions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.g.%20Bayesian%20Statistics%20I.html">
+     9.6 Summarising Posteriors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.h.%20Bayesian%20Statistics%20I.html">
+     9.7 Prior Predictions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.i.%20Bayesian%20Statistics%20I.html">
+     9.8 Conjugacy
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="10.a.%20Bayesian%20Statistics%20II.html">
    10. Bayesian Statistics II: Normal data
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.b.%20Bayesian%20Statistics%20II.html">
+     10.1 Example: CD4 cell counts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
+     10.2 Calculating the posterior for the mean of a Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.d.%20Bayesian%20Statistics%20II.html">
+     10.3 Credible Intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.e.%20Bayesian%20Statistics%20II.html">
+     10.4 Predictions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.f.%20Bayesian%20Statistics%20II.html">
+     10.5 Multiparameter models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.g.%20Bayesian%20Statistics%20II.html">
+     Further Resources
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -552,7 +629,7 @@
 <h1>9. Bayesian Statistics I<a class="headerlink" href="#bayesian-statistics-i" title="Permalink to this headline">¶</a></h1>
 <p>So far in this module, we have looked at frequentist or classical statistical ideas, such as maximum likelihood estimation, hypothesis testing and p-values. Underlying the frequentist approach is the belief that there is a true state of reality, and that parameters have a fixed and true value. Probabilities are long-run frequencies; for example, the probability of a driver in London having a car accident is a fixed value between 0 and 1. A typical way of estimating this value is to take a sample of observations, construct a likelihood function for these observations, and to obtain the parameter value that maximizes the likelihood. When we take a Bayesian approach, the parameter we wish to estimate is considered to be a random variable, and probabilities may represent a subjective belief about the state of uncertainty, or there may be a data generating distribution underlying the random parameter. For example, you may have a prior belief about the probability of a driver in London having a car accident, and after collecting a sample of data, you combine your prior beliefs with the likelihood for those observations to construct an updated belief - the posterior. Your belief may change in light of the data.</p>
 <p>Bayesian methods sometimes require numerical integration, and cheaper computing has made Bayesian approaches more feasible in the last 20 years. Bayesian approaches are likely to be an important part of working in Health Data Science. In the next two sessions, we introduce the fundamental principles.</p>
-<p>The current session is split into two separate parts.</p>
+<p>The current session is split into two separate parts. The first introduces the basic concepts underlying Bayesian inference and the second applies the basic principles to a simple example using proportions.</p>
 <div class="alert alert-block alert-warning">
 <b> Part 1: Intended learning outcomes</b> 
 <p>By the end of this session you will be able to:</p>
@@ -605,7 +682,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="08.g.%20Frequentist%20II.html" title="previous page">Further resources</a>
-    <a class='right-next' id="next-link" href="09.b.%20Bayesian%20Statistics%20I.html" title="next page">Part 1:</a>
+    <a class='right-next' id="next-link" href="09.b.%20Bayesian%20Statistics%20I.html" title="next page">Part 1: 9.1 Introduction to Bayesian Inference</a>
 
         </div>
         

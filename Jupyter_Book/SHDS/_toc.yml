@@ -6,6 +6,7 @@ root: 00. Welcome
 parts:
   - caption: Overview
     chapters:
+    - file: 00. Acknowledgements
     - file: 01. Introduction
   - caption: Basic probability
     chapters:
@@ -38,7 +39,6 @@ parts:
       - file: 05.d. Likelihood
       - file: 05.e. Likelihood
       - file: 05.f. Likelihood
-      - file: 05.g. Likelihood
     - file: 06.a. Maximum Likelihood
       sections: 
       - file: 06.b. Maximum Likelihood
@@ -65,7 +65,21 @@ parts:
     - file: 09.a. Bayesian Statistics I
       sections: 
       - file: 09.b. Bayesian Statistics I
-    - file: 10. Bayesian Statistics II
+      - file: 09.c. Bayesian Statistics I
+      - file: 09.d. Bayesian Statistics I
+      - file: 09.e. Bayesian Statistics I
+      - file: 09.f. Bayesian Statistics I
+      - file: 09.g. Bayesian Statistics I
+      - file: 09.h. Bayesian Statistics I
+      - file: 09.i. Bayesian Statistics I
+    - file: 10.a. Bayesian Statistics II
+      sections: 
+      - file: 10.b. Bayesian Statistics II
+      - file: 10.c. Bayesian Statistics II
+      - file: 10.d. Bayesian Statistics II
+      - file: 10.e. Bayesian Statistics II
+      - file: 10.f. Bayesian Statistics II
+      - file: 10.g. Bayesian Statistics II
   - caption: Statistical modelling
     chapters:
     - file: 11. Types of Investigation

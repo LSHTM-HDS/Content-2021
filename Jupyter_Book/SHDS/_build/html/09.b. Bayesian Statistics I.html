@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Part 1: &#8212; Statistics for Health Data Science</title>
+    <title>Part 1: 9.1 Introduction to Bayesian Inference &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="10. Bayesian Statistics II: Normal data" href="10.%20Bayesian%20Statistics%20II.html" />
+    <link rel="next" title="9.2 Bayes Theorem (recap)" href="09.c.%20Bayesian%20Statistics%20I.html" />
     <link rel="prev" title="9. Bayesian Statistics I" href="09.a.%20Bayesian%20Statistics%20I.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -97,6 +97,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -234,27 +239,27 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5. Likelihood
+     5.1 Introduction to maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.c.%20Likelihood.html">
-     5. Likelihood
+     5.2 The likelihood
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.d.%20Likelihood.html">
-     5. Likelihood
+     5.3 Log likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.e.%20Likelihood.html">
+     5.4 Finding the MLE
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="05.f.%20Likelihood.html">
-     5. Likelihood
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="05.g.%20Likelihood.html">
-     5. Likelihood
+     5.5 Summary
     </a>
    </li>
   </ul>
@@ -396,15 +401,87 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Part 1:
+     Part 1: 9.1 Introduction to Bayesian Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.c.%20Bayesian%20Statistics%20I.html">
+     9.2 Bayes Theorem (recap)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.d.%20Bayesian%20Statistics%20I.html">
+     9.3 The Bayesian paradigm in Health data science problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
+     Part 2:  9.4 Bayes thorem for discrete and continous data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.f.%20Bayesian%20Statistics%20I.html">
+     9.5 Bayesian inference on proportions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.g.%20Bayesian%20Statistics%20I.html">
+     9.6 Summarising Posteriors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.h.%20Bayesian%20Statistics%20I.html">
+     9.7 Prior Predictions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.i.%20Bayesian%20Statistics%20I.html">
+     9.8 Conjugacy
     </a>
    </li>
   </ul>
  </li>
- <li class="toctree-l1">
-  <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="10.a.%20Bayesian%20Statistics%20II.html">
    10. Bayesian Statistics II: Normal data
   </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.b.%20Bayesian%20Statistics%20II.html">
+     10.1 Example: CD4 cell counts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
+     10.2 Calculating the posterior for the mean of a Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.d.%20Bayesian%20Statistics%20II.html">
+     10.3 Credible Intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.e.%20Bayesian%20Statistics%20II.html">
+     10.4 Predictions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.f.%20Bayesian%20Statistics%20II.html">
+     10.5 Multiparameter models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.g.%20Bayesian%20Statistics%20II.html">
+     Further Resources
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 <p class="caption">
@@ -547,34 +624,14 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   Part 1:
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#probability">
-   9.3 Probability
+   9.1.1 Probability
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#bayesian-inference">
-   9.4 Bayesian Inference
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#bayes-theorem">
-   9.5 Bayes Theorem
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example">
-   9.6 Example
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-bayesian-paradigm-in-health-data-science-problems">
-   9.7 The Bayesian paradigm in Health data science problems.
+   9.1.2 Bayesian Inference
   </a>
  </li>
 </ul>
@@ -588,11 +645,10 @@
         
               <div>
                 
-  <div class="section" id="part-1">
-<h1>Part 1:<a class="headerlink" href="#part-1" title="Permalink to this headline">¶</a></h1>
-</div>
+  <div class="section" id="part-1-9-1-introduction-to-bayesian-inference">
+<h1>Part 1: 9.1 Introduction to Bayesian Inference<a class="headerlink" href="#part-1-9-1-introduction-to-bayesian-inference" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="probability">
-<h1>9.3 Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h1>
+<h2>9.1.1 Probability<a class="headerlink" href="#probability" title="Permalink to this headline">¶</a></h2>
 <p>In Session 2, we learned about probability in the frequentist sense: the proportion of times an event occurs in the long-run. Let’s have a look at the following two scenarios:</p>
 <ol class="simple">
 <li><p>A research group wishes to know the probability that a baby who is born in a particular hospital ward has cystic fibrosis. They look at the records on screening tests done at birth to investigate.</p></li>
@@ -610,7 +666,7 @@ b) the probability of the patient having these symptoms, given that she does not
 <p>and comparing the two probabilities. Note that this does not take into account the extra information about the context.</p>
 </div>
 <div class="section" id="bayesian-inference">
-<h1>9.4 Bayesian Inference<a class="headerlink" href="#bayesian-inference" title="Permalink to this headline">¶</a></h1>
+<h2>9.1.2 Bayesian Inference<a class="headerlink" href="#bayesian-inference" title="Permalink to this headline">¶</a></h2>
 <p>The underlying concept for Bayesian inference essentially works as follows. We have some population parameter <span class="math notranslate nohighlight">\(\theta\)</span> which we wish to make inference on, and the likelihood <span class="math notranslate nohighlight">\(p(y|\theta)\)</span> which tells us how likely different values of <span class="math notranslate nohighlight">\(y\)</span> are, conditional on different parameter values <span class="math notranslate nohighlight">\(\theta\)</span>. In the frequentist approach, <span class="math notranslate nohighlight">\(\theta\)</span> is considered to be a fixed, but unknown, constant. Inference is then based on the likelihood <span class="math notranslate nohighlight">\(p(\mathbf{y}|\theta)\)</span>, where <span class="math notranslate nohighlight">\(\mathbf{y} = \left\{y_1, . . . ,y_n\right\}\)</span> is a sample of observations from the population. The frequentist approach looks at the distribution of the data given <span class="math notranslate nohighlight">\(\theta\)</span> to estimate <span class="math notranslate nohighlight">\(\theta\)</span> by using, for example, the maximum likelihood approach which we covered in Session 6.</p>
 <p>In the Bayesian paradigm, we no longer assume that the parameters have a fixed true value, but consider <span class="math notranslate nohighlight">\(\theta\)</span> to be a random quantity with an unknown distribution, which we wish to estimate. This distribution is denoted by <span class="math notranslate nohighlight">\(p(\theta|y)\)</span>, and so we look at the distribution of the parameter, having seen data <span class="math notranslate nohighlight">\(y\)</span>. To achieve this, we will have to specify a prior probability distribution, denoted <span class="math notranslate nohighlight">\(p(\theta)\)</span>, which represents our initial beliefs about the distribution of <span class="math notranslate nohighlight">\(\theta\)</span>
 prior to observing any data. In some situations, when we are trying to estimate a parameter <span class="math notranslate nohighlight">\(\theta\)</span> we have some knowledge, about the possible value of <span class="math notranslate nohighlight">\(\theta\)</span> before we take into account the data that we observe.</p>
@@ -618,134 +674,6 @@ prior to observing any data. In some situations, when we are trying to estimate 
 <p><img alt="Physician.png" src="attachment:Physician.png" /></p>
 <p>In this example, the physician is assessing the probability that the patient has the disease. It is the physician’s prior probability based on their own training, knowledge and experience; a colleague may have a different prior probability. Here, prior probability is being defined subjectively. The size of the probability represents the physician’s degree of belief about the occurrence of an event, i.e. their own personal assessment of how likely an event is, based on the evidence available to them before the test results are given. This definition corresponds more closely to the everyday, intuitive  usage of probability than a frequentist interpretation (where the probability of a particular event occurring can be interpreted as the proportion of times the event would/does occur in a large number of similar trials or situations). The prior probability of the event might come from direct data, known prevalance of disease in a population, or data from related populations. If such prior information does not exist, then it can be formally elicited from experts, but we would want to acknowledge the uncertainty in the experts’ knowledge.</p>
 </div>
-<div class="section" id="bayes-theorem">
-<h1>9.5 Bayes Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h1>
-<p>Let’s remind ourselves of Bayes theorem for discrete events, which we met in Session 2 (probability):</p>
-<p>If <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are events, then</p>
-<p>\begin{equation}
-P(A|B) = \frac{ P(B|A) P(A) } {P(B)} \propto P(B|A) P(A),
-\end{equation}</p>
-<p>or in words:
-\begin{equation}
-\mbox{posterior probability of A given B} \propto \mbox{the likelihood of B given A} \times \mbox{the prior probability of A}.
-\end{equation}</p>
-<p>Also, if <span class="math notranslate nohighlight">\(A_i\)</span> is a set of mutually exclusive and exhaustive events, i.e. <span class="math notranslate nohighlight">\( p( \bigcup\limits_i A_i ) = \sum\limits_i p(A_i) = 1\)</span> and <span class="math notranslate nohighlight">\(A_i \cap A_j = \emptyset\)</span> for <span class="math notranslate nohighlight">\(i \neq j\)</span>, then</p>
-<p>\begin{equation}
-p(A_i|B) = \frac{ p(B|A_i) p(A_i) } {\sum\limits_j p(B|A_j) p(A_j) }.
-\end{equation}</p>
-<p>The calculation of the denominator is more difficult if we have continuous parameters as it requires integration over A; we will discuss this in the next section.</p>
-<p>We will illustrate Bayes Theorem further with the diagnostic test example for Covid-19 below. We see Bayesian reasoning is purely probabilistic. Bayes theorem gives us a principled way to update prior probabilities on the basis of new data.</p>
-</div>
-<div class="section" id="example">
-<h1>9.6 Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h1>
-<p><a class="reference external" href="https://www.bmj.com/content/bmj/369/bmj.m1808.full.pdf">Watson (2020)</a> discusses some interesting issues around the interpretation of Covid-19 diagnostic tests. Typically, a clinician estimates a pre-test probability (a prior probability) of having Covid-19 for a particular area, which is derived from knowledge about local rates of Covid-19. Then, given a patient’s test result, the post-test probability (the posterior probability) of having Covid-19 is obtained. The posterior probability depends on the pre-test probability, as well as the sensitivity and specificity of the test, which are difficult to estimate; often, sensitivity is over-estimated. The article discusses how one can be fairly confident about a positive test result, but more caution is needed for a negative test result, as there may still be quite a high chance that a person has Covid-19. We illustrate this with Bayes’ theorem.</p>
-<p>Suppose that, in a student hall of residence, the prevalence of Covid-19 if you have a persistent cough is <span class="math notranslate nohighlight">\(75\%\)</span>. Suppose we assume that the test will be positive in Covid-19 patients <span class="math notranslate nohighlight">\(70\%\)</span> of the time (sensitivity is 0.7), and it will be negative in non-Covid-19 patients <span class="math notranslate nohighlight">\(95\%\)</span> of the time (specificity is 0.95). Given that a student in this hall with a persistent cough tests negative, what is the probability that they have Covid-19? In other words, what is the probability of a false negative?</p>
-<p>Let us denote by <span class="math notranslate nohighlight">\(C+\)</span> the event that a person has Covid-19, and <span class="math notranslate nohighlight">\(C-\)</span> the event that a person does not have Covid-19.  Further we denote by <span class="math notranslate nohighlight">\(T+\)</span> and <span class="math notranslate nohighlight">\(T-\)</span> the events that a person has a positive and a negative test, respectively. The information we are given is that:</p>
-<p>\begin{align}
-p(C+)&amp;=0.75  \
-p(T+|C+)&amp;=0.70 \
-p(T-|C-)&amp;=0.95\
-\end{align}</p>
-<p>Now, what we want is:
-\begin{align}
-p(\mbox{false negative}) = p(C+|T-)&amp;= \frac{p(T-|C+)p(C+)}{p(T-)} \
-&amp;= \frac{p(T-|C+)p(C+)}{p(T-|C+)p(C+) + p(T-|C-)p(C-)} \
-&amp;= \frac{(1-0.7) \times 0.75}{(1-0.7) \times 0.75 + 0.95 \times 0.25} \
-&amp;= \frac{0.225}{0.4625} \
-&amp;= 0.4864
-\end{align}</p>
-<p>You can see that, despite the negative test result, due to the very high prevalence of Covid-19 in the hall of residence and the relatively low sensitivity rate, there is still a 48.64% chance that a person has Covid-19.</p>
-<p>Suppose a different student has no symptoms. The prevalence of Covid-19 in asymptomatic people is 0.1. They use the same diagnostic test and the test result is positive. What is the probability that this student with a positive test result has Covid-19? In other words, what is <span class="math notranslate nohighlight">\(p(C+|T+)\)</span>?</p>
-<p>Solution:
-\begin{align}
-p(C+|T+) &amp;= \frac{p(T+|C+)p(C+)}{p(T+)} \
-&amp;= \frac{p(T+|C+)p(C+)}{p(T+|C+)p(H+) + p(T+|C-)p(C-)} \
-&amp;= \frac{0.7 \times 0.1}{0.7 \times 0.1 + (1-0.95) \times 0.9} \
-&amp;= \frac{0.07}{0.115} \
-&amp;= 0.609
-\end{align}</p>
-<p>This means that, amongst all the people who test positive, <span class="math notranslate nohighlight">\(60.9\%\)</span> will actually have the disease. After a positive result from a test, the probability that you have Covid-19 increase from <span class="math notranslate nohighlight">\(10\%\)</span> to <span class="math notranslate nohighlight">\(61\%\)</span>.</p>
-<p>Note that these results are specific to the the prevalence of Covid-19 in the area, as well as the sensitivity and specificity of the diagnostic test. The code below reproduces the leaf-plot from <a class="reference external" href="https://www.bmj.com/content/bmj/369/bmj.m1808.full.pdf">Watson (2020)</a>. The <span class="math notranslate nohighlight">\(x\)</span>-axis is the pre-test probability of having Covid-19. The corresponding <span class="math notranslate nohighlight">\(y\)</span>-values on the lower curve (lower leaf) are the post-test probabilities of having Covid-19, following a negative test result. The corresponding <span class="math notranslate nohighlight">\(y\)</span>-values on the upper curve (upper leaf) are the post-test probabilities of having Covid-19, following a positive test result. The correponding values on the diagonal (<span class="math notranslate nohighlight">\(y=x\)</span>) line represent probabilities if no test is carried out.</p>
-<p>In our first example, the prevalence in symptomatic people is 0.75, so we follow the orange arrows to find that the post-test probability after a negative result 0.4864. In the second example, the prevalence in asymptomatic people is 0.1. We follow the purple arrows to find that the post-test probability after a positive result is 0.609. How do you think the shape of the lower and upper leaves would change, if sensitivity was higher? If specificity was lower? Re-run the code with different values to check.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Function takes as arguments the sensitivitiy of the test (sensi) </span>
-<span class="c1"># and the specificity (speci)</span>
-
-<span class="n">leafplot</span> <span class="o">&lt;-</span> <span class="nf">function</span><span class="p">(</span><span class="n">sensi</span><span class="p">,</span> <span class="n">speci</span><span class="p">){</span>
-  
-  <span class="n">pretest</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.01</span><span class="p">)</span> <span class="c1">#possible pre-test probabilities </span>
-  
-  <span class="c1">#probability of having Covid-19 after a positive test result </span>
-  <span class="n">pos.test</span> <span class="o">&lt;-</span> <span class="n">sensi</span><span class="o">*</span><span class="n">pretest</span><span class="o">/</span><span class="p">(</span><span class="n">sensi</span><span class="o">*</span><span class="n">pretest</span><span class="o">+</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">speci</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">pretest</span><span class="p">))</span>
-  
-  <span class="c1">#probability of having Covid-19 after a negative test result </span>
-  <span class="n">neg.test</span> <span class="o">&lt;-</span> <span class="p">((</span><span class="m">1</span><span class="o">-</span><span class="n">sensi</span><span class="p">)</span><span class="o">*</span><span class="p">(</span><span class="n">pretest</span><span class="p">))</span><span class="o">/</span><span class="p">((</span><span class="m">1</span><span class="o">-</span><span class="n">sensi</span><span class="p">)</span><span class="o">*</span><span class="n">pretest</span><span class="o">+</span><span class="n">speci</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">pretest</span><span class="p">))</span>
-  
-  <span class="c1">#plot leaves</span>
-  <span class="nf">plot</span><span class="p">(</span><span class="n">pretest</span><span class="p">,</span> <span class="n">pos.test</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;darkgreen&quot;</span><span class="p">,</span> 
-     <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Pre-test Probability&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Post-test Probability&quot;</span><span class="p">)</span>
-  <span class="nf">points</span><span class="p">(</span><span class="n">pretest</span><span class="p">,</span> <span class="n">neg.test</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;darkgreen&quot;</span><span class="p">)</span>
-  <span class="nf">abline</span><span class="p">(</span><span class="n">a</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">b</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;darkgreen&quot;</span><span class="p">)</span>
-  <span class="nf">legend</span><span class="p">(</span><span class="s">&quot;topleft&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Positive Test&quot;</span><span class="p">,</span> <span class="s">&quot;Negative Test&quot;</span><span class="p">),</span>
-        <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Purple&quot;</span><span class="p">,</span> <span class="s">&quot;Orange&quot;</span><span class="p">),</span> <span class="n">lty</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">bg</span><span class="o">=</span><span class="s">&quot;transparent&quot;</span><span class="p">)</span>
-  
-  <span class="c1">#plot arrows </span>
-    <span class="c1">#we use pretest[11] to get the prevalence value of 0.1, and </span>
-    <span class="c1">#pretest[76] to get the prevalence value of 0.75 in the vector &quot;pretest&quot;</span>
-    
-  <span class="nf">arrows</span><span class="p">(</span><span class="n">pretest</span><span class="p">[</span><span class="m">11</span><span class="p">],</span> <span class="m">0</span><span class="p">,</span> <span class="n">pretest</span><span class="p">[</span><span class="m">11</span><span class="p">],</span> <span class="n">pos.test</span><span class="p">[</span><span class="m">11</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="m">15</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;purple&quot;</span><span class="p">)</span>
-  <span class="nf">arrows</span><span class="p">(</span><span class="n">pretest</span><span class="p">[</span><span class="m">11</span><span class="p">],</span> <span class="n">pos.test</span><span class="p">[</span><span class="m">11</span><span class="p">],</span> <span class="m">0</span><span class="p">,</span> <span class="n">pos.test</span><span class="p">[</span><span class="m">11</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="m">15</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;purple&quot;</span><span class="p">)</span>
-  <span class="nf">arrows</span><span class="p">(</span><span class="n">pretest</span><span class="p">[</span><span class="m">76</span><span class="p">],</span> <span class="m">0</span><span class="p">,</span> <span class="n">pretest</span><span class="p">[</span><span class="m">76</span><span class="p">],</span> <span class="n">neg.test</span><span class="p">[</span><span class="m">76</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="m">15</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;orange&quot;</span><span class="p">)</span>
-  <span class="nf">arrows</span><span class="p">(</span><span class="n">pretest</span><span class="p">[</span><span class="m">76</span><span class="p">],</span> <span class="n">neg.test</span><span class="p">[</span><span class="m">76</span><span class="p">],</span> <span class="m">0</span><span class="p">,</span> <span class="n">neg.test</span><span class="p">[</span><span class="m">76</span><span class="p">],</span> <span class="n">angle</span><span class="o">=</span><span class="m">15</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;orange&quot;</span><span class="p">)</span>
-  
-  <span class="p">}</span>
-
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">6.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5.5</span><span class="p">)</span>
-<span class="nf">leafplot</span><span class="p">(</span><span class="n">sensi</span><span class="o">=</span><span class="m">0.7</span><span class="p">,</span> <span class="n">speci</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
-
-
-<span class="c1">#See what happens to the plot when you change sensitivity and specificity! </span>
-<span class="c1">#leafplot(0.95, 0.8)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/09.b. Bayesian Statistics I_5_0.png" src="_images/09.b. Bayesian Statistics I_5_0.png" />
-</div>
-</div>
-</div>
-<div class="section" id="the-bayesian-paradigm-in-health-data-science-problems">
-<h1>9.7 The Bayesian paradigm in Health data science problems.<a class="headerlink" href="#the-bayesian-paradigm-in-health-data-science-problems" title="Permalink to this headline">¶</a></h1>
-<p>We end this section with a discussion on the Bayesian approach in Health data science problems. Some features of the Bayesian paradigm are particularly useful in this context:</p>
-<blockquote>
-<div><ol class="simple">
-<li><p>Bayes theorem provides a statistically principled method for combining data. Thus, we can take into account the context within which the data are generated. For example, results of a diagnostic test may have a different interpretation/consequence if used in a symptomatic patient than in a general screening programme. The prior probability of disease would be higher in the former than the latter. Priors can then be updated by the test result to give an assessment of disease risk specific to the local prevalence.</p></li>
-<li><p>For problems where there are multiple or diverse sources of data which must be combined, the Bayesian framework provides a natural environment for doing so. Examples where Bayesian synthesis of information is common are:<br />
-•	models of biological systems, for example genetic and genomic pathways,<br />
-•	models of the natural history of diseases over time and relationships with clinical events,<br />
-•	economic models of disease trajectories and cost-effect trade-offs for interventions that interrupt the trajectories,<br />
-•	ecological studies of pollutant emissions and effects on population health,<br />
-•	demographic studies, for example to study migration,<br />
-•	speech recognition software,<br />
-•	other pattern recognition models such as medical imaging or search engines,<br />
-•	epidemic modelling.<br />
-In all these examples complex data is synthesised and/or used to update outputs.</p></li>
-<li><p>Bayesian models fit well into decision theory methodology, providing we can also specify consequences of model outputs.</p></li>
-<li><p>In many examples, especially those that aim to model complicated processes, some of the data inputs are very sparse, or even non-existent. In such cases, prior data may be formally elicited from an expert panel and incorporated in a Bayesian analysis. Examples include multiple evidence synthesis and identification of latent groups.</p></li>
-<li><p>Bayesians are allowed to make direct probability statements about unknown quantities. Frequentists cannot make these direct probability statements because the unknown model parameters are assumed fixed.</p></li>
-<li><p>In recent years the resources available to complete Bayesian analysis have increased, including bespoke software and packages within commercial statistical software.</p></li>
-</ol>
-</div></blockquote>
-<p>But Bayesian methods are not that widely used in statistics compared with more classical approaches because they have some limitations.</p>
-<blockquote>
-<div><ol class="simple">
-<li><p>Sometimes the need for a prior distribution is a barrier if little is known about a parameter and researchers fall back on priors that are weakly informative. In that case, it is not easy to see how much benefit comes from a Bayesian analysis.</p></li>
-<li><p>Because of the need to use Bayesian updating via a prior distribution, the analysis almost always requires a parametric approach. This limits the structure of the analysis models. Although non-parametric Bayesian methods are available for some situations, they often have underlying parametric assumptions.</p></li>
-<li><p>The numerical integration methods usually required for realistic problems are often computationally expensive. This is especially true if there are multiple sources of evidence to be combined.</p></li>
-<li><p>Many statisticians are unfamiliar with the methods and associated software.</p></li>
-</ol>
-</div></blockquote>
 </div>
 
     <script type="text/x-thebe-config">
@@ -774,7 +702,7 @@ In all these examples complex data is synthesised and/or used to update outputs.
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="09.a.%20Bayesian%20Statistics%20I.html" title="previous page">9. Bayesian Statistics I</a>
-    <a class='right-next' id="next-link" href="10.%20Bayesian%20Statistics%20II.html" title="next page">10. Bayesian Statistics II: Normal data</a>
+    <a class='right-next' id="next-link" href="09.c.%20Bayesian%20Statistics%20I.html" title="next page">9.2 Bayes Theorem (recap)</a>
 
         </div>
         
