@@ -1,0 +1,900 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>16. Extensions: Confounding, standardization, and collapsibility &#8212; Statistics for Health Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="15. Generalised Linear Models: Poisson Regression for Count Variables" href="15.%20Poisson%20Regression%20Model.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Welcome.html">
+   Welcome to Statistics for Health Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.%20Introduction.html">
+   1 Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basic probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02.a.%20Probability.Discrete.html">
+   2. Probability and Discrete Probability Distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.b.%20Probability.Discrete.html">
+     2.1 Bayes’ Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.c.%20Probability.Discrete.html">
+     2.2 The binomial distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.d.%20Probability.Discrete.html">
+     2.3 The Poisson distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
+   3. Continuous probability distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.b.%20Continuous%20Probability%20Distributions.html">
+     3.1 Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.c.%20Continuous%20Probability%20Distributions.html">
+     3.2 Useful continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.d.%20Continuous%20Probability%20Distributions.html">
+     3.3 Uses of the standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
+     3.5 Are the data normally distributed?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.f.%20Continuous%20Probability%20Distributions.html">
+     3.5 Joint distributions and correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical Inference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04.a.%20Population.and.samples.html">
+   4. Populations and Samples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.b.%20Population.and.samples.html">
+     4.1 Sampling from a population
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.c.%20Population.and.samples.html">
+     4.2 Statistical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.d.%20Population.and.samples.html">
+     4.3 Sampling distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.e.%20Population.and.samples.html">
+     4.4 Obtaining the sampling distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.f.%20Population.and.samples.html">
+     4.5 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.g.%20Population.and.samples.html">
+     Appendix: additional reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05.a.%20Likelihood.html">
+   5. Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.b.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.c.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.d.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.f.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.g.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="06.a.%20Maximum%20Likelihood.html">
+   6. Maximum Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
+     6.1 Likelihood and log-likelihood with
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     independent observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.c.%20Maximum%20Likelihood.html">
+     6.2 Properties of maximum likelihood estimators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.d.%20Maximum%20Likelihood.html">
+     6.3 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.e.%20Maximum%20Likelihood.html">
+     Appendix: Additional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="07.a.%20Frequentist%20I.html">
+   7. Frequentist I: Confidence Intervals (CIs)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.b.%20Frequentist%20I.html">
+     7.1 Introduction to confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.c.%20Frequentist%20I.html">
+     7.2 95% confidence intervals for the mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.d.%20Frequentist%20I.html">
+     7.3 Interpretation of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.e.%20Frequentist%20I.html">
+     7.4 Approximate confidence intervals for parameters estimated using large samples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.f.%20Frequentist%20I.html">
+     7.5 Confidence Intervals using resampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.g.%20Frequentist%20I.html">
+     7.6 Summary: Use of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.h.%20Frequentist%20I.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="08.a.%20Frequentist%20II.html">
+   8. Frequentist II: Hypothesis tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.b.%20Frequentist%20II.html">
+     8.1 Proving and disproving hypotheses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.c.%20Frequentist%20II.html">
+     8.2 The p-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.d.%20Frequentist%20II.html">
+     8.3 Connection between p-values and confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.e.%20Frequentist%20II.html">
+     8.4 Other (mis-)interpretations of p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.f.%20Frequentist%20II.html">
+     8.5 Calculating p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.g.%20Frequentist%20II.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="09.a.%20Bayesian%20Statistics%20I.html">
+   9. Bayesian Statistics I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
+     Part 1:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
+   10. Bayesian Statistics II: Normal data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical modelling
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Types%20of%20Investigation.html">
+   11. Types of Investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.%20Linear%20Regression%20I.html">
+   12. Linear Regression I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.%20Linear%20Regression%20II.html">
+   13. Linear Regression II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.%20Logistic%20Regression.html">
+   14 Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   16. Extensions: Confounding, standardization, and collapsibility
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/16. Extensions Confounding, standardization, and collapsibility.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F16. Extensions Confounding, standardization, and collapsibility.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/16. Extensions Confounding, standardization, and collapsibility.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#motivating-example-treatment-for-kidney-stones">
+   16.1 Motivating example: treatment for kidney stones:
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#estimating-the-effect-of-treatment">
+   16.2 Estimating the effect of treatment
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#seeing-versus-doing">
+     16.2.1 Seeing’ versus ‘doing’
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#standardization">
+     16.2.2 Standardization
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-the-treatment-effect-using-logistic-regression">
+     16.2.3 Estimating the treatment effect using logistic regression
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#extension-to-a-continuous-outcome">
+   16.3 Extension to a continuous outcome
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#collapsibility">
+   16.4 Collapsibility
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#continuous-outcome">
+     16.4.1 Continuous outcome
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binary-outcome">
+     16.4.2 Binary outcome
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implications-for-randomised-controlled-trials">
+     16.4.3 Implications for randomised controlled trials
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#implications-for-observational-studies">
+     16.4.4 Implications for observational studies
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#concluding-remarks">
+   16.5 Concluding remarks
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#references">
+   References
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="extensions-confounding-standardization-and-collapsibility">
+<h1>16. Extensions: Confounding, standardization, and collapsibility<a class="headerlink" href="#extensions-confounding-standardization-and-collapsibility" title="Permalink to this headline">¶</a></h1>
+<p>This session is about the type of investigation in which the aim is to estimate causal effects of treatments or exposures on an outcome (‘causality and explanation’).</p>
+<div class="alert alert-block alert-warning">
+<b> Intended learning outcomes</b> 
+<p>By the end of this session, you will be able to:</p>
+<ul class="simple">
+<li><p>define different ways of quantifying a treatment effect for binary and continuous outcomes, including marginal effects (i.e. ‘population average’ effects) and conditional effects.</p></li>
+<li><p>introduce some new notation (the ‘do’ notation) to aid in expressing treatment effects.</p></li>
+<li><p>explain the use of standardization to obtain marginal treatment effect estimates.</p></li>
+<li><p>describe the concept of collapsibility and understand the implications for interpretation of regression coefficients in linear and logistic regression.</p></li>
+</ul>
+</div><div class="section" id="motivating-example-treatment-for-kidney-stones">
+<h2>16.1 Motivating example: treatment for kidney stones:<a class="headerlink" href="#motivating-example-treatment-for-kidney-stones" title="Permalink to this headline">¶</a></h2>
+<p>Throughout this session we will use an example from an observational study comparing two treatments for kidney stones. The two treatments are surgery and lithotripsy, the latter of which is less invasive. We let <span class="math notranslate nohighlight">\(X\)</span> denote the treatment variable, with <span class="math notranslate nohighlight">\(X = 0\)</span> for surgery and <span class="math notranslate nohighlight">\(X = 1\)</span> for lithotripsy. The outcome of interest is binary: success (<span class="math notranslate nohighlight">\(Y = 0\)</span>) or failure (<span class="math notranslate nohighlight">\(Y = 1\)</span>). There is a third binary variable indicating the size of the kidney stone: small stone size (&lt; 2cm diameter) (denoted <span class="math notranslate nohighlight">\(Z = 0\)</span>) or large stone size (≥ 2cm diameter) (denoted <span class="math notranslate nohighlight">\(Z = 1\)</span>).</p>
+<p>In this observational setting subject matter knowledge tells us that stone size will influence the treatment that a doctor recommends for the patient, and also that larger stone size is related to an increased likelihood of a bad outcome. The assumed relationships between the three variables <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(Z\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are illustrated using a directed acyclic graph (DAG) in Figure 1. The data on the three variables are summarised in Table 1. Table 2 shows conditional probabilities calculated using the data in Table 1.</p>
+<p><img alt="image.png" src="attachment:image.png" /></p>
+<p><img alt="image.png" src="attachment:image.png" /></p>
+<p>Some observations we can make from these data are:</p>
+<ul class="simple">
+<li><p>Patients with small stone size (Z = 0) were more likely to receive lithotripsy (X = 1) than those with large stone size (0.76 vs 0.23), and vice-versa patients with large stone size being more likely to receive surgery.</p></li>
+<li><p>The probability of failure (Y = 1) is higher for those with large stone size compared to those with small stone size (0.28 vs 0.12), though this could be due to a mixture of their stone size and the type of treatment received.</p></li>
+<li><p>The probability of failure (Y = 1) is slightly higher in those who received surgery compared to those who received lithotripsy (0.22 vs 0.17)), though this could be due to a mixture of the effects of treatment and of the stone size, since we have observed also that the treatment type is influenced by stone size and that stone size is related to the outcome. That is, the association between X and Y is confounded by Z.</p></li>
+<li><p>In those with small stone size, the probability of failure is higher in those who received lithotripsy (Pr(Y = 1|X = 1, Z = 0) = 0.13) compared with surgery (Pr(Y = 1|X = 0, Z = 0) = 0.07). Also, in those with large stone the probability of failure is higher in those who received lithotripsy (Pr(Y = 1|X = 1, Z = 1) = 0.31) compared with surgery (Pr(Y = 1|X = 0, Z = 1) = 0.27).</p></li>
+</ul>
+</div>
+<div class="section" id="estimating-the-effect-of-treatment">
+<h2>16.2 Estimating the effect of treatment<a class="headerlink" href="#estimating-the-effect-of-treatment" title="Permalink to this headline">¶</a></h2>
+<p>In the kidney stones example the effect of treatment type on the outcome is confounded by stone size, because smaller stone size is associated both with an increased likelihood of getting lithotripsy rather than surgery, and with greater chance of a good outcome. In this situation we know that to discover the real ‘effect’ of treatment type on the outcome we have to control for stone size. But what exactly do we mean by the ‘treatment effect’? There are different ways of measuring the treatment effect and we could be interested in a marginal treatment effect or a conditional treatment effect.</p>
+<p>To define the treatment effect we introduce some new notation.</p>
+<div class="section" id="seeing-versus-doing">
+<h3>16.2.1 Seeing’ versus ‘doing’<a class="headerlink" href="#seeing-versus-doing" title="Permalink to this headline">¶</a></h3>
+<p>To discuss what we mean by a treatment effect let’s first consider the difference between an observational study and a randomized controlled trial. The study of kidney stone treatment described above is observational, so we ‘see’ which treatment individuals in the study population received in the ‘real world’. By contrast, if we had instead performed a randomized trial to investigate the treatment effect we would intervene on the treatment to be assigned (through the randomization). Thus in an observational study we ‘see’ the treatment X, whereas in a randomized trial we ‘do’ the treatment X. A treatment effect is defined in terms of what the difference in the distribution of the outcome would have been under the two treatments. Suppose that instead of ‘seeing’ X in the kidney stones study we had instead been able to ‘do’ X. We can then imagine the hypothetical situations in which everyone in the study population had been given surgery, denoted do(X = 0), or in which everyone had been given lithotripsy, denoted do(X = 1). The ‘do’ notation was introduced by Pearl (1995). Accessible introductions to this concept are given in the books by Pearl, Glymour and Jewell (2016) and Pearl &amp; Mackenzie (2018).</p>
+<p>The treatment effect can be defined in terms of the difference in the probability of the outcome
+under the two hypothetical interventions</p>
+<center>$Pr(Y = 1|do(X = 1)) − Pr(Y = 1|do(X = 0))$<center>
+<div style="text-align: right"> (1) </div>
+<p>This is referred to as the Average Causal Effect (ACE). It is a ‘marginal’ treatment effect because it is ‘marginalized’ or ‘averaged’ over the distribution of Z in the study population. Here the treatment effect is measured using a difference in probabilities (or risk difference). Alternatively we could measure the treatment effect using a ratio of probabilities (risk ratio)</p>
+<center>$\frac{Pr(Y = 1|do(X = 1))}{Pr(Y = 1|do(X = 0)) }$<center>
+<div style="text-align: right"> (2) </div>
+<p>or using an odds ratio</p>
+<center>$\frac{Pr(Y = 1|do(X = 1)) Pr(Y = 0|do(X = 0))}{Pr(Y = 1|do(X = 0)) Pr(Y = 0|do(X = 1))}$<center>
+<div style="text-align: right"> (3) </div>
+<p>The quantity that we use to measure the treatment effect is called the ‘estimand’ - meaning the
+quantity we aim to estimate.</p>
+<p>The question arises as to what population the marginal treatment effect refers to. It is the ‘population average treatment effect’, where the population is the study population. Therefore, in general the marginal treatment effect depends on the distribution of Z in the study population, because it is defined as averaged over Z. In a different study with a different distribution of Z the marginal treatment effect would be different.</p>
+<p>We could also consider a treatment effect conditional on Z, which again can be quantified in terms
+of a risk difference, risk ratio or odds ratio:</p>
+<center>$Pr(Y = 1|do(X = 1), Z = z) − Pr(Y = 1|do(X = 0), Z = z) $<center>
+<div style="text-align: right"> (4) </div>
+<center>$\frac{Pr(Y = 1|do(X = 1), Z = z)}{Pr(Y = 1|do(X = 0), Z = z)}$<center>
+<div style="text-align: right"> (5) </div>
+<center>$\frac{Pr(Y = 1|do(X = 1), Z = z) Pr(Y = 0|do(X = 0), Z = z)}{Pr(Y = 1|do(X = 0), Z = z) Pr(Y = 0|do(X = 1), Z = z)}$<center>
+<div style="text-align: right"> (6) </div>
+<p>We can never observe the outcome Y under the hypothetical situations in which all individuals in the population of interest received treatment X = 0 and in which all individuals received treatment X = 1, because in reality each individual can only receive one treatment at a given time. However, a randomized trial mimics this scenario through randomization, which makes the groups of individuals in the two treatment groups comparable. In a randomized trial we ‘do’ X on two comparable groups of individuals and so the probabilities Pr(Y = 1|do(X = x)) (x = 0, 1) can be estimated directly from the data on Y and X because Pr(Y = 1|do(X = x)) = Pr(Y = 1|X = x) (x = 0, 1). In the observational study Pr(Y = 1|do(X = x)) <span class="math notranslate nohighlight">\(\neq\)</span>  Pr(Y = 1|X = x) due to the confounding by Z.</p>
+<p>In the observational study in this example, Z is the only confounder, and therefore after conditioning on Z we have Pr(Y = 1|do(X = 1), Z = z) = Pr(Y = 1|X = 1, Z = z). This means that conditional treatment effect (conditional on Z) can be estimated from the observational data usingthe observed probabilities Pr(Y = 1|X = 1, Z = z), because after conditioning on Z there is no confounding of the association between X and Y.</p>
+</div>
+<div class="section" id="standardization">
+<h3>16.2.2 Standardization<a class="headerlink" href="#standardization" title="Permalink to this headline">¶</a></h3>
+<p>We have seen above how conditional treatment effects can be estimated from the observational data where there is confounding. Now let’s consider how we could estimate a marginal treatment effect, as defined in 1, 2 and 3. As noted above, the probabilities Pr(Y = 1|do(X = x)) cannot be estimated using Pr(Y = 1|X = x) from the observational data due to the confounding by Z.</p>
+<p>Using the law of total probability the probability Pr(Y = 1|do(X = x)) can be written as</p>
+<center>$Pr(Y = 1|do(X = x)) = \sum \limits _{z=0,1} Pr(Y = 1|do(X = x), Z = z) Pr(Z = z|do(X = x)).$
+<center>
+<div style="text-align: right"> (7) </div>
+<p>In the previous section we argued that the conditional probabilities Pr(Y = 1|do(X = 1), Z = z) can be estimated easily from the observational data because Pr(Y = 1|do(X = 1), Z = z) = Pr(Y = 1|X = 1, Z = z). Now let’s think about the term Pr(Z = z|do(X = 1)). It helps to look at the DAG in Figure 1 for this part. If we intervene on X, as implied by do(X = 1), then this has no impact on Z because Z comes before X, i.e. it is not downstream from X. It follows that Pr(Z = z|do(X = 1)) = Pr(Z = z). Using these results we can write the above expression as</p>
+<center>$Pr(Y = 1|do(X = x)) = \sum \limits _{z=0,1} Pr(Y = 1|X = x, Z = z) Pr(Z = z)$
+<center>
+<div style="text-align: right"> (8) </div>
+<p>The probabilities Pr(Y = 1|X = 1, Z = z) and Pr(Z = z) can both be estimated from theobservational data and hence we can estimate the marginal treatment effects. This technique of expressing Pr(Y = 1|do(X = 1)) in terms of the conditional probabilities Pr(Y = 1|X = 1, Z = z) and Pr(Z = z) is called ‘standardization’. It is an example of the use of weighted averaging. Standardization is also referred to as ‘marginalizing’ or ‘averaging’ over Z and it has a long history of use in epidemiology (e.g. see Rothman, Greenland &amp; Lash 2008).</p>
+<p>In the practical we will apply these methods to the Kidney data.</p>
+</div>
+<div class="section" id="estimating-the-treatment-effect-using-logistic-regression">
+<h3>16.2.3 Estimating the treatment effect using logistic regression<a class="headerlink" href="#estimating-the-treatment-effect-using-logistic-regression" title="Permalink to this headline">¶</a></h3>
+<p>So far we have not used any regression models. The probabilities involved in estimating treatment effects can of course be estimated by applying logistic regression to our data. Suppose the data were provided in individual-level format instead of in grouped format (Table 1). An illustration of how the data may appear in individual format is shown in Table 3.</p>
+<p>The conditional probabilities Pr(Y = 1|X = x, Z = z) can be estimated using the logistic regression model</p>
+<center>$Pr(Y = 1|X = x, Z = z) = \frac{exp(\beta_{0} + \beta_{X}X + \beta_{Z}Z + \beta_{XZ}XZ)}{1 + exp(\beta_{0} + \beta_{X}X + \beta_{Z}Z + \beta_{XZ}XZ)}$
+<center>
+<div style="text-align: right"> (9) </div>
+<p>This model includes an interaction term between X and Z. A model without the interaction terms could be used, which would make the assumption that the effect of treatment X on the outcome Z is not modified by Z. In our example, this would be the assumption that the impact of lithotripsy on the outcome is the same inpatients with large stone size or small stone size.</p>
+<p>In R, after fitting a logistic regression model using ‘glm’ one can obtain estimates of the probabilities Pr(Y = 1|X = x, Z = z) using ‘predict’. The ‘margins’ command can be used to obtain marginal treatment effect estimates. We will try this out in the practical.</p>
+<p>Table 3: Example of individual level data for the kidney example for 10 individuals. Y : outcome (0 success, 1 failure), X: treatment (0 surgery, 1 lithotripsy), Z stone size (0 small, 1 large)</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:right head"><p>ID</p></th>
+<th class="text-align:left head"><p>Y</p></th>
+<th class="text-align:left head"><p>X</p></th>
+<th class="text-align:left head"><p>Z</p></th>
+</tr>
+</thead>
+<tbody>
+</tbody>
+</table>
+<div class="highlight-none notranslate"><div class="highlight"><pre><span></span>|1|1|0|0|
+|2|1|1|0|
+|3|0|1|0|
+|4|1|0|1|
+|5|0|1|1|
+|6|0|1|0|
+|7|0|1|1|
+|8|1|0|1|
+|9|0|0|0|
+|10|1|0|1|
+</pre></div>
+</div>
+<p>Confidence intervals for conditional treatment effect estimates can be estimated analytically in some cases. Confidence intervals for marginal treatment effect estimates obtained using standardization can be obtained either using approximations or using bootstrapping.</p>
+</div>
+</div>
+<div class="section" id="extension-to-a-continuous-outcome">
+<h2>16.3 Extension to a continuous outcome<a class="headerlink" href="#extension-to-a-continuous-outcome" title="Permalink to this headline">¶</a></h2>
+<p>Above we focused on a binary outcome (as well as binary treatment and confounder), which made all the calculations relatively simple, being based on probabilities. In this section we extend to the setting of a continuous outcome, again denoted Y . As above, we consider a binary treatment X and binary confounder Z, and we assume the relationships as depicted in the DAG in Figure 1. We can imagine that the binary outcome is replaced by a continuous outcome such as as measure of kidney function. When the outcome is continuous, the treatment effect is measured using a difference in means. Using the <span class="math notranslate nohighlight">\(do()\)</span> notation as above, the conditional and marginal mean differences between the two treatments are:</p>
+<center>$E(Y |do(X = 1), Z = z) − E(Y |do(X = 0), Z = z)$<center>
+<div style="text-align: right"> (10) </div>
+<center>$E(Y |do(X = 1)) − E(Y |do(X = 0))$<center>
+<div style="text-align: right"> (11) </div>
+<p>The expectations conditional on Z can, as above, be estimated from the observational data using the result that E(Y |X = x, Z = z) = E(Y |X = x, Z = z). The marginal probabilities can again be estimated using standardization</p>
+<center>$E(Y |do(X = x)) = \sum \limits _{z=0,1} E(Y |X = x, Z = z) Pr(Z = z) $<center>
+<div style="text-align: right"> (12) </div>
+<p>In a simple setting where Z is binary or categorical, the expectations E(Y |X = x, Z = z) can be estimated empirically from the data- i.e. by calculating the sample mean of Y in individuals with X + x and Z = z. Alternatively they could be estimated from a linear regression of Y on X and Z (and perhaps the interaction X × Z).</p>
+<p>Suppose that Z were continuous instead of binary, then the standardization requires an integral rather than a sum:</p>
+<center>$E(Y |do(X = x)) = \int E(Y |X = x, Z = z)f(z)dz $<center>
+<div style="text-align: right"> (13) </div>
+<p>where f(z) denotes the probability density function for Z. If Z is continuous then a regression model will typically be required to estimate the conditional expectations E(Y |X = x, Z = z). To perform the standardization requires an assumption about the distribution of Z. For example it might be assumed that Z is normally distributed. An alternative approach in this situation is to use an ‘empirical’ average. For this we calculate the conditional expectation E(Y |X = x, Z = z) for each individual <span class="math notranslate nohighlight">\(i\)</span> in the study population using their value of Z, <span class="math notranslate nohighlight">\(z_{i}\)</span> , and then take the average of these conditional expectations:</p>
+<center>$E(Y |do(X = x)) = \frac{1}{n} \sum \limits _{i=1}^{n} E(Y |X = x, Z = z_{i})  $<center>
+<div style="text-align: right"> (14) </div>
+<p>Note that we would obtain the conditional expectation <span class="math notranslate nohighlight">\(E(Y |X = x, Z = z_{i})\)</span> for each person <span class="math notranslate nohighlight">\(i\)</span> under both values of X (X = 0, 1), even though the individual was only observed under one value of X. Recall from earlier that the marginal effect refers to the study population at hand and does not (in general) transport to populations where the distribution of Z is different. It is possible to standardize to a different population than the study, by using the Z values from some other population of interest in the above equation.</p>
+</div>
+<div class="section" id="collapsibility">
+<h2>16.4 Collapsibility<a class="headerlink" href="#collapsibility" title="Permalink to this headline">¶</a></h2>
+<p>We expect the effect estimates for a treatment to change when we adjust for an important confounder. Conversely, when we adjust for a variable which is not a confounder, intuitively we do not expect the estimated treatment effect to change. However, it turns out that this intuition is only correct in certain situations.</p>
+<p>In this section we will look at a property of certain estimands which is called ‘collapsibility’. For this we consider a modified DAG as shown in Figure 2. Compared with the DAG in Figure 1 the arrow from Z to X has been removed, indicating an assumption that Z does not affect X. A situation such as this would arise if X is a randomized treatment in a randomized trial, for example.</p>
+<p><img alt="image.png" src="attachment:image.png" /></p>
+<p>We consider the scenario depicted in Figure 2 for the case of a continuous outcome and then a
+binary outcome.</p>
+<div class="section" id="continuous-outcome">
+<h3>16.4.1 Continuous outcome<a class="headerlink" href="#continuous-outcome" title="Permalink to this headline">¶</a></h3>
+<p>We will use simulated data in this section. Data were generated on Y , X and Z for 4000 individuals. 1000 individuals were in each of the four groups (X = 0, Z = 0), (X = 0, Z = 1), (X = 1, Z = 0), (X = 1, Z = 1). The outcome Y was generated using the linear model</p>
+<center>$Y = 10 + 2X + Z + \epsilon $<center>
+<div style="text-align: right"> (15) </div>
+<p>where the residuals <span class="math notranslate nohighlight">\(\epsilon\)</span> follow a normal distribution with mean 0 and variance 1. The data conform to the assumptions in Figure 2: there is no (marginal) association between X and Z, but both X and Z affect Y .</p>
+<p>Suppose we are interested in the effect of X on Y . As in the previous section the conditional expectations E(Y |do(X = x), Z = z) can be estimated using E(Y |do(X = x), Z) = E(Y |X = x, Z = z). Unlike in the previous section, here there is no confounding by Z and so the marginal expectation can be written as E(Y |do(X = x)) = E(Y |X = x). That is, in this situation it is legitimate to estimate the marginal treatment effect without having to use standardization (and using standardization will give the same result).</p>
+<p>Results from two linear regression models are shown below. The regression of Y on X alone provides an estimate of the marginal treatment effect E(Y |do(X = 1)) − E(Y |do(X = 0)) of 1.98. The regression of Y on X and Z provides an estimate of the conditional treatment effect E(Y |do(X = 1), Z = z) − E(Y |do(X = 0), Z = z) of 1.98, which is assumed by the model to be the same for Z = 0, 1 (and which we know is true because of how the data were simulated - you can check this in the practical using the simulated data by including an interaction term).</p>
+<p>The marginal and conditional effect estimates are identical, which we expect because there is no
+confounding by Z.</p>
+<p><img alt="image.png" src="attachment:image.png" /></p>
+<p>Coefficients in the linear regression model, i.e. mean differences, are described as being ‘collapsible’. This means that when there is no effect of Z on X, the marginal treatment effect (which is ‘collapsed’ over Z) is the same as the treatment effect conditional on Z. The implication of this is that if we adjust for a variable Z and see that the coefficient for X does not change, then this implies that Z does not confound the association between X and Y . Note the standard errors are
+different.</p>
+<p>We can show this result algebraically. Consider the linear regression model</p>
+<center>$Y = \beta_{0} + \beta_{X}X + \beta_{Z}Z + \epsilon $<center>
+<div style="text-align: right"> (16) </div>
+<p>Under this model, the expectation of Y given X is</p>
+<center>$E(Y |X) = \beta_{0} + \beta_{X}X + \beta_{Z}E(Z|X) $<center>
+<div style="text-align: right"> (17) </div>
+<p>If X and Z are marginally independent, as in Figure 2, then E(Z|X) = E(Z), and we use the notation E(Z) = <span class="math notranslate nohighlight">\(\mu_{Z}\)</span>. Then we have</p>
+<center>$E(Y |X) = \beta_{0} + \beta_{Z}\mu_{Z} + \beta_{X}X $<center>
+<div style="text-align: right"> (18) </div>
+<p>Therefore, if we fit the regression model for Y with X as the only covariate, the coefficient for X is identical to the coefficient for X in the model which adjusts for Z (i.e. <span class="math notranslate nohighlight">\(\beta_{X}\)</span>), if X and Z are marginally independent. Note that the intercept changes from <span class="math notranslate nohighlight">\(\beta_{0}\)</span> to <span class="math notranslate nohighlight">\(\beta_{0} + \beta_{Z}\mu_{Z}\)</span>.</p>
+</div>
+<div class="section" id="binary-outcome">
+<h3>16.4.2 Binary outcome<a class="headerlink" href="#binary-outcome" title="Permalink to this headline">¶</a></h3>
+<p>Next, we investigate the setting with a binary outcome Y , considering the example data in Table 4.</p>
+<p><img alt="image.png" src="attachment:image.png" /></p>
+<p>Earlier in this session we considered three ways of measuring the treatment effect for a binary
+outcome: a risk difference, risk ratio, and odds ratio. First, let’s consider the odds ratio. The conditional odds ratios in the Z = 0 and Z = 1 groups are</p>
+<center>$\frac{Pr(Y = 1|do(X = 1), Z = 0) Pr(Y = 0|do(X = 0), Z = 0)}{Pr(Y = 1|do(X = 0), Z = 0) Pr(Y = 0|do(X = 1), Z = 0)} = \frac{900 x 500}{100 x 500} = 9 $<center>
+<div style="text-align: right"> (19) </div>
+<center>$\frac{Pr(Y = 1|do(X = 1), Z = 1) Pr(Y = 0|do(X = 0), Z = 1)}{Pr(Y = 1|do(X = 0), Z = 1) Pr(Y = 0|do(X = 1), Z = 1)} = \frac{500 x 900}{500 x 100} = 9 $<center>
+<div style="text-align: right"> (20) </div>
+<p>The marginal odds ratio is</p>
+<center>$\frac{Pr(Y = 1|do(X = 1)) Pr(Y = 0|do(X = 0))}{Pr(Y = 1|do(X = 0)) Pr(Y = 0|do(X = 1))} = \frac{1400 x 1400}{600 x 600} = 5.44 $<center>
+<div style="text-align: right"> (21) </div>
+<p>So the conditional odds ratio is equal to 9 in the two Z groups, telling us there is no interaction between X and Z on the odds ratio scale. However, the marginal odds ratio is 5.44. Odds ratios are ‘non-collapsible’. Meaning that even if Z is not a confounder the marginal and conditional odds ratios for X will be different. In this example they are quite different in magnitude (comparing 5.44 with 9). The implication of this is that if we compare the coefficient for X in a logistic regression of Y on X with that from a logistic regression of Y on X and Z, a change in the coefficient (a log odds ratio) does not necessarily suggest that Z is a confounder. Due to the non-collapsibility of odds ratios, we expect the coefficient for X to change even when Z is not a confounder .</p>
+<p>Next consider the risk difference. The conditional risk differences in the Z = 0 and Z = 1 groups are</p>
+<center>$Pr(Y = 1|do(X = 1), Z = 0) − Pr(Y = 1|do(X = 0), Z = 0) = \frac{500}{1000} - \frac{100}{1000} = 0.4 $<center>
+<div style="text-align: right"> (22) </div>
+<center>$Pr(Y = 1|do(X = 1), Z = 1) − Pr(Y = 1|do(X = 0), Z = 1) = \frac{900}{1000} - \frac{500}{1000} = 0.4 $<center>
+<div style="text-align: right"> (23) </div>
+<p>The marginal risk difference, which we can estimate without the use of standardization because of the lack of an arrow from Z to X in Figure 2, is</p>
+<center>$Pr(Y = 1|do(X = 1)) − Pr(Y = 1|do(X = 0)) = \frac{1400}{2000} - \frac{600}{2000} = 0.4 $<center>
+<div style="text-align: right"> (24) </div>
+<p>The conditional risk difference is the same in both Z groups, suggesting no interaction between X and Z on the risk difference scale, and also the conditional risk differences are equal to the marginal risk difference. Risk differences are collapsible.</p>
+<p>Finally, consider the risk ratio. The conditional risk ratios are</p>
+<center>$Pr(Y = 1|do(X = 1), Z = 0)/Pr(Y = 1|do(X = 0), Z = 0) = 5$<center>
+<div style="text-align: right"> (25) </div>    
+<center>$Pr(Y = 1|do(X = 1), Z = 1)/Pr(Y = 1|do(X = 0), Z = 1) = 1.8$<center>
+<div style="text-align: right"> (26) </div>    
+<p>and the marginal risk ratio is</p>
+<center>$Pr(Y = 1|do(X = 1))/Pr(Y = 1|do(X = 0)) = 2.33 $<center>
+<div style="text-align: right"> (27) </div>  
+<p>In this case the risk ratio differs in the Z = 0 and Z = 1 groups - that is, there is an interaction between X and Z. Interactions cannot be depicted in the DAG.</p>
+<p>Interactions are scale-dependent, meaning that we can have an interaction between X and Z when we measure the treatment effect on one scale but not on another. In this example there is an interaction on the risk ratio scale but not on the risk difference scale or the odds ratio scale. This is actually quite an unusual example in that there is no interaction on either the risk difference or odds ratio scale. In general if there is no interaction on one scale then there are interactions on the other two scales. Risk ratios are actually collapsible, however collapsibility is only a relevant concept when there is no X-by-Z interaction.</p>
+</div>
+<div class="section" id="implications-for-randomised-controlled-trials">
+<h3>16.4.3 Implications for randomised controlled trials<a class="headerlink" href="#implications-for-randomised-controlled-trials" title="Permalink to this headline">¶</a></h3>
+<p>The preceding results have implications for randomised trials with binary outcomes when the treatment effect is quantified using an odds ratio. In RCTs, baseline covariates are sometimes adjusted for. Given the non-collapsibility of odds ratios, the odds ratio for the treatment effect will differ depending on what baseline covariates are adjusted for. This is potentially problematic, as it means that, all other things being equal, different trials may be estimating different quantities simply due to differences in the covariates which are being adjusted for.</p>
+<p>There is also the question of which treatment effect we should be interested in estimating. The marginal treatment effect is (arguably) the relevant quantity for making policy decisions, while conditional effects are more relevant for answering how effective a treatment will be for a particular individual (on the basis of the values of their covariates). Marginal quantities refer to a specific population and care should be taken to consider whether marginal estimates from a trial are transportable to a wider population in which a treatment could be used.</p>
+</div>
+<div class="section" id="implications-for-observational-studies">
+<h3>16.4.4 Implications for observational studies<a class="headerlink" href="#implications-for-observational-studies" title="Permalink to this headline">¶</a></h3>
+<p>One approach to deciding whether or not a variable is a confounder for an exposure’s effect on an outcome is to compare its estimated effect before and after adjustment for the potential confounder. The above results show that when using logistic regression, we should be aware that a change could be attributable purely to the non-collapsibility of odds ratios. To determine whether this is the case, we could assess the association between exposure and the potential confounder. If they are independent, any difference between the marginal and conditional odds ratio for treatment could be attributable to non-collapsibility. In practice, non-collapsibility may not have a big impact on estimates. This is true when a binary outcome is rare, because then the odds ratio approximates a risk ratio, which is collapsible.</p>
+</div>
+</div>
+<div class="section" id="concluding-remarks">
+<h2>16.5 Concluding remarks<a class="headerlink" href="#concluding-remarks" title="Permalink to this headline">¶</a></h2>
+<p>This session has focused on a binary treatment or exposure. The concepts and methods extend to other types of exposure, for a example a continuous exposure (e.g. dose). In that case the treatment effect is defined in terms of a contrast in the outcome between two levels of X. We focused on a medical treatment in the example, but we could use the same methods to investigate effects of ‘lifestyle’ exposures, for example relating to dietary intake or physical activity level. Exposures considered in causal investigations should be well defined. There has been much debate over whether it makes sense to estimate causal effects of such things as sex or race, since these are things that cannot be different for an individual (depending on how they are defined). See Hernan (2016) for a discussion on this topic.</p>
+<p>We focused on a single additional variable Z, which was either related to both X and Y (Figure 1), or was related to Y alone (Figure 2). In most observational settings there are more variables at play. Standardization extends to more than one variable that we wish to average over. For example, with two binary confounders Z1 and Z2 the standardization formula in 8 becomes</p>
+<center>$Pr(Y = 1|do(X = x)) = \sum \limits_{z_{1} = 0,1} \sum \limits_{z_{2} = 0,1} Pr(Y = 1|X = x, Z_{1} = z_{1}, Z_{2} = z_{2}) Pr(Z_{1} = z_{1}, Z_{2} = z_{2}) $<center>
+<div style="text-align: right"> (27) </div>  
+<p>Assumptions about the inter-relationships between all of the variables at play in a given study are key for informing which variables should be adjusted for in an analysis when the aim is to estimate the effect of a particular treatment or exposure. DAGs are helpful in setting out assumptions about relationships between variables, and in particular their temporal ordering, and can be used to establish which variables need to be controlled for to estimate certain effects.</p>
+<p>We have considered simple settings in this session to illustrate the main points. The book by Pearl, Glymour and Jewell (2016) is an excellent source of additional detail and extensions to more complex settings.</p>
+</div>
+<div class="section" id="references">
+<h2>References<a class="headerlink" href="#references" title="Permalink to this headline">¶</a></h2>
+<p>Hernan M.A. Does water kill? A call for less casual causal inferences. Annals of Epidemiology 2016; 26: 674-680.</p>
+<p>Pearl J. Causal diagrams for empirical research. Biometrika 1995; 82:669–710.</p>
+<p>Pearl J, Glymour M., Jewell N.P. Causal Inference in Statistics: A Primer. 2016. Wiley.</p>
+<p>Pearl J., Mackenzie D. The Book of Why. 2018. Penguin.</p>
+<p>Rothman K., Greenland S., Lash T. Modern Epidemiology. 3rd Edition. 2008. Lippincott Williams &amp; Wilkins.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="15.%20Poisson%20Regression%20Model.html" title="previous page">15. Generalised Linear Models: Poisson Regression for Count Variables</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

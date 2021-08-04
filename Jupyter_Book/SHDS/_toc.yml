@@ -1,0 +1,78 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: 00. Welcome
+parts:
+  - caption: Overview
+    chapters:
+    - file: 01. Introduction
+  - caption: Basic probability
+    chapters:
+    - file: 02.a. Probability.Discrete
+      sections: 
+      - file: 02.b. Probability.Discrete
+      - file: 02.c. Probability.Discrete
+      - file: 02.d. Probability.Discrete
+    - file: 03.a. Continuous Probability Distributions
+      sections: 
+      - file: 03.b. Continuous Probability Distributions
+      - file: 03.c. Continuous Probability Distributions
+      - file: 03.d. Continuous Probability Distributions
+      - file: 03.e. Continuous Probability Distributions
+      - file: 03.f. Continuous Probability Distributions
+  - caption: Statistical Inference
+    chapters:
+    - file: 04.a. Population.and.samples
+      sections: 
+      - file: 04.b. Population.and.samples
+      - file: 04.c. Population.and.samples
+      - file: 04.d. Population.and.samples
+      - file: 04.e. Population.and.samples
+      - file: 04.f. Population.and.samples
+      - file: 04.g. Population.and.samples
+    - file: 05.a. Likelihood
+      sections: 
+      - file: 05.b. Likelihood
+      - file: 05.c. Likelihood
+      - file: 05.d. Likelihood
+      - file: 05.e. Likelihood
+      - file: 05.f. Likelihood
+      - file: 05.g. Likelihood
+    - file: 06.a. Maximum Likelihood
+      sections: 
+      - file: 06.b. Maximum Likelihood
+      - file: 06.c. Maximum Likelihood
+      - file: 06.d. Maximum Likelihood
+      - file: 06.e. Maximum Likelihood
+    - file: 07.a. Frequentist I
+      sections: 
+      - file: 07.b. Frequentist I
+      - file: 07.c. Frequentist I
+      - file: 07.d. Frequentist I
+      - file: 07.e. Frequentist I
+      - file: 07.f. Frequentist I
+      - file: 07.g. Frequentist I
+      - file: 07.h. Frequentist I
+    - file: 08.a. Frequentist II
+      sections: 
+      - file: 08.b. Frequentist II
+      - file: 08.c. Frequentist II
+      - file: 08.d. Frequentist II
+      - file: 08.e. Frequentist II
+      - file: 08.f. Frequentist II
+      - file: 08.g. Frequentist II
+    - file: 09.a. Bayesian Statistics I
+      sections: 
+      - file: 09.b. Bayesian Statistics I
+    - file: 10. Bayesian Statistics II
+  - caption: Statistical modelling
+    chapters:
+    - file: 11. Types of Investigation
+    - file: 12. Linear Regression I
+    - file: 13. Linear Regression II
+    - file: 14. Logistic Regression
+    - file: 15. Poisson Regression Model
+    - file: 16. Extensions Confounding, standardization, and collapsibility
+
+

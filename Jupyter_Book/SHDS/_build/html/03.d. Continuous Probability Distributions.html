@@ -1,0 +1,784 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>3.3 Uses of the standard Normal distribution &#8212; Statistics for Health Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="3.5 Are the data normally distributed?" href="03.e.%20Continuous%20Probability%20Distributions.html" />
+    <link rel="prev" title="3.2 Useful continuous distributions" href="03.c.%20Continuous%20Probability%20Distributions.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Welcome.html">
+   Welcome to Statistics for Health Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.%20Introduction.html">
+   1 Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basic probability
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02.a.%20Probability.Discrete.html">
+   2. Probability and Discrete Probability Distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.b.%20Probability.Discrete.html">
+     2.1 Bayes’ Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.c.%20Probability.Discrete.html">
+     2.2 The binomial distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.d.%20Probability.Discrete.html">
+     2.3 The Poisson distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
+   3. Continuous probability distributions
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.b.%20Continuous%20Probability%20Distributions.html">
+     3.1 Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.c.%20Continuous%20Probability%20Distributions.html">
+     3.2 Useful continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     3.3 Uses of the standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
+     3.5 Are the data normally distributed?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.f.%20Continuous%20Probability%20Distributions.html">
+     3.5 Joint distributions and correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical Inference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04.a.%20Population.and.samples.html">
+   4. Populations and Samples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.b.%20Population.and.samples.html">
+     4.1 Sampling from a population
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.c.%20Population.and.samples.html">
+     4.2 Statistical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.d.%20Population.and.samples.html">
+     4.3 Sampling distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.e.%20Population.and.samples.html">
+     4.4 Obtaining the sampling distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.f.%20Population.and.samples.html">
+     4.5 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.g.%20Population.and.samples.html">
+     Appendix: additional reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05.a.%20Likelihood.html">
+   5. Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.b.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.c.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.d.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.f.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.g.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="06.a.%20Maximum%20Likelihood.html">
+   6. Maximum Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
+     6.1 Likelihood and log-likelihood with
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     independent observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.c.%20Maximum%20Likelihood.html">
+     6.2 Properties of maximum likelihood estimators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.d.%20Maximum%20Likelihood.html">
+     6.3 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.e.%20Maximum%20Likelihood.html">
+     Appendix: Additional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="07.a.%20Frequentist%20I.html">
+   7. Frequentist I: Confidence Intervals (CIs)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.b.%20Frequentist%20I.html">
+     7.1 Introduction to confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.c.%20Frequentist%20I.html">
+     7.2 95% confidence intervals for the mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.d.%20Frequentist%20I.html">
+     7.3 Interpretation of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.e.%20Frequentist%20I.html">
+     7.4 Approximate confidence intervals for parameters estimated using large samples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.f.%20Frequentist%20I.html">
+     7.5 Confidence Intervals using resampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.g.%20Frequentist%20I.html">
+     7.6 Summary: Use of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.h.%20Frequentist%20I.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="08.a.%20Frequentist%20II.html">
+   8. Frequentist II: Hypothesis tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.b.%20Frequentist%20II.html">
+     8.1 Proving and disproving hypotheses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.c.%20Frequentist%20II.html">
+     8.2 The p-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.d.%20Frequentist%20II.html">
+     8.3 Connection between p-values and confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.e.%20Frequentist%20II.html">
+     8.4 Other (mis-)interpretations of p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.f.%20Frequentist%20II.html">
+     8.5 Calculating p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.g.%20Frequentist%20II.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.%20Bayesian%20Statistics%20I.html">
+   9. Bayesian Statistics I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
+   10. Bayesian Statistics II: Normal data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical modelling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Types%20of%20Investigation.html">
+   11. Types of Investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.%20Linear%20Regression%20I.html">
+   12. Linear Regression I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.%20Linear%20Regression%20II.html">
+   13. Linear Regression II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.%20Logistic%20Regression.html">
+   14 Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
+   16. Extensions: Confounding, standardization, and collapsibility
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/03.d. Continuous Probability Distributions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F03.d. Continuous Probability Distributions.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/03.d. Continuous Probability Distributions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approach-1-manual-calculation">
+   Approach 1: Manual calculation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approach-2-using-r-to-do-the-same-calculation">
+   Approach 2: Using R to do the same calculation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#approach-3-using-r-to-do-the-calculation-on-the-untransformed-scale">
+   Approach 3: Using R to do the  calculation on the untransformed scale
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="uses-of-the-standard-normal-distribution">
+<h1>3.3 Uses of the standard Normal distribution<a class="headerlink" href="#uses-of-the-standard-normal-distribution" title="Permalink to this headline">¶</a></h1>
+<p>Suppose we wanted to answer the following question:</p>
+<blockquote>
+<div><p>What is the probability of having a ‘healthy’ weight?</p>
+</div></blockquote>
+<p>A healthy weight is often is often measured using the Body Mass Index (BMI - although see <a class="reference external" href="https://www.health.harvard.edu/blog/how-useful-is-the-body-mass-index-bmi-201603309339">here</a> and <a class="reference external" href="https://www.bbc.co.uk/news/health-43895508">here</a> for a discussion on why this may be too simplistic a measure). An individual’s BMI can be calculated using their height and weight, using the formula BMI <span class="math notranslate nohighlight">\(= \frac{mass(kg)}{height(m)^2}\)</span>. Then people can be classified as:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:left head"><p>Classification</p></th>
+<th class="text-align:left head"><p>BMI</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:left"><p>Underweight</p></td>
+<td class="text-align:left"><p>&lt;18.5</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Normal</p></td>
+<td class="text-align:left"><p>18.5-24.9</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Overweight</p></td>
+<td class="text-align:left"><p>25-29.9</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:left"><p>Obese</p></td>
+<td class="text-align:left"><p>30-39.9</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:left"><p>Extremely obese</p></td>
+<td class="text-align:left"><p>&gt;40</p></td>
+</tr>
+</tbody>
+</table>
+<p>To address our question, we will use data taken from a study undertaken among a group of 76 cleaners, that investigated whether telling the cleaners they had an active lifestyle influenced their BMI. We will assume that values of BMI approximately follow a normal distribution. We do not know the true values of <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> so we will replace these with the sample mean and standard deviation. This gives us values of <span class="math notranslate nohighlight">\(\mu=\)</span>26.5 and <span class="math notranslate nohighlight">\(\sigma^2=\)</span> 18.1, as demonstrated in the snippet of code below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># BMI dataset</span>
+<span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;Practicals/Datasets/BMI/MindsetMatters.csv&quot;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+<span class="c1">#remove observations with no BMI data</span>
+<span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BMI</span><span class="p">),]</span>
+<span class="c1">#estimate mu and sigma</span>
+<span class="n">mu</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BMI</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;value of mu is &quot;</span><span class="p">,</span><span class="nf">round</span><span class="p">(</span><span class="n">mu</span><span class="p">,</span><span class="m">2</span><span class="p">)))</span>
+<span class="n">sig</span> <span class="o">&lt;-</span> <span class="nf">sd</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BMI</span><span class="p">)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;value of sigma is &quot;</span><span class="p">,</span><span class="nf">round</span><span class="p">(</span><span class="n">sig</span><span class="p">,</span><span class="m">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>Cond</th><th scope=col>Age</th><th scope=col>Wt</th><th scope=col>Wt2</th><th scope=col>BMI</th><th scope=col>BMI2</th><th scope=col>Fat</th><th scope=col>Fat2</th><th scope=col>WHR</th><th scope=col>WHR2</th><th scope=col>Syst</th><th scope=col>Syst2</th><th scope=col>Diast</th><th scope=col>Diast2</th></tr></thead>
+<tbody>
+	<tr><td>0    </td><td>43   </td><td>137  </td><td>137.4</td><td>25.1 </td><td>25.1 </td><td>31.9 </td><td>32.8 </td><td>0.79 </td><td>0.79 </td><td>124  </td><td>118  </td><td>70   </td><td>73   </td></tr>
+	<tr><td>0    </td><td>42   </td><td>150  </td><td>147.0</td><td>29.3 </td><td>28.7 </td><td>35.5 </td><td>  NA </td><td>0.81 </td><td>0.81 </td><td>119  </td><td>112  </td><td>80   </td><td>68   </td></tr>
+	<tr><td>0    </td><td>41   </td><td>124  </td><td>124.8</td><td>26.9 </td><td>27.0 </td><td>35.1 </td><td>  NA </td><td>0.84 </td><td>0.84 </td><td>108  </td><td>107  </td><td>59   </td><td>65   </td></tr>
+	<tr><td>0    </td><td>40   </td><td>173  </td><td>171.4</td><td>32.8 </td><td>32.4 </td><td>41.9 </td><td>42.4 </td><td>1.00 </td><td>1.00 </td><td>116  </td><td>126  </td><td>71   </td><td>79   </td></tr>
+	<tr><td>0    </td><td>33   </td><td>163  </td><td>160.2</td><td>37.9 </td><td>37.2 </td><td>41.7 </td><td>  NA </td><td>0.86 </td><td>0.84 </td><td>113  </td><td>114  </td><td>73   </td><td>78   </td></tr>
+	<tr><td>0    </td><td>24   </td><td> 90  </td><td> 91.8</td><td>16.5 </td><td>16.8 </td><td>  NA </td><td>  NA </td><td>0.73 </td><td>0.73 </td><td> NA  </td><td> NA  </td><td>78   </td><td>76   </td></tr>
+</tbody>
+</table>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;value of mu is 26.46&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;value of sigma is 4.25&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>So what is the probability a randomly selected person in this sample has a normal BMI?</p>
+<div class="section" id="approach-1-manual-calculation">
+<h2>Approach 1: Manual calculation<a class="headerlink" href="#approach-1-manual-calculation" title="Permalink to this headline">¶</a></h2>
+<p>One option is to make use of pre-calculated probabilities of the standard normal distribution. If we write <span class="math notranslate nohighlight">\(X\)</span> to represent the value of a person’s BMI, then we are assuming that</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim N(\mu=26.5, \sigma^2=18.1)
+\]</div>
+<p>To make use of the pre-calculated probabilities for the standard normal distribution, we must first transform our normally distributed variable to have a standard normal distribution. We know that the transformed variable <span class="math notranslate nohighlight">\(Z\)</span> (the <em>Z score</em>) has a standard normal distribution, where</p>
+<div class="math notranslate nohighlight">
+\[
+Z = \frac{X - \mu}{\sigma}
+\]</div>
+<p>Given values for <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma\)</span> we can go from the <em>X scale</em> to the <em>Z scale</em> and <em>vice versa</em>. The important point about describing a distribution on the Z scale is that this opens the ability to calculate specific probabilities. So back to answering the question…</p>
+<p>From the table above we can see that a normal weight is classified as a BMI between 18.5 and 24.9, and we want to know what the probability is that a randomly selected person falls between these limits. We write this as;</p>
+<div class="math notranslate nohighlight">
+\[
+P(18.5 &lt; X &lt; 24.9) 
+\]</div>
+<p>On the Z-scale, this is equivalent to saying that:</p>
+<div class="math notranslate nohighlight">
+\[
+P(-1.87 &lt; Z &lt; -0.37) = P(Z &lt; -0.37) - P(Z &lt; -1.87)
+\]</div>
+<p>Tables exist containing a range of pre-calculated probabilities that a variable following a standard normal distribution takes a value of less than <span class="math notranslate nohighlight">\(k\)</span>, for a range of possible values of <span class="math notranslate nohighlight">\(k\)</span>. These are often called <em>z-tables</em> (found <a class="reference external" href="http://www.z-table.com/">online</a> or at the back of most stats books). From these tables, we can look up the corresponding probability for each z-score, giving:</p>
+<div class="math notranslate nohighlight">
+\[
+0.3557 - 0.0307 = 0.325
+\]</div>
+</div>
+<div class="section" id="approach-2-using-r-to-do-the-same-calculation">
+<h2>Approach 2: Using R to do the same calculation<a class="headerlink" href="#approach-2-using-r-to-do-the-same-calculation" title="Permalink to this headline">¶</a></h2>
+<p>Using this approach, R is ultimately using the same pre-calculated probability tables. However, it is considerably quicker and easier to ask R to look up the values rather than finding them in tables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># a) if we were to use Z tables within R (to illustrate the point)</span>
+
+<span class="n">z_min</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="m">18.5</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="n">sig</span>
+<span class="n">z_max</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="m">24.9</span><span class="o">-</span><span class="n">mu</span><span class="p">)</span><span class="o">/</span><span class="n">sig</span>
+
+<span class="c1"># note when using pnorm we don&#39;t need to specify mu and sigma as the </span>
+<span class="c1"># function assumes mu=0 and sigma=1 unless specified.</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;z_max is &quot;</span><span class="p">,</span><span class="nf">round</span><span class="p">(</span><span class="n">z_max</span><span class="p">,</span><span class="m">2</span><span class="p">),</span><span class="s">&quot; and z_min is &quot;</span><span class="p">,</span><span class="nf">round</span><span class="p">(</span><span class="n">z_min</span><span class="p">,</span><span class="m">2</span><span class="p">)))</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Probability of having a healthy BMI is (z-score) &quot;</span><span class="p">,</span><span class="nf">round</span><span class="p">(</span><span class="nf">pnorm</span><span class="p">(</span><span class="n">z_max</span><span class="p">)</span><span class="o">-</span><span class="nf">pnorm</span><span class="p">(</span><span class="n">z_min</span><span class="p">),</span><span class="m">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;z_max is -0.37 and z_min is -1.87&quot;
+</pre></div>
+</div>
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Probability of having a healthy BMI is (z-score) 0.326&quot;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="approach-3-using-r-to-do-the-calculation-on-the-untransformed-scale">
+<h2>Approach 3: Using R to do the  calculation on the untransformed scale<a class="headerlink" href="#approach-3-using-r-to-do-the-calculation-on-the-untransformed-scale" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># b) if we were to directly estimate</span>
+ 
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Probability of having a healthy BMI is (direct) &quot;</span><span class="p">,</span><span class="nf">round</span><span class="p">(</span><span class="nf">pnorm</span><span class="p">(</span><span class="m">24.9</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">sig</span><span class="p">)</span><span class="o">-</span><span class="nf">pnorm</span><span class="p">(</span><span class="m">18.5</span><span class="p">,</span><span class="n">mu</span><span class="p">,</span><span class="n">sig</span><span class="p">),</span><span class="m">3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Probability of having a healthy BMI is (direct) 0.326&quot;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Calculating directly gives the same result as using a z-score in R, and this returns the same information as using z-tables.</p>
+<p>In answer to our question, we estimate that the probability of having a ‘healthy’ weight is 32.6%. We can compare this to the observed proportion of our sample of data with a ‘healthy’ BMI.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># c) provide a sanity check against the data</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
+
+<span class="nf">ggplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">BMI</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">bins</span> <span class="o">=</span> <span class="m">30</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;steelblue&quot;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;grey80&quot;</span><span class="p">)</span> <span class="o">+</span>
+    <span class="nf">geom_vline</span><span class="p">(</span><span class="n">xintercept</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">18.5</span><span class="p">,</span><span class="m">24.9</span><span class="p">))</span>
+<span class="c1">#hist(dat$BMI,col=&quot;steelblue&quot;)</span>
+<span class="c1">#abline(v=c(18.5,24.9),lty=2)</span>
+<span class="nf">print</span><span class="p">(</span><span class="nf">paste0</span><span class="p">(</span><span class="s">&quot;Within the data a healthy BMI is seen &quot;</span><span class="p">,</span>
+             <span class="nf">round</span><span class="p">(</span><span class="m">100</span><span class="o">*</span><span class="p">((</span><span class="nf">sum</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BMI</span><span class="o">&lt;</span><span class="m">24.9</span><span class="p">)</span><span class="o">-</span><span class="nf">sum</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BMI</span><span class="o">&lt;</span><span class="m">18.5</span><span class="p">))</span><span class="o">/</span><span class="nf">length</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BMI</span><span class="p">)),</span><span class="m">1</span><span class="p">),</span><span class="s">&quot;%&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Within the data a healthy BMI is seen 35.1%&quot;
+</pre></div>
+</div>
+<img alt="_images/03.d. Continuous Probability Distributions_8_1.png" src="_images/03.d. Continuous Probability Distributions_8_1.png" />
+</div>
+</div>
+<p>So we can see that the sample estimate (35.1%) is roughly similar to the population estimate of 32.6%.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="03.c.%20Continuous%20Probability%20Distributions.html" title="previous page">3.2 Useful continuous distributions</a>
+    <a class='right-next' id="next-link" href="03.e.%20Continuous%20Probability%20Distributions.html" title="next page">3.5 Are the data normally distributed?</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

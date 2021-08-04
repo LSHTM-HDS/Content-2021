@@ -1,0 +1,955 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>10. Bayesian Statistics II: Normal data &#8212; Statistics for Health Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="11. Types of Investigation" href="11.%20Types%20of%20Investigation.html" />
+    <link rel="prev" title="9. Bayesian Statistics I" href="09.%20Bayesian%20Statistics%20I.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Welcome.html">
+   Welcome to Statistics for Health Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.%20Introduction.html">
+   1 Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basic probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02.a.%20Probability.Discrete.html">
+   2. Probability and Discrete Probability Distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.b.%20Probability.Discrete.html">
+     2.1 Bayes’ Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.c.%20Probability.Discrete.html">
+     2.2 The binomial distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.d.%20Probability.Discrete.html">
+     2.3 The Poisson distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
+   3. Continuous probability distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.b.%20Continuous%20Probability%20Distributions.html">
+     3.1 Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.c.%20Continuous%20Probability%20Distributions.html">
+     3.2 Useful continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.d.%20Continuous%20Probability%20Distributions.html">
+     3.3 Uses of the standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
+     3.5 Are the data normally distributed?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.f.%20Continuous%20Probability%20Distributions.html">
+     3.5 Joint distributions and correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical Inference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04.a.%20Population.and.samples.html">
+   4. Populations and Samples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.b.%20Population.and.samples.html">
+     4.1 Sampling from a population
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.c.%20Population.and.samples.html">
+     4.2 Statistical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.d.%20Population.and.samples.html">
+     4.3 Sampling distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.e.%20Population.and.samples.html">
+     4.4 Obtaining the sampling distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.f.%20Population.and.samples.html">
+     4.5 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.g.%20Population.and.samples.html">
+     Appendix: additional reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05.a.%20Likelihood.html">
+   5. Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.b.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.c.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.d.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.f.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.g.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="06.a.%20Maximum%20Likelihood.html">
+   6. Maximum Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
+     6.1 Likelihood and log-likelihood with
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     independent observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.c.%20Maximum%20Likelihood.html">
+     6.2 Properties of maximum likelihood estimators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.d.%20Maximum%20Likelihood.html">
+     6.3 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.e.%20Maximum%20Likelihood.html">
+     Appendix: Additional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="07.a.%20Frequentist%20I.html">
+   7. Frequentist I: Confidence Intervals (CIs)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.b.%20Frequentist%20I.html">
+     7.1 Introduction to confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.c.%20Frequentist%20I.html">
+     7.2 95% confidence intervals for the mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.d.%20Frequentist%20I.html">
+     7.3 Interpretation of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.e.%20Frequentist%20I.html">
+     7.4 Approximate confidence intervals for parameters estimated using large samples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.f.%20Frequentist%20I.html">
+     7.5 Confidence Intervals using resampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.g.%20Frequentist%20I.html">
+     7.6 Summary: Use of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.h.%20Frequentist%20I.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="08.a.%20Frequentist%20II.html">
+   8. Frequentist II: Hypothesis tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.b.%20Frequentist%20II.html">
+     8.1 Proving and disproving hypotheses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.c.%20Frequentist%20II.html">
+     8.2 The p-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.d.%20Frequentist%20II.html">
+     8.3 Connection between p-values and confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.e.%20Frequentist%20II.html">
+     8.4 Other (mis-)interpretations of p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.f.%20Frequentist%20II.html">
+     8.5 Calculating p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.g.%20Frequentist%20II.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.%20Bayesian%20Statistics%20I.html">
+   9. Bayesian Statistics I
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   10. Bayesian Statistics II: Normal data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical modelling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Types%20of%20Investigation.html">
+   11. Types of Investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.%20Linear%20Regression%20I.html">
+   12. Linear Regression I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.%20Linear%20Regression%20II.html">
+   13. Linear Regression II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.%20Logistic%20Regression.html">
+   14 Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
+   16. Extensions: Confounding, standardization, and collapsibility
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/10. Bayesian Statistics II.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F10. Bayesian Statistics II.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/10. Bayesian Statistics II.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-cd4-cell-counts">
+   10.1 Example: CD4 cell counts
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#calculating-the-posterior-for-the-mean-of-a-normal-distribution">
+   10.2 Calculating the posterior for the mean of a Normal distribution
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#likelihood">
+     10.2.1 Likelihood
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prior">
+     10.2.2 Prior
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#posterior">
+     10.2.3 Posterior
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#credible-intervals">
+   10.3 Credible Intervals
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#cd4-cell-counts-example">
+     10.3.1 CD4 cell counts example:
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#predictions">
+   10.4 Predictions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#prior-predictive-distributions">
+     10.4.1 Prior predictive distributions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#posterior-predictive-distributions">
+     10.4.2 Posterior predictive distributions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#multiparameter-models">
+   10.5 Multiparameter models
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-reading">
+   10.6 Further Reading
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#resources-for-learning">
+     10.6.1 Resources for learning
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples-of-applications">
+     10.6.2 Examples of applications
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="bayesian-statistics-ii-normal-data">
+<h1>10. Bayesian Statistics II: Normal data<a class="headerlink" href="#bayesian-statistics-ii-normal-data" title="Permalink to this headline">¶</a></h1>
+<p>In the previous session, we looked at Bayesian inference for proportions. We now consider continuous data and explore Bayesian inference for data when they are assumed to follow a Normal distribution.</p>
+<div class="alert alert-block alert-warning">
+<b> Intended learning outcomes</b> 
+<p>By the end of this session you will be able to:</p>
+<ul class="simple">
+<li><p>Find the posterior for a Normally distributed mean when the variance of the data is known</p></li>
+<li><p>Find credible and HPD intervals for a Normally distributed mean</p></li>
+<li><p>Find the Bayesian predictive distributions for Normal data and data summaries.</p></li>
+</ul>
+</div><div class="section" id="example-cd4-cell-counts">
+<h2>10.1 Example: CD4 cell counts<a class="headerlink" href="#example-cd4-cell-counts" title="Permalink to this headline">¶</a></h2>
+<p>In this session, we will use a dataset on CD4 cell counts which is available in R through the <em>boot</em> package. CD4 cells are in our blood as part of our immune system. Since these cells die in people who have HIV, CD4 cell counts are used in HIV patients to determine the health of their immune system and susceptibility to opportunistic infections. In this dataset, there are 20 patients with HIV. Their CD4 cell counts are recorded before and after they were put on treatment. We wish to investigate whether this treatment increased their CD4 cell counts.<br />
+We install the <em>boot</em> package where the data is stored and we look at the data. Note that the unit of CD4 cell count is 100 <span class="math notranslate nohighlight">\(cells/mm^3\)</span>. We are interested in the difference in CD4 cell counts before and after treatment. We look at the summary statistics of the difference.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">boot</span><span class="p">)</span>
+<span class="n">ydata</span> <span class="o">&lt;-</span> <span class="n">cd4</span><span class="o">$</span><span class="n">oneyear</span> <span class="o">-</span> <span class="n">cd4</span><span class="o">$</span><span class="n">baseline</span>
+<span class="n">data</span> <span class="o">&lt;-</span> <span class="nf">cbind</span><span class="p">(</span><span class="n">cd4</span><span class="p">,</span> <span class="n">y</span><span class="o">=</span><span class="n">ydata</span><span class="p">)</span>
+<span class="n">data</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">ydata</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>baseline</th><th scope=col>oneyear</th><th scope=col>y</th></tr></thead>
+<tbody>
+	<tr><td>2.12 </td><td>2.47 </td><td> 0.35</td></tr>
+	<tr><td>4.35 </td><td>4.61 </td><td> 0.26</td></tr>
+	<tr><td>3.39 </td><td>5.26 </td><td> 1.87</td></tr>
+	<tr><td>2.51 </td><td>3.02 </td><td> 0.51</td></tr>
+	<tr><td>4.04 </td><td>6.36 </td><td> 2.32</td></tr>
+	<tr><td>5.10 </td><td>5.93 </td><td> 0.83</td></tr>
+	<tr><td>3.77 </td><td>3.93 </td><td> 0.16</td></tr>
+	<tr><td>3.35 </td><td>4.09 </td><td> 0.74</td></tr>
+	<tr><td>4.10 </td><td>4.88 </td><td> 0.78</td></tr>
+	<tr><td>3.35 </td><td>3.81 </td><td> 0.46</td></tr>
+	<tr><td>4.15 </td><td>4.74 </td><td> 0.59</td></tr>
+	<tr><td>3.56 </td><td>3.29 </td><td>-0.27</td></tr>
+	<tr><td>3.39 </td><td>5.55 </td><td> 2.16</td></tr>
+	<tr><td>1.88 </td><td>2.82 </td><td> 0.94</td></tr>
+	<tr><td>2.56 </td><td>4.23 </td><td> 1.67</td></tr>
+	<tr><td>2.96 </td><td>3.23 </td><td> 0.27</td></tr>
+	<tr><td>2.49 </td><td>2.56 </td><td> 0.07</td></tr>
+	<tr><td>3.03 </td><td>4.31 </td><td> 1.28</td></tr>
+	<tr><td>2.66 </td><td>4.37 </td><td> 1.71</td></tr>
+	<tr><td>3.00 </td><td>2.40 </td><td>-0.60</td></tr>
+</tbody>
+</table>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+-0.6000  0.2675  0.6650  0.8050  1.3775  2.3200 
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the classical framework, we could use a paired t-test to see if the mean change in CD4 cell counts is significantly different from the null hypothesis value of zero (<span class="math notranslate nohighlight">\(H_0: \mu = \mathbb{E}[Y]=0)\)</span>.</p>
+<p>For our Bayesian analysis, we will assume these measurements come from a Normal distribution with an unknown mean <span class="math notranslate nohighlight">\(\mu\)</span>,
+which represents the mean change in CD4 counts. We will assume that the variance is known to be <span class="math notranslate nohighlight">\(\sigma^2 = 0.7\)</span>. This is slightly artificial as, in a real example, we may not know what the true variance is; however, we might be able to infer the variability of CD4 counts from earlier studies. Having both <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span> unknown requires a more complicated analysis which we will not cover in this course. The Bayesian analysis involves constructing a likelihood for the data, specifying an appropriate prior distribution and combining them to obtain a posterior distribution. We will then describe how credible intervals for <span class="math notranslate nohighlight">\(\mu\)</span>, and prior and posterior predictive distributions can be found.</p>
+</div>
+<div class="section" id="calculating-the-posterior-for-the-mean-of-a-normal-distribution">
+<h2>10.2 Calculating the posterior for the mean of a Normal distribution<a class="headerlink" href="#calculating-the-posterior-for-the-mean-of-a-normal-distribution" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we obtain the posterior for the mean of a Normal distribution with known variance, <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Suppose we have <span class="math notranslate nohighlight">\(n\)</span> observed independent data points, each assumed to come from the Normal distribution: <span class="math notranslate nohighlight">\(y_1,\dots,y_n \sim N(\mu,\sigma^2)\)</span>. Recall that the Normal distribution has probability density function given by
+\begin{align}
+p(y \mid \mu, \sigma^2) = \left( \frac{1}{2\pi\sigma^2} \right)^{1/2}
+\exp\left{-\frac{1}{2\sigma^2}(y-\mu)^2\right}.
+\end{align}</p>
+<p>Note that some authors will parameterize the Normal distribution with the <em>precision</em> instead of the variance: <span class="math notranslate nohighlight">\(\eta=\frac{1}{\sigma^2}\)</span>.</p>
+<div class="section" id="likelihood">
+<h3>10.2.1 Likelihood<a class="headerlink" href="#likelihood" title="Permalink to this headline">¶</a></h3>
+<p>Since we assume all observations are independent, dropping the conditioning on <span class="math notranslate nohighlight">\(\sigma^2\)</span>, the likelihood is the product of the <span class="math notranslate nohighlight">\(n\)</span> individual p.d.f.s:</p>
+<p>\begin{align}\notag
+p(y_1,\dots,y_n \mid \mu)
+&amp;= p(y_1 \mid \mu) p(y_2 \mid \mu) \dots p(y_n \mid \mu) \
+&amp;= \prod_{i=1}^n p(y_i \mid \mu) \
+&amp;=
+\left( \frac{1}{2\pi \sigma^2}\right)^{n/2} \exp\left{
+-\frac{1}{2\sigma^2}\sum_{i=1}^n(y_i-\mu)^2 \right}
+\end{align}
+Notice that
+\begin{align*}\sum_{i=1}^n (y_i - \mu)^2 &amp; = \sum_{i=1}^n (y_i - \bar
+y + \bar y  -
+\mu)^2 \
+&amp; = \sum_{i=1}^n (y_i-\bar y)^2 + n(\bar y - \mu)^2, \mbox{ since }
+\sum_{i=1}^n (y_i-\bar y)=0,\
+&amp; = (n-1)s^2 + n(\bar y - \mu)^2,
+\end{align*}</p>
+<p>where (as usual) <span class="math notranslate nohighlight">\(s^2 = \sum_{i=1}^n (y_i - \bar y)^2 /(n-1).\)</span>
+Thus the Likelihood can be written:
+\begin{equation}
+p(y_1,\dots,y_n \mid \mu) =
+\label{eq:normal} \left(\frac{1}{2\pi \sigma^2}\right)^{n/2} \exp\left{
+-\frac{1}{2\sigma^2}\left[(n-1)s^2 + n(\bar y - \mu)^2 \right]   \right}.
+\end{equation}
+Since we are interested in the posterior for <span class="math notranslate nohighlight">\(\mu,\)</span> we can drop all
+terms not involving <span class="math notranslate nohighlight">\(\mu,\)</span> so the likelihood is proportional to
+\begin{align}\notag
+p(y_1,\dots,y_n \mid \mu) \propto
+\exp\left{ -\frac{n}{2\sigma^2} (\bar y - \mu)^2 \right}.
+\end{align}
+Notice that this also has the same form of a Normal distribution for the mean <span class="math notranslate nohighlight">\(\bar{y}\)</span>, specifically, <span class="math notranslate nohighlight">\(\bar{y} \sim N(\mu, \frac{\sigma^2}{n})\)</span>.</p>
+</div>
+<div class="section" id="prior">
+<h3>10.2.2 Prior<a class="headerlink" href="#prior" title="Permalink to this headline">¶</a></h3>
+<p>We noted in the previous session that the Normal distribution is a conjugate prior when the likelihood is a Normal distribution. Thus, for convenience, we will use a Normal distribution as a prior for <span class="math notranslate nohighlight">\(\mu\)</span>:
+$<span class="math notranslate nohighlight">\(
+\mu  \sim N(\phi, \tau^{2}),
+\)</span><span class="math notranslate nohighlight">\(
+as the posterior distribution will conveniently be a Normal distribution as well. The prior parameters \)</span>\phi<span class="math notranslate nohighlight">\( and \)</span>\tau^2<span class="math notranslate nohighlight">\( should be specified based on prior knowledge of \)</span>\mu<span class="math notranslate nohighlight">\( and the uncertainty around this prior knowledge. It may come from previous research or formally elicited from investigators. If no prior evidence is available, we assign an appriopriately large value to \)</span>\tau$.</p>
+</div>
+<div class="section" id="posterior">
+<h3>10.2.3 Posterior<a class="headerlink" href="#posterior" title="Permalink to this headline">¶</a></h3>
+<p>To derive the posterior for the mean <span class="math notranslate nohighlight">\(\mu\)</span>, we need to find the  distribution of that parameter conditional on the data (both the empirical data and prior distribution). In the following calculation, we are only interested in the parts of the p.d.f. that depend on <span class="math notranslate nohighlight">\(\mu\)</span>. Any terms not involving <span class="math notranslate nohighlight">\(\mu\)</span> are part of the <em>normalisation constant</em>. This is part of the p.d.f., but does not affect the shape of the density.</p>
+<p>The posterior is given by
+\begin{align}\notag
+p(\mu \mid y_1,\dots,y_n)
+&amp;\propto p(y_1,\dots,y_n \mid \mu) p(\mu) \
+&amp;\propto \exp\left{ -\frac{n}{2\sigma^2} (\bar y - \mu)^2 \right}
+\exp\left{-\frac{1}{2\tau^2}(\mu-\phi)^2\right} \ \notag
+&amp; = \exp\left{ -\frac{n}{2\sigma^2}(\bar{y}-\mu)^2
+-\frac{1}{2\tau^2}(\mu-\phi)^2\right} \
+\end{align}</p>
+<p>Expanding the brackets and retaining only terms containing <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
+<p>\begin{align}\notag
+p(\mu \mid y_1,\dots,y_n)
+&amp; \propto \exp\left{ -\frac{n}{2\sigma^2 \tau^2}  (-2n\bar{y}\mu\tau^2 - n\mu^2\tau^2+\mu^2\sigma^2-2\mu\phi\sigma^2)
+\right}
+\end{align}</p>
+<p>Completing the squared term for <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
+<p>\begin{align}\notag
+p(\mu \mid y_1,\dots,y_n)
+&amp;\propto \exp\left{ -\frac{\tau^2 n + \sigma^2}{2 \sigma^2 \tau^2}\left(\mu - \frac{ \tau^2 n\bar{y} -\sigma^2\phi}{\tau^2n+\sigma^2}\right)^2\right}
+\end{align}</p>
+<p>We can recognise this has the form the p.d.f. of the Normal distribution, therefore we see that
+\begin{align}
+\label{equ_posterior_mean}
+\mu \vert y_1,\dots,y_n \sim N\left{ \frac{ \tau^2 n\bar{y} + \sigma^2\phi }{\tau^2 n + \sigma^2}, \frac{\sigma^2\tau^2}{\tau^2n+\sigma^2} \right}.
+\end{align}</p>
+<p>We see that:</p>
+<ol class="simple">
+<li><p>the Normal prior is <em>conjugate</em> for a Normal Likelihood, as the posterior is also Normal.</p></li>
+<li><p>The posterior mean, <span class="math notranslate nohighlight">\(\frac{ \tau^2 n\bar{y} + \sigma^2\phi }{\tau^2 n + \sigma^2}\)</span> is a weighted average of the data <span class="math notranslate nohighlight">\(\bar y \)</span> and the prior mean <span class="math notranslate nohighlight">\(\phi\)</span>: we can write it as <span class="math notranslate nohighlight">\(w \bar{y} + (1-w) \phi\)</span>, where <span class="math notranslate nohighlight">\(w= \frac{\tau^2 n}{\tau^2 n + \sigma^2}\)</span> . Hence the posterior combines the information from the likelihood (data) and prior (a priori belief).</p></li>
+<li><p>The variance of the posterior is  <span class="math notranslate nohighlight">\(\frac{\sigma^2\tau^2}{\tau^2n+\sigma^2}\)</span>. In a larger study, since <span class="math notranslate nohighlight">\(n\)</span> becomes very large, we have <span class="math notranslate nohighlight">\(\tau^2 &gt;&gt; \frac{\sigma^2}{n}\)</span>, so the posterior variance tends to zero.</p></li>
+<li><p>In smaller studies, <span class="math notranslate nohighlight">\(\tau^2 &lt;&lt; \frac{\sigma^2}{n}\)</span>, the posterior mean is closer to <span class="math notranslate nohighlight">\(\phi\)</span> and the posterior variance depends both on the prior and sampling variance <span class="math notranslate nohighlight">\(\frac{\sigma^2\tau^2}{\tau^2n+\sigma^2}\)</span>.</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="credible-intervals">
+<h2>10.3 Credible Intervals<a class="headerlink" href="#credible-intervals" title="Permalink to this headline">¶</a></h2>
+<p>We saw in the previous session that a Bayesian <span class="math notranslate nohighlight">\(100(1 − \alpha)\%\)</span> credible interval is an interval which contains <span class="math notranslate nohighlight">\(100(1 − \alpha)\% \)</span> of the posterior distribution of the parameter, and the <span class="math notranslate nohighlight">\(100(1 -\alpha) \%\)</span> Highest Posterior Density (HPD) interval (<span class="math notranslate nohighlight">\(\alpha \in (0,1)\)</span>) is the credible interval with the smallest range of values for <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<p>Given that the posterior distribution has mean <span class="math notranslate nohighlight">\(\psi\)</span> and variance <span class="math notranslate nohighlight">\(\gamma^{2}\)</span>, the <span class="math notranslate nohighlight">\(95\%\)</span> HPD interval is given by
+<span class="math notranslate nohighlight">\(\psi \pm 1.96 \times \gamma\)</span>. Thus, for a standard Normal posterior, the 95% HPD interval is <span class="math notranslate nohighlight">\((-1.96,1.96).\)</span></p>
+<div class="section" id="cd4-cell-counts-example">
+<h3>10.3.1 CD4 cell counts example:<a class="headerlink" href="#cd4-cell-counts-example" title="Permalink to this headline">¶</a></h3>
+<p>In the CD4 cell count example, suppose that we have very strong prior information that suggests the treatment is not effective, and we expect that the difference in cell counts is approximately zero. Let us denote by <span class="math notranslate nohighlight">\(y\)</span> the difference in CD4 cell counts. We set <span class="math notranslate nohighlight">\(\mu \sim N(0, 0.1)\)</span> to reflect that there is only about <span class="math notranslate nohighlight">\(2.5\%\)</span> chance that the treatment increases mean CD4 counts by more than 0.62 (1.96 <span class="math notranslate nohighlight">\(\times \sqrt{0.1}\)</span>) and a <span class="math notranslate nohighlight">\(50\%\)</span> chance that it will actually decrease the mean CD4 count).</p>
+<p>Summarizing the information we have:</p>
+<blockquote>
+<div><p>sample size <span class="math notranslate nohighlight">\(n = 20\)</span><br />
+mean of data <span class="math notranslate nohighlight">\(\bar{y} = 0.805\)</span><br />
+variance of data (assumed known) <span class="math notranslate nohighlight">\(\sigma^2 = 0.7\)</span><br />
+prior mean <span class="math notranslate nohighlight">\( \phi = 0\)</span><br />
+prior variance <span class="math notranslate nohighlight">\(\tau^2= 0.1\)</span></p>
+</div></blockquote>
+<p>We find the posterior distribution:</p>
+<p>\begin{align}
+\mu \vert y_1,\dots,y_n &amp;\sim N\left{ \frac{ \tau^2 n\bar{y} + \sigma^2\phi }{\tau^2 n + \sigma^2}, \frac{\sigma^2\tau^2}{\tau^2n+\sigma^2} \right} \
+&amp;\sim N\left{ \frac{ 0.1 \times 20 \times 0.805 + 0 }{0.1 \times 20 + 0.7}, \frac{0.7 \times 0.1}{0.1 \times 20 +0.7 } \right} \
+&amp; \sim N\left{ 0.596, 0.0259 \right}
+\end{align}</p>
+<p>We plot below the prior distribution (in blue), the distribution of <span class="math notranslate nohighlight">\(\bar{y}\)</span> (red) and the posterior distribution (purple). We observe that the mean of the posterior distribution is in between the mean of the prior and that of the likelihood. Note that in R, the Normal distribution is parameterized by the standard deviation rather than the variance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">7</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">-2</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">0.01</span><span class="p">)</span>
+<span class="c1">#plot the prior </span>
+<span class="n">y1</span> <span class="o">&lt;-</span> <span class="nf">dnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">0.1</span><span class="p">))</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y1</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">3</span><span class="p">),</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Density&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="nf">expression</span><span class="p">(</span><span class="n">mu</span><span class="p">))</span>
+<span class="nf">legend</span><span class="p">(</span><span class="s">&quot;topleft&quot;</span><span class="p">,</span> <span class="n">legend</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Prior distribution&quot;</span><span class="p">,</span> <span class="s">&quot;Distribution of mean of y&quot;</span><span class="p">,</span> <span class="s">&quot;Posterior distribution&quot;</span><span class="p">),</span>
+       <span class="n">col</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="s">&quot;red&quot;</span><span class="p">,</span> <span class="s">&quot;purple&quot;</span><span class="p">),</span> <span class="n">lty</span><span class="o">=</span><span class="m">1</span><span class="p">)</span>
+<span class="c1">#plot the observed distribution </span>
+<span class="n">y2</span> <span class="o">&lt;-</span> <span class="nf">dnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="m">0.805</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">0.7</span><span class="o">/</span><span class="m">20</span><span class="p">))</span>
+<span class="nf">lines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y2</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">y3</span> <span class="o">&lt;-</span> <span class="nf">dnorm</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">mean</span><span class="o">=</span><span class="m">0.596</span><span class="p">,</span> <span class="n">sd</span><span class="o">=</span><span class="nf">sqrt</span><span class="p">(</span><span class="m">0.0259</span><span class="p">))</span>
+<span class="nf">lines</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="n">y3</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">lwd</span><span class="o">=</span><span class="m">1</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;purple&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/10. Bayesian Statistics II_9_0.png" src="_images/10. Bayesian Statistics II_9_0.png" />
+</div>
+</div>
+<p>The  <span class="math notranslate nohighlight">\(95\%\)</span> HPD interval can be calculated as <span class="math notranslate nohighlight">\(0.596 \pm 1.96 \times \sqrt{0.0259} = (0.281, 0.911)\)</span>. This interval lies wholly above zero, so we can state that we have a strong posterior belief that there is an increase in CD4 cell counts.</p>
+</div>
+</div>
+<div class="section" id="predictions">
+<h2>10.4 Predictions<a class="headerlink" href="#predictions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="prior-predictive-distributions">
+<h3>10.4.1 Prior predictive distributions<a class="headerlink" href="#prior-predictive-distributions" title="Permalink to this headline">¶</a></h3>
+<p>Finding the predictive distribution for a new patient <span class="math notranslate nohighlight">\(y\)</span> before making any observations involves finding the following distribution:</p>
+<p>\begin{align}
+p(y | \sigma^2, \phi, \tau^2) &amp;= \int p(y, \mu | \sigma^2, \phi, \tau^2) d \mu\
+&amp;= \int p(y | \mu, \sigma^2, \phi, \tau^2) p(\mu |  \phi, \tau^2) d \mu
+\end{align}</p>
+<p>This calculation involves a lot of algebra. We instead use a different approach: note that we can write the observation as <span class="math notranslate nohighlight">\(y = \mu + \epsilon\)</span>, where <span class="math notranslate nohighlight">\(\mu \sim N(\phi, \tau^2)\)</span> and <span class="math notranslate nohighlight">\(\epsilon \sim N(0, \sigma^2)\)</span>. Then, since <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\epsilon\)</span> are independent, we can use this result:</p>
+<blockquote>
+<div><p>If X and Y be independent random variables that are Normally distributed, <span class="math notranslate nohighlight">\(X\sim N(\mu _{X},\sigma _{X}^{2})\)</span> and <span class="math notranslate nohighlight">\(Y\sim N(\mu _{Y},\sigma _{Y}^{2})\)</span>, then their sum is also Normally distributed: <span class="math notranslate nohighlight">\(X + Y \sim N(\mu _{X}+\mu _{Y},\sigma _{X}^{2}+\sigma _{Y}^{2})\)</span>.</p>
+</div></blockquote>
+<p>Thus we have that <span class="math notranslate nohighlight">\(y \sim N(\phi, \tau^2 + \sigma^2)\)</span>.</p>
+<p>In our example, before collecting any data, suppose we wish to predict the probability that the difference in cell counts is greater than 0.3 (30 <span class="math notranslate nohighlight">\(cells/mm^3\)</span>). We have that <span class="math notranslate nohighlight">\(y \sim N(0, 0.1 + 0.7)\)</span>. We compute <span class="math notranslate nohighlight">\(p(y &gt; 0.3)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">-</span><span class="nf">pnorm</span><span class="p">(</span><span class="m">0.3</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">0.8</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.368657838608209</div></div>
+</div>
+<p>Given our prior distribution alone, the probability that the change in CD4 count for a new patient will exceed 0.3 (30 <span class="math notranslate nohighlight">\(cells/mm^3\)</span>) is approximately 0.369.</p>
+</div>
+<div class="section" id="posterior-predictive-distributions">
+<h3>10.4.2 Posterior predictive distributions<a class="headerlink" href="#posterior-predictive-distributions" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that have observed <span class="math notranslate nohighlight">\(y_1, ..., y_n \)</span>, and we want to predict future observations <span class="math notranslate nohighlight">\(z\)</span>, assuming that <span class="math notranslate nohighlight">\(z\)</span> and <span class="math notranslate nohighlight">\(y_i\)</span> are independent for all <span class="math notranslate nohighlight">\(1 \leq i \leq n\)</span>, conditional on <span class="math notranslate nohighlight">\(\mu\)</span>. The posterior predictive distribution for <span class="math notranslate nohighlight">\(z\)</span> is given by,</p>
+<p>\begin{align}
+p(z| y_1, …, y_n,  \sigma^2, \phi, \tau^2) &amp;= \int p(z, \mu | y_1, …, y_n,  \sigma^2, \phi, \tau^2) d \mu \
+&amp;= \int p(z | y_1, …, y_n,\mu,  \sigma^2) p(\mu |y_1, …, y_n,\sigma^2, \phi, \tau^2  ) d \mu. \
+\end{align}</p>
+<p>Again, this involves some fiddly algebra but we can use a similar method to that we used for the prior predictive distribution. We wish to know what the predictive distribution of a new patient <span class="math notranslate nohighlight">\(z\)</span> is, given the previous observations <span class="math notranslate nohighlight">\(y_1, ..., y_n\)</span>. We can write <span class="math notranslate nohighlight">\(z  = \mu + \epsilon\)</span>. We have that <span class="math notranslate nohighlight">\(\mu \vert y_1,\dots,y_n \sim N\left\{ \frac{ \tau^2 n\bar{y} + \sigma^2\phi }{\tau^2 n + \sigma^2}, \frac{\sigma^2\tau^2}{\tau^2n+\sigma^2} \right\}, \)</span> and <span class="math notranslate nohighlight">\(\epsilon \sim N(0, \sigma^2)\)</span>.</p>
+<p>Using the result for the sum of two independent Normal distributions, the posterior predictive distribution has the form <span class="math notranslate nohighlight">\( N\left\{ \frac{ \tau^2 n\bar{y} + \sigma^2\phi }{\tau^2 n + \sigma^2}, \frac{\sigma^2\tau^2}{\tau^2n+\sigma^2} + \sigma ^2\right\}\)</span></p>
+<p>In our example, based on both prior and observed data, the predictive distribution for cell counts in a new patient being greater than 0.3 (30 <span class="math notranslate nohighlight">\(cells/mm^3\)</span>) is <span class="math notranslate nohighlight">\(N(0.596, 0.0259 + 0.7)\)</span>. We can compute <span class="math notranslate nohighlight">\(f(z | y_1, ..., y_n &gt; 0.3)\)</span>:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="m">1</span><span class="o">-</span> <span class="nf">pnorm</span><span class="p">(</span><span class="m">0.3</span><span class="p">,</span> <span class="m">0.596</span><span class="p">,</span> <span class="nf">sqrt</span><span class="p">(</span><span class="m">0.7259</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.635861643314828</div></div>
+</div>
+<p>After having observed the data, the predictive probability that the next patient will have a difference in CD4 cell counts of greater than 0.3 (30 <span class="math notranslate nohighlight">\(cells/mm^3\)</span>) has increased substantially to 0.636.</p>
+</div>
+</div>
+<div class="section" id="multiparameter-models">
+<h2>10.5 Multiparameter models<a class="headerlink" href="#multiparameter-models" title="Permalink to this headline">¶</a></h2>
+<p>Suppose now that our likelihood has two unknown parameters, <span class="math notranslate nohighlight">\((\mu,\sigma^2).\)</span> In this case, we would need a prior distribution for both parameters, and our posterior distribution will now be bivariate. If desired we can summarise this by the mean and covariance matrix or by HPD contour maps. However, often in applications, interest focusses only on one parameter, say <span class="math notranslate nohighlight">\(\mu;\)</span> the other parameter is usually referred to as a nuisance parameter. In Bayesian inference, we typically use simulation to draw from the posterior distribution of <span class="math notranslate nohighlight">\((\mu,\sigma^2).\)</span> For marginal inference for <span class="math notranslate nohighlight">\(\mu,\)</span> we summarise the draws from <span class="math notranslate nohighlight">\(\mu\)</span> in the usual way, across all simulated values of <span class="math notranslate nohighlight">\(\sigma^2\)</span>. Analytically, this is equivalent to integrating the posterior over <span class="math notranslate nohighlight">\(\sigma^2\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[p(\mu | y) = \int p(\mu,\sigma^2 |y) \, d\sigma^2,\]</div>
+<p>where we have used Bayes’ theorem to obtain the posterior, i.e.<span class="math notranslate nohighlight">\(p(\mu,\sigma^2 |y).\)</span> This integral may be intractable (hence the preference for simulation approaches). This will be covered in more detail in the Bayesian course next term.</p>
+</div>
+<div class="section" id="further-reading">
+<h2>10.6 Further Reading<a class="headerlink" href="#further-reading" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="resources-for-learning">
+<h3>10.6.1 Resources for learning<a class="headerlink" href="#resources-for-learning" title="Permalink to this headline">¶</a></h3>
+<p>These textbooks are recommended for further learning and examples:</p>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="http://www.stat.columbia.edu/~gelman/book/">Bayesian data analysis by Gelman et. al</a> can be downloaded in PDF format.</p></li>
+<li><p><a class="reference external" href="https://www.mrc-bsu.cam.ac.uk/software/bugs/the-bugs-project-the-bugs-book/">The Bugs Book by Lunn et. al.</a> is available at the LSHTM library.</p></li>
+<li><p><a class="reference external" href="http://jim-stone.staff.shef.ac.uk/BookBayes2012/HTML_BayesRulev5EbookHTMLFiles/ops/xhtml/ch01BayesJVSone.html">an introductory book by Jim Stone with nice examples</a> The first chapter is freely available online.</p></li>
+</ul>
+</div></blockquote>
+</div>
+<div class="section" id="examples-of-applications">
+<h3>10.6.2 Examples of applications<a class="headerlink" href="#examples-of-applications" title="Permalink to this headline">¶</a></h3>
+<blockquote>
+<div><ul class="simple">
+<li><p><a class="reference external" href="https://www.nature.com/articles/nrg2615">Article on Nature providing guidelines Bayesian analyses for genetic association studies</a>.</p></li>
+<li><p>The potential benefits of incorporating prior information in the context of health care evaluation is discussed by <a class="reference external" href="https://projecteuclid.org/euclid.ss/1089808280">David Spiegelhalter in this article</a>.</p></li>
+<li><p>We mentioned earlier that Bayesian approaches can be helpful for overcoming challenges with small sample sizes in clinical trials for rare diseases; you can read more about this <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC2551510/pdf/bmj00623-0045.pdf">in an article by Lilford et. al.</a></p></li>
+</ul>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="09.%20Bayesian%20Statistics%20I.html" title="previous page">9. Bayesian Statistics I</a>
+    <a class='right-next' id="next-link" href="11.%20Types%20of%20Investigation.html" title="next page">11. Types of Investigation</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

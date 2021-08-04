@@ -1,0 +1,991 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>5. Likelihood &#8212; Statistics for Health Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Welcome.html">
+   Welcome to Statistics for Health Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.%20Introduction.html">
+   1 Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basic probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02.a.%20Probability.Discrete.html">
+   2. Probability and Discrete Probability Distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.b.%20Probability.Discrete.html">
+     2.1 Bayes’ Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.c.%20Probability.Discrete.html">
+     2.2 The binomial distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.d.%20Probability.Discrete.html">
+     2.3 The Poisson distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
+   3. Continuous probability distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.b.%20Continuous%20Probability%20Distributions.html">
+     3.1 Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.c.%20Continuous%20Probability%20Distributions.html">
+     3.2 Useful continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.d.%20Continuous%20Probability%20Distributions.html">
+     3.3 Uses of the standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
+     3.5 Are the data normally distributed?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.f.%20Continuous%20Probability%20Distributions.html">
+     3.5 Joint distributions and correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical Inference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04.a.%20Population.and.samples.html">
+   4. Populations and Samples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.b.%20Population.and.samples.html">
+     4.1 Sampling from a population
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.c.%20Population.and.samples.html">
+     4.2 Statistical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.d.%20Population.and.samples.html">
+     4.3 Sampling distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.e.%20Population.and.samples.html">
+     4.4 Obtaining the sampling distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.f.%20Population.and.samples.html">
+     4.5 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.g.%20Population.and.samples.html">
+     Appendix: additional reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05.a.%20Likelihood.html">
+   5. Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.b.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.c.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.d.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.f.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.g.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="06.a.%20Maximum%20Likelihood.html">
+   6. Maximum Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
+     6.1 Likelihood and log-likelihood with
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     independent observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.c.%20Maximum%20Likelihood.html">
+     6.2 Properties of maximum likelihood estimators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.d.%20Maximum%20Likelihood.html">
+     6.3 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.e.%20Maximum%20Likelihood.html">
+     Appendix: Additional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="07.a.%20Frequentist%20I.html">
+   7. Frequentist I: Confidence Intervals (CIs)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.b.%20Frequentist%20I.html">
+     7.1 Introduction to confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.c.%20Frequentist%20I.html">
+     7.2 95% confidence intervals for the mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.d.%20Frequentist%20I.html">
+     7.3 Interpretation of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.e.%20Frequentist%20I.html">
+     7.4 Approximate confidence intervals for parameters estimated using large samples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.f.%20Frequentist%20I.html">
+     7.5 Confidence Intervals using resampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.g.%20Frequentist%20I.html">
+     7.6 Summary: Use of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.h.%20Frequentist%20I.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="08.a.%20Frequentist%20II.html">
+   8. Frequentist II: Hypothesis tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.b.%20Frequentist%20II.html">
+     8.1 Proving and disproving hypotheses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.c.%20Frequentist%20II.html">
+     8.2 The p-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.d.%20Frequentist%20II.html">
+     8.3 Connection between p-values and confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.e.%20Frequentist%20II.html">
+     8.4 Other (mis-)interpretations of p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.f.%20Frequentist%20II.html">
+     8.5 Calculating p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.g.%20Frequentist%20II.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.%20Bayesian%20Statistics%20I.html">
+   9. Bayesian Statistics I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
+   10. Bayesian Statistics II: Normal data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical modelling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Types%20of%20Investigation.html">
+   11. Types of Investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.%20Linear%20Regression%20I.html">
+   12. Linear Regression I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.%20Linear%20Regression%20II.html">
+   13. Linear Regression II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.%20Logistic%20Regression.html">
+   14 Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
+   16. Extensions: Confounding, standardization, and collapsibility
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/05.e.  Likelihood.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F05.e.  Likelihood.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/05.e.  Likelihood.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-versus-inference">
+   5.1 Probability versus Inference
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#maximum-likelihood-estimation">
+   5.2 Maximum likelihood estimation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-likelihood">
+   5.3 The likelihood
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#examples-of-likelihoods">
+   5.4 Examples of likelihoods¶
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binomial-model">
+     5.4.1 Binomial model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exponential-model">
+     5.4.2 Exponential model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#log-likelihood">
+   5.5 Log likelihood
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#finding-the-mle">
+   5.6 Finding the MLE
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     5.6.1 Binomial model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id2">
+     5.6.2 Exponential model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   5.7 Summary
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="likelihood">
+<h1>5. Likelihood<a class="headerlink" href="#likelihood" title="Permalink to this headline">¶</a></h1>
+<p>[ADD SOMETHING ABOUT HOW THIS ALL FITS IN]</p>
+<div class="alert alert-block alert-warning">
+<b> Intended learning outcomes</b> 
+<p>By the end of this session you will be able to:</p>
+<ul class="simple">
+<li><p>explain the concepts of likelihood and maximum likelihood estimation</p></li>
+<li><p>derive a likelihood in a simple situation</p></li>
+<li><p>explain the connection between maximising the likelihood and maximising the log-likelihood</p></li>
+<li><p>describe and apply the process of obtaining a maximum likelihood estimator</p></li>
+</ul>
+</div><div class="section" id="probability-versus-inference">
+<h2>5.1 Probability versus Inference<a class="headerlink" href="#probability-versus-inference" title="Permalink to this headline">¶</a></h2>
+<p>A typical probability problem is as follows. We are planning to run a small clinical study, which involves giving 8 patients a particular drug. We are told that the probability that a single patient experiences a side effect from a particular drug is 0.23. From this information, we can calculate the probability of various complex events occurring. For example, we might want to know the probability that more than 6 of the 8 patients will experience a side effect. Or we might wish to know the probability that none of the 8 patients experience a side effect. Here, we are assuming that a characteristic (parameter) of the population is known. Specifically, we are assuming that we know the true probability of a single patient experiencing a side effect.</p>
+<p>Real life is not like that! Typically, in health data science studies, we have observed some data which we believe can be modelled using a particular distribution, but the parameters of that distribution are unknown. For the small clinical study, for example, in real life we would observe how many of the 8 patients did in fact experience a side effect. We might be happy to assume that these data are drawn from a binomial distribution. But the probability of a patient experiencing a side effect - the key parameter of the binomial distribution - would be unknown. The study aim would be to make statements - inferences - about that unknown parameter. So, in some sense, the problem is the opposite way around.</p>
+<p>Our task, in statistical inference, is to make statements about the underlying parameter(s) of our proposed model given the observed data. In particular, we typically wish to obtain the best estimate of the unknown parameters. In the simple clinical study, we would want to obtain the best estimate of the unknown probability of experiencing a side effect, given the observed information about how many of the 8 patients did experience a side effect. We also wish to know how well we have estimated the unknown parameter(s): what is the uncertainty associated with our estimate(s)?</p>
+<p>The concept of likelihood provides the best single framework for this task. We will see that the likelihood function, often simply called the likelihood, plays a fundamental role in both frequentist and Bayesian inference.</p>
+</div>
+<div class="section" id="maximum-likelihood-estimation">
+<h2>5.2 Maximum likelihood estimation<a class="headerlink" href="#maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h2>
+<p>Consider the example above, of a small clinical study of 8 patients who are all given a particular drug. The observed data consist of the number, of those 8 patients, who experience a side effect. Suppose that we conduct the study and observe that 2 patients experience a side effect. We wish to use these observed data to make statements - inferences - about the unknown probability of experiencing a side effect from that drug.</p>
+<p><strong>Statistical model:</strong> We begin by defining a model for the data. Here, we define <span class="math notranslate nohighlight">\(X\)</span> as the random variable representing the total number of the 8 patients who experience a side effect. Our model is that</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim binomial(8, \pi)
+\]</div>
+<p>which - we remember from the probability sessions - involves the assumptions that each Bernoulli event (whether or not each individual patient experiences a side effect) is independent and has the same probability of occurring.</p>
+<p>This model involves the unknown parameter <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p><strong>Data:</strong> We have observed a realisation from this model, <span class="math notranslate nohighlight">\(X=2\)</span>. These are often called our observed data.</p>
+<p>Under our proposed statistical model, the probability that 2 out of 8 patients experience a side effect is:</p>
+<div class="math notranslate nohighlight">
+\[
+P(X=2) = {8 \choose 2} \pi^2 (1-\pi)^6
+\]</div>
+<p>Since <span class="math notranslate nohighlight">\(\pi\)</span> is unknown, it is natural to consider how the probability of observing these data varies with different values of <span class="math notranslate nohighlight">\(\pi\)</span>:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><span class="math notranslate nohighlight">\(\pi\)</span></p></th>
+<th class="text-align:center head"><p>P(<span class="math notranslate nohighlight">\(X\)</span>=<span class="math notranslate nohighlight">\(2\)</span>)</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>0</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>0.25</p></td>
+<td class="text-align:center"><p>0.311</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>0.5</p></td>
+<td class="text-align:center"><p>0.109</p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>0.75</p></td>
+<td class="text-align:center"><p>0.004</p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>1</p></td>
+<td class="text-align:center"><p>0</p></td>
+</tr>
+</tbody>
+</table>
+<p>Suppose that, in truth, the unknown probability of a patient experiencing a side effect from this drug was 0.75. The probability of then observing 2 from 8 patients experiencing a side effect is 0.004. This is a very low probability, so this would be an unusual or perhaps unexpected event, although not strictly impossible.</p>
+<p>Suppose that, conversely, the unknown probability of a patient experiencing a side effect from this drug was actually 0.25. Then the probability of observing 2 from 8 patients experiencing a side effect would be 0.31 (<span class="math notranslate nohighlight">\(31\%\)</span>). If this were the case, there would be nothing unusual or unexpected about our observed data.</p>
+<p>We do not know which value of <span class="math notranslate nohighlight">\(\pi\)</span> is the true value. But a sensible strategy to obtain a ‘best guess’, or estimate, of <span class="math notranslate nohighlight">\(\pi\)</span>, might be to pick the value which maximises the probability of observing the data that we observed. We will see below that this probability is in fact the likelihood, leading to the concept of maximising the likelihood or maximum likelihood. This is a term that you will encounter frequently in statistics.</p>
+<p>Following these ideas, we can extend the table above by considering a finer range of possible values for <span class="math notranslate nohighlight">\(\pi\)</span> between 0 and 1, and plot the probability of observing <span class="math notranslate nohighlight">\(X=2\)</span>, assuming that that value of <span class="math notranslate nohighlight">\(\pi\)</span> were true. This gives the graph below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Define a range of values for pi</span>
+<span class="kc">pi</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">by</span> <span class="o">=</span> <span class="m">0.05</span><span class="p">)</span>
+
+<span class="c1"># Calculate the likelihood for each value, given n=8 and x=2</span>
+<span class="n">L_pi</span> <span class="o">&lt;-</span> <span class="nf">choose</span><span class="p">(</span><span class="m">8</span><span class="p">,</span><span class="m">2</span><span class="p">)</span><span class="o">*</span><span class="kc">pi</span><span class="o">^</span><span class="m">2</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="kc">pi</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="m">8-2</span><span class="p">)</span>
+
+<span class="c1"># Plot the output</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="kc">pi</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">L_pi</span><span class="p">)</span>
+
+<span class="c1"># Add a line to indicate the value which yields the highest likelihood</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="kc">pi</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">L_pi</span><span class="p">)],</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05.e.  Likelihood_3_0.png" src="_images/05.e.  Likelihood_3_0.png" />
+</div>
+</div>
+<p>We see that <span class="math notranslate nohighlight">\(\pi=0.25\)</span> is the value that leads to the highest probability of observing the data that we did indeed observe (i.e <span class="math notranslate nohighlight">\(X=2\)</span>) so we choose this value as our best guess for <span class="math notranslate nohighlight">\(\pi\)</span>. We will see that this value is called the maximum likelihood estimator. We write <span class="math notranslate nohighlight">\(\hat{\pi} = 0.25\)</span>, where we have added a hat to indicate that this is being viewed as an estimate of an unknown parameter.</p>
+<p>The likelihood when <span class="math notranslate nohighlight">\(\pi = 0\)</span> is exactly zero, as is the likelihood when <span class="math notranslate nohighlight">\(\pi = 1\)</span>. This makes sense because these two probabilities would make the observed data impossible - they imply that patients would either <em>never</em> or <em>always</em> experience side effects. Informally, we could say that these values are <em>inconsistent</em> with the data.</p>
+<p>Note that, our estimate of the probability of a patient experiencing a side effect is intuitively a sensible one: it is the sample proportion, <span class="math notranslate nohighlight">\(\frac{2}{8}\)</span>.</p>
+<p>We will see later on that estimators obtained in this way (by maximising a likelihood) have very nice statistical properties.</p>
+</div>
+<div class="section" id="the-likelihood">
+<h2>5.3 The likelihood<a class="headerlink" href="#the-likelihood" title="Permalink to this headline">¶</a></h2>
+<p>The function that we maximised above to find our estimate for the unknown parameter <span class="math notranslate nohighlight">\(\pi\)</span> took the same algebraic appearance as the probability distribution function, evaluated at the value of the observed data. We will see below that this function is called the likelihood. The likelihood looks like a probability distribution function. It has a probabilistic interpretation for any particular value of <span class="math notranslate nohighlight">\(\pi\)</span>: it’s the probability of seeing the observed data assuming that is the true value of <span class="math notranslate nohighlight">\(\pi\)</span>. However, in contrast to the probability distribution function, which is a function of <span class="math notranslate nohighlight">\(x\)</span> and sums to 1 over all possible values of <span class="math notranslate nohighlight">\(x\)</span>, the likelihood function is a function of <span class="math notranslate nohighlight">\(\pi\)</span>. So, for example, this does not sum to 1 over all possible values of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p>A general definition of the likelihood is as follows.</p>
+<p>For a probability model with parameter <span class="math notranslate nohighlight">\(\theta\)</span>, the likelihood of the parameter <span class="math notranslate nohighlight">\(\theta\)</span> given the observed data <span class="math notranslate nohighlight">\(x\)</span> is defined as</p>
+<div class="math notranslate nohighlight">
+\[
+L(\theta | x) = P(x | \theta)
+\]</div>
+<p>On the right hand side of this equation:</p>
+<ul class="simple">
+<li><p>This is either a probability distribution function or a density function</p></li>
+<li><p>If our distribution is discrete, as above, this is: <span class="math notranslate nohighlight">\(P(x | \theta) = P(X=x)\)</span></p></li>
+<li><p>If our distribution is continuous, this becomes: <span class="math notranslate nohighlight">\(P(x | \theta) = f(x)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(P(x | \theta)\)</span> is a probability statement. It is the probability of seeing the observed data, under the assumed model, assuming that the true parameter value is equal to <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
+</ul>
+<p>And on the left hand side of this equation:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(L(\theta | x)\)</span> is the likelihood function, often just called the likelihood.</p></li>
+</ul>
+<p>In an informal sense the likelihood conveys the <em>consistency</em> of different values of the parameter with the observed data.</p>
+<p>We often just write the likelihood as <span class="math notranslate nohighlight">\(L(\theta)\)</span>. The additional notation (writing “<span class="math notranslate nohighlight">\(| x\)</span>”) is merely to remind ourselves that the likelihood function involves the observed data, but it is not a function of these: <span class="math notranslate nohighlight">\(x\)</span> is treated as a fixed quantity in the likelihood.</p>
+</div>
+<div class="section" id="examples-of-likelihoods">
+<h2>5.4 Examples of likelihoods¶<a class="headerlink" href="#examples-of-likelihoods" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="binomial-model">
+<h3>5.4.1 Binomial model<a class="headerlink" href="#binomial-model" title="Permalink to this headline">¶</a></h3>
+<p>Consider a diabetes clinic at which patients present following initial diagnosis. The first line of intervention for diabetes is lifestyle change, and the clinician wants to determine what proportion of patients will respond to this intervention. She decides to conduct a study by following up twenty patients who present to the clinic in one day.</p>
+<p><strong>Statistical model:</strong> We assume that a binomial model is appropriate for the number of patients who will respond to lifestyle changes out of the twenty patients in total.</p>
+<div class="math notranslate nohighlight">
+\[ X \sim Bin(20, \pi) \]</div>
+<p><strong>Data:</strong> Out of the twenty patients sampled, she found that twelve of them had responded well after six weeks of recommended lifestyle changes. Our observed data are <span class="math notranslate nohighlight">\(x = 12\)</span>.</p>
+<p><strong>Probability mass function:</strong> As we described before, the likelihood of <span class="math notranslate nohighlight">\(\pi\)</span> given these data is the probability of observing the data for different values for <span class="math notranslate nohighlight">\(\pi\)</span>. Remember the PMF for a binomial distribution of size 20,</p>
+<div class="math notranslate nohighlight">
+\[ P(X = x|\pi) = {20 \choose x} \pi^{x} (1-\pi)^{20 - x} \]</div>
+<p>for a given value of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<p><strong>Likelihood:</strong> The likelihood has this same form but is viewed as a function of <span class="math notranslate nohighlight">\(\pi\)</span>, rather than a function of <span class="math notranslate nohighlight">\(x\)</span>. For our observed data of 12 out of 20 patients,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} L(\pi | x = 12) = {20 \choose 12} \pi^{20} (1-\pi)^{20 - 12} \\  \end{split}\]</div>
+<p>As before, we can identify the value of <span class="math notranslate nohighlight">\(\pi\)</span> which gives the maximum likelihood by plotting the likelihood for a range of values of <span class="math notranslate nohighlight">\(\pi\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">8</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+
+<span class="c1"># Define a range of values for pi</span>
+<span class="kc">pi</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">by</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">)</span>
+
+<span class="c1"># Calculate the likelihood for each value, this time given n=20 and x=12</span>
+<span class="n">L_pi</span> <span class="o">&lt;-</span> <span class="nf">choose</span><span class="p">(</span><span class="m">20</span><span class="p">,</span><span class="m">12</span><span class="p">)</span><span class="o">*</span><span class="kc">pi</span><span class="o">^</span><span class="m">12</span><span class="o">*</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="kc">pi</span><span class="p">)</span><span class="o">^</span><span class="p">(</span><span class="m">20-12</span><span class="p">)</span>
+
+<span class="c1"># Plot the output</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="kc">pi</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">L_pi</span><span class="p">)</span>
+
+<span class="c1"># Find the value of pi for which L_pi is highest</span>
+<span class="n">pi_max</span> <span class="o">&lt;-</span> <span class="kc">pi</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">L_pi</span><span class="p">)]</span>
+
+<span class="c1"># Add a line to the plot at pi_max</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="n">pi_max</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add a title specifying the value of pi_max</span>
+<span class="nf">title</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Maximum at&quot;</span><span class="p">,</span> <span class="n">pi_max</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05.e.  Likelihood_5_0.png" src="_images/05.e.  Likelihood_5_0.png" />
+</div>
+</div>
+<p>The value which maximises this function is 0.6, the observed sample proportion; we’ll call this value <span class="math notranslate nohighlight">\(\hat{\pi}\)</span> to indicate that it is an estimate of <span class="math notranslate nohighlight">\(\pi\)</span>. Notice that the likelihood for values of <span class="math notranslate nohighlight">\(\pi\)</span> smaller than 0.3 or greater than 0.9 is very small - much smaller than that of values around 0.6 - suggesting that these values are inconsistent with the observed data.</p>
+</div>
+<div class="section" id="exponential-model">
+<h3>5.4.2 Exponential model<a class="headerlink" href="#exponential-model" title="Permalink to this headline">¶</a></h3>
+<p>Suppose we wish to estimate how long patients usually wait in reception before their GP appointment. At one practice, a patient walks through the door and the receptionist records the time until they get called through.</p>
+<p><strong>Statistical model:</strong> The waiting time in minutes, <span class="math notranslate nohighlight">\(Y\)</span>, is a continuous random variable which must be non-negative. It is common to use an exponential distribution to model waiting times, so we will assume it’s a reasonable choice for this example.</p>
+<div class="math notranslate nohighlight">
+\[ Y \sim Exp(\lambda) \]</div>
+<p><em>Remember that the mean of this distribution is equal to one over the rate parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, i.e. <span class="math notranslate nohighlight">\(E(Y) = \frac{1}{\lambda}\)</span>.</em></p>
+<p><strong>Data:</strong> The receptionist observes that the patient waits for eight minutes and forty-five seconds, so <span class="math notranslate nohighlight">\(y = 8.75\)</span>.</p>
+<p><strong>Probability density function:</strong> The PDF for an exponential distribution is</p>
+<div class="math notranslate nohighlight">
+\[f_Y(y|\lambda) = \lambda e^{-y\lambda}\]</div>
+<p><strong>Likelihood:</strong> We write down the likelihood for <span class="math notranslate nohighlight">\(\lambda\)</span> based on the exponential PDF above.</p>
+<div class="math notranslate nohighlight">
+\[ L(\lambda | y = 8.75) = \lambda e^{-8.75\lambda}\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">8</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+
+<span class="c1"># Define a range of values for lambda, equating to mean waiting times from 1 to 100 minutes</span>
+<span class="n">lam</span> <span class="o">=</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0.01</span><span class="p">,</span><span class="m">1</span><span class="p">,</span><span class="n">by</span> <span class="o">=</span> <span class="m">0.01</span><span class="p">)</span>
+
+<span class="c1"># Calculate the likelihood for each value, given y=8.75</span>
+<span class="n">L_lam</span> <span class="o">&lt;-</span> <span class="n">lam</span><span class="o">*</span><span class="nf">exp</span><span class="p">(</span><span class="m">-8.75</span><span class="o">*</span><span class="n">lam</span><span class="p">)</span>
+
+<span class="c1"># Find the value of lambda for which L_lam is highest</span>
+<span class="n">lam_max</span> <span class="o">&lt;-</span> <span class="n">lam</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">L_lam</span><span class="p">)]</span>
+
+<span class="c1"># Plot the likelihood and indicate the maximum value</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">lam</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">L_lam</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="n">lam_max</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="nf">title</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Maximum at&quot;</span><span class="p">,</span> <span class="nf">round</span><span class="p">(</span><span class="n">lam_max</span><span class="p">,</span><span class="m">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05.e.  Likelihood_7_0.png" src="_images/05.e.  Likelihood_7_0.png" />
+</div>
+</div>
+<p>If we evaluate over a fine enough range of values for <span class="math notranslate nohighlight">\(\lambda\)</span>, we find that the value which maximises this exponential likelihood is equal to <span class="math notranslate nohighlight">\(\frac{1}{8.75}\)</span>, i.e. one over the observed waiting time. This defines an exponential distribution with mean equal to the observed waiting time.</p>
+<p>As with the binomial example, the estimate obtained by maximising the likelihood is intuitively sensible based on the data we’ve observed.</p>
+</div>
+</div>
+<div class="section" id="log-likelihood">
+<h2>5.5 Log likelihood<a class="headerlink" href="#log-likelihood" title="Permalink to this headline">¶</a></h2>
+<p>We have discussed the idea that finding the maximum value of a likelihood gives us sensible estimates for the unknown parameters. For the examples above it is relatively clear from calculating a few values of the likelihood where the maximum lies, but this will not always be the case.</p>
+<p>A theoretical result which will come in handy is that a value which maximises the likelihood also maximises the log-transform of the likelihood, or the <em>log-likelihood</em>. This is because the log is a <em>concave</em> function, so when we use it to transform the likelihood, any maximum or minimum stays in the same place on the x-axis. We will denote the log-likelihood <span class="math notranslate nohighlight">\(l(\theta) = \log(L(\theta))\)</span>.</p>
+<p>This result is evident when plotting the transformation of the two likelihoods above.</p>
+<p>For the binomial example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">12</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+
+<span class="c1"># likelihood L(pi)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="kc">pi</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">L_pi</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="n">pi_max</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="nf">title</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Maximum at&quot;</span><span class="p">,</span> <span class="n">pi_max</span><span class="p">))</span>
+
+<span class="c1"># log-likelihood l(pi)</span>
+<span class="n">l_pi</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">L_pi</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="kc">pi</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">l_pi</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="kc">pi</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">l_pi</span><span class="p">)],</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="nf">title</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Maximum at&quot;</span><span class="p">,</span> <span class="kc">pi</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">l_pi</span><span class="p">)]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05.e.  Likelihood_10_0.png" src="_images/05.e.  Likelihood_10_0.png" />
+</div>
+</div>
+<p>For the exponential example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">12</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">6</span><span class="p">)</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span> <span class="o">=</span> <span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+
+<span class="c1"># likelihood L(beta)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">lam</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">L_lam</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="n">lam_max</span><span class="p">,</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="nf">title</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Maximum at&quot;</span><span class="p">,</span> <span class="nf">round</span><span class="p">(</span><span class="n">lam_max</span><span class="p">,</span><span class="m">2</span><span class="p">)))</span>
+
+<span class="c1"># log-likelihood l(beta)</span>
+<span class="n">l_lam</span> <span class="o">&lt;-</span> <span class="nf">log</span><span class="p">(</span><span class="n">L_lam</span><span class="p">)</span>
+
+<span class="nf">plot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">lam</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">l_lam</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span> <span class="o">=</span> <span class="n">lam</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">l_lam</span><span class="p">)],</span> <span class="n">col</span> <span class="o">=</span> <span class="s">&quot;red&quot;</span><span class="p">)</span>
+<span class="nf">title</span><span class="p">(</span><span class="nf">paste</span><span class="p">(</span><span class="s">&quot;Maximum at&quot;</span><span class="p">,</span> <span class="nf">round</span><span class="p">(</span><span class="n">lam</span><span class="p">[</span><span class="nf">which.max</span><span class="p">(</span><span class="n">l_lam</span><span class="p">)],</span><span class="m">2</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/05.e.  Likelihood_12_0.png" src="_images/05.e.  Likelihood_12_0.png" />
+</div>
+</div>
+<p>Log-transformed likelihoods are generally “better-behaved” and easier to work with than the original form. Remember the rules of logs for products and powers - we’ll see in the next section how these make computation with the log-likelihood very convenient.</p>
+</div>
+<div class="section" id="finding-the-mle">
+<h2>5.6 Finding the MLE<a class="headerlink" href="#finding-the-mle" title="Permalink to this headline">¶</a></h2>
+<p>We’ve so far obtained the maximum likelihood estimate (MLE) by plotting the likelihood for different parameter values and looking for that which yields the maximum. Of course, the estimate obtained in this way depends on how many parameter values we evaluate.</p>
+<p>The more formal way is to determine the location of that maximal point algebraically, from the likelihood function itself. In this way, we can directly obtain the general form for the MLE in terms of the data.</p>
+<p>This is where the log-likelihood comes into its own; we know that a value which maximises the log-likelihood also maximises the likelihood, and the impact of logs on products and powers make the algebra much simpler.</p>
+<p>We find the maximum likelihood estimator of a parameter from the log-likelihood function through the following steps:</p>
+<div class="alert alert-success">
+<p><b> Method for finding MLEs:</b></p>
+<ol class="simple">
+<li><p>Obtain the derivative of the log-likelihood: <span class="math notranslate nohighlight">\(\frac{d l(\theta \mid {x})}{d \theta}\)</span></p></li>
+<li><p>Set <span class="math notranslate nohighlight">\(\frac{d l(\theta \mid {x})}{d \theta}=0\)</span> and solve for <span class="math notranslate nohighlight">\(\theta\)</span></p></li>
+<li><p>Verify that it is a maximum by showing that the second derivative <span class="math notranslate nohighlight">\(\frac{d ^2 l(\theta \mid  {x})}{d \theta ^2 }\)</span> is negative when the MLE is substituted for <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
+</ol>
+</div>
+<div class="section" id="id1">
+<h3>5.6.1 Binomial model<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>We will derive the MLE for the binomial example described earlier. In general, the likelihood given observed data of <span class="math notranslate nohighlight">\(x\)</span> responders out of <span class="math notranslate nohighlight">\(n\)</span> patients is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} L(\pi|x) = {n \choose x} \pi^{x} (1-\pi)^{n - x} \\  \end{split}\]</div>
+<p>and so the log-likelihood is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} l(\pi|x) = \log\left({n \choose x} \pi^{x} (1-\pi)^{n - x}\right) \\ = \log {n \choose x} + x \log \pi + (n-x)\log (1-\pi) \end{split}\]</div>
+<p>We can now obtain the maximum likelihood estimate from this function.</p>
+<p><strong>Step 1</strong>: Differentiate the log-likelihood with respect to our parameter <span class="math notranslate nohighlight">\(\pi\)</span></p>
+<p>\begin{equation}
+\frac{d l \left( \pi \mid x \right)}{d \pi} =  \frac{x}{\pi}  -\frac{(n-x)}{(1-\pi)}
+\end{equation}</p>
+<p><strong>Step 2</strong>: We set the derivative equal to zero and solve for <span class="math notranslate nohighlight">\(\pi\)</span></p>
+<p>\begin{equation}
+0 =  \frac{x}{\pi}  -\frac{(n-x)}{(1-\pi)}
+\end{equation}</p>
+<p>\begin{equation}
+\frac{(n-x)}{(1-\pi)} =  \frac{x}{\pi}<br />
+\end{equation}</p>
+<p>\begin{equation}
+(n-x)\pi =  x(1-\pi)
+\end{equation}</p>
+<p>\begin{equation}
+n\pi-x\pi =  x-x\pi
+\end{equation}</p>
+<p>\begin{equation}
+\hat{\pi} =  \frac{x}{n}
+\end{equation}</p>
+<p>Having solved the equation, we get that the maximum likelihood estimator for <span class="math notranslate nohighlight">\(\pi\)</span> is <span class="math notranslate nohighlight">\(\hat{\pi} =  \frac{x}{n}\)</span> (note that we put a hat to indicate that it is an estimator).</p>
+<p>There is one thing left for us to check: we have found that <span class="math notranslate nohighlight">\(\frac{x}{n}\)</span> is the point where the derivative of the log-likelihood is zero, but that could mean that it is a maximum or a minimum of the log-likelihood function. To verify that this is indeed a maximum, we need to compute the second derivative of the log-likelihood and check that it takes a negative value when <span class="math notranslate nohighlight">\({\pi} =  \frac{x}{n}\)</span>.</p>
+<p><strong>Step 3</strong>: Find the second derivative:</p>
+<p>\begin{equation}
+\frac{d l^2 \left( \pi \mid x \right)}{d \pi ^2} =  -\frac{x}{\pi^2}  -\frac{(n-x)}{(1-\pi)^2}
+\end{equation}</p>
+<p>This second derivative must be negative if we plug in <span class="math notranslate nohighlight">\(\frac{x}{n}\)</span> for <span class="math notranslate nohighlight">\({\pi}\)</span>. Both fractions on the right hand side have a squared number in the denominator which is positive, so we only have to think about the numerators. We have that <span class="math notranslate nohighlight">\(-x \leq 0 \)</span> since <span class="math notranslate nohighlight">\(x \geq 0\)</span> and also <span class="math notranslate nohighlight">\(-(n-x) \leq 0 \)</span> since <span class="math notranslate nohighlight">\(n \geq x \geq 0\)</span>. Thus the MLE for <span class="math notranslate nohighlight">\(\pi\)</span> is <span class="math notranslate nohighlight">\(\frac{x}{n}\)</span>.</p>
+</div>
+<div class="section" id="id2">
+<h3>5.6.2 Exponential model<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h3>
+<p>The likelihood function for the exponential example is</p>
+<div class="math notranslate nohighlight">
+\[L(\lambda | y) = \lambda e^{-\lambda y}\]</div>
+<p>therefore we have</p>
+<div class="math notranslate nohighlight">
+\[ l(\lambda | y) = \log \left( \lambda e^{-\lambda y} \right) = \log \lambda - y \lambda \]</div>
+<p><strong>Step 1</strong>: Differentiate the log-likelihood with respect to our parameter <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<div class="math notranslate nohighlight">
+\[\frac{d l \left( \lambda \mid y \right)}{d \lambda} = \frac{1}{\lambda} - y\]</div>
+<p><strong>Step 2</strong>: Set the derivative to zero and solve for <span class="math notranslate nohighlight">\(\lambda\)</span></p>
+<div class="math notranslate nohighlight">
+\[ \frac{1}{\lambda} - y = 0\]</div>
+<div class="math notranslate nohighlight">
+\[ \hat{\lambda} = \frac{1}{y} \]</div>
+<p><strong>Step 3</strong>: Verify that this is a maximum rather than a minimum by considering the second derivative</p>
+<div class="math notranslate nohighlight">
+\[ \frac{d l^2 \left(\lambda \mid y \right)}{d \lambda ^2} = -\frac{1}{\lambda^2}\]</div>
+<p>This is negative for any value of <span class="math notranslate nohighlight">\(\lambda\)</span>. So the MLE for <span class="math notranslate nohighlight">\(\lambda\)</span> is <span class="math notranslate nohighlight">\(\hat{\lambda} = \frac{1}{y}\)</span>, one over the observed waiting time.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h2>5.7 Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h2>
+<p>Likelihood is a fundamental concept in statistical inference. In this lecture we have introduced the definition of likelihood and demonstrated how it can be used to estimate an unknown parameter, through maximum likelihood estimation. For two examples, we have seen that estimates obtained by MLE are intuitively sensible for the parameter of interest and have derived them algebraically via the log-likelihood.</p>
+<p>In the next lecture, we will find out about the specific mathematical properties which make the MLE a “good” estimator, and extend to the situation where our data consist of more than one observation.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
