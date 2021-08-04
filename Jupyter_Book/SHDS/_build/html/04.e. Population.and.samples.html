@@ -1,0 +1,889 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>4.4 Obtaining the sampling distribution &#8212; Statistics for Health Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="4.5 Summary" href="04.f.%20Population.and.samples.html" />
+    <link rel="prev" title="4.3 Sampling distributions" href="04.d.%20Population.and.samples.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Welcome.html">
+   Welcome to Statistics for Health Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.%20Introduction.html">
+   1 Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basic probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02.a.%20Probability.Discrete.html">
+   2. Probability and Discrete Probability Distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.b.%20Probability.Discrete.html">
+     2.1 Bayes’ Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.c.%20Probability.Discrete.html">
+     2.2 The binomial distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.d.%20Probability.Discrete.html">
+     2.3 The Poisson distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
+   3. Continuous probability distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.b.%20Continuous%20Probability%20Distributions.html">
+     3.1 Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.c.%20Continuous%20Probability%20Distributions.html">
+     3.2 Useful continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.d.%20Continuous%20Probability%20Distributions.html">
+     3.3 Uses of the standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
+     3.5 Are the data normally distributed?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.f.%20Continuous%20Probability%20Distributions.html">
+     3.5 Joint distributions and correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical Inference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="04.a.%20Population.and.samples.html">
+   4. Populations and Samples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.b.%20Population.and.samples.html">
+     4.1 Sampling from a population
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.c.%20Population.and.samples.html">
+     4.2 Statistical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.d.%20Population.and.samples.html">
+     4.3 Sampling distributions
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     4.4 Obtaining the sampling distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.f.%20Population.and.samples.html">
+     4.5 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.g.%20Population.and.samples.html">
+     Appendix: additional reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05.a.%20Likelihood.html">
+   5. Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.b.%20Likelihood.html">
+     5.1 Introduction to maximum likelihood estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.c.%20Likelihood.html">
+     5.2 The likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.d.%20Likelihood.html">
+     5.3 Log likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.f.%20Likelihood.html">
+     5.5 Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="06.a.%20Maximum%20Likelihood.html">
+   6. Maximum Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
+     6.1 Likelihood and log-likelihood with
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     independent observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.c.%20Maximum%20Likelihood.html">
+     6.2 Properties of maximum likelihood estimators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.d.%20Maximum%20Likelihood.html">
+     6.3 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.e.%20Maximum%20Likelihood.html">
+     Appendix: Additional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="07.a.%20Frequentist%20I.html">
+   7. Frequentist I: Confidence Intervals (CIs)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.b.%20Frequentist%20I.html">
+     7.1 Introduction to confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.c.%20Frequentist%20I.html">
+     7.2 95% confidence intervals for the mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.d.%20Frequentist%20I.html">
+     7.3 Interpretation of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.e.%20Frequentist%20I.html">
+     7.4 Approximate confidence intervals for parameters estimated using large samples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.f.%20Frequentist%20I.html">
+     7.5 Confidence Intervals using resampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.g.%20Frequentist%20I.html">
+     7.6 Summary: Use of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.h.%20Frequentist%20I.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="08.a.%20Frequentist%20II.html">
+   8. Frequentist II: Hypothesis tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.b.%20Frequentist%20II.html">
+     8.1 Proving and disproving hypotheses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.c.%20Frequentist%20II.html">
+     8.2 The p-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.d.%20Frequentist%20II.html">
+     8.3 Connection between p-values and confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.e.%20Frequentist%20II.html">
+     8.4 Other (mis-)interpretations of p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.f.%20Frequentist%20II.html">
+     8.5 Calculating p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.g.%20Frequentist%20II.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="09.a.%20Bayesian%20Statistics%20I.html">
+   9. Bayesian Statistics I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
+     Part 1: 9.1 Introduction to Bayesian Inference
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
+   10. Bayesian Statistics II: Normal data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical modelling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Types%20of%20Investigation.html">
+   11. Types of Investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.%20Linear%20Regression%20I.html">
+   12. Linear Regression I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.%20Linear%20Regression%20II.html">
+   13. Linear Regression II
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="14.%20Logistic%20Regression.html">
+   14 Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
+   16. Extensions: Confounding, standardization, and collapsibility
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/04.e. Population.and.samples.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F04.e. Population.and.samples.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/04.e. Population.and.samples.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation">
+   4.4.1 Example: the sampling distribution for the sample mean age - algebraic calculation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-central-limit-theorem">
+   4.4.2 The Central Limit Theorem
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resampling">
+   4.4.3 Resampling
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-the-sampling-distribution-for-the-sample-mean-age-resampling">
+     4.4.3.1 Example: the sampling distribution for the sample mean age - resampling
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-do-we-use-a-sampling-distribution-for">
+   4.4.5 What do we use a sampling distribution for?
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="obtaining-the-sampling-distribution">
+<h1>4.4 Obtaining the sampling distribution<a class="headerlink" href="#obtaining-the-sampling-distribution" title="Permalink to this headline">¶</a></h1>
+<p>The sampling distribution is hypothetical: in reality, we are not going to repeat our study many times to see how much our estimates differ from sample to sample.</p>
+<p>In many cases we can describe the sampling distribution of our estimator well enough to do statistical inference, i.e. well enough to make useful statements about the population parameter. There are three main approaches to obtaining the (approximate) sampling distribution of an estimator:</p>
+<ol class="simple">
+<li><p><strong>Algebraic calculation</strong>. Sometimes we can algebraically obtain the distribution of the estimator from our statistical model. An example is given below for the sampling distribution for the sample mean age in the emotional distress example.</p></li>
+<li><p><strong>The Central Limit Theorem</strong>. If we have an estimator which can be written as the sum of independent random variables, then for large samples, the estimator will have an approximately normal distribution. This is described in more detail shortly.</p></li>
+<li><p><strong>Resampling</strong>. In many situations, we can use a resampling principle to obtain an approximate sampling distribution.</p></li>
+</ol>
+<p>Returning to the question posed at the start of section 4.3, those questions can be answered using the sampling distribution:</p>
+<ul class="simple">
+<li><p>How precise do we believe our estimate is?</p></li>
+<li><p>Are we fairly certain that the true parameter is close to the estimate, or do we believe the estimate may well be far from the true value?</p></li>
+</ul>
+<p>The first question asks whether the sampling distribution is centred at the right value (i.e. the population parameter being estimated). If it is, we say the estimator is <strong>unbiased</strong>. In the epidemiology module and earlier in this module, you have already come across how <em>measurements</em> can be biased. Here, we are referring to whether the estimator is biased, which is sometimes referred to as <em>statistical bias</em>. Most estimators are unbiased, and this can be shown using statistical theory. For a small number of estimators it can be shown that they are in fact biased, and sometimes a correction can be applied to account for this. An example of illustrating whether estimators are biased are given in the Appendix.</p>
+<p>The second question will be examined when looking at the standard error and forms the basis for constructing 95% confidence intervals.</p>
+<div class="section" id="example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation">
+<h2>4.4.1 Example: the sampling distribution for the sample mean age - algebraic calculation<a class="headerlink" href="#example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation" title="Permalink to this headline">¶</a></h2>
+<p>We will continue with the emotional distress study, assuming that in truth, ages follow a normal distribution with population mean <span class="math notranslate nohighlight">\(\mu=30\)</span> and population standard deviation <span class="math notranslate nohighlight">\(\sigma=4.8\)</span>.</p>
+<p>Our model for the emotional distress study states that:</p>
+<div class="math notranslate nohighlight">
+\[ 
+X_i \overset{\small{iid}}{\sim} N(\mu, \sigma^2), \qquad i=1,2,...,10
+\]</div>
+<p>Under this statistical model, we want to know the distribution of our estimator for <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mu} = \frac{1}{10} \sum_{i=1}^n X_i
+\]</div>
+<p>In this case, it’s quite easy to derive the sampling distribution algebraically. We use the following fact:</p>
+<blockquote>
+<div><p>The mean of independent normally distributed variables also follows a normal distribution</p>
+</div></blockquote>
+<p>It is then  easy to calculate the expectation and variance of <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> using techniques covered in the maths refresher. So we know that the sampling distribution of <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mu} \sim N\left(\mu, \frac{\sigma^2}{10}\right) 
+\]</div>
+<p>This gives us a lot of useful information about how the sampling distribution in relation to the unknown parameter <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
+<ul class="simple">
+<li><p>It follows a normal distribution (has a symmetric bell-shape)</p></li>
+<li><p>It is centred around the true (unknown) population value</p></li>
+<li><p>The standard deviation of this normal distribution is <span class="math notranslate nohighlight">\(\sigma/\sqrt{10}\)</span>. Typically we do not know the value of <span class="math notranslate nohighlight">\(\sigma^2\)</span> (more on how we deal with this problem later). Here, we happen to know that <span class="math notranslate nohighlight">\(\sigma = 4.8\)</span>, so the standard deviation of the distribution is  <span class="math notranslate nohighlight">\(4.8/\sqrt{10} = 1.52\)</span>, otherwise known as the standard error.</p></li>
+</ul>
+</div>
+<div class="section" id="the-central-limit-theorem">
+<h2>4.4.2 The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this headline">¶</a></h2>
+<p>The Central Limit Theorem (CLT) is a key concept in statistics and in estimation. When we use the mean from a sample to estimate a parameter, we already acknowledge that there will be some error around this estimate, as described above. The CLT takes this further;</p>
+<div class="alert alert-block alert-info">
+<b> The Central Limit Theorem</b> 
+<p>If a random variable <span class="math notranslate nohighlight">\(X\)</span> has population mean <span class="math notranslate nohighlight">\(\mu\)</span> and population variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> the sample mean <span class="math notranslate nohighlight">\(\bar{X}\)</span>, based on <span class="math notranslate nohighlight">\(n\)</span> observations, is <em>approximately</em> normally distributed with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2/n\)</span>, for sufficiently large <span class="math notranslate nohighlight">\(n\)</span>.</p>
+</div>
+<p>This theorem is hugely powerful. Even for models that don’t assume data are normally distributed, for sufficiently large samples the mean will follow a normal distribution. We will see that this allows us to conduct large-sample inference fairly easily on any type of data. An example using a binary variable is given in the Appendix.</p>
+</div>
+<div class="section" id="resampling">
+<h2>4.4.3 Resampling<a class="headerlink" href="#resampling" title="Permalink to this headline">¶</a></h2>
+<p>For a population of interest, we want to estimate a parameter <span class="math notranslate nohighlight">\(\theta\)</span> using a sample <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(n\)</span> individuals (for our example <span class="math notranslate nohighlight">\(n=10\)</span>) from the population. We have an estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> from our sample <span class="math notranslate nohighlight">\(S\)</span>. We want to know about the sampling distribution of the estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>.</p>
+<p>We discussed above the idea that we could obtain the sampling distribution by repeatedly sampling from the population and calculating our estimate in each sample. Then a histogram of those many estimates would give us (approximately) the sampling distribution. In practice, it is logistically impossible to repeat the study a large number of times. However, we can mimic this process by using resampling.</p>
+<p>The basic idea is to pretend that the observed data are the population and repeatedly sample from the data to learn about the relationship between <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> and the estimates obtained from the re-sampled data, which we will call <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span>.</p>
+<p>Suppose we sample with replacement from the sample <span class="math notranslate nohighlight">\(S\)</span> to obtain “sub-samples” also of size <span class="math notranslate nohighlight">\(n\)</span>. These “sub-samples” are called <strong>bootstrap samples</strong>.</p>
+<p>For example, suppose we have a sample <span class="math notranslate nohighlight">\(S\)</span> of size 10 (<span class="math notranslate nohighlight">\(n=10\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+S = \{ x_1, x_2, x_3, x_4, x_5, x_6, x_7, x_8, x_9, x_{10} \}
+\]</div>
+<p>And suppose our estimate is the sample mean,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta} = \frac{(x_1 + x_2 +  x_3 +  x_4 +  x_5 + x_6 + x_7 + x_8 + x_9 + x_{10})}{10}
+\]</div>
+<p>Then a bootstrap sample might be:</p>
+<div class="math notranslate nohighlight">
+\[
+S^*_1 = \{x_{10}, x_3, x_2, x_8, x_6, x_2, x_4, x_1, x_8, x_1 \}
+\]</div>
+<p>Another bootstrap sample could be:</p>
+<div class="math notranslate nohighlight">
+\[
+S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
+\]</div>
+<p>In each bootstrap sample, we obtain a new estimate (the sample mean in the bootstrap sample):</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta}^*_1 = \frac{(x_{10} + x_3 + x_2 + x_8 + x_6 + x_2 + x_4 + x_1 + x_8 + x_1)}{10}
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\theta}^*_2 = \frac{(x_5 + x_9 + x_4 + x_7 + x_{10} + x_9 + x_3 + x_4 + x_6 + x_2)}{10}
+\]</div>
+<p>We do this a very large number of times to obtain lots of estimates from different bootstrap samples. Then we can draw a histogram of these many bootstrap estimates to see the shape and dispersion of the distribution.</p>
+<p>The <strong>bootstrap principle</strong> says that the distribution of <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> given <span class="math notranslate nohighlight">\(\theta\)</span> (i.e. the sampling distribution) is approximated by the distribution of <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span> given <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>.  For example, if we find that our values of <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span> are approximately normally distributed and centred around <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> then the bootstrap principle tells us that <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> follows a normal distribution centred around <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
+<div class="section" id="example-the-sampling-distribution-for-the-sample-mean-age-resampling">
+<h3>4.4.3.1 Example: the sampling distribution for the sample mean age - resampling<a class="headerlink" href="#example-the-sampling-distribution-for-the-sample-mean-age-resampling" title="Permalink to this headline">¶</a></h3>
+<p>Suppose our data - the 10 sampled ages - are the set: <span class="math notranslate nohighlight">\(\{ 28.1, 27.5, 25, 29.9, 29.7, 29.9, 39.9, 33.6, 21.3, 30.8 \}\)</span>. Our estimate of the population age is the sample mean age, which is: <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>.</p>
+<p>To obtain an approximation to the sampling distribution for the sample mean age, using a resampling approach, we first take a large number of bootstrap samples from the data. The code below does this.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Our sample of data (ages for 10 sampled researchers)</span>
+<span class="n">ages</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">28.1</span><span class="p">,</span><span class="m">27.5</span><span class="p">,</span><span class="m">25</span><span class="p">,</span><span class="m">29.9</span><span class="p">,</span><span class="m">29.7</span><span class="p">,</span><span class="m">29.9</span><span class="p">,</span><span class="m">39.9</span><span class="p">,</span><span class="m">33.6</span><span class="p">,</span><span class="m">21.3</span><span class="p">,</span><span class="m">30.8</span><span class="p">)</span>
+
+<span class="c1"># Randomly select 10,000 bootstrap samples (each of size 10)</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">532</span><span class="p">)</span> 
+<span class="n">bootstrap_samples</span> <span class="o">&lt;-</span> <span class="nf">lapply</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">10000</span><span class="p">,</span> <span class="nf">function</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="nf">sample</span><span class="p">(</span><span class="n">ages</span><span class="p">,</span> <span class="n">replace</span> <span class="o">=</span> <span class="bp">T</span><span class="p">))</span>
+
+<span class="c1"># List some of the bootstrap samples</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;First bootstrap sample:&quot;</span><span class="p">)</span>
+<span class="n">bootstrap_samples</span><span class="p">[</span><span class="m">1</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Third bootstrap sample:&quot;</span><span class="p">)</span>
+<span class="n">bootstrap_samples</span><span class="p">[</span><span class="m">3</span><span class="p">]</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;500th bootstrap sample:&quot;</span><span class="p">)</span>
+<span class="n">bootstrap_samples</span><span class="p">[</span><span class="m">500</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;First bootstrap sample:&quot;
+</pre></div>
+</div>
+<div class="output text_html"><ol>
+	<li><ol class=list-inline>
+	<li>27.5</li>
+	<li>29.9</li>
+	<li>28.1</li>
+	<li>27.5</li>
+	<li>29.9</li>
+	<li>21.3</li>
+	<li>27.5</li>
+	<li>28.1</li>
+	<li>29.9</li>
+	<li>30.8</li>
+</ol>
+</li>
+</ol>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Third bootstrap sample:&quot;
+</pre></div>
+</div>
+<div class="output text_html"><ol>
+	<li><ol class=list-inline>
+	<li>30.8</li>
+	<li>28.1</li>
+	<li>21.3</li>
+	<li>29.9</li>
+	<li>39.9</li>
+	<li>21.3</li>
+	<li>27.5</li>
+	<li>29.9</li>
+	<li>29.9</li>
+	<li>29.7</li>
+</ol>
+</li>
+</ol>
+</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;500th bootstrap sample:&quot;
+</pre></div>
+</div>
+<div class="output text_html"><ol>
+	<li><ol class=list-inline>
+	<li>21.3</li>
+	<li>29.9</li>
+	<li>39.9</li>
+	<li>29.9</li>
+	<li>29.9</li>
+	<li>27.5</li>
+	<li>29.9</li>
+	<li>29.9</li>
+	<li>29.9</li>
+	<li>21.3</li>
+</ol>
+</li>
+</ol>
+</div></div>
+</div>
+<p>The next step is to calculate the estimate (the sample mean, in our case) in each bootstrap sample. These estimates are called <span class="math notranslate nohighlight">\(\hat{\mu}^*_1, \hat{\mu}^*_2, .., \hat{\mu}^*_{10,000}\)</span>. Then we can plot the histogram of all the estimates across the bootstrap samples.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Calculate the sample mean in each of the bootstrap samples</span>
+<span class="n">r.mean</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">bootstrap_samples</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+
+<span class="c1"># Draw a histogram with a red vertical line indicating the original sample mean age</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4.5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/04.e. Population.and.samples_7_0.png" src="_images/04.e. Population.and.samples_7_0.png" />
+</div>
+</div>
+<p>We see a number of features from the graph above.</p>
+<ul class="simple">
+<li><p>The histogram follows an approximately normal distribution (has a symmetric bell-shape)</p></li>
+<li><p>It is centred around the sample mean age (from the original sample, <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>)</p></li>
+<li><p>The code below tells us that the standard deviation of this distribution is 1.51.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="n">r.mean</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">1.50868637530863</div></div>
+</div>
+<p>So we have seen that the bootstrap approximation of the distribution of <span class="math notranslate nohighlight">\(\hat{\mu}^*\)</span> given <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> is a normal distribution centred around <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> with standard deviation of 1.51. The bootstrap principle tells us that the distribution of <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> given <span class="math notranslate nohighlight">\(\mu\)</span> is approximately the same. In other words, approximately:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mu} \sim N(\mu, 1.51^2)
+\]</div>
+<p>Remember, that we obtained the true distribution algebraically above and found that</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\mu} \sim N(\mu, 1.52^2)
+\]</div>
+<p>So the resampling (bootstrap) approach has given us a very good approximation to the true sampling distribution. The code below redraws the histogram above, with the approximate (bootstrap) sampling distribution and the algebraically-calculated one.</p>
+<p>We see that the bootstrap sampling distribution (shown in red) is simply a shift of the normal distribution which best follows the histogram (shown in orange), and that the bootstrap and true (algebraic, shown in blue) sampling distributions are very similar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram of estimates (sample means) in bootstrap samples</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4.5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
+
+<span class="c1"># Add the normal distribution which most closely follows the histogram</span>
+<span class="nf">lines</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">),</span> <span class="nf">dnorm</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">),</span> <span class="nf">mean</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span> <span class="m">1.52</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;orange&quot;</span><span class="p">,</span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+
+<span class="c1"># Add the bootstrap approximation to the sampling distribution: normal distribution with mean mu=30 SD=1.51</span>
+<span class="nf">lines</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">),</span> <span class="nf">dnorm</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">),</span> <span class="m">30</span><span class="p">,</span> <span class="m">1.51</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">,</span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+
+<span class="c1"># Add the algebraic sampling distribution: normal distribution with mean mu=30 SD=1.52</span>
+<span class="nf">lines</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">),</span> <span class="nf">dnorm</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">25</span><span class="p">,</span> <span class="m">35</span><span class="p">,</span> <span class="n">by</span><span class="o">=</span><span class="n">.</span><span class="m">5</span><span class="p">),</span> <span class="m">30</span><span class="p">,</span> <span class="m">1.52</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+
+<span class="c1"># Add a vertical line at original sample mean</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">,</span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/04.e. Population.and.samples_11_0.png" src="_images/04.e. Population.and.samples_11_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="what-do-we-use-a-sampling-distribution-for">
+<h2>4.4.5 What do we use a sampling distribution for?<a class="headerlink" href="#what-do-we-use-a-sampling-distribution-for" title="Permalink to this headline">¶</a></h2>
+<p>In practice, we have a  sample of data and an estimate from that sample of the population parameter of interest. When we present an estimate of a population quantity, we need to be able to say something about how precise it is. Is it likely to be close to the true value? Can we provide a range of values within which we believe the true value lies?</p>
+<p>We can only answer these questions, within the framework of frequentist statistical inference, by thinking about what estimates we might have got had we chosen a different sample. This leads us to the sampling distribution - the distribution of the estimator across samples.</p>
+<p>In subsequent sessions we will see how the sampling distribution allows us to</p>
+<ul class="simple">
+<li><p>construct confidence intervals for population parameters (intervals within which we believe the true value is likely to lie)</p></li>
+<li><p>conduct hypothesis tests for population parameters</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="04.d.%20Population.and.samples.html" title="previous page">4.3 Sampling distributions</a>
+    <a class='right-next' id="next-link" href="04.f.%20Population.and.samples.html" title="next page">4.5 Summary</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

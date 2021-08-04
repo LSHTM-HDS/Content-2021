@@ -1,0 +1,1812 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14 Logistic Regression &#8212; Statistics for Health Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="15. Generalised Linear Models: Poisson Regression for Count Variables" href="15.%20Poisson%20Regression%20Model.html" />
+    <link rel="prev" title="13. Linear Regression II" href="13.%20Linear%20Regression%20II.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Welcome.html">
+   Welcome to Statistics for Health Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.%20Introduction.html">
+   1 Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basic probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02.a.%20Probability.Discrete.html">
+   2. Probability and Discrete Probability Distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.b.%20Probability.Discrete.html">
+     2.1 Bayes’ Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.c.%20Probability.Discrete.html">
+     2.2 The binomial distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.d.%20Probability.Discrete.html">
+     2.3 The Poisson distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
+   3. Continuous probability distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.b.%20Continuous%20Probability%20Distributions.html">
+     3.1 Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.c.%20Continuous%20Probability%20Distributions.html">
+     3.2 Useful continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.d.%20Continuous%20Probability%20Distributions.html">
+     3.3 Uses of the standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
+     3.5 Are the data normally distributed?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.f.%20Continuous%20Probability%20Distributions.html">
+     3.5 Joint distributions and correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical Inference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04.a.%20Population.and.samples.html">
+   4. Populations and Samples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.b.%20Population.and.samples.html">
+     4.1 Sampling from a population
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.c.%20Population.and.samples.html">
+     4.2 Statistical Models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.d.%20Population.and.samples.html">
+     4.3 Sampling distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.e.%20Population.and.samples.html">
+     4.4 Obtaining the sampling distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.f.%20Population.and.samples.html">
+     4.5 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.g.%20Population.and.samples.html">
+     Appendix: additional reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05.a.%20Likelihood.html">
+   5. Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.b.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.c.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.d.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.f.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.g.%20Likelihood.html">
+     5. Likelihood
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="06.a.%20Maximum%20Likelihood.html">
+   6. Maximum Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
+     6.1 Likelihood and log-likelihood with
+     <span class="math notranslate nohighlight">
+      \(n\)
+     </span>
+     independent observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.c.%20Maximum%20Likelihood.html">
+     6.2 Properties of maximum likelihood estimators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.d.%20Maximum%20Likelihood.html">
+     6.3 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.e.%20Maximum%20Likelihood.html">
+     Appendix: Additional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="07.a.%20Frequentist%20I.html">
+   7. Frequentist I: Confidence Intervals (CIs)
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.b.%20Frequentist%20I.html">
+     7.1 Introduction to confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.c.%20Frequentist%20I.html">
+     7.2 95% confidence intervals for the mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.d.%20Frequentist%20I.html">
+     7.3 Interpretation of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.e.%20Frequentist%20I.html">
+     7.4 Approximate confidence intervals for parameters estimated using large samples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.f.%20Frequentist%20I.html">
+     7.5 Confidence Intervals using resampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.g.%20Frequentist%20I.html">
+     7.6 Summary: Use of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.h.%20Frequentist%20I.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="08.a.%20Frequentist%20II.html">
+   8. Frequentist II: Hypothesis tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.b.%20Frequentist%20II.html">
+     8.1 Proving and disproving hypotheses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.c.%20Frequentist%20II.html">
+     8.2 The p-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.d.%20Frequentist%20II.html">
+     8.3 Connection between p-values and confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.e.%20Frequentist%20II.html">
+     8.4 Other (mis-)interpretations of p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.f.%20Frequentist%20II.html">
+     8.5 Calculating p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.g.%20Frequentist%20II.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="09.%20Bayesian%20Statistics%20I.html">
+   9. Bayesian Statistics I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="10.%20Bayesian%20Statistics%20II.html">
+   10. Bayesian Statistics II: Normal data
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical modelling
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Types%20of%20Investigation.html">
+   11. Types of Investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="12.%20Linear%20Regression%20I.html">
+   12. Linear Regression I
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="13.%20Linear%20Regression%20II.html">
+   13. Linear Regression II
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   14 Logistic Regression
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="15.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="16.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
+   16. Extensions: Confounding, standardization, and collapsibility
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/14. Logistic Regression.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F14. Logistic Regression.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/14. Logistic Regression.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#introduction-linear-vs-logistic-regression">
+   14.1 Introduction: linear vs. logistic regression
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-dementia-dataset">
+   14.2 The dementia dataset
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-logistic-regression-model">
+   14.3 The logistic regression model
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-logit-function">
+     14.3.1 The logit function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-logistic-model">
+     14.3.2 The logistic model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#inference-of-the-logistic-regression-model">
+     14.3.3 Inference of the logistic regression model
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpretation-of-the-parameters">
+   14.4 Interpretation of the parameters
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-simplified-model">
+     14.4.1 A simplified model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dementia-a-first-example">
+     14.4.2 Dementia: a first example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpretation-when-x-i-is-a-continuous-variable">
+     14.4.3 Interpretation when
+     <span class="math notranslate nohighlight">
+      \(X_i\)
+     </span>
+     is a continuous variable
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#a-more-general-case">
+     15.4.4 A more general case
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dementia-a-second-example">
+     14.4.5 Dementia: a second example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interactions">
+     14.4.6 Interactions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#dementia-a-third-example">
+     14.4.7 Dementia: a third example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#diagnosis-for-the-logistic-regression">
+   14.5 Diagnosis for the logistic regression
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#goodness-of-fit">
+     14.5.1 Goodness-of-fit
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#mcfadden-pseudo-r-2">
+       14.5.1.1 McFadden pseudo-
+       <span class="math notranslate nohighlight">
+        \(R^2\)
+       </span>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-hosmer-lemeshow-test">
+       14.5.1.2 The Hosmer-Lemeshow test
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#predictive-performance">
+     14.5.2 Predictive performance
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#predictions">
+       14.5.2.1 Predictions
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#calibration">
+       14.5.2.2 Calibration
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#sensitivity-and-specificity">
+       14.5.2.3 Sensitivity and Specificity
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-receiving-operator-characteristic-roc-curve">
+       14.5.2.4 The
+       <em>
+        receiving operator characteristic
+       </em>
+       (ROC) curve
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#external-validation">
+       14.5.2.5 External validation
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adequacy-of-the-logistic-regression-model">
+     14.5.3 Adequacy of the logistic regression model
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#common-pitfalls">
+     14.5.4 Common pitfalls
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#perfect-separation">
+       14.5.4.1 Perfect separation
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#low-events-per-variable">
+       14.5.4.2 Low events per variable
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#influential-values">
+       14.5.4.3 Influential values
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multicolinearity">
+       14.5.4.4 Multicolinearity
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#additional-notes">
+   14.6 Additional notes
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-regression-for-case-control-studies">
+     14.6.1 Logistic regression for case-control studies
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#extension-to-logistic-regression">
+     14.6.2 Extension to logistic regression
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#conditional-logistic-regression">
+       14.6.2.1 Conditional logistic regression
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multinomial-logistic-regression">
+       14.6.2.2 Multinomial logistic regression
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#ordinal-logistic-regression">
+       14.6.2.3 Ordinal logistic regression
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#neural-networks">
+     14.6.3 Neural networks
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="logistic-regression">
+<h1>14 Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h1>
+<p>In this session, we continue exploring regression modelling. We now extend the ideas encountered in the context of linear regression models and apply them to a setting where the outcome of interest is a binary variable.</p>
+<div class="alert alert-block alert-warning">
+<b> Intended learning outcomes</b> 
+<p>By the end of this session, you will be able to:</p>
+<ul class="simple">
+<li><p>explain the rationale and the structure behind the logistic regression</p></li>
+<li><p>apply a logistic regression model to real data</p></li>
+<li><p>interpret the results of a logistic regression</p></li>
+<li><p>interpret output from key diagnosis tools used for logistic regression</p></li>
+</ul>
+</div><div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="introduction-linear-vs-logistic-regression">
+<h2>14.1 Introduction: linear vs. logistic regression<a class="headerlink" href="#introduction-linear-vs-logistic-regression" title="Permalink to this headline">¶</a></h2>
+<p>We have already learned how to estimate linear regression models and we also know in which conditions we can use such a model. In particular, let us assume that the outcome we are interested in, <span class="math notranslate nohighlight">\(Y\)</span>, is a binary variable. It could be, for example, a survival indicator, <span class="math notranslate nohighlight">\(1\)</span> being indicator of death and <span class="math notranslate nohighlight">\(0\)</span> of survival. It could be the indicator of a specific disease, <span class="math notranslate nohighlight">\(1\)</span> being indicator of the presence of the disease and <span class="math notranslate nohighlight">\(0\)</span> of its absence. What if we were using the classic linear model we have just studied to model such an outcome?</p>
+<p>We would model <span class="math notranslate nohighlight">\(\pi_i=E(Y_i|X_i)\)</span> by the linear predictor <span class="math notranslate nohighlight">\(\eta_i = \beta_0 + \sum_{k=1}^p \beta_k X_{i,k}\)</span> where <span class="math notranslate nohighlight">\(X_i=(X_{i,k})\)</span> are some dependent variables including a residual error <span class="math notranslate nohighlight">\(\varepsilon_i\)</span>. In the case of <span class="math notranslate nohighlight">\(Y_i\)</span> being a binary variable <span class="math notranslate nohighlight">\(Y_i|X_i\)</span> follows a Bernouilli distribution and <span class="math notranslate nohighlight">\(\pi_i = E(Y_i|X_i) = P(Y_i=1|X_i)\)</span> is a probability. However, <span class="math notranslate nohighlight">\(\eta_i\)</span>, the linear predictor, can take values in the whole real space <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and therefore can not be used to model the probability <span class="math notranslate nohighlight">\(\pi_i\)</span> whose range is constrained to <span class="math notranslate nohighlight">\((0;1)\)</span>. Hence, it makes the classic linear model not suitable for binary outcomes. From now on, we note <span class="math notranslate nohighlight">\(\eta_i = \sum_{k=0}^p \beta_k X_{i,k}\)</span> where <span class="math notranslate nohighlight">\(X_{i,0}=1\)</span>.</p>
+<p>The solution to this issue is to link the linear predictor <span class="math notranslate nohighlight">\(\eta_i\)</span> and the probability <span class="math notranslate nohighlight">\(\pi_i\)</span> using a link function. The <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> function (see Section III) is the most widely used and is at the basis of the <em>logistic regression model</em>. In the following section, we describe the dementia dataset which is used as an illustration all along this lecture. In the third section, we describe the logistic model and how it can be estimated. In the fourth section, diagnosic tools for logistic regression are presented and in the fifth section, some additional notes are given.</p>
+</div>
+<div class="section" id="the-dementia-dataset">
+<h2>14.2 The dementia dataset<a class="headerlink" href="#the-dementia-dataset" title="Permalink to this headline">¶</a></h2>
+<p>The dementia dataset we will work with all along this logistic regression module is a simulated dataset that gathers medical history data of 200.000 subjects and their dementia status. Below are the first lines of the dataset.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># we load the dataset and display its first lines</span>
+<span class="n">dementia</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;dementia.csv&quot;</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">dementia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in file(file, &quot;rt&quot;):
+&quot;cannot open file &#39;dementia.csv&#39;: No such file or directory&quot;
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">):</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">connection</span>
+<span class="ne">Traceback</span>:
+
+<span class="mi">1</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;dementia.csv&quot;</span><span class="p">)</span>
+<span class="mi">2</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">header</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span><span class="p">,</span> <span class="n">quote</span> <span class="o">=</span> <span class="n">quote</span><span class="p">,</span> 
+ <span class="o">.</span>     <span class="n">dec</span> <span class="o">=</span> <span class="n">dec</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">fill</span><span class="p">,</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
+<span class="mi">3</span><span class="o">.</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>It contains several variables</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">dementia</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>'id'</li>
+	<li>'prac'</li>
+	<li>'pr_lcd'</li>
+	<li>'sex'</li>
+	<li>'age'</li>
+	<li>'bmi'</li>
+	<li>'bmi_category'</li>
+	<li>'consultations'</li>
+	<li>'agegp'</li>
+	<li>'alcohol'</li>
+	<li>'smoke'</li>
+	<li>'smoke_curr'</li>
+	<li>'mi'</li>
+	<li>'stroke'</li>
+	<li>'diabetes'</li>
+	<li>'statin'</li>
+	<li>'antihyper'</li>
+	<li>'index_date'</li>
+	<li>'year'</li>
+	<li>'timetodeath'</li>
+	<li>'mortality'</li>
+	<li>'date_death'</li>
+	<li>'timetodementia'</li>
+	<li>'dementia'</li>
+	<li>'date_dementia'</li>
+	<li>'end_date'</li>
+	<li>'dob'</li>
+	<li>'rsample'</li>
+	<li>'vitd'</li>
+	<li>'lp'</li>
+</ol>
+</div></div>
+</div>
+<p>and here are the one that we will use during this course</p>
+<ul class="simple">
+<li><p>id: a variable that identifies a patient</p></li>
+<li><p>sex: a factor variable that gives the sex of the patient (<span class="math notranslate nohighlight">\(0\)</span> for men, <span class="math notranslate nohighlight">\(1\)</span> for women)</p></li>
+<li><p>age: a numeric variable that gives the age in years of the patient at his inclusion in the study</p></li>
+<li><p>bmi: a numeric variable that gives the bmi of the patient at his inclusion in the study</p></li>
+<li><p>mortality: an indicator variable that equals <span class="math notranslate nohighlight">\(1\)</span> if the patient has died since his inclusion, <span class="math notranslate nohighlight">\(0\)</span> if not</p></li>
+<li><p>dementia: an indicator variable that equals <span class="math notranslate nohighlight">\(1\)</span> if the patient has become demented, <span class="math notranslate nohighlight">\(0\)</span> if not</p></li>
+</ul>
+<p>Here, in this lecture, the outcome of interest will be dementia.</p>
+</div>
+<div class="section" id="the-logistic-regression-model">
+<h2>14.3 The logistic regression model<a class="headerlink" href="#the-logistic-regression-model" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-logit-function">
+<h3>14.3.1 The logit function<a class="headerlink" href="#the-logit-function" title="Permalink to this headline">¶</a></h3>
+<p>Before introducing the logistic regression model, we introduce the <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> function and the concept of odds. As we said, we cannot model directly <span class="math notranslate nohighlight">\(\pi_i=E(Y_i|X_i)=P(Y_i=1|X_i)\)</span> by the linear predictor <span class="math notranslate nohighlight">\(\eta_i = \sum_{k=0}^p \beta_k X_{i,k}\)</span>. The <em>logit</em> function is defined as follows for all <span class="math notranslate nohighlight">\(\pi\in(0,1)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi) = \log \left(\frac{\pi}{1-\pi}\right).\]</div>
+<p>The main advantage of the <em>logit</em> function is that it maps <span class="math notranslate nohighlight">\((0,1)\)</span> into the set of real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> allowing to link <span class="math notranslate nohighlight">\(\pi_i\)</span> and the linear predictor <span class="math notranslate nohighlight">\(\eta_i\)</span>.</p>
+<p>The quantity <span class="math notranslate nohighlight">\(\frac{\pi}{1-\pi}=\frac{P(Y=1)}{P(Y=0)}\)</span> where <span class="math notranslate nohighlight">\(Y\)</span> is a binary variable which denotes the presence of an event (<span class="math notranslate nohighlight">\(Y=1\)</span>) or its absence (<span class="math notranslate nohighlight">\(Y=0\)</span>) is called the <em>odds</em> of this event. When the odds is equal to <span class="math notranslate nohighlight">\(1\)</span>, it means that <span class="math notranslate nohighlight">\(Y\)</span> is equally likely to be to <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span>. When the odds is greater than <span class="math notranslate nohighlight">\(1\)</span>, it means that <span class="math notranslate nohighlight">\(Y\)</span> is more likely to be equal to <span class="math notranslate nohighlight">\(1\)</span> than it is to be equal to <span class="math notranslate nohighlight">\(0\)</span>. When the odds is less than <span class="math notranslate nohighlight">\(1\)</span>, it means that <span class="math notranslate nohighlight">\(Y\)</span> is more likely to be equal to <span class="math notranslate nohighlight">\(0\)</span> than it is to be equal to <span class="math notranslate nohighlight">\(1\)</span>. For example, if a patient has an odds of developing dementia of <span class="math notranslate nohighlight">\(9\)</span> it is very likely that this patient will have a dementia status of <span class="math notranslate nohighlight">\(1\)</span>.</p>
+</div>
+<div class="section" id="the-logistic-model">
+<h3>14.3.2 The logistic model<a class="headerlink" href="#the-logistic-model" title="Permalink to this headline">¶</a></h3>
+<p>Thanks to the <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> <em>link function</em>, we can map the probability <span class="math notranslate nohighlight">\(\pi_i=P(Y_i=1|X_i)\)</span> to the linear predictor <span class="math notranslate nohighlight">\(\eta_i=\sum_{k=0}^p \beta_k X_{i,k}\)</span> and that actually defines the logistic regression model</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(P(Y_i=1|X_i))=\sum_{k=0}^p \beta_k X_{i,k}\]</div>
+<p>which can be equivalently written as</p>
+<div class="math notranslate nohighlight">
+\[P(Y_i=1|X_i)=\frac{\exp(\sum_{k=0}^p \beta_k X_{i,k})}{1+\exp(\sum_{k=0}^p \beta_k X_{i,k})}\]</div>
+<p>by inverting the <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> function. In the dementia example, we could model the probability of dementia according to the sex of the patient with the model</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1 sex_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pi_i\)</span> is the parameter of the binomial variable <span class="math notranslate nohighlight">\(Y_i|sex_i\)</span> where <span class="math notranslate nohighlight">\(Y_i\)</span> is the dementia status of the patient <span class="math notranslate nohighlight">\(i\)</span>. The odds of the dementia of patient <span class="math notranslate nohighlight">\(i\)</span> is <span class="math notranslate nohighlight">\(\frac{\pi_i}{1-\pi_i}\)</span>.</p>
+<blockquote>
+<div><p><em>Exercise:</em> prove the equivalence between both logistic regression model expressions:
+$<span class="math notranslate nohighlight">\( \mathrm{logit}(P(Y_i=1|X_i))=\sum_{k=0}^p \beta_k X_{i,k} \quad\text{and}\quad P(Y_i=1|X_i)=\frac{\exp(\sum_{k=0}^p \beta_k X_{i,k})}{1+\exp(\sum_{k=0}^p \beta_k X_{i,k})}\)</span>$</p>
+</div></blockquote>
+</div>
+<div class="section" id="inference-of-the-logistic-regression-model">
+<h3>14.3.3 Inference of the logistic regression model<a class="headerlink" href="#inference-of-the-logistic-regression-model" title="Permalink to this headline">¶</a></h3>
+<p>Let us assume that we have <span class="math notranslate nohighlight">\(n\)</span> observations <span class="math notranslate nohighlight">\((y_i)\)</span> from the random variable <span class="math notranslate nohighlight">\(Y_i\)</span> with <span class="math notranslate nohighlight">\(i=1,\dots,n\)</span>. We want to estimate the <span class="math notranslate nohighlight">\(p+1\)</span> parameters <span class="math notranslate nohighlight">\(\beta_k\)</span> of the logistic regression model that includes the covariate <span class="math notranslate nohighlight">\((X_i)\)</span> whose observed values are denoted <span class="math notranslate nohighlight">\((x_i)\)</span>. The estimation is done by maximizing the log-likelihood. We first need to derive the likelihood of the model.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}\begin{aligned}
+L(\beta) &amp;= \prod_{i=1}^n Pr(Y_i = y_i|X_i=x_i) \\
+&amp;= \prod_{i=1}^n Pr(Y_i = 1 | X_i = x_i)^{y_i}Pr(Y_i = 0 | X_i = x_i)^{1-y_i}\\
+&amp;= \prod_{i=1}^n \left( \frac{\exp(\sum_{k=0}^p \beta_k x_{i,k})}{1+\exp(\sum_{k=0}^p \beta_k x_{i,k})} \right)^{y_i} \left( \frac{1}{1+\exp(\sum_{k=0}^p \beta_k x_{i,k})} \right)^{1-y_i}
+\end{aligned}\end{split}\]</div>
+<p>Taking the log of the above likelihood, we derive the following log-likelihood</p>
+<div class="math notranslate nohighlight">
+\[\begin{aligned}
+\ell(\beta) &amp;= \sum_{i=1}^n y_i \sum_{k=0}^p \beta_k x_{i,k} - \log(1+\exp(\beta^{\top}x_i))
+\end{aligned}\]</div>
+<p>By maximizing this log-likelihood over <span class="math notranslate nohighlight">\(\beta\)</span>, we can estimate the parameters. Note that, contrarily to the simple linear model, the maximisation over <span class="math notranslate nohighlight">\(\beta\)</span> is done numerically as there exist no closed-form solution to this optimisation problem. Once the optimisation algorithm has converged, we obtain a vector of estimates <span class="math notranslate nohighlight">\(\hat{\beta}=(\hat{\beta}_k)_{k=0,\dots,p}\)</span> and a vector of estimated standard errors <span class="math notranslate nohighlight">\(\hat{se}(\hat{\beta})\)</span>. We know from maximum likelihood theory that, from these, we can compute a <span class="math notranslate nohighlight">\(95\%\)</span> confidence interval for the parameters: $<span class="math notranslate nohighlight">\(\left[\hat{\beta}_k - 1.96\hat{se}(\hat{\beta}_k) ;~ \hat{\beta}_k + 1.96\hat{se}(\hat{\beta}_k)\right].\)</span>$</p>
+<p>Because the model is estimated using maximum likelihood theory, we can use the three likelihood based tests on the estimated parameters: the Wald test, the score test and the likelihood ratio test. From the likelihood theory, we know that these tests are asymptotically equivalent. The likelihood ratio test is often used to compare nested models and for null hypothesis that entails testing the nullity of several parameters simultaneously. The Wald test is often used to test separately the nullity of each parameter and both its statistics and p-value are often given as an output of the estimation of a logistic model.</p>
+</div>
+</div>
+<div class="section" id="interpretation-of-the-parameters">
+<h2>14.4 Interpretation of the parameters<a class="headerlink" href="#interpretation-of-the-parameters" title="Permalink to this headline">¶</a></h2>
+<p>The interpretation of the parameters <span class="math notranslate nohighlight">\((\beta_k)_{k=0,\dots,p}\)</span> is different to the one we have studied in the linear regression module. This is because in the linear regression model, we directly map <span class="math notranslate nohighlight">\(E(Y_i|X_i)\)</span> to <span class="math notranslate nohighlight">\(\eta_i\)</span>, or equivalently said, the link function in this case is the identity function. In the logistic regression case, because of the logit link function, the interpretation is less straightforward.</p>
+<div class="section" id="a-simplified-model">
+<h3>14.4.1 A simplified model<a class="headerlink" href="#a-simplified-model" title="Permalink to this headline">¶</a></h3>
+<p>To better understand these differences, let us assume a very basic logistic model for a binary variable <span class="math notranslate nohighlight">\(Y_i\)</span> whose Bernouilli parameter <span class="math notranslate nohighlight">\(\pi_i\)</span> is modeled according to a single binary variable <span class="math notranslate nohighlight">\(X_i\)</span>. We call the subjects for which <span class="math notranslate nohighlight">\(X_i=1\)</span> the exposed and those for which <span class="math notranslate nohighlight">\(X_i=0\)</span> the unexposed. The model is written</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1X_i\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[\pi_i = \frac{\exp(\beta_0 + \beta_1X_i)}{1+\exp(\beta_0 + \beta_1X_i)}.\]</div>
+<p>In this simplified case, <span class="math notranslate nohighlight">\(\pi_i\)</span> can only take two values, depending on wheter the subject <span class="math notranslate nohighlight">\(i\)</span> is unexposed or exposed. Let us note respectively these values <span class="math notranslate nohighlight">\(\pi_i^0\)</span> and <span class="math notranslate nohighlight">\(\pi_i^1\)</span>. We have</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i^0) = \beta_0  \quad\text{ and }\quad \mathrm{logit}(\pi_i^1) = \beta_0+\beta_1\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[\pi_i^0 = \frac{\exp(\beta_0)}{1+\exp(\beta_0)} \quad\text{ and }\quad \pi_i^1 = \frac{\exp(\beta_0 + \beta_1)}{1+\exp(\beta_0 + \beta_1)}.\]</div>
+<p>From these first two equalities, we have that</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i^1) - \mathrm{logit}(\pi_i^0) = \beta_1\]</div>
+<p>and <span class="math notranslate nohighlight">\(\beta_1\)</span> can be interpreted as a difference of the logarithm of the odds between the exposed and the unexposed. Equivalently, from the second two equalities, if we compute the odds-ratio of the oucome in the exposed versus the unexposed, we find that</p>
+<div class="math notranslate nohighlight">
+\[\frac{\pi_i^1}{1-\pi_i^1}\bigg/\frac{\pi_i^0}{1-\pi_i^0} = \exp(\beta_1)\]</div>
+<p>This gives an equivalent and more convenient way of interpreting <span class="math notranslate nohighlight">\(\beta_1\)</span> as the odds ratio that compares the odds of the outcome in the exposed versus unexposed. In this simplified example, the odds of the event among the exposed is multiplied by <span class="math notranslate nohighlight">\(\exp(\beta_1)\)</span> compared to the odds among the unexposed. In particular, if the odds-ratio equals <span class="math notranslate nohighlight">\(1\)</span>, that means that the exposure do not impact the odds of having <span class="math notranslate nohighlight">\(Y=1\)</span>. If the odds-ratio is superior to <span class="math notranslate nohighlight">\(1\)</span>, that means that the odds are bigger for the exposed and therefore the probability of having <span class="math notranslate nohighlight">\(Y=1\)</span> is bigger among the exposed. On the contrary, if the odds-ratio is inferior to <span class="math notranslate nohighlight">\(1\)</span>, the odds are lower for the exposed and the probability of habing <span class="math notranslate nohighlight">\(Y=1\)</span> is lower among the exposed.</p>
+<p>Because of this, rather than computing the <span class="math notranslate nohighlight">\(95\%\)</span> confidence interval directly from the estimated <span class="math notranslate nohighlight">\(\hat{\beta}=(\hat{\beta}_k)_{k=0,\dots,p}\)</span>, it is more informative to give the confidence interval for its exponential that, as we have just seen, has a straightforward interpretation as an odds-ratio. For <span class="math notranslate nohighlight">\(k=0,\dots,p\)</span>, we can directly compute the odds-ratio <span class="math notranslate nohighlight">\(95\%\)</span> confidence interval for the odds-ratios from the <span class="math notranslate nohighlight">\(95\%\)</span> confidence interval for <span class="math notranslate nohighlight">\(\beta\)</span> by simply taking the exponential of its bounds:</p>
+<div class="math notranslate nohighlight">
+\[\left[\exp(\hat{\beta}_k - 1.96\hat{se}(\hat{\beta}_k)) ;~ \exp(\hat{\beta}_k + 1.96\hat{se}(\hat{\beta}_k))\right].\]</div>
+<p>From the above equalities, we can also observe that it is possible to compute directly from <span class="math notranslate nohighlight">\(\beta_0\)</span> the proportion of subject which have the event among the unexposed <span class="math notranslate nohighlight">\(\pi_i^0\)</span>. However, it is important to remain cautious when making this interpretation. For example, in a case-control study where the cases are, by construction, over-represented, this proportion can not be linked to the prevalence of the event among the unexposed in the general population.</p>
+<blockquote>
+<div><p><em>Exercise:</em> compute the odds-ratio that compares the odds of the outcome in the exposed versus unexposed from the simplified model and prove that it equals <span class="math notranslate nohighlight">\(\exp(\beta_1)\)</span></p>
+</div></blockquote>
+</div>
+<div class="section" id="dementia-a-first-example">
+<h3>14.4.2 Dementia: a first example<a class="headerlink" href="#dementia-a-first-example" title="Permalink to this headline">¶</a></h3>
+<p>Let us describe the interpretation of the logistic model parameters through an example from the dementia dataset. In this example, we are interested to model the dementia status <span class="math notranslate nohighlight">\(Y_i\)</span> of the subjects according to their sex. The logistic regression model that allows us to do so is</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1sex_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(\pi_i=E(Y_i|sex_i)\)</span>. In R, the function used to estimate such a model is <code class="docutils literal notranslate"><span class="pre">glm</span></code> that stands for <em>generalized linear model</em>. The logistic regression model is a specific class of generalized linear model whose particularity is to have the logit function as a link function. To use the <code class="docutils literal notranslate"><span class="pre">glm</span></code> function, we need to give some important arguments:</p>
+<ul class="simple">
+<li><p>An <code class="docutils literal notranslate"><span class="pre">R</span></code> object called a formula that states the model we want to estimate. The general form of this formula is <em>y ~ x1 + x2 + … + xp</em> for a model with outcome <span class="math notranslate nohighlight">\(y\)</span> and <span class="math notranslate nohighlight">\(p\)</span> explanatory variables <span class="math notranslate nohighlight">\(x_k\)</span>. Note that we could have included the intercept in the model by simply adding <span class="math notranslate nohighlight">\(1\)</span> as explanatory variable <em>y ~ 1 + x1 + x2 + … + xp</em>. However note that by default, <code class="docutils literal notranslate"><span class="pre">R</span></code>will include an intercept in the model even if not specified in the formula. If you ever want to estimate a model without an intercept, you have to include <code class="docutils literal notranslate"><span class="pre">-1</span></code> in the formula.</p></li>
+<li><p>The dataset from which the model is estimated</p></li>
+<li><p>The family of the <em>generalized linear model</em>, here we specify that we are working with a binomial outcome with the <em>logit</em> link function. Other options exist but are out of the scope of this module.</p></li>
+</ul>
+<p>Finally, the <code class="docutils literal notranslate"><span class="pre">R</span></code> command to estimate the logistic model above on the dementia dataset and to store its results into an object <code class="docutils literal notranslate"><span class="pre">dementia1</span></code> is</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dementia1</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">dementia</span> <span class="o">~</span> <span class="n">sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can explore the results that have just been stored into <code class="docutils literal notranslate"><span class="pre">dementia1</span></code> using the function <code class="docutils literal notranslate"><span class="pre">summary</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">dementia1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = dementia ~ sex, family = binomial(link = &quot;logit&quot;), 
+    data = dementia)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.2211  -0.2211  -0.1771  -0.1771   2.8855  
+
+Coefficients:
+            Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -4.14722    0.02439 -170.01   &lt;2e-16 ***
+sex          0.44771    0.03264   13.72   &lt;2e-16 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 38333  on 199999  degrees of freedom
+Residual deviance: 38143  on 199998  degrees of freedom
+AIC: 38147
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us go through this summary in details part by part and describe its contents:</p>
+<ul class="simple">
+<li><p><em>Call:</em> this part of the summary gives us the call we made to the function <code class="docutils literal notranslate"><span class="pre">glm</span></code>. It can be useful when a doubt arises about which model has been estimated.</p></li>
+<li><p><em>Deviance residuals:</em> this part gives a summary of the distribution of all the estimated residuals. Here, the deviance residuals are given, they are defined as the individual contributions to the residual deviance (see below). They can be retrieved using the function <code class="docutils literal notranslate"><span class="pre">residuals</span></code> with option <code class="docutils literal notranslate"><span class="pre">type</span> <span class="pre">=</span> <span class="pre">&quot;deviance&quot;</span></code>. Note that there also exists other type of residuals for generalized linear models.</p></li>
+<li><p><em>Coefficients:</em> this part gives the results of the estimation of the parameters from the model, here in our case, <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>. For each parameter <span class="math notranslate nohighlight">\(\beta_k\)</span>, we have</p>
+<ul>
+<li><p>the point estimate <span class="math notranslate nohighlight">\(\hat{\beta}_k\)</span></p></li>
+<li><p>the standard error of the estimation <span class="math notranslate nohighlight">\(se(\hat{\beta}_k)\)</span></p></li>
+<li><p>the z-value computed as the ratio of the point estimate and the standard error <span class="math notranslate nohighlight">\(\hat{\beta}_k/se(\hat{\beta}_k)\)</span>. It is actually the Wald statistics whose null hypothesis is <span class="math notranslate nohighlight">\(\beta_k=0\)</span>.</p></li>
+<li><p>the p-value of the Wald test (the star symbols gives the intensity of the significance level)</p></li>
+</ul>
+</li>
+<li><p><em>Null and residual deviances:</em> The deviance of a model is a measure of the goodness-of-fit of this model. It is defined as <span class="math notranslate nohighlight">\(D = -2(\ell_e - \ell_s)\)</span> where <span class="math notranslate nohighlight">\(\ell_e\)</span> and <span class="math notranslate nohighlight">\(\ell_s\)</span> are respectively the log-likelihood of the estimated model and the log-likelihood of the saturated model. The saturated model uses the maximum possible number of parameters without redundancies and is the one with the best possible fit. The null deviance is simply the deviance computed for the null model, i.e. the minimal model with only an intercept and without any covariate. A bad model will have a high deviance and, for a good model, we expect the deviance to decrease, meaning that we better describe the data. However, we should remain cautious as a null deviance would mean a model with possible overfitting. Note that when computing deviances of different models for the same dataset, the log-likelihood of the saturated model <span class="math notranslate nohighlight">\(\ell_s\)</span> would be constant. This is why often, as in the <code class="docutils literal notranslate"><span class="pre">glm</span></code>function output, the deviance is given in a simplified form as <span class="math notranslate nohighlight">\(-2\ell_e\)</span> by removing the constant lok-likelihood from the saturated model. The degrees of freedom are given on the same line and equals <span class="math notranslate nohighlight">\(n-1\)</span> where <span class="math notranslate nohighlight">\(n\)</span> is the sample size and <span class="math notranslate nohighlight">\(1\)</span> is the number of parameters to estimate in the null model The residual deviance is the deviance for the estimated model.</p></li>
+<li><p><em>AIC:</em> the Akaike information criterion quantifies model fit as a function of the likelihood and the number of parameters being estimated. It is defined as <span class="math notranslate nohighlight">\(AIC = 2k - 2\ell(\hat{\beta})\)</span> where <span class="math notranslate nohighlight">\(k\)</span> is the number of parameter in the model and <span class="math notranslate nohighlight">\(\ell(\hat{\beta})\)</span> the log-likelihood of the model computed at the estimated parameter values <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>. The AIC is mainly used as a way to compare different models. The best model, in the scale of the AIC, is the one with the lowest AIC. Note that sometimes, contrarily to the <em>glm</em> package, the AIC is computed as <span class="math notranslate nohighlight">\(AIC = -2k + 2\ell(\hat{\beta})\)</span> in which case the best model would be the one with the highest AIC value. We can observe that the AIC is actually minus the sum of the deviance and twice the number of the parameters. By including the number of parameters, the AIC can penalize a model that have too many parameters and avoids the selection of overfitting models.</p></li>
+<li><p><em>Number of Fisher Scoring iterations:</em> it gives the number of iterations that the optimisation algorithm used to estimate the model performed before convergence</p></li>
+</ul>
+<p>In this summary, we have everything that we need to give an interpretation of the estimated model. However, as we have seen, in the logistic regression, the crude parameters do not have a straightforward interpretation and we prefer to compute and interpret their exponential.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="nf">coefficients</span><span class="p">(</span><span class="n">dementia1</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><dl class=dl-horizontal>
+	<dt>(Intercept)</dt>
+		<dd>0.0158083366518103</dd>
+	<dt>sex</dt>
+		<dd>1.56472020945518</dd>
+</dl>
+</div></div>
+</div>
+<p>Let us interpret these as we just have seen. First, as this is not a case control study, we can interpret <span class="math notranslate nohighlight">\(\exp({\hat{\beta}_0})/(1+exp({\hat{\beta}_0})) = 0.0156\)</span> as an estimation of the prevalence of dementia among the unexposed subjects, here the men. Actually, we can double check this by computing it directly from the data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">tidyverse</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="n">dementia</span> <span class="o">%&gt;%</span> <span class="nf">group_by</span><span class="p">(</span><span class="n">sex</span><span class="p">,</span> <span class="n">dementia</span><span class="p">)</span> <span class="o">%&gt;%</span> <span class="nf">count</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Registered S3 methods overwritten by &#39;ggplot2&#39;:
+  method         from 
+  [.quosures     rlang
+  c.quosures     rlang
+  print.quosures rlang
+Registered S3 method overwritten by &#39;rvest&#39;:
+  method            from
+  read_xml.response xml2
+── Attaching packages ─────────────────────────────────────── tidyverse 1.2.1 ──
+✔ ggplot2 3.1.1       ✔ purrr   0.3.2  
+✔ tibble  2.1.1       ✔ dplyr   0.8.0.1
+✔ tidyr   0.8.3       ✔ stringr 1.4.0  
+✔ readr   1.3.1       ✔ forcats 0.4.0  
+── Conflicts ────────────────────────────────────────── tidyverse_conflicts() ──
+✖ dplyr::filter() masks stats::filter()
+✖ dplyr::lag()    masks stats::lag()
+</pre></div>
+</div>
+<div class="output text_html"><table>
+<thead><tr><th scope=col>sex</th><th scope=col>dementia</th><th scope=col>n</th></tr></thead>
+<tbody>
+	<tr><td>0     </td><td>0     </td><td>107981</td></tr>
+	<tr><td>0     </td><td>1     </td><td>  1707</td></tr>
+	<tr><td>1     </td><td>0     </td><td> 88132</td></tr>
+	<tr><td>1     </td><td>1     </td><td>  2180</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">round</span><span class="p">(</span><span class="m">1707</span> <span class="o">/</span> <span class="p">(</span><span class="m">107981</span> <span class="o">+</span> <span class="m">1707</span><span class="p">),</span><span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.0156</div></div>
+</div>
+<p>Now, we have that <span class="math notranslate nohighlight">\(\exp({\hat{\beta}_1}) = 1.565\)</span>. That means that the odds-ratio of developing dementia in the women versus the men is of <span class="math notranslate nohighlight">\(1.565\)</span> or equivalently that the probability of developing dementia is higher among the exposed, here the women.</p>
+<p>From the summary, we can deduced other interesting informations. First, if we look at the <span class="math notranslate nohighlight">\(p\)</span>-value for the sex variable, we can see that it is very significative meaning that we clearly reject the null hypothesis of no sex association. By looking at the residual deviance, we can see that by just including one parameter, the sex association, the deviance decreases by <span class="math notranslate nohighlight">\(190\)</span>. Decreasing the deviance is a good sign as it means that we are improving the description of the data with the estimated model. However, let us note again that decreasing the deviance is not a goal <em>per se</em> as it could lead to overfitting.</p>
+<p>To summarize, a synthetic interpration of the estimated model could be the following: there is a significative association between the variable <em>sex</em> and the dementia status and the odds of developing dementia are <span class="math notranslate nohighlight">\(1.565\)</span> times higher for the women in our study.</p>
+<blockquote>
+<div><p><em>Exercise:</em> write a code that computes the odds-ratio <span class="math notranslate nohighlight">\(95\%\)</span> confidence interval directly from the <code class="docutils literal notranslate"><span class="pre">R</span></code> output</p>
+</div></blockquote>
+</div>
+<div class="section" id="interpretation-when-x-i-is-a-continuous-variable">
+<h3>14.4.3 Interpretation when <span class="math notranslate nohighlight">\(X_i\)</span> is a continuous variable<a class="headerlink" href="#interpretation-when-x-i-is-a-continuous-variable" title="Permalink to this headline">¶</a></h3>
+<p>In the previous example, the <span class="math notranslate nohighlight">\(X_i\)</span> was a binary variable and the interpretations of the odds-ratio was done by comparing the exposed to the unexposed. But when <span class="math notranslate nohighlight">\(X_i\)</span> is continuous, the notions of exposed and unexposed becomes irrelevant. So how should we interpret <span class="math notranslate nohighlight">\(\beta_1\)</span> in the following model where <span class="math notranslate nohighlight">\(X_i\)</span> is a continuous variable?</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1X_i\]</div>
+<p>As in the linear regression, the interpretation of <span class="math notranslate nohighlight">\(\beta_1\)</span> is linked to the increase of <span class="math notranslate nohighlight">\(1\)</span> unit of the variable <span class="math notranslate nohighlight">\(X_i\)</span>. Indeed, we have,</p>
+<div class="math notranslate nohighlight">
+\[P(Y_i=1|X_i=x+1) = \frac{\exp(\beta_0 + \beta_1(x+1))}{1+\exp(\beta_0 + \beta_1(x+1))} \quad\text{and}\quad P(Y_i=1|X_i=x) = \frac{\exp(\beta_0 + \beta_1x)}{1+\exp(\beta_0 + \beta_1x)}.\]</div>
+<p>Hence,</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(Y_i=1|X_i=x+1)}{1-P(Y_i=1|X_1=x_1)} = \exp(\beta_0 + \beta_1(x_1+1))\quad\text{and}\quad \frac{P(Y_i=1|X_i=x)}{1-P(Y_i=1|X_i=x)} = \exp(\beta_0 + \beta_1x_1).\]</div>
+<p>So that,</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(Y_i=1|X_i=x+1)}{1-P(Y_i=1|X_i=x+1)}\bigg/ \frac{P(Y_i=1|X_i=x)}{1-P(Y_i=1|X_i=x)} = \exp(\beta_1).\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(\exp(\beta_1)\)</span> is the odds-ratio of having <span class="math notranslate nohighlight">\(Y=1\)</span> for an increase of <span class="math notranslate nohighlight">\(1\)</span> of the variable <span class="math notranslate nohighlight">\(X_i\)</span>.</p>
+</div>
+<div class="section" id="a-more-general-case">
+<h3>15.4.4 A more general case<a class="headerlink" href="#a-more-general-case" title="Permalink to this headline">¶</a></h3>
+<p>We have just studied very simplified cases of logistic regression. Let us now study the more general case with <span class="math notranslate nohighlight">\(X_{i,1},\dots,X_{i,p}\)</span> <span class="math notranslate nohighlight">\(p\)</span> numeric variables and <span class="math notranslate nohighlight">\(Y_i\)</span> a binary variable such as <span class="math notranslate nohighlight">\(Y_i|X_{i,1},\dots,X_{i,p}\)</span> is a Bernoulli variable of parameter <span class="math notranslate nohighlight">\(\pi_i\)</span>, the general model is</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta_0 + \sum_{k=1}^p \beta_k X_{i,k}.\]</div>
+<p>This model can be equivalently written using the vector notation</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta^{\top}X_i\]</div>
+<p>where <span class="math notranslate nohighlight">\(\beta\)</span> is the vector of parameters of size <span class="math notranslate nohighlight">\(p+1\)</span> and where <span class="math notranslate nohighlight">\(X_i\)</span> is a <span class="math notranslate nohighlight">\(p+1\)</span> vector containing the constant vector <span class="math notranslate nohighlight">\(1\)</span> followed by the variable <span class="math notranslate nohighlight">\(X_{i,1},\dots,X_{i,p}\)</span>.</p>
+<p>The interpretation is actually quite similar to the one we made in the simplified example. We have an estimated vector of parameters <span class="math notranslate nohighlight">\(\hat{\beta}\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\exp(\beta_0)/(1+\exp(\beta_0))\)</span> is the probability of <span class="math notranslate nohighlight">\(Y=1\)</span> when all covariates <span class="math notranslate nohighlight">\(X_{i,k}\)</span> are equal to <span class="math notranslate nohighlight">\(0\)</span>. If the study cohort is a random sample from the underlying population of interest, then the estimate of <span class="math notranslate nohighlight">\(\exp(\beta_0)/(1+\exp(\beta_0))\)</span> from the data provides an estimate of the prevalence of the outcome <span class="math notranslate nohighlight">\(Y=1\)</span> in the underlying population of interest. This is not the case if the study cohort is not a random sample, for example if it is a stratified random sample, a convenience sample, or a case-control sample. The sampling design for the study needs to be taken into account when interpreting the intercept parameter <span class="math notranslate nohighlight">\(\beta_0\)</span> (and functions thereof). Note however, that contrarily to before where we had only one binary covariate defining an exposed group and a unexposed group, this time, because all <span class="math notranslate nohighlight">\(X_{i,k}\)</span> can be numeric, we have to be more specific. In particular, the group of subjects whose covariates <span class="math notranslate nohighlight">\(X_{i,k}\)</span> are all equal to <span class="math notranslate nohighlight">\(0\)</span> might not have any sense at all in the practice, e.g. when we include weight as a covariate.</p>
+<p>Now, let us focus on the <span class="math notranslate nohighlight">\(\beta_1,\dots,\beta_p\)</span>. Similar to the previous section, interpreting a <span class="math notranslate nohighlight">\(\beta_k\)</span> parameter is linked to the increase of <span class="math notranslate nohighlight">\(1\)</span> unit of the variable <span class="math notranslate nohighlight">\(X_{i,k}\)</span> while assuming that all other variables <span class="math notranslate nohighlight">\((X_{i,k'})_{k'\neq k}\)</span> remain unchanged. Therefore, <span class="math notranslate nohighlight">\(\exp(\beta_k)\)</span> is the odds-ratio for an increase of <span class="math notranslate nohighlight">\(1\)</span> unit of <span class="math notranslate nohighlight">\(X_{i,k}\)</span> assuming all other variables remain unchanged.</p>
+<p>For example we write here the odds-ratio of dementia in subjects with <span class="math notranslate nohighlight">\(X_{i,1} = x_1+1\)</span> versus those with <span class="math notranslate nohighlight">\(X_{i,1}=x_1\)</span> and with <span class="math notranslate nohighlight">\(X_{i,j}=x_j\)</span> for all <span class="math notranslate nohighlight">\(1&lt;j\leq p\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(Y_i=1|X_{i,1}=x_1+1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}{1-P(Y_i=1|X_{i,1}=x_1+1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}\bigg/ \frac{P(Y_i=1|X_{i,1}=x_1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}{P(Y_i=1|X_{i,1}=x_1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}\]</div>
+<p>Similar to the computations we did on the previous section, we have that</p>
+<div class="math notranslate nohighlight">
+\[P(Y_i=1|X_{i,1}=x_1+1,X_{i,2}=x_2,\dots,X_{i,p}=x_p) = \frac{\exp(\beta_0 + \beta_1(x_1+1) + \beta_2x_2 + \dots + \beta_px_p)}{1+\exp(\beta_0 + \beta_1(x_1+1) + \beta_2x_2 + \dots + \beta_px_p)}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[P(Y_i=1|X_{i,1}=x_1,X_{i,2}=x_2,\dots,X_{i,p}=x_p) = \frac{\exp(\beta_0 + \beta_1x_1 + \beta_2x_2 + \dots + \beta_px_p)}{1+\exp(\beta_0 + \beta_1x_1 + \beta_2x_2 + \dots + \beta_px_p)}.\]</div>
+<p>Hence, we can compute</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(Y_i=1|X_{i,1}=x_1+1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}{1-P(Y_i=1|X_{i,1}=x_1+1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)} = \exp(\beta_0 + \beta_1(x_1+1) + \beta_2x_2 + \dots + \beta_px_p)\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(Y_i=1|X_{i,1}=x_1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}{1-P(Y_i=1|X_{i,1}=x_1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)} = \exp(\beta_0 + \beta_1x_1 + \beta_2x_2 + \dots + \beta_px_p)\]</div>
+<p>so that, finally, we have that</p>
+<div class="math notranslate nohighlight">
+\[\frac{P(Y_i=1|X_{i,1}=x_1+1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}{1-P(Y_i=1|X_{i,1}=x_1+1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}\bigg/ \frac{P(Y_i=1|X_{i,1}=x_1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)}{1-P(Y_i=1|X_{i,1}=x_1,X_{i,2}=x_2,\dots,X_{i,p}=x_p)} = \exp(\beta_1).\]</div>
+<blockquote>
+<div><p><em>Exercice:</em> Estimate the association between dementia status and age using the <code class="docutils literal notranslate"><span class="pre">glm</span></code> function in <code class="docutils literal notranslate"><span class="pre">R</span></code> and interprect this association correctly.</p>
+</div></blockquote>
+</div>
+<div class="section" id="dementia-a-second-example">
+<h3>14.4.5 Dementia: a second example<a class="headerlink" href="#dementia-a-second-example" title="Permalink to this headline">¶</a></h3>
+<p>Let see a second example with several variables to see how to interpret the results. This time, our interest lies in modeling the probability of developing dementia during the follow-up according to sex, age at inclusion and bmi at inclusion.</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1sex_i + \beta_2 age_i + \beta_3 bmi_i\]</div>
+<p>This model can be estimated in <code class="docutils literal notranslate"><span class="pre">R</span></code>using the <code class="docutils literal notranslate"><span class="pre">glm</span></code> function</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dementia2</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">dementia</span> <span class="o">~</span> <span class="n">sex</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>As usually, let us print the results that have been stored in the <code class="docutils literal notranslate"><span class="pre">R</span></code>object <code class="docutils literal notranslate"><span class="pre">dementia2</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">dementia2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = dementia ~ sex + age + bmi, family = binomial(link = &quot;logit&quot;), 
+    data = dementia)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.1067  -0.1959  -0.1134  -0.0732   3.6917  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -9.783837   0.152138 -64.309  &lt; 2e-16 ***
+sex          0.306798   0.033773   9.084  &lt; 2e-16 ***
+age          0.098682   0.001413  69.826  &lt; 2e-16 ***
+bmi         -0.025619   0.003596  -7.124 1.05e-12 ***
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 38333  on 199999  degrees of freedom
+Residual deviance: 31732  on 199996  degrees of freedom
+AIC: 31740
+
+Number of Fisher Scoring iterations: 8
+</pre></div>
+</div>
+</div>
+</div>
+<p>We compute the exponential of the estimated coefficients and will interpret each.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="nf">coefficients</span><span class="p">(</span><span class="n">dementia2</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><dl class=dl-horizontal>
+	<dt>(Intercept)</dt>
+		<dd>5.63551570540758e-05</dd>
+	<dt>sex</dt>
+		<dd>1.35906636679882</dd>
+	<dt>age</dt>
+		<dd>1.1037155539435</dd>
+	<dt>bmi</dt>
+		<dd>0.974706075132112</dd>
+</dl>
+</div></div>
+</div>
+<p>Contrarily to the previous model, here we do not interpret the intercept. Indeed, if we were doing so, it would be the prevalence of dementia among men with age and bmi at inclusion of 0 which obviously does not make any clinical sense. We can interpret the other parameters</p>
+<ul class="simple">
+<li><p><em>sex</em>: there is an association between sex and the dementia status and the odds of dementia are multiplied by <span class="math notranslate nohighlight">\(1.36\)</span> for women compared to men having same age and bmi at inclusion</p></li>
+<li><p><em>age</em>: there is an association between age and the dementia status and the odds of dementia are multiplied by <span class="math notranslate nohighlight">\(1.10\)</span> when age increases by <span class="math notranslate nohighlight">\(1\)</span> year assuming sex and bmi at inclusion remain unchanged</p></li>
+<li><p><em>bmi</em>: there is an association between bmi and the dementia status and the odds of dementia are multiplied by <span class="math notranslate nohighlight">\(0.97\)</span> when bmi increases by <span class="math notranslate nohighlight">\(1\)</span> unit assuming sex and age at inclusion remain unchanged</p></li>
+</ul>
+<p>By including these variables into this new model, we only added two parameters but we can see that the deviance decreased slightly. It was <span class="math notranslate nohighlight">\(38143\)</span> on the first simple model and now equals <span class="math notranslate nohighlight">\(31732\)</span>. The quality of this new model is confirmed by the AIC which was <span class="math notranslate nohighlight">\(38147\)</span> for the previous model and decreases to <span class="math notranslate nohighlight">\(31740\)</span> for the new model.</p>
+</div>
+<div class="section" id="interactions">
+<h3>14.4.6 Interactions<a class="headerlink" href="#interactions" title="Permalink to this headline">¶</a></h3>
+<p>As in the linear regression, we might include interactions into the model to take into account the fact that a variable <span class="math notranslate nohighlight">\(Z\)</span> might affect the relation between another variable <span class="math notranslate nohighlight">\(X\)</span> and the outcome <span class="math notranslate nohighlight">\(Y\)</span>. Adding the interaction <span class="math notranslate nohighlight">\(X\times Z\)</span> into the model allows to model properly this. The model would be written</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1 X + \beta_2 Z + \beta_3X\times Z.\]</div>
+<p>Interpreting such a model becomes more subtile because of the interaction term. Let us assume here that <span class="math notranslate nohighlight">\(X\)</span> is a numeric variable and <span class="math notranslate nohighlight">\(Z\)</span> a binary variable. The interpretation has to be done according to each possible strata. In this example, there are two strata depending upon <span class="math notranslate nohighlight">\(Z\)</span> which can be <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span>.</p>
+<ul class="simple">
+<li><p>if <span class="math notranslate nohighlight">\(Z=0\)</span>, <span class="math notranslate nohighlight">\(\mathrm{logit}(\pi_i) = \beta_0 + \beta_1 X\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\exp(\beta_0)/(1+\exp(\beta_0))\)</span> is the proportion of subject for which <span class="math notranslate nohighlight">\(Y_i=1\)</span> and both <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Z\)</span> are null</p></li>
+<li><p><span class="math notranslate nohighlight">\(exp(\beta_1)\)</span> is the odds-ratio for <span class="math notranslate nohighlight">\(1\)</span> unit increase of <span class="math notranslate nohighlight">\(X\)</span> for subjects with <span class="math notranslate nohighlight">\(Z=0\)</span></p></li>
+</ul>
+</li>
+<li><p>if <span class="math notranslate nohighlight">\(Z=1\)</span>, <span class="math notranslate nohighlight">\(\mathrm{logit}(\pi_i) = (\beta_0+\beta_2) + (\beta_1+\beta_3)X\)</span></p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(\exp(\beta_0+\beta_2)/(1+\exp(\beta_0+\beta_2))\)</span> is the proportion of subject for which <span class="math notranslate nohighlight">\(Y_i=1\)</span> and <span class="math notranslate nohighlight">\(X\)</span> is null and <span class="math notranslate nohighlight">\(Z=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(exp(\beta_1+\beta_3)\)</span> is the odds-ratio for <span class="math notranslate nohighlight">\(1\)</span> unit increase of <span class="math notranslate nohighlight">\(X\)</span> for subjects with <span class="math notranslate nohighlight">\(Z=1\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>Note that, when including the interaction, we assume the potential that this interaction could actually exist. It can be however useful to directly test its existence. From the above model, it is straightforward to do so by testing the nullity of the parameter <span class="math notranslate nohighlight">\(\beta_3\)</span>. If <span class="math notranslate nohighlight">\(\beta_3=0\)</span> is rejected, there is no evidence towards a modification of the effect of <span class="math notranslate nohighlight">\(X\)</span> on <span class="math notranslate nohighlight">\(Y\)</span> by <span class="math notranslate nohighlight">\(Z\)</span>.</p>
+<p><em>Remark:</em> We need to be careful when computing the <span class="math notranslate nohighlight">\(95\%\)</span> confindence interval for the OR among subjects with <span class="math notranslate nohighlight">\(Z=1\)</span>, <span class="math notranslate nohighlight">\(\exp(\beta_1 + \beta_3)\)</span>. Indeed, when computing <span class="math notranslate nohighlight">\(\hat{\mathrm{se}}(\hat{\beta}_1+\hat{\beta}_3)\)</span>, we need to know the value of the estimated covariance between <span class="math notranslate nohighlight">\(\hat{\beta_1}\)</span> and <span class="math notranslate nohighlight">\(\hat{\beta_3}\)</span> because <span class="math notranslate nohighlight">\(\mathrm{var}(\hat{\beta}_1+\hat{\beta}_3) = \mathrm{var}(\hat{\beta}_1) + \mathrm{var}(\hat{\beta}_3) + \mathrm{cov}(\hat{\beta}_1,\hat{\beta}_3)\)</span>.</p>
+</div>
+<div class="section" id="dementia-a-third-example">
+<h3>14.4.7 Dementia: a third example<a class="headerlink" href="#dementia-a-third-example" title="Permalink to this headline">¶</a></h3>
+<p>We study here how sex can modify the relation between dementia and bmi. This model is written</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1bmi_i + \beta_2sex_i + \beta_3bmi_i\times sex_i\]</div>
+<p>and can be estimated in <code class="docutils literal notranslate"><span class="pre">R</span></code> using the <code class="docutils literal notranslate"><span class="pre">glm</span></code> function. To include an interaction between two variables <code class="docutils literal notranslate"><span class="pre">x</span></code> and <code class="docutils literal notranslate"><span class="pre">z</span></code> into a model in <code class="docutils literal notranslate"><span class="pre">R</span></code>, we have to specify both the variable and the interaction term explicitly using the <code class="docutils literal notranslate"><span class="pre">:</span></code> symbol: <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">~ x</span> <span class="pre">+</span> <span class="pre">z</span> <span class="pre">+</span> <span class="pre">x:z</span></code>. We can also use the symbol <code class="docutils literal notranslate"><span class="pre">*</span></code> between two variables and both the variables and the interaction term will be included: <code class="docutils literal notranslate"><span class="pre">y</span> <span class="pre">~</span> <span class="pre">x*z</span></code>. Both formula will estimate the exact same model. Be careful however when using <code class="docutils literal notranslate"><span class="pre">*</span></code> with more than two variables and check that you actually want to include all the interaction terms.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dementia3</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">dementia</span> <span class="o">~</span> <span class="n">bmi</span> <span class="o">+</span> <span class="n">sex</span> <span class="o">+</span> <span class="n">bmi</span><span class="o">:</span><span class="n">sex</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">dementia3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = dementia ~ bmi + sex + bmi:sex, family = binomial(link = &quot;logit&quot;), 
+    data = dementia)
+
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-0.3013  -0.2220  -0.1922  -0.1667   3.4232  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -2.094229   0.153899 -13.608  &lt; 2e-16 ***
+bmi         -0.075540   0.005742 -13.156  &lt; 2e-16 ***
+sex         -0.158205   0.191034  -0.828  0.40759    
+bmi:sex      0.021042   0.007174   2.933  0.00336 ** 
+---
+Signif. codes:  0 ‘***’ 0.001 ‘**’ 0.01 ‘*’ 0.05 ‘.’ 0.1 ‘ ’ 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 38333  on 199999  degrees of freedom
+Residual deviance: 37780  on 199996  degrees of freedom
+AIC: 37788
+
+Number of Fisher Scoring iterations: 7
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cbind</span><span class="p">(</span><span class="s">&quot;coefficients&quot;</span> <span class="o">=</span> <span class="nf">coefficients</span><span class="p">(</span><span class="n">dementia3</span><span class="p">),</span> <span class="s">&quot;exp(coefficients)&quot;</span> <span class="o">=</span> <span class="nf">exp</span><span class="p">(</span><span class="nf">coefficients</span><span class="p">(</span><span class="n">dementia3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th></th><th scope=col>coefficients</th><th scope=col>exp(coefficients)</th></tr></thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>-2.09422922</td><td>0.1231651  </td></tr>
+	<tr><th scope=row>bmi</th><td>-0.07554006</td><td>0.9272426  </td></tr>
+	<tr><th scope=row>sex</th><td>-0.15820459</td><td>0.8536751  </td></tr>
+	<tr><th scope=row>bmi:sex</th><td> 0.02104249</td><td>1.0212654  </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<blockquote>
+<div><p><em>Exercise:</em> Run this model using the <code class="docutils literal notranslate"><span class="pre">*</span></code> notation in the formula and check that you are actually estimating the exact same model.</p>
+</div></blockquote>
+<p>We will interpret separately on the two strata defined by the levels of the variable <span class="math notranslate nohighlight">\(sex_i\)</span></p>
+<ul class="simple">
+<li><p>when <span class="math notranslate nohighlight">\(sex_i=0\)</span>, i.e. for women, <span class="math notranslate nohighlight">\(\mathrm{logit}(\pi_i) = \beta_0 + \beta_1bmi_i\)</span></p>
+<ul>
+<li><p>we do not interpret <span class="math notranslate nohighlight">\(\beta_0\)</span> as a null bmi is not clinically relevant</p></li>
+<li><p><span class="math notranslate nohighlight">\(\exp(\beta_1) = 0.927\)</span>  is the odds-ratio of dementia for a <span class="math notranslate nohighlight">\(1\)</span> unit increase of bmi at inclusion for a woman</p></li>
+</ul>
+</li>
+<li><p>when <span class="math notranslate nohighlight">\(sex_i=1\)</span>, i.e. for men, <span class="math notranslate nohighlight">\(\mathrm{logit}(\pi_i) = (\beta_0 + \beta_2) + (\beta_1 + \beta_3)*bmi_i\)</span></p>
+<ul>
+<li><p>we do not interpret <span class="math notranslate nohighlight">\(\beta_0 + \beta_1\)</span> as a null bmi is not clinically relevant</p></li>
+<li><p><span class="math notranslate nohighlight">\(\exp(\beta_1 + \beta_3) = 0.947\)</span> is the odds-ratio of dementia for a <span class="math notranslate nohighlight">\(1\)</span> unit increase of bmi at inclusion for a man</p></li>
+</ul>
+</li>
+</ul>
+<p>We note that according to the Wald test results, there is a significative association between the bmi and the dementia status but overall, no association with sex. However, we reject the null hypothesis <span class="math notranslate nohighlight">\(\beta_3=0\)</span>. Therefore, there exist an interaction between bmi and sex and the sex has an impact on the dementia status only through its interaction with the bmi.</p>
+<p>The AIC for this last model is 37788 which is higher than the AIC of the previous model. We recall here that the lower the AIC, the better. Here the results is not very surprising as the second model included three different covariates that added more informations to the model.</p>
+<p><em>Remark:</em> As we said, if we want to compute the <span class="math notranslate nohighlight">\(95\%\)</span> confindence interval for the OR of dementia among men for a <span class="math notranslate nohighlight">\(1\)</span> unit increase of bmi at inclusion <span class="math notranslate nohighlight">\(\exp(\beta_1 + \beta_3)\)</span>, we need to know the covariance between <span class="math notranslate nohighlight">\(\hat{\beta_1}\)</span> and <span class="math notranslate nohighlight">\(\hat{\beta_3}\)</span>. Thankfully, it is easy to access this matrix in <code class="docutils literal notranslate"><span class="pre">R</span></code> when estimating the model with the <code class="docutils literal notranslate"><span class="pre">glm</span></code> function. The function <code class="docutils literal notranslate"><span class="pre">vcov</span></code> which takes as argument a <code class="docutils literal notranslate"><span class="pre">glm</span></code> object will give the display the estimated covariance matrix. For example, we can compute the estimated covariate matrix for the third model <code class="docutils literal notranslate"><span class="pre">dementia3</span></code>. There is however no direct way to obtain the CI using the raw <code class="docutils literal notranslate"><span class="pre">R</span></code> output of the <code class="docutils literal notranslate"><span class="pre">glm</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">vcov</span><span class="p">(</span><span class="n">dementia3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th></th><th scope=col>(Intercept)</th><th scope=col>bmi</th><th scope=col>sex</th><th scope=col>bmi:sex</th></tr></thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td> 0.0236847582</td><td>-0.0008724659</td><td>-0.0236847582</td><td> 8.724659e-04</td></tr>
+	<tr><th scope=row>bmi</th><td>-0.0008724659</td><td> 0.0000329684</td><td> 0.0008724659</td><td>-3.296840e-05</td></tr>
+	<tr><th scope=row>sex</th><td>-0.0236847582</td><td> 0.0008724659</td><td> 0.0364941671</td><td>-1.350220e-03</td></tr>
+	<tr><th scope=row>bmi:sex</th><td> 0.0008724659</td><td>-0.0000329684</td><td>-0.0013502196</td><td> 5.146734e-05</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>By taking the square-root of the diagonal of this matrix, we find the same standard error as displayed in the summary of the object <code class="docutils literal notranslate"><span class="pre">dementia3</span></code> shown above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">diag</span><span class="p">(</span><span class="nf">vcov</span><span class="p">(</span><span class="n">dementia3</span><span class="p">)))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><dl class=dl-horizontal>
+	<dt>(Intercept)</dt>
+		<dd>0.153898532012959</dd>
+	<dt>bmi</dt>
+		<dd>0.00574181125264866</dd>
+	<dt>sex</dt>
+		<dd>0.191034465684247</dd>
+	<dt>bmi:sex</dt>
+		<dd>0.00717407389023679</dd>
+</dl>
+</div></div>
+</div>
+<blockquote>
+<div><p><em>Exercise:</em> We can expect that by adding interaction terms into the second model between some of the covariates, the fit of the model might be better. Try to add some interaction terms into a fourth model and try to correctly interpret each parameter when possible. Compare the AIC of this fourth estimated model to the second and third models we estimated and comment.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="diagnosis-for-the-logistic-regression">
+<h2>14.5 Diagnosis for the logistic regression<a class="headerlink" href="#diagnosis-for-the-logistic-regression" title="Permalink to this headline">¶</a></h2>
+<p>When using a regression model, and in particular a logistic regression model, it is important to bear in mind the goal of the study. To simplify, it can be either a predictive goal or an explanatory goal. If the goal is to have a model with very good predictive ability, we do not really care about which variables are included in the model as long as its predictive abilities are good. When selecting the model, we will prefer a model with good predictive value on external data even at the price of a lesser good fit to the initial dataset. However, let us note that there is often a correlation between a model that fits corretly the initial data and a model with good predictive ability. If the goal is explanatory, we focus on the clinical validity of the model and the interpretation of the parameters. Thus, which variables are included into the model should be carefully thought using scientific knowledge of the modelisation problem from clinician inputs. Also, when selecting the model, we will prefer a model that carefully takes into account the relation between the variables from the study data rather than a model that have good predictive ability on an external dataset. However, we expect from a good model estimated from appropriate data that similar results shall be found on an appropriate external dataset. This is a topic of major interest in science and is known as the <em>reproducibility of scientific research</em>. Finally, let us also note that the goal of a study can also be to explore the causal structure between some variables and the outcome rather than just associations. However, causality and causal inference will not be mentioned in this lecture.</p>
+<p>We will first see how to evaluate the explanatory abilities of a logistic regression model using goodness-of-fit tools that evaluates how close to the data the model actually is and then we will see how to evaluate the predictive abilities of a logistic regression model.</p>
+<div class="section" id="goodness-of-fit">
+<h3>14.5.1 Goodness-of-fit<a class="headerlink" href="#goodness-of-fit" title="Permalink to this headline">¶</a></h3>
+<p>We have already seen some concepts used to assess the goodness-of-fit of regression model: the deviance, which measures the distance between the model and the saturated model and the AIC that penalizes over-fitting. We present here two additional way of assessing the goodness-of-fit of the logistic regression model.</p>
+<div class="section" id="mcfadden-pseudo-r-2">
+<h4>14.5.1.1 McFadden pseudo-<span class="math notranslate nohighlight">\(R^2\)</span><a class="headerlink" href="#mcfadden-pseudo-r-2" title="Permalink to this headline">¶</a></h4>
+<p>For the linear regression model, we have studied the <span class="math notranslate nohighlight">\(R^2\)</span> that measures how much variability is explained by the model. For the logistic regression model, several generalization of the <span class="math notranslate nohighlight">\(R^2\)</span> measure have been proposed. Here, we will focus on the McFadden’s pseudo-<span class="math notranslate nohighlight">\(R^2\)</span>. The McFadden <span class="math notranslate nohighlight">\(R^2\)</span> is defined as follow:</p>
+<div class="math notranslate nohighlight">
+\[R^2_{McFadden} = 1 - \frac{\ell_e}{\ell_0}\]</div>
+<p>where <span class="math notranslate nohighlight">\(\ell_e\)</span> is the log-likelihood of the estimated model and <span class="math notranslate nohighlight">\(\ell_0\)</span> is the log-likelihood of the null model having only an intercept. The rationale behind this measure is that, when the estimated model does not explain correctly the variability, its log-likelihood will be close to the null log-likelihood so that the ratio will be close to <span class="math notranslate nohighlight">\(1\)</span> and the McFadden’s pseudo-<span class="math notranslate nohighlight">\(R^2\)</span> close to <span class="math notranslate nohighlight">\(0\)</span>. On the contrary, when the model correctly explains the variability of the model, the likelihood will be close to <span class="math notranslate nohighlight">\(1\)</span> and therefore <span class="math notranslate nohighlight">\(\ell_e\)</span> will be close to <span class="math notranslate nohighlight">\(0\)</span> so that the McFadden’s pseudo-<span class="math notranslate nohighlight">\(R^2\)</span> will be close to <span class="math notranslate nohighlight">\(1\)</span>. However, when applied to a classic linear regression model, the McFadden’s pseudo-<span class="math notranslate nohighlight">\(R^2\)</span> is not equivalent to the classic <span class="math notranslate nohighlight">\(R_2\)</span>.</p>
+<p>It is possible to compute the McFadden’s pseudo-<span class="math notranslate nohighlight">\(R^2\)</span> from <code class="docutils literal notranslate"><span class="pre">R</span></code> quite easily using the function <code class="docutils literal notranslate"><span class="pre">logLik</span></code> that extracts the value of the estimated log-likelihood for a <code class="docutils literal notranslate"><span class="pre">glm</span></code> object. If we want to compute it for our three examples, this is how we would do</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># first we estimate the null model</span>
+<span class="n">dementia0</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">dementia</span> <span class="o">~</span> <span class="m">1</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span> 
+
+<span class="c1"># then we compute the McFadden pseudo-R2 for each model</span>
+<span class="n">R2_McFadden1</span> <span class="o">&lt;-</span> <span class="nf">as.double</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="nf">logLik</span><span class="p">(</span><span class="n">dementia1</span><span class="p">)</span><span class="o">/</span><span class="nf">logLik</span><span class="p">(</span><span class="n">dementia0</span><span class="p">))</span>
+<span class="n">R2_McFadden2</span> <span class="o">&lt;-</span> <span class="nf">as.double</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="nf">logLik</span><span class="p">(</span><span class="n">dementia2</span><span class="p">)</span><span class="o">/</span><span class="nf">logLik</span><span class="p">(</span><span class="n">dementia0</span><span class="p">))</span>
+<span class="n">R2_McFadden3</span> <span class="o">&lt;-</span> <span class="nf">as.double</span><span class="p">(</span><span class="m">1</span> <span class="o">-</span> <span class="nf">logLik</span><span class="p">(</span><span class="n">dementia3</span><span class="p">)</span><span class="o">/</span><span class="nf">logLik</span><span class="p">(</span><span class="n">dementia0</span><span class="p">))</span>
+
+<span class="nf">round</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;model 1&quot;</span> <span class="o">=</span> <span class="n">R2_McFadden1</span><span class="p">,</span> <span class="s">&quot;model 2&quot;</span> <span class="o">=</span> <span class="n">R2_McFadden2</span><span class="p">,</span> <span class="s">&quot;model 3&quot;</span> <span class="o">=</span> <span class="n">R2_McFadden3</span><span class="p">),</span><span class="m">3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><dl class=dl-horizontal>
+	<dt>model 1</dt>
+		<dd>0.005</dd>
+	<dt>model 2</dt>
+		<dd>0.172</dd>
+	<dt>model 3</dt>
+		<dd>0.014</dd>
+</dl>
+</div></div>
+</div>
+<p>We can see that the second model which included three different variables is the one with the highest ability to explain the variability from the data. The first one performed poorly as it included only one binary variable and the third model also perform quite poorly even though we included an interaction between <span class="math notranslate nohighlight">\(bmi_i\)</span> and <span class="math notranslate nohighlight">\(sex_i\)</span>.</p>
+</div>
+<div class="section" id="the-hosmer-lemeshow-test">
+<h4>14.5.1.2 The Hosmer-Lemeshow test<a class="headerlink" href="#the-hosmer-lemeshow-test" title="Permalink to this headline">¶</a></h4>
+<p>The Hosmer-Lemeshow test (ref) is a classic approach to assess the goodness-of-fit of a logistic regression model. The rationale of this test is to divide the vector of predicted probabilites <span class="math notranslate nohighlight">\(\hat{\pi} = (\hat{\pi}_i)\)</span> with <span class="math notranslate nohighlight">\(i=1,\dots,n\)</span> into <span class="math notranslate nohighlight">\(G\)</span> groups, e.g. based on the quantiles, with <span class="math notranslate nohighlight">\(n_g\)</span> subjects. In each group, the mean of the predicted probabilites <span class="math notranslate nohighlight">\(\bar{\pi}_g\)</span> is compared to the proportion of observed success. Formally, for the group <span class="math notranslate nohighlight">\(g=1,\dots,G\)</span>, we have that</p>
+<ul class="simple">
+<li><p>the observed values are</p>
+<ul>
+<li><p>for Y = 1: <span class="math notranslate nohighlight">\(y_g\)</span></p></li>
+<li><p>for Y = 0: <span class="math notranslate nohighlight">\(n_g - y_g\)</span></p></li>
+</ul>
+</li>
+<li><p>the predicted values are</p>
+<ul>
+<li><p>for Y = 1: <span class="math notranslate nohighlight">\(\bar{\pi}_gn_g\)</span></p></li>
+<li><p>for Y = 0: <span class="math notranslate nohighlight">\(n_g(1 - \bar{\pi}_g)\)</span></p></li>
+</ul>
+</li>
+</ul>
+<p>The Hosmer-Lemeshow test statistics is based on the chi-square statistics computed over all groups and all possible values for <span class="math notranslate nohighlight">\(Y\)</span></p>
+<div class="math notranslate nohighlight">
+\[\sum_{g=1}^G\sum_{l=0}^1 \frac{(o_{gl} - e_{gl})^2}{e_{gl}} = \sum_{g=1}^G \frac{(n_g\bar{\pi}_g - y_g)^2}{n_g\bar{\pi}_g(1-\bar{\pi}_g)}\]</div>
+<p>and has been shown to follow asymptotically a <span class="math notranslate nohighlight">\(\chi^2\)</span> distribution with <span class="math notranslate nohighlight">\(g-2\)</span> degrees of freedom under the null hypothesis of a correctly specified model. However, we insist on the fact that this test if often criticized for several reasons. First it is known to have low power. Secondly, its results can be sensible to the choice of the number of groups <span class="math notranslate nohighlight">\(G\)</span> and this is even worst for small sample sizes.</p>
+<p>The Hesmer-Lemeshow test statistics has not been implemented into the <code class="docutils literal notranslate"><span class="pre">glm</span></code> package but is available on the <code class="docutils literal notranslate"><span class="pre">ResourceSelection</span></code> package through the <code class="docutils literal notranslate"><span class="pre">hoslem.test</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">ResourceSelection</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>ResourceSelection 0.3-5 	 2019-07-22
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can make the test for different values of <span class="math notranslate nohighlight">\(g\)</span>, for example for <span class="math notranslate nohighlight">\(g\)</span> ranging from <span class="math notranslate nohighlight">\(5\)</span> to <span class="math notranslate nohighlight">\(15\)</span> and, for each, print the associated p-value.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">for </span><span class="p">(</span><span class="n">g</span> <span class="n">in</span> <span class="m">5</span><span class="o">:</span><span class="m">15</span><span class="p">)</span> <span class="p">{</span>
+	<span class="nf">print</span><span class="p">(</span><span class="nf">hoslem.test</span><span class="p">(</span><span class="n">dementia2</span><span class="o">$</span><span class="n">y</span><span class="p">,</span> <span class="nf">fitted</span><span class="p">(</span><span class="n">dementia2</span><span class="p">),</span> <span class="n">g</span><span class="o">=</span><span class="n">g</span><span class="p">)</span><span class="o">$</span><span class="n">p.value</span><span class="p">)</span>
+<span class="p">}</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] 0.09098048
+[1] 0.1496694
+[1] 0.1485977
+[1] 0.2253204
+[1] 0.3575556
+[1] 0.1946257
+[1] 0.3013775
+[1] 0.4373874
+[1] 0.4974033
+[1] 0.3596752
+[1] 0.4791807
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can see that indeed, the p-value are very dependent upon the value of <span class="math notranslate nohighlight">\(g\)</span> which makes this test not very appropriate to test for the goodness-of-fit of the model. However, here, all the p-values are over <span class="math notranslate nohighlight">\(0.05\)</span> and therefore we do not reject the null hypothesis of a correctly specified model.</p>
+<blockquote>
+<div><p><em>Hosmer, D. W., Lemeshow, S. (1980) Goodness of fit tests for the multiple logistic regression model. Communications in Statistics – Theory and Methods</em></p>
+</div></blockquote>
+<blockquote>
+<div><p>Hosmer D. W., Lemeshow S. and Rodney X. S. Applied logistic regression. Wiley, 2013.</p>
+</div></blockquote>
+</div>
+</div>
+<div class="section" id="predictive-performance">
+<h3>14.5.2 Predictive performance<a class="headerlink" href="#predictive-performance" title="Permalink to this headline">¶</a></h3>
+<p>The predictive performance of a model evaluates how well the model is able to predict the outcome for given observations. In certain cases, for example when developing diagnosis tools, the predictive performance of a model is essential.</p>
+<div class="section" id="predictions">
+<h4>14.5.2.1 Predictions<a class="headerlink" href="#predictions" title="Permalink to this headline">¶</a></h4>
+<p>When estimating a logistic regression model in <code class="docutils literal notranslate"><span class="pre">R</span></code>, we estimate all the parameters <span class="math notranslate nohighlight">\((\beta_k)\)</span> with <span class="math notranslate nohighlight">\(k=0,\dots,p\)</span>. From these and knowing the observed covariate values <span class="math notranslate nohighlight">\((x_i)\)</span> for each subject <span class="math notranslate nohighlight">\(i=1,\dots,n\)</span>, we could easily compute an estimate of <span class="math notranslate nohighlight">\(\pi_i\)</span> the probability for subject <span class="math notranslate nohighlight">\(i\)</span> of having <span class="math notranslate nohighlight">\(Y_i=1\)</span>. We could do it by hand, but we can also directly use the function <code class="docutils literal notranslate"><span class="pre">predict</span></code> whose goal is to compute the estimated outcome of subjects from given data according to a given estimated model.</p>
+<p>With the <code class="docutils literal notranslate"><span class="pre">predict</span></code> function, we can either compute the estimation on the linear predictor scale <span class="math notranslate nohighlight">\(\hat{\beta}^{\top}X\)</span> or on the response scale <span class="math notranslate nohighlight">\(\exp(\hat{\beta}^{\top}X\)</span>)/(1+<span class="math notranslate nohighlight">\(exp(\hat{\beta}^{\top}X))\)</span>. Both are equivalent and the second can be computed from the first by using the inverse of the <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> function as we have seen when introducing the logistic model. In <code class="docutils literal notranslate"><span class="pre">R</span></code>, the choice is made through the option <code class="docutils literal notranslate"><span class="pre">type</span></code>. By default, the prediction computed is on the linear predictor scale, when the option <code class="docutils literal notranslate"><span class="pre">type=&quot;response&quot;</span></code> is chosen, the prediction will be on the response scale, here in <span class="math notranslate nohighlight">\([0;1]\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">predicted</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">dementia2</span><span class="p">,</span> <span class="n">dementia</span><span class="p">)</span>
+<span class="n">predicted_resp</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">dementia2</span><span class="p">,</span> <span class="n">dementia</span><span class="p">,</span> <span class="n">type</span> <span class="o">=</span> <span class="s">&quot;response&quot;</span><span class="p">)</span>
+
+<span class="nf">cbind</span><span class="p">(</span><span class="s">&quot;linear predictor&quot;</span> <span class="o">=</span> <span class="nf">head</span><span class="p">(</span><span class="n">predicted</span><span class="p">),</span> <span class="s">&quot;response&quot;</span> <span class="o">=</span> <span class="nf">head</span><span class="p">(</span><span class="n">predicted_resp</span><span class="p">),</span> <span class="s">&quot;response from linear predictor&quot;</span> <span class="o">=</span> <span class="nf">head</span><span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="n">predicted</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">+</span><span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="n">predicted</span><span class="p">)))))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>linear predictor</th><th scope=col>response</th><th scope=col>response from linear predictor</th></tr></thead>
+<tbody>
+	<tr><td>-4.769513  </td><td>0.008413131</td><td>0.008413131</td></tr>
+	<tr><td>-3.130847  </td><td>0.041852637</td><td>0.041852637</td></tr>
+	<tr><td>-6.530830  </td><td>0.001455674</td><td>0.001455674</td></tr>
+	<tr><td>-6.065192  </td><td>0.002316932</td><td>0.002316932</td></tr>
+	<tr><td>-1.230898  </td><td>0.226024249</td><td>0.226024249</td></tr>
+	<tr><td>-4.723302  </td><td>0.008807525</td><td>0.008807525</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="calibration">
+<h4>14.5.2.2 Calibration<a class="headerlink" href="#calibration" title="Permalink to this headline">¶</a></h4>
+<p>A model is said to be well calibrated if the predicted probabilities match the actual proportion of observed events in strata of the data. Generally, these strata are obtained by dividing the covariate space into a finite number of sets. However, when the covariate are continuous, the number of possible sets becomes large and these strata can become too little. Therefore, one approach is to group subjects according to their predicted probabilities and use these groups as strata, exactly as the Hosmer-Lemeshow test is doing.</p>
+</div>
+<div class="section" id="sensitivity-and-specificity">
+<h4>14.5.2.3 Sensitivity and Specificity<a class="headerlink" href="#sensitivity-and-specificity" title="Permalink to this headline">¶</a></h4>
+<p>To compute the estimated outcome <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> from these estimated probabilies, we generally chose a threshold value <span class="math notranslate nohighlight">\(\alpha\)</span> in the interval <span class="math notranslate nohighlight">\(]0,1[\)</span>, and for all subjects with <span class="math notranslate nohighlight">\(\pi_i&lt;=\alpha\)</span>, <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> is fixed at <span class="math notranslate nohighlight">\(0\)</span> while for all subjects with <span class="math notranslate nohighlight">\(\pi_i&gt;\alpha\)</span>, <span class="math notranslate nohighlight">\(\hat{y}_i\)</span> is fixed at <span class="math notranslate nohighlight">\(1\)</span>. To assess the predictive quality of the predictions, the idea is to compare the observed outcomes to the predicted outcomes. To do so, we introduce two notions: <span class="math notranslate nohighlight">\(Se\)</span> the sensitivity and <span class="math notranslate nohighlight">\(Sp\)</span> the specificity that are defined as follows</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+Se &amp;= Pr(\hat{y}_i=1|y_i=1) = \frac{\sum_{i=1}^n 1_{(\hat{\pi}_i&gt;\alpha~\&amp;~ y_i=1~)}}{\sum_{i=1}^n 1_{(y_i=1)}}\\
+Sp &amp;= Pr(\hat{y}_i=0|y_i=0) = \frac{\sum_{i=1}^n 1_{(\hat{\pi}_i\leq\alpha~\&amp;~ y_i=0~)}}{\sum_{i=1}^n 1_{(y_i=0)}}
+\end{align}\end{split}\]</div>
+<p>The sensitivity is the rate of true positives and the specificity is the rate of true negatives. Ideally, we would want to make a prediction <span class="math notranslate nohighlight">\(\hat{y}\)</span> of the outcome <span class="math notranslate nohighlight">\(y\)</span> that gives at the same time high sensitivity and high specificity. The choice of <span class="math notranslate nohighlight">\(\alpha\)</span>, the threshold value, has obviously a great impact on the sensitivity and specificity values. For example, a high <span class="math notranslate nohighlight">\(\alpha\)</span> will generate a high specificity but a low sensitivity while a low <span class="math notranslate nohighlight">\(\alpha\)</span> will do the opposite. The goal is to have an optimal <span class="math notranslate nohighlight">\(\alpha\)</span> that maximize both the sensitivity and specificity.</p>
+<blockquote>
+<div><p><em>Exercise:</em> Write a code in <code class="docutils literal notranslate"><span class="pre">R</span></code> to compute <span class="math notranslate nohighlight">\(Se\)</span> and <span class="math notranslate nohighlight">\(Sp\)</span> for any value of <span class="math notranslate nohighlight">\(\alpha\)</span></p>
+</div></blockquote>
+</div>
+<div class="section" id="the-receiving-operator-characteristic-roc-curve">
+<h4>14.5.2.4 The <em>receiving operator characteristic</em> (ROC) curve<a class="headerlink" href="#the-receiving-operator-characteristic-roc-curve" title="Permalink to this headline">¶</a></h4>
+<p>The ROC curve is an intuitive way of plotting the relation between sensitivity and specificity computed for a whole range of values of <span class="math notranslate nohighlight">\(\alpha\)</span> between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span>. It plots <span class="math notranslate nohighlight">\(Se\)</span> against <span class="math notranslate nohighlight">\(1-Sp\)</span>. It can directly be plotted in <code class="docutils literal notranslate"><span class="pre">R</span></code> with the function <code class="docutils literal notranslate"><span class="pre">roc</span></code> from the <code class="docutils literal notranslate"><span class="pre">pROC</span></code>package that takes as argument, the actual observed outcomes and the predicted response probabilities from the estimated model.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">library</span><span class="p">(</span><span class="n">pROC</span><span class="p">,</span> <span class="n">quietly</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="nf">roc</span><span class="p">(</span><span class="n">response</span> <span class="o">=</span> <span class="n">dementia</span><span class="o">$</span><span class="n">dementia</span><span class="p">,</span> <span class="n">predictor</span> <span class="o">=</span> <span class="n">predicted_resp</span><span class="p">),</span> <span class="n">print.auc</span> <span class="o">=</span> <span class="kc">TRUE</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Type &#39;citation(&quot;pROC&quot;)&#39; for a citation.
+
+Attaching package: ‘pROC’
+
+The following objects are masked from ‘package:stats’:
+
+    cov, smooth, var
+
+Setting levels: control = 0, case = 1
+Setting direction: controls &lt; cases
+</pre></div>
+</div>
+<img alt="_images/14. Logistic Regression_49_1.png" src="_images/14. Logistic Regression_49_1.png" />
+</div>
+</div>
+<p>A perfect model should have a high sensitivity and a high specificity and its ROC curve shoud attain the top-left corner of the plot. A model without predictive ability shoud lie on the identity curve. The goal is to find a model that gets close to the top-left corner. To assess how close to the top-left corner a ROC curve is, one of the most used measure in the <em>area under the ROC</em>, often shortly referred in the literature as the <em>AUC</em> for <em>area under the curve</em>. The perfect model would have an AUC of <span class="math notranslate nohighlight">\(1\)</span> while a poor model shall have an AUC of <span class="math notranslate nohighlight">\(0.5\)</span>, the goal is to find a model whose AUC gets close to <span class="math notranslate nohighlight">\(1\)</span>, i.e. that has high specificity and high sensitivity.</p>
+<p>In our example, we find an AUC of <span class="math notranslate nohighlight">\(0.840\)</span> which is quite good. However, we can expect to achieve better results with a more appropriate model as the example used here remains a very simple model.</p>
+<blockquote>
+<div><p><em>Exercise:</em> Using the code you have written for computing <span class="math notranslate nohighlight">\(Se\)</span> and <span class="math notranslate nohighlight">\(Sp\)</span>, write a code that plots the ROC curve.</p>
+</div></blockquote>
+<p>Note that the ROC curve is a very traditional tool from the predictive toolkit but it is less and less used as it is not very informative \emph{per se} reporting directly the numbers is preferred.</p>
+</div>
+<div class="section" id="external-validation">
+<h4>14.5.2.5 External validation<a class="headerlink" href="#external-validation" title="Permalink to this headline">¶</a></h4>
+<p>In the example, we have estimated a model on the <code class="docutils literal notranslate"><span class="pre">dementia</span></code> dataset and have studied its prediction ability on the same data. This is not a good approach in general. The issue here is that, by estimating and validating the model on the exact same dataset, we might capture pattern specific to this dataset and the predictive ability of the model might be very different on external data.</p>
+<p>A solution to tackle this issue is to use different data to estimate and validate the model in order to avoid overfitting to a particular dataset. The data used to estimate and calibrate the model is called <em>the learning data</em> and the data used to validate the prediction accuracy of the model is called the <em>validation data</em>. There are different ways of applying this idea into practice:</p>
+<ul class="simple">
+<li><p>we can divide the initial dataset into two parts (not necessarily of equal size): the learning one and the validation one</p></li>
+<li><p>the <span class="math notranslate nohighlight">\(k-\)</span>fold cross validation is a resampling technique that divides the initial dataset into <span class="math notranslate nohighlight">\(k\)</span> smaller datasets. Each one of the <span class="math notranslate nohighlight">\(k\)</span> groups will serves as a validation dataset for a model estimated on the other <span class="math notranslate nohighlight">\(k-1\)</span> dataset. By repeating this for the <span class="math notranslate nohighlight">\(k\)</span> small datasets separately, we obtain <span class="math notranslate nohighlight">\(k\)</span> different predictions from which we can evaluate the goodness-of-fit of the model. When <span class="math notranslate nohighlight">\(k=1\)</span>, this method is known as the <em>leave-one-out</em> procedure</p></li>
+<li><p>the <em>bootstrap</em> procedure is a reseampling technique that artificially creates several dataset from the same initial dataset by resampling subjects with replacement</p></li>
+<li><p>use an external dataset from a different source as validation data for the model estimated from an initial dataset</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="adequacy-of-the-logistic-regression-model">
+<h3>14.5.3 Adequacy of the logistic regression model<a class="headerlink" href="#adequacy-of-the-logistic-regression-model" title="Permalink to this headline">¶</a></h3>
+<p>When including a covariate into a logistic regression model, it is assumed that there is a linear relationship between the log odds <span class="math notranslate nohighlight">\(\mathrm{logit}{\pi}\)</span> of the outcome and this covariate, while other covariates remain unchanged.</p>
+<p>The assumption of linearity of the <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> according to the continuous predictor variabels can be easily assessed by looking at the plots between the predictor and the logit values. For example, if we want to check this assumption for our second estimated model, we need to make this plot for the two continuous variables <code class="docutils literal notranslate"><span class="pre">age</span></code> and <code class="docutils literal notranslate"><span class="pre">bmi</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dementia</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">logit</span> <span class="o">=</span> <span class="nf">log</span><span class="p">(</span><span class="n">predicted_resp</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">predicted_resp</span><span class="p">)))</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">age</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">logit</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="nf">geom_smooth</span><span class="p">()</span>
+<span class="n">dementia</span> <span class="o">%&gt;%</span> <span class="nf">mutate</span><span class="p">(</span><span class="n">logit</span> <span class="o">=</span> <span class="nf">log</span><span class="p">(</span><span class="n">predicted_resp</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">-</span><span class="n">predicted_resp</span><span class="p">)))</span> <span class="o">%&gt;%</span> <span class="nf">ggplot</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">logit</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_point</span><span class="p">()</span> <span class="o">+</span> <span class="nf">geom_smooth</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>`geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;
+`geom_smooth()` using method = &#39;gam&#39; and formula &#39;y ~ s(x, bs = &quot;cs&quot;)&#39;
+</pre></div>
+</div>
+<img alt="_images/14. Logistic Regression_51_1.png" src="_images/14. Logistic Regression_51_1.png" />
+<img alt="_images/14. Logistic Regression_51_2.png" src="_images/14. Logistic Regression_51_2.png" />
+</div>
+</div>
+<p>From the two scatter plots with loess smoothing above, we can see that there clearly exists a linear relation between the logits and the variable <code class="docutils literal notranslate"><span class="pre">age</span></code> while it does not seem really obvious for the <code class="docutils literal notranslate"><span class="pre">bmi</span></code> variable. In practice, this can happen for example when the relationship between the outcome and the <code class="docutils literal notranslate"><span class="pre">bmi</span></code> variable is quadratic. By including <code class="docutils literal notranslate"><span class="pre">bmi</span></code><span class="math notranslate nohighlight">\(^2\)</span> into the model, we can allow more flexibility into this linear relationship so that the log odds linear assumption is still valid.</p>
+</div>
+<div class="section" id="common-pitfalls">
+<h3>14.5.4 Common pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="perfect-separation">
+<h4>14.5.4.1 Perfect separation<a class="headerlink" href="#perfect-separation" title="Permalink to this headline">¶</a></h4>
+<p>Perfect separation happens when the outcome can be directly predicted from one of the predictor variables. For example, let say that we model an outcome <span class="math notranslate nohighlight">\(Y\)</span> using one explanatory standard gaussian variable <span class="math notranslate nohighlight">\(X_1\)</span> and that <span class="math notranslate nohighlight">\(Y\)</span> is such that <span class="math notranslate nohighlight">\(Y=0\)</span> whenever <span class="math notranslate nohighlight">\(X_1\leq0\)</span> and <span class="math notranslate nohighlight">\(Y=1\)</span> whenever <span class="math notranslate nohighlight">\(X1&gt;0\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="p">(</span><span class="n">x1</span> <span class="o">&lt;=</span> <span class="m">0</span><span class="p">)</span><span class="o">*</span><span class="m">1</span>
+
+<span class="n">data_sep</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let us try to estimate this logistic regression model</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model_sep</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">x1</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data_sep</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“glm.fit: algorithm did not converge”Warning message:
+“glm.fit: fitted probabilities numerically 0 or 1 occurred”
+</pre></div>
+</div>
+</div>
+</div>
+<p><code class="docutils literal notranslate"><span class="pre">R</span></code> detects the perfect separation and prompts an error that states that <code class="docutils literal notranslate"><span class="pre">fitted</span> <span class="pre">probabilities</span> <span class="pre">numerically</span> <span class="pre">0</span> <span class="pre">or</span> <span class="pre">1</span> <span class="pre">occured</span></code>. The reason of this error is that, due to the perfect separation, the maximum likelihood of the parameter <span class="math notranslate nohighlight">\(\beta_1\)</span> for the variable <span class="math notranslate nohighlight">\(X_1\)</span> can not be estimated as its value is actually infinite thus leading to the prompted error. There exists some options to consider when facing this issue among which:</p>
+<ul class="simple">
+<li><p>removing the problematic variable from the model</p></li>
+<li><p>setting <span class="math notranslate nohighlight">\(\beta_1\)</span> at an arbitrary high value and estimate the model</p></li>
+<li><p>changing the model or manipulating the data</p></li>
+</ul>
+<p>Note that, in practice, perfect separation is not very likely to happen. However, <em>quasi_perfect</em> separation is totally possible and needs to be tackled. For more details about how to handle separation, one can read the following articles:</p>
+<blockquote>
+<div><p><em>Heinze, G., &amp; Schemper, M. (2002). A solution to the problem of separation in logistic regression. Statistics in Medicine</em></p>
+<p><em>Firth, D. (1993). Bias Reduction of Maximum Likelihood Estimates. Biometrika</em></p>
+</div></blockquote>
+</div>
+<div class="section" id="low-events-per-variable">
+<h4>14.5.4.2 Low events per variable<a class="headerlink" href="#low-events-per-variable" title="Permalink to this headline">¶</a></h4>
+<p>A common issue when estimating logistic regression model is the problem of the ratio between the number of events and the number of predictive variables. This ratio is known as <em>Events Per Variable</em> When this ratio is low, it can lead to biased estimation and model with poor predictive abilities.</p>
+<p>If the biomedical literature, the so-called <em>ten events per variable rule</em> is commonly used. However, we emphasize here the absence of theoretical justification and even the lack of actual evidence that this rule gives good results. If you want more information about the issues raised by this commonly used rule, you can read the following article:</p>
+<blockquote>
+<div><p><em>Smeden, M., de Groot, J.A., Moons, K.G. et al. (2016) No rationale for 1 variable per 10 events criterion for binary logistic regression analysis. BMC Med Res Methodol</em>.</p>
+</div></blockquote>
+</div>
+<div class="section" id="influential-values">
+<h4>14.5.4.3 Influential values<a class="headerlink" href="#influential-values" title="Permalink to this headline">¶</a></h4>
+<p>Another aspect to take into account when estimating a logistic regression model is the presence of influential values among the observations which, as their names indicates, might have a huge impact on the estimation of the model. The Cook’s distance is a useful measure to assess how influential an observation is. It measures how much the outcome would be modifier by removing this observation from the data.</p>
+<p>In, <code class="docutils literal notranslate"><span class="pre">R</span></code>, the Cook’s distance can be easily plotted and directly plotted by specifying <code class="docutils literal notranslate"><span class="pre">which</span> <span class="pre">=</span> <span class="pre">4</span></code> as an argument to the <code class="docutils literal notranslate"><span class="pre">plot</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">plot</span><span class="p">(</span><span class="n">dementia2</span><span class="p">,</span> <span class="n">which</span> <span class="o">=</span> <span class="m">4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/14. Logistic Regression_58_0.png" src="_images/14. Logistic Regression_58_0.png" />
+</div>
+</div>
+<p>As you can see from the above example, some observations seems to have higher influence than the other. However, if we look at the y-axis scale, this difference is not huge. It is important to be careful when using this plot for several reasons. As we have seen, the scale of the y-axis can have a very reduced range. Also, if some outliers seems to be identified, additional analysis should be performed for these apparent outliers before ruling them as actual influential values. If they happen to be, one of the solution is to remove them from the data.</p>
+</div>
+<div class="section" id="multicolinearity">
+<h4>14.5.4.4 Multicolinearity<a class="headerlink" href="#multicolinearity" title="Permalink to this headline">¶</a></h4>
+<p>Multicolinearity arises when one or several predictor variables can be described as a linear combination of a set of other predictor variables. In the case of perfect multicolinearity, the model becomes unidentifiable meaning that there no unique set of parameters can be found.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">x2</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">x3</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+<span class="n">x4</span> <span class="o">&lt;-</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span>
+<span class="n">prob</span> <span class="o">=</span> <span class="nf">exp</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="m">1</span><span class="o">+</span><span class="nf">exp</span><span class="p">(</span><span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span><span class="p">))</span>
+<span class="n">y</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">1</span><span class="p">,</span> <span class="m">1000</span><span class="p">,</span> <span class="n">prob</span><span class="p">)</span>
+
+<span class="n">data_multicol</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">y</span><span class="p">,</span><span class="n">x1</span><span class="p">,</span><span class="n">x2</span><span class="p">,</span><span class="n">x3</span><span class="p">,</span><span class="n">x4</span><span class="p">)</span>
+<span class="n">model_multicol</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">y</span> <span class="o">~</span> <span class="n">x1</span> <span class="o">+</span> <span class="n">x2</span> <span class="o">+</span> <span class="n">x3</span> <span class="o">+</span> <span class="n">x4</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">data_sep</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message:
+“glm.fit: algorithm did not converge”Warning message:
+“glm.fit: fitted probabilities numerically 0 or 1 occurred”
+</pre></div>
+</div>
+</div>
+</div>
+<p>We obtain the same error message that we got in the <em>perfect separation</em> case which makes sense as both issues leads to unidentifiable model and the impossibility of converging towards a unique solution. In less severe cases of multicolinearity, the model estimation sometimes converge but some parameters estimate might be biased and their standard error estimates can have high values meaning that there is a lot of uncertainty on their actual values.</p>
+<p>There exist several measures of the interrelationship between the predictor variables. Two of the most commonly used are the <em>tolerance</em> and the <em>variance inflation factor</em> (VIF). The tolerance is defined as <span class="math notranslate nohighlight">\(1-R^2_j\)</span> where <span class="math notranslate nohighlight">\(R^2_j\)</span> is the <span class="math notranslate nohighlight">\(R^2\)</span> of the regression of the covariate <span class="math notranslate nohighlight">\(X_j\)</span> on all other covariates and informs and the VIF is defined as the reciprocal of the tolerance. Tolerance ranges between <span class="math notranslate nohighlight">\(0\)</span> and <span class="math notranslate nohighlight">\(1\)</span> and a low tolerance is an indicator of a multicolinearity issue. As a consequence, a high VIF also is an indicator of a multicolinearity issue. As every such indicator, several rules of thumb are being used by scientists for these indicators as the following article describes.</p>
+<blockquote>
+<div><p>O’brien, R. M. (2007). A Caution Regarding Rules of Thumb for Variance Inflation Factors. Quality &amp; Quantity</p>
+</div></blockquote>
+<p>The VIF can be computed in <code class="docutils literal notranslate"><span class="pre">R</span></code> using the function <code class="docutils literal notranslate"><span class="pre">vif</span></code> from the <code class="docutils literal notranslate"><span class="pre">car</span></code> package.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">install.packages</span><span class="p">(</span><span class="s">&quot;car&quot;</span><span class="p">,</span> <span class="n">repos</span><span class="o">=</span><span class="s">&#39;http://cran.us.r-project.org&#39;</span><span class="p">)</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">car</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>also installing the dependencies ‘openxlsx’, ‘rio’
+
+Warning message in install.packages(&quot;car&quot;, repos = &quot;http://cran.us.r-project.org&quot;):
+“installation of package ‘openxlsx’ had non-zero exit status”Warning message in install.packages(&quot;car&quot;, repos = &quot;http://cran.us.r-project.org&quot;):
+“installation of package ‘rio’ had non-zero exit status”Warning message in install.packages(&quot;car&quot;, repos = &quot;http://cran.us.r-project.org&quot;):
+“installation of package ‘car’ had non-zero exit status”Updating HTML index of packages in &#39;.Library&#39;
+Making &#39;packages.html&#39; ... done
+</pre></div>
+</div>
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span>Error in library(car): there is no package called ‘car’
+Traceback:
+
+1. library(car)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">vif</span><span class="p">(</span><span class="n">model_multicol</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>When multicolinearity arises, different options might be considered. A first is to remove from the covariates highly correlated ones, i.e. those with high VIF. A second option is to proceed to a dimensionality reduction approach as a preliminary step.</p>
+</div>
+</div>
+</div>
+<div class="section" id="additional-notes">
+<h2>14.6 Additional notes<a class="headerlink" href="#additional-notes" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="logistic-regression-for-case-control-studies">
+<h3>14.6.1 Logistic regression for case-control studies<a class="headerlink" href="#logistic-regression-for-case-control-studies" title="Permalink to this headline">¶</a></h3>
+</div>
+<div class="section" id="extension-to-logistic-regression">
+<h3>14.6.2 Extension to logistic regression<a class="headerlink" href="#extension-to-logistic-regression" title="Permalink to this headline">¶</a></h3>
+<p>In this section, we present some useful extensions of the logistic regression model. We will not go into much details and only the general idea is introduced for each. If you want more informations on extension to logistic regression, Chapter 7, 8 and 11 of the following book are useful to read.</p>
+<blockquote>
+<div><p>Agresti, A., Categorical Data Analysis, 3rd edition, 2012</p>
+</div></blockquote>
+<div class="section" id="conditional-logistic-regression">
+<h4>14.6.2.1 Conditional logistic regression<a class="headerlink" href="#conditional-logistic-regression" title="Permalink to this headline">¶</a></h4>
+<p>The conditional logistic regression is specifically designed for grouped data and in particular for matched studies where each group is a pair of two matched subjetcs. Matched studies are widely used and these can be analysed using conditional logistic regression.</p>
+<p>A naïve idea would be to include into a logistic regression model a parameter specific to each data stratum. However, for matched studies, it would mean having as many parameters as pairs. This raised two main issues. First, each of this stratum specific parameter would be estimated only from the information contained in a unique pair, i.e. very few information. Secondly, as the number of pairs increases, the number of parameters would also increase and maximum likelihood theory would fail to provide valid estimation.</p>
+<p>The idea of conditional logistic regression is to remove the dependence upon the stratum specific parameters by conditioning the probability on sufficient exposure informations. This way, because the stratum specific parameters vanishes from the equation, there is no violation of maximum likelihood theory assumptions and the other model parameters can be estimated consistently using classic techniques.</p>
+<blockquote>
+<div><p>If you are interested into model for matched studies, you are invited to read the GLM notes from the Medical Statistics MSc where you will find two sessions on matched studies.</p>
+</div></blockquote>
+</div>
+<div class="section" id="multinomial-logistic-regression">
+<h4>14.6.2.2 Multinomial logistic regression<a class="headerlink" href="#multinomial-logistic-regression" title="Permalink to this headline">¶</a></h4>
+<p>The multinomial logistic regression model is a generalization of the logistic regression model for outcomes that have more than <span class="math notranslate nohighlight">\(2\)</span> categories, <span class="math notranslate nohighlight">\(Y\in\{1,\dots,J\}\)</span> with <span class="math notranslate nohighlight">\(J\geq 2\)</span> a natural number. In this case, the conditional distribution of <span class="math notranslate nohighlight">\(Y_i\)</span> given the covariates <span class="math notranslate nohighlight">\(X_i\)</span> is the multinomial distribution. Among the <span class="math notranslate nohighlight">\(J\)</span> categories, a reference one is chosen, e.g. the first category, and for <span class="math notranslate nohighlight">\(j=2,\dots,J\)</span></p>
+<div class="math notranslate nohighlight">
+\[\log\left( \frac{\mathbb{P}(Y_i=j|X_i)}{\mathbb{P}(Y_i=1|X_i)} \right) = \beta_{0,j} + \sum_{k=1}^p \beta_{k,j}X_{i,k}\]</div>
+<p>The model is estimated simultaneously for all values of <span class="math notranslate nohighlight">\(j\)</span>. For a fixed <span class="math notranslate nohighlight">\(j\)</span>, the interpretation of the parameters is similar to the logistic regression model. However, note that technically, the multinomial logistic regression model is not a generalized linear model because the multinomial probability distribution does not belong to the exponential family.</p>
+</div>
+<div class="section" id="ordinal-logistic-regression">
+<h4>14.6.2.3 Ordinal logistic regression<a class="headerlink" href="#ordinal-logistic-regression" title="Permalink to this headline">¶</a></h4>
+<p>The ordinal logistic regression is designed for outcomes that have more than <span class="math notranslate nohighlight">\(2\)</span> categories, <span class="math notranslate nohighlight">\(Y\in\{1,\dots,J\}\)</span> with <span class="math notranslate nohighlight">\(J\geq 2\)</span>, and whose categories have an explicit ordering. In the ordinal logistic regression, the modelled quantity is <span class="math notranslate nohighlight">\(\mathrm{logit}(\mathbb{P}(Y_i\geq j|X_i))\)</span> for <span class="math notranslate nohighlight">\(j\geq 2\)</span>. Indeed, when <span class="math notranslate nohighlight">\(j=1\)</span>, t
+<span class="math notranslate nohighlight">\(\mathbb{P}(Y\geq 1)=1\)</span> and does not need to be modelled. As the categories are ordered, a fundamental assumption made by ordinal logistic regression is that the effect of the covariates are homogenous between the different categories. Therefore, the model is written</p>
+<div class="math notranslate nohighlight">
+\[\mathrm{logit}(\mathbb{P}(Y_i\geq j|X_i)) = \beta_{0j} + \sum_{k=1}^n \beta_{k}X_{i,k}\]</div>
+<p>where only the intercept term depends upon the category. However, it is important to be careful when making this assumption and adequation of the model should be checked.</p>
+</div>
+</div>
+<div class="section" id="neural-networks">
+<h3>14.6.3 Neural networks<a class="headerlink" href="#neural-networks" title="Permalink to this headline">¶</a></h3>
+<p>You probably have already read about artificial neural networks, a class of model widely used for data classification in machine learning. Artificial neural networks are at the heart of <em>deep learning</em> methods used to develop computer vision, speech recognition, audio recognition, etc. Actually, the basic logistic regression model happens to be a special case of artificial neural network. If you are interested in this subject and want to have more insight on the relation between these two models, you might want to read the following article.</p>
+<blockquote>
+<div><p>Dreiseitl, S., &amp; Ohno-Machado, L. (2002). Logistic regression and artificial neural network classification models: a methodology review. Journal of Biomedical Informatics</p>
+</div></blockquote>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="13.%20Linear%20Regression%20II.html" title="previous page">13. Linear Regression II</a>
+    <a class='right-next' id="next-link" href="15.%20Poisson%20Regression%20Model.html" title="next page">15. Generalised Linear Models: Poisson Regression for Count Variables</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

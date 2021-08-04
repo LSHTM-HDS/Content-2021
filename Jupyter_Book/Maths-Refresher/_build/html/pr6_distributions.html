@@ -1,0 +1,761 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Distributions &#8212; Maths Refresher</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="Correlation and covariance" href="pr5_correlation.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Maths Refresher</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="myintro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr1_functions.html">
+   Functions, exponential and logarithm rules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr2_calculus.html">
+   Differentiation and integration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr3_matrices.html">
+   Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cm_combinatorics.html">
+   Combinatorics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr1_probability.html">
+   Probability, definitions and axioms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr2_theorems.html">
+   Probability Theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr3_variables.html">
+   Discrete Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr4_continuous_variables.html">
+   Continuous Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr5_correlation.html">
+   Correlation and covariance
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Distributions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/pr6_distributions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/Maths_Refresher"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/Maths_Refresher/issues/new?title=Issue%20on%20page%20%2Fpr6_distributions.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/pr6_distributions.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#parameters">
+   Parameters
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#discrete-distributions">
+   Discrete distributions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bernoulli-distribution">
+     Bernoulli distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#binomial-distribution">
+     Binomial distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#poisson-distribution">
+     Poisson distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypergeometric-distribution">
+     Hypergeometric distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#continuous-distributions">
+   Continuous distributions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-normal-gaussian-distribution">
+     The normal (Gaussian) distribution
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-standard-normal-distribution">
+       The standard normal distribution
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-exponential-distribution">
+     The exponential distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#student-s-t-distribution">
+     Student’s t-distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chi-squared-distribution">
+     Chi-squared distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-f-distribution">
+     The F-distribution
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-beta-distribution">
+     The Beta distribution
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="distributions">
+<h1>Distributions<a class="headerlink" href="#distributions" title="Permalink to this headline">¶</a></h1>
+<p>This page goes through some distributions that you may encounter during this year. This is to give a flavour of things to come; we do not expect you to know the details on this page when you start the programme.</p>
+<p>This page can be read in a static format or can be used interactively. In order to open the interactive version of the notebook, you need to open it in Binder. To do this, hover your mouse over the rocket symbol (near the top right of the page) and click on the word “Binder” which should appear. This will load an online R kernel which should allow you to interactively change and run the R code below. The first time you load this it may take a few minutes. If this is slow, you can also open up R separately and copy and paste the code into your local copy of R.</p>
+<div class="section" id="parameters">
+<h2>Parameters<a class="headerlink" href="#parameters" title="Permalink to this headline">¶</a></h2>
+<p>The word parameter refers to an unknown quantity. We often think about a parameter as being the “true” value, or the value that holds in a wider population of interest.</p>
+<p>Most distributions have one or more unknown parameters which define the distribution.</p>
+</div>
+<div class="section" id="discrete-distributions">
+<h2>Discrete distributions<a class="headerlink" href="#discrete-distributions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="bernoulli-distribution">
+<h3>Bernoulli distribution<a class="headerlink" href="#bernoulli-distribution" title="Permalink to this headline">¶</a></h3>
+<p>The simplest discrete distribution that we are likely to encounter is the Bernoulli. The Bernoulli distribution corresponds to a single binary outcome (1=”success”, 0=”failure”), with <span class="math notranslate nohighlight">\(P(X = 1) = \pi\)</span>.</p>
+<p>If random variable <span class="math notranslate nohighlight">\(X\)</span> follows a Bernoulli distribution then we can write</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim Bernoulli(\pi), 
+\]</div>
+<p>where the <span class="math notranslate nohighlight">\(\sim\)</span> can be read as “follows the distribution of” or “is distributed as”. The expectation and variance of a variable <span class="math notranslate nohighlight">\(X\)</span> which follows a Bernoulli distribution with parameter <span class="math notranslate nohighlight">\(\pi\)</span> are given by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(X) = \pi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var(X) = \pi(1-\pi)\)</span></p></li>
+</ul>
+<p>So if we randomly generate a value for <span class="math notranslate nohighlight">\(X\)</span>, it will either take the value of 0 or 1. If we do this many times (e.g. 50 times), then each of those 50 values will take the value either 0 or 1. The expectation - the long-run average - is <span class="math notranslate nohighlight">\(\pi\)</span>. So if we simulate a large number of values, we expect the sample mean to be around <span class="math notranslate nohighlight">\(\pi\)</span>. And we expect the sample variance to be around <span class="math notranslate nohighlight">\(\pi(1-\pi)\)</span>.</p>
+<p>The probability distribution function (PDF) of a Bernoulli variable is given by the single probability <span class="math notranslate nohighlight">\(P(X = 1) = \pi\)</span>. This fully characterises the whole distribution since it determines <span class="math notranslate nohighlight">\(P(X=0) = 1-\pi\)</span>.</p>
+<p>The code below (in R) randomly generates values from a Bernoulli distribution. The first number is the number of values to draw (generate). We have set this to <span class="math notranslate nohighlight">\(50\)</span>. This means that the object <span class="math notranslate nohighlight">\(X\)</span> contains <span class="math notranslate nohighlight">\(50\)</span> realisations from a Bernoulli distribution. So each of those 50 values will be a draw from  <span class="math notranslate nohighlight">\(Bernoulli(\pi)\)</span>. The second number is always 1 for a Bernoulli distribution. The third number is the probability of success, <span class="math notranslate nohighlight">\(\pi\)</span>. Here, we have set <span class="math notranslate nohighlight">\(\pi=0.3\)</span>. If you are reading this interactively, change the first and third number and see what happens to the individual values, sample mean and sample variance.</p>
+<p>The command <code class="docutils literal notranslate"><span class="pre">head(X)</span></code> displays the first few values of the object <span class="math notranslate nohighlight">\(X\)</span> (i.e. it writes the first few values drawn for <span class="math notranslate nohighlight">\(X\)</span> on screen, in this case the first six values drawn for <span class="math notranslate nohighlight">\(X\)</span> were two zeros followed by a one and three more zeros). The <code class="docutils literal notranslate"><span class="pre">mean(X)</span></code> and <code class="docutils literal notranslate"><span class="pre">var(X)</span></code> commands display the sample mean and sample variance of <span class="math notranslate nohighlight">\(X\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">50</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.3</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">var</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>1</li>
+	<li>0</li>
+	<li>0</li>
+	<li>0</li>
+	<li>1</li>
+	<li>1</li>
+</ol>
+</div><div class="output text_html">0.36</div><div class="output text_html">0.235102040816327</div></div>
+</div>
+</div>
+<div class="section" id="binomial-distribution">
+<h3>Binomial distribution<a class="headerlink" href="#binomial-distribution" title="Permalink to this headline">¶</a></h3>
+<p>Now suppose we conduct many Bernoulli trials (we will call this number <span class="math notranslate nohighlight">\(n\)</span>) and combine the results together to form a single number - the total number of “successes” among the <span class="math notranslate nohighlight">\(n\)</span> trials. This number follows a binomial distribution.</p>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> be the total number of successes from <span class="math notranslate nohighlight">\(n\)</span> trials. Then <span class="math notranslate nohighlight">\(X\)</span> follows a binomial distribution,</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim binomial(n; \pi), 
+\]</div>
+<p>The expectation and variance of a variable <span class="math notranslate nohighlight">\(X\)</span> which follows a binomial distribution with parameter <span class="math notranslate nohighlight">\(\pi\)</span> and a fixed number of <span class="math notranslate nohighlight">\(n\)</span> trials, are given by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(X) = n \pi\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var(X) = n \pi(1-\pi)\)</span></p></li>
+</ul>
+<p>The probability distribution function <span class="math notranslate nohighlight">\(X\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(X=x) = \begin{pmatrix}n \\ x \end{pmatrix} \pi^{x} (1-\pi)^{n-x}, \ \ \mbox{for} \ \ x=0,1,2,..,n.
+\end{split}\]</div>
+<p>The code below randomly generates values from a binomial distribution. The first number is the number of values to draw (generate). If we set this number to 100, as below, then the object <span class="math notranslate nohighlight">\(X\)</span> will contain 100 different draws from a binomial distribution.  The second number is the number of trials <span class="math notranslate nohighlight">\(n\)</span>. The third number is the probability of success, <span class="math notranslate nohighlight">\(\pi\)</span> within each trial. If you are reading this interactively, change the first and third number and see what happens to the individual values, sample mean and sample variance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">10</span><span class="p">,</span> <span class="m">0.48</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">var</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>7</li>
+	<li>5</li>
+	<li>7</li>
+	<li>2</li>
+	<li>5</li>
+	<li>3</li>
+</ol>
+</div><div class="output text_html">4.89</div><div class="output text_html">2.8059595959596</div><img alt="_images/pr6_distributions_9_3.png" src="_images/pr6_distributions_9_3.png" />
+</div>
+</div>
+</div>
+<div class="section" id="poisson-distribution">
+<h3>Poisson distribution<a class="headerlink" href="#poisson-distribution" title="Permalink to this headline">¶</a></h3>
+<p>The Poisson distribution is used to model the <strong>number of events</strong> occurring in a fixed time interval <span class="math notranslate nohighlight">\(T\)</span> when:</p>
+<ul class="simple">
+<li><p>events occur randomly in time,</p></li>
+<li><p>they occur at a constant rate <span class="math notranslate nohighlight">\(\lambda\)</span> per unit time,</p></li>
+<li><p>they occur independently of each other.</p></li>
+</ul>
+<p>A random variable <span class="math notranslate nohighlight">\(X\)</span> which follows a Poisson distribution can therefore take any non-negative integer value. Examples where the Poisson distribution might be appropriate include:</p>
+<ul class="simple">
+<li><p>Emissions from a radioactive source,</p></li>
+<li><p>The number of deaths in a large cohort of people over a year,</p></li>
+<li><p>The number of car accidents occurring in a city over a year.</p></li>
+</ul>
+<p>The parameter for the Poisson distribution is the expected number of events, <span class="math notranslate nohighlight">\(\mu\)</span>. This can be calculated from the rate as <span class="math notranslate nohighlight">\(\mu=\lambda T\)</span>. Often, the time period of interest is equal to one unit (in whatever units of time we are measuring in) in which case <span class="math notranslate nohighlight">\(\mu=\lambda\)</span>.</p>
+<p>If <span class="math notranslate nohighlight">\(X\)</span> is the total number of events occurring in a fixed interval <span class="math notranslate nohighlight">\(T\)</span> at a constant rate <span class="math notranslate nohighlight">\(\lambda\)</span> with parameter <span class="math notranslate nohighlight">\(\mu=\lambda T\)</span>, then we write</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim \mbox{Poisson}(\mu)
+\]</div>
+<p>The expectation and variance of a variable <span class="math notranslate nohighlight">\(X\)</span> which follows a Poisson distribution with parameter <span class="math notranslate nohighlight">\(\mu\)</span> are given by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(X) = \mu\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var(X) = \mu\)</span></p></li>
+</ul>
+<p>The probability distribution function of <span class="math notranslate nohighlight">\(X\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[
+P(X=x) = \frac{\mu^{x}}{x!} e^{-\mu}, \ \ \mbox{ for } \ \ x=0,1,2,...
+\]</div>
+<p>The code below randomly generates values from a Poisson distribution. The first number is the number of values to draw (generate). The second number is the number of trials <span class="math notranslate nohighlight">\(n\)</span>. The third number is the probability of success, <span class="math notranslate nohighlight">\(\pi\)</span> within each trial. If you are reading this interactively, change the first and third number and see what happens to the individual values, sample mean and sample variance.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">X</span> <span class="o">&lt;-</span> <span class="nf">rpois</span><span class="p">(</span><span class="m">100</span><span class="p">,</span> <span class="m">3</span><span class="p">)</span>
+<span class="nf">head</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+<span class="nf">var</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><ol class=list-inline>
+	<li>4</li>
+	<li>5</li>
+	<li>3</li>
+	<li>2</li>
+	<li>1</li>
+	<li>3</li>
+</ol>
+</div><div class="output text_html">2.98</div><div class="output text_html">2.78747474747475</div><img alt="_images/pr6_distributions_12_3.png" src="_images/pr6_distributions_12_3.png" />
+</div>
+</div>
+</div>
+<div class="section" id="hypergeometric-distribution">
+<h3>Hypergeometric distribution<a class="headerlink" href="#hypergeometric-distribution" title="Permalink to this headline">¶</a></h3>
+<p>In health settings, this distribution is perhaps less commonly used than the Bernoulli, binomial and Poisson.</p>
+<p>When the population size <span class="math notranslate nohighlight">\(N\)</span> and number of successes in the population <span class="math notranslate nohighlight">\(M\)</span> are large, the variable <span class="math notranslate nohighlight">\(X\)</span> recording the number of successes in a sample of size <span class="math notranslate nohighlight">\(n\)</span> has a binomial distribution (see above). This approximate result fails when the population size <span class="math notranslate nohighlight">\(N\)</span> is small. Suppose then that we have a population of size <span class="math notranslate nohighlight">\(N\)</span>, with <span class="math notranslate nohighlight">\(M\)</span> individuals having the characteristic corresponding to “success”, i.e. <span class="math notranslate nohighlight">\(M\)</span> out of <span class="math notranslate nohighlight">\(N\)</span> individuals in the population have a particular disease. We do not assume that <span class="math notranslate nohighlight">\(N\)</span> and <span class="math notranslate nohighlight">\(M\)</span> are large.</p>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> be the random variable recording the number of individuals with the disease of interest in a sample of size <span class="math notranslate nohighlight">\(n\)</span> from a population of size <span class="math notranslate nohighlight">\(N\)</span>, of which <span class="math notranslate nohighlight">\(M\)</span> individuals have the disease. Then <span class="math notranslate nohighlight">\(X\)</span> follows a hypergeometric distribution.</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim hypergeometric(M,N,n)
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(X=x) = \frac{\begin{pmatrix}M \\ x \end{pmatrix} \begin{pmatrix}N-M \\ n-x \end{pmatrix}}{\begin{pmatrix}N \\ n \end{pmatrix}} \ \ \mbox{for}  \ \ x = 0, 1, ..., n 
+\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="continuous-distributions">
+<h2>Continuous distributions<a class="headerlink" href="#continuous-distributions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-normal-gaussian-distribution">
+<h3>The normal (Gaussian) distribution<a class="headerlink" href="#the-normal-gaussian-distribution" title="Permalink to this headline">¶</a></h3>
+<p>The normal (Gaussian) distribution is arguably the most important probability distribution in statistics. It lies at the heart of the modelling assumptions of linear regression and plays a critical role in statistical inference because of the Central Limit Theorem.</p>
+<p>The normal distribution has a ‘bell-shape’. It is centred around its mean, <span class="math notranslate nohighlight">\(\mu\)</span>. The spread of the different values is determined by the variance, <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
+<p>If a variable <span class="math notranslate nohighlight">\(X\)</span> follows a normal distribution, with parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>, we write</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim N(\mu, \sigma^2)
+\]</div>
+<p>The expectation and variance of a variable <span class="math notranslate nohighlight">\(X\)</span> which follows a normal distribution with parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span> are given by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(X) = \mu\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var(X) = \sigma^2\)</span></p></li>
+</ul>
+<p>The probability distribution function of <span class="math notranslate nohighlight">\(X\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ 
+f(x) = \frac{1}{\sqrt{2 \pi \sigma^2}} e^{-\frac{(x - \mu)^2}{2 \sigma^2}}
+\]</div>
+<p>The code below randomly draws 1000 observations from a normal distribution. If you are reading these notes interactively, try changing the values <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span> in the first two lines and see how the histogram of values change.</p>
+<p>If you would like to see the values generated, try adding the lines of code <code class="docutils literal notranslate"><span class="pre">head(r)</span></code> and <code class="docutils literal notranslate"><span class="pre">summary(r)</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">mu</span> <span class="o">&lt;-</span> <span class="m">13</span>
+<span class="n">sigma2</span> <span class="o">&lt;-</span> <span class="m">5</span>
+<span class="n">X</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="n">mu</span><span class="p">,</span> <span class="n">sigma2</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/pr6_distributions_17_0.png" src="_images/pr6_distributions_17_0.png" />
+</div>
+</div>
+<div class="section" id="the-standard-normal-distribution">
+<h4>The standard normal distribution<a class="headerlink" href="#the-standard-normal-distribution" title="Permalink to this headline">¶</a></h4>
+<p>A special case of the normal distribution is the <strong>standard normal</strong>, which is a normal distribution with mean 0 and variance 1. We often use the letter <span class="math notranslate nohighlight">\(Z\)</span> to denote a variable that follows a standard normal distribution. For a standard normal variable, <span class="math notranslate nohighlight">\(Z\)</span>, 95% of the distribution is contained between -1.96 and +1.96:</p>
+<div class="math notranslate nohighlight">
+\[
+P(-1.96 &lt; Z &lt; 1.96) = 0.95
+\]</div>
+<p>A useful property of normal distributions is that any normal distribution can be transformed to the standard normal distribution by subtracting the mean and dividing through by the standard deviation (the square root of the variance). So if</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim N(\mu, \sigma^2)
+\]</div>
+<p>then</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{X - \mu}{\sigma} \sim N(0, 1)
+\]</div>
+<p>One consequence of this is that for any normal distribution, 95% of the observations are contained within <span class="math notranslate nohighlight">\(\pm 1.96 \sigma\)</span> of the mean <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
+</div>
+</div>
+<div class="section" id="the-exponential-distribution">
+<h3>The exponential distribution<a class="headerlink" href="#the-exponential-distribution" title="Permalink to this headline">¶</a></h3>
+<p>Suppose the number of events in a period follow a Poisson distribution and occur at rate <span class="math notranslate nohighlight">\(\lambda\)</span>, with <span class="math notranslate nohighlight">\(\lambda&gt;0\)</span>. Consider the time between two consecutive events. The distribution of this variable is called the exponential.</p>
+<p>If a variable <span class="math notranslate nohighlight">\(X\)</span> follows an exponential distribution, with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, we write</p>
+<div class="math notranslate nohighlight">
+\[
+X \sim Exp(\lambda)
+\]</div>
+<p>The expectation and variance of a variable <span class="math notranslate nohighlight">\(X\)</span> which follows an exponential distribution with parameter <span class="math notranslate nohighlight">\(\lambda\)</span> are given by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(X) = \frac{1}{\lambda}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var(X) = \frac{1}{\lambda^2}\)</span></p></li>
+</ul>
+<p>The probability distribution function of <span class="math notranslate nohighlight">\(X\)</span> is</p>
+<div class="math notranslate nohighlight">
+\[ 
+f(x) =\lambda e^{-\lambda x} \ \ \mbox{for} \ \ x&gt;0
+\]</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">rate</span> <span class="o">&lt;-</span> <span class="m">30</span>
+<span class="n">X</span> <span class="o">&lt;-</span> <span class="nf">rexp</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="n">rate</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/pr6_distributions_20_0.png" src="_images/pr6_distributions_20_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="student-s-t-distribution">
+<h3>Student’s t-distribution<a class="headerlink" href="#student-s-t-distribution" title="Permalink to this headline">¶</a></h3>
+<p>Student’s t-distribution arises as the ratio of the sample mean to its standard error. The t-distribution has a complex density function which we shall not state here. For now we note that the t-distribution has an additional parameter of sorts, known as the <em>degrees of freedom</em> (d.f.). The density function is similar to that of the standard normal, but the t-distribution has heavier tails. We often use <span class="math notranslate nohighlight">\(T\)</span> to denote a variable which follows a t-distribution. If <span class="math notranslate nohighlight">\(T\)</span> follows a t-distribution with <span class="math notranslate nohighlight">\(\nu\)</span> degrees of freedom, we write</p>
+<div class="math notranslate nohighlight">
+\[
+T \sim t_\nu
+\]</div>
+<p>The expectation and variance of a variable <span class="math notranslate nohighlight">\(X\)</span> which follows a t-distribution with <span class="math notranslate nohighlight">\(\nu\)</span> degrees of freedom are given by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(T) = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var(T) = \frac{\nu}{\nu - 2}\)</span> if <span class="math notranslate nohighlight">\(\nu &gt;2\)</span>; <span class="math notranslate nohighlight">\(\infty\)</span> for <span class="math notranslate nohighlight">\(1&lt;\nu \leq 2\)</span>; undefined otherwise</p></li>
+</ul>
+<p>As the number of degrees of freedom increases the t-distribution gets closer and closer to the standard normal distribution. In the code below (if using interactively), try decreasing and increasing the degrees of freedom to see how the shape of the distribution changes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="m">18</span>
+<span class="bp">T</span> <span class="o">&lt;-</span> <span class="nf">rt</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="m">18</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="bp">T</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/pr6_distributions_22_0.png" src="_images/pr6_distributions_22_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="chi-squared-distribution">
+<h3>Chi-squared distribution<a class="headerlink" href="#chi-squared-distribution" title="Permalink to this headline">¶</a></h3>
+<p>The chi-squared distribution with <span class="math notranslate nohighlight">\(n\)</span> degrees of freedom arises as the sum of the squares of <span class="math notranslate nohighlight">\(n\)</span> independent standard normal variables.</p>
+<p>Thus if <span class="math notranslate nohighlight">\(X_{1},..,X_{n} \sim N(0,1)\)</span> and are independent and</p>
+<div class="math notranslate nohighlight">
+\[
+Q = \sum^{n}_{i=1} X^{2}_{i} 
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(Q\)</span> follows a chi-squared distribution on <span class="math notranslate nohighlight">\(n\)</span> degrees of freedom. We write</p>
+<div class="math notranslate nohighlight">
+\[
+Q \sim \chi^{2}_{n}
+\]</div>
+<p>The expectation and variance of <span class="math notranslate nohighlight">\(Q\)</span> are given by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(Q) = n\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var(Q) = 2 n\)</span></p></li>
+</ul>
+<p>The probability distribution function is complex and not stated here.</p>
+<p>The chi-squared distribution is used in a number of areas of statistics, such as when estimating the variance of a normal distribution, and in hypothesis testing to examine if there is evidence of an association between two categorical variables.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span> <span class="o">&lt;-</span> <span class="m">18</span>
+<span class="n">Q</span> <span class="o">&lt;-</span> <span class="nf">rchisq</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="m">18</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">Q</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/pr6_distributions_24_0.png" src="_images/pr6_distributions_24_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="the-f-distribution">
+<h3>The F-distribution<a class="headerlink" href="#the-f-distribution" title="Permalink to this headline">¶</a></h3>
+<p>The F distribution arises as the ratio of two independent chi-squared distributions.</p>
+<p>Suppose <span class="math notranslate nohighlight">\(U_{1} \sim \chi^{2}_{n}\)</span>, <span class="math notranslate nohighlight">\(U_{2} \sim \chi^{2}_{m}\)</span> and <span class="math notranslate nohighlight">\(U_{1},U_{2}\)</span> are independent, then:</p>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{U_{1}/n}{U_{2}/m}
+\]</div>
+<p>We write <span class="math notranslate nohighlight">\(F \sim F_{n,m}\)</span>.</p>
+<p>The F-distribution arises when performing hypothesis tests in an analysis of variance and linear regression.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df1</span> <span class="o">&lt;-</span> <span class="m">4</span>
+<span class="n">df2</span> <span class="o">&lt;-</span> <span class="m">9</span>
+<span class="n">U1</span> <span class="o">&lt;-</span> <span class="nf">rchisq</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="n">df1</span><span class="p">)</span>
+<span class="n">U2</span> <span class="o">&lt;-</span> <span class="nf">rchisq</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="n">df2</span><span class="p">)</span>
+<span class="bp">F</span> <span class="o">&lt;-</span><span class="p">(</span><span class="n">U1</span><span class="o">/</span><span class="n">df1</span><span class="p">)</span><span class="o">/</span><span class="p">(</span><span class="n">U2</span><span class="o">/</span><span class="n">df2</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="bp">F</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/pr6_distributions_26_0.png" src="_images/pr6_distributions_26_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="the-beta-distribution">
+<h3>The Beta distribution<a class="headerlink" href="#the-beta-distribution" title="Permalink to this headline">¶</a></h3>
+<p>The beta distribution is a continuous probability distribution with two parameters, often called shape parameters since they control the shape of the distribution. If <span class="math notranslate nohighlight">\(X\)</span> follows a Beta distribution, we write</p>
+<div class="math notranslate nohighlight">
+\[
+X\sim Beta(\alpha, \beta)
+\]</div>
+<p>The density of the Beta distribution is:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{1}{B(\alpha, \beta)} \ x^{\alpha - 1} (1 - x)^{\beta - 1}, \qquad \mbox{for} \ \ x \in [0,1]
+\]</div>
+<p>The Beta function, <span class="math notranslate nohighlight">\(B(\alpha, \beta)\)</span> is a normalisation constant to ensure that the integral from 0 to 1 is equal to 1.</p>
+<p>The Beta distribution appears frequently in Bayesian inference. It can also be used to model percentages and proportions. The expectation and variance is given by:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(X) = \frac{\alpha}{\alpha + \beta}\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var(X) = \frac{\alpha \beta}{(\alpha + \beta)^2 (\alpha + \beta + 1)}\)</span></p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">alpha</span> <span class="o">&lt;-</span> <span class="m">10</span>
+<span class="n">beta</span> <span class="o">&lt;-</span> <span class="m">2</span>
+
+<span class="n">X</span> <span class="o">&lt;-</span> <span class="nf">rbeta</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="n">alpha</span><span class="p">,</span> <span class="n">beta</span><span class="p">,</span> <span class="n">ncp</span> <span class="o">=</span> <span class="m">0</span><span class="p">)</span>
+
+<span class="nf">hist</span><span class="p">(</span><span class="n">X</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/pr6_distributions_28_0.png" src="_images/pr6_distributions_28_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="pr5_correlation.html" title="previous page">Correlation and covariance</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

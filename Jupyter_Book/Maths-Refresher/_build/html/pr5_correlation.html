@@ -1,0 +1,450 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Correlation and covariance &#8212; Maths Refresher</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Distributions" href="pr6_distributions.html" />
+    <link rel="prev" title="Continuous Random Variables" href="pr4_continuous_variables.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Maths Refresher</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="myintro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr1_functions.html">
+   Functions, exponential and logarithm rules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr2_calculus.html">
+   Differentiation and integration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr3_matrices.html">
+   Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cm_combinatorics.html">
+   Combinatorics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr1_probability.html">
+   Probability, definitions and axioms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr2_theorems.html">
+   Probability Theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr3_variables.html">
+   Discrete Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr4_continuous_variables.html">
+   Continuous Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Correlation and covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr6_distributions.html">
+   Distributions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/pr5_correlation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/Maths_Refresher"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/Maths_Refresher/issues/new?title=Issue%20on%20page%20%2Fpr5_correlation.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/pr5_correlation.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#covariance">
+   Covariance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#linear-association">
+     Linear association
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#rules-of-covariance">
+     Rules of covariance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#correlation">
+   Correlation
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="correlation-and-covariance">
+<h1>Correlation and covariance<a class="headerlink" href="#correlation-and-covariance" title="Permalink to this headline">¶</a></h1>
+<p>Correlation and covariance are measures of the degree of relationship between two continuous random variables.</p>
+<div class="section" id="covariance">
+<h2>Covariance<a class="headerlink" href="#covariance" title="Permalink to this headline">¶</a></h2>
+<p>Let <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> be two random variables which are not necessarily independent. Then the variance of their sum is found as</p>
+<div class="math notranslate nohighlight">
+\[
+Var(X+Y) = E\left(((X+Y)-(E(X)+E(Y)))^{2}\right) 
+\]</div>
+<p>This can be written as</p>
+<div class="math notranslate nohighlight">
+\[ E\left(((X-E(X)) + (Y-E(Y)))^{2}\right) 
+\]</div>
+<p>which equals</p>
+<div class="math notranslate nohighlight">
+\[
+E\left((X-E(X))^{2} + (Y-E(Y))^{2} + 2(X-E(X))(Y-E(Y)) \right) 
+\]</div>
+<p>We can now write this as:</p>
+<div class="math notranslate nohighlight">
+\[
+Var(X+Y) = Var(X) + Var(Y) + 2E((X-E(X))(Y-E(Y))) 
+\]</div>
+<p>We define the covariance between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> as:</p>
+<div class="math notranslate nohighlight">
+\[
+Cov(X,Y) = E\left( (X-E(X)) (Y-E(Y)) \right)
+\]</div>
+<p>From its definition we see that if when <span class="math notranslate nohighlight">\(X-E(X)\)</span> tends to be positive, <span class="math notranslate nohighlight">\(Y-E(Y)\)</span> tends to be positive, then <span class="math notranslate nohighlight">\(Cov(X,Y)&gt;0\)</span>. Conversely, if when <span class="math notranslate nohighlight">\(X-E(X)\)</span> tends to be positive, <span class="math notranslate nohighlight">\(Y-E(Y)\)</span> tends to be negative, then <span class="math notranslate nohighlight">\(Cov(X,Y)&lt;0\)</span>.</p>
+<p>Returning to the equation above, for two random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span></p>
+<div class="math notranslate nohighlight">
+\[
+Var(X+Y) =  Var(X) + Var(Y) + 2Cov(X,Y)
+\]</div>
+<div class="section" id="linear-association">
+<h3>Linear association<a class="headerlink" href="#linear-association" title="Permalink to this headline">¶</a></h3>
+<p><strong>Note</strong> It is important to remember that covariance is only a measure of <em>linear</em> association. Two variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> can be strongly dependent, yet have zero covariance.</p>
+</div>
+<div class="section" id="rules-of-covariance">
+<h3>Rules of covariance<a class="headerlink" href="#rules-of-covariance" title="Permalink to this headline">¶</a></h3>
+<p>There are various rules which covariance follows, resulting from its definition in terms of expectations. For example:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Cov(X,X) = Var(X)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Cov(X, Y) = Cov(Y, X)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Cov(aX, bY) = abCov(X, Y)\)</span></p></li>
+</ul>
+<p>Try proving the first one for yourself.</p>
+<p>And some slightly more complex rules (for reference):</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(Cov(aR+bS,cX+dY) = acCov(R,X) + adCov(R,Y) + bc Cov(S,X) + bd Cov(S,Y)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Cov(aX+bY,cX+dY) = acVar(X) + bdVar(Y) + (ad+bc)Cov(Y,X)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Cov(X + Y, X - Y) = Var(X) - Var(Y)\)</span></p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="correlation">
+<h2>Correlation<a class="headerlink" href="#correlation" title="Permalink to this headline">¶</a></h2>
+<p>The size of <span class="math notranslate nohighlight">\(Cov(X,Y)\)</span> depends on the scale/magnitude of variability of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. The correlation between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> is a standardised version of the covariance.</p>
+<div class="math notranslate nohighlight">
+\[
+Corr(X,Y) = \frac{Cov(X,Y)}{\sqrt{Var(X)Var(Y)}}.
+\]</div>
+<p>We can take the square root of the variance of <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> to get their standard deviations, <span class="math notranslate nohighlight">\(SD(X) = \sqrt{Var(X)}\)</span> and <span class="math notranslate nohighlight">\(SD(Y) = \sqrt{Var(Y)}\)</span>. Then we can also write:</p>
+<div class="math notranslate nohighlight">
+\[
+Corr(X,Y) = \frac{Cov(X,Y)}{SD(X)SD(Y)}.
+\]</div>
+<ul class="simple">
+<li><p>The correlation coefficient lies between -1 and 1.</p>
+<ul>
+<li><p><span class="math notranslate nohighlight">\(Corr(X,Y)=1\)</span> or <span class="math notranslate nohighlight">\(Corr(X,Y)=-1\)</span> means <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are perfectly correlated.</p></li>
+<li><p>However, it is important to remember that this does <em>not</em> necessarily mean <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are equal.</p></li>
+<li><p>For example, if <span class="math notranslate nohighlight">\(Y=2X\)</span>, they have correlation 1 but are not equal to each other.</p></li>
+</ul>
+</li>
+<li><p><span class="math notranslate nohighlight">\(Corr(X,Y)=0\)</span> does <strong>not</strong> mean <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent.</p>
+<ul>
+<li><p>It is possible for two variables to be strongly dependent (associated) yet have zero correlation.</p></li>
+<li><p>As for covariance, correlation is a measure of <strong>linear</strong> association</p></li>
+<li><p>However, if <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent then <span class="math notranslate nohighlight">\(Corr(X,Y)=0\)</span>.</p></li>
+</ul>
+</li>
+</ul>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>In the figure below, try to guess what the correlation between the two variables is. Once you’ve had a think, click the button on the right to see the correct values.</p>
+<div class="figure align-default" id="id1">
+<a class="reference internal image-reference" href="_images/correlation.png"><img alt="_images/correlation.png" src="_images/correlation.png" style="height: 400px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 6 </span><span class="caption-text">Examples of correlation between variables</span><a class="headerlink" href="#id1" title="Permalink to this image">¶</a></p>
+</div>
+<div class="toggle docutils container">
+<p>Answers:</p>
+<ul class="simple">
+<li><p>top left 0.8 - strong positive correlation</p></li>
+<li><p>top right-0.55 - moderately strong negative correlation</p></li>
+<li><p>bottom left 0.001 - no relationship, no correlation</p></li>
+<li><p>bottom right -0.07 - strong dependence but no linear association so no correlation</p></li>
+</ul>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="pr4_continuous_variables.html" title="previous page">Continuous Random Variables</a>
+    <a class='right-next' id="next-link" href="pr6_distributions.html" title="next page">Distributions</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
