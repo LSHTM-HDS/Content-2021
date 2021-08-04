@@ -1,0 +1,621 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Matrices &#8212; Maths Refresher</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Combinatorics" href="cm_combinatorics.html" />
+    <link rel="prev" title="Differentiation and integration" href="mr2_calculus.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Maths Refresher</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="myintro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Notes
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr1_functions.html">
+   Functions, exponential and logarithm rules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr2_calculus.html">
+   Differentiation and integration
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cm_combinatorics.html">
+   Combinatorics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr1_probability.html">
+   Probability, definitions and axioms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr2_theorems.html">
+   Probability Theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr3_variables.html">
+   Discrete Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr4_continuous_variables.html">
+   Continuous Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr5_correlation.html">
+   Correlation and covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr6_distributions.html">
+   Distributions
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/mr3_matrices.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/Maths_Refresher"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/LSHTM-HDS/Content-2021/Maths_Refresher/issues/new?title=Issue%20on%20page%20%2Fmr3_matrices.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/mr3_matrices.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-notation">
+   Basic notation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-definitions">
+   Basic definitions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#special-matrices">
+   Special matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#square-matrices">
+     Square matrices
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-special-matrices">
+     Other special matrices
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#basic-operations-for-matrices">
+   Basic operations for matrices
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#addition-and-subtraction">
+     Addition and subtraction
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiplication">
+     Multiplication
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#further-definitions">
+   Further definitions
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="matrices">
+<h1>Matrices<a class="headerlink" href="#matrices" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="basic-notation">
+<h2>Basic notation<a class="headerlink" href="#basic-notation" title="Permalink to this headline">¶</a></h2>
+<p>An <span class="math notranslate nohighlight">\(m \times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span> is a rectangular array of numbers with <span class="math notranslate nohighlight">\(m\)</span> rows and <span class="math notranslate nohighlight">\(n\)</span> columns:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\begin{pmatrix} a_{11} &amp;\cdots &amp;a_{1n} \\
+\vdots &amp; &amp;\vdots \\
+a_{m1} &amp;\cdots &amp;a_{mn} \end{pmatrix}
+\end{split}\]</div>
+<p>The elements of a matrix <span class="math notranslate nohighlight">\(A\)</span> <span class="math notranslate nohighlight">\((m\times n)\)</span> are <span class="math notranslate nohighlight">\(\{a_{ij}; \ \ i=1,\cdots,m \ \mbox{(rows)}, \ \ j=1,…,m \ \mbox{(columns)} \}\)</span>. For example, the elements of the matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\begin{pmatrix} 1 &amp;2 &amp;3 \\
+4 &amp;5 &amp;6 \end{pmatrix}
+\end{split}\]</div>
+<p>are <span class="math notranslate nohighlight">\(a_{11}=1, a_{12}=2, a_{13}=3, a_{21}=4, a_{22}=5,\)</span> and <span class="math notranslate nohighlight">\(a_{23}=6\)</span>.</p>
+<p>A <strong>column vector</strong> with <span class="math notranslate nohighlight">\(m\)</span> elements, <span class="math notranslate nohighlight">\(y=\begin{pmatrix}y_1 \\ y_2 \\ \vdots \\y_m\end{pmatrix}\)</span>, is a matrix with only one column, i.e. an <span class="math notranslate nohighlight">\(m\times1\)</span> matrix.</p>
+<p>A <strong>row vector</strong> with <span class="math notranslate nohighlight">\(n\)</span> elements, <span class="math notranslate nohighlight">\(x = \begin{pmatrix}x_1 &amp; \cdots &amp;x_n \end{pmatrix}\)</span>, is a matrix with only one row, i.e. a <span class="math notranslate nohighlight">\(1\times m\)</span> matrix.</p>
+</div>
+<div class="section" id="basic-definitions">
+<h2>Basic definitions<a class="headerlink" href="#basic-definitions" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>order</strong> of a matrix is the number of rows by the number of columns i.e. <span class="math notranslate nohighlight">\((m\times n)\)</span>. For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\begin{pmatrix} 1 &amp;2 &amp;3 \\
+4 &amp;5 &amp;6 \end{pmatrix}
+\end{split}\]</div>
+<p>is a matrix of order <span class="math notranslate nohighlight">\(2\times3\)</span>, and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+B=\begin{pmatrix} 1 &amp;2 \\
+3 &amp;4 \\ 5 &amp;6 \end{pmatrix}
+\end{split}\]</div>
+<p>is of order <span class="math notranslate nohighlight">\(3\times 2\)</span>.</p>
+<p>A <strong>transposed matrix</strong> <span class="math notranslate nohighlight">\(A^T\)</span> (or <span class="math notranslate nohighlight">\(A'\)</span>) arises from the matrix <span class="math notranslate nohighlight">\(A\)</span> by interchanging the column vectors and the row vectors, i.e. <span class="math notranslate nohighlight">\(a_{ij}^T = a_{ji}\)</span> (so a column vector is converted into a row vector and vice versa). For example,
+<span class="math notranslate nohighlight">\(x = \begin{pmatrix} 1 &amp;2 &amp;3 \end{pmatrix}\)</span> is a <span class="math notranslate nohighlight">\(1\times3\)</span> row vector and <span class="math notranslate nohighlight">\(x^T =\begin{pmatrix} 1 \\2 \\3 \end{pmatrix}\)</span> is a <span class="math notranslate nohighlight">\(3\times1\)</span> column vector,</p>
+<p><span class="math notranslate nohighlight">\(A = \begin{pmatrix} 1 &amp;2 &amp;3 \\ 4 &amp;5 &amp;6 \end{pmatrix}\)</span> is of order <span class="math notranslate nohighlight">\(2\times3\)</span> and  <span class="math notranslate nohighlight">\(A^T= \begin{pmatrix} 1 &amp;4 \\2 &amp;5 \\3 &amp;6 \end{pmatrix}\)</span>  is of order <span class="math notranslate nohighlight">\(3\times2\)</span>.</p>
+<p>A <strong>partitioned matrix</strong> is a matrix written in terms of sub-matrices. For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A = \begin{pmatrix} A_{11} &amp;A_{12} \\ A_{21} &amp;A_{22} \end{pmatrix}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_{11}, A_{12}, A_{21}\)</span> and <span class="math notranslate nohighlight">\(A_{22}\)</span> are sub-matrices, and</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A_{11}\)</span> and <span class="math notranslate nohighlight">\(A_{12}\)</span> have the same number of rows (as do <span class="math notranslate nohighlight">\(A_{21}\)</span> and <span class="math notranslate nohighlight">\(A_{22}\)</span>)</p></li>
+<li><p><span class="math notranslate nohighlight">\(A_{11}\)</span> and <span class="math notranslate nohighlight">\(A_{21}\)</span> have the same number of columns (as do <span class="math notranslate nohighlight">\(A_{12}\)</span> and <span class="math notranslate nohighlight">\(A_{22}\)</span>)</p></li>
+</ul>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A =  \begin{pmatrix} 1 &amp;2 &amp;3 &amp;4 &amp;5 \\ 6 &amp;7 &amp;8 &amp;9 &amp;10 \\ 11 &amp;12 &amp;13 &amp;14 &amp;15 \end{pmatrix}
+\end{split}\]</div>
+<p>can be written as</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A= \begin{pmatrix} A_{11} &amp;A_{12} \\ A_{21} &amp;A_{22}\end{pmatrix}
+\end{split}\]</div>
+<p>where <span class="math notranslate nohighlight">\(A_{11}=\begin{pmatrix} 1&amp;2&amp;3 \\6&amp;7&amp;8  \end{pmatrix}, A_{12} = \begin{pmatrix}4&amp;5 \\ 9&amp;10  \end{pmatrix}, A_{21}=\begin{pmatrix} 11 &amp;12 &amp;13 \end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(A_{22}=\begin{pmatrix} 14 &amp;15 \end{pmatrix}\)</span>.</p>
+<p>Note that partitioning is not restricted to dividing a matrix into just four sub-matrices.</p>
+</div>
+<div class="section" id="special-matrices">
+<h2>Special matrices<a class="headerlink" href="#special-matrices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="square-matrices">
+<h3>Square matrices<a class="headerlink" href="#square-matrices" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>square matrix</strong> has exactly as many rows as it has columns, i.e. the order of the matrix is <span class="math notranslate nohighlight">\(m\times m\)</span>. For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A= \begin{pmatrix} 1&amp;2\\3&amp;4 \end{pmatrix}
+\end{split}\]</div>
+<p>is a square matrix of order <span class="math notranslate nohighlight">\(2\times2\)</span>.</p>
+<p>The <strong>main diagonal</strong> (or leading diagonal) of a square matrix <span class="math notranslate nohighlight">\(A\)</span> <span class="math notranslate nohighlight">\((m\times m)\)</span> are the elements lying on the diagonal from top left to bottom right: <span class="math notranslate nohighlight">\(a_{11}, a_{22},\cdots, a_{mm}\)</span>. i.e. all <span class="math notranslate nohighlight">\(a_{jj}\)</span> for <span class="math notranslate nohighlight">\(j=1,\cdots,m\)</span>. For example, the diagonal elements of matrix</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+C=\begin{pmatrix} 1&amp;1&amp;1 \\ 2&amp;4&amp;5 \\ 3&amp;5&amp;6 \end{pmatrix}
+\end{split}\]</div>
+<p>are 1, 4 and 6.</p>
+<p>The <strong>trace</strong> of a square matrix is the sum of all the diagonal elements, i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+tr(A)= a_{11}+ a_{22}+ \cdots + a_{mm} = \sum_{j=1}^m a_{jj}
+\]</div>
+<p>For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A= \begin{pmatrix} 1&amp;2 \\ 3&amp;4 \end{pmatrix}
+\end{split}\]</div>
+<p>is a <span class="math notranslate nohighlight">\(2\times2\)</span> square matrix, the main diagonal of this matrix are the elements 1 and 4, so <span class="math notranslate nohighlight">\(tr(A)=1+4=5\)</span>.</p>
+</div>
+<div class="section" id="other-special-matrices">
+<h3>Other special matrices<a class="headerlink" href="#other-special-matrices" title="Permalink to this headline">¶</a></h3>
+<p>A <strong>symmetric matrix</strong> is a square matrix for which <span class="math notranslate nohighlight">\(a_{ij} = a_{ji}\)</span> for <span class="math notranslate nohighlight">\(i\neq j\)</span>, i.e. for all off-diagonal elements, so that the matrix is symmetric about the diagonal. For a symmetric matrix <span class="math notranslate nohighlight">\(A\)</span>, taking the transpose does not affect the matrix, <span class="math notranslate nohighlight">\(A^T= A\)</span>. For example,</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\begin{pmatrix} 1&amp;2&amp;3\\2&amp;4&amp;5\\3&amp;5&amp;1\end{pmatrix}
+\end{split}\]</div>
+<p>is a <span class="math notranslate nohighlight">\(3\times3\)</span> symmetric matrix, and  <span class="math notranslate nohighlight">\(A^T= A\)</span>.</p>
+<p>A <strong>diagonal matrix</strong> is a square matrix where all the off-diagonal elements are zero, e.g.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\begin{pmatrix}1&amp;0&amp;0\\0&amp;2&amp;0\\0&amp;0&amp;3\end{pmatrix}.
+\end{split}\]</div>
+<p>A <strong>zero</strong> (or null) matrix is a matrix where all the elements are zero, e.g.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A=\begin{pmatrix}0&amp;0&amp;0\\0&amp;0&amp;0\\0&amp;0&amp;0\end{pmatrix}.
+\end{split}\]</div>
+<p>An <strong>identity</strong> (or unit) matrix is a special case of a diagonal matrix having all the diagonal elements equal to 1, e.g.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+I=\begin{pmatrix}1&amp;0&amp;0\\0&amp;1&amp;0\\0&amp;0&amp;1\end{pmatrix}.
+\end{split}\]</div>
+<p>The order of an identity matrix is sometimes indicated in the name, e.g. <span class="math notranslate nohighlight">\(I_m\)</span> is the <span class="math notranslate nohighlight">\(m\times m\)</span> identity matrix.</p>
+<p>A <strong>summing vector</strong> is a vector where all elements are 1, e.g. <span class="math notranslate nohighlight">\(x=\begin{pmatrix}1&amp;1&amp;1\end{pmatrix}\)</span>.</p>
+<p>A <strong>J</strong> matrix is a matrix (not necessarily square) whose every element is 1, e.g.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+J=\begin{pmatrix}1&amp;1\\1&amp;1\\1&amp;1\end{pmatrix}.
+\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="basic-operations-for-matrices">
+<h2>Basic operations for matrices<a class="headerlink" href="#basic-operations-for-matrices" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="addition-and-subtraction">
+<h3>Addition and subtraction<a class="headerlink" href="#addition-and-subtraction" title="Permalink to this headline">¶</a></h3>
+<p>Addition and subtraction can only take place when the matrices involved are of the same order, i.e. they have the same number of rows and columns:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A\pm B=\begin{pmatrix}a_{11}&amp;\cdots&amp;a_{1n}\\ \vdots &amp;&amp;\vdots \\a_{m1}&amp;\cdots&amp;a_{mn} \end{pmatrix} \pm \begin{pmatrix}b_{11}&amp;\cdots&amp;b_{1n}\\\vdots&amp;&amp;\vdots \\b_{m1}&amp;\cdots&amp;b_{mn} \end{pmatrix} = \begin{pmatrix}a_{11}\pm b_{11}&amp;\cdots&amp;a_{1n}\pm b_{1n}\\ \vdots&amp;&amp;\vdots \\a_{m1}\pm b_{m1}&amp;\cdots&amp;a_{mn}\pm b_{mn} \end{pmatrix}.
+\end{split}\]</div>
+<p>For example, if <span class="math notranslate nohighlight">\(A=\begin{pmatrix} 1&amp;3\\4&amp;5\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(B=\begin{pmatrix} 0&amp;1\\2&amp;3\end{pmatrix}\)</span> where <span class="math notranslate nohighlight">\(A\)</span> and <span class="math notranslate nohighlight">\(B\)</span> are both of order <span class="math notranslate nohighlight">\(2\times2\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A+B=\begin{pmatrix} 1+0&amp;3+1\\4+2&amp;5+3\end{pmatrix}=\begin{pmatrix} 1&amp;4\\ 6&amp;8\end{pmatrix}  \qquad \mbox{and} \qquad B-A=\begin{pmatrix} 0-1&amp;1-3\\2-4&amp;3-5\end{pmatrix}=\begin{pmatrix}-1&amp;-2 \\ -2&amp;-2\end{pmatrix}.
+\end{split}\]</div>
+<p>Rules for addition and subtraction of matrices:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(A+B=B+A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((A+B)+C=A+(B+C)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A+0=0+A=A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A+(-A)=0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((A+B)^T=A^T+B^T\)</span></p></li>
+</ul>
+<p>Multiplication by a scalar <span class="math notranslate nohighlight">\(c\)</span> means multiplying every element of the matrix by <span class="math notranslate nohighlight">\(c\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+cA=\begin{pmatrix} ca_{11}&amp;\cdots&amp;ca_{1n}\\ \vdots&amp;&amp;\vdots \\ca_{m1}&amp;\cdots&amp;ca_{mn}\end{pmatrix}.
+\end{split}\]</div>
+<p>For example, if <span class="math notranslate nohighlight">\(A= \begin{pmatrix}1&amp;3\\4&amp;5\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(c = 2\)</span> then <span class="math notranslate nohighlight">\(cA=\begin{pmatrix}2\times 1&amp;2\times 3\\2\times 4&amp;2\times 5 \end{pmatrix}=\begin{pmatrix} 2&amp;6\\8&amp;10\end{pmatrix}\)</span>.</p>
+<p>Rules for multiplication by a scalar:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(cA=Ac\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(d(cA)=(dc)A\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((c\pm d)A=cA\pm dA\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(c(A\pm B)=cA\pm cB\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="multiplication">
+<h3>Multiplication<a class="headerlink" href="#multiplication" title="Permalink to this headline">¶</a></h3>
+<p><strong>Multiplication by a vector</strong>
+An <span class="math notranslate nohighlight">\(m\times n\)</span> matrix <span class="math notranslate nohighlight">\(A\)</span> can be multiplied by <span class="math notranslate nohighlight">\(n\times 1\)</span> column vector <span class="math notranslate nohighlight">\(x\)</span> yielding a <span class="math notranslate nohighlight">\(m\times1\)</span> column vector providing the number of columns in <span class="math notranslate nohighlight">\(A\)</span> is equal to the number of rows in <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Ax=\begin{pmatrix}a_{11}&amp;\cdots&amp;a_{1n}\\ \vdots&amp;&amp;\vdots \\ a_{m1}&amp;\cdots&amp;a_{mn}\end{pmatrix} \begin{pmatrix}x_{1}\\ \vdots \\ x_{n}\end{pmatrix} = \begin{pmatrix} a_{11} x_{1} + a_{12} x_{2}+ \cdots + a_{1n} x_{n} \\  \vdots \\ a_{m1} x_{1} + a_{m2} x_{2}+ \cdots + a_{mn} x_{n}  \end{pmatrix}=y 
+\end{split}\]</div>
+<p>i.e. <span class="math notranslate nohighlight">\(y_i= \sum_{j=1}^n (a_{ij} x_j)\)</span> for <span class="math notranslate nohighlight">\(i=1,…,m\)</span>.</p>
+<p>For example, suppose <span class="math notranslate nohighlight">\(A= \begin{pmatrix}1&amp;2&amp;3\\2&amp;2&amp;1\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(x=\begin{pmatrix}1\\2\\1\end{pmatrix}\)</span>. Note that matrix <span class="math notranslate nohighlight">\(A\)</span> is of order <span class="math notranslate nohighlight">\(2\times3\)</span> and column vector <span class="math notranslate nohighlight">\(x\)</span> is of order <span class="math notranslate nohighlight">\(3\times1\)</span>, i.e. the number of columns in <span class="math notranslate nohighlight">\(A\)</span> is equal to the number of rows in <span class="math notranslate nohighlight">\(x\)</span>. Then the product <span class="math notranslate nohighlight">\(Ax\)</span> is defined yielding a <span class="math notranslate nohighlight">\(2\times1\)</span> vector:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+Ax=\begin{pmatrix}1&amp;2&amp;3\\2&amp;2&amp;1\end{pmatrix}\begin{pmatrix} 1\\2\\1\end{pmatrix} = \begin{pmatrix}1\times 1+2\times2+ 3\times1 \\ 2\times1+2\times2+ 1\times1\end{pmatrix}=\begin{pmatrix}8 \\ 7  \end{pmatrix}
+\end{split}\]</div>
+<p><strong>Multiplication of matrices</strong>
+The product <span class="math notranslate nohighlight">\(AB=C\)</span> is defined only when the number of columns in <span class="math notranslate nohighlight">\(A\)</span> is the same as the number of rows in <span class="math notranslate nohighlight">\(B\)</span>. If <span class="math notranslate nohighlight">\(A\)</span> is a matrix of order <span class="math notranslate nohighlight">\(m\times n\)</span>, and <span class="math notranslate nohighlight">\(B\)</span> is a matrix of order <span class="math notranslate nohighlight">\(n\times r\)</span>, then the product <span class="math notranslate nohighlight">\(AB=C\)</span> will be of order <span class="math notranslate nohighlight">\(m\times r\)</span>.  The elements of <span class="math notranslate nohighlight">\(C\)</span> are given as</p>
+<div class="math notranslate nohighlight">
+\[
+c_{ij}=\sum_{k=1}^n a_{ik} b_{kj} \qquad \mbox{where} \qquad i=1,…,m \ \mbox{and} \  j=1,…,r.
+\]</div>
+<p>For example, if <span class="math notranslate nohighlight">\(A=\begin{pmatrix} 1&amp;2&amp;3 \\ 2&amp;2&amp;1 \end{pmatrix}\)</span>,  i.e. of order <span class="math notranslate nohighlight">\(2\times3\)</span>, and <span class="math notranslate nohighlight">\(B= \begin{pmatrix} 1&amp;2\\2&amp;3\\3&amp;4 \end{pmatrix}\)</span>, i.e. of order <span class="math notranslate nohighlight">\(3\times2\)</span>,  then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+AB=\begin{pmatrix} 1&amp;2&amp;3 \\ 2&amp;2&amp;1\end{pmatrix}\begin{pmatrix}1&amp;2 \\2&amp;3 \\ 3&amp;4\end{pmatrix}=\begin{pmatrix}1 \times1+2\times2+ 3\times3&amp;1\times2+2\times3+ 3\times4\\ 2\times1+2\times2+ 1\times3&amp;2\times2+2\times3+ 1\times4\end{pmatrix}=\begin{pmatrix}14&amp;20 \\ 9&amp;14\end{pmatrix}
+\end{split}\]</div>
+<p>which is of order <span class="math notranslate nohighlight">\(2\times2\)</span>, as expected.</p>
+<p>Rules for multiplication of matrices:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(AB\neq BA\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((AB)C=A(BC)=ABC\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(A(B+C)=AB+AC\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\((B+C)A=BA+CA\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(IA=AI=A\)</span> where <span class="math notranslate nohighlight">\(I\)</span> is the identity matrix with the same number of rows (and columns since <span class="math notranslate nohighlight">\(I\)</span> is square) as columns in <span class="math notranslate nohighlight">\(A\)</span>.</p></li>
+</ul>
+<p>So if <span class="math notranslate nohighlight">\(A=\begin{pmatrix} 1&amp;2&amp;3 \\ 2&amp;2&amp;1\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(I=\begin{pmatrix} 1&amp;0&amp;0 \\ 0&amp;1&amp;0 \\ 0&amp;0&amp;1\end{pmatrix}\)</span>, i.e. the identity matrix of order <span class="math notranslate nohighlight">\(3\times 3\)</span>, then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+AI= \begin{pmatrix} 1&amp;2&amp;3 \\ 2&amp;2&amp;1 \end{pmatrix} \begin{pmatrix} 1&amp;0&amp;0 \\ 0&amp;1&amp;0 \\ 0&amp;0&amp;1 \end{pmatrix} = \begin{pmatrix} 1&amp;2&amp;3 \\ 2&amp;2&amp;1 \end{pmatrix} =A.
+\end{split}\]</div>
+<p>If <span class="math notranslate nohighlight">\(A=\begin{pmatrix} 1&amp;2 \\ 3&amp;4\end{pmatrix}\)</span> and <span class="math notranslate nohighlight">\(J=\begin{pmatrix} 1&amp;1 \\ 1&amp;1\end{pmatrix}\)</span>, i.e. a matrix of order <span class="math notranslate nohighlight">\(2 \times 2\)</span>,  then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+AJ=\begin{pmatrix} 1 &amp;2 \\ 3&amp;4\end{pmatrix}\begin{pmatrix} 1&amp;1 \\ 1&amp;1\end{pmatrix}=\begin{pmatrix} 3&amp;3 \\ 7&amp;7\end{pmatrix}.
+\end{split}\]</div>
+</div>
+</div>
+<div class="section" id="further-definitions">
+<h2>Further definitions<a class="headerlink" href="#further-definitions" title="Permalink to this headline">¶</a></h2>
+<p>The <strong>determinant</strong> of a second order square matrix is</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+det(A) = |A| = \left| \begin{matrix} a_{11} &amp;a_{12} \\ a_{21} &amp;a_{22} \end{matrix} \right| = a_{11} a_{22} - a_{12} a_{21}
+\end{split}\]</div>
+<p>For example, if <span class="math notranslate nohighlight">\(A= \begin{pmatrix} 1&amp;2 \\ 3&amp;4 \end{pmatrix}\)</span> then <span class="math notranslate nohighlight">\(det(A)= | A | =1 \times 4 - 2\times 3=-2.\)</span></p>
+<p>The <strong>inverse</strong> of a matrix <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(A^{-1}\)</span>, if it exists, is a matrix whose product with <span class="math notranslate nohighlight">\(A\)</span> is the identity matrix, i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+AA^{-1}=A^{-1} A=I 
+\]</div>
+<p>Note that both <span class="math notranslate nohighlight">\(A\)</span>  and <span class="math notranslate nohighlight">\(A^{-1}\)</span> must be square.</p>
+<p>For second order matrices:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A^{-1}= \frac{1}{det(A)} \begin{pmatrix} a_{22} &amp;-a_{12} \\ -a_{21} &amp;a_{11} \end{pmatrix}
+\end{split}\]</div>
+<p>For example, if <span class="math notranslate nohighlight">\(A= \begin{pmatrix}1&amp;2 \\ 3&amp;4\end{pmatrix}\)</span> then <span class="math notranslate nohighlight">\(det(A)=|A|=1\times 4-2\times 3=-2\)</span>. Then the inverse of <span class="math notranslate nohighlight">\(A\)</span> is given by</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A^{-1} = -\frac{1}{2} \begin{pmatrix} 4&amp;-2\\ -3&amp;1  \end{pmatrix} = \begin{pmatrix}-2&amp;1 \\ 3/2&amp;-1/2  \end{pmatrix}
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+AA^{-1}=\begin{pmatrix} 1&amp;2 \\ 3&amp;4 \end{pmatrix} \begin{pmatrix}-2&amp;1 \\ 3/2&amp;-1/2 \end{pmatrix} =\begin{pmatrix}-2+3&amp;1-1 \\ -6+6&amp;3-2  \end{pmatrix} = \begin{pmatrix}1&amp;0 \\ 0&amp;1  \end{pmatrix}.
+\end{split}\]</div>
+<p>A <strong>singular</strong> or non-invertible matrix has the property <span class="math notranslate nohighlight">\(det(A)=0\)</span>.</p>
+<p>For example, if <span class="math notranslate nohighlight">\(A=\begin{pmatrix} 1&amp;2 \\ 2&amp;4 \end{pmatrix}\)</span> then <span class="math notranslate nohighlight">\(det(A)=1 \times 4-2 \times 2=0\)</span> and therefore <span class="math notranslate nohighlight">\(A\)</span> is a singular matrix.</p>
+<p>An <strong>idempotent</strong> matrix <span class="math notranslate nohighlight">\(A\)</span> is a square matrix with the property that <span class="math notranslate nohighlight">\(AA=A^2=A\)</span>.</p>
+<p>For example, if <span class="math notranslate nohighlight">\(A=\begin{pmatrix}0.5&amp;0.5 \\0.5&amp;0.5 \end{pmatrix}\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+AA= \begin{pmatrix}0.5&amp;0.5 \\ 0.5&amp;0.5\end{pmatrix}\begin{pmatrix} 0.5&amp;0.5 \\ 0.5&amp;0.5\end{pmatrix}= \begin{pmatrix}0.25+0.25&amp;0.25+0.25 \\ 0.25+0.25&amp;0.25+0.25\end{pmatrix}= \begin{pmatrix}0.5&amp;0.5 \\ 0.5&amp;0.5\end{pmatrix}=A.
+\end{split}\]</div>
+<p>An <strong>orthogonal</strong> matrix <span class="math notranslate nohighlight">\(A\)</span> is a square matrix whose product with its transpose (<span class="math notranslate nohighlight">\(A^T\)</span>) is equal to the identity matrix, i.e. <span class="math notranslate nohighlight">\(AA^T=A^T A=I\)</span>. Equivalently, it is a square matrix whose transpose is equal to its inverse <span class="math notranslate nohighlight">\(A^T=A^{-1}\)</span>.</p>
+<p>For example, <span class="math notranslate nohighlight">\(A= \begin{pmatrix}1&amp;0 \\ 0&amp;-1\end{pmatrix}\)</span> is orthogonal since</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+A^T= \begin{pmatrix}1&amp;0 \\ 0&amp;-1\end{pmatrix} = A   \ \ \mbox{and} \ \    A^{-1}= \frac{1}{-1}\begin{pmatrix}-1&amp;0 \\ 0&amp;1\end{pmatrix} =  \begin{pmatrix}1&amp;0 \\ 0&amp;-1\end{pmatrix}  = A = A^T  
+\end{split}\]</div>
+<p>so that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+AA^T= \begin{pmatrix}1&amp;0 \\ 0&amp;-1\end{pmatrix}  \begin{pmatrix}1&amp;0 \\ 0&amp;-1\end{pmatrix}  =I.
+\end{split}\]</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="mr2_calculus.html" title="previous page">Differentiation and integration</a>
+    <a class='right-next' id="next-link" href="cm_combinatorics.html" title="next page">Combinatorics</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,473 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Probability Theorems &#8212; Maths Refresher</title>
+    
+  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Discrete Random Variables" href="pr3_variables.html" />
+    <link rel="prev" title="Probability, definitions and axioms" href="pr1_probability.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Maths Refresher</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="myintro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr1_functions.html">
+   Functions, exponential and logarithm rules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr2_calculus.html">
+   Differentiation and integration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr3_matrices.html">
+   Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cm_combinatorics.html">
+   Combinatorics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr1_probability.html">
+   Probability, definitions and axioms
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Probability Theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr3_variables.html">
+   Discrete Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr4_continuous_variables.html">
+   Continuous Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr5_correlation.html">
+   Correlation and covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr6_distributions.html">
+   Distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz1.html">
+   Quiz 1: Powers and logs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz2.html">
+   Quiz 2: Differentiation and integration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz3.html">
+   Quiz 3: Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz4.html">
+   Quiz 4: Combinatorics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz5.html">
+   Quiz 5: Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz6.html">
+   Quiz 6: Probability theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz7.html">
+   Quiz 7: Discrete Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz8.html">
+   Quiz 8: Continuous Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz9.html">
+   Quiz 9: Correlation and covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz10.html">
+   Quiz 10: More complex questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions.html">
+   Solution to quizzes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr_reading.html">
+   Further material
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/pr2_theorems.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/StatsFizz/Maths_Refresher/master?urlpath=tree/pr2_theorems.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/StatsFizz/Maths_Refresher/blob/master/pr2_theorems.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#partitions">
+   Partitions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#examples">
+     Examples
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#theorem-of-total-probability">
+   Theorem of total probability
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayes-theorem">
+   Bayes’ theorem
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="probability-theorems">
+<h1>Probability Theorems<a class="headerlink" href="#probability-theorems" title="Permalink to this headline">¶</a></h1>
+<p>This section discusses two key theorems:</p>
+<ol class="simple">
+<li><p>The theorem of total probability, and</p></li>
+<li><p>Bayes’ theorem</p></li>
+</ol>
+<div class="section" id="partitions">
+<h2>Partitions<a class="headerlink" href="#partitions" title="Permalink to this headline">¶</a></h2>
+<p>The theorem of total probability involves the concept of a partition of a sample space. So we begin by defining a partition.</p>
+<p>The events <span class="math notranslate nohighlight">\(B_{1},B_{2},...B_{n}\)</span> partition the sample space <span class="math notranslate nohighlight">\(\Omega\)</span> if</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(P(B_{i}) &gt; 0\)</span> for all <span class="math notranslate nohighlight">\(i\)</span> (all events in the partition have non-zero probability of occurring)</p></li>
+<li><p><span class="math notranslate nohighlight">\(\bigcup^{n}_{i=1} B_{i} = \Omega\)</span> (i.e. the union of the events = the sample space)</p></li>
+<li><p><span class="math notranslate nohighlight">\(B_{i} \cap B_{j} = \emptyset\)</span> (empty) for all <span class="math notranslate nohighlight">\(i \neq j\)</span>,  . i.e. <span class="math notranslate nohighlight">\(B_{i}\)</span> and <span class="math notranslate nohighlight">\(B_{j}\)</span> are disjoint</p></li>
+</ul>
+<p>That is, the events <span class="math notranslate nohighlight">\(B_{1},...,B_{n}\)</span> partition the sample space if</p>
+<ul class="simple">
+<li><p>all events are possible</p></li>
+<li><p>at least one event must occur, but</p></li>
+<li><p>no two events can occur simultaneously</p></li>
+</ul>
+<div class="section" id="examples">
+<h3>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h3>
+<p>Some examples of partitions of sample spaces are:</p>
+<ul class="simple">
+<li><p>Blood groups A, B, AB and O partition the sample space of blood groups.</p></li>
+<li><p>Dead and alive partition the sample space of vital statuses.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="theorem-of-total-probability">
+<h2>Theorem of total probability<a class="headerlink" href="#theorem-of-total-probability" title="Permalink to this headline">¶</a></h2>
+<p>Sometimes we wish to know the probability of a particular event <span class="math notranslate nohighlight">\(A\)</span>, but we only have data regarding the probability of the event conditional on some other event. The theorem of total probability allows us to express the probability of an event <span class="math notranslate nohighlight">\(A\)</span> occurring in terms of its probability conditional on other events which partition the sample space.</p>
+<p>Let <span class="math notranslate nohighlight">\(A\)</span> be some event, and let <span class="math notranslate nohighlight">\(B_1, ..., B_n\)</span> be a partition of the sample space</p>
+<p>Then the theorem of total probability says that</p>
+<div class="math notranslate nohighlight">
+\[
+P(A) = P(A | B_1)P(B_1) + P(A | B_2)P(B_2) + ... + P(A | B_n)P(B_n)
+\]</div>
+<p>or equivalently</p>
+<div class="math notranslate nohighlight">
+\[
+P(A) = \sum_{j=1}^n P(A | B_j)P(B_j)
+\]</div>
+<p>That is, the total probability of <span class="math notranslate nohighlight">\(A\)</span> can be calculated if the conditional probability of <span class="math notranslate nohighlight">\(A\)</span> given <span class="math notranslate nohighlight">\(B_j\)</span> and
+<span class="math notranslate nohighlight">\(P(B_j)\)</span> are known, for all <span class="math notranslate nohighlight">\(j\)</span>.</p>
+</div>
+<div class="section" id="bayes-theorem">
+<h2>Bayes’ theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
+<p>In the theorem of total probability, <span class="math notranslate nohighlight">\(P(A)\)</span> is calculated using the knowledge of the conditional probabilities of <span class="math notranslate nohighlight">\(A\)</span> given <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(P(A|B)\)</span>.  In many situations we would like to make statements about the probability of <span class="math notranslate nohighlight">\(B\)</span> knowing or conditional on <span class="math notranslate nohighlight">\(A\)</span>, i.e. we would like to reverse the conditioning. Bayes’ Theorem provides a useful and very powerful theorem to do this.</p>
+<p>From the definition of conditional probability we can express <span class="math notranslate nohighlight">\(P(A \cap B_{j})\)</span> in two different ways</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+P(A \cap B_{j}) = P(A|B_{j}) P(B_{j}) \\
+\end{split}\]</div>
+<p>or</p>
+<div class="math notranslate nohighlight">
+\[
+P(A \cap B_{j}) = P(B_{j}|A) P(A).
+\]</div>
+<p>Equating the two, we therefore have</p>
+<div class="math notranslate nohighlight">
+\[
+P(A|B_{j}) P(B_{j}) = P(B_{j}|A) P(A) \ \ \Rightarrow \ \ P(B_{j}|A) = \frac{P(A|B_{j}) P(B_{j})}{P(A)}
+\]</div>
+<p>From the theorem of total probability (above) we know that</p>
+<div class="math notranslate nohighlight">
+\[
+P(A) = \sum^{n}_{k=1} P(A|B_{k}) P(B_{k})
+\]</div>
+<p>And so we can write</p>
+<div class="math notranslate nohighlight">
+\[
+P(B_{j}|A) = \frac{P(A|B_{j}) P(B_{j})}{P(A)} = \frac{P(A|B_{j}) P(B_{j})}{\sum^{n}_{k=1} P(A|B_{k}) P(B_{k})}.
+\]</div>
+<p>This is <strong>Bayes’ Theorem</strong>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="pr1_probability.html" title="previous page">Probability, definitions and axioms</a>
+    <a class='right-next' id="next-link" href="pr3_variables.html" title="next page">Discrete Random Variables</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>

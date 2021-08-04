@@ -1,0 +1,544 @@
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta charset="utf-8" />
+    <title>Continuous Random Variables &#8212; Maths Refresher</title>
+    
+  <link rel="stylesheet" href="_static/css/index.d431a4ee1c1efae0e38bdfebc22debff.css">
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+  <link rel="stylesheet"
+    href="_static/vendor/open-sans_all/1.44.1/index.css">
+  <link rel="stylesheet"
+    href="_static/vendor/lato_latin-ext/1.44.1/index.css">
+
+    
+    <link rel="stylesheet" href="_static/sphinx-book-theme.bfb7730f9caf2ec0b46a44615585038c.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.30270b6e4c972e43c488.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/language_data.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.be0a4a0c39cd630af62a2fcf693f3f06.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.5/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.4/require.min.js"></script>
+    <script src="https://unpkg.com/@jupyter-widgets/html-manager@^0.18.0/dist/embed-amd.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="Correlation and covariance" href="pr5_correlation.html" />
+    <link rel="prev" title="Discrete Random Variables" href="pr3_variables.html" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+
+
+
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+<a class="navbar-brand text-wrap" href="index.html">
+  
+  <img src="_static/logo.jpg" class="logo" alt="logo">
+  
+  
+  <h1 class="site-logo" id="site-title">Maths Refresher</h1>
+  
+</a>
+</div>
+
+<form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form>
+
+<nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+  <ul class="nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="myintro.html">
+   Introduction
+  </a>
+ </li>
+</ul>
+<ul class="current nav sidenav_l1">
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr1_functions.html">
+   Functions, exponential and logarithm rules
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr2_calculus.html">
+   Differentiation and integration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr3_matrices.html">
+   Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="cm_combinatorics.html">
+   Combinatorics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr1_probability.html">
+   Probability, definitions and axioms
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr2_theorems.html">
+   Probability Theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr3_variables.html">
+   Discrete Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Continuous Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr5_correlation.html">
+   Correlation and covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="pr6_distributions.html">
+   Distributions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz1.html">
+   Quiz 1: Powers and logs
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz2.html">
+   Quiz 2: Differentiation and integration
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz3.html">
+   Quiz 3: Matrices
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz4.html">
+   Quiz 4: Combinatorics
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz5.html">
+   Quiz 5: Probability
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz6.html">
+   Quiz 6: Probability theorems
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz7.html">
+   Quiz 7: Discrete Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz8.html">
+   Quiz 8: Continuous Random Variables
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz9.html">
+   Quiz 9: Correlation and covariance
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Quiz10.html">
+   Quiz 10: More complex questions
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Solutions.html">
+   Solution to quizzes
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="mr_reading.html">
+   Further material
+  </a>
+ </li>
+</ul>
+
+</nav>
+
+ <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="row topbar fixed-top container-xl">
+    <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show">
+    </div>
+    <div class="col pl-2 topbar-main">
+        
+        <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+            data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+            aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+            title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+            <i class="fas fa-bars"></i>
+            <i class="fas fa-arrow-left"></i>
+            <i class="fas fa-arrow-up"></i>
+        </button>
+        
+        <div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/pr4_continuous_variables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+    
+</div>
+        <!-- Source interaction buttons -->
+
+
+        <!-- Full screen (wrap in <a> to have style consistency -->
+        <a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+                data-placement="bottom" onclick="toggleFullScreen()" title="Fullscreen mode"><i
+                    class="fas fa-expand"></i></button></a>
+
+        <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/StatsFizz/Maths_Refresher/master?urlpath=tree/pr4_continuous_variables.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        <a class="colab-button" href="https://colab.research.google.com/github/StatsFizz/Maths_Refresher/blob/master/pr4_continuous_variables.ipynb"><button type="button" class="btn btn-secondary topbarbtn"
+                title="Launch Colab" data-toggle="tooltip" data-placement="left"><img class="colab-button-logo"
+                    src="_static/images/logo_colab.png"
+                    alt="Interact on Colab">Colab</button></a>
+        
+        
+    </div>
+</div>
+
+    </div>
+
+    <!-- Table of contents -->
+    <div class="d-none d-md-block col-md-2 bd-toc show">
+        
+        <div class="tocsection onthispage pt-5 pb-3">
+            <i class="fas fa-list"></i> Contents
+        </div>
+        <nav id="bd-toc-nav">
+            <ul class="nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#probability-density-functions">
+   Probability density functions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#cumulative-distribution-function">
+   Cumulative distribution function
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#relationship-between-cdf-and-pdf">
+     Relationship between CDF and PDF
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#expectation-and-variance-of-continuous-random-variables">
+   Expectation and variance of continuous random variables
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#some-rules-for-expectation-and-variance">
+     Some rules for expectation and variance
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#expectation-and-variance-of-functions-of-a-random-variable">
+     Expectation and variance of functions of a random variable
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#joint-continuous-distributions">
+   Joint continuous distributions
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#independence">
+   Independence
+  </a>
+ </li>
+</ul>
+
+        </nav>
+        
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="continuous-random-variables">
+<h1>Continuous Random Variables<a class="headerlink" href="#continuous-random-variables" title="Permalink to this headline">¶</a></h1>
+<p>A discrete random variable <span class="math notranslate nohighlight">\(X\)</span> takes values in a finite or countably infinite set, and is characterised by the probabilities <span class="math notranslate nohighlight">\(P(X=x_{j})\)</span> for the possible values <span class="math notranslate nohighlight">\(x_{j}\)</span> it might take. For example, e.g. <span class="math notranslate nohighlight">\(X=\)</span> weight measured to the nearest kg (for people who weigh between 50kg and 61kg) would be a discrete random variable.</p>
+<p>Conversely, <strong>continuous random variables</strong> arise when a random variable takes values in an <em>uncountably infinite</em> set, such as the set of real numbers.</p>
+<div class="section" id="probability-density-functions">
+<h2>Probability density functions<a class="headerlink" href="#probability-density-functions" title="Permalink to this headline">¶</a></h2>
+<p>For continuous random variables <span class="math notranslate nohighlight">\(X\)</span>, the probability that <span class="math notranslate nohighlight">\(X\)</span> will take any particular value <span class="math notranslate nohighlight">\(x\)</span> is actually zero. This is because although <span class="math notranslate nohighlight">\(X\)</span> will take some value, there are <em>so many</em> possible values it could take the probability that it will take any particular value is zero. Instead of assigning probabilities to particular values, we define a <strong>probability density function</strong> <span class="math notranslate nohighlight">\(f(x)\)</span> (also sometimes abbreviated PDF) such that for any two values <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+P(a \leq X \leq b) =  \int^{b}_{a} f(x) dx.
+\]</div>
+<p>So the probability that <span class="math notranslate nohighlight">\(X\)</span> takes a value between <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> is equal to the area underneath the density function between <span class="math notranslate nohighlight">\(x=a\)</span> and <span class="math notranslate nohighlight">\(x=b\)</span>.</p>
+<div class="figure align-default" id="pdf">
+<a class="reference internal image-reference" href="_images/pdf.png"><img alt="_images/pdf.png" src="_images/pdf.png" style="height: 300px;" /></a>
+<p class="caption"><span class="caption-number">Fig. 5 </span><span class="caption-text">A probability density function</span><a class="headerlink" href="#pdf" title="Permalink to this image">¶</a></p>
+</div>
+<p>Probability density functions must satisfy a number of conditions, which ensure that the axioms of probability are not violated:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f(x)\geq 0\)</span> for all <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\int^{\infty}_{-\infty} f(x) dx = 1\)</span></p></li>
+</ul>
+<p>This second condition is the continuous equivalent of the <span class="math notranslate nohighlight">\(\sum_{x_{j}} P(X=x_{j}) = 1\)</span> requirement for discrete random variables. Notice that it is possible for <span class="math notranslate nohighlight">\(f(x)&gt;1\)</span>, in contrast to the requirement for discrete <span class="math notranslate nohighlight">\(X\)</span> that <span class="math notranslate nohighlight">\(0 \leq P(X=x_{j}) \leq 1\)</span>.</p>
+</div>
+<div class="section" id="cumulative-distribution-function">
+<h2>Cumulative distribution function<a class="headerlink" href="#cumulative-distribution-function" title="Permalink to this headline">¶</a></h2>
+<p>For continuous <span class="math notranslate nohighlight">\(X\)</span>, the CDF is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x) = \int^{x}_{-\infty} f(t) dt,
+\]</div>
+<p>which is the area under the curve (of the density function) to the left of <span class="math notranslate nohighlight">\(x\)</span>. Note that when <span class="math notranslate nohighlight">\(x\)</span> appears in the bounds of the integral, we do not use <span class="math notranslate nohighlight">\(x\)</span> as the index within the integral (i.e. the integral contains <span class="math notranslate nohighlight">\(f(t) dt\)</span> and not <span class="math notranslate nohighlight">\(f(x) dx\)</span>).</p>
+<p>Probabilities can be expressed using the CDF too:</p>
+<div class="math notranslate nohighlight">
+\[
+P(a \leq X \leq b) = \int^{b}_{a} f(x) dx = \int^{b}_{- \infty} f(x) dx - \int^{a}_{- \infty} f(x) dx = F(b) - F(a)
+\]</div>
+<div class="section" id="relationship-between-cdf-and-pdf">
+<h3>Relationship between CDF and PDF<a class="headerlink" href="#relationship-between-cdf-and-pdf" title="Permalink to this headline">¶</a></h3>
+<p>The CDF is the integral of the PDF (above). Therefore, we also have that</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \frac{d}{dx}F(x).
+\]</div>
+</div>
+</div>
+<div class="section" id="expectation-and-variance-of-continuous-random-variables">
+<h2>Expectation and variance of continuous random variables<a class="headerlink" href="#expectation-and-variance-of-continuous-random-variables" title="Permalink to this headline">¶</a></h2>
+<p>Expectation is defined for continuous random variables <span class="math notranslate nohighlight">\(X\)</span> as for discrete <span class="math notranslate nohighlight">\(X\)</span>, but with the summation replaced by an integral:</p>
+<div class="math notranslate nohighlight">
+\[
+\mu = E(X) = \int^{\infty}_{-\infty} x f(x) dx.
+\]</div>
+<p>The variance is again defined as the expectation of the difference between <span class="math notranslate nohighlight">\(X\)</span> and its mean, squared:
+The variance of continuous <span class="math notranslate nohighlight">\(X\)</span> is thus given by:</p>
+<div class="math notranslate nohighlight">
+\[
+Var(X) = E((X-\mu)^{2}) = \int^{\infty}_{-\infty} (x-\mu)^{2} f(x) dx.
+\]</div>
+<p>As for discrete variables, we have the alternative form: <span class="math notranslate nohighlight">\(Var(X) = E(X^2) - E(X)^2\)</span>.</p>
+<div class="section" id="some-rules-for-expectation-and-variance">
+<h3>Some rules for expectation and variance<a class="headerlink" href="#some-rules-for-expectation-and-variance" title="Permalink to this headline">¶</a></h3>
+<p>The rules that we encountered for discrete variables also hold here. If <span class="math notranslate nohighlight">\(a\)</span> and <span class="math notranslate nohighlight">\(b\)</span> are constants, and <span class="math notranslate nohighlight">\(X\)</span> is a continuous random variable then:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(aX + b) = aE(X) + b\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var (aX + b) = a^2Var (X)\)</span></p></li>
+</ul>
+<p>For two continuous random variables, <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>, we have:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(X + Y ) = E(X) + E(Y)\)</span></p></li>
+</ul>
+<p>If <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are also independent then:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(E(XY) = E(X)E(Y)\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(Var (X + Y) = Var (X) + Var (Y)\)</span></p></li>
+</ul>
+</div>
+<div class="section" id="expectation-and-variance-of-functions-of-a-random-variable">
+<h3>Expectation and variance of functions of a random variable<a class="headerlink" href="#expectation-and-variance-of-functions-of-a-random-variable" title="Permalink to this headline">¶</a></h3>
+<p>For a function of a random variable <span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(g(X)\)</span>, we define the expectation as</p>
+<div class="math notranslate nohighlight">
+\[
+E(g(X)) = \int^{\infty}_{-\infty} g(x) f(x) dx .
+\]</div>
+<p>And the variance is</p>
+<div class="math notranslate nohighlight">
+\[
+Var(g(X)) = \int^{\infty}_{-\infty} (g(x)- E(g(X)))^{2} f(x) dx.
+\]</div>
+</div>
+</div>
+<div class="section" id="joint-continuous-distributions">
+<h2>Joint continuous distributions<a class="headerlink" href="#joint-continuous-distributions" title="Permalink to this headline">¶</a></h2>
+<p>Earlier, we introduced the concept of the <strong>joint probability distribution</strong> of two discrete random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. The idea extends naturally to the case of two continuous random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>. For constants <span class="math notranslate nohighlight">\(a, b, c\)</span> and <span class="math notranslate nohighlight">\(d\)</span>,</p>
+<div class="math notranslate nohighlight">
+\[
+P(a \leq X \leq b,\ c \leq Y \leq d) = \int^{b}_{a} \int^{d}_{c} f(x,y) \ dy\ dx.
+\]</div>
+<p>The joint density function must satisfy</p>
+<div class="math notranslate nohighlight">
+\[
+f(x,y) \geq 0\mbox{ for all }x,y 
+\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[
+\int^{\infty}_{-\infty} \int^{\infty}_{-\infty} f(x,y) \ dy\ dx = 1.
+\]</div>
+<p>The <strong>marginal distribution</strong> of one variable can be obtained from the joint density function:</p>
+<div class="math notranslate nohighlight">
+\[
+f(x) = \int^{\infty}_{-\infty} f(x,y)\  dy.
+\]</div>
+<p>The (joint) cumulative distribution function for <span class="math notranslate nohighlight">\((X,Y)\)</span> is defined by:</p>
+<div class="math notranslate nohighlight">
+\[
+F(x,y) = P(X\leq x, \ Y \leq y) = \int^{x}_{-\infty} \int^{y}_{-\infty} f(u,v) \ dv\ du.
+\]</div>
+<p>Although we will not go into the details further here, we can make corresponding definitions for the joint distribution of mixtures of continuous and discrete random variables.</p>
+</div>
+<div class="section" id="independence">
+<h2>Independence<a class="headerlink" href="#independence" title="Permalink to this headline">¶</a></h2>
+<p>Two continuous random variables <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> are independent if their joint density function can be factorised into the product of their marginal densities, i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+f(x,y) = f(x)f(y) \mbox{ for all } x,y
+\]</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        </div>
+    </div>
+    
+    
+    <div class='prev-next-bottom'>
+        
+    <a class='left-prev' id="prev-link" href="pr3_variables.html" title="previous page">Discrete Random Variables</a>
+    <a class='right-next' id="next-link" href="pr5_correlation.html" title="next page">Correlation and covariance</a>
+
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2020.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+
+    
+  <script src="_static/js/index.30270b6e4c972e43c488.js"></script>
+
+
+    
+  </body>
+</html>

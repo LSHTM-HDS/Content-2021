@@ -1,0 +1,33 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+
+format: jb-book
+root: myintro
+parts:
+  - caption: Notes
+    chapters:
+    - file: mr1_functions
+    - file: mr2_calculus
+    - file: mr3_matrices
+    - file: cm_combinatorics
+    - file: pr1_probability
+    - file: pr2_theorems
+    - file: pr3_variables
+    - file: pr4_continuous_variables
+    - file: pr5_correlation
+    - file: pr6_distributions
+  - caption: Quizzes
+    chapters:
+    - file: Quiz1
+    - file: Quiz2
+    - file: Quiz3
+    - file: Quiz4
+    - file: Quiz5
+    - file: Quiz6
+    - file: Quiz7
+    - file: Quiz8
+    - file: Quiz9
+    - file: Quiz10
+    - file: Solutions
+    - file: mr_reading
+

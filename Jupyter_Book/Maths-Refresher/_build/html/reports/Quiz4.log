@@ -1,0 +1,30 @@
+Traceback (most recent call last):
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\jupyter_cache\executors\utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 1077, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\asyncio\base_events.py", line 573, in run_until_complete
+    return future.result()
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 527, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 822, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 730, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+ display(qs4["Q4_1"])
+------------------
+
+[1;31m---------------------------------------------------------------------------[0m
+[1;31mNameError[0m                                 Traceback (most recent call last)
+[1;32m<ipython-input-2-d30846853a31>[0m in [0;36m<module>[1;34m[0m
+[1;32m----> 1[1;33m [0mdisplay[0m[1;33m([0m[0mqs4[0m[1;33m[[0m[1;34m"Q4_1"[0m[1;33m][0m[1;33m)[0m[1;33m[0m[1;33m[0m[0m
+[0m
+[1;31mNameError[0m: name 'qs4' is not defined
+NameError: name 'qs4' is not defined
+
