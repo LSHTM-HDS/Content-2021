@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
@@ -608,6 +608,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -631,7 +634,8 @@
 <p>Bayesian methods sometimes require numerical integration, and cheaper computing has made Bayesian approaches more feasible in the last 20 years. Bayesian approaches are likely to be an important part of working in Health Data Science. In the next two sessions, we introduce the fundamental principles.</p>
 <p>The current session is split into two separate parts. The first introduces the basic concepts underlying Bayesian inference and the second applies the basic principles to a simple example using proportions.</p>
 <div class="alert alert-block alert-warning">
-<b> Part 1: Intended learning outcomes</b> 
+<b> Intended learning outcomes</b> 
+<p><b> Part 1: </b></p>
 <p>By the end of this session you will be able to:</p>
 <ul class="simple">
 <li><p>compare the notions of probability and likelihood in Bayesian and Frequentist paradigms</p></li>
@@ -639,7 +643,7 @@
 <li><p>apply Bayes Theorem in the discrete case</p></li>
 </ul>
 <p></b> </b></p>
-<p><b> Part 2: Intended learning outcomes</b></p>
+<p><b> Part 2</b></p>
 <p>By the end of this session you will be able to:</p>
 <ul class="simple">
 <li><p>Understand and apply the basic principles of Bayesian analysis using proportions, specifically:</p>
@@ -660,7 +664,7 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
+            repo: "LSHTM-HDS/Content-2021",
             ref: "master",
         },
         codeMirrorConfig: {
