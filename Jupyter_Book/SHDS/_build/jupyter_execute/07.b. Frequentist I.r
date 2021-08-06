@@ -8,13 +8,13 @@ lab6 <- expression(mu + 2)
 lab7 <- expression(mu + 3)
 
 # Plot a normal distribution centred around a value "mu" with an unspecified dispersion
-options(repr.plot.width=5, repr.plot.height=5)
+options(repr.plot.width=6, repr.plot.height=4.5)
 plot(seq(-4, 4, by=.05), xaxt="none",  xlab=" ", ylab="Density", 
      dnorm(seq(-4, 4, by=.05), 0, 1.52), col="blue", type = "l")
 abline(v=0, col="black")
 axis(1, seq(-3, 3, by=1), labels=c(lab1, lab2, lab3, lab4, lab5, lab6, lab7))
 
-options(repr.plot.width=5, repr.plot.height=5)
+options(repr.plot.width=6, repr.plot.height=4.5)
 plot(seq(-6, 6, by=.05), xaxt="none",  xlab=" ", ylab="Density", 
      dnorm(seq(-6, 6, by=.05), 0, 1.52), col="blue", type = "l")
 abline(v=0, col="black")
