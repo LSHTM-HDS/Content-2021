@@ -94,7 +94,6 @@ parts:
     - file: 12.a. Linear Regression I
       sections: 
       - file: 12.b. Linear Regression I
-      - file: 12.b. Linear Regression I
       - file: 12.c. Linear Regression I
       - file: 12.d. Linear Regression I
       - file: 12.e. Linear Regression I
