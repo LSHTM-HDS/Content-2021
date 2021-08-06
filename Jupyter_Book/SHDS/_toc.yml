@@ -82,11 +82,81 @@ parts:
       - file: 10.g. Bayesian Statistics II
   - caption: Statistical modelling
     chapters:
-    - file: 11. Types of Investigation
-    - file: 12. Linear Regression I
-    - file: 13. Linear Regression II
-    - file: 14. Logistic Regression
-    - file: 15. Poisson Regression Model
-    - file: 16. Extensions Confounding, standardization, and collapsibility
+    - file: 11.a. Types of Investigation
+      sections: 
+      - file: 11.b. Types of Investigation
+      - file: 11.c. Types of Investigation
+      - file: 11.d. Types of Investigation
+      - file: 11.e. Types of Investigation
+      - file: 11.f. Types of Investigation
+      - file: 11.g. Types of Investigation
+      - file: 11.h. Types of Investigation
+    - file: 12.a. Linear Regression I
+      sections: 
+      - file: 12.b. Linear Regression I
+      - file: 12.b. Linear Regression I
+      - file: 12.c. Linear Regression I
+      - file: 12.d. Linear Regression I
+      - file: 12.e. Linear Regression I
+      - file: 12.f. Linear Regression I
+      - file: 12.g. Linear Regression I
+      - file: 12.h. Linear Regression I
+      - file: 12.i. Linear Regression I
+      - file: 12.j. Linear Regression I
+      - file: 12.k. Linear Regression I
+      - file: 12.l. Linear Regression I
+      - file: 12.m. Linear Regression I
+      - file: 12.n. Linear Regression I
+      - file: 12.o. Linear Regression I
+      - file: 12.p. Linear Regression I
+      - file: 12.q. Linear Regression I
+      - file: 12.r. Linear Regression I
+      - file: 12.s. Linear Regression I
+      - file: 12.t. Linear Regression I
+      - file: 12.u. Linear Regression I
+    - file: 13.a. Linear Regression II
+      sections: 
+      - file: 13.b. Linear Regression II
+      - file: 13.c. Linear Regression II
+      - file: 13.d. Linear Regression II
+      - file: 13.e. Linear Regression II
+      - file: 13.f. Linear Regression II
+      - file: 13.g. Linear Regression II
+      - file: 13.h. Linear Regression II
+      - file: 13.i. Linear Regression II
+      - file: 13.j. Linear Regression II
+      - file: 13.k. Linear Regression II
+      - file: 13.l. Linear Regression II
+      - file: 13.m. Linear Regression II
+      - file: 13.n. Linear Regression II
+    - file: 14.a. Logistic Regression
+      sections: 
+      - file: 14.b. Logistic Regression
+      - file: 14.c. Logistic Regression
+      - file: 14.d. Logistic Regression
+      - file: 14.e. Logistic Regression
+      - file: 14.f. Logistic Regression
+      - file: 14.g. Logistic Regression
+      - file: 14.h. Logistic Regression
+      - file: 14.i. Logistic Regression
+      - file: 14.j. Logistic Regression
+      - file: 14.k. Logistic Regression
+      - file: 14.l. Logistic Regression
+      - file: 14.m. Logistic Regression
+      - file: 14.n. Logistic Regression
+    - file: 15.a. Poisson Regression Model
+      sections: 
+      - file: 15.b. Poisson Regression Model 
+      - file: 15.c. Poisson Regression Model 
+      - file: 15.d. Poisson Regression Model 
+      - file: 15.e. Poisson Regression Model 
+      - file: 15.f. Poisson Regression Model 
+    - file: 16.a. Extensions Confounding, standardization, and collapsibility
+      sections: 
+      - file: 16.b. Extensions Confounding, standardization, and collapsibility  
+      - file: 16.c. Extensions Confounding, standardization, and collapsibility 
+      - file: 16.d. Extensions Confounding, standardization, and collapsibility 
+      - file: 16.e. Extensions Confounding, standardization, and collapsibility 
+      - file: 16.f. Extensions Confounding, standardization, and collapsibility 
 
 
