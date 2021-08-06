@@ -33,6 +33,6 @@ html:
 
 # Configure your Binder links, such as the URL of the BinderHub.
 launch_buttons:
-  binderhub_url             : https://mybinder.org/v2/gh/binder-examples/r/master?urlpath=rstudio
+  binderhub_url             : https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS/
   thebe                 : true
 
