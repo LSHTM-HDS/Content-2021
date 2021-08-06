@@ -602,7 +602,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/master?urlpath=tree/docs/02.c. Probability.Discrete.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/binder-examples/r/master?urlpath=rstudio/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/02.c. Probability.Discrete.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -670,7 +670,7 @@
 <p>From previous data, the clinical researcher running the trial estimates that the probability of the side-effect is 0.23.</p>
 <p>Let <span class="math notranslate nohighlight">\(X\)</span> be the number of people in the study (i.e. among the 8 participants) who experience a side-effect. Suppose we are happy to assume that <span class="math notranslate nohighlight">\(X\)</span> follows a binomial distribution. Then, using the formula for the probability distribution function that we derive below, we can calculate the probability that <span class="math notranslate nohighlight">\(P(X=x)\)</span> for all possible values <span class="math notranslate nohighlight">\(x=0,1,...,8\)</span>.</p>
 <p>The code below (in R) does that calculation and displays a bar chart of the probability distribution function.</p>
-<div class="cell docutils container">
+<div class="cell tag_thebe-kernel:ir docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Obtain the probability distribution function (for values x=0,1,...,8)</span>
 <span class="n">x</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">8</span><span class="p">)</span>
@@ -796,7 +796,7 @@ P(X=x) = \begin{pmatrix}n \\ x \end{pmatrix} \pi^{x} (1-\pi)^{n-x}, \mbox{ for }
         requestKernel: true,
         binderOptions: {
             repo: "LSHTM-HDS/Content-2021",
-            ref: "master",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",
