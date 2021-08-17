@@ -1,0 +1,1057 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>14.1 Diagnostics for checking the assumptions of linear regression &#8212; Statistics for Health Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="14.2 Statistical tests of assumptions" href="14.c.%20Linear%20Regression%20III.html" />
+    <link rel="prev" title="14. Linear Regression III" href="14.a.%20Linear%20Regression%20III.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Welcome.html">
+   Welcome to Statistics for Health Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preamble
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.%20Introduction.html">
+   1 Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basic probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02.a.%20Probability.Discrete.html">
+   2. Discrete Distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.b.%20Probability.Discrete.html">
+     Bayes' Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.c.%20Probability.Discrete.html">
+     The binomial distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.d.%20Probability.Discrete.html">
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
+   3. Continuous distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.b.%20Continuous%20Probability%20Distributions.html">
+     3.1 Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.c.%20Continuous%20Probability%20Distributions.html">
+     3.2 Useful continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.d.%20Continuous%20Probability%20Distributions.html">
+     3.3 Uses of the standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
+     3.5 Are the data normally distributed?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.f.%20Continuous%20Probability%20Distributions.html">
+     3.5 Joint distributions and correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical Inference
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="04.a.%20Population.and.samples.html">
+   4. Populations and Samples
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.b.%20Population.and.samples.html">
+     4.1 Sampling from a population
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.c.%20Population.and.samples.html">
+     4.2 Statistical models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.d.%20Population.and.samples.html">
+     4.3 Sampling distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.e.%20Population.and.samples.html">
+     4.4 Obtaining the sampling distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.f.%20Population.and.samples.html">
+     4.5 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.g.%20Population.and.samples.html">
+     Appendix: additional reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05.a.%20Likelihood.html">
+   5. Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.b.%20Likelihood.html">
+     5.1 Maximum likelihood estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.c.%20Likelihood.html">
+     5.2 The likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.d.%20Likelihood.html">
+     5.3 Log likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.e.%20Likelihood.html">
+     5.4 Finding the MLE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.f.%20Likelihood.html">
+     5.5 Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="06.a.%20Maximum%20Likelihood.html">
+   6. Maximum Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
+     6.1 Likelihood with independent observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.c.%20Maximum%20Likelihood.html">
+     6.2 Properties of maximum likelihood estimators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.d.%20Maximum%20Likelihood.html">
+     6.3 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.e.%20Maximum%20Likelihood.html">
+     Appendix: Additional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="07.a.%20Frequentist%20I.html">
+   7. Frequentist I: Confidence Intervals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.b.%20Frequentist%20I.html">
+     7.1 Confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.c.%20Frequentist%20I.html">
+     7.2 Confidence intervals for the mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.d.%20Frequentist%20I.html">
+     7.3 Interpretation of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.e.%20Frequentist%20I.html">
+     7.4 Approximate confidence intervals for parameters estimated using large samples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.f.%20Frequentist%20I.html">
+     7.5 Confidence Intervals using resampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.g.%20Frequentist%20I.html">
+     7.6 Summary: Use of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.h.%20Frequentist%20I.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="08.a.%20Frequentist%20II.html">
+   8. Frequentist II: Hypothesis tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.b.%20Frequentist%20II.html">
+     8.1 Evidence against hypotheses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.c.%20Frequentist%20II.html">
+     8.2 The p-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.d.%20Frequentist%20II.html">
+     8.3 Connection between p-values and confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.e.%20Frequentist%20II.html">
+     8.4 Other (mis-)interpretations of p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.f.%20Frequentist%20II.html">
+     8.5 Calculating p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.g.%20Frequentist%20II.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="09.a.%20Bayesian%20Statistics%20I.html">
+   9. Bayesian Statistics I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
+     Part 1: 9.1 Introduction to Bayesian Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.c.%20Bayesian%20Statistics%20I.html">
+     9.2 Bayes Theorem (recap)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.d.%20Bayesian%20Statistics%20I.html">
+     9.3 The Bayesian paradigm in Health data science problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
+     Part 2:  9.4 Bayes thorem for discrete and continous data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.f.%20Bayesian%20Statistics%20I.html">
+     9.5 Bayesian inference on proportions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.g.%20Bayesian%20Statistics%20I.html">
+     9.6 Summarising Posteriors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.h.%20Bayesian%20Statistics%20I.html">
+     9.7 Prior Predictions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.i.%20Bayesian%20Statistics%20I.html">
+     9.8 Conjugacy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="10.a.%20Bayesian%20Statistics%20II.html">
+   10. Bayesian Statistics II: Normal data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.b.%20Bayesian%20Statistics%20II.html">
+     10.1 Example: CD4 cell counts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
+     Calculating the posterior
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.d.%20Bayesian%20Statistics%20II.html">
+     10.3 Credible Intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.e.%20Bayesian%20Statistics%20II.html">
+     10.4 Predictions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.f.%20Bayesian%20Statistics%20II.html">
+     10.5 Multiparameter models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.g.%20Bayesian%20Statistics%20II.html">
+     Further Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical modelling
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
+   11. Types of Investigation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
+     11.1 Specifying research questions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
+     11.2 Different types of investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
+     11.3 Properties of different types of investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
+     11.4 An example: stroke in women
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
+     11.5 Role of explanatory variables in different types of investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
+     11.6 Example: the role of regression in different types of investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
+     11.7 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="12.a.%20Linear%20Regression%20I.html">
+   12. Linear Regression I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.b.%20Linear%20Regression%20I.html">
+     12.1 Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
+     12.2 Simple linear regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.d.%20Linear%20Regression%20I.html">
+     12.3 The simple linear regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
+     12.4 Estimation of the population parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
+     12.5 Examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
+     12.6 Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
+     12.7 Hypothesis testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
+     12.8 Confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
+     12.9 Prediction intervals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
+   13. Linear Regression I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
+     13.1 Multivariable linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
+     13.2 The multivariable linear regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
+     13.3 Example Birthweight data: Model 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.e.%20Linear%20Regression%20II.html">
+     13.4 Centering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
+     13.5 Including categorical predictor variables in linear regression models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
+     12.15 Birthweight data: Model 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
+     13.6 Optional Reading: Analysis of Variance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="14.a.%20Linear%20Regression%20III.html">
+   14. Linear Regression III
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     14.1 Diagnostics for checking the assumptions of linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
+     14.2 Statistical tests of assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
+     14.3 Dealing with violations of assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
+     14.4 Modelling interaction terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.f.%20Linear%20Regression%20III.html">
+     14.5 Collinearity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
+     14.6 Different types of investigation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="15.a.%20Logistic%20Regression.html">
+   15 Logistic Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.b.%20Logistic%20Regression.html">
+     15.1 Introduction: linear vs. logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.c.%20Logistic%20Regression.html">
+     15.2 The dementia dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.d.%20Logistic%20Regression.html">
+     15.3 The logistic regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
+     15.4 Interpretation of the parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
+     15.5 Example 1: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
+     15.6 Interpretation when
+     <span class="math notranslate nohighlight">
+      \(X_i\)
+     </span>
+     is a continuous variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.h.%20Logistic%20Regression.html">
+     15.7 Example 2: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
+     15.8 Interactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
+     15.9 Example 3: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
+     15.10 Diagnosis for the logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
+     15.11 Adequacy of the logistic regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.12 Common pitfalls
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
+     15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/14.b. Linear Regression III.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F14.b. Linear Regression III.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/14.b. Linear Regression III.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#assumptions-of-the-linear-regression-model">
+   14.1.1 Assumptions of the linear regression model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#using-plots-to-investigate-assumptions">
+   14.1.2 Using plots to investigate assumptions
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatter-plots-of-the-outcome-against-independent-variables">
+     14.1.2.1 Scatter plots of the outcome against independent variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plots-of-residuals-against-fitted-values-or-covariates">
+     14.1.2.2 Plots of residuals against fitted values or covariates
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#normal-plots-of-residuals">
+     14.1.2.3 Normal plots of residuals
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plots-based-on-cook-s-distance">
+     14.1.2.4 Plots based on Cook’s distance
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="diagnostics-for-checking-the-assumptions-of-linear-regression">
+<h1>14.1 Diagnostics for checking the assumptions of linear regression<a class="headerlink" href="#diagnostics-for-checking-the-assumptions-of-linear-regression" title="Permalink to this headline">¶</a></h1>
+<p>As previously discussed, the linear regression model makes certain assumptions and all inferences made from a model are contingent on these assumptions being correct. It is therefore important that we have statistical techniques (or <strong>diagnostic tools</strong>) to investigate these assumptions.</p>
+<p>In practice, it is rare for all the assumptions of a statistical procedure to hold exactly. We may have evidence in the data, or prior knowledge about the data, that lead us to believe that the assumptions made by the model do not hold. This does not necessarily mean that the results from the model should be disregarded, since statistical procedures are <strong>robust</strong> to departures from assumptions in many settings. When conducting statistical analyses, it is a good idea to first try to establish to what extent assumptions hold and then consider whether the methods used can be adapted to improve the extent to which assumptions hold. If adaptations cannot be made, it is necessary to consider to what extent the results of an analysis can be trusted.</p>
+<p>In this section we largely focus on diagnostic tools that can be used to identify assumption violations. Some pointers are given to possible adaptations and alternative techniques that can be used when assumptions are violated, however issues of robustness are not considered in great detail. It is worth noting that, broadly speaking, the central limit theorem implies that departures from assumptions are less important for large datasets than for small ones, and so assumption violations are less of a concern when working with big data.</p>
+<div class="section" id="assumptions-of-the-linear-regression-model">
+<h2>14.1.1 Assumptions of the linear regression model<a class="headerlink" href="#assumptions-of-the-linear-regression-model" title="Permalink to this headline">¶</a></h2>
+<p>The assumptions made by the linear regression model are as follows:</p>
+<ol class="simple">
+<li><p><strong>Linearity:</strong> There is a linear relationship between the dependent variable <span class="math notranslate nohighlight">\(Y\)</span> and each of the independent variables. Here we are contrasting a linear relationship with a non-linear relationship, not with no relationship. A model in which one of the regression coefficients is zero can satisfy the assumptions of linear regression.</p></li>
+<li><p><strong>Normality:</strong> The true residuals follow a normal distribution.</p></li>
+<li><p><strong>Homoscedasticity:</strong> The true residual variance is constant i.e. the scatter of points around the true regression line has the same variance, irrespective of the value of <span class="math notranslate nohighlight">\(x_i\)</span>. The converse of this feature is termed <strong>heteroscedasticity</strong>.</p></li>
+<li><p><strong>Independence:</strong> The observations of <span class="math notranslate nohighlight">\(y_i\)</span> are independent.</p></li>
+</ol>
+<p>In this session we will focus on the first three assumptions. Violations of the independence assumption are often more apparant from the context of a study than from the data itself. For example, if we carry out a study in which the blood pressure of 100 people are each measured twice, and then treat the 200 measurements as independent in the statistical analysis it is clear that the assumption of independence is violated.</p>
+<p>Notice that the normality and homoscedasticity assumptions concern the <em>true</em> residuals, defined in terms of deviations from the model defined by population parameters. Since true residuals can never be observed in practice, we have to use the observed residuals (obtained by replacing the population parameters with their estimates). In fact, observed residuals are neither independent nor do they have constant variance, but in most settings the departures from independence and homoscedasticity are very small. Consequently, we can proceed as if the observed residuals were the true residuals when investigating assumptions.</p>
+</div>
+<div class="section" id="using-plots-to-investigate-assumptions">
+<h2>14.1.2 Using plots to investigate assumptions<a class="headerlink" href="#using-plots-to-investigate-assumptions" title="Permalink to this headline">¶</a></h2>
+<p>It is a good idea to explore your data using a number of simple plots. Here we will introduce the most useful plots for both simple and multivariable linear regression models.</p>
+<div class="section" id="scatter-plots-of-the-outcome-against-independent-variables">
+<h3>14.1.2.1 Scatter plots of the outcome against independent variables<a class="headerlink" href="#scatter-plots-of-the-outcome-against-independent-variables" title="Permalink to this headline">¶</a></h3>
+<p>For simple linear regression models, a scatter plot of the outcome against the independent variable can usually make serious violations of assumptions apparent. Such plots are particularly good for identfiying non-linearity, heteroscedasticity and <strong>outliers</strong> (points which lie atypically far from the regression line).</p>
+<p>Let our outcome and independent variable be denoted by <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(X\)</span>, respectively. The figure below depicts four different scenarios where various assumptions are violated. In Scenario A, there is a slight curvature in the scatter of points between <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(X\)</span>, suggesting a non-linear relationship which violates the linearity assumption. In Scenario B, the variance of <span class="math notranslate nohighlight">\(Y\)</span> is larger for larger values of <span class="math notranslate nohighlight">\(X\)</span>, violating the homoscedasticity assumption. In Scenario C, the linearity and homoscedasticity assumptions appear to hold, but there is a possible outlier (circled in red). Scenario D depicts an ideal situation for simple linear regression, where there appears to be no violations.</p>
+<div class="figure align-default" id="simple-plots">
+<a class="reference internal image-reference" href="Images/simple_plots.jpg"><img alt="Images/simple_plots.jpg" src="Images/simple_plots.jpg" style="height: 600px;" /></a>
+</div>
+<p>For multivariable linear regression, the linearity assumption requires that the relationship between the outcome and each independent variable is linear <em>conditional on the other covariates in the model</em>. So, there is no requirement that the relationship between the outcome and each individual covariate is linear when other covariates are ignored. This means that assessment of the fit of a multivariable linear regression cannot be inferred from a series of scatter plots relating the outcome to each covariate. Such plots can be useful for detecting points with extreme values, but the residual plots considered next are more useful for multivariable models.</p>
+</div>
+<div class="section" id="plots-of-residuals-against-fitted-values-or-covariates">
+<h3>14.1.2.2 Plots of residuals against fitted values or covariates<a class="headerlink" href="#plots-of-residuals-against-fitted-values-or-covariates" title="Permalink to this headline">¶</a></h3>
+<p>Plots of the observed residuals against the fitted values are useful for investigating the assumptions of linearity and homoscedasticity. For linearity: if a non-linear relationship is present, then the residuals will not be equally distributed above and below zero across the range of fitted values. For homoscedasticity: if there is heterogeneity in the residuals, the variance of residuals will not be constant across the range of fitted values.</p>
+<p>The figure below uses the same data from Scenarios A-D above, but displays the observed residuals against fitted values. We can see that linearity is violated in Scenario A, since the scatter points are not equally distributed above and below the line at <span class="math notranslate nohighlight">\(\epsilon=0\)</span>. Furthermore, in Scenario B we can see that the variance of residuals increase with increasing <span class="math notranslate nohighlight">\(\hat{y}\)</span>, indicating a violation of homoscedasticity.</p>
+<div class="figure align-default" id="residual-plots">
+<a class="reference internal image-reference" href="Images/residual_plots.jpg"><img alt="Images/residual_plots.jpg" src="Images/residual_plots.jpg" style="height: 600px;" /></a>
+</div>
+<p>It can also be useful to plot residuals against each covariate, as a futher check for a linear relationship between <span class="math notranslate nohighlight">\(Y\)</span> and each of the independent variables (conditional on the other covariates in the model). If there are only a small number of covariates in the model, then these plots can be done for all variables. However, if the model is very complex, it may be judged sufficient to only plot residuals against fitted values and residuals against the most important covariates.</p>
+</div>
+<div class="section" id="normal-plots-of-residuals">
+<h3>14.1.2.3 Normal plots of residuals<a class="headerlink" href="#normal-plots-of-residuals" title="Permalink to this headline">¶</a></h3>
+<p>Normal plots (such as the <strong>Q-Q plot</strong>) provide the best means of visually detecting departures from normality. The normal Q-Q plot plots observed values against a standard normal distribution with the same number of points. If the data are perfectly normally distributed, the points on a Q-Q plot would lie on the line <span class="math notranslate nohighlight">\(Y=X\)</span>. Deviations from this line indicate deviations from normality. Q-Q plots of residuals can be used to investigate the normality assumption.</p>
+<p>As previously mentioned, the observed residuals do not have constant variance even when true residuals do. Therefore, some authors suggest using <strong>standardised</strong> residuals in the normal plots (since standardised residuals do have constant variance). On the other hand, some prefer to work with the observed residuals since these have the same units as the outcome. In practice, the differences between the two approaches are minor.</p>
+<p>The figure below depicts normal Q-Q plots for the standardised residuals in Scenarios A-D. In such plots we might expect to see some deviation from the straight line in the extreme values of the residuals and so the variation in the tails are not of great concern. In Scenario A however, there is deviation away from the line <span class="math notranslate nohighlight">\(Y=X\)</span> towards the middle, indicating a violation of the normality assumption. Furthermore, the outlier in Scenario C may need further investigation (we discuss outliers further in a subsequent section).</p>
+<div class="figure align-default" id="normal-residual-plots">
+<a class="reference internal image-reference" href="Images/normal_residual_plots.jpg"><img alt="Images/normal_residual_plots.jpg" src="Images/normal_residual_plots.jpg" style="height: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="plots-based-on-cook-s-distance">
+<h3>14.1.2.4 Plots based on Cook’s distance<a class="headerlink" href="#plots-based-on-cook-s-distance" title="Permalink to this headline">¶</a></h3>
+<p>Cook’s distance is a measure of the <strong>influence</strong> of an observation. An influential observation is one that has a large impact on the model parameter estimates. It is worth checking the influence of observations, particularly potential outliers, to see if they are having a much larger impact on model fit than we would expect.</p>
+<p>For a model with <span class="math notranslate nohighlight">\(p\)</span> parameters (with estimated residual variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>), the Cook’s distance for the <span class="math notranslate nohighlight">\(i^{th}\)</span> observation (<span class="math notranslate nohighlight">\(D_i\)</span>) is obtained by refitting the model excluding this observation and obtaining new fitted values (<span class="math notranslate nohighlight">\(\hat{y_{j(i)}}\)</span>) for all <span class="math notranslate nohighlight">\(n\)</span> observations (including the omitted one). <span class="math notranslate nohighlight">\(D_i\)</span> is then defined as:</p>
+<div class="math notranslate nohighlight">
+\[D_i = \frac{\sum_{i=1}^n(\hat{y}_{j(i)}-\hat{y}_i)^2}{(p+1)\hat{\sigma}^2}\]</div>
+<p>The higher the value of <span class="math notranslate nohighlight">\(D_i\)</span>, the more influential the observation.</p>
+<p>It can be informative to display Cook’s distances graphically. The figure below plots the Cook’s distances for each observation in Scenarios A-D.</p>
+<div class="figure align-default" id="cooks-distance">
+<a class="reference internal image-reference" href="Images/cooks_distance.jpg"><img alt="Images/cooks_distance.jpg" src="Images/cooks_distance.jpg" style="height: 600px;" /></a>
+</div>
+<p>In Scenario C the outlier identified in the previous plots and potentially problematic has a much higher Cook’s distance than the other observations, indicating that it is highly influential and worth further investigation.</p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="14.a.%20Linear%20Regression%20III.html" title="previous page">14. Linear Regression III</a>
+    <a class='right-next' id="next-link" href="14.c.%20Linear%20Regression%20III.html" title="next page">14.2 Statistical tests of assumptions</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

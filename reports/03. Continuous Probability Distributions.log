@@ -1,0 +1,42 @@
+Traceback (most recent call last):
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\jupyter_cache\executors\utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 1077, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\asyncio\base_events.py", line 573, in run_until_complete
+    return future.result()
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 527, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 822, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 730, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+# BMI dataset
+
+dat <- read.csv("Practicals/Datasets/BMI/MindsetMatters.csv")
+head(dat)
+#remove observatiosn with no BMI data
+dat <- dat[!is.na(dat$BMI),]
+#estimate mu and sigma
+mu <- mean(dat$BMI)
+print(paste0("value of mu is ",round(mu,2)))
+sig <- sd(dat$BMI)
+print(paste0("value of sigma is ",round(sig,2)))
+------------------
+
+Error in file(file, "rt"): cannot open the connection
+Traceback:
+
+1. read.csv("Practicals/Datasets/BMI/MindsetMatters.csv")
+2. read.table(file = file, header = header, sep = sep, quote = quote, 
+ .     dec = dec, fill = fill, comment.char = comment.char, ...)
+3. file(file, "rt")
+ERROR: Error in file(file, "rt"): cannot open the connection
+
+

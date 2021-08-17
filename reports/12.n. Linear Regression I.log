@@ -1,0 +1,39 @@
+Traceback (most recent call last):
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\jupyter_cache\executors\utils.py", line 56, in single_nb_execution
+    record_timing=False,
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 1077, in execute
+    return NotebookClient(nb=nb, resources=resources, km=km, **kwargs).execute()
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\util.py", line 74, in wrapped
+    return just_run(coro(*args, **kwargs))
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\util.py", line 53, in just_run
+    return loop.run_until_complete(coro)
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\asyncio\base_events.py", line 573, in run_until_complete
+    return future.result()
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 527, in async_execute
+    cell, index, execution_count=self.code_cells_executed + 1
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 822, in async_execute_cell
+    self._check_raise_for_error(cell, exec_reply)
+  File "c:\users\emsuewil\anaconda3\envs\stats_for_hds\lib\site-packages\nbclient\client.py", line 730, in _check_raise_for_error
+    raise CellExecutionError.from_cell_and_msg(cell, exec_reply['content'])
+nbclient.exceptions.CellExecutionError: An error occurred while executing the following cell:
+------------------
+#What are the mean gestational days and mothers height in our data?
+summary(data$Gestational.Days)
+summary(data$Maternal.Height)
+
+#Create new (centered) variables in our data
+data$Gestational.Days.Centered<-data$Gestational.Days-mean(data$Gestational.Days)
+data$Maternal.Height.Centered<-data$Maternal.Height-mean(data$Maternal.Height)
+
+#Redefine Model 3 using the centered variables
+model3<-lm(Birth.Weight~Gestational.Days.Centered+Maternal.Height.Centered, data=data)
+summary(model3)
+------------------
+
+Error in data$Gestational.Days: object of type 'closure' is not subsettable
+Traceback:
+
+1. summary(data$Gestational.Days)
+ERROR: Error in data$Gestational.Days: object of type 'closure' is not subsettable
+
+

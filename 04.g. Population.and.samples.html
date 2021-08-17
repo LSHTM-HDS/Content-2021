@@ -1,0 +1,1112 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Appendix: additional reading &#8212; Statistics for Health Data Science</title>
+    
+  <link href="_static/css/theme.css" rel="stylesheet" />
+  <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="./" src="_static/documentation_options.js"></script>
+    <script src="_static/jquery.js"></script>
+    <script src="_static/underscore.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/togglebutton.js"></script>
+    <script src="_static/clipboard.min.js"></script>
+    <script src="_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" />
+    <link rel="next" title="5. Likelihood" href="05.a.%20Likelihood.html" />
+    <link rel="prev" title="4.5 Summary" href="04.f.%20Population.and.samples.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="index.html">
+      
+      <img src="_static/logo.jpg" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Welcome.html">
+   Welcome to Statistics for Health Data Science
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Preamble
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20Acknowledgements.html">
+   Acknowledgements
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="01.%20Introduction.html">
+   1 Introduction
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Basic probability
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="02.a.%20Probability.Discrete.html">
+   2. Discrete Distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.b.%20Probability.Discrete.html">
+     Bayes' Theorem
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.c.%20Probability.Discrete.html">
+     The binomial distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.d.%20Probability.Discrete.html">
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
+   3. Continuous distributions
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.b.%20Continuous%20Probability%20Distributions.html">
+     3.1 Continuous random variables
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.c.%20Continuous%20Probability%20Distributions.html">
+     3.2 Useful continuous distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.d.%20Continuous%20Probability%20Distributions.html">
+     3.3 Uses of the standard Normal distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
+     3.5 Are the data normally distributed?
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="03.f.%20Continuous%20Probability%20Distributions.html">
+     3.5 Joint distributions and correlations
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical Inference
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="04.a.%20Population.and.samples.html">
+   4. Populations and Samples
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.b.%20Population.and.samples.html">
+     4.1 Sampling from a population
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.c.%20Population.and.samples.html">
+     4.2 Statistical models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.d.%20Population.and.samples.html">
+     4.3 Sampling distributions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.e.%20Population.and.samples.html">
+     4.4 Obtaining the sampling distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="04.f.%20Population.and.samples.html">
+     4.5 Summary
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Appendix: additional reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="05.a.%20Likelihood.html">
+   5. Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.b.%20Likelihood.html">
+     5.1 Maximum likelihood estimation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.c.%20Likelihood.html">
+     5.2 The likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.d.%20Likelihood.html">
+     5.3 Log likelihood
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.e.%20Likelihood.html">
+     5.4 Finding the MLE
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="05.f.%20Likelihood.html">
+     5.5 Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="06.a.%20Maximum%20Likelihood.html">
+   6. Maximum Likelihood
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
+     6.1 Likelihood with independent observations
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.c.%20Maximum%20Likelihood.html">
+     6.2 Properties of maximum likelihood estimators
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.d.%20Maximum%20Likelihood.html">
+     6.3 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="06.e.%20Maximum%20Likelihood.html">
+     Appendix: Additional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="07.a.%20Frequentist%20I.html">
+   7. Frequentist I: Confidence Intervals
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.b.%20Frequentist%20I.html">
+     7.1 Confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.c.%20Frequentist%20I.html">
+     7.2 Confidence intervals for the mean
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.d.%20Frequentist%20I.html">
+     7.3 Interpretation of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.e.%20Frequentist%20I.html">
+     7.4 Approximate confidence intervals for parameters estimated using large samples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.f.%20Frequentist%20I.html">
+     7.5 Confidence Intervals using resampling
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.g.%20Frequentist%20I.html">
+     7.6 Summary: Use of confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="07.h.%20Frequentist%20I.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="08.a.%20Frequentist%20II.html">
+   8. Frequentist II: Hypothesis tests
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.b.%20Frequentist%20II.html">
+     8.1 Evidence against hypotheses
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.c.%20Frequentist%20II.html">
+     8.2 The p-value
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.d.%20Frequentist%20II.html">
+     8.3 Connection between p-values and confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.e.%20Frequentist%20II.html">
+     8.4 Other (mis-)interpretations of p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.f.%20Frequentist%20II.html">
+     8.5 Calculating p-values
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="08.g.%20Frequentist%20II.html">
+     Further resources
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="09.a.%20Bayesian%20Statistics%20I.html">
+   9. Bayesian Statistics I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
+     Part 1: 9.1 Introduction to Bayesian Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.c.%20Bayesian%20Statistics%20I.html">
+     9.2 Bayes Theorem (recap)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.d.%20Bayesian%20Statistics%20I.html">
+     9.3 The Bayesian paradigm in Health data science problems.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
+     Part 2:  9.4 Bayes thorem for discrete and continous data
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.f.%20Bayesian%20Statistics%20I.html">
+     9.5 Bayesian inference on proportions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.g.%20Bayesian%20Statistics%20I.html">
+     9.6 Summarising Posteriors
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.h.%20Bayesian%20Statistics%20I.html">
+     9.7 Prior Predictions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="09.i.%20Bayesian%20Statistics%20I.html">
+     9.8 Conjugacy
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="10.a.%20Bayesian%20Statistics%20II.html">
+   10. Bayesian Statistics II: Normal data
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.b.%20Bayesian%20Statistics%20II.html">
+     10.1 Example: CD4 cell counts
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
+     Calculating the posterior
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.d.%20Bayesian%20Statistics%20II.html">
+     10.3 Credible Intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.e.%20Bayesian%20Statistics%20II.html">
+     10.4 Predictions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.f.%20Bayesian%20Statistics%20II.html">
+     10.5 Multiparameter models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="10.g.%20Bayesian%20Statistics%20II.html">
+     Further Resources
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Statistical modelling
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
+   11. Types of Investigation
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
+     11.1 Specifying research questions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
+     11.2 Different types of investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
+     11.3 Properties of different types of investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
+     11.4 An example: stroke in women
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
+     11.5 Role of explanatory variables in different types of investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
+     11.6 Example: the role of regression in different types of investigation
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
+     11.7 Summary
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
+     References
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="12.a.%20Linear%20Regression%20I.html">
+   12. Linear Regression I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-11" name="toctree-checkbox-11" type="checkbox"/>
+  <label for="toctree-checkbox-11">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.b.%20Linear%20Regression%20I.html">
+     12.1 Introduction
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
+     12.2 Simple linear regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.d.%20Linear%20Regression%20I.html">
+     12.3 The simple linear regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
+     12.4 Estimation of the population parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
+     12.5 Examples
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
+     12.6 Inference
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
+     12.7 Hypothesis testing
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
+     12.8 Confidence intervals
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
+     12.9 Prediction intervals
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
+   13. Linear Regression I
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
+  <label for="toctree-checkbox-12">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
+     13.1 Multivariable linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
+     13.2 The multivariable linear regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
+     13.3 Example Birthweight data: Model 3
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.e.%20Linear%20Regression%20II.html">
+     13.4 Centering
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
+     13.5 Including categorical predictor variables in linear regression models
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
+     12.15 Birthweight data: Model 4
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
+     13.6 Optional Reading: Analysis of Variance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="14.a.%20Linear%20Regression%20III.html">
+   14. Linear Regression III
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
+  <label for="toctree-checkbox-13">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
+     14.1 Diagnostics for checking the assumptions of linear regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
+     14.2 Statistical tests of assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
+     14.3 Dealing with violations of assumptions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
+     14.4 Modelling interaction terms
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.f.%20Linear%20Regression%20III.html">
+     14.5 Collinearity
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
+     14.6 Different types of investigation
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="15.a.%20Logistic%20Regression.html">
+   15 Logistic Regression
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
+  <label for="toctree-checkbox-14">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.b.%20Logistic%20Regression.html">
+     15.1 Introduction: linear vs. logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.c.%20Logistic%20Regression.html">
+     15.2 The dementia dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.d.%20Logistic%20Regression.html">
+     15.3 The logistic regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
+     15.4 Interpretation of the parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
+     15.5 Example 1: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
+     15.6 Interpretation when
+     <span class="math notranslate nohighlight">
+      \(X_i\)
+     </span>
+     is a continuous variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.h.%20Logistic%20Regression.html">
+     15.7 Example 2: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
+     15.8 Interactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
+     15.9 Example 3: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
+     15.10 Diagnosis for the logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
+     15.11 Adequacy of the logistic regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.12 Common pitfalls
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
+     15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="_sources/04.g. Population.and.samples.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F04.g. Population.and.samples.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/04.g. Population.and.samples.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a1-more-on-populations">
+   A1 More on populations
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a2-bias-of-estimators">
+   A2 Bias of estimators
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a3-clt-for-binary-data">
+   A3 CLT for binary data
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="appendix-additional-reading">
+<h1>Appendix: additional reading<a class="headerlink" href="#appendix-additional-reading" title="Permalink to this headline">¶</a></h1>
+<p>This appendix section contains additional information which will deepen your understanding. However, it is not examinable and is completely optional reading.</p>
+<div class="section" id="a1-more-on-populations">
+<h2>A1 More on populations<a class="headerlink" href="#a1-more-on-populations" title="Permalink to this headline">¶</a></h2>
+<p>There are additional issues related to the definition of the population, that should be considered.</p>
+<ul class="simple">
+<li><p>Is the population well defined?</p></li>
+</ul>
+<p>Loosely speaking, we think about the population as being the wider group (often of people or patients) who we can generalise the results to. For some research questions the population of interest is well defined. For instance, suppose we undertake a study where we are attempting to estimate the proportion of adults (18 years and above) in the UK with hypertension in 2020. The population is well defined. Conversely, suppose we undertake a study to estimate the effect of a blood-pressure-lowering treatment among a sample of 50 patients in the UK in 2020. In this case, the population of interest can be difficult to pin down. Who can we generalize our results to? Is the population restricted in time and space? Can we generalise to patients in other countries? Can we generalise to future patients?</p>
+<ul class="simple">
+<li><p>Is the sample representative of the population?</p></li>
+</ul>
+<p>Clearly a sample can be chosen in may ways, and the way in which we are able to make inferences about the population depends critically on the way in which the sample is selected: it is hard to over-emphasize the importance and relevance of the sampling process to the meaning and validity of the subsequent inferences. In this module, we will assume that sampling units (in this case, people) are randomly sampled from the population.</p>
+<ul class="simple">
+<li><p>Is the population finite, or (effectively or potentially) infinite?</p></li>
+</ul>
+<p>For example, a study of a new treatment for a disease may wish to generalise to all potential patients.</p>
+<ul class="simple">
+<li><p>Have we sampled all the population?</p></li>
+</ul>
+<p>For example, a study of leukemia in the years following a leak from a nuclear power station may sample all subjects developing leukemia within the relevant time period in the vicinity of the power station. In such an example it is not clear how to define a wider population from which the sample can be considered to have been drawn. In these and other cases one approach is to consider a notional or counterfactual population, which can only have a conceptual existence.</p>
+<p>In general the issues can be complex and will not be considered further here.</p>
+</div>
+<div class="section" id="a2-bias-of-estimators">
+<h2>A2 Bias of estimators<a class="headerlink" href="#a2-bias-of-estimators" title="Permalink to this headline">¶</a></h2>
+<p>Using statistical theory it is possible to show that the sample mean, <span class="math notranslate nohighlight">\(\bar{X}\)</span>, is an unbiased estimator of the population mean, <span class="math notranslate nohighlight">\(\mu\)</span>. One of the simplest examples is when our random variables follow the <em>Bernoulli</em> distribution.</p>
+<p><strong>Example</strong> Let <span class="math notranslate nohighlight">\(X_1, X_2,.., X_n\)</span> be Bernoulli trials with success parameter <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Our estimate of <span class="math notranslate nohighlight">\(p\)</span> is the sample mean,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p} = \bar{X} = \frac{X_1 + X_2 + ... + X_n}{n}
+\]</div>
+<p>We will now show that the expected value of this estimator is equal to the population mean, <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+E(\bar{X}) &amp; = E\left[\frac{X_1 + X_2 + ... + X_n}{n}\right] \\
+&amp; = \frac{1}{n} E[X_1 + X_2 + ... + X_n] \qquad  \mbox{(we can take constants out of expectations)} \\
+&amp;= \frac{1}{n} (E(X_1) + E(X_2) + ... + E(X_n)) \\
+&amp;= \frac{1}{n} (p + p + ... + p) = p \\
+\end{align*}
+\end{split}\]</div>
+<p>This simple use of algebra illustrates that <span class="math notranslate nohighlight">\(\bar{X}\)</span> is an unbiased estimator for <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p><strong>Exercise:</strong> You can use similar logic to demonstrate that the sample mean is an unbiased estimator for the population mean when the random variables <span class="math notranslate nohighlight">\(X\)</span> follow a normal distribution with known variance.</p>
+</div>
+<div class="section" id="a3-clt-for-binary-data">
+<h2>A3 CLT for binary data<a class="headerlink" href="#a3-clt-for-binary-data" title="Permalink to this headline">¶</a></h2>
+<p>We will return to the emotional distress study again, using the sub-sample of 10 people, but this time measure a binary characteristic for each person - the presence of emotional distress.</p>
+<p>We suppose that, in the population, the true proportion is 28%. Under this assumption, we can simulate (draw) different samples,  each containing 10 people. If we do this a very large number of times, say 10,000, then the distribution of the different sample proportions we obtain will give us a very good picture of the true sampling distribution of the proportion. (Of course, remember that in practice we cannot do this because we won’t know the true population proportion).</p>
+<p>The code below obtains the approximate sampling distribution.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Population parameters</span>
+<span class="kc">pi</span> <span class="o">&lt;-</span> <span class="m">0.28</span>
+<span class="n">n_in_study</span> <span class="o">&lt;-</span> <span class="m">10</span>
+
+<span class="c1"># Simulate data from multiple studies</span>
+<span class="n">different_studies</span> <span class="o">&lt;-</span> <span class="m">10000</span>
+<span class="nf">set.seed</span><span class="p">(</span><span class="m">1042</span><span class="p">)</span>
+<span class="n">study_measurements_ed</span> <span class="o">&lt;-</span> <span class="nf">list</span><span class="p">()</span>
+<span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="n">different_studies</span><span class="p">)</span> <span class="p">{</span>
+  <span class="n">study_measurements_ed[[i]]</span> <span class="o">&lt;-</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">n_in_study</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="kc">pi</span><span class="p">)</span>
+<span class="p">}</span>
+
+<span class="c1"># Calculate the proportion in each study</span>
+<span class="n">sample.props</span>   <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">study_measurements_ed</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
+
+<span class="c1"># Draw graphs</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">sample.props[1</span><span class="o">:</span><span class="m">10000</span><span class="n">]</span><span class="p">,</span> 
+     <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="m">-0.05</span><span class="p">,</span> <span class="m">0.95</span><span class="p">,</span> <span class="m">0.05</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span>
+     <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Sample proportion with emotional distress&quot;</span><span class="p">,</span> 
+     <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=10)&quot;</span><span class="p">)</span>  <span class="c1"># the &quot;\n&quot; makes a newline</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/04.g. Population.and.samples_5_0.png" src="_images/04.g. Population.and.samples_5_0.png" />
+</div>
+</div>
+<p>The graph above shows us a reasonably accurate picture of the sampling distribution. Unlike the sample mean, the sampling distribution of the sample proportion is not quite symmetric. It is also not continuous - the sample statistic can only take 10 different values, with a sample size of <span class="math notranslate nohighlight">\(n=10\)</span>.</p>
+<p>Below, the code shows that the mean of the sample means is approximately 0.28. (The discrepancy is just random error due to the fact that our “sampling distribution” does not come from an infinite number of samples. If we simulated a sufficiently large number of samples, this number would become closer to the true value of 0.28.)</p>
+<p>The final line of code below lists the (approximate) probability density function, which gives us the whole sampling distribution for the sample proportion in this example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">### Summarise the approximate sampling distribution</span>
+
+<span class="c1"># The mean value of the different sample means</span>
+<span class="nf">mean</span><span class="p">(</span><span class="n">sample.props</span><span class="p">)</span>
+
+<span class="c1"># The whole sampling distribution (i.e. the PDF)</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">sample.props</span><span class="p">)</span><span class="o">/</span><span class="n">different_studies</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html">0.27911</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>sample.props
+     0    0.1    0.2    0.3    0.4    0.5    0.6    0.7    0.8    0.9 
+0.0365 0.1439 0.2630 0.2592 0.1793 0.0876 0.0257 0.0043 0.0004 0.0001 
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we will explore what happens to the sampling distribution as we take larger samples. So instead of 10 people per sample, suppose we had 100 or 10,000 people in each sample. The central limit theorem tells us we expect the distribution to become more normal as we increase the sample size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x10n</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">1000</span><span class="p">),</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.28</span><span class="p">))</span> 
+<span class="n">x10mean</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">x10n</span><span class="p">)</span>
+                            
+<span class="n">x50n</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="m">1000</span><span class="p">),</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.28</span><span class="p">))</span> 
+<span class="n">x50mean</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">x50n</span><span class="p">)</span>
+
+<span class="n">x100n</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">1000</span><span class="p">),</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.28</span><span class="p">))</span> 
+<span class="n">x100mean</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">x100n</span><span class="p">)</span>
+
+<span class="n">x1000n</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">1000</span><span class="p">),</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.28</span><span class="p">))</span> 
+<span class="n">x1000mean</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">x1000n</span><span class="p">)</span>
+                                
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">x10mean</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=10)&quot;</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">x50mean</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=50)&quot;</span><span class="p">)</span>        
+<span class="nf">hist</span><span class="p">(</span><span class="n">x100mean</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=100)&quot;</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">x1000mean</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=1,000)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/04.g. Population.and.samples_9_0.png" src="_images/04.g. Population.and.samples_9_0.png" />
+</div>
+</div>
+<p>As predicted by the CLT, even though the original data are binary (each person has emotional distress or does not), the sample proportion (which is the mean of the binary outcomes) has a distribution which becomes approximately normal with sufficiently large samples.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "r"
+        },
+        kernelOptions: {
+            kernelName: "ir",
+            path: "./."
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'ir'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="04.f.%20Population.and.samples.html" title="previous page">4.5 Summary</a>
+    <a class='right-next' id="next-link" href="05.a.%20Likelihood.html" title="next page">5. Likelihood</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By MSc Health Data Science, LSHTM<br/>
+        
+            &copy; Copyright 2021.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
