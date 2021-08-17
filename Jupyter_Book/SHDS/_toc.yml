@@ -4,17 +4,23 @@
 format: jb-book
 root: 00. Welcome
 parts:
-  - caption: Overview
+  - caption: Preamble
     chapters:
     - file: 00. Acknowledgements
+    - file: 00. How_to_use
+  - caption: Overview
+    chapters:
     - file: 01. Introduction
   - caption: Basic probability
     chapters:
+    - file: 02. Probability.Intro 
     - file: 02.a. Probability.Discrete
       sections: 
       - file: 02.b. Probability.Discrete
+        title: Bayes' Theorem
       - file: 02.c. Probability.Discrete
       - file: 02.d. Probability.Discrete
+      - file: 02.e. Probability.Discrete
     - file: 03.a. Continuous Probability Distributions
       sections: 
       - file: 03.b. Continuous Probability Distributions
@@ -24,6 +30,7 @@ parts:
       - file: 03.f. Continuous Probability Distributions
   - caption: Statistical Inference
     chapters:
+    - file: 04. Inference.Intro
     - file: 04.a. Population.and.samples
       sections: 
       - file: 04.b. Population.and.samples
@@ -76,6 +83,7 @@ parts:
       sections: 
       - file: 10.b. Bayesian Statistics II
       - file: 10.c. Bayesian Statistics II
+        title: Calculating the posterior
       - file: 10.d. Bayesian Statistics II
       - file: 10.e. Bayesian Statistics II
       - file: 10.f. Bayesian Statistics II
@@ -91,6 +99,7 @@ parts:
       - file: 11.f. Types of Investigation
       - file: 11.g. Types of Investigation
       - file: 11.h. Types of Investigation
+      - file: 11.i. Types of Investigation
     - file: 12.a. Linear Regression I
       sections: 
       - file: 12.b. Linear Regression I
@@ -150,12 +159,4 @@ parts:
       - file: 15.d. Poisson Regression Model 
       - file: 15.e. Poisson Regression Model 
       - file: 15.f. Poisson Regression Model 
-    - file: 16.a. Extensions Confounding, standardization, and collapsibility
-      sections: 
-      - file: 16.b. Extensions Confounding, standardization, and collapsibility  
-      - file: 16.c. Extensions Confounding, standardization, and collapsibility 
-      - file: 16.d. Extensions Confounding, standardization, and collapsibility 
-      - file: 16.e. Extensions Confounding, standardization, and collapsibility 
-      - file: 16.f. Extensions Confounding, standardization, and collapsibility 
-
 

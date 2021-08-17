@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="6.3 Summary" href="06.d.%20Maximum%20Likelihood.html" />
-    <link rel="prev" title="6.1 Likelihood and log-likelihood with \(n\) independent observations" href="06.b.%20Maximum%20Likelihood.html" />
+    <link rel="prev" title="6.1 Likelihood with independent observations" href="06.b.%20Maximum%20Likelihood.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,7 +335,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F06.c. Maximum Likelihood.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F06.c. Maximum Likelihood.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/06.c. Maximum Likelihood.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/06.c. Maximum Likelihood.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -988,27 +976,30 @@
                 
   <div class="section" id="properties-of-maximum-likelihood-estimators">
 <h1>6.2 Properties of maximum likelihood estimators<a class="headerlink" href="#properties-of-maximum-likelihood-estimators" title="Permalink to this headline">¶</a></h1>
-<p>Maximum likelihood estimators can be shown to have some very useful properties. In particular, there are some very important asymptotic properties (properties that we observe as the sample size of our data gets very very large). To explore these properties, have a look at the simulation below. We generate a sample of size 8 from the exponential distribution where <span class="math notranslate nohighlight">\(\lambda=12.22\)</span>. The MLE is calculated from this sample, by taking its average. We repeat this 100 times, and we plot a histogram of the 100 MLEs that we obtain. Change the sample size, <span class="math notranslate nohighlight">\(n\)</span>, to larger numbers and see what you notice about the histogram.</p>
+<p>Maximum likelihood estimators can be shown to have some very useful properties. In particular, there are some very important asymptotic properties (properties that we observe as the sample size of our data gets very very large).</p>
+<p>To explore these properties, have a look at the simulation below. We generate a sample of size 8 from the exponential distribution where <span class="math notranslate nohighlight">\(\lambda=12.22\)</span>. The MLE is calculated from this the observed mean of the sample. We repeat this 100 times, and we plot a histogram of the 100 MLEs that we obtain.</p>
+<p>Change the sample size, <span class="math notranslate nohighlight">\(n\)</span>, to larger numbers and see what you notice about the histogram.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">n</span> <span class="o">&lt;-</span> <span class="m">8</span>  <span class="c1">#  make this sample size bigger, and see what happens to the histogram! </span>
 
-<span class="c1">#MLEs will be stored in this vector</span>
+<span class="c1"># MLEs will be stored in this vector</span>
 <span class="n">mle</span> <span class="o">&lt;-</span> <span class="nf">rep</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">100</span><span class="p">)</span>
 
 <span class="nf">for </span><span class="p">(</span><span class="n">i</span> <span class="n">in</span> <span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">){</span>
-  <span class="c1">#generate a sample of size n from an exponential distribution with lambda=0.0818</span>
+  <span class="c1"># Generate a sample of size n from an exponential distribution with lambda=0.0818</span>
   <span class="n">sample</span> <span class="o">&lt;-</span> <span class="nf">rexp</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">rate</span><span class="o">=</span><span class="m">0.0818</span><span class="p">)</span>
-  <span class="c1">#calculate the MLE (the reciprocal mean of the sample) and store it </span>
+  <span class="c1"># Calculate the MLE (the reciprocal mean of the sample) and store it </span>
   <span class="n">mle</span><span class="p">[</span><span class="n">i</span><span class="p">]</span> <span class="o">&lt;-</span> <span class="m">1</span><span class="o">/</span><span class="nf">mean</span><span class="p">(</span><span class="n">sample</span><span class="p">)</span>
 <span class="p">}</span>
 
-<span class="c1">#plot a histogram of the 100 MLEs </span>
+<span class="c1"># Plot a histogram of the 100 MLEs </span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
 <span class="nf">hist</span><span class="p">(</span><span class="n">mle</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="m">20</span><span class="p">,</span> 
      <span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.3</span><span class="p">),</span> 
      <span class="n">main</span><span class="o">=</span><span class="s">&quot;Histogram of MLE&quot;</span><span class="p">,</span> 
      <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;MLE&quot;</span><span class="p">)</span>
-<span class="c1">#add red line to indicate true lambda </span>
+<span class="c1"># Add red line to indicate true lambda </span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">12.22</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1018,23 +1009,62 @@
 </div>
 </div>
 <p>You may notice that, as <span class="math notranslate nohighlight">\(n\)</span> becomes large, the distribution of the MLE becomes more and more concentrated around the true value, and the histrogram appears to look more bell-shaped.</p>
-<p>Denoting the parameter of interest as <span class="math notranslate nohighlight">\(\theta\)</span> and its MLE as <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>, MLE are:</p>
-<ol class="simple">
-<li><p>Asymptotically unbiased: <span class="math notranslate nohighlight">\(\mathbb{E}(\hat{\theta}) \rightarrow \theta\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p></li>
-<li><p>Consistent: <span class="math notranslate nohighlight">\(\hat{\theta} \rightarrow \theta\)</span> in probability as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p></li>
-<li><p>Asymptotically efficient: <span class="math notranslate nohighlight">\(Var(\hat{\theta})\)</span> is smallest variance amongst all unbiased estimators as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p></li>
-<li><p>Asymptotically Normal: <span class="math notranslate nohighlight">\(\hat{\theta} \sim N(\theta ,Var(\hat{\theta} ))\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p></li>
-<li><p>Transformation invariant: if <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> is the MLE for <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(g(\hat{\theta})\)</span> is the MLE of <span class="math notranslate nohighlight">\(g(\theta)\)</span> for any function <span class="math notranslate nohighlight">\(g\)</span>.</p></li>
-</ol>
-<p>The approximate normal distribution of the MLE means that confidence intervals and hypothesis tests for the parameters can be constructed easily. The confidence interval will be the narrowest amongst confidence intervals of estimators that are linear and unbiased. But you might question to what extent these asymptotic properties are useful in practical examples where the sample size is relatively small. Further, in the cases that we have covered so far, it is fairly straightforward to compute the likelihood function and to find the value that maximizes it, but in many situations, this will be a complex task that requires numerical approaches. In Sessions 9 and 10 on Bayesian Statistics, we will see a different paradigm for making inference which can address some of these issues.</p>
+<p>Suppose we denote the parameter of interest as <span class="math notranslate nohighlight">\(\theta\)</span> and its MLE as <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>. The tabs below show some important properties of MLEs.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="7b4d8688-f2b6-4cde-b6c3-a96aae6af220" name="b5bafe8c-b970-4bad-9585-5812ef7a2aa4" type="radio">
+</input><label class="tabbed-label" for="7b4d8688-f2b6-4cde-b6c3-a96aae6af220">
+Bias</label><div class="tabbed-content docutils">
+<div class="alert alert-success">
+<p>The MLE is <strong>asymptotically unbiased</strong>, i.e. on average we obtain the correct answer as samples become large.</p>
+<p><span class="math notranslate nohighlight">\(\mathbb{E}(\hat{\theta}) \rightarrow \theta\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</div>
+</div>
+<input id="333a0ec6-423f-4be6-9f17-5218a17e4c0f" name="b5bafe8c-b970-4bad-9585-5812ef7a2aa4" type="radio">
+</input><label class="tabbed-label" for="333a0ec6-423f-4be6-9f17-5218a17e4c0f">
+Consistency</label><div class="tabbed-content docutils">
+<div class="alert alert-success">
+<p>The MLE is <strong>consistent</strong>, i.e. the MLE converges towards the correct answer as samples become large.</p>
+<p><span class="math notranslate nohighlight">\(\hat{\theta} \rightarrow \theta\)</span> in probability as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+</div>
+</div>
+<input id="c6d9381a-4b19-4c3e-9949-ff44d8fd6923" name="b5bafe8c-b970-4bad-9585-5812ef7a2aa4" type="radio">
+</input><label class="tabbed-label" for="c6d9381a-4b19-4c3e-9949-ff44d8fd6923">
+Normality</label><div class="tabbed-content docutils">
+<div class="alert alert-success">
+<p>The MLE is <strong>asymptotically normal</strong>.</p>
+<p><span class="math notranslate nohighlight">\(\hat{\theta} \sim N(\theta ,Var(\hat{\theta} ))\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>The approximate normal distribution of the MLE means that confidence intervals and hypothesis tests for the parameters can be constructed easily.</p>
+</div>
+</div>
+<input id="e68320ab-ac24-426a-8f50-1bda1fb2e05b" name="b5bafe8c-b970-4bad-9585-5812ef7a2aa4" type="radio">
+</input><label class="tabbed-label" for="e68320ab-ac24-426a-8f50-1bda1fb2e05b">
+Efficiency</label><div class="tabbed-content docutils">
+<div class="alert alert-success">
+<p>The MLE is <strong>asymptotically efficient</strong>.</p>
+<p><span class="math notranslate nohighlight">\(Var(\hat{\theta})\)</span> is the smallest variance amongst all unbiased estimators as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
+<p>This means that, for example, confidence intervals constructed around the MLE will be the narrowest amongst confidence intervals of estimators that are linear and unbiased.</p>
+</div>
+</div>
+<input id="ed24b4c4-d9c6-4c50-8a06-1a10bf82b040" name="b5bafe8c-b970-4bad-9585-5812ef7a2aa4" type="radio">
+</input><label class="tabbed-label" for="ed24b4c4-d9c6-4c50-8a06-1a10bf82b040">
+Transformation invariance</label><div class="tabbed-content docutils">
+<div class="alert alert-success">
+<p>The MLE is <strong>transformation invariant</strong>.</p>
+<p>If <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> is the MLE for <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(g(\hat{\theta})\)</span> is the MLE of <span class="math notranslate nohighlight">\(g(\theta)\)</span> for any function <span class="math notranslate nohighlight">\(g\)</span>.</p>
+</div>
+</div>
+</div>
+<p>You might question to what extent these asymptotic properties are useful in practical examples where the sample size is relatively small.</p>
+<p>Further, in the cases that we have covered so far, it is fairly straightforward to compute the likelihood function and to find the value that maximizes it, but in many situations, this will be a complex task that requires numerical approaches.</p>
+<p>In the subsequent sessions on Bayesian Statistics, we will see a different paradigm for making inference which can address some of these issues.</p>
 </div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1054,7 +1084,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="06.b.%20Maximum%20Likelihood.html" title="previous page">6.1 Likelihood and log-likelihood with <span class="math notranslate nohighlight">\(n\)</span> independent observations</a>
+    <a class='left-prev' id="prev-link" href="06.b.%20Maximum%20Likelihood.html" title="previous page">6.1 Likelihood with independent observations</a>
     <a class='right-next' id="next-link" href="06.d.%20Maximum%20Likelihood.html" title="next page">6.3 Summary</a>
 
         </div>

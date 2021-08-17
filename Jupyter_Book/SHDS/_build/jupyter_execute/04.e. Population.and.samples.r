@@ -40,3 +40,5 @@ lines(seq(25, 35, by=.5), dnorm(seq(25, 35, by=.5), 30, 1.52), col="blue",lwd=2)
 abline(v=mean(ages),col="green",lwd=2)
 
 
+
+

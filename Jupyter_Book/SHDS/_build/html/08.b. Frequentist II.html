@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>8.1 Proving and disproving hypotheses &#8212; Statistics for Health Data Science</title>
+    <title>8.1 Evidence against hypotheses &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,12 +335,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07.c.%20Frequentist%20I.html">
-     7.2 95% confidence intervals for the mean
+     7.2 Confidence intervals for the mean
     </a>
    </li>
    <li class="toctree-l2">
@@ -359,7 +382,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     8.1 Proving and disproving hypotheses
+     8.1 Evidence against hypotheses
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F08.b. Frequentist II.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F08.b. Frequentist II.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/08.b. Frequentist II.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/08.b. Frequentist II.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -984,28 +972,18 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-emotional-distress-in-violence-researchers">
-   8.1.1 Example: Emotional distress in violence researchers
+  <a class="reference internal nav-link" href="#proving-and-disproving-hypotheses">
+   8.1.1 Proving and disproving hypotheses
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#statistical-model">
-   8.1.2 Statistical model
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-null-hypothesis">
-   8.1.3  The null hypothesis
+  <a class="reference internal nav-link" href="#example">
+   8.1.2 Example
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#sampling-distribution-for-the-difference-in-sample-means">
-   8.1.4 Sampling distribution for the difference in sample means
-  </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#sampling-distribution-under-the-null-hypothesis">
-   8.1.5 Sampling distribution under the null hypothesis
+   8.1.3 Sampling distribution for the difference in sample means
   </a>
  </li>
 </ul>
@@ -1019,9 +997,12 @@
         
               <div>
                 
-  <div class="section" id="proving-and-disproving-hypotheses">
-<h1>8.1 Proving and disproving hypotheses<a class="headerlink" href="#proving-and-disproving-hypotheses" title="Permalink to this headline">¶</a></h1>
-<p>This session considers the concept of testing hypotheses. Let’s consider a very simple example. Suppose we believe that all men are over 120cm tall. We could:</p>
+  <div class="section" id="evidence-against-hypotheses">
+<h1>8.1 Evidence against hypotheses<a class="headerlink" href="#evidence-against-hypotheses" title="Permalink to this headline">¶</a></h1>
+<p>This session considers the concept of testing hypotheses.</p>
+<div class="section" id="proving-and-disproving-hypotheses">
+<h2>8.1.1 Proving and disproving hypotheses<a class="headerlink" href="#proving-and-disproving-hypotheses" title="Permalink to this headline">¶</a></h2>
+<p>Let’s consider a very simple example. Suppose we believe that all men are over 120cm tall. We could:</p>
 <ul class="simple">
 <li><p><em>Prove</em> the hypothesis by finding every man and showing they are more than 120cm tall</p></li>
 <li><p><em>Disprove</em> the hypothesis by finding a single man less than 120cm tall</p></li>
@@ -1037,8 +1018,9 @@
 </ul>
 <p>We assume that our null hypothesis holds, i.e. that our sample of data came from a population in which our null hypothesis is true. We then look for evidence, in our sample data, against the null hypothesis (i.e. to falsify the hypothesis).</p>
 <p>For example, suppose our null hypothesis is that the mean BMI is the same in England and Scotland and that we have a random sample of adults from England and Scotland. If we assume our null hypothesis is true (the two populations have the same mean BMI), then we would expect our two samples to have similar means. If, in fact, we observed very different sample means in the two sample groups then we would take this as <em>evidence against our null hypothesis</em>.</p>
-<div class="section" id="example-emotional-distress-in-violence-researchers">
-<h2>8.1.1 Example: Emotional distress in violence researchers<a class="headerlink" href="#example-emotional-distress-in-violence-researchers" title="Permalink to this headline">¶</a></h2>
+</div>
+<div class="section" id="example">
+<h2>8.1.2 Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>To explore the concept of hypothesis testing, we will return to the example of emotional distress among violence researchers. The researchers were randomly assigned to receive an intervention (group debriefing aimed at reducing emotional distress) or control (nothing). At the end of the intervention, 22 researchers in the intervention group and 26 researchers in the control group filled in a questionnaire measuring emotional distress. The score gives a value of 0-20, with higher scores indicating higher distress.</p>
 <p>The sample mean scores and their standard deviations in the two groups are:</p>
 <ul class="simple">
@@ -1068,6 +1050,10 @@
 <span class="nf">sqrt</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="n">dist0</span><span class="p">))</span>
 <span class="nf">sqrt</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="n">dist1</span><span class="p">))</span>
 
+<span class="c1"># Sample difference in means</span>
+<span class="nf">print</span><span class="p">(</span><span class="s">&quot;Difference in sample means:&quot;</span><span class="p">)</span>
+<span class="p">(</span><span class="n">delta.hat</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">dist1</span><span class="p">)</span> <span class="o">-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">dist0</span><span class="p">))</span>
+
 <span class="c1"># Draw histograms of the scores in each group</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">6</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
 <span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
@@ -1083,26 +1069,26 @@
 <div class="output text_html">6.34615384615385</div><div class="output text_html">5.45454545454545</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Sample SDs: &quot;
 </pre></div>
 </div>
-<div class="output text_html">1.87493589634009</div><div class="output text_html">1.8702501163843</div><img alt="_images/08.b. Frequentist II_2_6.png" src="_images/08.b. Frequentist II_2_6.png" />
+<div class="output text_html">1.87493589634009</div><div class="output text_html">1.8702501163843</div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Difference in sample means:&quot;
+</pre></div>
+</div>
+<div class="output text_html">-0.891608391608392</div><img alt="_images/08.b. Frequentist II_3_8.png" src="_images/08.b. Frequentist II_3_8.png" />
 </div>
 </div>
-</div>
-<div class="section" id="statistical-model">
-<h2>8.1.2 Statistical model<a class="headerlink" href="#statistical-model" title="Permalink to this headline">¶</a></h2>
-<p>We will let <span class="math notranslate nohighlight">\(Y_{0,1}, ...,Y_{0,26}\)</span> be random variables representing the emotional distress scores of the 26 sampled researchers in the control group and <span class="math notranslate nohighlight">\(Y_{1,1}, ...,Y_{1,22}\)</span> be random variables representing the emotional distress scores of the 22 sampled researchers in the intervention group. So the first subscript denotes the group (0=control, 1=intervention) and the second is an index for the person (i=1, …, 26 in the control group; i=1,…,22 in the intervention group).</p>
-<p>We will let <span class="math notranslate nohighlight">\(y_{0,1}, ...,y_{0,26}\)</span> and <span class="math notranslate nohighlight">\(y_{1,1}, ...,y_{1,22}\)</span> represent the realised values of these random variables (i.e. the observed emotional distress scores).</p>
+<p><strong>Statistical model:</strong>  We will let <span class="math notranslate nohighlight">\(Y_{0,1}, ...,Y_{0,26}\)</span> be random variables representing the emotional distress scores of the 26 sampled researchers in the control group and <span class="math notranslate nohighlight">\(Y_{1,1}, ...,Y_{1,22}\)</span> be random variables representing the emotional distress scores of the 22 sampled researchers in the intervention group. So the first subscript denotes the group (0=control, 1=intervention) and the second is an index for the person (i=1, …, 26 in the control group; i=1,…,22 in the intervention group).</p>
 <p>We will assume that all random variables are independent of each other. The emotional distress scores in the control group are all drawn from the same normal distribution, with population mean <span class="math notranslate nohighlight">\(\mu_0\)</span> and population standard deviation  <span class="math notranslate nohighlight">\(\sigma\)</span>. For now, we suppose <span class="math notranslate nohighlight">\(\sigma\)</span> is a known value, with <span class="math notranslate nohighlight">\(\sigma = 1.75\)</span>. The emotional distress scores in the intervention group are assumed to be drawn from a normal distribution with population mean <span class="math notranslate nohighlight">\(\mu_1\)</span> and the same population standard deviation.</p>
 <p>This model can be compactly written as follows</p>
 <div class="math notranslate nohighlight">
 \[ 
 Y_{j,i} \overset{\small{iid}}{\sim} N(\mu_j, 1.75^2), \qquad i=1,2,...,n_j
 \]</div>
-<p>The population parameter we are interested in is</p>
+<p><strong>Data:</strong> We will let <span class="math notranslate nohighlight">\(y_{0,1}, ...,y_{0,26}\)</span> and <span class="math notranslate nohighlight">\(y_{1,1}, ...,y_{1,22}\)</span> represent the realised values of these random variables (i.e. the observed emotional distress scores).</p>
+<p><strong>Estimand, estimator and estimate:</strong> The population parameter (estimand) we are interested in is:</p>
 <div class="math notranslate nohighlight">
 \[
 \delta = \mu_1 - \mu_0
 \]</div>
-<p>The obvious estimator for this is the sample difference in means</p>
+<p>The obvious estimator for this is the sample difference in means:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{\delta} = \bar{Y_1} - \bar{Y_0} = \frac{1}{n_1} \sum_{i=1}^{n_1} Y_{1,i} - \frac{1}{n_0} \sum_{i=1}^{n_0} Y_{0,i}
@@ -1110,17 +1096,14 @@ Y_{j,i} \overset{\small{iid}}{\sim} N(\mu_j, 1.75^2), \qquad i=1,2,...,n_j
 <p>And the sample estimate is:</p>
 <div class="math notranslate nohighlight">
 \[
-\bar{y_1} - \bar{y_0} = \frac{1}{n_1} \sum_{i=1}^{n_1} y_{1,i} - \frac{1}{n_0} \sum_{i=1}^{n_0} y_{0,i}
+\hat{\delta} =  \bar{y_1} - \bar{y_0} = \frac{1}{n_1} \sum_{i=1}^{n_1} y_{1,i} - \frac{1}{n_0} \sum_{i=1}^{n_0} y_{0,i} = 5.4545 - 6.3462 = -0.892
 \]</div>
-</div>
-<div class="section" id="the-null-hypothesis">
-<h2>8.1.3  The null hypothesis<a class="headerlink" href="#the-null-hypothesis" title="Permalink to this headline">¶</a></h2>
-<p>The <strong>null hypothesis</strong> is that there is no difference in the population mean emotional distress score in the intervention and control groups. Formally, we write:</p>
+<p><strong>Null and alternative hypotheses:</strong> The null hypothesis is that there is no difference in the population mean emotional distress score in the intervention and control groups. Formally, we write:</p>
 <div class="math notranslate nohighlight">
 \[
 H_0:  \delta = 0
 \]</div>
-<p>The <strong>alternative hypothesis</strong> (sometimes written <span class="math notranslate nohighlight">\(H_1\)</span> or <span class="math notranslate nohighlight">\(H_A\)</span>) is that the null hypothesis is not true:</p>
+<p>The alternative hypothesis (sometimes written <span class="math notranslate nohighlight">\(H_1\)</span> or <span class="math notranslate nohighlight">\(H_A\)</span>) is that the null hypothesis is not true:</p>
 <div class="math notranslate nohighlight">
 \[
 H_1: \delta \neq 0
@@ -1129,12 +1112,12 @@ H_1: \delta \neq 0
 <p>In order to answer this question, we need to consider the sampling distribution of the difference in means. Unlike in previous sessions, where we used the sampling distribution to obtain confidence intervals, we are now interested in a subtly different sampling distribution: the sampling distribution that we would see <em>if the null hypothesis were true</em>.</p>
 </div>
 <div class="section" id="sampling-distribution-for-the-difference-in-sample-means">
-<h2>8.1.4 Sampling distribution for the difference in sample means<a class="headerlink" href="#sampling-distribution-for-the-difference-in-sample-means" title="Permalink to this headline">¶</a></h2>
+<h2>8.1.3 Sampling distribution for the difference in sample means<a class="headerlink" href="#sampling-distribution-for-the-difference-in-sample-means" title="Permalink to this headline">¶</a></h2>
 <p>Under the statistical models above, if <span class="math notranslate nohighlight">\(\sigma\)</span> is a known value it is straightforward to derive the sampling distribution of the estimator (the difference in sample means between groups).</p>
 <blockquote>
 <div><p>Linear combinations of independent normal distributions are also normal</p>
 </div></blockquote>
-<p>Thus the distribution of <span class="math notranslate nohighlight">\(\hat{\delta}\)</span> is normal. We can then calculate its expectation and variance using techniques from the Maths Refresher to obtain:</p>
+<p>Thus the distribution of <span class="math notranslate nohighlight">\(\hat{\delta}\)</span> is normal. We can then calculate its expectation and variance using techniques from the <a class="reference external" href="https://lshtm-hds.github.io/Math-Refresher">Refresher</a> to obtain:</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{\delta} \sim N\left(\delta, \sigma^2 \left(\frac{1}{n_1} + \frac{1}{n_0} \right) \right)
@@ -1145,15 +1128,14 @@ H_1: \delta \neq 0
 \hat{\delta} \sim N\left(\delta, 1.75^2 \left(\frac{1}{22} + \frac{1}{26} \right) \right) = N(\delta,  0.507^2)  
 \]</div>
 <p>So the expectation of the sampling distribution is the true population value <span class="math notranslate nohighlight">\(\delta\)</span> and the standard error is <span class="math notranslate nohighlight">\(0.507\)</span>. Remember that because we are considering the distribution of an estimator, we call the standard deviation of the estimator (the square root of the variance) the standard error.</p>
-</div>
-<div class="section" id="sampling-distribution-under-the-null-hypothesis">
-<h2>8.1.5 Sampling distribution under the null hypothesis<a class="headerlink" href="#sampling-distribution-under-the-null-hypothesis" title="Permalink to this headline">¶</a></h2>
+<p><strong>Sampling distribution under the null hypothesis</strong></p>
 <p>We are interested in the distribution of the difference in sampling means would look like under repeated sampling <em>if the null hypothesis were true</em>. The null hypothesis states that <span class="math notranslate nohighlight">\(\delta = 0\)</span>. Therefore, under the null hypothesis,</p>
 <div class="math notranslate nohighlight">
 \[
 \hat{\delta} \sim  N(0,  0.507^2) 
 \]</div>
-<div class="cell docutils container">
+<p>The graph below shows this distribution. The code to draw the graph is suppressed, since it is not the focus here, but can be viewed by clicking the button.</p>
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Sample difference in means</span>
 <span class="n">delta.hat</span> <span class="o">&lt;-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">dist1</span><span class="p">)</span> <span class="o">-</span> <span class="nf">mean</span><span class="p">(</span><span class="n">dist0</span><span class="p">)</span>
@@ -1162,8 +1144,8 @@ H_1: \delta \neq 0
 <span class="n">sample.diff.means</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">10000</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.507</span><span class="p">)</span>
 
 <span class="c1"># Draw the approximate sampling distribution with the percentile confidence limits marked in red</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
-<span class="nf">hist</span><span class="p">(</span><span class="n">sample.diff.means</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution for difference in sample means, \nUNDER THE NULL HYPOTHESIS&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Difference in sample means&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-2.5</span><span class="p">,</span> <span class="m">2.5</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">))</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">6</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">sample.diff.means</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution for \n difference in sample means, \n UNDER THE NULL HYPOTHESIS&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Difference in sample means&quot;</span><span class="p">,</span> <span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-2.5</span><span class="p">,</span> <span class="m">2.5</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">))</span>
 <span class="nf">lines</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">-2.5</span><span class="p">,</span> <span class="m">2.5</span><span class="p">,</span> <span class="m">0.025</span><span class="p">),</span> <span class="nf">dnorm</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">-2.5</span><span class="p">,</span> <span class="m">2.5</span><span class="p">,</span> <span class="m">0.025</span><span class="p">),</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.507</span><span class="p">))</span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="n">delta.hat</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;green&quot;</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
@@ -1182,11 +1164,11 @@ H_1: \delta \neq 0
 <p>The sampling distribution above shows us the distribution of the differences in sample means that we could have seen under repeated sampling, i.e. if we had done the same study a very large number of times. The question we must ask now is: is the value we have seen consistent with this sampling distribution? Or is it surprising? A “surprising” result is taken as evidence against the null hypothesis. In order to clarify these ideas, consider two scenarios that could have happened.</p>
 <p>Scenario 1: Suppose we had done exactly the same study, but had seen a difference in sample means of <span class="math notranslate nohighlight">\(\hat{\delta} = -3.5\)</span> (i.e. the intervention group sample mean score was 3.5 units lower than the control group mean).</p>
 <p>Scenario 2: Suppose we had done this study, but had actually seen a difference in sample means of <span class="math notranslate nohighlight">\(\hat{\delta} = 0.02\)</span>.</p>
-<p>What would we conclude in these scenarios? The histogram above is shown below for the two scenarios.</p>
-<div class="cell docutils container">
+<p>What would we conclude in these scenarios? The graph below superimposes these two scenarios on the sampling distribution.</p>
+<div class="cell tag_hide-output docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Draw the approximate sampling distribution with the percentile confidence limits marked in red</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">6</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
 <span class="nf">hist</span><span class="p">(</span><span class="n">sample.diff.means</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution for \ndifference in sample means, \nUNDER THE NULL HYPOTHESIS&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Difference in sample means&quot;</span><span class="p">,</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">0.8</span><span class="p">),</span> <span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-3.5</span><span class="p">,</span> <span class="m">3.5</span><span class="p">))</span>
 <span class="nf">lines</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">-3.5</span><span class="p">,</span> <span class="m">3.5</span><span class="p">,</span> <span class="m">0.025</span><span class="p">),</span> <span class="nf">dnorm</span><span class="p">(</span><span class="nf">seq</span><span class="p">(</span><span class="m">-3.5</span><span class="p">,</span> <span class="m">3.5</span><span class="p">,</span> <span class="m">0.025</span><span class="p">),</span> <span class="m">0</span><span class="p">,</span> <span class="m">0.507</span><span class="p">))</span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
@@ -1194,9 +1176,9 @@ H_1: \delta \neq 0
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">-3.5</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;orange&quot;</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.02</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;blue&quot;</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="m">2</span><span class="p">)</span>
 
-<span class="nf">text</span><span class="p">(</span><span class="m">-2.5</span><span class="p">,</span> <span class="m">0.4</span><span class="p">,</span> <span class="s">&quot;Scenario 1: \nObserved value&quot;</span><span class="p">)</span>
-<span class="nf">text</span><span class="p">(</span><span class="m">1.8</span><span class="p">,</span> <span class="m">0.2</span><span class="p">,</span>  <span class="s">&quot;Scenario 2: \nObserved value&quot;</span><span class="p">)</span>
-<span class="nf">text</span><span class="p">(</span><span class="m">-1.7</span><span class="p">,</span> <span class="m">0.6</span><span class="p">,</span> <span class="s">&quot;Actual data: \nObserved value&quot;</span><span class="p">)</span>
+<span class="nf">text</span><span class="p">(</span><span class="m">-2.5</span><span class="p">,</span> <span class="m">0.42</span><span class="p">,</span> <span class="s">&quot;Scenario 1: \nObserved value&quot;</span><span class="p">)</span>
+<span class="nf">text</span><span class="p">(</span><span class="m">2</span><span class="p">,</span> <span class="m">0.22</span><span class="p">,</span>  <span class="s">&quot;Scenario 2: \nObserved value&quot;</span><span class="p">)</span>
+<span class="nf">text</span><span class="p">(</span><span class="m">-1.9</span><span class="p">,</span> <span class="m">0.62</span><span class="p">,</span> <span class="s">&quot;Actual data: \nObserved value&quot;</span><span class="p">)</span>
 <span class="nf">lines</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">0.05</span><span class="p">,</span> <span class="m">1.5</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.005</span><span class="p">,</span> <span class="m">0.15</span><span class="p">))</span>
 <span class="nf">lines</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-2.5</span><span class="p">,</span> <span class="m">-3.4</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.35</span><span class="p">,</span> <span class="m">0.2</span><span class="p">))</span>
 <span class="nf">lines</span><span class="p">(</span><span class="nf">c</span><span class="p">(</span><span class="m">-1.8</span><span class="p">,</span> <span class="m">-0.9</span><span class="p">),</span> <span class="nf">c</span><span class="p">(</span><span class="m">0.55</span><span class="p">,</span> <span class="m">0.48</span><span class="p">))</span>
@@ -1225,8 +1207,8 @@ H_1: \delta \neq 0
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

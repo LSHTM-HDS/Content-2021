@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,7 +335,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F04.e. Population.and.samples.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F04.e. Population.and.samples.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/04.e. Population.and.samples.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/04.e. Population.and.samples.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -984,8 +972,8 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation">
-   4.4.1 Example: the sampling distribution for the sample mean age - algebraic calculation
+  <a class="reference internal nav-link" href="#algebraic-calculation">
+   4.4.1 Algebraic calculation
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
@@ -999,8 +987,8 @@
   </a>
   <ul class="nav section-nav flex-column">
    <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#example-the-sampling-distribution-for-the-sample-mean-age-resampling">
-     4.4.3.1 Example: the sampling distribution for the sample mean age - resampling
+    <a class="reference internal nav-link" href="#example-resampling">
+     4.4.3.1 Example: resampling
     </a>
    </li>
   </ul>
@@ -1030,20 +1018,22 @@
 <li><p><strong>The Central Limit Theorem</strong>. If we have an estimator which can be written as the sum of independent random variables, then for large samples, the estimator will have an approximately normal distribution. This is described in more detail shortly.</p></li>
 <li><p><strong>Resampling</strong>. In many situations, we can use a resampling principle to obtain an approximate sampling distribution.</p></li>
 </ol>
-<p>Returning to the question posed at the start of section 4.3, those questions can be answered using the sampling distribution:</p>
+<p>Returning to the question posed at the start of the previous section, those questions can be answered using the sampling distribution:</p>
 <ul class="simple">
 <li><p>How precise do we believe our estimate is?</p></li>
 <li><p>Are we fairly certain that the true parameter is close to the estimate, or do we believe the estimate may well be far from the true value?</p></li>
 </ul>
-<p>The first question asks whether the sampling distribution is centred at the right value (i.e. the population parameter being estimated). If it is, we say the estimator is <strong>unbiased</strong>. In the epidemiology module and earlier in this module, you have already come across how <em>measurements</em> can be biased. Here, we are referring to whether the estimator is biased, which is sometimes referred to as <em>statistical bias</em>. Most estimators are unbiased, and this can be shown using statistical theory. For a small number of estimators it can be shown that they are in fact biased, and sometimes a correction can be applied to account for this. An example of illustrating whether estimators are biased are given in the Appendix.</p>
+<p>The first question asks whether the sampling distribution is centred at the right value (i.e. the population parameter being estimated). If it is, we say the estimator is <strong>unbiased</strong>. In the epidemiology module and earlier in this module, you have already come across how <em>measurements</em> can be biased. Here, we are referring to whether the estimator is biased, which is sometimes referred to as <em>statistical bias</em>. Most estimators are unbiased, and this can be shown using statistical theory. For a small number of estimators it can be shown that they are in fact biased, and sometimes a correction can be applied to account for this. An example of exploring whether estimators are biased is given in the Appendix.</p>
 <p>The second question will be examined when looking at the standard error and forms the basis for constructing 95% confidence intervals.</p>
-<div class="section" id="example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation">
-<h2>4.4.1 Example: the sampling distribution for the sample mean age - algebraic calculation<a class="headerlink" href="#example-the-sampling-distribution-for-the-sample-mean-age-algebraic-calculation" title="Permalink to this headline">¶</a></h2>
-<p>We will continue with the emotional distress study, assuming that in truth, ages follow a normal distribution with population mean <span class="math notranslate nohighlight">\(\mu=30\)</span> and population standard deviation <span class="math notranslate nohighlight">\(\sigma=4.8\)</span>.</p>
+<div class="section" id="algebraic-calculation">
+<h2>4.4.1 Algebraic calculation<a class="headerlink" href="#algebraic-calculation" title="Permalink to this headline">¶</a></h2>
+<p>We will illustrate the idea of obtaining a sampling distribution via algebraic calculation by revisiting the sub-sample from the emotional distress study.</p>
+<p>For the moment, we will assume that in truth, ages follow a normal distribution with population mean <span class="math notranslate nohighlight">\(\mu=30\)</span> and population standard deviation <span class="math notranslate nohighlight">\(\sigma=4.8\)</span>. Of course, in real life we would not have this information.</p>
+<p>We now imagine that the population value of <span class="math notranslate nohighlight">\(\mu\)</span> is unknown to the investigators undertaking the study; indeed, making inferences about <span class="math notranslate nohighlight">\(\mu\)</span> is the aim of the study. We further imagine the rather unrealistic (but simplifying) situation that the investigators know the true value of the population standard deviation, <span class="math notranslate nohighlight">\(\sigma=4.8\)</span>.</p>
 <p>Our model for the emotional distress study states that:</p>
 <div class="math notranslate nohighlight">
 \[ 
-X_i \overset{\small{iid}}{\sim} N(\mu, \sigma^2), \qquad i=1,2,...,10
+X_i \overset{\small{iid}}{\sim} N(\mu, 4.8^2), \qquad i=1,2,...,10
 \]</div>
 <p>Under this statistical model, we want to know the distribution of our estimator for <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
 <div class="math notranslate nohighlight">
@@ -1057,14 +1047,20 @@ X_i \overset{\small{iid}}{\sim} N(\mu, \sigma^2), \qquad i=1,2,...,10
 <p>It is then  easy to calculate the expectation and variance of <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> using techniques covered in the maths refresher. So we know that the sampling distribution of <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{\mu} \sim N\left(\mu, \frac{\sigma^2}{10}\right) 
+\hat{\mu} \sim N\left(\mu, 1.52^2 \right) 
+\]</div>
+<p>where the variance of this normal distribution was obtained as</p>
+<div class="math notranslate nohighlight">
+\[
+Var(\hat{\mu}) = \frac{1}{10^2} \times 10 \times Var(X_i) = \frac{4.8^2}{10}.
 \]</div>
 <p>This gives us a lot of useful information about how the sampling distribution in relation to the unknown parameter <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
 <ul class="simple">
 <li><p>It follows a normal distribution (has a symmetric bell-shape)</p></li>
 <li><p>It is centred around the true (unknown) population value</p></li>
-<li><p>The standard deviation of this normal distribution is <span class="math notranslate nohighlight">\(\sigma/\sqrt{10}\)</span>. Typically we do not know the value of <span class="math notranslate nohighlight">\(\sigma^2\)</span> (more on how we deal with this problem later). Here, we happen to know that <span class="math notranslate nohighlight">\(\sigma = 4.8\)</span>, so the standard deviation of the distribution is  <span class="math notranslate nohighlight">\(4.8/\sqrt{10} = 1.52\)</span>, otherwise known as the standard error.</p></li>
+<li><p>The standard error of the sample mean (the standard deviation of the estimator) is  <span class="math notranslate nohighlight">\(1.52\)</span>.</p></li>
 </ul>
+<p>In many situations, this sort of algebraic calculation is possible. If not, we often rely on the central limit theorem to obtain the approximate sampling distribution in large samples.</p>
 </div>
 <div class="section" id="the-central-limit-theorem">
 <h2>4.4.2 The Central Limit Theorem<a class="headerlink" href="#the-central-limit-theorem" title="Permalink to this headline">¶</a></h2>
@@ -1073,10 +1069,12 @@ X_i \overset{\small{iid}}{\sim} N(\mu, \sigma^2), \qquad i=1,2,...,10
 <b> The Central Limit Theorem</b> 
 <p>If a random variable <span class="math notranslate nohighlight">\(X\)</span> has population mean <span class="math notranslate nohighlight">\(\mu\)</span> and population variance <span class="math notranslate nohighlight">\(\sigma^2\)</span> the sample mean <span class="math notranslate nohighlight">\(\bar{X}\)</span>, based on <span class="math notranslate nohighlight">\(n\)</span> observations, is <em>approximately</em> normally distributed with mean <span class="math notranslate nohighlight">\(\mu\)</span> and variance <span class="math notranslate nohighlight">\(\sigma^2/n\)</span>, for sufficiently large <span class="math notranslate nohighlight">\(n\)</span>.</p>
 </div>
-<p>This theorem is hugely powerful. Even for models that don’t assume data are normally distributed, for sufficiently large samples the mean will follow a normal distribution. We will see that this allows us to conduct large-sample inference fairly easily on any type of data. An example using a binary variable is given in the Appendix.</p>
+<p>So even for situations where <span class="math notranslate nohighlight">\(X\)</span> follows a distribution that is not even close to being normal (e.g. <span class="math notranslate nohighlight">\(X\)</span> might be Poisson, or Binomial, or some wacky distribution), for sufficiently large samples the <em>mean</em> will follow a normal distribution. An example where <span class="math notranslate nohighlight">\(X\)</span> is a binary variable is given in the Appendix to this session.</p>
+<p>This theorem is hugely powerful. We will see that this allows us to conduct large-sample inference fairly easily on any type of data.</p>
 </div>
 <div class="section" id="resampling">
 <h2>4.4.3 Resampling<a class="headerlink" href="#resampling" title="Permalink to this headline">¶</a></h2>
+<p>An alternative approach, which is computationally intensive but very flexible, is to use a resampling approach.</p>
 <p>For a population of interest, we want to estimate a parameter <span class="math notranslate nohighlight">\(\theta\)</span> using a sample <span class="math notranslate nohighlight">\(S\)</span> of <span class="math notranslate nohighlight">\(n\)</span> individuals (for our example <span class="math notranslate nohighlight">\(n=10\)</span>) from the population. We have an estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> from our sample <span class="math notranslate nohighlight">\(S\)</span>. We want to know about the sampling distribution of the estimator <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>.</p>
 <p>We discussed above the idea that we could obtain the sampling distribution by repeatedly sampling from the population and calculating our estimate in each sample. Then a histogram of those many estimates would give us (approximately) the sampling distribution. In practice, it is logistically impossible to repeat the study a large number of times. However, we can mimic this process by using resampling.</p>
 <p>The basic idea is to pretend that the observed data are the population and repeatedly sample from the data to learn about the relationship between <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> and the estimates obtained from the re-sampled data, which we will call <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span>.</p>
@@ -1113,9 +1111,9 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 \]</div>
 <p>We do this a very large number of times to obtain lots of estimates from different bootstrap samples. Then we can draw a histogram of these many bootstrap estimates to see the shape and dispersion of the distribution.</p>
 <p>The <strong>bootstrap principle</strong> says that the distribution of <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> given <span class="math notranslate nohighlight">\(\theta\)</span> (i.e. the sampling distribution) is approximated by the distribution of <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span> given <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>.  For example, if we find that our values of <span class="math notranslate nohighlight">\(\hat{\theta}^*\)</span> are approximately normally distributed and centred around <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> then the bootstrap principle tells us that <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> follows a normal distribution centred around <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<div class="section" id="example-the-sampling-distribution-for-the-sample-mean-age-resampling">
-<h3>4.4.3.1 Example: the sampling distribution for the sample mean age - resampling<a class="headerlink" href="#example-the-sampling-distribution-for-the-sample-mean-age-resampling" title="Permalink to this headline">¶</a></h3>
-<p>Suppose our data - the 10 sampled ages - are the set: <span class="math notranslate nohighlight">\(\{ 28.1, 27.5, 25, 29.9, 29.7, 29.9, 39.9, 33.6, 21.3, 30.8 \}\)</span>. Our estimate of the population age is the sample mean age, which is: <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>.</p>
+<div class="section" id="example-resampling">
+<h3>4.4.3.1 Example: resampling<a class="headerlink" href="#example-resampling" title="Permalink to this headline">¶</a></h3>
+<p>We illustrate the idea of resampling using the sub-sample of the emotional distress study. Suppose our data - the 10 sampled ages - are the set: <span class="math notranslate nohighlight">\(\{ 28.1, 27.5, 25, 29.9, 29.7, 29.9, 39.9, 33.6, 21.3, 30.8 \}\)</span>. Our estimate of the population age is the sample mean age, which is: <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>.</p>
 <p>To obtain an approximation to the sampling distribution for the sample mean age, using a resampling approach, we first take a large number of bootstrap samples from the data. The code below does this.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1265,7 +1263,7 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 </div>
 <div class="section" id="what-do-we-use-a-sampling-distribution-for">
 <h2>4.4.5 What do we use a sampling distribution for?<a class="headerlink" href="#what-do-we-use-a-sampling-distribution-for" title="Permalink to this headline">¶</a></h2>
-<p>In practice, we have a  sample of data and an estimate from that sample of the population parameter of interest. When we present an estimate of a population quantity, we need to be able to say something about how precise it is. Is it likely to be close to the true value? Can we provide a range of values within which we believe the true value lies?</p>
+<p>In practice, we have a single sample of data and a single estimate from that sample of the population parameter of interest.  When we present our single estimate of a population quantity, we need to be able to say something about how precise it is. Is it likely to be close to the true value? Can we provide a range of values within which we believe the true value lies?</p>
 <p>We can only answer these questions, within the framework of frequentist statistical inference, by thinking about what estimates we might have got had we chosen a different sample. This leads us to the sampling distribution - the distribution of the estimator across samples.</p>
 <p>In subsequent sessions we will see how the sampling distribution allows us to</p>
 <ul class="simple">
@@ -1279,8 +1277,8 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

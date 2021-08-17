@@ -11,3 +11,5 @@ lambda <- seq(0, 2, 0.01)
 plot(lambda, n*log(lambda) - lambda*sum(obs), type="l", xlab= expression(lambda), ylim=c(-100,0),ylab="Log-likelihood")
 
 1/mean(obs)
+
+

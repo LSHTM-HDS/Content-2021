@@ -5,7 +5,7 @@ lab3 <- expression(1*SE)
 lab4 <- expression(2*SE)
 
 # Draw sampling distribution
-options(repr.plot.width=5, repr.plot.height=5)
+options(repr.plot.width=6, repr.plot.height=5)
 plot(seq(-4, 4, by=.05), xaxt="none",  xlab=" ", ylab="Density", 
      dnorm(seq(-4, 4, by=.05), 0, 1), col="blue", type = "l")
 axis(1, seq(-2, 2, by=1), labels=c(lab1, lab2, 0, lab3, lab4))
@@ -29,4 +29,6 @@ text(2.95, 0.23, expression(hat(delta)>1.96*SE))
 lines(c(2.25, 3), c(0.185, 0.215), col="black")
 lines(c(2.05, 2.8), c(0.035, 0.065), col="black")
 lines(c(-2.4, 0.2), c(0.23, 0.14), col="black")
+
+
 

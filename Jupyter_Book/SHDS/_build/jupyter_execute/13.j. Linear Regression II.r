@@ -1,3 +1,5 @@
+data<- read.csv('https://www.inferentialthinking.com/data/baby.csv')
+
 #Create the interaction term 
 data$int3<-data$Gestational.Days*data$Maternal.Height
 

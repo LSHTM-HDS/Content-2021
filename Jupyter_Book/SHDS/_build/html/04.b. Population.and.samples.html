@@ -44,16 +44,16 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="4.2 Statistical Models" href="04.c.%20Population.and.samples.html" />
+    <link rel="next" title="4.2 Statistical models" href="04.c.%20Population.and.samples.html" />
     <link rel="prev" title="4. Populations and Samples" href="04.a.%20Population.and.samples.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,7 +335,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F04.b. Population.and.samples.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F04.b. Population.and.samples.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/04.b. Population.and.samples.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/04.b. Population.and.samples.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -989,8 +977,8 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#example-emotional-distress-in-violence-researchers">
-   4.1.2 Example: Emotional distress in violence researchers
+  <a class="reference internal nav-link" href="#example">
+   4.1.2 Example
   </a>
  </li>
 </ul>
@@ -1009,7 +997,7 @@
 <p>Much of statistical inference is concerned with making statements about properties of populations, based on properties of samples from the populations. A helpful mental picture of the population and the sample to have in mind is as follows. Imagine that the <strong>population</strong> is a very large number of “objects” contained in a large urn, from which we can randomly sample a relatively small number of the “objects” at a time to provide our <strong>sample</strong>.</p>
 <p>The objects in our population are often called <strong>sampling units</strong>. For many health research questions these sampling units are  individual patients. If we were collecting information about different hospitals in order to make comparison between different providers, then the sampling unit might be hospitals.</p>
 <p>Making statements about a population using information contained in a sample of data relies critically on the process of how the sample was drawn from the population (i.e. the sampling process). A common example of a sample process is random sampling. Under random sampling, each object in the population has the same chance of appearing in the selected sample. Inference procedures tend to be most straightforward in this setting.</p>
-<p>In many cases, sampling is not random. For example, many populations have intrinsic structure that might facilitate sampling. If our population is people in rural Gambia, for example, then the easiest way to sample individual people might be to choose 5 villages and then go and survey the people in those villages. While it is not necessarily difficult to modify the process of statistical inference for such situation, statistically invalid conclusions can be reached if such modifications are not undertaken.</p>
+<p>In many cases, sampling is not random. For example, many populations have intrinsic structure that might facilitate sampling. If our population is people in rural Gambia, for example, then the easiest way to sample individual people might be to choose 5 villages and then go and survey the people in those villages. While it is not necessarily difficult to modify the process of statistical inference for such situations, statistically invalid conclusions can be reached if such modifications are not undertaken.</p>
 <div class="section" id="parameters-and-estimators">
 <h2>4.1.1 Parameters and estimators<a class="headerlink" href="#parameters-and-estimators" title="Permalink to this headline">¶</a></h2>
 <p>In statistical inference, the aim is to make statements about certain features of the population, using the information contained in the sample data. Typically, we quantify the features of interest in terms of unknown population quantities (some examples might be a population mean, standard deviation, proportion, or risk ratio) and attempt to <strong>estimate</strong> these population quantities. We call these unknown population quantities population <strong>parameters</strong>. Parameters are typically denoted using Greek letters. Often, certain letters tend to be used for certain types of quantities. For instance, <span class="math notranslate nohighlight">\(\mu\)</span> will often denote a population mean and <span class="math notranslate nohighlight">\(\pi\)</span> will often denote a population proportion. When we are talking about a general “parameter of interest”, we often use the letter <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
@@ -1017,13 +1005,13 @@
 <p>We often want to estimate a population parameter from the sample. We do this by using sample statistics to estimate population parameters. For example, the obvious statistic to use to estimate a population mean is the sample mean.  When a sample statistic is used for the purpose of estimating a population parameter it is known as an <strong>estimator</strong>.  So an estimator is a statistic that is  designed to be a “guess” at a particular parameter of a population.  When we use a sample statistic to esitmate a population parameter we use a “hat” to denote the estimator, e.g. <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> is an estimator for the population quantity <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> is an estimator for the population quantity <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>Once we have drawn our sample of data and calculated the value of the estimator in that sample, we refer to this as the <strong>estimate</strong>. In other words, the term estimate is used for the value obtained by substituting sample data values into the formula for the estimator.</p>
 <p>The basic structure of frequentist inference can be represented diagrammatically as follows:</p>
-<div class="figure align-default" id="inference">
+<div class="figure align-default" id="freq-inference">
 <a class="reference internal image-reference" href="_images/Inference.png"><img alt="_images/Inference.png" src="_images/Inference.png" style="height: 400px;" /></a>
-<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Statistical inference</span><a class="headerlink" href="#inference" title="Permalink to this image">¶</a></p>
+<p class="caption"><span class="caption-number">Fig. 2 </span><span class="caption-text">Statistical inference</span><a class="headerlink" href="#freq-inference" title="Permalink to this image">¶</a></p>
 </div>
 </div>
-<div class="section" id="example-emotional-distress-in-violence-researchers">
-<h2>4.1.2 Example: Emotional distress in violence researchers<a class="headerlink" href="#example-emotional-distress-in-violence-researchers" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="example">
+<h2>4.1.2 Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
 <p>To explore these issues further, we will consider a study question investigated by a recent MSc student at LSHTM as part of their summer project. The student explored the question of whether people who engage with victims of violence themselves suffer from emotional distress. This question was assessed using a sample of 53 violence researchers in Uganda. Subsequently, these violence researchers took part in a randomised trial, but we will focus on the initial description of the sample. The full article can be found here <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5455179/">https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5455179/</a></p>
 <p>For the purposes of illustration, in this session we will take a smaller sample of 10 violence researchers. Among our 10 sampled violence researchers, the sample mean age and the sample proportion suffering from emotional distress are</p>
 <ul class="simple">
@@ -1053,8 +1041,8 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1075,7 +1063,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="04.a.%20Population.and.samples.html" title="previous page">4. Populations and Samples</a>
-    <a class='right-next' id="next-link" href="04.c.%20Population.and.samples.html" title="next page">4.2 Statistical Models</a>
+    <a class='right-next' id="next-link" href="04.c.%20Population.and.samples.html" title="next page">4.2 Statistical models</a>
 
         </div>
         

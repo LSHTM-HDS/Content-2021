@@ -1,3 +1,6 @@
+data<- read.csv('https://www.inferentialthinking.com/data/baby.csv')
+model3<-lm(Birth.Weight~Gestational.Days+Maternal.Height, data=data)
+
 summary(model3)
 confint(model3, parm=c(2,3), level=0.95)
 

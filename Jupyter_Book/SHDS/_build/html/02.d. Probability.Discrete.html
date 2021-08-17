@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.3 The Poisson distribution &#8212; Statistics for Health Data Science</title>
+    <title>The Poisson distribution &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,17 +44,17 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="3. Continuous probability distributions" href="03.a.%20Continuous%20Probability%20Distributions.html" />
-    <link rel="prev" title="2.2 The binomial distribution" href="02.c.%20Probability.Discrete.html" />
+    <link rel="next" title="Summary" href="02.e.%20Probability.Discrete.html" />
+    <link rel="prev" title="The binomial distribution" href="02.c.%20Probability.Discrete.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,7 +335,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F02.d. Probability.Discrete.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F02.d. Probability.Discrete.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/02.d. Probability.Discrete.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/02.d. Probability.Discrete.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -985,27 +973,27 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-of-the-poisson-distribution">
-   2.3.1 Example of the Poisson distribution
+   Example of the Poisson distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deriving-the-poisson-distribution">
-   2.3.2 Deriving the Poisson distribution
+   Deriving the Poisson distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#general-form-of-the-poisson-distribution">
-   2.3.3 General form of the Poisson distribution
+   General form of the Poisson distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applications-of-the-poisson-distribution">
-   2.3.4 Applications of the Poisson distribution
+   Applications of the Poisson distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#approximating-the-binomial-by-a-poisson">
-   2.3.5 Approximating the binomial by a Poisson
+   Approximating the binomial by a Poisson
   </a>
  </li>
 </ul>
@@ -1020,10 +1008,11 @@
               <div>
                 
   <div class="section" id="the-poisson-distribution">
-<h1>2.3 The Poisson distribution<a class="headerlink" href="#the-poisson-distribution" title="Permalink to this headline">¶</a></h1>
+<h1>The Poisson distribution<a class="headerlink" href="#the-poisson-distribution" title="Permalink to this headline">¶</a></h1>
 <p>The Poisson distribution is used to model the <em>number of events</em> occurring in a fixed time interval.</p>
+<p>Similarly to our approach with the Binomial distribution, in the following calculations we will assume that we know the true rate at which events occur. In practice, of course, this rate is often the unknown quantity that we are trying to estimate. Later sessions will revisit this example, under the more realistic scenario where this rate is unknown and we are using the sample of data to <em>make inferences</em> about the rate. The calculations in the current session will form important building blocks for those later sessions.</p>
 <div class="section" id="example-of-the-poisson-distribution">
-<h2>2.3.1 Example of the Poisson distribution<a class="headerlink" href="#example-of-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>Example of the Poisson distribution<a class="headerlink" href="#example-of-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
 <p>A clinical research is interested in modelling the number of asthma attacks that people with asthma experience in one year. Based on a large sample the researcher has estimated that the average number of attacks in a year is 2.5.</p>
 <p>If we let <span class="math notranslate nohighlight">\(X\)</span> be the variable for the number of attacks a randomly selected person with asthma will experience in a year and we are happy to assume that <span class="math notranslate nohighlight">\(X\)</span> follows a Poisson distribution, then we can calculate <span class="math notranslate nohighlight">\(P(X=x)\)</span> for any given value of <span class="math notranslate nohighlight">\(x\)</span>.</p>
 <p>The code below (in R) does this calculation and plots the probability distribution function of the number of asthma attacks in a year.</p>
@@ -1046,7 +1035,7 @@
 </div>
 </div>
 <div class="section" id="deriving-the-poisson-distribution">
-<h2>2.3.2 Deriving the Poisson distribution<a class="headerlink" href="#deriving-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>Deriving the Poisson distribution<a class="headerlink" href="#deriving-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
 <p>To give a heuristic derivation of the probability distribution function of the Poisson, we divide the total time <span class="math notranslate nohighlight">\(T\)</span> into a very large number of small intervals (see Figure below). As the number of intervals we divide <span class="math notranslate nohighlight">\(T\)</span> into increases, at most one event will occur in each interval, and so <span class="math notranslate nohighlight">\(X\)</span> will equal the number of intervals in which an event occurs. Since the occurrence of events in each interval are assumed independent of each other, <span class="math notranslate nohighlight">\(X \sim Bin(n,\pi)\)</span>, where <span class="math notranslate nohighlight">\(n\)</span> is the number of intervals and <span class="math notranslate nohighlight">\(\pi\)</span> is the probability of an event occurring in any given interval.</p>
 <div class="figure align-default" id="poisson">
 <a class="reference internal image-reference" href="_images/poisson.png"><img alt="_images/poisson.png" src="_images/poisson.png" style="height: 300px;" /></a>
@@ -1075,10 +1064,11 @@ P(X=x) = {n \choose x} \left(\frac{\mu}{n}\right)^{x} \left(1-\frac{\mu}{n}\righ
 \[
 \frac{n!}{n^{x} (n-x)!} = \frac{n(n-1)...(n-x+1)}{n^{x}} \rightarrow 1 \mbox{ as } n \rightarrow \infty,
 \]</div>
-<p>and to simplify the third term, we note that:
-$<span class="math notranslate nohighlight">\(
+<p>and to simplify the third term, we note that:</p>
+<div class="math notranslate nohighlight">
+\[
 \left(1-\frac{\mu}{n}\right)^{n-x} \rightarrow \left(1-\frac{\mu}{n}\right)^{n} \rightarrow e^{-\mu}
-\)</span>$</p>
+\]</div>
 <p>Replacing the first and third terms by these limits gives</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1086,7 +1076,7 @@ P(X=x) \rightarrow \frac{\mu^{x}}{x!} e^{-\mu} \mbox{ as } n \rightarrow \infty.
 \]</div>
 </div>
 <div class="section" id="general-form-of-the-poisson-distribution">
-<h2>2.3.3 General form of the Poisson distribution<a class="headerlink" href="#general-form-of-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>General form of the Poisson distribution<a class="headerlink" href="#general-form-of-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
 <p>We can now define a Poisson distribution for the number of events occurring in a fixed interval <span class="math notranslate nohighlight">\(T\)</span> at a constant rate <span class="math notranslate nohighlight">\(\lambda\)</span> with parameter <span class="math notranslate nohighlight">\(\mu=\lambda T\)</span>, which we write as</p>
 <div class="math notranslate nohighlight">
 \[
@@ -1101,7 +1091,7 @@ P(X=x) = \frac{\mu^{x}}{x!} e^{-\mu}, \ \mbox{ for } x=0,1,2,...
 <p>The derivation of the expectation and variance of a Poisson random variable <span class="math notranslate nohighlight">\(X\)</span> with parameter <span class="math notranslate nohighlight">\(\mu\)</span> will be set as a practical question.</p>
 </div>
 <div class="section" id="applications-of-the-poisson-distribution">
-<h2>2.3.4 Applications of the Poisson distribution<a class="headerlink" href="#applications-of-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>Applications of the Poisson distribution<a class="headerlink" href="#applications-of-the-poisson-distribution" title="Permalink to this headline">¶</a></h2>
 <p><em>Assumptions</em></p>
 <p>The Poisson distribution is used to model the <em>number of events</em> occurring in a fixed time interval <span class="math notranslate nohighlight">\(T\)</span> when:</p>
 <ul class="simple">
@@ -1118,7 +1108,7 @@ P(X=x) = \frac{\mu^{x}}{x!} e^{-\mu}, \ \mbox{ for } x=0,1,2,...
 </ul>
 </div>
 <div class="section" id="approximating-the-binomial-by-a-poisson">
-<h2>2.3.5 Approximating the binomial by a Poisson<a class="headerlink" href="#approximating-the-binomial-by-a-poisson" title="Permalink to this headline">¶</a></h2>
+<h2>Approximating the binomial by a Poisson<a class="headerlink" href="#approximating-the-binomial-by-a-poisson" title="Permalink to this headline">¶</a></h2>
 <p>When <span class="math notranslate nohighlight">\(n\)</span> is large relative to <span class="math notranslate nohighlight">\(\pi\)</span>, the binomial distribution can be approximated by a Poisson with a
 mean <span class="math notranslate nohighlight">\(n\pi\)</span>. That this approximation is reasonable follows directly from our earlier heuristic derivation
 of how a Poisson distribution arises as an approximation to a binomial distribution when the number
@@ -1131,8 +1121,8 @@ of trials tends to infinity.</p>
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1152,8 +1142,8 @@ of trials tends to infinity.</p>
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02.c.%20Probability.Discrete.html" title="previous page">2.2 The binomial distribution</a>
-    <a class='right-next' id="next-link" href="03.a.%20Continuous%20Probability%20Distributions.html" title="next page">3. Continuous probability distributions</a>
+    <a class='left-prev' id="prev-link" href="02.c.%20Probability.Discrete.html" title="previous page">The binomial distribution</a>
+    <a class='right-next' id="next-link" href="02.e.%20Probability.Discrete.html" title="next page">Summary</a>
 
         </div>
         

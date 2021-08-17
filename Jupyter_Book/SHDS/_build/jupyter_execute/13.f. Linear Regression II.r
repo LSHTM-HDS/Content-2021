@@ -1,4 +1,5 @@
 #Define the squared terms
+data<- read.csv('https://www.inferentialthinking.com/data/baby.csv')
 data$Gestational.Days.squared<-data$Gestational.Days*data$Gestational.Days
 data$Maternal.Height.squared<-data$Maternal.Height*data$Maternal.Height
 

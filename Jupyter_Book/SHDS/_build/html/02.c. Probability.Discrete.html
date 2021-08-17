@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.2 The binomial distribution &#8212; Statistics for Health Data Science</title>
+    <title>The binomial distribution &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,17 +44,17 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.3 The Poisson distribution" href="02.d.%20Probability.Discrete.html" />
-    <link rel="prev" title="2.1 Bayes’ Theorem" href="02.b.%20Probability.Discrete.html" />
+    <link rel="next" title="The Poisson distribution" href="02.d.%20Probability.Discrete.html" />
+    <link rel="prev" title="Application of Bayes’ Theorem" href="02.b.%20Probability.Discrete.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,7 +335,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F02.c. Probability.Discrete.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F02.c. Probability.Discrete.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/02.c. Probability.Discrete.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/02.c. Probability.Discrete.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -985,22 +973,22 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-of-a-binomial-distribution">
-   2.2.1 Example of a binomial distribution
+   Example of a binomial distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#deriving-the-binomial-distribution">
-   2.2.2  Deriving the binomial distribution
+   Deriving the binomial distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#general-form-of-the-binomial-distribution">
-   2.2.3 General form of the binomial distribution
+   General form of the binomial distribution
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#applications-of-the-binomial-distribution">
-   2.2.4 Applications of the Binomial distribution
+   Applications of the Binomial distribution
   </a>
  </li>
 </ul>
@@ -1015,15 +1003,16 @@
               <div>
                 
   <div class="section" id="the-binomial-distribution">
-<h1>2.2 The binomial distribution<a class="headerlink" href="#the-binomial-distribution" title="Permalink to this headline">¶</a></h1>
+<h1>The binomial distribution<a class="headerlink" href="#the-binomial-distribution" title="Permalink to this headline">¶</a></h1>
 <p>The binomial distribution is used to model the number of successes out of a fixed number of trials.</p>
+<p>In the following calculations, we will assume that we know the true probability of success within each trial. In practice, of course, this probability is often the unknown quantity that we are trying to estimate. Later sessions will revisit this example, under the more realistic scenario where this probability is unknown and we are using the sample of data to <em>make inferences</em> about the probability. The calculations in the current session will form important building blocks for those later sessions.</p>
 <blockquote>
 <div><p>Note on terminology:  <br> <br> - Do not confuse the word “trial” here with the idea of a clinical trial or randomised controlled trial. In our discussion of the binomial distribution, we simply mean a Bernoulli trial, which is a statistical experiment which results in a binary outcome. So the trial in question could be whether or not a baby is a male; whether or not someone is alive in 30 days time; whether or not someone experiences a side effect.  <br> <br> - Similarly, the word “success” can be confusing. We use the word success to denote having the event of interest. It does not imply that this is a good event. In fact, the event we are interested in, in health applications, is often a bad one. It might be diagnosis of cancer or death, in which case a success would refer to someone having cancer or dying. Conversely, if our study was looking at treatments for improving pregnancy rates, our event, and thus the definition of success, might be a couple becoming pregnant. So the word success, in this context, does not necessarily refer to a good event (although sometimes it does!).</p>
 </div></blockquote>
 <div class="section" id="example-of-a-binomial-distribution">
-<h2>2.2.1 Example of a binomial distribution<a class="headerlink" href="#example-of-a-binomial-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>Example of a binomial distribution<a class="headerlink" href="#example-of-a-binomial-distribution" title="Permalink to this headline">¶</a></h2>
 <p>A small study of 8 participants is being run. All 8 participants will be given an experimental drug. The aim of this study is to obtain data about how many people will experience a side-effect of the drug.</p>
-<p>From previous data, the clinical researcher running the trial estimates that the probability of the side-effect is 0.23.</p>
+<p>From previous data, the clinical researcher running the trial believes that the probability of the side-effect is 0.23.</p>
 <p>Let <span class="math notranslate nohighlight">\(X\)</span> be the number of people in the study (i.e. among the 8 participants) who experience a side-effect. Suppose we are happy to assume that <span class="math notranslate nohighlight">\(X\)</span> follows a binomial distribution. Then, using the formula for the probability distribution function that we derive below, we can calculate the probability that <span class="math notranslate nohighlight">\(P(X=x)\)</span> for all possible values <span class="math notranslate nohighlight">\(x=0,1,...,8\)</span>.</p>
 <p>The code below (in R) does that calculation and displays a bar chart of the probability distribution function.</p>
 <div class="cell tag_thebe-kernel:ir docutils container">
@@ -1040,12 +1029,12 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/02.c. Probability.Discrete_2_0.png" src="_images/02.c. Probability.Discrete_2_0.png" />
+<img alt="_images/02.c. Probability.Discrete_3_0.png" src="_images/02.c. Probability.Discrete_3_0.png" />
 </div>
 </div>
 </div>
 <div class="section" id="deriving-the-binomial-distribution">
-<h2>2.2.2  Deriving the binomial distribution<a class="headerlink" href="#deriving-the-binomial-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>Deriving the binomial distribution<a class="headerlink" href="#deriving-the-binomial-distribution" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we are conducting research on quadruplets (sets of four siblings born within the same pregnancy). In this session we will consider the number of boys among a set of quadruplets.</p>
 <p>Let <span class="math notranslate nohighlight">\(X\)</span> be the number of boys within a particular set of quadruplets. The sample space for <span class="math notranslate nohighlight">\(X\)</span> (the set of possible values <span class="math notranslate nohighlight">\(X\)</span> could take) is: <span class="math notranslate nohighlight">\(\{0, 1, 2, 3, 4 \}\)</span>. We will now derive the full probability distribution function for <span class="math notranslate nohighlight">\(X\)</span>.  In our calculations, we will assume that the proportion of males at birth is 0.51 and that the gender of each birth is an independent event.</p>
 <p>Consider one set of quadruplets. We will start by calculating the probability of no boys i.e. the probability of four girls. By applying the multiplication rule (using the assumption of independence between sex of the children) we obtain:</p>
@@ -1114,7 +1103,7 @@ P(X=x) = \begin{pmatrix}n \\ x \end{pmatrix} \pi^{x} (1-\pi)^{n-x}
 \end{split}\]</div>
 </div>
 <div class="section" id="general-form-of-the-binomial-distribution">
-<h2>2.2.3 General form of the binomial distribution<a class="headerlink" href="#general-form-of-the-binomial-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>General form of the binomial distribution<a class="headerlink" href="#general-form-of-the-binomial-distribution" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we have a sequence of <span class="math notranslate nohighlight">\(n\)</span> independent Bernoulli trials (i.e. <span class="math notranslate nohighlight">\(n\)</span> independent Bernoulli variables). Let <span class="math notranslate nohighlight">\(\pi\)</span> denote the probability of an individual “success”.  To write that <span class="math notranslate nohighlight">\(X\)</span> follows a binomial distribution with these features, we write <span class="math notranslate nohighlight">\(X\sim binomial(n,\pi)\)</span>, (where <span class="math notranslate nohighlight">\(\sim\)</span> means “follows”).</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
@@ -1125,7 +1114,7 @@ P(X=x) = \begin{pmatrix}n \\ x \end{pmatrix} \pi^{x} (1-\pi)^{n-x}, \mbox{ for }
 <p>The variance of a binomial variable is <span class="math notranslate nohighlight">\(Var(X) = n\pi (1-\pi)\)</span></p>
 </div>
 <div class="section" id="applications-of-the-binomial-distribution">
-<h2>2.2.4 Applications of the Binomial distribution<a class="headerlink" href="#applications-of-the-binomial-distribution" title="Permalink to this headline">¶</a></h2>
+<h2>Applications of the Binomial distribution<a class="headerlink" href="#applications-of-the-binomial-distribution" title="Permalink to this headline">¶</a></h2>
 <p><em>Assumptions</em></p>
 <p>In order for a variable to follow a binomial distribution, some “structural” things need to be true.</p>
 <ol class="simple">
@@ -1151,8 +1140,8 @@ P(X=x) = \begin{pmatrix}n \\ x \end{pmatrix} \pi^{x} (1-\pi)^{n-x}, \mbox{ for }
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1172,8 +1161,8 @@ P(X=x) = \begin{pmatrix}n \\ x \end{pmatrix} \pi^{x} (1-\pi)^{n-x}, \mbox{ for }
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02.b.%20Probability.Discrete.html" title="previous page">2.1 Bayes’ Theorem</a>
-    <a class='right-next' id="next-link" href="02.d.%20Probability.Discrete.html" title="next page">2.3 The Poisson distribution</a>
+    <a class='left-prev' id="prev-link" href="02.b.%20Probability.Discrete.html" title="previous page">Application of Bayes’ Theorem</a>
+    <a class='right-next' id="next-link" href="02.d.%20Probability.Discrete.html" title="next page">The Poisson distribution</a>
 
         </div>
         

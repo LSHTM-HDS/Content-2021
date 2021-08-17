@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>6.1 Likelihood and log-likelihood with \(n\) independent observations &#8212; Statistics for Health Data Science</title>
+    <title>6.1 Likelihood with independent observations &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,7 +335,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F06.b. Maximum Likelihood.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F06.b. Maximum Likelihood.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/06.b. Maximum Likelihood.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/06.b. Maximum Likelihood.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -983,21 +971,12 @@
             </div>
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
- <li class="toc-h1 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#">
-   6.1 Likelihood and log-likelihood with
-   <span class="math notranslate nohighlight">
-    \(n\)
-   </span>
-   independent observations
-  </a>
- </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-exponential-distribution">
    6.1.1 Example: Exponential distribution
   </a>
  </li>
- <li class="toc-h1 nav-item toc-entry">
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-normal-distribution">
    6.1.2 Example: Normal distribution
   </a>
@@ -1013,21 +992,28 @@
         
               <div>
                 
-  <div class="section" id="likelihood-and-log-likelihood-with-n-independent-observations">
-<h1>6.1 Likelihood and log-likelihood with <span class="math notranslate nohighlight">\(n\)</span> independent observations<a class="headerlink" href="#likelihood-and-log-likelihood-with-n-independent-observations" title="Permalink to this headline">¶</a></h1>
-<p>Suppose that you collect a sample of <span class="math notranslate nohighlight">\(n\)</span> observations. If the <span class="math notranslate nohighlight">\(n\)</span> observations are independent, then the joint likelihood function from these <span class="math notranslate nohighlight">\(n\)</span> observations has a very convenient form; it is the product of the likelihood from each observation. If <span class="math notranslate nohighlight">\(X_1,..., X_n\)</span> are i.i.d., and we observe a sample <span class="math notranslate nohighlight">\(\mathbf{x} = \left\{ x_1, x_2, ..., x_n \right\}\)</span>:</p>
-<p>\begin{align*}
-L \left( \theta \mid \mathbf{x} \right) &amp;=  L\left( \theta \mid x_1 \right) L\left( \theta \mid x_2 \right) …  L \left( \theta \mid x_n \right) \
-&amp;= \prod_{i=1}^n  L\left( \theta \mid x_i \right)
-\end{align*}.</p>
-<p>Recall that we often prefer to work with the log-likelihood function, as it simplifies the algebra when it comes to finding the MLE. The log-likelihood function for <span class="math notranslate nohighlight">\(n\)</span> independent observations is:
+  <div class="section" id="likelihood-with-independent-observations">
+<h1>6.1 Likelihood with independent observations<a class="headerlink" href="#likelihood-with-independent-observations" title="Permalink to this headline">¶</a></h1>
+<p>Suppose that the observed data consiste of a sample of <span class="math notranslate nohighlight">\(n\)</span> observations. If these observations are independent, then the joint likelihood function from these <span class="math notranslate nohighlight">\(n\)</span> observations has a very convenient form; it is the product of the likelihood from each observation.</p>
+<p>Suppose that the random variables <span class="math notranslate nohighlight">\(X_1,..., X_n\)</span> are i.i.d., and that our observed data are <span class="math notranslate nohighlight">\(\mathbf{x} = \left\{ x_1, x_2, ..., x_n \right\}\)</span>. Then the likelihood function is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
 \begin{align*}
-l \left( \theta \mid \mathbf{x} \right)
-&amp;= log \prod_{i=1}^n L\left( \theta \mid x_i \right) \
-&amp;= \sum_{i=1}^n log L\left( \theta \mid x_i \right) \
-&amp;= \sum_{i=1}^n l\left( \theta \mid x_i \right) \
-\end{align*}</p>
-<p>Finding the MLE involves the same three steps as we saw in Session 5, but the log-likelihood function is now a joint function for the <span class="math notranslate nohighlight">\(n\)</span> observations:</p>
+L \left( \theta \mid \mathbf{x} \right) &amp;=  L\left( \theta \mid x_1 \right) L\left( \theta \mid x_2 \right) ...  L \left( \theta \mid x_n \right) \\
+ &amp;= \prod_{i=1}^n  L\left( \theta \mid x_i \right).
+\end{align*}
+\end{split}\]</div>
+<p>Recall that we often prefer to work with the log-likelihood function, as it simplifies the algebra when it comes to finding the MLE. The log-likelihood function for <span class="math notranslate nohighlight">\(n\)</span> independent observations is given by:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+l \left( \theta \mid \mathbf{x} \right) 
+ &amp;= log \prod_{i=1}^n L\left( \theta \mid x_i \right) \\
+  &amp;= \sum_{i=1}^n log L\left( \theta \mid x_i \right) \\
+   &amp;= \sum_{i=1}^n l\left( \theta \mid x_i \right) 
+\end{align*}
+\end{split}\]</div>
+<p>Finding the MLE involves the same three steps as we saw in the previous session, but the log-likelihood function is now a joint function for the <span class="math notranslate nohighlight">\(n\)</span> observations:</p>
 <div class="alert alert-success">
 <p><b> Method for finding MLEs:</b></p>
 <ol class="simple">
@@ -1036,22 +1022,29 @@ l \left( \theta \mid \mathbf{x} \right)
 <li><p>Verify that it is a maximum by showing that the second derivative <span class="math notranslate nohighlight">\(\frac{d ^2 l(\theta \mid  \mathbf{x})}{d \theta ^2 }\)</span> is negative when the MLE is substituted for <span class="math notranslate nohighlight">\(\theta\)</span>.</p></li>
 </ol>
 </div>
-</div>
 <div class="section" id="example-exponential-distribution">
-<h1>6.1.1 Example: Exponential distribution<a class="headerlink" href="#example-exponential-distribution" title="Permalink to this headline">¶</a></h1>
-<p>Recall the example from Session 5 on the time that patients wait until their GP appointment in a particular practice. The receptionist records the time that elapses between when a patient walks through the door, and when they are called through for their appointment for a random sample of eight people. These times (in minutes) are: 8.75, 10.20, 15.29, 7.89, 7.04, 12.04, 19.04, 17.50.</p>
+<h2>6.1.1 Example: Exponential distribution<a class="headerlink" href="#example-exponential-distribution" title="Permalink to this headline">¶</a></h2>
+<p>Recall the example from the previous session, investigating the time that patients wait until their GP appointment in a particular practice. The receptionist records the time that elapses between when a patient walks through the door, and when they are called through for their appointment for a random sample of 8 people. These times (in minutes) are: 8.75, 10.20, 15.29, 7.89, 7.04, 12.04, 19.04, 17.50.</p>
 <p>As a reminder, we can model the waiting time until a specific event using the exponential distribution with parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, which has a probability density function given by:</p>
-<p>\begin{equation}<br />
-f _X\left(x \mid \lambda \right)=\lambda e^{-x\lambda} , x &gt; 0, \lambda &gt; 0<br />
-\end{equation}</p>
-<p><em>Remember that the mean of this distribution is equal to one over the rate parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, i.e. <span class="math notranslate nohighlight">\(E(X) = \frac{1}{\lambda}\)</span>.</em></p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  
+f _X\left(x \mid \lambda \right)=\lambda e^{-x\lambda} , x &gt; 0, \lambda &gt; 0  
+\end{equation}
+\]</div>
+<blockquote>
+<div><p>Recall that the mean of this distribution is equal to one over the rate parameter <span class="math notranslate nohighlight">\(\lambda\)</span>, i.e. <span class="math notranslate nohighlight">\(E(X) = \frac{1}{\lambda}\)</span>.</p>
+</div></blockquote>
 <p>We have that the log-likelihood is:</p>
-<p>\begin{align}
-\log L\left( \lambda \mid \mathbf{x} \right) &amp;= \sum_{i=1}^n \log  L(\lambda \mid x_i) \
-&amp;= \sum_{i=1}^n \log \left( \lambda e^{-x_i \lambda } \right) \
-&amp;= \sum_{i=1}^n \log \lambda -x_i\lambda \<br />
-&amp;= n \log \lambda -\lambda \sum_{i=1}^n x_i
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+\log L\left( \lambda \mid \mathbf{x} \right) &amp;= \sum_{i=1}^n \log  L(\lambda \mid x_i) \\ 
+&amp;= \sum_{i=1}^n \log \left( \lambda e^{-x_i \lambda } \right) \\
+&amp;= \sum_{i=1}^n \log \lambda -x_i\lambda \\  
+&amp;= n \log \lambda -\lambda \sum_{i=1}^n x_i 
+\end{align}
+\end{split}\]</div>
 <p>We can make a plot of this log-likelihood, using the data from our example with eight observations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1070,33 +1063,43 @@ f _X\left(x \mid \lambda \right)=\lambda e^{-x\lambda} , x &gt; 0, \lambda &gt; 
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/06.b. Maximum Likelihood_1_0.png" src="_images/06.b. Maximum Likelihood_1_0.png" />
+<img alt="_images/06.b. Maximum Likelihood_2_0.png" src="_images/06.b. Maximum Likelihood_2_0.png" />
 </div>
 </div>
 <p>Graphically, we observe that the maximum is between 0 and 0.25. We will use the three steps, as before, to derive the MLE algebraically:</p>
-<p><strong>Step1</strong>: Taking the derivative of the log-likelihood with respect to <span class="math notranslate nohighlight">\(\lambda\)</span>:
+<p><strong>Step1</strong>: Taking the derivative of the log-likelihood with respect to <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{equation}
-\frac{d log L\left( \lambda \mid x_1 ,…, x_n \right) }{d \lambda} = \frac{n}{\lambda}- \sum_{i=1}^n x_i
-\end{equation}</p>
-<p><strong>Step2:</strong> Set the derivative equal to zero and solve for <span class="math notranslate nohighlight">\(\lambda\)</span>:
-\begin{equation}
-0 = \frac{n}{\lambda}- \sum_{i=1}^n x_i
-\end{equation}</p>
-<p>\begin{equation}
-\hat{\lambda}= \frac{n }{\sum_{i=1}^n x_i} = \frac{1}{\bar{x}}
-\end{equation}</p>
+\frac{d log L\left( \lambda \mid x_1 ,..., x_n \right) }{d \lambda} = \frac{n}{\lambda}- \sum_{i=1}^n x_i 
+\end{equation}
+\]</div>
+<p><strong>Step2:</strong> Set the derivative equal to zero and solve for <span class="math notranslate nohighlight">\(\lambda\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+0 &amp;= \frac{n}{\lambda}- \sum_{i=1}^n x_i \\
+\hat{\lambda} &amp;= \frac{n }{\sum_{i=1}^n x_i} = \frac{1}{\bar{x}}
+\end{align*}
+\end{split}\]</div>
 <p>The MLE is <span class="math notranslate nohighlight">\(\hat{\lambda}= \frac{1}{\bar{x}}\)</span>. And to check that this provides a maximum, we go on to the next step:</p>
 <p><strong>Step3:</strong> Find the second derivative:</p>
-<p>\begin{equation}
-\frac{d l^2 \left( \lambda \mid \boldsymbol{x} \right)}{d \lambda ^2}
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}
+\frac{d l^2 \left( \lambda \mid \boldsymbol{x} \right)}{d \lambda ^2} 
 = - \frac{n}{\lambda^2}
 \end{equation}
-When <span class="math notranslate nohighlight">\({\lambda}=\frac{1}{\bar{x}}\)</span>, we have:
+\]</div>
+<p>When <span class="math notranslate nohighlight">\({\lambda}=\frac{1}{\bar{x}}\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
 \begin{align}
-\frac{d l^2 \left( \lambda \mid \boldsymbol{x} \right)}{d \lambda ^2}<br />
-&amp;=-n \bar{x}^2
-\end{align}
-which is negative. This verifies that we found the maximum likelihood estimate.</p>
+ \frac{d l^2 \left( \lambda \mid \boldsymbol{x} \right)}{d \lambda ^2}  
+ &amp;=-n \bar{x}^2
+ \end{align}
+\]</div>
+<p>which is negative. This verifies that we found the maximum likelihood estimate.</p>
 <p>Going back to our example of eight patients waiting for their GP appointment, the maximum likelihood estimate <span class="math notranslate nohighlight">\(\lambda\)</span> is given by one over the average of the eight waiting times:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1110,53 +1113,76 @@ which is negative. This verifies that we found the maximum likelihood estimate.<
 <p>We have that <span class="math notranslate nohighlight">\(\hat{\lambda}=0.0818\)</span> minutes.</p>
 </div>
 <div class="section" id="example-normal-distribution">
-<h1>6.1.2 Example: Normal distribution<a class="headerlink" href="#example-normal-distribution" title="Permalink to this headline">¶</a></h1>
-<p>We will now consider the normal distribution. Remember that the normal distribution has two parameters, <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>. We will first obtain the MLE for <span class="math notranslate nohighlight">\(\mu\)</span> (treating <span class="math notranslate nohighlight">\(\sigma^2\)</span> as a constant), and in the practical, we will obtain the MLE for <span class="math notranslate nohighlight">\(\sigma^2\)</span> (treating <span class="math notranslate nohighlight">\(\mu\)</span> as a constant). Recall that normal distribution has probability density function given by:</p>
-<p>\begin{equation}<br />
-f_X \left( x \mid \mu, \sigma^2 \right)= (2 \pi \sigma^2)^{-\frac{1}{2}} \exp \left{-\frac{(x-\mu)^2}{2\sigma^2} \right}
-\end{equation}</p>
+<h2>6.1.2 Example: Normal distribution<a class="headerlink" href="#example-normal-distribution" title="Permalink to this headline">¶</a></h2>
+<p>We will now consider the normal distribution. Remember that the normal distribution has two parameters, <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>. We will first obtain the MLE for <span class="math notranslate nohighlight">\(\mu\)</span> (treating <span class="math notranslate nohighlight">\(\sigma^2\)</span> as a constant), and in the practical, we will obtain the MLE for <span class="math notranslate nohighlight">\(\sigma^2\)</span> (treating <span class="math notranslate nohighlight">\(\mu\)</span> as a constant).</p>
+<p>Recall that normal distribution has probability density function given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  
+f_X \left( x \mid \mu, \sigma^2 \right)= (2 \pi \sigma^2)^{-\frac{1}{2}} \exp \left\{-\frac{(x-\mu)^2}{2\sigma^2} \right\}
+\end{equation}
+\]</div>
 <p>We have that the log-likelihood given an i.i.d. sample of size <span class="math notranslate nohighlight">\(n\)</span> is:</p>
-<p>\begin{align}
-l \left(\mu, \sigma^2 \mid  \boldsymbol{x}  \right) &amp;=  \sum_{i=1}^n \log \left{ (2 \pi \sigma^2)^{-\frac{1}{2}} \exp \left{-\frac{(x_i-\mu)^2}{2\sigma^2} \right} \right} \
-&amp;= \sum_{i=1}^n \left{ \log (2 \pi \sigma^2)^{-\frac{1}{2}}+ \log \exp  \left{-\frac{(x_i-\mu)^2}{2\sigma^2} \right}  \right} \
-&amp;= \sum_{i=1}^n \left{ -\frac{1}{2} \log (2 \pi \sigma^2) - \frac{(x_i-\mu)^2}{2\sigma^2}  \right} \
-&amp;=  {-\frac{n}{2}}\log (2 \pi \sigma^2) -\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i-\mu)^2
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+l \left(\mu, \sigma^2 \mid  \boldsymbol{x}  \right) &amp;=  \sum_{i=1}^n \log \left\{ (2 \pi \sigma^2)^{-\frac{1}{2}} \exp \left\{-\frac{(x_i-\mu)^2}{2\sigma^2} \right\} \right\} \\
+&amp;= \sum_{i=1}^n \left\{ \log (2 \pi \sigma^2)^{-\frac{1}{2}}+ \log \exp  \left\{-\frac{(x_i-\mu)^2}{2\sigma^2} \right\}  \right\} \\
+&amp;= \sum_{i=1}^n \left\{ -\frac{1}{2} \log (2 \pi \sigma^2) - \frac{(x_i-\mu)^2}{2\sigma^2}  \right\} \\
+&amp;=  {-\frac{n}{2}}\log (2 \pi \sigma^2) -\frac{1}{2\sigma^2} \sum_{i=1}^n (x_i-\mu)^2 
+\end{align}
+\end{split}\]</div>
 <p>We will first find the MLE for the parameter <span class="math notranslate nohighlight">\(\mu\)</span>.</p>
 <p><strong>Step1</strong>: Take the derivative of the log-likelihood with respect to  <span class="math notranslate nohighlight">\(\mu\)</span>. Note that this requires use of the chain rule:</p>
-<p>\begin{align}<br />
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}  
 \frac{d l \left(\mu, \sigma^2 \mid  \mathbf{x}  \right) }{d \mu}
-&amp;=  -\frac{2}{2\sigma^2}(-1) \sum_{i=1}^n (x_i-\mu) \
-&amp;=  \frac{ \sum_{i=1}^n (x_i-\mu)}{\sigma^2} \
+&amp;=  -\frac{2}{2\sigma^2}(-1) \sum_{i=1}^n (x_i-\mu) \\
+&amp;=  \frac{ \sum_{i=1}^n (x_i-\mu)}{\sigma^2} \\
 &amp;=  \frac{ \sum_{i=1}^n x_i-n\mu}{\sigma^2}
-\end{align}</p>
+\end{align}
+\end{split}\]</div>
 <p><strong>Step2:</strong> Setting the derivative equal to zero and solving for <span class="math notranslate nohighlight">\(\mu\)</span>:</p>
-<p>\begin{align}<br />
-0 &amp;=  \frac{ \sum_{i=1}^n x_i-n\mu}{\sigma^2} \
-\end{align}</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}  
+0 &amp;=  \frac{ \sum_{i=1}^n x_i-n\mu}{\sigma^2} \\
+\end{align}
+\end{split}\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\sigma^2 &gt; 0\)</span>, we have that:</p>
-<p>\begin{equation}<br />
-0 = \sum_{i=1}^n x_i-n\mu
-\end{equation}</p>
-<p>\begin{equation}<br />
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  
+0 = \sum_{i=1}^n x_i-n\mu 
+\end{equation}
+\]</div>
+<div class="math notranslate nohighlight">
+\[
+\begin{equation}  
 \hat{\mu} =\frac{ \sum_{i=1}^n x_i}{n} = \bar{x}
-\end{equation}</p>
+\end{equation}
+\]</div>
 <p>We have that the MLE for <span class="math notranslate nohighlight">\(\mu\)</span> is the sample mean, <span class="math notranslate nohighlight">\(\bar{x}\)</span>.</p>
 <p><strong>Step3:</strong> Find the second derivative:</p>
-<p>\begin{align}<br />
+<div class="math notranslate nohighlight">
+\[
+\begin{align}  
 \frac{d^2 l \left(\mu, \sigma^2 \mid  \mathbf{x}  \right) }{d \mu^2 }
 &amp;=  -\frac{n}{\sigma^2},
-\end{align}</p>
+\end{align}
+\]</div>
 <p>since both <span class="math notranslate nohighlight">\(n&gt;0\)</span> and <span class="math notranslate nohighlight">\(\sigma^2 &gt;0\)</span>, we have that the second derivative is negative, verifying that we have found the maximum.</p>
 <p>In the practical, we will find the MLE for <span class="math notranslate nohighlight">\(\sigma^2\)</span>.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

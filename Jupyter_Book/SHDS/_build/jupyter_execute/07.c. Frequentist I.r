@@ -7,3 +7,5 @@ mean(ages)
 # Display the lower and upper limits of the confidence interval
 mean(ages) - 1.96*1.52
 mean(ages) + 1.96*1.52
+
+

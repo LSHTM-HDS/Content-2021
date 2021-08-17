@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,12 +335,12 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07.c.%20Frequentist%20I.html">
-     7.2 95% confidence intervals for the mean
+     7.2 Confidence intervals for the mean
     </a>
    </li>
    <li class="toctree-l2">
@@ -359,7 +382,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="08.b.%20Frequentist%20II.html">
-     8.1 Proving and disproving hypotheses
+     8.1 Evidence against hypotheses
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F07.e. Frequentist I.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F07.e. Frequentist I.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/07.e. Frequentist I.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/07.e. Frequentist I.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -989,18 +977,18 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-commonly-used-confidence-intervals-proportions-and-rates">
-   7.4.2 Some commonly used confidence intervals: Proportions and rates
+  <a class="reference internal nav-link" href="#proportions-and-rates">
+   7.4.2 Proportions and rates
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-commonly-used-confidence-intervals-mean">
-   7.4.2 Some commonly used confidence intervals: Mean
+  <a class="reference internal nav-link" href="#the-mean">
+   7.4.2 The mean
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#some-commonly-used-confidence-intervals-comparing-two-groups">
-   7.4.3 Some commonly used confidence intervals: Comparing two groups
+  <a class="reference internal nav-link" href="#comparing-two-groups">
+   7.4.3 Comparing two groups
   </a>
  </li>
 </ul>
@@ -1016,6 +1004,8 @@
                 
   <div class="section" id="approximate-confidence-intervals-for-parameters-estimated-using-large-samples">
 <h1>7.4 Approximate confidence intervals for parameters estimated using large samples<a class="headerlink" href="#approximate-confidence-intervals-for-parameters-estimated-using-large-samples" title="Permalink to this headline">¶</a></h1>
+<p>You will encounter many different confidence intervals during your studies. Many of these rely on an asymptotic normal distribution, as described below.</p>
+<p>There are many different confidence intervals and many approaches to calculating confidence intervals. We do not aim to give you a comprehensive list here. Below, we describe a few commonly used confidence intervals to give you a flavour. <strong>Please note:</strong> We do not expect you to memorise these formulae.</p>
 <div class="section" id="normal-based-confidence-intervals">
 <h2>7.4.1 Normal-based confidence intervals<a class="headerlink" href="#normal-based-confidence-intervals" title="Permalink to this headline">¶</a></h2>
 <p>The Central Limit Theorem tells us that the mean of independent identically distributed random variables, with finite expectation and variance, tends to a normal distribution as the sample size tends to infinity.</p>
@@ -1025,9 +1015,8 @@
 \mbox{Estimate} \pm 1.96 \times SE(\mbox{Estimator})
 \]</div>
 </div>
-<div class="section" id="some-commonly-used-confidence-intervals-proportions-and-rates">
-<h2>7.4.2 Some commonly used confidence intervals: Proportions and rates<a class="headerlink" href="#some-commonly-used-confidence-intervals-proportions-and-rates" title="Permalink to this headline">¶</a></h2>
-<p>You will encounter many different confidence intervals during your studies. We do not aim to give you a comprehensive list. But here are a few to give you a flavour. <strong>Please note:</strong> We do not expect you to memorise these formulae.</p>
+<div class="section" id="proportions-and-rates">
+<h2>7.4.2 Proportions and rates<a class="headerlink" href="#proportions-and-rates" title="Permalink to this headline">¶</a></h2>
 <p>First, we need some notation.</p>
 <div class="sphinx-bs container pb-4 docutils">
 <div class="row docutils">
@@ -1095,8 +1084,8 @@
 </table>
 <p>The three tabs below provide examples of using the formulae above to obtain approximate 95% confidence intervals for proportions and rates.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ef5b24fa-741a-4e23-a540-cf83f6d162f9" name="dcf78a4d-e1f9-40d9-a523-03a4ebcfdfb3" type="radio">
-</input><label class="tabbed-label" for="ef5b24fa-741a-4e23-a540-cf83f6d162f9">
+<input checked="checked" id="6ab6133c-cd2f-4e6b-8992-2c90f40729c9" name="165123cb-65a1-4106-b48f-1a6627dff04e" type="radio">
+</input><label class="tabbed-label" for="6ab6133c-cd2f-4e6b-8992-2c90f40729c9">
 Proportion</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>We want to estimate the population proportion of patients who experience a side effect from a particular drug.</p></li>
@@ -1113,8 +1102,8 @@ Proportion</label><div class="tabbed-content docutils">
 <li><p>So our estimate of the proportion of patients who experience a side effect is: 0.25 (95% CI 0.155 to 0.349). Our best guess is that 25% of patients experience a side-effect from this drug. We are 95% confident that the true proportion lies between 15.5% and 34.9%.</p></li>
 </ul>
 </div>
-<input id="9feae83e-a0fa-4da1-a0e2-87b036b86381" name="dcf78a4d-e1f9-40d9-a523-03a4ebcfdfb3" type="radio">
-</input><label class="tabbed-label" for="9feae83e-a0fa-4da1-a0e2-87b036b86381">
+<input id="2d800606-d850-4e6a-bf4c-0d44e89595c8" name="165123cb-65a1-4106-b48f-1a6627dff04e" type="radio">
+</input><label class="tabbed-label" for="2d800606-d850-4e6a-bf4c-0d44e89595c8">
 Rate</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>We want to estimate the rate of panic attacks among adults with a mild anxiety disorder.</p></li>
@@ -1130,8 +1119,8 @@ Rate</label><div class="tabbed-content docutils">
 <li><p>This gives a range of -0.0096 to 0.0596. This illustrates an important point - approximate confidence intervals sometimes contain impossible parameter values (the rate <span class="math notranslate nohighlight">\(\lambda\)</span> cannot be negative). To resolve this problem, we will re-do the calculations on the log scale.</p></li>
 </ul>
 </div>
-<input id="63132259-e209-43db-a523-a47b5a054136" name="dcf78a4d-e1f9-40d9-a523-03a4ebcfdfb3" type="radio">
-</input><label class="tabbed-label" for="63132259-e209-43db-a523-a47b5a054136">
+<input id="5d4b9ca8-0532-4aac-9a2c-be6ecbf56067" name="165123cb-65a1-4106-b48f-1a6627dff04e" type="radio">
+</input><label class="tabbed-label" for="5d4b9ca8-0532-4aac-9a2c-be6ecbf56067">
 Logarithm of the rate</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>The logarithm of the observed rate is <span class="math notranslate nohighlight">\(\nu = log(0.025) = -3.689\)</span>. So this is our estimate of the log rate.</p></li>
@@ -1154,8 +1143,8 @@ Logarithm of the rate</label><div class="tabbed-content docutils">
 </div>
 </div>
 </div>
-<div class="section" id="some-commonly-used-confidence-intervals-mean">
-<h2>7.4.2 Some commonly used confidence intervals: Mean<a class="headerlink" href="#some-commonly-used-confidence-intervals-mean" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="the-mean">
+<h2>7.4.2 The mean<a class="headerlink" href="#the-mean" title="Permalink to this headline">¶</a></h2>
 <p>In this subsection we consider estimating a population mean. Our observed data comprise <span class="math notranslate nohighlight">\(n\)</span> independent observations, <span class="math notranslate nohighlight">\(x_1, x_2, ..., x_n\)</span>. We consider two possibilities:</p>
 <ul class="simple">
 <li><p>Data are normally distributed, <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n\)</span></p></li>
@@ -1199,12 +1188,12 @@ given by <span class="math notranslate nohighlight">\(\frac{\sigma}{\sqrt{n}}\)<
 <p>where <span class="math notranslate nohighlight">\(t_{n-1}\)</span> is a number obtained from the t-distribution, which is similar to the standard normal distribution. This number is around 2 for small <span class="math notranslate nohighlight">\(n\)</span> and becomes very close to <span class="math notranslate nohighlight">\(1.96\)</span> for large samples.</p>
 <p>For small samples, where the data are not normally distributed, the confidence interval assuming data are normally distributed often has reasonable performance, but other methods (e.g. bootstrap confidence intervals) may be advisable.</p>
 </div>
-<div class="section" id="some-commonly-used-confidence-intervals-comparing-two-groups">
-<h2>7.4.3 Some commonly used confidence intervals: Comparing two groups<a class="headerlink" href="#some-commonly-used-confidence-intervals-comparing-two-groups" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="comparing-two-groups">
+<h2>7.4.3 Comparing two groups<a class="headerlink" href="#comparing-two-groups" title="Permalink to this headline">¶</a></h2>
 <p>There are many ways of comparing outcomes between two groups. Two popular options are the difference in proportions for binary outcomes and the difference in means for continuous outcomes. Confidence intervals for other measures (e.g. the risk ratio, the odds ratio, the difference in medians, etc.) also can be obtained.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="c86c5864-e7c8-4cd7-89b1-23ff986d0f07" name="182b69de-291f-4a59-b4ed-afa319a3eef8" type="radio">
-</input><label class="tabbed-label" for="c86c5864-e7c8-4cd7-89b1-23ff986d0f07">
+<input checked="checked" id="f9693f73-cf73-4d3f-a99c-a2e6ef26d1a7" name="5b87e779-e19e-4934-acc0-cc4e05d7049d" type="radio">
+</input><label class="tabbed-label" for="f9693f73-cf73-4d3f-a99c-a2e6ef26d1a7">
 Difference in proportions</label><div class="tabbed-content docutils">
 <p>We are interested in the population difference in proportions from two observations from two binomial distributions. Suppose our observed data consist of two observations from <span class="math notranslate nohighlight">\(X_1 \sim binomial(n_1, \pi_1)\)</span>, with the realised values being <span class="math notranslate nohighlight">\(X_1=k_1\)</span> and <span class="math notranslate nohighlight">\(X_2 = k_2\)</span>. We want to estimate the difference <span class="math notranslate nohighlight">\(\delta = \pi_1 - \pi_2\)</span>.</p>
 <p>We estimate the proportion in the first group by <span class="math notranslate nohighlight">\(\hat{\pi}_1 = \frac{k_1}{n_1}\)</span>. Similarly, we estimate the proportion in the second group by <span class="math notranslate nohighlight">\(\hat{\pi}_2 = \frac{k_2}{n_2}\)</span>. Then our estimate of the difference in proportions is <span class="math notranslate nohighlight">\(\hat{\delta} = \hat{\pi}_1 - \hat{\pi}_2\)</span>.</p>
@@ -1217,8 +1206,8 @@ Difference in proportions</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[\hat{\delta} \pm 1.96 \times \sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1} + \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}}\]</div>
 </div>
-<input id="5e910588-e048-42c9-beba-4ba964f4fcd0" name="182b69de-291f-4a59-b4ed-afa319a3eef8" type="radio">
-</input><label class="tabbed-label" for="5e910588-e048-42c9-beba-4ba964f4fcd0">
+<input id="9b02b1c9-8d8a-4777-a17f-30991a9f5f42" name="5b87e779-e19e-4934-acc0-cc4e05d7049d" type="radio">
+</input><label class="tabbed-label" for="9b02b1c9-8d8a-4777-a17f-30991a9f5f42">
 Difference in means</label><div class="tabbed-content docutils">
 <p>We are interested in the difference in population means between two groups from <span class="math notranslate nohighlight">\(n_1\)</span> iid observations from a normal distribution from group 1 and <span class="math notranslate nohighlight">\(n_2\)</span> from group 2. Suppose our observed data are <span class="math notranslate nohighlight">\(n_1\)</span> observations drawn from <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu_1, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> observations drawn from <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu_2, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n_2\)</span>. We want to estimate the difference <span class="math notranslate nohighlight">\(\delta = \mu_1 - \mu_2\)</span></p>
 <p>The sample means are <span class="math notranslate nohighlight">\(\bar{x}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{x}_2\)</span> and the sample standard deviations are <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span>.</p>
@@ -1271,8 +1260,8 @@ SE(\hat{\delta}) =  \sigma \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

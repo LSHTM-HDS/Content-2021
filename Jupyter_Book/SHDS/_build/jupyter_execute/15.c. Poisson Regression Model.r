@@ -14,7 +14,7 @@ var(data)
 
 options(repr.plot.width=4, repr.plot.height=3)
 #Install package
-install.packages("VGAM")
+#install.packages("VGAM")
 library("VGAM")
 
 #Number of data points to simulate

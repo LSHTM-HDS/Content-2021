@@ -1,3 +1,9 @@
+data<- read.csv('https://www.inferentialthinking.com/data/baby.csv')
+
+#Define a dummy variable for maternal.smoker
+data$Maternal.Smoker2<-0
+data$Maternal.Smoker2[data$Maternal.Smoker=="True"]<-1
+
 #Create a binary variable indicating height group
 data$Maternal.Height2<-0
 data$Maternal.Height2[data$Maternal.Height>64]<-1

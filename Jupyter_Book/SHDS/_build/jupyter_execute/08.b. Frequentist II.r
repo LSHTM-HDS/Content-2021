@@ -12,6 +12,10 @@ print("Sample SDs: ")
 sqrt(var(dist0))
 sqrt(var(dist1))
 
+# Sample difference in means
+print("Difference in sample means:")
+(delta.hat <- mean(dist1) - mean(dist0))
+
 # Draw histograms of the scores in each group
 options(repr.plot.width=6, repr.plot.height=4)
 par(mfrow=c(1,2))
@@ -25,8 +29,8 @@ delta.hat <- mean(dist1) - mean(dist0)
 sample.diff.means <- rnorm(10000, 0, 0.507)
 
 # Draw the approximate sampling distribution with the percentile confidence limits marked in red
-options(repr.plot.width=5, repr.plot.height=5)
-hist(sample.diff.means, freq=FALSE, main="Sampling distribution for difference in sample means, \nUNDER THE NULL HYPOTHESIS", xlab="Difference in sample means", xlim=c(-2.5, 2.5), ylim=c(0, 0.8))
+options(repr.plot.width=6, repr.plot.height=5)
+hist(sample.diff.means, freq=FALSE, main="Sampling distribution for \n difference in sample means, \n UNDER THE NULL HYPOTHESIS", xlab="Difference in sample means", xlim=c(-2.5, 2.5), ylim=c(0, 0.8))
 lines(seq(-2.5, 2.5, 0.025), dnorm(seq(-2.5, 2.5, 0.025), 0, 0.507))
 abline(v=0, col="red")
 abline(v=delta.hat, col="green", lty=2)
@@ -37,7 +41,7 @@ lines(c(0, 1.5), c(0.005, 0.18))
 lines(c(-1.8, -0.9), c(0.38, 0.28))
 
 # Draw the approximate sampling distribution with the percentile confidence limits marked in red
-options(repr.plot.width=5, repr.plot.height=5)
+options(repr.plot.width=6, repr.plot.height=5)
 hist(sample.diff.means, freq=FALSE, main="Sampling distribution for \ndifference in sample means, \nUNDER THE NULL HYPOTHESIS", xlab="Difference in sample means", ylim=c(0, 0.8), xlim=c(-3.5, 3.5))
 lines(seq(-3.5, 3.5, 0.025), dnorm(seq(-3.5, 3.5, 0.025), 0, 0.507))
 abline(v=0, col="red")
@@ -45,9 +49,9 @@ abline(v=delta.hat, col="green", lty=2)
 abline(v=-3.5, col="orange", lty=2)
 abline(v=0.02, col="blue", lty=2)
 
-text(-2.5, 0.4, "Scenario 1: \nObserved value")
-text(1.8, 0.2,  "Scenario 2: \nObserved value")
-text(-1.7, 0.6, "Actual data: \nObserved value")
+text(-2.5, 0.42, "Scenario 1: \nObserved value")
+text(2, 0.22,  "Scenario 2: \nObserved value")
+text(-1.9, 0.62, "Actual data: \nObserved value")
 lines(c(0.05, 1.5), c(0.005, 0.15))
 lines(c(-2.5, -3.4), c(0.35, 0.2))
 lines(c(-1.8, -0.9), c(0.55, 0.48))

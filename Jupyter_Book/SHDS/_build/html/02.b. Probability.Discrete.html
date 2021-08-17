@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>2.1 Bayes’ Theorem &#8212; Statistics for Health Data Science</title>
+    <title>Application of Bayes’ Theorem &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -44,17 +44,17 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="2.2 The binomial distribution" href="02.c.%20Probability.Discrete.html" />
-    <link rel="prev" title="2. Probability and Discrete Probability Distributions" href="02.a.%20Probability.Discrete.html" />
+    <link rel="next" title="The binomial distribution" href="02.c.%20Probability.Discrete.html" />
+    <link rel="prev" title="2. Discrete Distributions" href="02.a.%20Probability.Discrete.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,7 +335,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F02.b. Probability.Discrete.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F02.b. Probability.Discrete.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/02.b. Probability.Discrete.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/02.b. Probability.Discrete.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -984,18 +972,23 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#uses-of-bayes-theorem">
-   2.1.2 Uses of Bayes’ Theorem
+  <a class="reference internal nav-link" href="#screening-tests-and-prognostic-scores">
+   Screening tests and prognostic scores
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#bayes-theorem">
+   Bayes’ Theorem
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#example-genetic-marker-in-childhood-cancer">
-   2.1.3 Example: Genetic marker in childhood cancer
+   Example: Genetic marker in childhood cancer
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#the-confusion-matrix">
-   2.1.4 The confusion matrix
+   The confusion matrix
   </a>
  </li>
 </ul>
@@ -1009,8 +1002,16 @@
         
               <div>
                 
-  <div class="section" id="bayes-theorem">
-<h1>2.1 Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="application-of-bayes-theorem">
+<h1>Application of Bayes’ Theorem<a class="headerlink" href="#application-of-bayes-theorem" title="Permalink to this headline">¶</a></h1>
+<p>Bayes’ Theorem has important and powerful applications in medical statistics. One important link, which you will return to later, is its connection to Bayesian statistics. In this session, we focus on another common application of Bayes’ theorem, in the area of assessing the accuracy of screening tests and prognostic scores.</p>
+<div class="section" id="screening-tests-and-prognostic-scores">
+<h2>Screening tests and prognostic scores<a class="headerlink" href="#screening-tests-and-prognostic-scores" title="Permalink to this headline">¶</a></h2>
+<p>Screening tests are tests that attempt to identify people with a particular condition or disease of interest. Babies are often screened for cystic fibrosis at birth, for example. Sometimes, screening tests attempt to identify high risk people rather than those who already have the condition of interest. Cervical screening, for example, which is offered to all women and people with a cervix aged 25 to 64 in the UK by the National Health Service, is a test to help prevent cancer. It doesn’t look for existing cancer, but instead looks for certain viruses which can increase the subsequent risk of cancer. Similarly, prognostic tests or prognostic scores are used to identify a high risk group.</p>
+<p>Screening tests or prognostic scores can be based on one genetic marker, as in our example below, or many. Or they might incorporate information from other sources (e.g. biomarkers, family history of the disease). These processes typically result in a binary classification of “positive” or “negative”.</p>
+</div>
+<div class="section" id="bayes-theorem">
+<h2>Bayes’ Theorem<a class="headerlink" href="#bayes-theorem" title="Permalink to this headline">¶</a></h2>
 <p>Suppose we have an event <span class="math notranslate nohighlight">\(A\)</span> and a set of events <span class="math notranslate nohighlight">\(B_1, B_2, ..., B_n\)</span> that partition the sample space. Suppose that we have information about the conditional probability of <span class="math notranslate nohighlight">\(A\)</span> conditional on event <span class="math notranslate nohighlight">\(B_j\)</span>, i.e. we know <span class="math notranslate nohighlight">\(P(A | B_j)\)</span>, for each <span class="math notranslate nohighlight">\(j\)</span>. However, what we actually want to know about is <span class="math notranslate nohighlight">\(P(B_j | A)\)</span>.</p>
 <p>Bayes’ Theorem provides a way of reversing the conditioning.</p>
 <div class="alert alert-success">
@@ -1020,14 +1021,9 @@
 P(B_{j}|A) = \frac{P(A|B_{j}) P(B_{j})}{P(A)} = \frac{P(A|B_{j}) P(B_{j})}{\sum^{n}_{k=1} P(A|B_{k}) P(B_{k})}.
 \]</div>
 </div>
-<div class="section" id="uses-of-bayes-theorem">
-<h2>2.1.2 Uses of Bayes’ Theorem<a class="headerlink" href="#uses-of-bayes-theorem" title="Permalink to this headline">¶</a></h2>
-<p>Bayes’ Theorem has important and powerful applications in medical statistics. One common use, particularly relevant for us, is in the area of assessing the accuracy of screening tests and prognostic scores.</p>
-<p>Screening tests are tests that attempt to identify people with a particular condition or disease of interest. Babies are often screened for cystic fibrosis at birth, for example. Sometimes, screening tests attempt to identify high risk people rather than those who already have the condition of interest. Cervical screening, for example, which is offered to all women and people with a cervix aged 25 to 64 in the UK by the National Health Service, is a test to help prevent cancer. It doesn’t look for existing cancer, but instead looks for certain viruses which can increase the subsequent risk of cancer.</p>
-<p>Screening tests can be based on one genetic marker, as in our example below, or many. Or they might incorporate information from other sources (e.g. biomarkers, family history of the disease). Screening tests typically result in a binary classification of “positive” or “negative”.</p>
 </div>
 <div class="section" id="example-genetic-marker-in-childhood-cancer">
-<h2>2.1.3 Example: Genetic marker in childhood cancer<a class="headerlink" href="#example-genetic-marker-in-childhood-cancer" title="Permalink to this headline">¶</a></h2>
+<h2>Example: Genetic marker in childhood cancer<a class="headerlink" href="#example-genetic-marker-in-childhood-cancer" title="Permalink to this headline">¶</a></h2>
 <p>In a population, 10% of people develop a particular childhood cancer.  Of those who develop the cancer (<span class="math notranslate nohighlight">\(C\)</span>), 1 in 4 carry a genetic marker, <span class="math notranslate nohighlight">\(M\)</span>, whereas of those who don’t develop the cancer, 1 in 10 carry <span class="math notranslate nohighlight">\(M\)</span>.  A newly born infant is tested for the genetic marker and is found to carry it. What is the probability that this infant will develop cancer?</p>
 <p>The first couple of sentences tell us that <span class="math notranslate nohighlight">\(P(C) = 0.1\)</span>, <span class="math notranslate nohighlight">\(P(M|C) = 0.25\)</span>  and <span class="math notranslate nohighlight">\(P(M | \bar{C})=0.1.\)</span> Our interest lies in <span class="math notranslate nohighlight">\(P(C|M)\)</span>. So we wish to reverse the conditioning. We can obtain this by applying Bayes’ Theorem:</p>
 <div class="math notranslate nohighlight">
@@ -1042,7 +1038,7 @@ P(C|M) = \frac{0.25\times 0.1}{0.25\times 0.1 + 0.1\times 0.9}=0.22
 <p><span class="math notranslate nohighlight">\(P(C|M)\)</span> is called the <strong>positive predictive value</strong> (PPV) of the test.  It is the probability, given a positive test result, that the individual actually will develop the disease.  i.e. in this case there is a 22% chance that the infant will develop the disease if they tested positive.</p>
 </div>
 <div class="section" id="the-confusion-matrix">
-<h2>2.1.4 The confusion matrix<a class="headerlink" href="#the-confusion-matrix" title="Permalink to this headline">¶</a></h2>
+<h2>The confusion matrix<a class="headerlink" href="#the-confusion-matrix" title="Permalink to this headline">¶</a></h2>
 <p>More generally, suppose we have a procedure that results in a binary classification (a binary prediction). This might be a screening test, which could be based on one or more genetic markers or biomarkers. It could be based on the output from a  prognostic risk score or a label derived from an algorithm. Whatever the procedure, suppose we end up with a binary classification: “Positive” or “Negative”. In the health context, this terminology (positive/negative) might represent pairs such as: “Diseased” and “Undiseased”; “Dead” and “Alive” or “Hospitalised” and “Not hospitalised”. We can contrast the binary classification with the (binary) true status. In the general discussion below, we will also use the terms positive and negative to denote the two possible true statuses.</p>
 <p>The following table is often called a <strong>confusion matrix</strong>, or sometimes error matrix. The name confusion matrix stems from the fact that the matrix allows you to see whether the classification is <em>confusing</em> two classes. The values <span class="math notranslate nohighlight">\(A\)</span>, <span class="math notranslate nohighlight">\(B\)</span>, <span class="math notranslate nohighlight">\(C\)</span> and <span class="math notranslate nohighlight">\(D\)</span> are the numbers in each category. The name comes from the fact that the table allows you to see if the classification procedure is “confusing” two categories.</p>
 <table class="colwidths-auto table">
@@ -1099,40 +1095,58 @@ P(C|M) = \frac{0.25\times 0.1}{0.25\times 0.1 + 0.1\times 0.9}=0.22
 </tbody>
 </table>
 <p>We can obtain estimates of various useful quantities from this matrix. We will use the following notation: <span class="math notranslate nohighlight">\(O\)</span> represents being, in truth, positive for the outcome of interest, and <span class="math notranslate nohighlight">\(\bar{O}\)</span> represents being truly negative. <span class="math notranslate nohighlight">\(P\)</span> represents being classified as positive and <span class="math notranslate nohighlight">\(\bar{P}\)</span> being classified as negative.</p>
-<ul class="simple">
-<li><p><em>Prevalence of the outcome</em></p></li>
-</ul>
+<p>The tabs below show various useful quantities.</p>
+<div class="tabbed-set docutils">
+<input checked="checked" id="b10ac1b6-ef23-4186-8607-69bf2cfc8735" name="d136f608-ca5b-4819-bb5f-15c29c327c33" type="radio">
+</input><label class="tabbed-label" for="b10ac1b6-ef23-4186-8607-69bf2cfc8735">
+Outcome prevalence</label><div class="tabbed-content docutils">
+<p>The prevalence of the outcome is:</p>
 <div class="math notranslate nohighlight">
 \[
 P(O) = \frac{p_A+p_C}{p_A+p_B+p_C+p_D}
 \]</div>
-<ul class="simple">
-<li><p><em>Sensitivity</em></p></li>
-</ul>
+<p>Prevalence is another word for risk or proportion. It tells us the fraction of the population of interest who have the outcome.</p>
+</div>
+<input id="22d5d894-88d0-410d-ac52-f918abffa582" name="d136f608-ca5b-4819-bb5f-15c29c327c33" type="radio">
+</input><label class="tabbed-label" for="22d5d894-88d0-410d-ac52-f918abffa582">
+Sensitivity</label><div class="tabbed-content docutils">
+<p>This is a property of the test. The sensitivity of the test remains the same, irrespective of how common or rare the outcome is.</p>
+<p>The sensitivity is:</p>
 <div class="math notranslate nohighlight">
 \[
 P(P|O)=\frac{p_A}{p_A+p_C}
 \]</div>
-<p>The terminology comes from the setting of clinical tests, i.e. how sensitive this test is to the presence of the disease. It is also often called the recall in the fields of machine learning and computer science. It is also sometimes referred to as the true positive rate.</p>
-<ul class="simple">
-<li><p><em>Specificity</em></p></li>
-</ul>
+<p>The terminology comes from the setting of clinical tests, i.e. how sensitive this test is to the presence of the disease. It is also often called the recall in the fields of machine learning and computer science.</p>
+<p>This is also sometimes referred to as the true positive rate.</p>
+</div>
+<input id="82097bca-4135-4925-864e-5aaae5670460" name="d136f608-ca5b-4819-bb5f-15c29c327c33" type="radio">
+</input><label class="tabbed-label" for="82097bca-4135-4925-864e-5aaae5670460">
+Specificity</label><div class="tabbed-content docutils">
+<p>This is a property of the test. The specificity of the test remains the same, irrespective of how common or rare the outcome is.</p>
+<p>The specificity is:</p>
 <div class="math notranslate nohighlight">
 \[
 P(\bar{P}|\bar{O})=\frac{p_D}{p_B+p_D}
 \]</div>
-<p>Again, this terminology comes from the setting of clinical tests, i.e. how specific  this test is to the presence of this disease (versus other diseases). So a test which is only positive for this specific disease is very specific. A test which picks up the presence of this disease, and other similar diseases, is not very specific. This is sometimes called the selectivity or true negative rate.</p>
-<ul class="simple">
-<li><p><em>Predictive value of a positive classification (PPV)</em></p></li>
-</ul>
+<p>As for the sensitivity, this terminology comes from the setting of clinical tests, i.e. how specific  this test is to the presence of this disease (versus other diseases). So a test which is only positive for this specific disease is very specific. A test which picks up the presence of this disease, and other similar diseases, is not very specific.</p>
+<p>This is sometimes called the selectivity or true negative rate.</p>
+</div>
+<input id="60e9ae24-f475-4a51-a6c4-559d76bcb02f" name="d136f608-ca5b-4819-bb5f-15c29c327c33" type="radio">
+</input><label class="tabbed-label" for="60e9ae24-f475-4a51-a6c4-559d76bcb02f">
+PPV</label><div class="tabbed-content docutils">
+<p>PPV stands for Positive Predictive Value, which is shorthand for the predictive value of a positive classification. This is very common terminology in clinical settings.</p>
+<p>This quantity is often of most interest to the person having the test. It answers the question: “what is the probability that I have (or will have) the outcome, given that I have just received a positive classification?”</p>
+<p>The PPV is:</p>
 <div class="math notranslate nohighlight">
 \[
 P(O|P) = \frac{p_A}{p_A+p_B}
 \]</div>
-<p>The PPV is terminology typically used in medical settings. In machine learning, it is typically called the precision.</p>
-<ul class="simple">
-<li><p><em>Accuracy</em></p></li>
-</ul>
+<p>In machine learning, it is typically called the precision.</p>
+</div>
+<input id="6b68d40e-9c86-4624-91ed-767787ccab3a" name="d136f608-ca5b-4819-bb5f-15c29c327c33" type="radio">
+</input><label class="tabbed-label" for="6b68d40e-9c86-4624-91ed-767787ccab3a">
+Accuracy</label><div class="tabbed-content docutils">
+<p>The accuracy is:</p>
 <div class="math notranslate nohighlight">
 \[
 P(\mbox{correct classification}) = \frac{p_A + p_D}{p_A+p_B+p_C+p_D}
@@ -1140,13 +1154,15 @@ P(\mbox{correct classification}) = \frac{p_A + p_D}{p_A+p_B+p_C+p_D}
 <p>This quantity is less used in medical settings but is commonly used elsewhere.</p>
 </div>
 </div>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
@@ -1166,8 +1182,8 @@ P(\mbox{correct classification}) = \frac{p_A + p_D}{p_A+p_B+p_C+p_D}
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02.a.%20Probability.Discrete.html" title="previous page">2. Probability and Discrete Probability Distributions</a>
-    <a class='right-next' id="next-link" href="02.c.%20Probability.Discrete.html" title="next page">2.2 The binomial distribution</a>
+    <a class='left-prev' id="prev-link" href="02.a.%20Probability.Discrete.html" title="previous page">2. Discrete Distributions</a>
+    <a class='right-next' id="next-link" href="02.c.%20Probability.Discrete.html" title="next page">The binomial distribution</a>
 
         </div>
         

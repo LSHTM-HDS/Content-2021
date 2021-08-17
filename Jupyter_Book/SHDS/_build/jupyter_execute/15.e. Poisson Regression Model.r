@@ -19,7 +19,7 @@ with(df, tapply(counts, country, function(x) {
 }))
 
 options(repr.plot.width=4, repr.plot.height=3)
-install.packages("ggplot2")
+#install.packages("ggplot2")
 library(ggplot2)
 g1<-ggplot(df, aes(counts, fill = treatment)) +
   geom_histogram(binwidth=.5, position="dodge")
@@ -32,7 +32,7 @@ g2 + labs(fill = "Country", x = "Admission Count")
 summary(m1 <- glm(counts ~ treatment + country, family="poisson", data=df))
 
 #Robust SE's
-install.packages("sandwich")
+#install.packages("sandwich")
 library(sandwich)
 cov <- vcovHC(m1, type="HC0")
 se <- sqrt(diag(cov))

@@ -18,6 +18,7 @@ print(df <- data.frame(treatment, country, alcohol_count))
 summary(df)
 summary(m1 <- zeroinfl(alcohol_count ~ country + treatment, data = df))
 
+library("ggplot2")
 df$pred <- predict(m1, type="response")
 # Create the plot
 ggplot(df, aes(x = country, y = pred, colour = treatment)) +

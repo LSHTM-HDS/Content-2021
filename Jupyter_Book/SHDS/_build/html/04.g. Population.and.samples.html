@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -93,7 +93,7 @@
 </ul>
 <p class="caption">
  <span class="caption-text">
-  Overview
+  Preamble
  </span>
 </p>
 <ul class="nav bd-sidenav">
@@ -102,6 +102,18 @@
    Acknowledgements
   </a>
  </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="00.%20How_to_use.html">
+   How to use this book
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Overview
+ </span>
+</p>
+<ul class="nav bd-sidenav">
  <li class="toctree-l1">
   <a class="reference internal" href="01.%20Introduction.html">
    1 Introduction
@@ -114,9 +126,14 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="02.%20Probability.Intro.html">
+   Probability and statistics
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="02.a.%20Probability.Discrete.html">
-   2. Probability and Discrete Probability Distributions
+   2. Discrete Distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
   <label for="toctree-checkbox-1">
@@ -126,24 +143,29 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     2.1 Bayes’ Theorem
+     Bayes' Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     2.2 The binomial distribution
+     The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     2.3 The Poisson distribution
+     The Poisson distribution
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="02.e.%20Probability.Discrete.html">
+     Summary
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="03.a.%20Continuous%20Probability%20Distributions.html">
-   3. Continuous probability distributions
+   3. Continuous distributions
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
   <label for="toctree-checkbox-2">
@@ -185,6 +207,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="04.%20Inference.Intro.html">
+   Statistical Inference
+  </a>
+ </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="04.a.%20Population.and.samples.html">
    4. Populations and Samples
@@ -202,7 +229,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.c.%20Population.and.samples.html">
-     4.2 Statistical Models
+     4.2 Statistical models
     </a>
    </li>
    <li class="toctree-l2">
@@ -239,7 +266,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="05.b.%20Likelihood.html">
-     5.1 Introduction to maximum likelihood estimation
+     5.1 Maximum likelihood estimation
     </a>
    </li>
    <li class="toctree-l2">
@@ -276,11 +303,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="06.b.%20Maximum%20Likelihood.html">
-     6.1 Likelihood and log-likelihood with
-     <span class="math notranslate nohighlight">
-      \(n\)
-     </span>
-     independent observations
+     6.1 Likelihood with independent observations
     </a>
    </li>
    <li class="toctree-l2">
@@ -302,7 +325,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="07.a.%20Frequentist%20I.html">
-   7. Frequentist I: Confidence Intervals (CIs)
+   7. Frequentist I: Confidence Intervals
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
   <label for="toctree-checkbox-6">
@@ -312,7 +335,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="07.b.%20Frequentist%20I.html">
-     7.1 Introduction to confidence intervals
+     7.1 Confidence intervals
     </a>
    </li>
    <li class="toctree-l2">
@@ -458,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     10.2 Calculating the posterior for the mean of a Normal distribution
+     Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -502,37 +525,37 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="11.b.%20Types%20of%20Investigation.html">
-     11.1 Specifying research questions:
+     11.1 Specifying research questions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.c.%20Types%20of%20Investigation.html">
-     11.2 Different types of investigation:
+     11.2 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.d.%20Types%20of%20Investigation.html">
-     11.3 Properties of different types of investigation:
+     11.3 Properties of different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.e.%20Types%20of%20Investigation.html">
-     11.4 An example:
+     11.4 An example: stroke in women
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.f.%20Types%20of%20Investigation.html">
-     11.5 Role of explanatory variables in different types of investigation:
+     11.5 Role of explanatory variables in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation:
+     11.6 Example: the role of regression in different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Example: the role of regression in different types of investigation:
+     11.7 Summary
     </a>
    </li>
   </ul>
@@ -564,7 +587,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.e.%20Linear%20Regression%20I.html">
-     12.4 Estimation of the population parameters.
+     12.4 Estimation of the population parameters
     </a>
    </li>
    <li class="toctree-l2">
@@ -635,6 +658,11 @@
    <li class="toctree-l2">
     <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
      12.18 ANOVA for models with categorical independent variables.
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
+     12.19 Summary of chapter
     </a>
    </li>
    <li class="toctree-l2">
@@ -839,43 +867,6 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-   16. Extensions: Confounding, standardization, and collapsibility
-  </a>
-  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
-  <label for="toctree-checkbox-15">
-   <i class="fas fa-chevron-down">
-   </i>
-  </label>
-  <ul>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.1 Motivating example: treatment for kidney stones:
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.2 Estimating the effect of treatment
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.3 Extension to a continuous outcome
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.4 Collapsibility
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Extensions%20Confounding%2C%20standardization%2C%20and%20collapsibility.html">
-     16.5 Concluding remarks and References
-    </a>
-   </li>
-  </ul>
- </li>
 </ul>
 
     </div>
@@ -933,11 +924,11 @@
         aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
     <div class="dropdown-buttons sourcebuttons">
         <a class="repository-button"
-            href="https://github.com/LSHTM-HDS/Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
+            href="https//github.com//LSHTM-HDS//Content-2021"><button type="button" class="btn btn-secondary topbarbtn"
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https://github.com/LSHTM-HDS/Content-2021/issues/new?title=Issue%20on%20page%20%2F04.g. Population.and.samples.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F04.g. Population.and.samples.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -958,7 +949,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/Jupyter_Book/SHDS//v2/gh/LSHTM-HDS/Content-2021/main?urlpath=tree/Jupyter_Book/SHDS/04.g. Population.and.samples.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/04.g. Population.and.samples.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,9 +957,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -989,13 +977,13 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a2-illustration-of-the-bias-in-statistical-estimators">
-   A2 Illustration of the bias in statistical estimators
+  <a class="reference internal nav-link" href="#a2-bias-of-estimators">
+   A2 Bias of estimators
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#a3-clt-applied-to-sampling-distribution-of-a-proportion">
-   A3 CLT applied to sampling distribution of a proportion
+  <a class="reference internal nav-link" href="#a3-clt-for-binary-data">
+   A3 CLT for binary data
   </a>
  </li>
 </ul>
@@ -1028,29 +1016,38 @@
 </ul>
 <p>For example, a study of a new treatment for a disease may wish to generalise to all potential patients.</p>
 <ul class="simple">
-<li><p>Does the population we wish to generalise to concern an intervention</p></li>
-</ul>
-<p>For example, we might be studying response to treatment in a randomised clinical trial. Or, alternatively, are we using the sample only observationally?</p>
-<ul class="simple">
 <li><p>Have we sampled all the population?</p></li>
 </ul>
 <p>For example, a study of leukemia in the years following a leak from a nuclear power station may sample all subjects developing leukemia within the relevant time period in the vicinity of the power station. In such an example it is not clear how to define a wider population from which the sample can be considered to have been drawn. In these and other cases one approach is to consider a notional or counterfactual population, which can only have a conceptual existence.</p>
 <p>In general the issues can be complex and will not be considered further here.</p>
 </div>
-<div class="section" id="a2-illustration-of-the-bias-in-statistical-estimators">
-<h2>A2 Illustration of the bias in statistical estimators<a class="headerlink" href="#a2-illustration-of-the-bias-in-statistical-estimators" title="Permalink to this headline">¶</a></h2>
-<p>Using statistical theory it is possible to show that <span class="math notranslate nohighlight">\(\bar{X}\)</span> is an unbiased estimator of <span class="math notranslate nohighlight">\(\mu\)</span>. One of the simplest examples is the from the <em>Bernoulli</em> distribution;</p>
-<p><strong>Example</strong> Let <span class="math notranslate nohighlight">\(X_1, X_2,.., X_n\)</span> be Bernoulli trials with success parameter <span class="math notranslate nohighlight">\(p\)</span>. We want to know the expected value of <span class="math notranslate nohighlight">\(p\)</span>, from the random variables <span class="math notranslate nohighlight">\(X\)</span>, which we will refer to as <span class="math notranslate nohighlight">\(E_p(\bar{X})\)</span>. Then,</p>
-<p><span class="math notranslate nohighlight">\(E_p(\bar{X}) = E\big[\frac{X_1 + X_2 + ... + X_n}{n}\big] \)</span></p>
-<p><span class="math notranslate nohighlight">\(  \hspace{1.3cm}          = \frac{1}{n} E[X_1 + X_2 + ... + X_n]\)</span> <span class="math notranslate nohighlight">\(\hspace{1.3cm}\)</span>  (we can take constants out of expectations)</p>
-<p><span class="math notranslate nohighlight">\(   \hspace{1.3cm}           = \frac{1}{n} (E(X_1) + E(X_2) + ... + E(X_n)) \)</span></p>
-<p><span class="math notranslate nohighlight">\(    \hspace{1.3cm}          = \frac{1}{n} (p + p + ... + p) = p\)</span></p>
-<p>So this simple use of algebra illustrates that <span class="math notranslate nohighlight">\(\bar{X}\)</span> is an unbiased estimator for <span class="math notranslate nohighlight">\(p\)</span>. Following the logic in the example you can also illustrate this for estimating <span class="math notranslate nohighlight">\(\mu\)</span> from a normal distribution (when <span class="math notranslate nohighlight">\(\sigma\)</span> is known).</p>
+<div class="section" id="a2-bias-of-estimators">
+<h2>A2 Bias of estimators<a class="headerlink" href="#a2-bias-of-estimators" title="Permalink to this headline">¶</a></h2>
+<p>Using statistical theory it is possible to show that the sample mean, <span class="math notranslate nohighlight">\(\bar{X}\)</span>, is an unbiased estimator of the population mean, <span class="math notranslate nohighlight">\(\mu\)</span>. One of the simplest examples is when our random variables follow the <em>Bernoulli</em> distribution.</p>
+<p><strong>Example</strong> Let <span class="math notranslate nohighlight">\(X_1, X_2,.., X_n\)</span> be Bernoulli trials with success parameter <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p>Our estimate of <span class="math notranslate nohighlight">\(p\)</span> is the sample mean,</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{p} = \bar{X} = \frac{X_1 + X_2 + ... + X_n}{n}
+\]</div>
+<p>We will now show that the expected value of this estimator is equal to the population mean, <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+E(\bar{X}) &amp; = E\left[\frac{X_1 + X_2 + ... + X_n}{n}\right] \\
+&amp; = \frac{1}{n} E[X_1 + X_2 + ... + X_n] \qquad  \mbox{(we can take constants out of expectations)} \\
+&amp;= \frac{1}{n} (E(X_1) + E(X_2) + ... + E(X_n)) \\
+&amp;= \frac{1}{n} (p + p + ... + p) = p \\
+\end{align*}
+\end{split}\]</div>
+<p>This simple use of algebra illustrates that <span class="math notranslate nohighlight">\(\bar{X}\)</span> is an unbiased estimator for <span class="math notranslate nohighlight">\(p\)</span>.</p>
+<p><strong>Exercise:</strong> You can use similar logic to demonstrate that the sample mean is an unbiased estimator for the population mean when the random variables <span class="math notranslate nohighlight">\(X\)</span> follow a normal distribution with known variance.</p>
 </div>
-<div class="section" id="a3-clt-applied-to-sampling-distribution-of-a-proportion">
-<h2>A3 CLT applied to sampling distribution of a proportion<a class="headerlink" href="#a3-clt-applied-to-sampling-distribution-of-a-proportion" title="Permalink to this headline">¶</a></h2>
-<p>Using the emotional distress study again, now we will simulate different samples, also each of 10 people, but this time measure a binary characteristic for each person - the presence of emotional distress.</p>
-<p>We suppose that, in the population, the true proportion is 28%.</p>
+<div class="section" id="a3-clt-for-binary-data">
+<h2>A3 CLT for binary data<a class="headerlink" href="#a3-clt-for-binary-data" title="Permalink to this headline">¶</a></h2>
+<p>We will return to the emotional distress study again, using the sub-sample of 10 people, but this time measure a binary characteristic for each person - the presence of emotional distress.</p>
+<p>We suppose that, in the population, the true proportion is 28%. Under this assumption, we can simulate (draw) different samples,  each containing 10 people. If we do this a very large number of times, say 10,000, then the distribution of the different sample proportions we obtain will give us a very good picture of the true sampling distribution of the proportion. (Of course, remember that in practice we cannot do this because we won’t know the true population proportion).</p>
+<p>The code below obtains the approximate sampling distribution.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Population parameters</span>
@@ -1071,7 +1068,7 @@
 <span class="c1"># Draw graphs</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
 <span class="nf">hist</span><span class="p">(</span><span class="n">sample.props</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">10000</span><span class="p">],</span> 
-     <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="m">-0.05</span><span class="p">,</span> <span class="m">0.95</span><span class="p">,</span> <span class="m">0.05</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;green4&quot;</span><span class="p">,</span>
+     <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">breaks</span><span class="o">=</span><span class="nf">seq</span><span class="p">(</span><span class="m">-0.05</span><span class="p">,</span> <span class="m">0.95</span><span class="p">,</span> <span class="m">0.05</span><span class="p">),</span> <span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span>
      <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">6</span><span class="p">),</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Sample proportion with emotional distress&quot;</span><span class="p">,</span> 
      <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=10)&quot;</span><span class="p">)</span>  <span class="c1"># the &quot;\n&quot; makes a newline</span>
 </pre></div>
@@ -1104,6 +1101,34 @@
 </div>
 </div>
 </div>
+<p>Now we will explore what happens to the sampling distribution as we take larger samples. So instead of 10 people per sample, suppose we had 100 or 10,000 people in each sample. The central limit theorem tells us we expect the distribution to become more normal as we increase the sample size.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x10n</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">10</span><span class="p">,</span><span class="m">1000</span><span class="p">),</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.28</span><span class="p">))</span> 
+<span class="n">x10mean</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">x10n</span><span class="p">)</span>
+                            
+<span class="n">x50n</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">50</span><span class="p">,</span><span class="m">1000</span><span class="p">),</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.28</span><span class="p">))</span> 
+<span class="n">x50mean</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">x50n</span><span class="p">)</span>
+
+<span class="n">x100n</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">100</span><span class="p">,</span><span class="m">1000</span><span class="p">),</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.28</span><span class="p">))</span> 
+<span class="n">x100mean</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">x100n</span><span class="p">)</span>
+
+<span class="n">x1000n</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="nf">rep</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span><span class="m">1000</span><span class="p">),</span><span class="nf">function</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="nf">rbinom</span><span class="p">(</span><span class="n">x</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="n">p</span> <span class="o">=</span> <span class="m">0.28</span><span class="p">))</span> 
+<span class="n">x1000mean</span> <span class="o">&lt;-</span> <span class="nf">colMeans</span><span class="p">(</span><span class="n">x1000n</span><span class="p">)</span>
+                                
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">x10mean</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=10)&quot;</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">x50mean</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=50)&quot;</span><span class="p">)</span>        
+<span class="nf">hist</span><span class="p">(</span><span class="n">x100mean</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=100)&quot;</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">x1000mean</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">,</span><span class="n">xlim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">0</span><span class="p">,</span><span class="m">1</span><span class="p">),</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Sampling distribution of the sample \n proportion (samples of n=1,000)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="_images/04.g. Population.and.samples_9_0.png" src="_images/04.g. Population.and.samples_9_0.png" />
+</div>
+</div>
+<p>As predicted by the CLT, even though the original data are binary (each person has emotional distress or does not), the sample proportion (which is the mean of the binary outcomes) has a distribution which becomes approximately normal with sufficiently large samples.</p>
 </div>
 </div>
 
@@ -1111,8 +1136,8 @@
     {
         requestKernel: true,
         binderOptions: {
-            repo: "LSHTM-HDS/Content-2021",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
