@@ -111,17 +111,6 @@ parts:
       - file: 12.h. Linear Regression I
       - file: 12.i. Linear Regression I
       - file: 12.j. Linear Regression I
-      - file: 12.k. Linear Regression I
-      - file: 12.l. Linear Regression I
-      - file: 12.m. Linear Regression I
-      - file: 12.n. Linear Regression I
-      - file: 12.o. Linear Regression I
-      - file: 12.p. Linear Regression I
-      - file: 12.q. Linear Regression I
-      - file: 12.r. Linear Regression I
-      - file: 12.s. Linear Regression I
-      - file: 12.t. Linear Regression I
-      - file: 12.u. Linear Regression I
     - file: 13.a. Linear Regression II
       sections: 
       - file: 13.b. Linear Regression II
@@ -131,32 +120,35 @@ parts:
       - file: 13.f. Linear Regression II
       - file: 13.g. Linear Regression II
       - file: 13.h. Linear Regression II
-      - file: 13.i. Linear Regression II
-      - file: 13.j. Linear Regression II
-      - file: 13.k. Linear Regression II
-      - file: 13.l. Linear Regression II
-      - file: 13.m. Linear Regression II
-      - file: 13.n. Linear Regression II
-    - file: 14.a. Logistic Regression
+    - file: 14.a. Linear Regression III
       sections: 
-      - file: 14.b. Logistic Regression
-      - file: 14.c. Logistic Regression
-      - file: 14.d. Logistic Regression
-      - file: 14.e. Logistic Regression
-      - file: 14.f. Logistic Regression
-      - file: 14.g. Logistic Regression
-      - file: 14.h. Logistic Regression
-      - file: 14.i. Logistic Regression
-      - file: 14.j. Logistic Regression
-      - file: 14.k. Logistic Regression
-      - file: 14.l. Logistic Regression
-      - file: 14.m. Logistic Regression
-      - file: 14.n. Logistic Regression
-    - file: 15.a. Poisson Regression Model
+      - file: 14.b. Linear Regression III
+      - file: 14.c. Linear Regression III
+      - file: 14.d. Linear Regression III
+      - file: 14.e. Linear Regression III
+      - file: 14.f. Linear Regression III
+      - file: 14.g. Linear Regression III
+      - file: 14.h. Linear Regression II I    
+    - file: 15.a. Logistic Regression
       sections: 
-      - file: 15.b. Poisson Regression Model 
-      - file: 15.c. Poisson Regression Model 
-      - file: 15.d. Poisson Regression Model 
-      - file: 15.e. Poisson Regression Model 
-      - file: 15.f. Poisson Regression Model 
+      - file: 15.b. Logistic Regression
+      - file: 15.c. Logistic Regression
+      - file: 15.d. Logistic Regression
+      - file: 15.e. Logistic Regression
+      - file: 15.f. Logistic Regression
+      - file: 15.g. Logistic Regression
+      - file: 15.h. Logistic Regression
+      - file: 15.i. Logistic Regression
+      - file: 15.j. Logistic Regression
+      - file: 15.k. Logistic Regression
+      - file: 15.l. Logistic Regression
+      - file: 15.m. Logistic Regression
+      - file: 15.n. Logistic Regression
+    - file: 16.a. Poisson Regression Model
+      sections: 
+      - file: 16.b. Poisson Regression Model 
+      - file: 16.c. Poisson Regression Model 
+      - file: 16.d. Poisson Regression Model 
+      - file: 16.e. Poisson Regression Model 
+      - file: 16.f. Poisson Regression Model 
 
