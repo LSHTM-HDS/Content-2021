@@ -110,7 +110,6 @@ parts:
       - file: 12.g. Linear Regression I
       - file: 12.h. Linear Regression I
       - file: 12.i. Linear Regression I
-      - file: 12.j. Linear Regression I
     - file: 13.a. Linear Regression II
       sections: 
       - file: 13.b. Linear Regression II
