@@ -17,3 +17,5 @@ ynonlin<-exp(x)+rnorm(100,0,0.5)
 plot(x,ynonlin, xlim=c(-0.5,3), yaxt="n", xaxt="n", xlab=" ", ylab=" ", main="Non-linear Association")
 title(ylab="Y", line=0, cex.lab=1.2)
 title(xlab="X", line=0, cex.lab=1.2)
+
+

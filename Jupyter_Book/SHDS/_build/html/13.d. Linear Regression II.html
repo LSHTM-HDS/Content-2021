@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13.3 Statistical tests of assumptions &#8212; Statistics for Health Data Science</title>
+    <title>13.3 Example Birthweight data: Model 3 &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="13.4 Dealing with violations of assumptions" href="13.e.%20Linear%20Regression%20II.html" />
-    <link rel="prev" title="13.2 Diagnostics for checking the assumptions of linear regression" href="13.c.%20Linear%20Regression%20II.html" />
+    <link rel="next" title="13.4 Centering" href="13.e.%20Linear%20Regression%20II.html" />
+    <link rel="prev" title="13.2 The multivariable linear regression model" href="13.c.%20Linear%20Regression%20II.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -340,7 +340,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="07.c.%20Frequentist%20I.html">
-     7.2 95% confidence intervals for the mean
+     7.2 Confidence intervals for the mean
     </a>
    </li>
    <li class="toctree-l2">
@@ -382,7 +382,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="08.b.%20Frequentist%20II.html">
-     8.1 Proving and disproving hypotheses
+     8.1 Evidence against hypotheses
     </a>
    </li>
    <li class="toctree-l2">
@@ -558,6 +558,11 @@
      11.7 Summary
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
+     References
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -615,66 +620,11 @@
      12.9 Prediction intervals
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.k.%20Linear%20Regression%20I.html">
-     12.10 Multivariable linear regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.l.%20Linear%20Regression%20I.html">
-     12.11 The multivariable linear regression model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.m.%20Linear%20Regression%20I.html">
-     12.12 Birthweight data: Model 3
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.n.%20Linear%20Regression%20I.html">
-     12.13 Centering
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.o.%20Linear%20Regression%20I.html">
-     12.14 Including categorical predictor variables in linear regression models
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.p.%20Linear%20Regression%20I.html">
-     12.15 Birthweight data: Model 4
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.q.%20Linear%20Regression%20I.html">
-     12.16 Analysis of Variance
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.r.%20Linear%20Regression%20I.html">
-     12.17 ANOVA for multivariable linear regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.s.%20Linear%20Regression%20I.html">
-     12.18 ANOVA for models with categorical independent variables.
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.t.%20Linear%20Regression%20I.html">
-     12.19 Summary of chapter
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.u.%20Linear%20Regression%20I.html">
-     12.20 Proofs
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression II
+   13. Linear Regression I
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -684,74 +634,44 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Introduction
+     13.1 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 Diagnostics for checking the assumptions of linear regression
+     13.2 The multivariable linear regression model
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     13.3 Statistical tests of assumptions
+     13.3 Example Birthweight data: Model 3
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.e.%20Linear%20Regression%20II.html">
-     13.4 Dealing with violations of assumptions
+     13.4 Centering
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including higher-order terms and interaction terms in a linear regression model
+     13.5 Including categorical predictor variables in linear regression models
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     13.6 Modelling interaction terms
+     12.15 Birthweight data: Model 4
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.7 Interaction between a continuous variable and a binary variable
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.i.%20Linear%20Regression%20II.html">
-     13.8 Interaction between two binary variables
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.j.%20Linear%20Regression%20II.html">
-     13.9 Interaction between two continuous predictor variables
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.k.%20Linear%20Regression%20II.html">
-     13.10 Collinearity
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.l.%20Linear%20Regression%20II.html">
-     13.11 Different types of investigation
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.m.%20Linear%20Regression%20II.html">
-     13.12 Example using the birthweight data
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.n.%20Linear%20Regression%20II.html">
-     13.13 Summary of chapter
+     13.6 Optional Reading: Analysis of Variance
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="14.a.%20Logistic%20Regression.html">
-   14 Logistic Regression
+  <a class="reference internal" href="14.a.%20Linear%20Regression%20III.html">
+   14. Linear Regression III
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-13" name="toctree-checkbox-13" type="checkbox"/>
   <label for="toctree-checkbox-13">
@@ -760,79 +680,45 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="14.b.%20Logistic%20Regression.html">
-     14.1 Introduction: linear vs. logistic regression
+    <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
+     14.1 Diagnostics for checking the assumptions of linear regression
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="14.c.%20Logistic%20Regression.html">
-     14.2 The dementia dataset
+    <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="14.d.%20Logistic%20Regression.html">
-     14.3 The logistic regression model
+    <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="14.e.%20Logistic%20Regression.html">
-     14.4 Interpretation of the parameters
+    <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
+     14.4 Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="14.f.%20Logistic%20Regression.html">
-     14.5 Example 1: Dementia
+    <a class="reference internal" href="14.f.%20Linear%20Regression%20III.html">
+     14.5 Collinearity
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="14.g.%20Logistic%20Regression.html">
-     14.6 Interpretation when
-     <span class="math notranslate nohighlight">
-      \(X_i\)
-     </span>
-     is a continuous variable
+    <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
+     14.6 Different types of investigation
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="14.h.%20Logistic%20Regression.html">
-     14.7 Example 2: Dementia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="14.i.%20Logistic%20Regression.html">
-     14.8 Interactions
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="14.j.%20Logistic%20Regression.html">
-     14.9 Example 3: Dementia
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="14.k.%20Logistic%20Regression.html">
-     14.10 Diagnosis for the logistic regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="14.l.%20Logistic%20Regression.html">
-     14.11 Adequacy of the logistic regression model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="14.m.%20Logistic%20Regression.html">
-     14.12 Common pitfalls
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="14.n.%20Logistic%20Regression.html">
-     14.13 Additional notes
+    <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
+     14.7 Example using the birthweight data
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="15.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="15.a.%20Logistic%20Regression.html">
+   15 Logistic Regression
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-14" name="toctree-checkbox-14" type="checkbox"/>
   <label for="toctree-checkbox-14">
@@ -841,27 +727,108 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.b.%20Poisson%20Regression%20Model.html">
+    <a class="reference internal" href="15.b.%20Logistic%20Regression.html">
+     15.1 Introduction: linear vs. logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.c.%20Logistic%20Regression.html">
+     15.2 The dementia dataset
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.d.%20Logistic%20Regression.html">
+     15.3 The logistic regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
+     15.4 Interpretation of the parameters
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
+     15.5 Example 1: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
+     15.6 Interpretation when
+     <span class="math notranslate nohighlight">
+      \(X_i\)
+     </span>
+     is a continuous variable
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.h.%20Logistic%20Regression.html">
+     15.7 Example 2: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
+     15.8 Interactions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
+     15.9 Example 3: Dementia
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
+     15.10 Diagnosis for the logistic regression
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
+     15.11 Adequacy of the logistic regression model
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.12 Common pitfalls
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
+     15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
      15.1 Introduction to Count Data and Poisson Distribution:
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.c.%20Poisson%20Regression%20Model.html">
+    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
      15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.d.%20Poisson%20Regression%20Model.html">
+    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
      15.3 Poisson regression in health data science
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.e.%20Poisson%20Regression%20Model.html">
+    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
      15.4 How to fit a Poisson Regression in R
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.f.%20Poisson%20Regression%20Model.html">
+    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
      15.5 Zero Inflated Poisson Regression Example
     </a>
    </li>
@@ -966,26 +933,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples-using-the-birthweight-data">
-   13.3.1 Examples using the birthweight data
-  </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#we-make-the-following-observations">
-     We make the following observations:
-    </a>
-   </li>
-  </ul>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -994,61 +941,56 @@
         
               <div>
                 
-  <div class="section" id="statistical-tests-of-assumptions">
-<h1>13.3 Statistical tests of assumptions<a class="headerlink" href="#statistical-tests-of-assumptions" title="Permalink to this headline">¶</a></h1>
-<p>It might be anticipated that the assumptions of the linear regression model can be investigated using formal hypothesis tests. Indeed there exist a number of statistical tests for normalilty including the Kolmorogorov-Smirnov test and the Shapiro-Wilk test. Further, there exist statistical tests for heteroscedasticity of rediduals.</p>
-<p>However, these tests suffer from the drawback that they tend to only have statistical power to detect model violations when datasets are large and when datasets are large the central limit theorem means that the consequences of these violations of are less important than in small datasets. With large datasets, tests of normality and heteroscedasticity can often be statistically significant, but the impact of these violations may be practically unimportant. For these reasons, the tests are considered by many statisticians to be of limited practical use and so details of these procedures will not be given here.</p>
-<div class="section" id="examples-using-the-birthweight-data">
-<h2>13.3.1 Examples using the birthweight data<a class="headerlink" href="#examples-using-the-birthweight-data" title="Permalink to this headline">¶</a></h2>
-<p>We will use some of the graphical tools discussed above to assess the validity of assumptions in the multivariable model defined in the previous chapter (Model 3). Recall Model 3 was defined as:</p>
+  <div class="section" id="example-birthweight-data-model-3">
+<h1>13.3 Example Birthweight data: Model 3<a class="headerlink" href="#example-birthweight-data-model-3" title="Permalink to this headline">¶</a></h1>
+<p>We are interested in investigating a model that relates birthweight to length of pregnancy and mother’s height. We will use the following multivariable linear regression model:</p>
 <div class="math notranslate nohighlight">
-\[\text{Model 3: } y_i = \beta_0 + \beta_1 l_i + \beta_2h_i + \epsilon_i \]</div>
-<p>The outcome <span class="math notranslate nohighlight">\(y_i\)</span> denotes the birthweight (in oz) for the <span class="math notranslate nohighlight">\(i^{th}\)</span> baby. The covariates <span class="math notranslate nohighlight">\(l_i\)</span> and <span class="math notranslate nohighlight">\(h_i\)</span> denote the length of pregnancy (i.e. number of gestational days), and the height of the mother (in inches) for the <span class="math notranslate nohighlight">\(i^{th}\)</span> baby, respectively.</p>
-<p>The code below fits Model 3 to the birthweight data, and then produces (1) a plot of residuals against fitted values (2) a Q-Q plot of the standardised residuals and (3) a plot of Cook’s distances by observation.</p>
+\[\text{Model 3: } y_i = \beta_0 + \beta_1 l_i + \beta_2h_i  + \epsilon_i \]</div>
+<p>The outcome <span class="math notranslate nohighlight">\(y_i\)</span> denotes the birthweight (in oz) for the <span class="math notranslate nohighlight">\(i^{th}\)</span> baby. The predictors <span class="math notranslate nohighlight">\(l_i\)</span> and <span class="math notranslate nohighlight">\(h_i\)</span> denote the length of pregnancy (i.e. number of gestational days), and the height of the mother (in inches), for the <span class="math notranslate nohighlight">\(i^{th}\)</span> baby, respectively.</p>
+<p>The linear regression can be conducted in R using the <code class="docutils literal notranslate"><span class="pre">lm()</span></code> command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Load the data</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model 3: Relating birthweight to length of pregnancy and mother&#39;s height</span>
 <span class="n">data</span><span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;https://www.inferentialthinking.com/data/baby.csv&#39;</span><span class="p">)</span>
-
-<span class="c1">#Fit Model 3 to the data</span>
 <span class="n">model3</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="n">Gestational.Days</span><span class="o">+</span><span class="n">Maternal.Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-
-<span class="c1">#Set the graphical space so that two plots are shown side-by-side in one row</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
-
-<span class="c1">#Plot the residuals against the fitted values</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">model3</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">,</span> <span class="n">model3</span><span class="o">$</span><span class="n">residuals</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Residual plot&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Fitted values&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Residuals&quot;</span><span class="p">,</span> <span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="m">0</span><span class="p">)</span>
-
-<span class="c1">#Obtain the standardised residuals</span>
-<span class="n">Standardised.Residuals</span><span class="o">&lt;-</span><span class="nf">rstandard</span><span class="p">(</span><span class="n">model3</span><span class="p">)</span>
-
-<span class="c1">#Normal Q-Q plot of the standardised residuals </span>
-<span class="nf">qqnorm</span><span class="p">(</span><span class="n">Standardised.Residuals</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Normal Q-Q plot&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Expected normal value&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Standardised Residuals&quot;</span><span class="p">)</span>
-<span class="nf">qqline</span><span class="p">(</span><span class="n">Standardised.Residuals</span><span class="p">)</span>
-
-<span class="c1">#Plot of Cook&#39;s distance</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">model3</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model3</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<img alt="_images/13.d. Linear Regression II_1_0.png" src="_images/13.d. Linear Regression II_1_0.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = Birth.Weight ~ Gestational.Days + Maternal.Height, 
+    data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-53.829 -10.589   0.246  10.254  54.403 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      -88.51993   14.31910  -6.182 8.73e-10 ***
+Gestational.Days   0.45237    0.03006  15.051  &lt; 2e-16 ***
+Maternal.Height    1.27598    0.19049   6.698 3.27e-11 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 16.44 on 1171 degrees of freedom
+Multiple R-squared:  0.1969,	Adjusted R-squared:  0.1955 
+F-statistic: 143.5 on 2 and 1171 DF,  p-value: &lt; 2.2e-16
+</pre></div>
 </div>
 </div>
-<div class="section" id="we-make-the-following-observations">
-<h3>We make the following observations:<a class="headerlink" href="#we-make-the-following-observations" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p><strong>Linearity:</strong> The residuals are equally distributed above and below zero in the “Residual plot”</p></li>
-<li><p><strong>Normality:</strong> There do not appear to be any serious departures from normality, based on the “Normal Q-Q plot”</p></li>
-<li><p><strong>Homoscedasticity:</strong> The variance of residuals are constant across the fitted values (based on the “Residual plot”)</p></li>
-</ol>
-<p>However, the Cook’s distance plot reveals that observation 239 is highly influential, compared to the remaining observations. Observations 405 and 820 also have a relatively high Cook’s distance. Sensitivity analyses may be required to assess model fit with and without these observations (this is discussed in Section 3.5.3).</p>
-<p>Finally, we can assume that the independence assumption holds, since the birthweight of a baby from one mother is not expected to be associated with the birthweight of a baby from a different mother. Therefore, we can reasonably conclude that all the assumptions are met in this model (but there are some potentially problematic observations in terms of influence).</p>
-<p>In the next section, we briefly introduce some of the statisical solutions available for when assumptions are not met.</p>
 </div>
-</div>
+<p><strong>Interpretation of the regression coefficients</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_1=0.45\)</span>. This is the estimated regression coefficient for number of gestational days. It is interpreted as: the expected increase in a baby’s birthweight for each gestational day, amongst babies whose mothers were of the same height, is 0.45 ounces.</p></li>
+</ul>
+<p>It may be tempting to make causal inference from regression models such as Model 3, i.e. “longer pregnancies <strong>cause</strong> an increase in birthweight”. However, this is far from straightforward. Based on the results presented above, it would be reasonable to say that “birthweight increases with length of pregnancy”. However, it is much less reasonable to claim that higher birthweight is caused by longer pregnancies (based on these results alone), because there may be an unobserved third variable that is the “real” cause of both increased length of pregancy and birthweight. Causal statements require more than just the results of a statistical model to make them plausible; this is a topic that we return to in the next lesson.</p>
+<p><em>Excerise</em>: What is the interpretation of <span class="math notranslate nohighlight">\(\hat{\beta}_2?\)</span></p>
+<p><strong>Interpretation of the intercept</strong></p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_0=-88.52\)</span>. The interpretation is that the estimated mean birthweight for a child who was born after 0 gestastional days and whose mother’s height is 0 inches is -88.52 ouces. Clearly this is an absurd value to estimate because no babies are born that quickly and no mothers are that short. If we wish to obtain a more reasonable intercept, we can use a technique called <strong>centering</strong>.</p></li>
+</ul>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1076,8 +1018,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="13.c.%20Linear%20Regression%20II.html" title="previous page">13.2 Diagnostics for checking the assumptions of linear regression</a>
-    <a class='right-next' id="next-link" href="13.e.%20Linear%20Regression%20II.html" title="next page">13.4 Dealing with violations of assumptions</a>
+    <a class='left-prev' id="prev-link" href="13.c.%20Linear%20Regression%20II.html" title="previous page">13.2 The multivariable linear regression model</a>
+    <a class='right-next' id="next-link" href="13.e.%20Linear%20Regression%20II.html" title="next page">13.4 Centering</a>
 
         </div>
         
