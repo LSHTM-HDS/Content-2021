@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13.3 Example Birthweight data: Model 3 &#8212; Statistics for Health Data Science</title>
+    <title>13.3 Including multiple covariates &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="13.4 Centering" href="13.e.%20Linear%20Regression%20II.html" />
-    <link rel="prev" title="13.2 The multivariable linear regression model" href="13.c.%20Linear%20Regression%20II.html" />
+    <link rel="prev" title="13.2 Multivariable linear regression" href="13.c.%20Linear%20Regression%20II.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -190,7 +190,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -582,7 +582,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -597,34 +597,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -634,17 +629,17 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -654,17 +649,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.7  Modelling interaction terms
     </a>
    </li>
   </ul>
@@ -681,22 +671,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -706,12 +696,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
-     14.7 Example using the birthweight data
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -941,19 +931,21 @@
         
               <div>
                 
-  <div class="section" id="example-birthweight-data-model-3">
-<h1>13.3 Example Birthweight data: Model 3<a class="headerlink" href="#example-birthweight-data-model-3" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="including-multiple-covariates">
+<h1>13.3 Including multiple covariates<a class="headerlink" href="#including-multiple-covariates" title="Permalink to this headline">¶</a></h1>
 <p>We are interested in investigating a model that relates birthweight to length of pregnancy and mother’s height. We will use the following multivariable linear regression model:</p>
 <div class="math notranslate nohighlight">
-\[\text{Model 3: } y_i = \beta_0 + \beta_1 l_i + \beta_2h_i  + \epsilon_i \]</div>
+\[
+\text{Model 4: } y_i = \beta_0 + \beta_1 l_i + \beta_2h_i  + \epsilon_i 
+\]</div>
 <p>The outcome <span class="math notranslate nohighlight">\(y_i\)</span> denotes the birthweight (in oz) for the <span class="math notranslate nohighlight">\(i^{th}\)</span> baby. The predictors <span class="math notranslate nohighlight">\(l_i\)</span> and <span class="math notranslate nohighlight">\(h_i\)</span> denote the length of pregnancy (i.e. number of gestational days), and the height of the mother (in inches), for the <span class="math notranslate nohighlight">\(i^{th}\)</span> baby, respectively.</p>
 <p>The linear regression can be conducted in R using the <code class="docutils literal notranslate"><span class="pre">lm()</span></code> command:</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model 3: Relating birthweight to length of pregnancy and mother&#39;s height</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model 4: Relating birthweight to length of pregnancy and mother&#39;s height</span>
 <span class="n">data</span><span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;https://www.inferentialthinking.com/data/baby.csv&#39;</span><span class="p">)</span>
-<span class="n">model3</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="n">Gestational.Days</span><span class="o">+</span><span class="n">Maternal.Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">model3</span><span class="p">)</span>
+<span class="n">model4</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="n">Gestational.Days</span><span class="o">+</span><span class="n">Maternal.Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model4</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -983,9 +975,9 @@ F-statistic: 143.5 on 2 and 1171 DF,  p-value: &lt; 2.2e-16
 </div>
 <p><strong>Interpretation of the regression coefficients</strong></p>
 <ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_1=0.45\)</span>. This is the estimated regression coefficient for number of gestational days. It is interpreted as: the expected increase in a baby’s birthweight for each gestational day, amongst babies whose mothers were of the same height, is 0.45 ounces.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_1=0.45\)</span>. This is the estimated regression coefficient for number of gestational days. It is interpreted as: the expected increase in a baby’s birthweight for each gestational day, <em>amongst babies whose mothers were of the same height</em>, is 0.45 ounces.</p></li>
 </ul>
-<p>It may be tempting to make causal inference from regression models such as Model 3, i.e. “longer pregnancies <strong>cause</strong> an increase in birthweight”. However, this is far from straightforward. Based on the results presented above, it would be reasonable to say that “birthweight increases with length of pregnancy”. However, it is much less reasonable to claim that higher birthweight is caused by longer pregnancies (based on these results alone), because there may be an unobserved third variable that is the “real” cause of both increased length of pregancy and birthweight. Causal statements require more than just the results of a statistical model to make them plausible; this is a topic that we return to in the next lesson.</p>
+<p>It may be tempting to make causal inference from regression models such as Model 4, i.e. “longer pregnancies <strong>cause</strong> an increase in birthweight”. However, this is far from straightforward. Based on the results presented above, it would be reasonable to say that “birthweight increases with length of pregnancy”. However, it is much less reasonable to claim that higher birthweight is caused by longer pregnancies (based on these results alone), because there may be an unobserved third variable that is the “real” cause of both increased length of pregancy and birthweight. Causal statements require more than just the results of a statistical model to make them plausible; this is a topic that we return to in the next lesson.</p>
 <p><em>Excerise</em>: What is the interpretation of <span class="math notranslate nohighlight">\(\hat{\beta}_2?\)</span></p>
 <p><strong>Interpretation of the intercept</strong></p>
 <ul class="simple">
@@ -1018,7 +1010,7 @@ F-statistic: 143.5 on 2 and 1171 DF,  p-value: &lt; 2.2e-16
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="13.c.%20Linear%20Regression%20II.html" title="previous page">13.2 The multivariable linear regression model</a>
+    <a class='left-prev' id="prev-link" href="13.c.%20Linear%20Regression%20II.html" title="previous page">13.2 Multivariable linear regression</a>
     <a class='right-next' id="next-link" href="13.e.%20Linear%20Regression%20II.html" title="next page">13.4 Centering</a>
 
         </div>

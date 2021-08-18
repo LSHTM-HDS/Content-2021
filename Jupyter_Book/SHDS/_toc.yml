@@ -118,7 +118,6 @@ parts:
       - file: 13.e. Linear Regression II
       - file: 13.f. Linear Regression II
       - file: 13.g. Linear Regression II
-      - file: 13.h. Linear Regression II
     - file: 14.a. Linear Regression III
       sections: 
       - file: 14.b. Linear Regression III
@@ -127,7 +126,7 @@ parts:
       - file: 14.e. Linear Regression III
       - file: 14.f. Linear Regression III
       - file: 14.g. Linear Regression III
-      - file: 14.h. Linear Regression III    
+      - file: 14.h. Linear Regression III
     - file: 15.a. Logistic Regression
       sections: 
       - file: 15.b. Logistic Regression
