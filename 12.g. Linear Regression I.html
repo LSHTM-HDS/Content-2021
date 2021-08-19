@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>12.6 Inference &#8212; Statistics for Health Data Science</title>
+    <title>12.6 Inference for the slope &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12.7 Hypothesis testing" href="12.h.%20Linear%20Regression%20I.html" />
-    <link rel="prev" title="12.5 Examples" href="12.f.%20Linear%20Regression%20I.html" />
+    <link rel="next" title="12.7 Example: binary independent variable" href="12.h.%20Linear%20Regression%20I.html" />
+    <link rel="prev" title="12.5 Example: continuous independent variable" href="12.f.%20Linear%20Regression%20I.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -190,7 +190,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -582,7 +582,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -597,34 +597,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -634,17 +629,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -654,17 +649,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
+     13.7  Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.8 Summary
     </a>
    </li>
   </ul>
@@ -681,22 +676,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -706,7 +701,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -788,6 +788,43 @@
    <li class="toctree-l2">
     <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
      15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
+     15.1 Introduction to Count Data and Poisson Distribution:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
+     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
+     15.3 Poisson regression in health data science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
+     15.4 How to fit a Poisson Regression in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
+     15.5 Zero Inflated Poisson Regression Example
     </a>
    </li>
   </ul>
@@ -891,6 +928,36 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#sampling-distribution-of-estimated-slope">
+   12.6.1 Sampling distribution of estimated slope
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#hypothesis-testing">
+   12.6.2 Hypothesis testing
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#confidence-intervals-for-the-regression-coefficients">
+   12.6.3 Confidence intervals for the regression coefficients
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -899,25 +966,162 @@
         
               <div>
                 
-  <div class="section" id="inference">
-<h1>12.6 Inference<a class="headerlink" href="#inference" title="Permalink to this headline">¶</a></h1>
+  <div class="section" id="inference-for-the-slope">
+<h1>12.6 Inference for the slope<a class="headerlink" href="#inference-for-the-slope" title="Permalink to this headline">¶</a></h1>
 <p>Most commonly, we wish to conduct statistical inference on the estimated slope. Consequently, we focus our attention here on <span class="math notranslate nohighlight">\(\beta_1\)</span>, but it is possible to apply the same methods to the intercept, <span class="math notranslate nohighlight">\(\beta_0\)</span>.</p>
-<p>The estimated slope, <span class="math notranslate nohighlight">\(\hat{\beta_1}\)</span> can be written as a linear combination of the observed values and is therefore a function of the random error (<span class="math notranslate nohighlight">\(\epsilon\)</span>):</p>
-<div class="math notranslate nohighlight">
-\[\begin{split}
-\begin{align}
-\hat{\beta_1} &amp;= \sum_{i=1}^n (\frac{(x_i-\bar{x})}{\sum_{i=1}^n(x_i-\bar{x})^2}(y_i-\bar{y})) \\
-            &amp;=\beta_1 + \sum_{i=1}^n (\frac{(x_i-\bar{x})}{\sum_{i=1}^n(x_i-\bar{x})^2}(\epsilon_i-\bar{\epsilon}))
-\end{align}
-\end{split}\]</div>
-<p>The second equality is obtained by substituting in <span class="math notranslate nohighlight">\((y_i-\bar{y})=\beta_1(x_i-\bar{x})+(\epsilon_i-\bar{\epsilon})\)</span>.</p>
-<p>Since the estimated parameter is a linear combination of the <span class="math notranslate nohighlight">\(\epsilon_i\)</span>, and <span class="math notranslate nohighlight">\(\epsilon_i \sim NID(0,\sigma^2)\)</span>, the estimated parameter itself is normally distributed. More specifically, it is normally distributed with mean <span class="math notranslate nohighlight">\(\beta_1\)</span> and standard deviation:</p>
+<p>For our statistical inference, we will view the values of the independent variable (<span class="math notranslate nohighlight">\(x_1, x_2, ..., x_n\)</span>) as fixed quantities.</p>
+<div class="section" id="sampling-distribution-of-estimated-slope">
+<h2>12.6.1 Sampling distribution of estimated slope<a class="headerlink" href="#sampling-distribution-of-estimated-slope" title="Permalink to this headline">¶</a></h2>
+<p>Knowing the sampling distribution of <span class="math notranslate nohighlight">\(\hat{\beta_1}\)</span> allows us to perform hypothesis tests and construct confidence intervals for <span class="math notranslate nohighlight">\(\beta_1\)</span>. Therefore, we now obtain that sampling distribution. The estimated slope, <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span>, is a linear combination of the observed outcome values:</p>
 <div class="math notranslate nohighlight">
 \[
-SD(\hat{\beta_1})=\sqrt{\frac{\sigma^2}{ns_x^2}}
+\begin{align}
+\hat{\beta}_1 &amp;= \sum_{i=1}^n \left(\frac{(x_i-\bar{x})}{\sum_{i=1}^n(x_i-\bar{x})^2}(y_i-\bar{y})\right) 
+\end{align}
 \]</div>
-<p>where <span class="math notranslate nohighlight">\(s_x^2\)</span> is the variance of <span class="math notranslate nohighlight">\(x\)</span>. It can be seen from the formula above that the variance of <span class="math notranslate nohighlight">\(\beta_1\)</span> increases with the size of the residual variance (as might be expected intuitively), decreases with increasing sample size (larger sample sizes give more precise estimates) and decreases as <span class="math notranslate nohighlight">\(s_x^2\)</span> increases (the wider range of <span class="math notranslate nohighlight">\(x\)</span> values the more precision of estimates).</p>
-<p>Knowing the distribution of <span class="math notranslate nohighlight">\(\hat{\beta_1}\)</span>, allows us to perform hypothesis tests and construct confidence intervals for <span class="math notranslate nohighlight">\(\beta_1\)</span>.</p>
+<p>We can simplify this by substituting in <span class="math notranslate nohighlight">\((y_i - \bar{y})=\beta_1(x_i-\bar{x})+(\epsilon_i-\bar{\epsilon})\)</span>, allowing us to write the estimated slope as a function of the random error (<span class="math notranslate nohighlight">\(\epsilon\)</span>):</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\hat{\beta}_1  &amp;=\beta_1 + \sum_{i=1}^n \left(\frac{(x_i-\bar{x})}{\sum_{i=1}^n(x_i-\bar{x})^2}(\epsilon_i-\bar{\epsilon})\right)
+\end{align}
+\]</div>
+<p>Since the estimated parameter is a linear combination of the <span class="math notranslate nohighlight">\(\epsilon_i\)</span>, and <span class="math notranslate nohighlight">\(\epsilon_i \overset{\small{iid}}{\sim} N(0, \sigma^2)\)</span>, the estimated parameter itself is normally distributed, with a distribution centred around the true value, <span class="math notranslate nohighlight">\(\beta_1\)</span>. More specifically,</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\hat{\beta}_1  \sim N\left(\beta_1, \frac{\sigma^2}{SS_{xx}}\right), \qquad \mbox{with} \qquad  SS_{xx} = \sum_{i=1}^n(x_i-\bar{x})^2
+\end{align}
+\]</div>
+<p>So the standard error of the slope is <span class="math notranslate nohighlight">\(SE(\hat{\beta}_1) = \sqrt{\frac{\sigma^2}{SS_{xx}}}\)</span>. The standard error (and therefore also the variance) of <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span>:</p>
+<ul class="simple">
+<li><p>increases with the size of the error variance (as might be expected intuitively),</p></li>
+<li><p>decreases with increasing sample size (larger sample sizes give more precise estimates) and</p></li>
+<li><p>decreases as <span class="math notranslate nohighlight">\({SS}_{xx}^2\)</span> increases (a wider range of <span class="math notranslate nohighlight">\(x\)</span> values leads to more precision in the slope estimate).</p></li>
+</ul>
+<p>We have seen that the sampling distrbution of <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> follows a normal distribution. We can convert this to a standard normal distribution:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\frac{\hat{\beta}_1 - \beta_1}{\sqrt{\sigma^2/SS_{xx}}} \sim N(0,1) 
+\end{align}
+\]</div>
+<p>Of course, we do not know the true value of the error variance, <span class="math notranslate nohighlight">\(\sigma\)</span>. When we replace this with our sample estimate, this changes the distribution above from a normal to a t-distribution. For large samples, these two distributions are very similar but for smaller samples the t-distribution has larger tails (suggesting that in smaller samples needing to estimate <span class="math notranslate nohighlight">\(\sigma\)</span> leads to more variability in the estimated slope, which makes sense intuitively).</p>
+<p>Therefore, replacing <span class="math notranslate nohighlight">\(\sigma\)</span> by the estimate <span class="math notranslate nohighlight">\(\hat{\sigma}\)</span>, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\frac{\hat{\beta}_1 - \beta_1}{\sqrt{\hat{\sigma}^2/SS_{xx}}} \sim t_{n-2}
+\end{align}
+\]</div>
+<p>This t-distribution is the one we will use to obtain p-values and confidence intervals for the slope parameter.</p>
+</div>
+<div class="section" id="hypothesis-testing">
+<h2>12.6.2 Hypothesis testing<a class="headerlink" href="#hypothesis-testing" title="Permalink to this headline">¶</a></h2>
+<p>Typically, we are interested in assessing whether there is a relationship, or association, between the independent variable <span class="math notranslate nohighlight">\(X\)</span> and outcome <span class="math notranslate nohighlight">\(Y\)</span>. Recall our model: <span class="math notranslate nohighlight">\(E[Y | X=x] = \beta_0 + \beta_1 X\)</span>. Within the framework of this linear model, no association between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> would be reflected by a value of <span class="math notranslate nohighlight">\(\beta_1 = 0\)</span>.</p>
+<p>Therefore, we are typically interested in testing the <strong>null hypothesis</strong> <span class="math notranslate nohighlight">\(H_0: \beta_1=0\)</span> against the alternative <span class="math notranslate nohighlight">\(H_1: \beta_1 \neq 0\)</span>.</p>
+<p>Under our null hypothesis, the following test statistic follows a t-distribution, as we saw above:</p>
+<div class="math notranslate nohighlight">
+\[
+T = \frac{\hat{\beta}_1 - 0}{\sqrt{\hat{\sigma}^2/SS_{xx}}} \sim t_{n-2}
+\]</div>
+<p>We now follow the familiar process from the session in hypothesis testing. We evaluate <span class="math notranslate nohighlight">\(T\)</span> in our particular sample and then calculate the probability of obtaining that value or one more extreme for a <span class="math notranslate nohighlight">\(t\)</span>-distribution with <span class="math notranslate nohighlight">\(n-2\)</span> degrees of freedom.</p>
+<p>Notes</p>
+<blockquote>
+<div><p><span class="math notranslate nohighlight">\(T\)</span> is simply the estimate divided by its standard error. This is a familiar form of test statistic which we saw in the session about hypothesis testing.  <br> <br>
+Although typically we are interested in the null hypothesis <span class="math notranslate nohighlight">\(H_0: \beta_1=0\)</span> we could use the same approach to test other null hypotheses, such as <span class="math notranslate nohighlight">\(H_0: \beta_1=5\)</span>. However, it is rare that we are interested in values other than 0. Therefore, p-values outputted by statistical software arise from testing the null hypothesis value of 0 by default.</p>
+</div></blockquote>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>Returning to our linear model relating birthweight to gestational days in the baby dataset, we will now test the null hypothesis that there is no association between gestational days and birthweight, i.e. <span class="math notranslate nohighlight">\(H_0: \beta_1 = 0\)</span> in Model 1.</p>
+<p>First, we rerun the code to reproduce the linear model output.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;https://www.inferentialthinking.com/data/baby.csv&#39;</span><span class="p">)</span>
+<span class="n">model1</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="n">Gestational.Days</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = Birth.Weight ~ Gestational.Days, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-49.348 -11.065   0.218  10.101  57.704 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      -10.75414    8.53693   -1.26    0.208    
+Gestational.Days   0.46656    0.03054   15.28   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 16.74 on 1172 degrees of freedom
+Multiple R-squared:  0.1661,	Adjusted R-squared:  0.1654 
+F-statistic: 233.4 on 1 and 1172 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the above output, the column <code class="docutils literal notranslate"><span class="pre">Std.Error</span></code> gives the standard errors of the estimated intercept and slope.</p>
+<p>The columns <code class="docutils literal notranslate"><span class="pre">t</span> <span class="pre">value</span></code> and <code class="docutils literal notranslate"><span class="pre">Pr(&gt;|t|)</span></code> give the test statistic and associated <span class="math notranslate nohighlight">\(p\)</span>-value for a hypothesis test, testing the null hypothesis that <span class="math notranslate nohighlight">\(H_0: \beta_0 = 0\)</span> in the top row and <span class="math notranslate nohighlight">\(H_0: \beta_1 = 0\)</span> in the bottom row.</p>
+<p>Note that the t-value for the slope (which we call <span class="math notranslate nohighlight">\(T\)</span> in the discussion above) is 15.28. You can check that this is equal to the estimate divided by the standard error (0.46656/0.03054 = 15.277014).</p>
+<p>To test the null hypothesis that <span class="math notranslate nohighlight">\(H_0: \beta_1=0\)</span> against the alternative <span class="math notranslate nohighlight">\(H_1:\beta_1 \neq  0\)</span>, the test statistic is 15.28 and the associated <span class="math notranslate nohighlight">\(p\)</span>-value is <span class="math notranslate nohighlight">\(&lt;2\times10^{-16}\)</span>. This is a very small <span class="math notranslate nohighlight">\(p\)</span>-value and therefore the data provide strong evidence against the null hypothesis. Based on these results, we can conclude that birthweight is associated with length of pregnancy.</p>
+</div>
+</div>
+<div class="section" id="confidence-intervals-for-the-regression-coefficients">
+<h2>12.6.3 Confidence intervals for the regression coefficients<a class="headerlink" href="#confidence-intervals-for-the-regression-coefficients" title="Permalink to this headline">¶</a></h2>
+<p>We saw above that:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+\frac{\hat{\beta}_1 - \beta_1}{\hat{SE}(\hat{\beta}_1) } \sim t_{n-2}
+\end{align}
+\]</div>
+<p>with <span class="math notranslate nohighlight">\(\hat{SE}(\hat{\beta}_1) = \sqrt{\hat{\sigma}^2/SS_{xx}}\)</span>. This leads to the following 95% confidence interval for <span class="math notranslate nohighlight">\(\beta_1\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\beta}_1 \pm t_{0.025, n-2} \hat{SE}(\hat{\beta}_1)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(t_{0.025, n-2}\)</span> is the 97.5<span class="math notranslate nohighlight">\(^{th}\)</span> percentile of a <span class="math notranslate nohighlight">\(t\)</span>-distribution with <span class="math notranslate nohighlight">\(n-2\)</span> degrees of freedom. For large samples, this value will be approximately 1.96. For smaller samples it will be a slightly larger number (reflecting additional imprecision in our estimate).</p>
+<p>If <span class="math notranslate nohighlight">\(n\)</span> is sufficiently large, the t-distribution is well approximated by a normal distribution. In this case, a 95% confidence interval can be found by:</p>
+<div class="math notranslate nohighlight">
+\[
+\hat{\beta}_1 \pm 1.96 \times \hat{SE}(\hat{\beta}_1)
+\]</div>
+<p>Example: Calculate a 95% for  <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span>  (using the values given in the R output above):</p>
+<p>Click the button to reveal the solution.</p>
+<div class="toggle docutils container">
+<p>Solution:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\hat{\beta}_1 \pm 1.96 \times SE(\hat{\beta}_1) \\
+0.46656 \pm 1.96 \times 0.03054
+\end{split}\]</div>
+<p>which gives a 95% CI from 0.407 to 0.526.</p>
+<p>The data are consistent with an increase in birthweight per daily increase in gestational age between 0.41oz and 0.52oz.</p>
+<p>Since 0 does not lie within the interval, we conclude that there is evidence of an association between birthweight and length of pregancy (as also indicated by the results of the hypothesis test).</p>
+</div>
+<p>Alternatively, we can obtain confidence intervals using <code class="docutils literal notranslate"><span class="pre">confint</span></code> in R. The option <code class="docutils literal notranslate"><span class="pre">parm</span></code> tells R which regression coefficients to provide confidence intervals for. Try omitting this option or changing it to value 1 to see what happens.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Confidence intervals for the slope, beta_1</span>
+<span class="nf">confint</span><span class="p">(</span><span class="n">model1</span><span class="p">,</span> <span class="n">parm</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr></thead>
+<tbody>
+	<tr><th scope=row>Gestational.Days</th><td>0.4066435</td><td>0.5264702</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -945,8 +1149,8 @@ SD(\hat{\beta_1})=\sqrt{\frac{\sigma^2}{ns_x^2}}
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="12.f.%20Linear%20Regression%20I.html" title="previous page">12.5 Examples</a>
-    <a class='right-next' id="next-link" href="12.h.%20Linear%20Regression%20I.html" title="next page">12.7 Hypothesis testing</a>
+    <a class='left-prev' id="prev-link" href="12.f.%20Linear%20Regression%20I.html" title="previous page">12.5 Example: continuous independent variable</a>
+    <a class='right-next' id="next-link" href="12.h.%20Linear%20Regression%20I.html" title="next page">12.7 Example: binary independent variable</a>
 
         </div>
         

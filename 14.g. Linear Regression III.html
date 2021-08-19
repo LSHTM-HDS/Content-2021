@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>14.6 Different types of investigation &#8212; Statistics for Health Data Science</title>
+    <title>14.6 Optional Reading: Analysis of Variance &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,7 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15 Logistic Regression" href="15.a.%20Logistic%20Regression.html" />
+    <link rel="next" title="14.7 Proofs" href="14.h.%20Linear%20Regression%20III.html" />
     <link rel="prev" title="14.5 Collinearity" href="14.f.%20Linear%20Regression%20III.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -190,7 +190,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -582,7 +582,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -597,34 +597,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -634,17 +629,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -654,17 +649,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
+     13.7  Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.8 Summary
     </a>
    </li>
   </ul>
@@ -681,22 +676,22 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -706,7 +701,12 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -788,6 +788,43 @@
    <li class="toctree-l2">
     <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
      15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
+     15.1 Introduction to Count Data and Poisson Distribution:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
+     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
+     15.3 Poisson regression in health data science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
+     15.4 How to fit a Poisson Regression in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
+     15.5 Zero Inflated Poisson Regression Example
     </a>
    </li>
   </ul>
@@ -897,24 +934,101 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#id1">
-   14.6.1 Different types of investigation
+  <a class="reference internal nav-link" href="#partitioning-variance">
+   14.6.1 Partitioning variance
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-coefficient-of-determination">
+     14.6.1.1 The coefficient of determination
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#comparing-models">
+   14.6.2 Comparing models
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#analysis-of-risk-factors">
-   14.6.2 Analysis of risk factors
+  <a class="reference internal nav-link" href="#the-anova-table">
+   14.6.3 The ANOVA table
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hypothesis-testing-using-anova">
+     14.6.3.1 Hypothesis testing using ANOVA
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#connection-between-f-tests-and-t-tests-in-simple-linear-regression">
+     14.6.3.2 Connection between F tests and t-tests in simple linear regression
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#prediction">
-   14.6.3 Prediction
+  <a class="reference internal nav-link" href="#anova-for-multivariable-linear-regression">
+   14.6.4 ANOVA for multivariable linear regression
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-global-f-test">
+     14.6.4.1 The Global F test
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Example
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-partial-f-test">
+     14.6.4.2 The partial F test
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id2">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#causal-inference">
-   14.6.4 Causal inference
+  <a class="reference internal nav-link" href="#anova-for-models-with-categorical-independent-variables">
+   14.6.5 ANOVA for models with categorical independent variables
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#sum-of-squares-for-models-with-categorical-variables">
+     14.6.5.1 Sum of squares for models with categorical variables
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id3">
+     14.6.5.2 The ANOVA table
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-f-test">
+     14.6.5.3 The F-test
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#id4">
+       Example
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -927,47 +1041,542 @@
         
               <div>
                 
-  <div class="section" id="different-types-of-investigation">
-<h1>14.6 Different types of investigation<a class="headerlink" href="#different-types-of-investigation" title="Permalink to this headline">¶</a></h1>
-<p>We have now learnt how to fit linear models, interpret the results, test the assumptions and model more complex associations. We now consider the different types of research question that linear regression models can be used for. We will see how the type of research question being asked can influence the role of the covariates and the interpretation and presentation of the results.</p>
-<div class="section" id="id1">
-<h2>14.6.1 Different types of investigation<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
-<p>The three different types of investigation we focus on here are:</p>
-<ol class="simple">
-<li><p>Analysis of risk factors</p></li>
-<li><p>Prediction analysis</p></li>
-<li><p>Causal inference</p></li>
-</ol>
-<p>These types of investigation were introduced in Lesson 11 and we provide a brief reminder here.</p>
-<p>A <strong>risk factor</strong> for a particular outcome is a variable that is associated with that outcome. In a risk factor analysis the aim is to investigate how one or more potential risk factors are associated with an outcome. For example, we may want investigate how age, sex, comorbidities etc. are associated with the risk of contracting coronavirus disease.</p>
-<p>Prediction analysis uses variables in our data to predict a future observation of a particular outcome. The model in a prediction analysis may be referred to as a <strong>prediction model</strong>, a <strong>risk prediction model</strong> or a <strong>prognosis model</strong>. A well known example of a predition model is the <a class="reference external" href="https://qrisk.org/three/">QRISK</a> score which predicts a person’s risk of developing a heart attack or stroke over the next 10 years using a range of characteristics such as age, sex, smoking status etc.</p>
-<p>Causal inference focuses on estimating the effect of a particular <strong>exposure</strong> or <strong>treatment</strong> of interest on an outcome.  For example, we may be interested in the <strong>casual effect</strong> of insulin use (treatment) on lung function (outcome) in patients with cystic fibrosis.</p>
-<p><em>Exercise</em>. Recall the three examples given for types questions that we can investigate using statistical models (at the beginning of the previous chapter):</p>
+  <div class="section" id="optional-reading-analysis-of-variance">
+<h1>14.6 Optional Reading: Analysis of Variance<a class="headerlink" href="#optional-reading-analysis-of-variance" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="partitioning-variance">
+<h2>14.6.1 Partitioning variance<a class="headerlink" href="#partitioning-variance" title="Permalink to this headline">¶</a></h2>
+<p>The total variation in <span class="math notranslate nohighlight">\(Y\)</span> is equal to:</p>
+<div class="math notranslate nohighlight">
+\[ 
+SS_{TOT} = \sum_{i=1}^n (Y_i-\bar{Y})^2
+\]</div>
+<p>This is often referred to as the sum of squares of the <span class="math notranslate nohighlight">\(Y\)</span>’s. This represents all of the variation in <span class="math notranslate nohighlight">\(Y\)</span> about its overall mean value. We can think about two components of this total variation:</p>
 <ul class="simple">
-<li><p>Does birthweight increase with length of pregnancy?</p></li>
-<li><p>Does taking drug A reduce inflammation more than taking drug B in patients with arthritis?</p></li>
-<li><p>Can we predict the risk of heart disease for our patients?</p></li>
+<li><p>the predictable variation in <span class="math notranslate nohighlight">\(Y\)</span> (predicted by the variables included in the model) and</p></li>
+<li><p>the unpredictable variation in <span class="math notranslate nohighlight">\(Y\)</span> (the remaining “noise”).</p></li>
 </ul>
-<p>What type of research question do you classify the above examples as?</p>
-<p>In the following subsections we will consider how the different types of investigation influence how we perform and interpret linear regression analyses in more detail. In each case we will assume that we are interested in one outcome <span class="math notranslate nohighlight">\(Y\)</span> and three covariates <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span> and <span class="math notranslate nohighlight">\(X_3\)</span>.</p>
+<p>The predictable variation represents the variation of the predicted values <span class="math notranslate nohighlight">\(\hat{Y}\)</span> about the mean. We can measure this as:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+SS_{REG}= \sum_{i=1}^n (\hat{Y_i}-\bar{Y})^2 
+\end{align}
+\]</div>
+<p>The unpredictable variation represents the variation of the observed values about their predicted values:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align}
+SS_{RES} =  \sum_{i=1}^n(Y_i-\hat{Y_i})^2
+\end{align}
+\]</div>
+<p>Note that in the equations above, SS stands for sums of squares, REG for regression and RES for residual.</p>
+<p>A key result for ANOVA is that the total variation in <span class="math notranslate nohighlight">\(Y\)</span> can be partitioned into the predictable variation, explained by the regression model, and the unpredictable (residual) variation:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+SS_{TOT} &amp;= SS_{REG}+SS_{RES} \\
+\rightarrow \sum_{i=1}^n (Y_i-\bar{Y})^2 &amp;= \sum_{i=1}^n (\hat{Y_i}-\bar{Y})^2 + \sum_{i=1}^n(Y_i-\hat{Y_i})^2
+\end{align}
+\end{split}\]</div>
+<div class="section" id="the-coefficient-of-determination">
+<h3>14.6.1.1 The coefficient of determination<a class="headerlink" href="#the-coefficient-of-determination" title="Permalink to this headline">¶</a></h3>
+<p>Using the sums of squares defined above, we can calculate the proportion of variance explained by statistical model, known as the <strong>coefficient of determination</strong>.</p>
+<p>The proportion of variation which is explained by a statistical model is denoted by <span class="math notranslate nohighlight">\(R^2\)</span> and is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+R^2 = \frac{SS_{REG}}{SS_{TOT}}.
+\]</div>
 </div>
-<div class="section" id="analysis-of-risk-factors">
-<h2>14.6.2 Analysis of risk factors<a class="headerlink" href="#analysis-of-risk-factors" title="Permalink to this headline">¶</a></h2>
-<p>Analyses of risk factors are concerned with estimating conditional and/or unconditional associations between the covariates (<span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span> and <span class="math notranslate nohighlight">\(X_3\)</span>) and the outcome (<span class="math notranslate nohighlight">\(Y\)</span>). Typical analyses may start with univariable regression models (e.g. three simple linear regression models relating <span class="math notranslate nohighlight">\(Y\)</span> to each covariate individually) and then proceed to a multivariable analysis. In such analyses we would report the estimated regression coefficients and associated confidence intervals.</p>
-<p>In such analyses it is important to remember that association does not imply causation. Results from risk factor analyses are often mistakenly interpreted as causal. However, this type of analysis does not consider temporal ordering, or appropriately account for confounding (a concept described in more detail in a subsequent section) and so interpreting the regression coefficients in a risk factor analysis as causal effects can be misleading.</p>
-<p>The results from a risk factor analysis may reveal some associations that are potentially causal and it might be of interest to follow up with a formal causal inference.</p>
+<div class="section" id="example">
+<h3>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h3>
+<p>The coefficient of determination is given in the <code class="docutils literal notranslate"><span class="pre">summary()</span></code> output for a linear regression in R. In Model 1, <span class="math notranslate nohighlight">\(R^2=0.1661\)</span> (see output below). This means that Model 1 explains 16.6% of the total variation in <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#The coefficient of determination</span>
+<span class="n">data</span><span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;https://www.inferentialthinking.com/data/baby.csv&#39;</span><span class="p">)</span>
+<span class="n">model1</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="n">Gestational.Days</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
+</pre></div>
 </div>
-<div class="section" id="prediction">
-<h2>14.6.3 Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
-<p>In a prediction analysis, we would use <span class="math notranslate nohighlight">\(X_1\)</span>, <span class="math notranslate nohighlight">\(X_2\)</span> and <span class="math notranslate nohighlight">\(X_3\)</span> to predict <span class="math notranslate nohighlight">\(Y\)</span> and the <span class="math notranslate nohighlight">\(X\)</span>-variables are often termed <strong>predictors</strong>. In this type of analysis, we are less concerned with how the covariate relates to each other and their temporal ordering. We simply want to achieve a good prediction of <span class="math notranslate nohighlight">\(Y\)</span>. The statistics of interest are the fitted values (often termed <strong>predictions</strong> or <strong>predicted values</strong>), rather than the estimated regression coefficients. When reporting the results of a prediction analysis we would report which variables were included in the prediction model and how they were modelled, along with diagnostics that measure the predictive performance of the model (e.g. the coefficient of determination and the mean square error).</p>
 </div>
-<div class="section" id="causal-inference">
-<h2>14.6.4 Causal inference<a class="headerlink" href="#causal-inference" title="Permalink to this headline">¶</a></h2>
-<p>Suppose we are interested in estimating the effect of <span class="math notranslate nohighlight">\(X_1\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>. The focus of the analysis is on estimating the regression coefficient of <span class="math notranslate nohighlight">\(X_1\)</span> (<span class="math notranslate nohighlight">\(\beta_1\)</span>) and the results should report this estimate along with a confidence interval. However, in order to obtain an estimate of <span class="math notranslate nohighlight">\(\beta_1\)</span> that we can interpret causally, we need to control (or adjust) for the <strong>confounding effects</strong> of the other covariates. This can be a difficult task and for this reasons causal inference is often thought to be the most challenging type of investigation.</p>
-<p>Confounding occurs when there are covariates that obscure the true causal association between the exposure of interest and the outcome. This will happen when the exposure and the outcome share common causes.</p>
-<p><em>Example 1:</em> Suppose we are interested in the effect of air pollution on lung function. Here, air pollution is the exposure (<span class="math notranslate nohighlight">\(X\)</span>) and lung function is the outcome (<span class="math notranslate nohighlight">\(Y\)</span>). In our analysis we compare the average lung functions of people living in an area with low air pollution (the <strong>unexposed</strong> or <strong>control</strong> group) to people in an area with high air pollution (the <strong>exposed</strong> group), using a simple linear regression relating <span class="math notranslate nohighlight">\(Y\)</span> to <span class="math notranslate nohighlight">\(X\)</span> (<span class="math notranslate nohighlight">\(X=1\)</span> for people in the exposed group and <span class="math notranslate nohighlight">\(X=0\)</span> for people in the unexposed group). We find that the average lung function is much worse in the exposed group, compared to the unexposed and so conclude that air pollution has a strong negative effect on lung function. However, suppose that the people in the unexposed group exercise more, on average, than the exposed group (poor air quality discourages people from spending time outside and therefore the exposed group exercise less). Since exercise is a predictor of lung function, the average lung function in the unexposed group would be higher, on average, than the lung function in the exposed group. Consequently, a simple comparison of average lung functions between the two groups, not accounting for exercise, would make the effect of air pollution seem larger than it actually is. In this case, exercise <strong>confounds</strong> the association between air pollution and lung function. To obtain an unbiased estimate of the causal effect of air pollution on lung function, we would need to adjust for exercise.</p>
-<p><em>Example 2:</em> Suppose we are interested in the effect of taking vitamin supplements on risk of cardiovascular disease. We compare the rates of cardiovascular disease in people who take vitamins compared to those who don’t, and find that the group who do take vitamins are less likely to develop cardiovascular disease. We may conclude that taking vitamins lowers risk of cardiovascular disease. However, the people who do take vitamins are also more likely to exercise more, eat more healthily, drink less alcohol and not smoke, compared to those who do not take vitamins. It turns out, that their lifestyle choices are the real causes of the lower risk of cardiovascular disease, not the use of vitamins.</p>
-<p><em>Exercise: identify the exposure, outcome and confounders in Example 2.</em></p>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = Birth.Weight ~ Gestational.Days, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-49.348 -11.065   0.218  10.101  57.704 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      -10.75414    8.53693   -1.26    0.208    
+Gestational.Days   0.46656    0.03054   15.28   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 16.74 on 1172 degrees of freedom
+Multiple R-squared:  0.1661,	Adjusted R-squared:  0.1654 
+F-statistic: 233.4 on 1 and 1172 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>While <span class="math notranslate nohighlight">\(R^2\)</span> is sometimes used an overall measure of goodness-of-fit (or predictive performance), it isn’t used to formally compare models. This is because <span class="math notranslate nohighlight">\(R^2\)</span> will never decrease when new covariates are added to a model (provided that the number and identity of observations remains the same). Therefore, using <span class="math notranslate nohighlight">\(R^2\)</span> for model comparisons, we would always conclude that the more complex model is at least as good a fit as the simpler model, even if this is not true.</p>
+<p>An adjusted <span class="math notranslate nohighlight">\(R^2\)</span> has been proposed to account for this issue. Above, for example, the <span class="math notranslate nohighlight">\(R^2\)</span> is 0.166 but the adjusted R-squared is a little smaller <span class="math notranslate nohighlight">\(R^2 = 0.165\)</span>. However, we would not recommend using the <span class="math notranslate nohighlight">\(R^2\)</span> for formal model comparison.</p>
+</div>
+</div>
+<div class="section" id="comparing-models">
+<h2>14.6.2 Comparing models<a class="headerlink" href="#comparing-models" title="Permalink to this headline">¶</a></h2>
+<p>When fitting statistical models, we may wish to compare how well two models fit the data, to see which is most appropriate. Consider the following three models:</p>
+<ul class="simple">
+<li><p>Model 1 (birthweight~length of pregnancy)</p></li>
+<li><p>Model 2 (birthweight~mother’s smoking status)</p></li>
+<li><p>Model 4 (birthweight~length of pregnancy+mothers height)</p></li>
+</ul>
+<p>We might want to make the following comparisons between models:</p>
+<ul class="simple">
+<li><p>Comparison 1: Model 1 vs Model 4</p></li>
+<li><p>Comparison 2: Model 2 vs Model 4</p></li>
+</ul>
+<p>In these examples, Comparison 1 is much simpler than Comparison 2, because the models in Comparison 1 are <strong>nested</strong>.</p>
+<p>Statistical models are said to be <strong>nested</strong> when one model (the simpler model) contains a subset of the covariates in the other one (the complex model) and no other additional variables. In Comparison 2, the models are not nested because the simpler model (Model 2) contains mother’s smoking status as a variable, which is not included in Model 4.</p>
+<p>Nested models can be compared using <strong>Analysis of Variance (ANOVA)</strong> (the comparison of non-nested models is much more complicated and is beyond the scope of this module).</p>
+<p>The main idea of ANOVA is that: if the complex model better describes the data than the simpler model, then we would expect a reasonably large amount of the residual variation that is unexplained by the simpler model to be explained by the complex one. ANOVA provides a statistical framework that can formally test this.</p>
+<p>We will first consider ANOVA in the context of simple linear regression, where the simpler model assumes no association between the outcome and the independent variable (the <strong>null</strong> model). We will then consider ANOVA in the context of multivariable linear regression and we end by learning how ANOVA can be used to test for differences between groups in a categorical variable.</p>
+</div>
+<div class="section" id="the-anova-table">
+<h2>14.6.3 The ANOVA table<a class="headerlink" href="#the-anova-table" title="Permalink to this headline">¶</a></h2>
+<p><strong>Sums of squares (SS):</strong> The first step is to partition the total variation into the regression (predictable) and residual (unpredictable) components. Variation is measured by sums of squares (SS). So we partition the total sum of squares (<span class="math notranslate nohighlight">\(SS_{TOT}\)</span>) into  (<span class="math notranslate nohighlight">\(SS_{REG}\)</span> and <span class="math notranslate nohighlight">\(SS_{RES}\)</span>)</p>
+<p><strong>Degrees of freedom:</strong> Each of these sum of squares have an associated degrees of freedom (d.f.). The d.f. for the total sum of squares is <span class="math notranslate nohighlight">\((n-1)\)</span>, since the variance of <span class="math notranslate nohighlight">\(Y\)</span> is <span class="math notranslate nohighlight">\(\sum_{i=1}^n (Y_i-\bar{Y})^2/(n-1)\)</span>. The d.f. for the regression sum of squares in the number of covariates in the regression model (when a simple linear regression model is used this is equal to 1). The residual d.f. is found by subtracting the regression d.f. from the total d.f.</p>
+<p><strong>Mean squares (MS)</strong> The sums of squares also have associated mean squares, which are obtained by dividing each sum of squares by its associated degrees of freedom (note that the residual mean square is then equal to <span class="math notranslate nohighlight">\(\hat{\sigma}^2\)</span>).</p>
+<p>These statistics are typically summarised in an ANOVA table. The table for simple linear regression is shown below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>d.f.</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>Mean Square</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p>1</p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{REG}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{REG}=\frac{SS_{REG}}{1}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Residual</p></td>
+<td><p>n-2</p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{RES}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{RES}=\frac{SS_{RES}}{n-2}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p>n-1</p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{TOT}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{TOT}=\frac{SS_{TOT}}{n-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Notes</p>
+<blockquote>
+<div><p>Very loosely speaking, degrees of freedom are “bits of information”. We start with <span class="math notranslate nohighlight">\(n\)</span> bits of information. Every time we estimate something we “use” a bit of information (and so lose a degree of freedom. Therefore, when we calculate the overall variation in <span class="math notranslate nohighlight">\(Y\)</span>, we lose one of the <span class="math notranslate nohighlight">\(n\)</span> bits of information because we need to calculate the overall mean to obtain the sum of squares of <span class="math notranslate nohighlight">\(Y\)</span>. Therefore, we have <span class="math notranslate nohighlight">\(n-1\)</span> bits of information overall.  In a simple linear regression model, we estimate two parameters, so we’re using two bits of information, but one of these is essentially the same bit we lost from calculating the overall mean, so we say that the regression model is using 1 degree of freedom. We started with n-1 df and the regression model used 1 of them so there are n-2 left for the remaining component, the residual SS.</p>
+</div></blockquote>
+<div class="section" id="hypothesis-testing-using-anova">
+<h3>14.6.3.1 Hypothesis testing using ANOVA<a class="headerlink" href="#hypothesis-testing-using-anova" title="Permalink to this headline">¶</a></h3>
+<p>The values in the ANOVA table can be used to conduct formal hypothesis tests.</p>
+<p>ANOVA is used to test the null hypothesis that the simpler of the two nested models better fits the data. In simple linear regression, the simpler model is the null model, in which case:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0:\)</span> The null model is a better fit</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1:\)</span> The simple linear regression model is a better fit</p></li>
+</ul>
+<p>To test the null hypothesis defined above, we use an <span class="math notranslate nohighlight">\(F\)</span> statistic, defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{MS_{REG}}{MS_{RES}}
+\]</div>
+<p>This ratio measures how much more variation in <span class="math notranslate nohighlight">\(Y\)</span> is explained by the model than would be expected by chance. If the model does not fit the data well, then we would expect this ratio to be equal to 1. The larger the value of <span class="math notranslate nohighlight">\(F\)</span>, the stronger the evidence that the complex model is a better fit. To obtain a <span class="math notranslate nohighlight">\(p\)</span>-value for a formal hypothesis test, <span class="math notranslate nohighlight">\(F\)</span> can be compared to the <span class="math notranslate nohighlight">\(F_{1,(n-2)}\)</span> distribution (where 1 and (n-2) are the relevant degrees of freedom for the mean squares).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># F-test using anova()</span>
+<span class="nf">anova</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th></th><th scope=col>Df</th><th scope=col>Sum Sq</th><th scope=col>Mean Sq</th><th scope=col>F value</th><th scope=col>Pr(&gt;F)</th></tr></thead>
+<tbody>
+	<tr><th scope=row>Gestational.Days</th><td>   1        </td><td> 65449.51   </td><td>65449.5131  </td><td>233.4293    </td><td>3.395226e-48</td></tr>
+	<tr><th scope=row>Residuals</th><td>1172        </td><td>328608.34   </td><td>  280.3825  </td><td>      NA    </td><td>          NA</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>The <span class="math notranslate nohighlight">\(F\)</span>-statistic is equal to 233.4 with <span class="math notranslate nohighlight">\(p\)</span>-value <span class="math notranslate nohighlight">\(&lt;2.2\times10^{-16}\)</span>. With such a small <span class="math notranslate nohighlight">\(p\)</span>-value there is strong evidence against the null hypothesis. Therefore we conclude that the model which includes gesational days is a better fit.</p>
+</div>
+<div class="section" id="connection-between-f-tests-and-t-tests-in-simple-linear-regression">
+<h3>14.6.3.2 Connection between F tests and t-tests in simple linear regression<a class="headerlink" href="#connection-between-f-tests-and-t-tests-in-simple-linear-regression" title="Permalink to this headline">¶</a></h3>
+<p>Above, we used a <span class="math notranslate nohighlight">\(F\)</span>-test to compare the model for birthweight (Y) including gestational days (L):</p>
+<div class="math notranslate nohighlight">
+\[
+y_i = \beta_0  + \beta_1 l_i + \epsilon_i
+\]</div>
+<p>with a model including just a constant</p>
+<div class="math notranslate nohighlight">
+\[
+y_i = \alpha_0  + \epsilon_i
+\]</div>
+<p>In other words, we have just used a <span class="math notranslate nohighlight">\(F\)</span>-test to test the null hypothesis <span class="math notranslate nohighlight">\(H_0: \beta_1 = 0\)</span>. This is exactly the same hypothesis test we tested previously using a <span class="math notranslate nohighlight">\(t\)</span>-test.</p>
+<p>In other words, the <span class="math notranslate nohighlight">\(F\)</span>-test for a simple linear regression model is the same as the <span class="math notranslate nohighlight">\(t\)</span>-test of the null hypothesis that the slope parameter is equal to 0. Below, we perform the <span class="math notranslate nohighlight">\(t\)</span>-test again.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># F-test</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = Birth.Weight ~ Gestational.Days, data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-49.348 -11.065   0.218  10.101  57.704 
+
+Coefficients:
+                  Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)      -10.75414    8.53693   -1.26    0.208    
+Gestational.Days   0.46656    0.03054   15.28   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 16.74 on 1172 degrees of freedom
+Multiple R-squared:  0.1661,	Adjusted R-squared:  0.1654 
+F-statistic: 233.4 on 1 and 1172 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>We see that the t-statistic for the slope is <span class="math notranslate nohighlight">\(t=15.28\)</span>, with p-value <span class="math notranslate nohighlight">\(p&lt;2e-16\)</span>. Previously, we had <span class="math notranslate nohighlight">\(F=233.4=15.24^2=t^2\)</span>. The p-value for the <span class="math notranslate nohighlight">\(F\)</span>-test was identical to the <span class="math notranslate nohighlight">\(t\)</span>-test.</p>
+<p>The two tests are equivalent, with <span class="math notranslate nohighlight">\(F=t^2\)</span>, providing identical p-values. Consequently, it is not particularly common to use <span class="math notranslate nohighlight">\(F\)</span>-tests in the simple linear regression model, they are more useful for assessing more complex models with multiple covariates.</p>
+</div>
+</div>
+<div class="section" id="anova-for-multivariable-linear-regression">
+<h2>14.6.4 ANOVA for multivariable linear regression<a class="headerlink" href="#anova-for-multivariable-linear-regression" title="Permalink to this headline">¶</a></h2>
+<p>In the context of multivariable linear regression, ANOVA can be used to test whether a more complex model is a better fit than the null model (<strong>the Global F test</strong>), or whether a more complex model is a better fit than a simpler model that includes a subset of the covariates in the complex model (<strong>the partial F test</strong>). Each test requires slight modifications to the ANOVA table defined above and we will discuss these in turn.</p>
+<div class="section" id="the-global-f-test">
+<h3>14.6.4.1 The Global F test<a class="headerlink" href="#the-global-f-test" title="Permalink to this headline">¶</a></h3>
+<p>The general formulation of the ANOVA table (suitable for simple and multivariable linear regression models) is given below. <span class="math notranslate nohighlight">\(p\)</span> is the number of covariates in the model.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>d.f.</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>Mean Square</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Regression</p></td>
+<td><p><span class="math notranslate nohighlight">\(p\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{REG}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{REG}=\frac{SS_{REG}}{p}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Residual</p></td>
+<td><p><span class="math notranslate nohighlight">\(n-(p+1)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{RES}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{RES}=\frac{SS_{RES}}{n-p-1}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p><span class="math notranslate nohighlight">\(n-1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{TOT}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{TOT}=\frac{SS_{TOT}}{n-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>Note that this is equivalent to the previous table (for simple linear regression) when <span class="math notranslate nohighlight">\(p=1\)</span>.</p>
+<p>The Global F test tests the null hypothesis (<span class="math notranslate nohighlight">\(H_0\)</span>) that the null model is a better fit than the more complex model against the alternative hypothesis (<span class="math notranslate nohighlight">\(H_1\)</span>) that the complex model is a better fit. Or, equivalently:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0:\)</span> All slope parameters in the complex model are equal to 0.</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1:\)</span> At least one of the slope parameters in the complex model is not equal to 0.</p></li>
+</ul>
+<p>The appropriate <span class="math notranslate nohighlight">\(F\)</span> statistic is the ratio</p>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{MS_{REG}}{MS_{RES}}
+\]</div>
+<p>Under the null hypothesis, <span class="math notranslate nohighlight">\(F\)</span> follows an <span class="math notranslate nohighlight">\(F_{p,(n-(p+1))}\)</span> distribution.</p>
+</div>
+<div class="section" id="id1">
+<h3>Example<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">summary()</span></code> to conduct a global <span class="math notranslate nohighlight">\(F\)</span>-test for Model 4, our model relating birthweight to both length of pregnancy and maternal height.</p>
+<p>The null and alternative hypotheses, for the global <span class="math notranslate nohighlight">\(F\)</span>-test, are defined as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0\)</span>: the regression coefficients for both gestational days and mother’s height are equal to 0.</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1\)</span>: the regression coefficient for either gestational days or mother’s height (or both) is not equal to 0.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># ANOVA for Model 4 </span>
+<span class="n">data</span><span class="o">$</span><span class="n">Gestational.Days.Centered</span><span class="o">&lt;-</span><span class="n">data</span><span class="o">$</span><span class="n">Gestational.Days</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Gestational.Days</span><span class="p">)</span>
+<span class="n">data</span><span class="o">$</span><span class="n">Maternal.Height.Centered</span><span class="o">&lt;-</span><span class="n">data</span><span class="o">$</span><span class="n">Maternal.Height</span><span class="o">-</span><span class="nf">mean</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Maternal.Height</span><span class="p">)</span>
+
+<span class="n">model4</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="n">Gestational.Days.Centered</span><span class="o">+</span><span class="n">Maternal.Height.Centered</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = Birth.Weight ~ Gestational.Days.Centered + Maternal.Height.Centered, 
+    data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-53.829 -10.589   0.246  10.254  54.403 
+
+Coefficients:
+                           Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)               119.46252    0.47980 248.983  &lt; 2e-16 ***
+Gestational.Days.Centered   0.45237    0.03006  15.051  &lt; 2e-16 ***
+Maternal.Height.Centered    1.27598    0.19049   6.698 3.27e-11 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 16.44 on 1171 degrees of freedom
+Multiple R-squared:  0.1969,	Adjusted R-squared:  0.1955 
+F-statistic: 143.5 on 2 and 1171 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <span class="math notranslate nohighlight">\(F\)</span> statistic is 143.5 with a <span class="math notranslate nohighlight">\(p\)</span>-value <span class="math notranslate nohighlight">\(&lt;2.2 \times 10^{-16}\)</span>. Therefore, there is strong evidence against the null and we can conclude that at least one of the estimated regression coefficients is non-zero (i.e Model 4 is a better fit than the null model).</p>
+</div>
+<div class="section" id="the-partial-f-test">
+<h3>14.6.4.2 The partial F test<a class="headerlink" href="#the-partial-f-test" title="Permalink to this headline">¶</a></h3>
+<p>The global <span class="math notranslate nohighlight">\(F\)</span>-test is a joint test of the statistical signficance of all the slope parameters in a linear regression model. On the other hand, the partial <span class="math notranslate nohighlight">\(F\)</span>-test compares the fit of:</p>
+<ul class="simple">
+<li><p>Model A (complex model, with  <span class="math notranslate nohighlight">\(p\)</span> predictors)</p></li>
+<li><p>Model B (simpler nested model with <span class="math notranslate nohighlight">\(p-k\)</span> predictors).</p></li>
+</ul>
+<p>The key to the partial <span class="math notranslate nohighlight">\(F\)</span>-test is the construction of an Analysis of Variance table that partitions the sum of squares explained by the complex model into that explained by the simple model and the extra sum of squares only explained by the complex model. Using the notation that <span class="math notranslate nohighlight">\(SS_{REG_A}\)</span> denotes the sum of squares explained by the complex model, whilst <span class="math notranslate nohighlight">\(SS_{REG_B}\)</span> denotes the sum of squares explained by the simpler model, the ANOVA table is as shown below.</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>———d.f.———</p></th>
+<th class="head"><p>—————SS—————</p></th>
+<th class="head"><p>————–Mean Square————–</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Explained by Model B</p></td>
+<td><p><span class="math notranslate nohighlight">\(p-k\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{REG_B}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{REG_B}=\frac{SS_{REG_B}}{p-k}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Explained by Model A</p></td>
+<td><p><span class="math notranslate nohighlight">\(p\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{REG_A}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{REG_A}=\frac{SS_{REG_A}}{p}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Extra explained by Model A</p></td>
+<td><p><span class="math notranslate nohighlight">\(k\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{REG_A}-SS_{REG_B}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{REG_X}=\frac{(SS_{REG_A}-SS_{REG_B})}{k}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>Residual from Model A</p></td>
+<td><p><span class="math notranslate nohighlight">\(n-(p+1)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{RES_A}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{RES}=\frac{SS_{RES_A}}{n-(p+1)}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p><span class="math notranslate nohighlight">\((n-1)\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{TOT}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{TOT}=\frac{SS_{TOT}}{n-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+<p>The partial <span class="math notranslate nohighlight">\(F\)</span>-test tests the following null hypothesis:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0: \)</span> all of the slope parameters included in Model A but omitted from Model B are equal to zero.</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1: \)</span> at least one of the additional parameters in Model A is not equal to 0.</p></li>
+</ul>
+<p>The appropriate test statistic (<span class="math notranslate nohighlight">\(F\)</span>) is the ratio of extra mean sum of squares in Model A to the mean residual sum of squares from Model A. Under the null hypothesis, this test statistic follows an <span class="math notranslate nohighlight">\(F\)</span>-distribution:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Under } H_0: F = \frac{MS_{REG_X}}{MS_{RES}} \sim F_{k,(n-(p+1))}
+\]</div>
+<p><em>Example</em>: We can use <code class="docutils literal notranslate"><span class="pre">anova()</span></code> to conduct a partial F-test to compare Models 1 and 3:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0:\)</span> Model 1 is the better fit</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_0:\)</span> Model 3 is the better fit</p></li>
+</ul>
+<div class="section" id="id2">
+<h4>Example<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h4>
+<p>We can use <code class="docutils literal notranslate"><span class="pre">anova()</span></code> to conduct a partial <span class="math notranslate nohighlight">\(F\)</span>-test to compare Models 1 and 4:</p>
+<ul class="simple">
+<li><p>Model 1 (birthweight~length of pregnancy)</p></li>
+<li><p>Model 4 (birthweight~length of pregnancy+mothers height)</p></li>
+</ul>
+<p>Model 1 is nested within Model 4. Model 4 is our complex model.</p>
+<p>In this case, the two models only differ by one variable (mother’s height) and so the hypotheses being tested within the partial <span class="math notranslate nohighlight">\(F\)</span>-test could be written as:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0: \beta_2=0\)</span>, where <span class="math notranslate nohighlight">\(\beta_2\)</span> is the regression coefficient for mother’s height.</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_0: \beta_2 \neq 0\)</span>.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">anova</span><span class="p">(</span><span class="n">model1</span><span class="p">,</span> <span class="n">model4</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>Res.Df</th><th scope=col>RSS</th><th scope=col>Df</th><th scope=col>Sum of Sq</th><th scope=col>F</th><th scope=col>Pr(&gt;F)</th></tr></thead>
+<tbody>
+	<tr><td>1172        </td><td>328608.3    </td><td>NA          </td><td>      NA    </td><td>      NA    </td><td>          NA</td></tr>
+	<tr><td>1171        </td><td>316482.2    </td><td> 1          </td><td>12126.13    </td><td>44.86728    </td><td>3.266475e-11</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>The <span class="math notranslate nohighlight">\(F\)</span>-statistic is 44.87 with a <span class="math notranslate nohighlight">\(p\)</span>-value of <span class="math notranslate nohighlight">\(3.23\times 10^{-11}\)</span>. This is strong evidence against the null hypothesis. Hence the data indicates that Model 4 (the more complex model) is the better fit.</p>
+<p>When the two models being compared only differ by one variable, the partial F test is equivalent to the t test of the null hypothesis that the regression coefficient for that variable is equal to 0. Notice in our example that the results of the partial F test are the same as the t-test for <span class="math notranslate nohighlight">\(\beta_2=0\)</span>, with <span class="math notranslate nohighlight">\(F=t^2\)</span>.</p>
+<p>For this reason, partial F tests are more useful in situations where we wish to compare models that differ by more than one variable. The approach is identical to that shown above.</p>
+</div>
+</div>
+</div>
+<div class="section" id="anova-for-models-with-categorical-independent-variables">
+<h2>14.6.5 ANOVA for models with categorical independent variables<a class="headerlink" href="#anova-for-models-with-categorical-independent-variables" title="Permalink to this headline">¶</a></h2>
+<p>Another useful application of ANOVA is to test for differences in means between categories of a categorical variable.</p>
+<p>Suppose we are interested in the association between an outcome <span class="math notranslate nohighlight">\(Y\)</span> and a categorical variable <span class="math notranslate nohighlight">\(X\)</span> with <span class="math notranslate nohighlight">\(K\)</span> groups. We have already seen how to define a multivariable linear regression model using dummy variables for this situation. An alternative model, often termed the <strong>ANOVA model</strong>, is as follows:</p>
+<p>Let <span class="math notranslate nohighlight">\(y_{ki}\)</span> be the value of the outcome for the <span class="math notranslate nohighlight">\(i^{th}\)</span> observation in the <span class="math notranslate nohighlight">\(k^{th}\)</span> group (<span class="math notranslate nohighlight">\(i=1,...,n_k\)</span> and <span class="math notranslate nohighlight">\(k=1,...,K\)</span>). The ANOVA model is then defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+y_{ki}=\mu_k + \epsilon_{ki} \text{, where } \epsilon_{ki} \overset{iid}{\sim} N(0,\sigma^2)
+\]</div>
+<p>Here, <span class="math notranslate nohighlight">\(\mu_k\)</span> is the mean of the outcome in the <span class="math notranslate nohighlight">\(k^{th}\)</span> group. With this representation, the null and alternative hypothesis are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0: \mu_k= \mu\)</span> (i.e. the means in all groups defined by the categorical variables are equal to a common value).</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1: \mu_k \neq \mu\)</span> (i.e. the group means are not all equal).</p></li>
+</ul>
+<div class="section" id="sum-of-squares-for-models-with-categorical-variables">
+<h3>14.6.5.1 Sum of squares for models with categorical variables<a class="headerlink" href="#sum-of-squares-for-models-with-categorical-variables" title="Permalink to this headline">¶</a></h3>
+<p>For models with a single independent categorical variable the fitted values are simply the group means (<span class="math notranslate nohighlight">\(\bar{y_k}\)</span>). Under the null hypothesis that the group means are all equal, the fitted values are all equal to the overall mean (<span class="math notranslate nohighlight">\(\bar{y}\)</span>). This leads to new terminology for the residual sum of squares (<span class="math notranslate nohighlight">\(SS_{RES}\)</span>) and the sum of squares explained by the model (<span class="math notranslate nohighlight">\(SS_{REG}\)</span>):</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(SS_{RES} = \sum_{k=1}^K \sum_{i=1}^{n_k} (y_{ki} - \bar{y}_k)^2\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(SS_{REG} = \sum_{k=1}^K \sum_{i=1}^{n_k} (\bar{y}_k - \bar{y})^2 = \sum_{k=1}^K n_k (\bar{y}_k - \bar{y})^2 \)</span></p></li>
+</ul>
+<p>In this case, the residual sum of squares is often termed the <strong>within group sum of squares <span class="math notranslate nohighlight">\((SS_{Within})\)</span></strong> and the regression sum of squares is often termed the <strong>between group sum of squares <span class="math notranslate nohighlight">\((SS_{Between})\)</span></strong>.</p>
+</div>
+<div class="section" id="id3">
+<h3>14.6.5.2 The ANOVA table<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h3>
+<p>When there are <span class="math notranslate nohighlight">\(K\)</span> groups, the degrees of freedom for the within groups sum of squares is <span class="math notranslate nohighlight">\(n-K\)</span> (because the model includes <span class="math notranslate nohighlight">\(K\)</span> parameters) and the degrees of freedom for the between groups sum of squares is <span class="math notranslate nohighlight">\(K-1\)</span> (because the null model contains a single parameter, the overall mean). Hence the ANOVA table is as follows:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="head"><p>Source</p></th>
+<th class="head"><p>d.f.</p></th>
+<th class="head"><p>SS</p></th>
+<th class="head"><p>Mean Square</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p>Between groups</p></td>
+<td><p><span class="math notranslate nohighlight">\(K-1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{Between}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{Between}=\frac{SS_{Between}}{(K-1)}\)</span></p></td>
+</tr>
+<tr class="row-odd"><td><p>WIthin Groups</p></td>
+<td><p><span class="math notranslate nohighlight">\(n-K\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{Within}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{Within}=\frac{SS_{RES}}{n-K}\)</span></p></td>
+</tr>
+<tr class="row-even"><td><p>Total</p></td>
+<td><p><span class="math notranslate nohighlight">\(n-1\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(SS_{TOT}\)</span></p></td>
+<td><p><span class="math notranslate nohighlight">\(MS_{TOT}=\frac{SS_{TOT}}{n-1}\)</span></p></td>
+</tr>
+</tbody>
+</table>
+</div>
+<div class="section" id="the-f-test">
+<h3>14.6.5.3 The F-test<a class="headerlink" href="#the-f-test" title="Permalink to this headline">¶</a></h3>
+<p>To test the null hypothesis that the means in all groups are equal to a common value, the appropriate <span class="math notranslate nohighlight">\(F\)</span>-statistic is:</p>
+<div class="math notranslate nohighlight">
+\[
+F = \frac{MS_{Between}}{MS_{Within}} \sim F_{(K-1), n-K} \text{ under } H_0.
+\]</div>
+<p>If this test obtains a small <span class="math notranslate nohighlight">\(p\)</span>-value, then we have evidence that the means in the groups are not all the same. However, it does not tell us which of the group means differed from which other group means. For this reason, if we do find evidence of difference in means on an <span class="math notranslate nohighlight">\(F\)</span>-test, we may want to follow up with further analysis. Such further analysis may include pair-wise comparisons of means through analysis restricted to two groups.</p>
+<div class="section" id="id4">
+<h4>Example<a class="headerlink" href="#id4" title="Permalink to this headline">¶</a></h4>
+<p>We conduct an <span class="math notranslate nohighlight">\(F\)</span>-test to compare the average birthweights between babies whose mothers smoke and whose mothers don’t smoke using the birthweight data.</p>
+<p>Let <span class="math notranslate nohighlight">\(\mu_1\)</span> and <span class="math notranslate nohighlight">\(\mu_0\)</span> denote the mean birthweight for babies whose mothers do smoke and don’t smoke, respectively. Then, the relevant hypotheses are:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0: \mu_1= \mu_0\)</span> (i.e. the birthweight of a baby does not depend on whether the mother smoked)</p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1: \mu_1\neq \mu_0\)</span></p></li>
+</ul>
+<p>Recall that we previously defined Model 2 to related birthweight and mother’s smoking status:</p>
+<div class="math notranslate nohighlight">
+\[ 
+y_i = \alpha_0 + \alpha_1 s_i + \epsilon_i
+\]</div>
+<p>Where <span class="math notranslate nohighlight">\(Y\)</span> denotes the birthweight and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+s_{i} =
+\begin{cases}
+    1 &amp; \text{ if the mother smokes} \\
+    0 &amp; \text{ if the mother does not smoke}
+\end{cases} 
+\end{split}\]</div>
+<p>We can rewrite this equation using the ANOVA model as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+    y_{1i} &amp;=\mu_1 + \epsilon_{1i}  \text{ if the mother smokes} \\
+    y_{0i} &amp;=\mu_0 + \epsilon_{0i}  \text{ if the mother does not smoke}
+\end{align} \end{split}\]</div>
+<p>Where <span class="math notranslate nohighlight">\(y_{ki}\)</span> is the mean birthweight in the <span class="math notranslate nohighlight">\(k^{th}\)</span> group (groups are defined by mother’s smoking status), <span class="math notranslate nohighlight">\(\mu_1 = \beta_0 + \beta_1\)</span> and <span class="math notranslate nohighlight">\(\mu_0=\beta_0\)</span> (in other words, our null hypothesis can be rewritten as: <span class="math notranslate nohighlight">\(\beta_1=0\)</span>).</p>
+<p>We can use either <code class="docutils literal notranslate"><span class="pre">anova()</span></code> or <code class="docutils literal notranslate"><span class="pre">summary()</span></code> to conduct the test in R:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">model2</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="nf">factor</span><span class="p">(</span><span class="n">Maternal.Smoker</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">anova</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model2</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th></th><th scope=col>Df</th><th scope=col>Sum Sq</th><th scope=col>Mean Sq</th><th scope=col>F value</th><th scope=col>Pr(&gt;F)</th></tr></thead>
+<tbody>
+	<tr><th scope=row>factor(Maternal.Smoker)</th><td>   1        </td><td> 24002.06   </td><td>24002.0638  </td><td>76.0167     </td><td>9.461068e-18</td></tr>
+	<tr><th scope=row>Residuals</th><td>1172        </td><td>370055.79   </td><td>  315.7473  </td><td>     NA     </td><td>          NA</td></tr>
+</tbody>
+</table>
+</div><div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = Birth.Weight ~ factor(Maternal.Smoker), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-68.085 -11.085   0.915  11.181  52.915 
+
+Coefficients:
+                            Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)                 123.0853     0.6645 185.221   &lt;2e-16 ***
+factor(Maternal.Smoker)True  -9.2661     1.0628  -8.719   &lt;2e-16 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 17.77 on 1172 degrees of freedom
+Multiple R-squared:  0.06091,	Adjusted R-squared:  0.06011 
+F-statistic: 76.02 on 1 and 1172 DF,  p-value: &lt; 2.2e-16
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the ANOVA table, the <code class="docutils literal notranslate"><span class="pre">factor(Maternal.Smoker)</span></code> row gives the between groups results and the <code class="docutils literal notranslate"><span class="pre">Residuals</span></code> row gives the within group results.</p>
+<p>The <span class="math notranslate nohighlight">\(F\)</span>-statistic is equal to 76.02 with a <span class="math notranslate nohighlight">\(p\)</span>-value equal to <span class="math notranslate nohighlight">\(9.46\times10^{-18}\)</span>. This evidence suggests that there is a difference in the mean birthweight between the two groups defined by mother’s smoking status.</p>
+</div>
+</div>
 </div>
 </div>
 
@@ -997,7 +1606,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="14.f.%20Linear%20Regression%20III.html" title="previous page">14.5 Collinearity</a>
-    <a class='right-next' id="next-link" href="15.a.%20Logistic%20Regression.html" title="next page">15 Logistic Regression</a>
+    <a class='right-next' id="next-link" href="14.h.%20Linear%20Regression%20III.html" title="next page">14.7 Proofs</a>
 
         </div>
         

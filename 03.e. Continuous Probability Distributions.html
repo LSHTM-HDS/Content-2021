@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>3.5 Are the data normally distributed? &#8212; Statistics for Health Data Science</title>
+    <title>3.4 Are the data normally distributed? &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -190,7 +190,7 @@
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -582,7 +582,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -597,34 +597,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -634,17 +629,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -654,17 +649,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
+     13.7  Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.8 Summary
     </a>
    </li>
   </ul>
@@ -681,22 +676,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -706,7 +701,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -788,6 +788,43 @@
    <li class="toctree-l2">
     <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
      15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
+     15.1 Introduction to Count Data and Poisson Distribution:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
+     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
+     15.3 Poisson regression in health data science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
+     15.4 How to fit a Poisson Regression in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
+     15.5 Zero Inflated Poisson Regression Example
     </a>
    </li>
   </ul>
@@ -898,17 +935,17 @@
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#data-and-their-relationship-with-statistical-distributions">
-   3.5.1 Data and their relationship with statistical distributions
+   3.4.1 Data and their relationship with statistical distributions
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#id1">
-   3.5.2 Are the data normally distributed?
+   3.4.2 Are the data normally distributed?
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#approaches-to-non-normally-distributed-data">
-   3.5.3 Approaches to non-normally distributed data
+   3.4.3 Approaches to non-normally distributed data
   </a>
  </li>
 </ul>
@@ -923,9 +960,9 @@
               <div>
                 
   <div class="section" id="are-the-data-normally-distributed">
-<h1>3.5 Are the data normally distributed?<a class="headerlink" href="#are-the-data-normally-distributed" title="Permalink to this headline">¶</a></h1>
+<h1>3.4 Are the data normally distributed?<a class="headerlink" href="#are-the-data-normally-distributed" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="data-and-their-relationship-with-statistical-distributions">
-<h2>3.5.1 Data and their relationship with statistical distributions<a class="headerlink" href="#data-and-their-relationship-with-statistical-distributions" title="Permalink to this headline">¶</a></h2>
+<h2>3.4.1 Data and their relationship with statistical distributions<a class="headerlink" href="#data-and-their-relationship-with-statistical-distributions" title="Permalink to this headline">¶</a></h2>
 <p>We often have data on a particular characteristic and want to make general statements about it, such as: the probability of it being greater than or less than something, provide a range in which “most” observations will lie, what is the central value (e.g. mean/median), etc. However,</p>
 <ul class="simple">
 <li><p>we rarely <em>know</em> the true distribution that a variable follows</p></li>
@@ -939,7 +976,7 @@
 </ul>
 </div>
 <div class="section" id="id1">
-<h2>3.5.2 Are the data normally distributed?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
+<h2>3.4.2 Are the data normally distributed?<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h2>
 <p>Many analyses and tests of data start with the assumption that the data are normally distributed. A simple example would be using a t-test to check whether the mean of 2 groups are different, more complex examples would include linear regression analysis. If the outcome being analysed is a qualitive outcome, or successes and failures, it should be obvious that the data aren’t normally distributed. But what if the data are continuous or count values, and they look like they are centered, but have some skewness? Is it safe to proceed as if they are normal?</p>
 <p>The first step, as always, is to plot the data to see what they look like. A histogram, as above, or density plot is a good step forward. Additionally, a <em>quantile-quantile</em> plot calculates the correlation between a sample and the equivalent normal distribution with the same mean <span class="math notranslate nohighlight">\(\mu\)</span> and standard deviation <span class="math notranslate nohighlight">\(\sigma\)</span>. If a variable follows a normal distribution, the quantile-quantile plot will follow the diagonal line.</p>
 <div class="cell docutils container">
@@ -979,7 +1016,7 @@ W = 0.9692, p-value = 0.06756
 <p>Although we haven’t yet covered hypothesis testing, this is testing the null hypothesis that the data follow a normal distribution. In this case, the test returns a p-value of 0.067. This p-value suggests some, but not strong, evidence against normality of the data.</p>
 </div>
 <div class="section" id="approaches-to-non-normally-distributed-data">
-<h2>3.5.3 Approaches to non-normally distributed data<a class="headerlink" href="#approaches-to-non-normally-distributed-data" title="Permalink to this headline">¶</a></h2>
+<h2>3.4.3 Approaches to non-normally distributed data<a class="headerlink" href="#approaches-to-non-normally-distributed-data" title="Permalink to this headline">¶</a></h2>
 <p>A really useful approach to dealing with non-normally distributed data is transformations. The most often used approach is to apply a log-transformation, either on the <em>natural</em> (<span class="math notranslate nohighlight">\(Y = log_e(X)\)</span>) or <em>log10</em> (<span class="math notranslate nohighlight">\(Y = log_{10}(X)\)</span>) scale. The transformed data may behave more like normally distributed data.</p>
 <p>An example is given below for weights of 1174 babies. First we will look at the distribution of (untransformed) birth weights.</p>
 <div class="cell docutils container">

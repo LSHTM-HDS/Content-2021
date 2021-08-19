@@ -51,6 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
+    <link rel="prev" title="15.4 How to fit a Poisson Regression in R" href="16.e.%20Poisson%20Regression%20Model.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -186,7 +187,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -508,7 +509,7 @@
   Statistical modelling
  </span>
 </p>
-<ul class="nav bd-sidenav">
+<ul class="current nav bd-sidenav">
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -578,7 +579,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -593,34 +594,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -630,17 +626,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -650,17 +646,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
+     13.7  Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.8 Summary
     </a>
    </li>
   </ul>
@@ -677,22 +673,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -702,7 +698,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -784,6 +785,43 @@
    <li class="toctree-l2">
     <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
      15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
+     15.1 Introduction to Count Data and Poisson Distribution:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
+     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
+     15.3 Poisson regression in health data science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
+     15.4 How to fit a Poisson Regression in R
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     15.5 Zero Inflated Poisson Regression Example
     </a>
    </li>
   </ul>
@@ -1217,6 +1255,7 @@ BIC-corrected          3.377975 model1 &gt; model2 0.00036511
         
         <div class='prev-next-bottom'>
             
+    <a class='left-prev' id="prev-link" href="16.e.%20Poisson%20Regression%20Model.html" title="previous page">15.4 How to fit a Poisson Regression in R</a>
 
         </div>
         

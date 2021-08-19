@@ -53,7 +53,7 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="12.2 Simple linear regression model" href="12.c.%20Linear%20Regression%20I.html" />
+    <link rel="next" title="12.2 Data used in our examples" href="12.c.%20Linear%20Regression%20I.html" />
     <link rel="prev" title="12. Linear Regression I" href="12.a.%20Linear%20Regression%20I.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -190,7 +190,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -582,7 +582,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -597,34 +597,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -634,17 +629,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -654,17 +649,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
+     13.7  Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.8 Summary
     </a>
    </li>
   </ul>
@@ -681,22 +676,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -706,7 +701,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -788,6 +788,43 @@
    <li class="toctree-l2">
     <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
      15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
+     15.1 Introduction to Count Data and Poisson Distribution:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
+     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
+     15.3 Poisson regression in health data science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
+     15.4 How to fit a Poisson Regression in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
+     15.5 Zero Inflated Poisson Regression Example
     </a>
    </li>
   </ul>
@@ -891,19 +928,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#data-used-in-our-examples">
-   12.1.1 Data used in our examples
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -922,7 +946,7 @@
 </ul>
 <p>In the above examples, the outcome variables are birthweight, inflammation and heart disease. In the first two examples, the length of pregnancy and drug use are covariates. In the third example, no covariates are explicitly mentioned. However, when answering the third question, researchers may want to consider a range of patient characteristics that are associated with the risk of heart disease as covariates in their model, for example: diet, exercise, comorbodities, medications etc.</p>
 <p>Statistical models contain <strong>population parameters</strong> and representations of <strong>uncertainty</strong>. The population parameters are unknown quantities that we want to estimate from our sample and the uncertainty is a measure of the variability in the outcome variable that is not explained by the covariates.</p>
-<p>This is the first of two lessons on linear regression. In this lesson, we will learn how to define linear regression models, how to estimate their population parameters and how to estimate measures of uncertainty. We begin by introducing the <strong>simple linear regression model</strong> (Section 3) which includes one outcome and one covariate. We then introduce the <strong>multivariable linear regression model</strong> (Section 4) which is an extension of the simple linear regression model to situations with multiple covariates. In the final part of this lesson, we learn how to conduct an <strong>analysis of variance</strong> of statistical models (Section 5). In the next lesson we will discuss how statistical models can be used in the different types of investigation that were discussed last week, and how the type of investigation influences the presentation and interpretation of results obtained using statistical models.</p>
+<p>This is the first of two lessons on linear regression. In this lesson, we will learn how to define linear regression models, how to estimate their population parameters and how to estimate measures of uncertainty. We begin by introducing the <strong>simple linear regression model</strong> which includes one outcome and one covariate. We then introduce the <strong>multivariable linear regression model</strong>, which is an extension of the simple linear regression model to situations with multiple covariates. In the third session, we discuss the key assumptions underlying linear regression models and important model diagnostics. Finally, we learn how to conduct an <strong>analysis of variance</strong> of statistical models.</p>
 <p>Before delving in, it is worth making a note of the different terminologies that you may come across in the medical literature. Here, I have already used the terms: outcome and covariates. Table 1 summarises alternatives terms that may be used to describe the same concepts.</p>
 <table class="colwidths-auto table">
 <thead>
@@ -935,7 +959,7 @@
 <td><p><span class="math notranslate nohighlight">\(x\)</span>-variables</p></td>
 </tr>
 <tr class="row-odd"><td><p>Dependent variable</p></td>
-<td><p>Independent variable</p></td>
+<td><p>Independent variables</p></td>
 </tr>
 <tr class="row-even"><td><p>Response variable</p></td>
 <td><p>Regressors</p></td>
@@ -952,36 +976,7 @@
 </tbody>
 </table>
 <p>Table 1: Different terminology used for outcome and covariates</p>
-<p>Finally, it is important to understand that statistical models make <strong>assumptions</strong> about the form of relationships between outcomes and covariates. Although we can examine our data to investigate the validity of these assumptions (using methods covered in the next lesson), we can never be certain that the model is correct.</p>
-<div class="section" id="data-used-in-our-examples">
-<h2>12.1.1 Data used in our examples<a class="headerlink" href="#data-used-in-our-examples" title="Permalink to this headline">¶</a></h2>
-<p>For our examples we will use data on babies and their mothers. The data contains a random sample of 1,174 mothers and their newborn babies. The column Birth Weight contains the birth weight of the baby, in ounces; Gestational Days is the number of gestational days, that is, the number of days the baby was in the womb. There is also data on maternal age, maternal height, maternal pregnancy weight, and whether or not the mother was a smoker.</p>
-<p>The following code can be used to download and look at the data:</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Load data</span>
-<span class="n">data</span><span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;https://www.inferentialthinking.com/data/baby.csv&#39;</span><span class="p">)</span>
-
-<span class="c1">#Look at the first 10 rows of the data</span>
-<span class="nf">head</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_html"><table>
-<thead><tr><th scope=col>Birth.Weight</th><th scope=col>Gestational.Days</th><th scope=col>Maternal.Age</th><th scope=col>Maternal.Height</th><th scope=col>Maternal.Pregnancy.Weight</th><th scope=col>Maternal.Smoker</th></tr></thead>
-<tbody>
-	<tr><td>120  </td><td>284  </td><td>27   </td><td>62   </td><td>100  </td><td>False</td></tr>
-	<tr><td>113  </td><td>282  </td><td>33   </td><td>64   </td><td>135  </td><td>False</td></tr>
-	<tr><td>128  </td><td>279  </td><td>28   </td><td>64   </td><td>115  </td><td>True </td></tr>
-	<tr><td>108  </td><td>282  </td><td>23   </td><td>67   </td><td>125  </td><td>True </td></tr>
-	<tr><td>136  </td><td>286  </td><td>25   </td><td>62   </td><td> 93  </td><td>False</td></tr>
-	<tr><td>138  </td><td>244  </td><td>33   </td><td>62   </td><td>178  </td><td>False</td></tr>
-</tbody>
-</table>
-</div></div>
-</div>
-</div>
+<p>Finally, it is important to understand that statistical models make <strong>assumptions</strong> about the form of relationships between outcomes and covariates. Although we can examine our data to investigate the validity of these assumptions (using methods covered in the next session), we can never be certain that the model is correct.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1010,7 +1005,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="12.a.%20Linear%20Regression%20I.html" title="previous page">12. Linear Regression I</a>
-    <a class='right-next' id="next-link" href="12.c.%20Linear%20Regression%20I.html" title="next page">12.2 Simple linear regression model</a>
+    <a class='right-next' id="next-link" href="12.c.%20Linear%20Regression%20I.html" title="next page">12.2 Data used in our examples</a>
 
         </div>
         

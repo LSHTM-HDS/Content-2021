@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>14.2 Statistical tests of assumptions &#8212; Statistics for Health Data Science</title>
+    <title>14.2 Investigating assumptions using plots &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="14.3 Dealing with violations of assumptions" href="14.d.%20Linear%20Regression%20III.html" />
-    <link rel="prev" title="14.1 Diagnostics for checking the assumptions of linear regression" href="14.b.%20Linear%20Regression%20III.html" />
+    <link rel="next" title="14.2 Statistical tests of assumptions" href="14.d.%20Linear%20Regression%20III.html" />
+    <link rel="prev" title="14.1 Assumptions" href="14.b.%20Linear%20Regression%20III.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -190,7 +190,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -582,7 +582,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -597,34 +597,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -634,17 +629,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -654,17 +649,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
+     13.7  Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.8 Summary
     </a>
    </li>
   </ul>
@@ -681,22 +676,22 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -706,7 +701,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -788,6 +788,43 @@
    <li class="toctree-l2">
     <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
      15.13 Optional Reading
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
+   15. Generalised Linear Models: Poisson Regression for Count Variables
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <label for="toctree-checkbox-15">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
+     15.1 Introduction to Count Data and Poisson Distribution:
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
+     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
+     15.3 Poisson regression in health data science
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
+     15.4 How to fit a Poisson Regression in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
+     15.5 Zero Inflated Poisson Regression Example
     </a>
    </li>
   </ul>
@@ -897,16 +934,24 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#examples-using-the-birthweight-data">
-   14.2.1 Examples using the birthweight data
+  <a class="reference internal nav-link" href="#scatter-plots-of-the-outcome-against-independent-variables">
+   14.2.1 Scatter plots of the outcome against independent variables
   </a>
-  <ul class="nav section-nav flex-column">
-   <li class="toc-h3 nav-item toc-entry">
-    <a class="reference internal nav-link" href="#we-make-the-following-observations">
-     We make the following observations:
-    </a>
-   </li>
-  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plots-of-residuals-against-fitted-values-or-covariates">
+   14.2.2  Plots of residuals against fitted values or covariates
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#normal-plots-of-residuals">
+   14.2.3  Normal plots of residuals
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#plots-based-on-cook-s-distance">
+   14.2.4  Plots based on Cook’s distance
+  </a>
  </li>
 </ul>
 
@@ -919,60 +964,48 @@
         
               <div>
                 
-  <div class="section" id="statistical-tests-of-assumptions">
-<h1>14.2 Statistical tests of assumptions<a class="headerlink" href="#statistical-tests-of-assumptions" title="Permalink to this headline">¶</a></h1>
-<p>It might be anticipated that the assumptions of the linear regression model can be investigated using formal hypothesis tests. Indeed there exist a number of statistical tests for normalilty including the Kolmorogorov-Smirnov test and the Shapiro-Wilk test. Further, there exist statistical tests for heteroscedasticity of rediduals.</p>
-<p>However, these tests suffer from the drawback that they tend to only have statistical power to detect model violations when datasets are large and when datasets are large the central limit theorem means that the consequences of these violations of are less important than in small datasets. With large datasets, tests of normality and heteroscedasticity can often be statistically significant, but the impact of these violations may be practically unimportant. For these reasons, the tests are considered by many statisticians to be of limited practical use and so details of these procedures will not be given here.</p>
-<div class="section" id="examples-using-the-birthweight-data">
-<h2>14.2.1 Examples using the birthweight data<a class="headerlink" href="#examples-using-the-birthweight-data" title="Permalink to this headline">¶</a></h2>
-<p>We will use some of the graphical tools discussed above to assess the validity of assumptions in the multivariable model defined in the previous chapter (Model 3). Recall Model 3 was defined as:</p>
+  <div class="section" id="investigating-assumptions-using-plots">
+<h1>14.2 Investigating assumptions using plots<a class="headerlink" href="#investigating-assumptions-using-plots" title="Permalink to this headline">¶</a></h1>
+<p>It is a good idea to explore your data using a number of simple plots. Here we will introduce the most useful plots for both simple and multivariable linear regression models.</p>
+<div class="section" id="scatter-plots-of-the-outcome-against-independent-variables">
+<h2>14.2.1 Scatter plots of the outcome against independent variables<a class="headerlink" href="#scatter-plots-of-the-outcome-against-independent-variables" title="Permalink to this headline">¶</a></h2>
+<p>For simple linear regression models, a scatter plot of the outcome against the independent variable can usually make serious violations of assumptions apparent. Such plots are particularly good for identfiying non-linearity, heteroscedasticity and <strong>outliers</strong> (points which lie atypically far from the regression line).</p>
+<p>Let our outcome and independent variable be denoted by <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(X\)</span>, respectively. The figure below depicts four different scenarios where various assumptions are violated. In Scenario A, there is a slight curvature in the scatter of points between <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(X\)</span>, suggesting a non-linear relationship which violates the linearity assumption. In Scenario B, the variance of <span class="math notranslate nohighlight">\(Y\)</span> is larger for larger values of <span class="math notranslate nohighlight">\(X\)</span>, violating the homoscedasticity assumption. In Scenario C, the linearity and homoscedasticity assumptions appear to hold, but there is a possible outlier (circled in red). Scenario D depicts an ideal situation for simple linear regression, where there appears to be no violations.</p>
+<div class="figure align-default" id="simple-plots">
+<a class="reference internal image-reference" href="Images/simple_plots.jpg"><img alt="Images/simple_plots.jpg" src="Images/simple_plots.jpg" style="height: 600px;" /></a>
+</div>
+<p>For multivariable linear regression, the linearity assumption requires that the relationship between the outcome and each independent variable is linear <em>conditional on the other covariates in the model</em>. So, there is no requirement that the relationship between the outcome and each individual covariate is linear when other covariates are ignored. This means that assessment of the fit of a multivariable linear regression cannot be inferred from a series of scatter plots relating the outcome to each covariate. Such plots can be useful for detecting points with extreme values, but the residual plots considered next are more useful for multivariable models.</p>
+</div>
+<div class="section" id="plots-of-residuals-against-fitted-values-or-covariates">
+<h2>14.2.2  Plots of residuals against fitted values or covariates<a class="headerlink" href="#plots-of-residuals-against-fitted-values-or-covariates" title="Permalink to this headline">¶</a></h2>
+<p>Plots of the observed residuals against the fitted values are useful for investigating the assumptions of linearity and homoscedasticity. For linearity: if a non-linear relationship is present, then the residuals will not be equally distributed above and below zero across the range of fitted values. For homoscedasticity: if there is heterogeneity in the residuals, the variance of residuals will not be constant across the range of fitted values.</p>
+<p>The figure below uses the same data from Scenarios A-D above, but displays the observed residuals against fitted values. We can see that linearity is violated in Scenario A, since the scatter points are not equally distributed above and below the line at <span class="math notranslate nohighlight">\(\epsilon=0\)</span>. Furthermore, in Scenario B we can see that the variance of residuals increase with increasing <span class="math notranslate nohighlight">\(\hat{y}\)</span>, indicating a violation of homoscedasticity.</p>
+<div class="figure align-default" id="residual-plots">
+<a class="reference internal image-reference" href="Images/residual_plots.jpg"><img alt="Images/residual_plots.jpg" src="Images/residual_plots.jpg" style="height: 600px;" /></a>
+</div>
+<p>It can also be useful to plot residuals against each covariate, as a futher check for a linear relationship between <span class="math notranslate nohighlight">\(Y\)</span> and each of the independent variables (conditional on the other covariates in the model). If there are only a small number of covariates in the model, then these plots can be done for all variables. However, if the model is very complex, it may be judged sufficient to only plot residuals against fitted values and residuals against the most important covariates.</p>
+</div>
+<div class="section" id="normal-plots-of-residuals">
+<h2>14.2.3  Normal plots of residuals<a class="headerlink" href="#normal-plots-of-residuals" title="Permalink to this headline">¶</a></h2>
+<p>Normal plots (such as the <strong>Q-Q plot</strong>) provide the best means of visually detecting departures from normality. The normal Q-Q plot plots observed values against a standard normal distribution with the same number of points. If the data are perfectly normally distributed, the points on a Q-Q plot would lie on the line <span class="math notranslate nohighlight">\(Y=X\)</span>. Deviations from this line indicate deviations from normality. Q-Q plots of residuals can be used to investigate the normality assumption.</p>
+<p>As previously mentioned, the observed residuals do not have constant variance even when true residuals do. Therefore, some authors suggest using <strong>standardised</strong> residuals in the normal plots (since standardised residuals do have constant variance). On the other hand, some prefer to work with the observed residuals since these have the same units as the outcome. In practice, the differences between the two approaches are minor.</p>
+<p>The figure below depicts normal Q-Q plots for the standardised residuals in Scenarios A-D. In such plots we might expect to see some deviation from the straight line in the extreme values of the residuals and so the variation in the tails are not of great concern. In Scenario A however, there is deviation away from the line <span class="math notranslate nohighlight">\(Y=X\)</span> towards the middle, indicating a violation of the normality assumption. Furthermore, the outlier in Scenario C may need further investigation (we discuss outliers further in a subsequent section).</p>
+<div class="figure align-default" id="normal-residual-plots">
+<a class="reference internal image-reference" href="Images/normal_residual_plots.jpg"><img alt="Images/normal_residual_plots.jpg" src="Images/normal_residual_plots.jpg" style="height: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="plots-based-on-cook-s-distance">
+<h2>14.2.4  Plots based on Cook’s distance<a class="headerlink" href="#plots-based-on-cook-s-distance" title="Permalink to this headline">¶</a></h2>
+<p>Cook’s distance is a measure of the <strong>influence</strong> of an observation. An influential observation is one that has a large impact on the model parameter estimates. It is worth checking the influence of observations, particularly potential outliers, to see if they are having a much larger impact on model fit than we would expect.</p>
+<p>For a model with <span class="math notranslate nohighlight">\(p\)</span> parameters (with estimated residual variance <span class="math notranslate nohighlight">\(\sigma^2\)</span>), the Cook’s distance for the <span class="math notranslate nohighlight">\(i^{th}\)</span> observation (<span class="math notranslate nohighlight">\(D_i\)</span>) is obtained by refitting the model excluding this observation and obtaining new fitted values (<span class="math notranslate nohighlight">\(\hat{y_{j(i)}}\)</span>) for all <span class="math notranslate nohighlight">\(n\)</span> observations (including the omitted one). <span class="math notranslate nohighlight">\(D_i\)</span> is then defined as:</p>
 <div class="math notranslate nohighlight">
-\[\text{Model 3: } y_i = \beta_0 + \beta_1 l_i + \beta_2h_i + \epsilon_i \]</div>
-<p>The outcome <span class="math notranslate nohighlight">\(y_i\)</span> denotes the birthweight (in oz) for the <span class="math notranslate nohighlight">\(i^{th}\)</span> baby. The covariates <span class="math notranslate nohighlight">\(l_i\)</span> and <span class="math notranslate nohighlight">\(h_i\)</span> denote the length of pregnancy (i.e. number of gestational days), and the height of the mother (in inches) for the <span class="math notranslate nohighlight">\(i^{th}\)</span> baby, respectively.</p>
-<p>The code below fits Model 3 to the birthweight data, and then produces (1) a plot of residuals against fitted values (2) a Q-Q plot of the standardised residuals and (3) a plot of Cook’s distances by observation.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Load the data</span>
-<span class="n">data</span><span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;https://www.inferentialthinking.com/data/baby.csv&#39;</span><span class="p">)</span>
-
-<span class="c1">#Fit Model 3 to the data</span>
-<span class="n">model3</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="n">Gestational.Days</span><span class="o">+</span><span class="n">Maternal.Height</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
-
-<span class="c1">#Set the graphical space so that two plots are shown side-by-side in one row</span>
-<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">3</span><span class="p">))</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
-
-<span class="c1">#Plot the residuals against the fitted values</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">model3</span><span class="o">$</span><span class="n">fitted.values</span><span class="p">,</span> <span class="n">model3</span><span class="o">$</span><span class="n">residuals</span><span class="p">,</span> <span class="n">main</span> <span class="o">=</span> <span class="s">&quot;Residual plot&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Fitted values&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Residuals&quot;</span><span class="p">,</span> <span class="n">pch</span><span class="o">=</span><span class="m">19</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">h</span><span class="o">=</span><span class="m">0</span><span class="p">)</span>
-
-<span class="c1">#Obtain the standardised residuals</span>
-<span class="n">Standardised.Residuals</span><span class="o">&lt;-</span><span class="nf">rstandard</span><span class="p">(</span><span class="n">model3</span><span class="p">)</span>
-
-<span class="c1">#Normal Q-Q plot of the standardised residuals </span>
-<span class="nf">qqnorm</span><span class="p">(</span><span class="n">Standardised.Residuals</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Normal Q-Q plot&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Expected normal value&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Standardised Residuals&quot;</span><span class="p">)</span>
-<span class="nf">qqline</span><span class="p">(</span><span class="n">Standardised.Residuals</span><span class="p">)</span>
-
-<span class="c1">#Plot of Cook&#39;s distance</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">model3</span><span class="p">,</span> <span class="n">which</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
-</pre></div>
+\[D_i = \frac{\sum_{i=1}^n(\hat{y}_{j(i)}-\hat{y}_i)^2}{(p+1)\hat{\sigma}^2}\]</div>
+<p>The higher the value of <span class="math notranslate nohighlight">\(D_i\)</span>, the more influential the observation.</p>
+<p>It can be informative to display Cook’s distances graphically. The figure below plots the Cook’s distances for each observation in Scenarios A-D.</p>
+<div class="figure align-default" id="cooks-distance">
+<a class="reference internal image-reference" href="Images/cooks_distance.jpg"><img alt="Images/cooks_distance.jpg" src="Images/cooks_distance.jpg" style="height: 600px;" /></a>
 </div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/14.c. Linear Regression III_1_0.png" src="_images/14.c. Linear Regression III_1_0.png" />
-</div>
-</div>
-<div class="section" id="we-make-the-following-observations">
-<h3>We make the following observations:<a class="headerlink" href="#we-make-the-following-observations" title="Permalink to this headline">¶</a></h3>
-<ol class="simple">
-<li><p><strong>Linearity:</strong> The residuals are equally distributed above and below zero in the “Residual plot”</p></li>
-<li><p><strong>Normality:</strong> There do not appear to be any serious departures from normality, based on the “Normal Q-Q plot”</p></li>
-<li><p><strong>Homoscedasticity:</strong> The variance of residuals are constant across the fitted values (based on the “Residual plot”)</p></li>
-</ol>
-<p>However, the Cook’s distance plot reveals that observation 239 is highly influential, compared to the remaining observations. Observations 405 and 820 also have a relatively high Cook’s distance. Sensitivity analyses may be required to assess model fit with and without these observations (this is discussed in Section 3.5.3).</p>
-<p>Finally, we can assume that the independence assumption holds, since the birthweight of a baby from one mother is not expected to be associated with the birthweight of a baby from a different mother. Therefore, we can reasonably conclude that all the assumptions are met in this model (but there are some potentially problematic observations in terms of influence).</p>
-<p>In the next section, we briefly introduce some of the statisical solutions available for when assumptions are not met.</p>
-</div>
+<p>In Scenario C the outlier identified in the previous plots and potentially problematic has a much higher Cook’s distance than the other observations, indicating that it is highly influential and worth further investigation.</p>
 </div>
 </div>
 
@@ -1001,8 +1034,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="14.b.%20Linear%20Regression%20III.html" title="previous page">14.1 Diagnostics for checking the assumptions of linear regression</a>
-    <a class='right-next' id="next-link" href="14.d.%20Linear%20Regression%20III.html" title="next page">14.3 Dealing with violations of assumptions</a>
+    <a class='left-prev' id="prev-link" href="14.b.%20Linear%20Regression%20III.html" title="previous page">14.1 Assumptions</a>
+    <a class='right-next' id="next-link" href="14.d.%20Linear%20Regression%20III.html" title="next page">14.2 Statistical tests of assumptions</a>
 
         </div>
         
