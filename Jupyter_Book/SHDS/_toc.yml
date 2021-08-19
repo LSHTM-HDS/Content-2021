@@ -145,9 +145,12 @@ parts:
       - file: 15.n. Logistic Regression
     - file: 16.a. Generalised Linear Model (GLM)
       sections: 
-      - file: 16.b. Poisson Regression Model 
-      - file: 16.c. Poisson Regression Model 
-      - file: 16.d. Poisson Regression Model 
-      - file: 16.e. Poisson Regression Model 
-      - file: 16.f. Poisson Regression Model 
+      - file: 16.b. Generalised Linear Model (GLM)
+      - file: 16.c. Generalised Linear Model (GLM)
+      - file: 16.d. Generalised Linear Model (GLM) 
+      - file: 16.e. Generalised Linear Model (GLM) 
+      - file: 16.f. Generalised Linear Model (GLM)
+      - file: 16.g. Generalised Linear Model (GLM)  
+      - file: 16.h. Generalised Linear Model (GLM)  
+      - file: 16.i. Generalised Linear Model (GLM)  
 
