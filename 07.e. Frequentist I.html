@@ -793,8 +793,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -803,28 +803,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -1046,8 +1061,8 @@
 </table>
 <p>The three tabs below provide examples of using the formulae above to obtain approximate 95% confidence intervals for proportions and rates.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="4948d41d-d5e1-43aa-a1a2-60b8a49e6400" name="a54258d2-dfc7-4167-820d-21a5b2f33404" type="radio">
-</input><label class="tabbed-label" for="4948d41d-d5e1-43aa-a1a2-60b8a49e6400">
+<input checked="checked" id="e6fbd8e5-4557-4418-b198-556a5d9d3c7f" name="cd46fb36-1351-4160-9341-1b6d47573556" type="radio">
+</input><label class="tabbed-label" for="e6fbd8e5-4557-4418-b198-556a5d9d3c7f">
 Proportion</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>We want to estimate the population proportion of patients who experience a side effect from a particular drug.</p></li>
@@ -1064,8 +1079,8 @@ Proportion</label><div class="tabbed-content docutils">
 <li><p>So our estimate of the proportion of patients who experience a side effect is: 0.25 (95% CI 0.155 to 0.349). Our best guess is that 25% of patients experience a side-effect from this drug. We are 95% confident that the true proportion lies between 15.5% and 34.9%.</p></li>
 </ul>
 </div>
-<input id="859705a5-847a-48b1-8a31-371f01efbcbd" name="a54258d2-dfc7-4167-820d-21a5b2f33404" type="radio">
-</input><label class="tabbed-label" for="859705a5-847a-48b1-8a31-371f01efbcbd">
+<input id="b81c12a7-e75a-40ff-817a-469c812210c0" name="cd46fb36-1351-4160-9341-1b6d47573556" type="radio">
+</input><label class="tabbed-label" for="b81c12a7-e75a-40ff-817a-469c812210c0">
 Rate</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>We want to estimate the rate of panic attacks among adults with a mild anxiety disorder.</p></li>
@@ -1081,8 +1096,8 @@ Rate</label><div class="tabbed-content docutils">
 <li><p>This gives a range of -0.0096 to 0.0596. This illustrates an important point - approximate confidence intervals sometimes contain impossible parameter values (the rate <span class="math notranslate nohighlight">\(\lambda\)</span> cannot be negative). To resolve this problem, we will re-do the calculations on the log scale.</p></li>
 </ul>
 </div>
-<input id="10a5cc3d-bb9a-4980-9cd9-42243c6e8067" name="a54258d2-dfc7-4167-820d-21a5b2f33404" type="radio">
-</input><label class="tabbed-label" for="10a5cc3d-bb9a-4980-9cd9-42243c6e8067">
+<input id="82fe5711-ce3b-46c1-bf5d-3350a003b672" name="cd46fb36-1351-4160-9341-1b6d47573556" type="radio">
+</input><label class="tabbed-label" for="82fe5711-ce3b-46c1-bf5d-3350a003b672">
 Logarithm of the rate</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>The logarithm of the observed rate is <span class="math notranslate nohighlight">\(\nu = log(0.025) = -3.689\)</span>. So this is our estimate of the log rate.</p></li>
@@ -1154,8 +1169,8 @@ given by <span class="math notranslate nohighlight">\(\frac{\sigma}{\sqrt{n}}\)<
 <h2>7.4.3 Comparing two groups<a class="headerlink" href="#comparing-two-groups" title="Permalink to this headline">¶</a></h2>
 <p>There are many ways of comparing outcomes between two groups. Two popular options are the difference in proportions for binary outcomes and the difference in means for continuous outcomes. Confidence intervals for other measures (e.g. the risk ratio, the odds ratio, the difference in medians, etc.) also can be obtained.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="dd8fb096-bdf3-411f-9d29-24833fb021c8" name="318e03ef-3b03-4d57-a761-5f06a0225614" type="radio">
-</input><label class="tabbed-label" for="dd8fb096-bdf3-411f-9d29-24833fb021c8">
+<input checked="checked" id="b2dd98b6-346f-4ab3-adba-4bb23a8054a3" name="f49ac794-829f-4d03-806e-1f5e9842da05" type="radio">
+</input><label class="tabbed-label" for="b2dd98b6-346f-4ab3-adba-4bb23a8054a3">
 Difference in proportions</label><div class="tabbed-content docutils">
 <p>We are interested in the population difference in proportions from two observations from two binomial distributions. Suppose our observed data consist of two observations from <span class="math notranslate nohighlight">\(X_1 \sim binomial(n_1, \pi_1)\)</span>, with the realised values being <span class="math notranslate nohighlight">\(X_1=k_1\)</span> and <span class="math notranslate nohighlight">\(X_2 = k_2\)</span>. We want to estimate the difference <span class="math notranslate nohighlight">\(\delta = \pi_1 - \pi_2\)</span>.</p>
 <p>We estimate the proportion in the first group by <span class="math notranslate nohighlight">\(\hat{\pi}_1 = \frac{k_1}{n_1}\)</span>. Similarly, we estimate the proportion in the second group by <span class="math notranslate nohighlight">\(\hat{\pi}_2 = \frac{k_2}{n_2}\)</span>. Then our estimate of the difference in proportions is <span class="math notranslate nohighlight">\(\hat{\delta} = \hat{\pi}_1 - \hat{\pi}_2\)</span>.</p>
@@ -1168,8 +1183,8 @@ Difference in proportions</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[\hat{\delta} \pm 1.96 \times \sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1} + \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}}\]</div>
 </div>
-<input id="e2526caf-dbf1-4c35-9aad-0e39b5936c99" name="318e03ef-3b03-4d57-a761-5f06a0225614" type="radio">
-</input><label class="tabbed-label" for="e2526caf-dbf1-4c35-9aad-0e39b5936c99">
+<input id="710fc30f-7300-4aef-ae30-3f484fbad942" name="f49ac794-829f-4d03-806e-1f5e9842da05" type="radio">
+</input><label class="tabbed-label" for="710fc30f-7300-4aef-ae30-3f484fbad942">
 Difference in means</label><div class="tabbed-content docutils">
 <p>We are interested in the difference in population means between two groups from <span class="math notranslate nohighlight">\(n_1\)</span> iid observations from a normal distribution from group 1 and <span class="math notranslate nohighlight">\(n_2\)</span> from group 2. Suppose our observed data are <span class="math notranslate nohighlight">\(n_1\)</span> observations drawn from <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu_1, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> observations drawn from <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu_2, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n_2\)</span>. We want to estimate the difference <span class="math notranslate nohighlight">\(\delta = \mu_1 - \mu_2\)</span></p>
 <p>The sample means are <span class="math notranslate nohighlight">\(\bar{x}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{x}_2\)</span> and the sample standard deviations are <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span>.</p>

@@ -793,8 +793,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -803,28 +803,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -1059,8 +1074,8 @@ P(C|M) = \frac{0.25\times 0.1}{0.25\times 0.1 + 0.1\times 0.9}=0.22
 <p>We can obtain estimates of various useful quantities from this matrix. We will use the following notation: <span class="math notranslate nohighlight">\(O\)</span> represents being, in truth, positive for the outcome of interest, and <span class="math notranslate nohighlight">\(\bar{O}\)</span> represents being truly negative. <span class="math notranslate nohighlight">\(P\)</span> represents being classified as positive and <span class="math notranslate nohighlight">\(\bar{P}\)</span> being classified as negative.</p>
 <p>The tabs below show various useful quantities.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="73595fd7-11fb-4503-ab58-efb145489b93" name="edab1986-1f26-4cbb-8a43-8efc9b35f1b9" type="radio">
-</input><label class="tabbed-label" for="73595fd7-11fb-4503-ab58-efb145489b93">
+<input checked="checked" id="3aa7d69d-a6c4-47ff-a017-8299358fd12e" name="d6a482c8-7a82-4a0a-978d-1fcb1bc642ca" type="radio">
+</input><label class="tabbed-label" for="3aa7d69d-a6c4-47ff-a017-8299358fd12e">
 Outcome prevalence</label><div class="tabbed-content docutils">
 <p>The prevalence of the outcome is:</p>
 <div class="math notranslate nohighlight">
@@ -1069,8 +1084,8 @@ P(O) = \frac{p_A+p_C}{p_A+p_B+p_C+p_D}
 \]</div>
 <p>Prevalence is another word for risk or proportion. It tells us the fraction of the population of interest who have the outcome.</p>
 </div>
-<input id="df220d7a-d5cb-4541-9436-4fefb66923b8" name="edab1986-1f26-4cbb-8a43-8efc9b35f1b9" type="radio">
-</input><label class="tabbed-label" for="df220d7a-d5cb-4541-9436-4fefb66923b8">
+<input id="efd58599-31de-4835-a83e-bdf5d3a8a803" name="d6a482c8-7a82-4a0a-978d-1fcb1bc642ca" type="radio">
+</input><label class="tabbed-label" for="efd58599-31de-4835-a83e-bdf5d3a8a803">
 Sensitivity</label><div class="tabbed-content docutils">
 <p>This is a property of the test. The sensitivity of the test remains the same, irrespective of how common or rare the outcome is.</p>
 <p>The sensitivity is:</p>
@@ -1081,8 +1096,8 @@ P(P|O)=\frac{p_A}{p_A+p_C}
 <p>The terminology comes from the setting of clinical tests, i.e. how sensitive this test is to the presence of the disease. It is also often called the recall in the fields of machine learning and computer science.</p>
 <p>This is also sometimes referred to as the true positive rate.</p>
 </div>
-<input id="86800a45-661e-468e-a6ad-a527f4e804d4" name="edab1986-1f26-4cbb-8a43-8efc9b35f1b9" type="radio">
-</input><label class="tabbed-label" for="86800a45-661e-468e-a6ad-a527f4e804d4">
+<input id="d6228e51-3074-43c7-995a-9332565c403b" name="d6a482c8-7a82-4a0a-978d-1fcb1bc642ca" type="radio">
+</input><label class="tabbed-label" for="d6228e51-3074-43c7-995a-9332565c403b">
 Specificity</label><div class="tabbed-content docutils">
 <p>This is a property of the test. The specificity of the test remains the same, irrespective of how common or rare the outcome is.</p>
 <p>The specificity is:</p>
@@ -1093,8 +1108,8 @@ P(\bar{P}|\bar{O})=\frac{p_D}{p_B+p_D}
 <p>As for the sensitivity, this terminology comes from the setting of clinical tests, i.e. how specific  this test is to the presence of this disease (versus other diseases). So a test which is only positive for this specific disease is very specific. A test which picks up the presence of this disease, and other similar diseases, is not very specific.</p>
 <p>This is sometimes called the selectivity or true negative rate.</p>
 </div>
-<input id="23e7f80b-c2af-40de-9c6e-d428f63c19e0" name="edab1986-1f26-4cbb-8a43-8efc9b35f1b9" type="radio">
-</input><label class="tabbed-label" for="23e7f80b-c2af-40de-9c6e-d428f63c19e0">
+<input id="554ee6f8-b01a-4161-ac24-de0432eb2458" name="d6a482c8-7a82-4a0a-978d-1fcb1bc642ca" type="radio">
+</input><label class="tabbed-label" for="554ee6f8-b01a-4161-ac24-de0432eb2458">
 PPV</label><div class="tabbed-content docutils">
 <p>PPV stands for Positive Predictive Value, which is shorthand for the predictive value of a positive classification. This is very common terminology in clinical settings.</p>
 <p>This quantity is often of most interest to the person having the test. It answers the question: “what is the probability that I have (or will have) the outcome, given that I have just received a positive classification?”</p>
@@ -1105,8 +1120,8 @@ P(O|P) = \frac{p_A}{p_A+p_B}
 \]</div>
 <p>In machine learning, it is typically called the precision.</p>
 </div>
-<input id="50946e90-8f3e-4c97-bb8c-ab94e2cb0b57" name="edab1986-1f26-4cbb-8a43-8efc9b35f1b9" type="radio">
-</input><label class="tabbed-label" for="50946e90-8f3e-4c97-bb8c-ab94e2cb0b57">
+<input id="2fc6c787-34f8-4678-8b40-8756377f3aea" name="d6a482c8-7a82-4a0a-978d-1fcb1bc642ca" type="radio">
+</input><label class="tabbed-label" for="2fc6c787-34f8-4678-8b40-8756377f3aea">
 Accuracy</label><div class="tabbed-content docutils">
 <p>The accuracy is:</p>
 <div class="math notranslate nohighlight">

@@ -793,8 +793,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -803,28 +803,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -973,24 +988,24 @@
 <p>You may notice that, as <span class="math notranslate nohighlight">\(n\)</span> becomes large, the distribution of the MLE becomes more and more concentrated around the true value, and the histrogram appears to look more bell-shaped.</p>
 <p>Suppose we denote the parameter of interest as <span class="math notranslate nohighlight">\(\theta\)</span> and its MLE as <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>. The tabs below show some important properties of MLEs.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="ab0e2998-3b4c-4036-8321-76ad755fca41" name="42d19ae5-1117-4743-85f4-23c013101cfd" type="radio">
-</input><label class="tabbed-label" for="ab0e2998-3b4c-4036-8321-76ad755fca41">
+<input checked="checked" id="606e2c7d-5428-43b2-939f-b91cc709d0dc" name="b7f30fee-4e7c-4bd5-9809-937516b66a51" type="radio">
+</input><label class="tabbed-label" for="606e2c7d-5428-43b2-939f-b91cc709d0dc">
 Bias</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically unbiased</strong>, i.e. on average we obtain the correct answer as samples become large.</p>
 <p><span class="math notranslate nohighlight">\(\mathbb{E}(\hat{\theta}) \rightarrow \theta\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </div>
 </div>
-<input id="9f95f0f7-4a7c-4b48-a741-46fb6009e556" name="42d19ae5-1117-4743-85f4-23c013101cfd" type="radio">
-</input><label class="tabbed-label" for="9f95f0f7-4a7c-4b48-a741-46fb6009e556">
+<input id="23ccd43b-ffc0-4cab-932f-12f1ac51f533" name="b7f30fee-4e7c-4bd5-9809-937516b66a51" type="radio">
+</input><label class="tabbed-label" for="23ccd43b-ffc0-4cab-932f-12f1ac51f533">
 Consistency</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>consistent</strong>, i.e. the MLE converges towards the correct answer as samples become large.</p>
 <p><span class="math notranslate nohighlight">\(\hat{\theta} \rightarrow \theta\)</span> in probability as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </div>
 </div>
-<input id="010c1059-a588-47d9-bea4-9383484a7b7a" name="42d19ae5-1117-4743-85f4-23c013101cfd" type="radio">
-</input><label class="tabbed-label" for="010c1059-a588-47d9-bea4-9383484a7b7a">
+<input id="0a39289c-2150-4157-b17c-faab2cb6e9e3" name="b7f30fee-4e7c-4bd5-9809-937516b66a51" type="radio">
+</input><label class="tabbed-label" for="0a39289c-2150-4157-b17c-faab2cb6e9e3">
 Normality</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically normal</strong>.</p>
@@ -998,8 +1013,8 @@ Normality</label><div class="tabbed-content docutils">
 <p>The approximate normal distribution of the MLE means that confidence intervals and hypothesis tests for the parameters can be constructed easily.</p>
 </div>
 </div>
-<input id="2f0e7b9b-c270-4a78-9460-c77e2177ed93" name="42d19ae5-1117-4743-85f4-23c013101cfd" type="radio">
-</input><label class="tabbed-label" for="2f0e7b9b-c270-4a78-9460-c77e2177ed93">
+<input id="d2826a15-43b3-4636-ad58-ab5407e0e371" name="b7f30fee-4e7c-4bd5-9809-937516b66a51" type="radio">
+</input><label class="tabbed-label" for="d2826a15-43b3-4636-ad58-ab5407e0e371">
 Efficiency</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically efficient</strong>.</p>
@@ -1007,8 +1022,8 @@ Efficiency</label><div class="tabbed-content docutils">
 <p>This means that, for example, confidence intervals constructed around the MLE will be the narrowest amongst confidence intervals of estimators that are linear and unbiased.</p>
 </div>
 </div>
-<input id="a50afcf4-60c0-41f6-8644-a806a00478a9" name="42d19ae5-1117-4743-85f4-23c013101cfd" type="radio">
-</input><label class="tabbed-label" for="a50afcf4-60c0-41f6-8644-a806a00478a9">
+<input id="554a1a61-d0a3-44c0-ba29-aa704293a795" name="b7f30fee-4e7c-4bd5-9809-937516b66a51" type="radio">
+</input><label class="tabbed-label" for="554a1a61-d0a3-44c0-ba29-aa704293a795">
 Transformation invariance</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>transformation invariant</strong>.</p>
