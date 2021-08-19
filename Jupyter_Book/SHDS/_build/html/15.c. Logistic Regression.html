@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15.2 The dementia dataset &#8212; Statistics for Health Data Science</title>
+    <title>15.2 Data used in our examples &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -54,7 +54,7 @@
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="15.3 The logistic regression model" href="15.d.%20Logistic%20Regression.html" />
-    <link rel="prev" title="15.1 Introduction: linear vs. logistic regression" href="15.b.%20Logistic%20Regression.html" />
+    <link rel="prev" title="15.1 Regression modelling for binary outcomes" href="15.b.%20Logistic%20Regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -190,7 +190,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -582,7 +582,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -597,34 +597,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -634,17 +629,17 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="13.b.%20Linear%20Regression%20II.html">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -654,17 +649,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
+     13.7  Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.8 Summary
     </a>
    </li>
   </ul>
@@ -681,22 +676,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -706,12 +701,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
-     14.7 Example using the birthweight data
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -728,12 +723,12 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="15.b.%20Logistic%20Regression.html">
-     15.1 Introduction: linear vs. logistic regression
+     15.1 Regression modelling for binary outcomes
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     15.2 The dementia dataset
+     15.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -743,56 +738,42 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
-     15.4 Interpretation of the parameters
+     15.4 Estimating the parameters
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
-     15.5 Example 1: Dementia
+     15.5 Examples
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
-     15.6 Interpretation when
-     <span class="math notranslate nohighlight">
-      \(X_i\)
-     </span>
-     is a continuous variable
+     15.6 Inference
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.h.%20Logistic%20Regression.html">
-     15.7 Example 2: Dementia
+     15.7 Multivariable logistic regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
-     15.8 Interactions
+     15.8 Interactions and higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
-     15.9 Example 3: Dementia
+     15.9 Model diagnostics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
-     15.10 Diagnosis for the logistic regression
+     15.12 Common pitfalls
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
      15.11 Adequacy of the logistic regression model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
-     15.12 Common pitfalls
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
-     15.13 Optional Reading
     </a>
    </li>
   </ul>
@@ -933,6 +914,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   15.2 Data used in our examples
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#exploratory-analyses">
+   15.2.1 Exploratory analyses
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -941,57 +940,77 @@
         
               <div>
                 
-  <div class="section" id="the-dementia-dataset">
-<h1>15.2 The dementia dataset<a class="headerlink" href="#the-dementia-dataset" title="Permalink to this headline">¶</a></h1>
-<p>The dementia dataset we will work with all along this logistic regression module is a simulated dataset that gathers medical history data of 200.000 subjects and their dementia status. Below are the first lines of the dataset.</p>
+  <div class="section" id="data-used-in-our-examples">
+<h1>15.2 Data used in our examples<a class="headerlink" href="#data-used-in-our-examples" title="Permalink to this headline">¶</a></h1>
+<p>We will use a dataset that is simulated to represent data from electronic health records for 200,000 patients. The outcome we will consider is whether or not a patient is diagnosed with dementia. In this example, there is an additional complexity because patients were followed up for different amounts of time. A longer follow-up will naturally lead to a higher probability of being diagnosed with dementia. In later modules, we will encounter survival analysis which allows the aspect of time to be accounted for. For now, we will ignore this aspect.</p>
+<p>The code below reads in the dataset and displays the first few rows.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># we load the dataset and display its first lines</span>
-<span class="n">dementia</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;dementia.csv&quot;</span><span class="p">)</span>
+<span class="n">dementia</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;Practicals/Datasets/Dementia/dementia2.csv&quot;</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">dementia</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Warning message in file(file, &quot;rt&quot;):
-&quot;cannot open file &#39;dementia.csv&#39;: No such file or directory&quot;
-</pre></div>
+<div class="output text_html"><table>
+<thead><tr><th scope=col>id</th><th scope=col>prac</th><th scope=col>pr_lcd</th><th scope=col>sex</th><th scope=col>age</th><th scope=col>bmi</th><th scope=col>bmi_category</th><th scope=col>consultations</th><th scope=col>agegp</th><th scope=col>alcohol</th><th scope=col>...</th><th scope=col>mortality</th><th scope=col>date_death</th><th scope=col>timetodementia</th><th scope=col>dementia</th><th scope=col>date_dementia</th><th scope=col>end_date</th><th scope=col>dob</th><th scope=col>rsample</th><th scope=col>vitd</th><th scope=col>lp</th></tr></thead>
+<tbody>
+	<tr><td> 23189                                                           </td><td>142                                                              </td><td>08dec2009                                                        </td><td>1                                                                </td><td>53                                                               </td><td>20.4                                                             </td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td>12                                                               </td><td>50                                                               </td><td>3-6 units/day                                                    </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>08dec2009                                                        </td><td>01nov1941                                                        </td><td>1                                                                </td><td><span style=white-space:pre-wrap>      NA</span>                 </td><td>-0.8153054                                                       </td></tr>
+	<tr><td> 92186                                                           </td><td>132                                                              </td><td>03feb2003                                                        </td><td>0                                                                </td><td>73                                                               </td><td>21.5                                                             </td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td> 4                                                               </td><td>70                                                               </td><td>&lt;2 units/day                                                  </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>03feb2003                                                        </td><td>16jan1928                                                        </td><td>1                                                                </td><td><span style=white-space:pre-wrap>      NA</span>                 </td><td>-1.2268275                                                       </td></tr>
+	<tr><td>187963                                                           </td><td> 43                                                              </td><td>06jul2001                                                        </td><td>0                                                                </td><td>40                                                               </td><td>27.1                                                             </td><td><span style=white-space:pre-wrap>Overweight (25-&lt;30)   </span></td><td> 0                                                               </td><td>40                                                               </td><td>&lt;2 units/day                                                  </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>06jul2001                                                        </td><td>18jun1961                                                        </td><td>1                                                                </td><td><span style=white-space:pre-wrap>      NA</span>                 </td><td>-0.6602434                                                       </td></tr>
+	<tr><td>148379                                                           </td><td>215                                                              </td><td>08mar2012                                                        </td><td>1                                                                </td><td>40                                                               </td><td>20.9                                                             </td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td> 3                                                               </td><td>40                                                               </td><td>&lt;2 units/day                                                  </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>08mar2012                                                        </td><td>10feb1952                                                        </td><td>1                                                                </td><td>23.22692                                                         </td><td>-0.9507329                                                       </td></tr>
+	<tr><td> 44194                                               </td><td>225                                                  </td><td>02feb2011                                            </td><td>1                                                    </td><td>92                                                   </td><td>32.5                                                 </td><td>Obese class I (30-&lt;35)                            </td><td>10                                                   </td><td>90                                                   </td><td><span style=white-space:pre-wrap>Non drinker  </span></td><td>...                                                  </td><td>0                                                    </td><td>                                                     </td><td>NA                                                   </td><td>0                                                    </td><td>                                                     </td><td>02feb2011                                            </td><td>09dec1912                                            </td><td>1                                                    </td><td><span style=white-space:pre-wrap>      NA</span>     </td><td> 1.0403746                                           </td></tr>
+	<tr><td>169915                                                           </td><td>175                                                              </td><td>02nov2011                                                        </td><td>1                                                                </td><td>55                                                               </td><td>26.3                                                             </td><td><span style=white-space:pre-wrap>Overweight (25-&lt;30)   </span></td><td> 3                                                               </td><td>55                                                               </td><td>3-6 units/day                                                    </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>02nov2011                                                        </td><td>06oct1946                                                        </td><td>1                                                                </td><td><span style=white-space:pre-wrap>      NA</span>                 </td><td>-0.1080445                                                       </td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">):</span> <span class="n">cannot</span> <span class="nb">open</span> <span class="n">the</span> <span class="n">connection</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">csv</span><span class="p">(</span><span class="s2">&quot;dementia.csv&quot;</span><span class="p">)</span>
-<span class="mi">2</span><span class="o">.</span> <span class="n">read</span><span class="o">.</span><span class="n">table</span><span class="p">(</span><span class="n">file</span> <span class="o">=</span> <span class="n">file</span><span class="p">,</span> <span class="n">header</span> <span class="o">=</span> <span class="n">header</span><span class="p">,</span> <span class="n">sep</span> <span class="o">=</span> <span class="n">sep</span><span class="p">,</span> <span class="n">quote</span> <span class="o">=</span> <span class="n">quote</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">dec</span> <span class="o">=</span> <span class="n">dec</span><span class="p">,</span> <span class="n">fill</span> <span class="o">=</span> <span class="n">fill</span><span class="p">,</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span> <span class="o">=</span> <span class="n">comment</span><span class="o">.</span><span class="n">char</span><span class="p">,</span> <span class="o">...</span><span class="p">)</span>
-<span class="mi">3</span><span class="o">.</span> <span class="n">file</span><span class="p">(</span><span class="n">file</span><span class="p">,</span> <span class="s2">&quot;rt&quot;</span><span class="p">)</span>
-</pre></div>
 </div>
-</div>
-</div>
-<p>It contains several variables</p>
+<div class="section" id="exploratory-analyses">
+<h1>15.2.1 Exploratory analyses<a class="headerlink" href="#exploratory-analyses" title="Permalink to this headline">¶</a></h1>
+<p>The variables we will use during this session are:</p>
+<ul class="simple">
+<li><p>id: a variable that identifies a patient</p></li>
+<li><p>sex: a factor variable that gives the sex of the patient (<span class="math notranslate nohighlight">\(0\)</span> for men, <span class="math notranslate nohighlight">\(1\)</span> for women)</p></li>
+<li><p>age: age in years of the patient at study baseline</p></li>
+<li><p>bmi: Body Mass Index of the patient at study baseline</p></li>
+<li><p>dementia: an indicator variable that equals <span class="math notranslate nohighlight">\(1\)</span> if the patient is diagnosed with dementia during follow-up, <span class="math notranslate nohighlight">\(0\)</span> if not.</p></li>
+</ul>
+<p>In this session the outcome of interest is dementia diagnosis, which we will treat as a binary variable. We are interested in modelling the relationship between dementia diagnosis and age, sex and BMI. Generally, we would expect older people to have a higher risk of being diagnosed with dementia. Females typically have higher risk. The relationship with BMI is less well understood.</p>
+<p>The code below tabulates dementia and sex and draws box-plots of age and BMI, separately by dementia diagnosis status.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">names</span><span class="p">(</span><span class="n">dementia</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Tabulate dementia diagnosis versus sex (dementia = right-hand column)</span>
+<span class="p">(</span><span class="n">table</span><span class="o">&lt;-</span><span class="nf">table</span><span class="p">(</span><span class="n">dementia</span><span class="o">$</span><span class="n">sex</span><span class="p">,</span> <span class="n">dementia</span><span class="o">$</span><span class="n">dementia</span><span class="p">))</span>
+<span class="nf">prop.table</span><span class="p">(</span><span class="n">table</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>
+
+<span class="c1"># Box plot of age by dementia diagnosis</span>
+<span class="nf">par</span><span class="p">(</span><span class="n">mfrow</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">1</span><span class="p">,</span><span class="m">2</span><span class="p">))</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">dementia</span><span class="o">$</span><span class="n">age</span> <span class="o">~</span> <span class="n">dementia</span><span class="o">$</span><span class="n">dementia</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Age&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Dementia diagnosis&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Baseline age (years)&quot;</span><span class="p">)</span>
+<span class="nf">boxplot</span><span class="p">(</span><span class="n">dementia</span><span class="o">$</span><span class="n">bmi</span> <span class="o">~</span> <span class="n">dementia</span><span class="o">$</span><span class="n">dementia</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;BMI&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Dementia diagnosis&quot;</span><span class="p">,</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Baseline BMI&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="nb">eval</span><span class="p">(</span><span class="n">expr</span><span class="p">,</span> <span class="n">envir</span><span class="p">,</span> <span class="n">enclos</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;dementia&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   
+         0      1
+  0 107981   1707
+  1  88132   2180
 </pre></div>
 </div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>   
+             0          1
+  0 0.98443768 0.01556232
+  1 0.97586146 0.02413854
+</pre></div>
+</div>
+<img alt="_images/15.c. Logistic Regression_3_2.png" src="_images/15.c. Logistic Regression_3_2.png" />
 </div>
 </div>
-<p>and here are the one that we will use during this course</p>
-<ul class="simple">
-<li><p>id: a variable that identifies a patient</p></li>
-<li><p>sex: a factor variable that gives the sex of the patient (<span class="math notranslate nohighlight">\(0\)</span> for men, <span class="math notranslate nohighlight">\(1\)</span> for women)</p></li>
-<li><p>age: a numeric variable that gives the age in years of the patient at his inclusion in the study</p></li>
-<li><p>bmi: a numeric variable that gives the bmi of the patient at his inclusion in the study</p></li>
-<li><p>mortality: an indicator variable that equals <span class="math notranslate nohighlight">\(1\)</span> if the patient has died since his inclusion, <span class="math notranslate nohighlight">\(0\)</span> if not</p></li>
-<li><p>dementia: an indicator variable that equals <span class="math notranslate nohighlight">\(1\)</span> if the patient has become demented, <span class="math notranslate nohighlight">\(0\)</span> if not</p></li>
-</ul>
-<p>Here, in this lecture, the outcome of interest will be dementia.</p>
+<p>From the output above, we see that dementia is fairly rare in this study population, with 1.6% of males receiving a dementia diagnosis during follow-up compared to a slightly higher 2.4% among females.</p>
+<p>The box-plots show that patients who received a dementia diagnosis during follow-up generally had a much higher age at baseline, as expected. The second box-plot perhaps hints at a slightly lower BMI among those diagnosed with dementia, but there is a less evident relationship than for age.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1019,7 +1038,7 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="15.b.%20Logistic%20Regression.html" title="previous page">15.1 Introduction: linear vs. logistic regression</a>
+    <a class='left-prev' id="prev-link" href="15.b.%20Logistic%20Regression.html" title="previous page">15.1 Regression modelling for binary outcomes</a>
     <a class='right-next' id="next-link" href="15.d.%20Logistic%20Regression.html" title="next page">15.3 The logistic regression model</a>
 
         </div>

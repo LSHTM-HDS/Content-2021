@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>13.1 Multivariable linear regression &#8212; Statistics for Health Data Science</title>
+    <title>13.1 Categorical independent variables &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="13.2 The multivariable linear regression model" href="13.c.%20Linear%20Regression%20II.html" />
-    <link rel="prev" title="13. Linear Regression I" href="13.a.%20Linear%20Regression%20II.html" />
+    <link rel="next" title="13.2 Multivariable linear regression" href="13.c.%20Linear%20Regression%20II.html" />
+    <link rel="prev" title="13. Linear Regression II" href="13.a.%20Linear%20Regression%20II.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -188,7 +190,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="03.e.%20Continuous%20Probability%20Distributions.html">
-     3.5 Are the data normally distributed?
+     3.4 Are the data normally distributed?
     </a>
    </li>
    <li class="toctree-l2">
@@ -580,7 +582,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.c.%20Linear%20Regression%20I.html">
-     12.2 Simple linear regression model
+     12.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -595,34 +597,29 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.f.%20Linear%20Regression%20I.html">
-     12.5 Examples
+     12.5 Example: continuous independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.g.%20Linear%20Regression%20I.html">
-     12.6 Inference
+     12.6 Inference for the slope
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.h.%20Linear%20Regression%20I.html">
-     12.7 Hypothesis testing
+     12.7 Example: binary independent variable
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="12.i.%20Linear%20Regression%20I.html">
-     12.8 Confidence intervals
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="12.j.%20Linear%20Regression%20I.html">
-     12.9 Prediction intervals
+     12.8 Additional material
     </a>
    </li>
   </ul>
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="13.a.%20Linear%20Regression%20II.html">
-   13. Linear Regression I
+   13. Linear Regression II
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-12" name="toctree-checkbox-12" type="checkbox"/>
   <label for="toctree-checkbox-12">
@@ -632,17 +629,17 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     13.1 Multivariable linear regression
+     13.1 Categorical independent variables
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.c.%20Linear%20Regression%20II.html">
-     13.2 The multivariable linear regression model
+     13.2 Multivariable linear regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.d.%20Linear%20Regression%20II.html">
-     13.3 Example Birthweight data: Model 3
+     13.3 Including multiple covariates
     </a>
    </li>
    <li class="toctree-l2">
@@ -652,17 +649,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.f.%20Linear%20Regression%20II.html">
-     13.5 Including categorical predictor variables in linear regression models
+     13.6  Including higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
-     12.15 Birthweight data: Model 4
+     13.7  Modelling interaction terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.6 Optional Reading: Analysis of Variance
+     13.8 Summary
     </a>
    </li>
   </ul>
@@ -679,22 +676,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="14.b.%20Linear%20Regression%20III.html">
-     14.1 Diagnostics for checking the assumptions of linear regression
+     14.1 Assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.c.%20Linear%20Regression%20III.html">
-     14.2 Statistical tests of assumptions
+     14.2 Investigating assumptions using plots
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.d.%20Linear%20Regression%20III.html">
-     14.3 Dealing with violations of assumptions
+     14.2 Statistical tests of assumptions
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.e.%20Linear%20Regression%20III.html">
-     14.4 Modelling interaction terms
+     14.3 Dealing with violations of assumptions
     </a>
    </li>
    <li class="toctree-l2">
@@ -704,12 +701,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.g.%20Linear%20Regression%20III.html">
-     14.6 Different types of investigation
+     14.6 Optional Reading: Analysis of Variance
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="14.h.%20Linear%20Regression%20III.html">
-     14.7 Example using the birthweight data
+     14.7 Proofs
     </a>
    </li>
   </ul>
@@ -726,12 +723,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="15.b.%20Logistic%20Regression.html">
-     15.1 Introduction: linear vs. logistic regression
+     15.1 Regression modelling for binary outcomes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.c.%20Logistic%20Regression.html">
-     15.2 The dementia dataset
+     15.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -741,56 +738,42 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
-     15.4 Interpretation of the parameters
+     15.4 Estimating the parameters
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
-     15.5 Example 1: Dementia
+     15.5 Examples
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
-     15.6 Interpretation when
-     <span class="math notranslate nohighlight">
-      \(X_i\)
-     </span>
-     is a continuous variable
+     15.6 Inference
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.h.%20Logistic%20Regression.html">
-     15.7 Example 2: Dementia
+     15.7 Multivariable logistic regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
-     15.8 Interactions
+     15.8 Interactions and higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
-     15.9 Example 3: Dementia
+     15.9 Model diagnostics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
-     15.10 Diagnosis for the logistic regression
+     15.12 Common pitfalls
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
      15.11 Adequacy of the logistic regression model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
-     15.12 Common pitfalls
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
-     15.13 Optional Reading
     </a>
    </li>
   </ul>
@@ -931,6 +914,29 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dummy-variables">
+   13.1.1 Dummy variables
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-model">
+   13.1.1 The model
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#categorising-continuous-variables">
+   13.1.2 Categorising continuous variables
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -939,17 +945,174 @@
         
               <div>
                 
-  <div class="section" id="multivariable-linear-regression">
-<h1>13.1 Multivariable linear regression<a class="headerlink" href="#multivariable-linear-regression" title="Permalink to this headline">¶</a></h1>
-<p>Multivariable linear regression extends the simple linear regression model to situations in which we wish to relate two or more independent variables to one outcome. Where there are multiple independent variables, we will refer to them as <strong>covariates</strong>.</p>
-<p>There can be a number of different reasons why we would want to add more covariates in our linear regression model. Recall these two examples of questions we might want to answer using statistical models (given at the beginning of this lesson):</p>
+  <div class="section" id="categorical-independent-variables">
+<h1>13.1 Categorical independent variables<a class="headerlink" href="#categorical-independent-variables" title="Permalink to this headline">¶</a></h1>
+<p>We have explored simple linear regression with a continuous independent variable and with a binary variable. We now extend these ideas to include a categorical independent variable.</p>
+<p>We will return to the baby example and use linear regression to explore the association between maternal Body Mass Index (BMI) category and the baby’s birthweight.</p>
+<div class="section" id="dummy-variables">
+<h2>13.1.1 Dummy variables<a class="headerlink" href="#dummy-variables" title="Permalink to this headline">¶</a></h2>
+<p>We have height measured in inches and weight measured in pounds. BMI is obtained using the formula <span class="math notranslate nohighlight">\(BMI = 703 \times weight (lb) / height (in)^2\)</span>. We will then categorise BMI according to the World Health Organisation’s classification.</p>
+<p>We will define a categorical variable <span class="math notranslate nohighlight">\(c_{i}\)</span> denoting the <span class="math notranslate nohighlight">\(i^{th}\)</span> mother’s BMI category, defined as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+c_{i} =
+\begin{cases}
+    1 &amp; \text{ if the mother's BMI is less than 18.5 (underweight)} \\
+    2 &amp; \text{ if the mother's BMI is at least 18.5 and less than 25 (normal)} \\
+    3 &amp; \text{ if the mother's BMI is at least 25 and less than 30 (overweight)} \\
+    4 &amp; \text{ if the mother's BMI is 30 or more (obese)} 
+\end{cases} 
+\end{split}\]</div>
+<p>Our BMI categorical variable has four categories. To distinguish between all four categories we need <em>three</em> dummy variables.  We choose a <em>baseline</em> or <em>reference</em> group, which for us will be the underweight category. For each of the other categories, we create a dummy variable which indicates that the woman is in (or not) that category. Specifically, we define our dummy variables as:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+w_{1i} =
+\begin{cases}
+    1 &amp; \text{ if } c_{i}=2\\
+    0 &amp; \text{ if } c_{i} \neq 2
+\end{cases} 
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+w_{2i} =
+\begin{cases}
+    1 &amp; \text{ if } c_{i}=3\\
+    0 &amp; \text{ if } c_{i} \neq 3
+\end{cases}
+\end{split}\]</div>
+<p>and</p>
+<div class="math notranslate nohighlight">
+\[\begin{split} 
+w_{3i} =
+\begin{cases}
+    1 &amp; \text{ if } c_{i}=4\\
+    0 &amp; \text{ if } c_{i} \neq 4
+\end{cases}
+\end{split}\]</div>
+<p>The R code below read in the baby data and create variables containing the mother’s BMI (<code class="docutils literal notranslate"><span class="pre">Maternal.BMI</span></code>) and the mother’s BMI category (<code class="docutils literal notranslate"><span class="pre">Maternal.BMIcat</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">data</span><span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&#39;https://www.inferentialthinking.com/data/baby.csv&#39;</span><span class="p">)</span>
+<span class="c1"># Calculate maternal BMI (with conversion factor due to measurement in lb and in)</span>
+<span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMI</span> <span class="o">&lt;-</span> <span class="m">703</span><span class="o">*</span><span class="n">data</span><span class="o">$</span><span class="n">Maternal.Pregnancy.Weight</span><span class="o">/</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Maternal.Height</span><span class="p">)</span><span class="o">**</span><span class="m">2</span>
+
+<span class="c1"># Categorise the BMI values</span>
+<span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMIcat</span> <span class="o">&lt;-</span><span class="m">1</span>
+<span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMIcat</span><span class="p">[</span><span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMI</span><span class="o">&gt;=</span><span class="m">18.5</span> <span class="o">&amp;</span> <span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMI</span><span class="o">&lt;</span><span class="m">25</span><span class="p">]</span><span class="o">&lt;-</span><span class="m">2</span>
+<span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMIcat</span><span class="p">[</span><span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMI</span><span class="o">&gt;=</span><span class="m">25</span>   <span class="o">&amp;</span> <span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMI</span><span class="o">&lt;</span><span class="m">30</span><span class="p">]</span><span class="o">&lt;-</span><span class="m">3</span>
+<span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMIcat</span><span class="p">[</span><span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMI</span><span class="o">&gt;=</span><span class="m">30</span><span class="p">]</span><span class="o">&lt;-</span><span class="m">4</span>
+
+<span class="c1"># Tabulate the BMI categories</span>
+<span class="nf">table</span><span class="p">(</span><span class="n">data</span><span class="o">$</span><span class="n">Maternal.BMIcat</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>  1   2   3   4 
+ 84 932 124  34 
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-model">
+<h2>13.1.1 The model<a class="headerlink" href="#the-model" title="Permalink to this headline">¶</a></h2>
+<p>A linear regression model relating birthweight (<span class="math notranslate nohighlight">\(Y\)</span>, the outcome) to the three dummy variables (<span class="math notranslate nohighlight">\(W_1, W_2, W_3\)</span>) representing the mother’s BMI category (<span class="math notranslate nohighlight">\(C\)</span>, the categorical independent variable) is defined as:</p>
+<div class="math notranslate nohighlight">
+\[
+\text{Model 3: } y_i = \beta_0 + \beta_{1}w_{1,i} + \beta_{2}w_{2,i} + \beta_{3}w_{3,i}  + \epsilon_i 
+\]</div>
+<p>The equation above can also be written as follows:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align}
+y_i &amp;= \beta_0 + \epsilon_i \text{ if } c_i=1 \text{ (underweight mothers) }  \\
+y_i &amp;= \beta_0 + \beta_1 +  \epsilon_i \text{ if } c_i=2 \text{ (normal weight mothers) } \\
+y_i &amp;= \beta_0 + \beta_2 + \epsilon_i \text{ if } c_i=3 \text{ (overweight mothers) } \\
+y_i &amp;= \beta_0 + \beta_3 + \epsilon_i \text{ if } c_i=4 \text{ (obese mothers) }  \\
+\end{align}
+\end{split}\]</div>
+<p>This makes explicit the interpretation of the parameters in the model.</p>
 <ul class="simple">
-<li><p>Does taking drug A reduce inflammation more than taking drug B in patients with arthritis?</p></li>
-<li><p>Can we predict the risk of heart disease for our patients?</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_0\)</span> is the expectation of <span class="math notranslate nohighlight">\(Y\)</span> when <span class="math notranslate nohighlight">\(C=1\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_0 + \beta_1\)</span> is the expectation of <span class="math notranslate nohighlight">\(Y\)</span> when <span class="math notranslate nohighlight">\(C=2\)</span>. Hence <span class="math notranslate nohighlight">\(\beta_1\)</span> is the difference in the expectation of <span class="math notranslate nohighlight">\(Y\)</span> between groups defined by <span class="math notranslate nohighlight">\(C=1\)</span> and <span class="math notranslate nohighlight">\(C=2\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_0 + \beta_2\)</span> is the expectation of <span class="math notranslate nohighlight">\(Y\)</span> when <span class="math notranslate nohighlight">\(C=3\)</span>. Hence <span class="math notranslate nohighlight">\(\beta_2\)</span> is the difference in the expectation of <span class="math notranslate nohighlight">\(Y\)</span> between groups defined by <span class="math notranslate nohighlight">\(C=1\)</span> and <span class="math notranslate nohighlight">\(C=3\)</span>.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_0 + \beta_3\)</span> is the expectation of <span class="math notranslate nohighlight">\(Y\)</span> when <span class="math notranslate nohighlight">\(C=4\)</span>. Hence <span class="math notranslate nohighlight">\(\beta_3\)</span> is the difference in the expectation of <span class="math notranslate nohighlight">\(Y\)</span> between groups defined by <span class="math notranslate nohighlight">\(C=1\)</span> and <span class="math notranslate nohighlight">\(C=4\)</span>.</p></li>
 </ul>
-<p>In the first example, we could use a statistical model with inflammation as the outcome and drug use as the independent variable of interest, but we may need to <strong>control</strong> (or <strong>adjust</strong>) for the <strong>confounding</strong> effects of other patient characteristics (age, gender, other medication use, etc.). In the second example, there are many different factors that could be associated with risk of heart disease (age, gender, lifestyle choices, etc.) and we may wish to include all such factors in a statistical model to predict heart disease.</p>
-<p>Here, we introduce the multivariable linear regression model and describe how to estimate and interpret the parameters in the model using an example from the birthweight data. In particular, we will consider two statistical models which relate birthweight to length of pregnancy and mother’s height. In the first of these two models (Model 3) we will model the mother’s height as a continuous variable and in the second (Model 4), we will model the mother’s height as a categorical variable.</p>
-<p><em>A note on notation.</em> There can be some confusion between the terms <strong>multivariable</strong> models and <strong>multivariate</strong> models. Multivariate models are those which have more than one outcome variable. Such models are beyond the scope of this module; we focus our attention on <strong>univariate</strong> models which have only one outcome. Both simple linear regression models and multivariable linear regression models are considered as univariate.</p>
+<p>Notes</p>
+<blockquote>
+<div><p>In this parameterisation of the model, the group defined by <span class="math notranslate nohighlight">\(C=0\)</span> is often referred to as the baseline group. There is no statistical reason why one group rather than another should be chosen as the baseline group. It can sometimes be desirable to re-parameterise a model of this type to estimate parameters representating differences in mean levels from a particular baseline group. In this example, for instance, we might instead want the group with normal weight to be our baseline group, in which case we would need to redefine our first dummy variable. <br> <br>
+Note that, in contrast to the models that we have met so far, this has more than one variable in it (even though the three dummy variables together measure a single characteristic). Therefore, this is no longer strictly a simple linear regression model. It is an example of a multivariable linear regression model. We will discuss general theory for this model later. Broadly speaking, the ideas we have met in the context of simple linear regression extend to this more general model very naturally.</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Model 3: Relating birthweight to length of pregnancy and mother&#39;s height group. </span>
+<span class="n">model3</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="nf">factor</span><span class="p">(</span><span class="n">Maternal.BMIcat</span><span class="p">),</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">model3</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+lm(formula = Birth.Weight ~ factor(Maternal.BMIcat), data = data)
+
+Residuals:
+    Min      1Q  Median      3Q     Max 
+-64.828 -10.828   0.172  11.172  57.677 
+
+Coefficients:
+                         Estimate Std. Error t value Pr(&gt;|t|)    
+(Intercept)               115.286      1.996  57.752   &lt;2e-16 ***
+factor(Maternal.BMIcat)2    4.543      2.084   2.180   0.0295 *  
+factor(Maternal.BMIcat)3    3.037      2.585   1.175   0.2404    
+factor(Maternal.BMIcat)4    8.626      3.719   2.320   0.0205 *  
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+Residual standard error: 18.3 on 1170 degrees of freedom
+Multiple R-squared:  0.006152,	Adjusted R-squared:  0.003604 
+F-statistic: 2.414 on 3 and 1170 DF,  p-value: 0.06511
+</pre></div>
+</div>
+</div>
+</div>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_0 = 115.29\)</span>. This is interpreted as the estimated mean birthweight (in oz) of a baby with all “dummy” variables equal to 0, i.e. it is the estimated mean birthweight of babies in our baseline category (those with mothers who are underweight).</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_1= 4.543\)</span>. The mean birthweight is estimated to increase by 4.5 oz per unit increase in the first “dummy” variable. A unit increase in the first dummy variable equates to moving from the underweight group to the normal weight group. So we can interpret this as the difference in mean birthweights between the group whose mothers have normal BMI and those whose mothers are underweight.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_2= 3.037\)</span>. The mean birthweight is estimated to increase by 3.0 oz per unit increase in the second “dummy” variable. A unit increase in the second dummy variable equates to moving from the underweight group to the overweight group. So we can interpret this as the difference in mean birthweights between the group whose mothers are overweight and those whose mothers are underweight.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\hat{\beta}_3= 8.626\)</span>. The mean birthweight is estimated to increase by 8.6 oz per unit increase in the third “dummy” variable. A unit increase in the first dummy variable equates to moving from the underweight group to the obese group. So we can interpret this as the difference in mean birthweights between the group whose mothers are obese and those whose mothers are underweight.</p></li>
+</ul>
+<p>Overall, we see a pattern of higher maternal BMI being associated with higher birthweights, particularly for the group with obese mothers.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\hat{\sigma}=18.3\)</span>. The observed outcomes are scattered around the fitted regression line with a standard deviation of 18.3oz.</p></li>
+</ul>
+<p>We can obtain confidence intervals around the three BMI estimates as follows:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">confint</span><span class="p">(</span><span class="n">model3</span><span class="p">,</span> <span class="n">level</span><span class="o">=</span><span class="m">0.95</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr></thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>111.3691529</td><td>119.202276 </td></tr>
+	<tr><th scope=row>factor(Maternal.BMIcat)2</th><td>  0.4533602</td><td>  8.631864 </td></tr>
+	<tr><th scope=row>factor(Maternal.BMIcat)3</th><td> -2.0356770</td><td>  8.109410 </td></tr>
+	<tr><th scope=row>factor(Maternal.BMIcat)4</th><td>  1.3296865</td><td> 15.922414 </td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+</div>
+<div class="section" id="categorising-continuous-variables">
+<h2>13.1.2 Categorising continuous variables<a class="headerlink" href="#categorising-continuous-variables" title="Permalink to this headline">¶</a></h2>
+<p>In the above example, we have categorised an continuous variable (BMI) in order to demonstrate how a categorical variable should be included in a linear regression model. This is important to know, since there are many variables that are categorical by definition and may be required for a statistical analysis. For example: cancer stage, ethnicity, education level, etc. While these examples should be included as a categorical variable in a linear regression model, it is not, in general, recommended to categorise a continuous variable in a linear model. We did so above, purely for pedagogical reasons.</p>
+<p>One of the problems with categorising continuous variables is that it is difficult to decide what the cut-off for each category should be. In the example above, however, there are widely used categorisations.</p>
+<p>We often lose information by categorising continous variables. We can often obtain a better and more parsimonious fit (using fewer parameters to describe the relationship) by modelling the continuous variable without categorisation. We will return to these ideas later.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -977,8 +1140,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="13.a.%20Linear%20Regression%20II.html" title="previous page">13. Linear Regression I</a>
-    <a class='right-next' id="next-link" href="13.c.%20Linear%20Regression%20II.html" title="next page">13.2 The multivariable linear regression model</a>
+    <a class='left-prev' id="prev-link" href="13.a.%20Linear%20Regression%20II.html" title="previous page">13. Linear Regression II</a>
+    <a class='right-next' id="next-link" href="13.c.%20Linear%20Regression%20II.html" title="next page">13.2 Multivariable linear regression</a>
 
         </div>
         
