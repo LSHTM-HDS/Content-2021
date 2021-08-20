@@ -141,6 +141,7 @@ parts:
       - file: 15.j. Logistic Regression
       - file: 15.k. Logistic Regression
       - file: 15.l. Logistic Regression
+      - file: 15.m. Logistic Regression
     - file: 16.a. Poisson Regression Model
       sections: 
       - file: 16.b. Poisson Regression Model 

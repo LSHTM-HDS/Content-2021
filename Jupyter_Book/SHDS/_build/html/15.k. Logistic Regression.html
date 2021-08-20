@@ -776,6 +776,11 @@
      15.13 Further resources
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.14 Additional reading
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -949,7 +954,7 @@
 <h1>15.12 Common pitfalls<a class="headerlink" href="#common-pitfalls" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="perfect-separation">
 <h2>15.12.1 Perfect separation<a class="headerlink" href="#perfect-separation" title="Permalink to this headline">¶</a></h2>
-<p>Perfect separation happens when the outcome can be directly predicted from one of the predictor variables. For example, let say that we model an outcome <span class="math notranslate nohighlight">\(Y\)</span> using one explanatory standard gaussian variable <span class="math notranslate nohighlight">\(X_1\)</span> and that <span class="math notranslate nohighlight">\(Y\)</span> is such that <span class="math notranslate nohighlight">\(Y=0\)</span> whenever <span class="math notranslate nohighlight">\(X_1\leq0\)</span> and <span class="math notranslate nohighlight">\(Y=1\)</span> whenever <span class="math notranslate nohighlight">\(X1&gt;0\)</span>.</p>
+<p>Perfect separation happens when the outcome can be directly predicted from one of the predictor variables. For example, let say that we model an outcome <span class="math notranslate nohighlight">\(Y\)</span> using one explanatory standard gaussian variable <span class="math notranslate nohighlight">\(X_1\)</span> and that <span class="math notranslate nohighlight">\(Y\)</span> is such that <span class="math notranslate nohighlight">\(Y=0\)</span> whenever <span class="math notranslate nohighlight">\(X_1\leq0\)</span> and <span class="math notranslate nohighlight">\(Y=1\)</span> whenever <span class="math notranslate nohighlight">\(X_1&gt;0\)</span>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">x1</span> <span class="o">&lt;-</span> <span class="nf">rnorm</span><span class="p">(</span><span class="m">1000</span><span class="p">,</span> <span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">)</span>

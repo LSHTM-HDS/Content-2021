@@ -776,6 +776,11 @@
      15.13 Further resources
     </a>
    </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.14 Additional reading
+    </a>
+   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -977,14 +982,14 @@ Y_i | X=x_i \sim Bernoulli\left(  \frac{e^{\beta_0 + \beta_1 x_i}}{1 + e^{\beta_
 <div class="math notranslate nohighlight">
 \[
 \begin{align*}
-L(\beta) &amp;= \prod_{i=1}^n Pr(Y_i = y_i|X_i=x_i) 
+L(\beta_0, \beta_1) &amp;= \prod_{i=1}^n Pr(Y_i = y_i|X_i=x_i) 
 \end{align*}
 \]</div>
 <p>We can write this as</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{align*}
-L(\beta) &amp;= \prod_{i=1}^n Pr(Y_i = 1 | X_i = x_i)^{y_i}Pr(Y_i = 0 | X_i = x_i)^{1-y_i}
+L(\beta_0, \beta_1) &amp;= \prod_{i=1}^n Pr(Y_i = 1 | X_i = x_i)^{y_i}Pr(Y_i = 0 | X_i = x_i)^{1-y_i}
 \end{align*}
 \]</div>
 <p>Because when the observed outcome is 1, the second term above is 1 (recall <span class="math notranslate nohighlight">\(x^0\)</span>=1 for any <span class="math notranslate nohighlight">\(x\)</span>) so we just have <span class="math notranslate nohighlight">\(Pr(Y_i = 1|X_i=x_i)\)</span>, which is equal to <span class="math notranslate nohighlight">\(Pr(Y_i = y_i|X_i=x_i)\)</span> when <span class="math notranslate nohighlight">\(y_i = 1\)</span>. Conversely, when <span class="math notranslate nohighlight">\(y_i = 0\)</span>, the first term becomes 1 and we are left with just the second term.</p>
@@ -992,14 +997,14 @@ L(\beta) &amp;= \prod_{i=1}^n Pr(Y_i = 1 | X_i = x_i)^{y_i}Pr(Y_i = 0 | X_i = x_
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
-L(\beta) &amp;= \prod_{i=1}^n \left(  \frac{e^{\beta_0 + \beta_1 x_i}}{1 + e^{\beta_0 + \beta_1 x_i}} \right)^{y_i} \left( \frac{1}{1 + e^{\beta_0 + \beta_1 x_i}} \right)^{1-y_i} \\ &amp; = \prod_{i=1}^n (e^{\beta_0 + \beta_1 x_i})^{y_i} \times \left(\frac{1}{1 + e^{\beta_0 + \beta_1 x_i}} \right) 
+L(\beta_0, \beta_1) &amp;= \prod_{i=1}^n \left(  \frac{e^{\beta_0 + \beta_1 x_i}}{1 + e^{\beta_0 + \beta_1 x_i}} \right)^{y_i} \left( \frac{1}{1 + e^{\beta_0 + \beta_1 x_i}} \right)^{1-y_i} \\ &amp; = \prod_{i=1}^n (e^{\beta_0 + \beta_1 x_i})^{y_i} \times \left(\frac{1}{1 + e^{\beta_0 + \beta_1 x_i}} \right) 
 \end{align*}
 \end{split}\]</div>
 <p>Taking the log of the above likelihood, we derive the following log-likelihood</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
 \begin{align*}
-l(\beta) &amp;= \sum_{i=1}^n \{ y_i log(e^{\beta_0 + \beta_1 x_i})  - log \left(1 + e^{\beta_0 + \beta_1 x_i} \right)  \} \\
+l(\beta_0, \beta_1) &amp;= \sum_{i=1}^n \{ y_i log(e^{\beta_0 + \beta_1 x_i})  - log \left(1 + e^{\beta_0 + \beta_1 x_i} \right)  \} \\
  &amp;= \sum_{i=1}^n \{ y_i (\beta_0 + \beta_1 x_i)  - log \left(1 + e^{\beta_0 + \beta_1 x_i} \right)  \}
 \end{align*}
 \end{split}\]</div>
