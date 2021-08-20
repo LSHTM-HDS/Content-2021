@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15.4 Interpretation of the parameters" href="15.e.%20Logistic%20Regression.html" />
-    <link rel="prev" title="15.2 The dementia dataset" href="15.c.%20Logistic%20Regression.html" />
+    <link rel="next" title="15.4 Estimating the parameters" href="15.e.%20Logistic%20Regression.html" />
+    <link rel="prev" title="15.2 Data used in our examples" href="15.c.%20Logistic%20Regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -723,12 +723,12 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="15.b.%20Logistic%20Regression.html">
-     15.1 Introduction: linear vs. logistic regression
+     15.1 Regression modelling for binary outcomes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.c.%20Logistic%20Regression.html">
-     15.2 The dementia dataset
+     15.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -738,56 +738,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
-     15.4 Interpretation of the parameters
+     15.4 Estimating the parameters
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
-     15.5 Example 1: Dementia
+     15.5 Examples
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
-     15.6 Interpretation when
-     <span class="math notranslate nohighlight">
-      \(X_i\)
-     </span>
-     is a continuous variable
+     15.6 Inference
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.h.%20Logistic%20Regression.html">
-     15.7 Example 2: Dementia
+     15.7 Multivariable logistic regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
-     15.8 Interactions
+     15.8 Interactions and higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
-     15.9 Example 3: Dementia
+     15.9 Model diagnostics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
-     15.10 Diagnosis for the logistic regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
-     15.11 Adequacy of the logistic regression model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
      15.12 Common pitfalls
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
-     15.13 Optional Reading
+    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
+     15.13 Further resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.14 Additional reading
     </a>
    </li>
   </ul>
@@ -949,19 +940,45 @@
             <nav id="bd-toc-nav">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-logit-function">
-   15.3.1 The logit function
+  <a class="reference internal nav-link" href="#components-of-the-model">
+   15.3.1 Components of the model
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-logit-function">
+     The logit function
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#odds">
+       Odds
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-linear-predictor">
+     The linear predictor
+    </a>
+   </li>
+  </ul>
  </li>
  <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#the-logistic-model">
-   15.3.2 The logistic model
+  <a class="reference internal nav-link" href="#the-basic-logistic-regression-model">
+   15.3.2 The basic logistic regression model
   </a>
- </li>
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#inference-of-the-logistic-regression-model">
-   15.3.3 Inference of the logistic regression model
-  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#interpreting-the-parameters">
+     Interpreting the parameters
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#general-interpretation">
+     General interpretation
+    </a>
+   </li>
+  </ul>
  </li>
 </ul>
 
@@ -976,47 +993,109 @@
                 
   <div class="section" id="the-logistic-regression-model">
 <h1>15.3 The logistic regression model<a class="headerlink" href="#the-logistic-regression-model" title="Permalink to this headline">¶</a></h1>
+<p>Throughout this session we will assume that the outcome <span class="math notranslate nohighlight">\(Y\)</span> is binary. Further, we assume that <span class="math notranslate nohighlight">\(Y\)</span> takes a value of 0 (“failure”) or 1 (“success”). As we discussed earlier, the terminology of success and failure does not imply success is a good thing; in health applications “success” often refers to a bad outcome such as death.</p>
+<p>We will initially consider the simple situation with a single independent variable of interest, <span class="math notranslate nohighlight">\(X\)</span>. We assume that conditional on <span class="math notranslate nohighlight">\(X\)</span>, the outcome <span class="math notranslate nohighlight">\(Y\)</span> follows a Bernoulli distribution:</p>
+<div class="math notranslate nohighlight">
+\[
+Y | X=x \sim Bernoulli(\pi_x)
+\]</div>
+<p>Then <span class="math notranslate nohighlight">\(\pi_x\)</span> is the conditional probability of sucess, given <span class="math notranslate nohighlight">\(X=x\)</span>. It also represents the conditional expectation of the outcome, given <span class="math notranslate nohighlight">\(X=x\)</span>.</p>
+<div class="math notranslate nohighlight">
+\[
+\pi_x = E[Y | X=x] = P(Y=1 | X=x)
+\]</div>
+<p>Typically, our research question involves relating this probability to the covariate(s).</p>
+<div class="section" id="components-of-the-model">
+<h2>15.3.1 Components of the model<a class="headerlink" href="#components-of-the-model" title="Permalink to this headline">¶</a></h2>
 <div class="section" id="the-logit-function">
-<h2>15.3.1 The logit function<a class="headerlink" href="#the-logit-function" title="Permalink to this headline">¶</a></h2>
-<p>Before introducing the logistic regression model, we introduce the <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> function and the concept of odds. As we said, we cannot model directly <span class="math notranslate nohighlight">\(\pi_i=E(Y_i|X_i)=P(Y_i=1|X_i)\)</span> by the linear predictor <span class="math notranslate nohighlight">\(\eta_i = \sum_{k=0}^p \beta_k X_{i,k}\)</span>. The <em>logit</em> function is defined as follows for all <span class="math notranslate nohighlight">\(\pi\in(0,1)\)</span>:</p>
+<h3>The logit function<a class="headerlink" href="#the-logit-function" title="Permalink to this headline">¶</a></h3>
+<p>As we have discussed, we do not wish to directly model <span class="math notranslate nohighlight">\(\pi\)</span>, because fitted values can lie outside the possible range of values. Instead, we will first transform <span class="math notranslate nohighlight">\(\pi\)</span>. In other words, we will model a function of <span class="math notranslate nohighlight">\(\pi\)</span>. We want a one-to-one function (so we can back-transform to the original scale, if we wish) that maps a probability <span class="math notranslate nohighlight">\(\pi\)</span> to the whole real line.</p>
+<p>The function that we use in logistic regression is called the <strong>logit function</strong>. Specifically,</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{logit}(\pi) = \log \left(\frac{\pi}{1-\pi}\right).\]</div>
-<p>The main advantage of the <em>logit</em> function is that it maps <span class="math notranslate nohighlight">\((0,1)\)</span> into the set of real numbers <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> allowing to link <span class="math notranslate nohighlight">\(\pi_i\)</span> and the linear predictor <span class="math notranslate nohighlight">\(\eta_i\)</span>.</p>
-<p>The quantity <span class="math notranslate nohighlight">\(\frac{\pi}{1-\pi}=\frac{P(Y=1)}{P(Y=0)}\)</span> where <span class="math notranslate nohighlight">\(Y\)</span> is a binary variable which denotes the presence of an event (<span class="math notranslate nohighlight">\(Y=1\)</span>) or its absence (<span class="math notranslate nohighlight">\(Y=0\)</span>) is called the <em>odds</em> of this event. When the odds is equal to <span class="math notranslate nohighlight">\(1\)</span>, it means that <span class="math notranslate nohighlight">\(Y\)</span> is equally likely to be to <span class="math notranslate nohighlight">\(0\)</span> or <span class="math notranslate nohighlight">\(1\)</span>. When the odds is greater than <span class="math notranslate nohighlight">\(1\)</span>, it means that <span class="math notranslate nohighlight">\(Y\)</span> is more likely to be equal to <span class="math notranslate nohighlight">\(1\)</span> than it is to be equal to <span class="math notranslate nohighlight">\(0\)</span>. When the odds is less than <span class="math notranslate nohighlight">\(1\)</span>, it means that <span class="math notranslate nohighlight">\(Y\)</span> is more likely to be equal to <span class="math notranslate nohighlight">\(0\)</span> than it is to be equal to <span class="math notranslate nohighlight">\(1\)</span>. For example, if a patient has an odds of developing dementia of <span class="math notranslate nohighlight">\(9\)</span> it is very likely that this patient will have a dementia status of <span class="math notranslate nohighlight">\(1\)</span>.</p>
+\[
+logit(\pi) = log\left(\frac{\pi}{1-\pi}\right)
+\]</div>
+<p>The probability <span class="math notranslate nohighlight">\(\pi\)</span> lies in the interval <span class="math notranslate nohighlight">\([0,1]\)</span> but the transformed value, <span class="math notranslate nohighlight">\(logit(\pi)\)</span> lies in the range <span class="math notranslate nohighlight">\((-\infty, \infty)\)</span>.</p>
+<p>It will also be useful to know how to back-transform. If <span class="math notranslate nohighlight">\(logit(\pi) = L\)</span> then</p>
+<div class="math notranslate nohighlight">
+\[
+\pi = \frac{exp(L)}{1 + exp(L)}
+\]</div>
+<p>This relationship will allow us to obtain fitted probabilities from our logistic regression model.</p>
+<div class="section" id="odds">
+<h4>Odds<a class="headerlink" href="#odds" title="Permalink to this headline">¶</a></h4>
+<p>Suppose we have a binary outcome, where the probability of success is <span class="math notranslate nohighlight">\(\pi\)</span>, i.e. <span class="math notranslate nohighlight">\(P(Y=1) = \pi\)</span>. Then the <strong>odds</strong> of success are given by</p>
+<div class="math notranslate nohighlight">
+\[
+\frac{\pi}{1-\pi}
+\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(logit(\pi)\)</span> is the logarithm of the odds, or the log-odds. We will see below that using the logit function leads to the parameters of the regression model being interpreted in terms of odds and odds ratios.</p>
 </div>
-<div class="section" id="the-logistic-model">
-<h2>15.3.2 The logistic model<a class="headerlink" href="#the-logistic-model" title="Permalink to this headline">¶</a></h2>
-<p>Thanks to the <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> <em>link function</em>, we can map the probability <span class="math notranslate nohighlight">\(\pi_i=P(Y_i=1|X_i)\)</span> to the linear predictor <span class="math notranslate nohighlight">\(\eta_i=\sum_{k=0}^p \beta_k X_{i,k}\)</span> and that actually defines the logistic regression model</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{logit}(P(Y_i=1|X_i))=\sum_{k=0}^p \beta_k X_{i,k}\]</div>
-<p>which can be equivalently written as</p>
-<div class="math notranslate nohighlight">
-\[P(Y_i=1|X_i)=\frac{\exp(\sum_{k=0}^p \beta_k X_{i,k})}{1+\exp(\sum_{k=0}^p \beta_k X_{i,k})}\]</div>
-<p>by inverting the <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> function. In the dementia example, we could model the probability of dementia according to the sex of the patient with the model</p>
-<div class="math notranslate nohighlight">
-\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1 sex_i\]</div>
-<p>where <span class="math notranslate nohighlight">\(\pi_i\)</span> is the parameter of the binomial variable <span class="math notranslate nohighlight">\(Y_i|sex_i\)</span> where <span class="math notranslate nohighlight">\(Y_i\)</span> is the dementia status of the patient <span class="math notranslate nohighlight">\(i\)</span>. The odds of the dementia of patient <span class="math notranslate nohighlight">\(i\)</span> is <span class="math notranslate nohighlight">\(\frac{\pi_i}{1-\pi_i}\)</span>.</p>
-<blockquote>
-<div><p><em>Exercise:</em> prove the equivalence between both logistic regression model expressions:
-$<span class="math notranslate nohighlight">\( \mathrm{logit}(P(Y_i=1|X_i))=\sum_{k=0}^p \beta_k X_{i,k} \quad\text{and}\quad P(Y_i=1|X_i)=\frac{\exp(\sum_{k=0}^p \beta_k X_{i,k})}{1+\exp(\sum_{k=0}^p \beta_k X_{i,k})}\)</span>$</p>
-</div></blockquote>
 </div>
-<div class="section" id="inference-of-the-logistic-regression-model">
-<h2>15.3.3 Inference of the logistic regression model<a class="headerlink" href="#inference-of-the-logistic-regression-model" title="Permalink to this headline">¶</a></h2>
-<p>Let us assume that we have <span class="math notranslate nohighlight">\(n\)</span> observations <span class="math notranslate nohighlight">\((y_i)\)</span> from the random variable <span class="math notranslate nohighlight">\(Y_i\)</span> with <span class="math notranslate nohighlight">\(i=1,\dots,n\)</span>. We want to estimate the <span class="math notranslate nohighlight">\(p+1\)</span> parameters <span class="math notranslate nohighlight">\(\beta_k\)</span> of the logistic regression model that includes the covariate <span class="math notranslate nohighlight">\((X_i)\)</span> whose observed values are denoted <span class="math notranslate nohighlight">\((x_i)\)</span>. The estimation is done by maximizing the log-likelihood. We first need to derive the likelihood of the model.</p>
+<div class="section" id="the-linear-predictor">
+<h3>The linear predictor<a class="headerlink" href="#the-linear-predictor" title="Permalink to this headline">¶</a></h3>
+<p>Just as for linear regression models, the linear predictor is an additive function of the independent variables. With a single covariate, it is simply:</p>
 <div class="math notranslate nohighlight">
-\[\begin{split}\begin{aligned}
-L(\beta) &amp;= \prod_{i=1}^n Pr(Y_i = y_i|X_i=x_i) \\
-&amp;= \prod_{i=1}^n Pr(Y_i = 1 | X_i = x_i)^{y_i}Pr(Y_i = 0 | X_i = x_i)^{1-y_i}\\
-&amp;= \prod_{i=1}^n \left( \frac{\exp(\sum_{k=0}^p \beta_k x_{i,k})}{1+\exp(\sum_{k=0}^p \beta_k x_{i,k})} \right)^{y_i} \left( \frac{1}{1+\exp(\sum_{k=0}^p \beta_k x_{i,k})} \right)^{1-y_i}
-\end{aligned}\end{split}\]</div>
-<p>Taking the log of the above likelihood, we derive the following log-likelihood</p>
+\[
+\beta_0 + \beta_1 X
+\]</div>
+</div>
+</div>
+<div class="section" id="the-basic-logistic-regression-model">
+<h2>15.3.2 The basic logistic regression model<a class="headerlink" href="#the-basic-logistic-regression-model" title="Permalink to this headline">¶</a></h2>
+<p>The equation for a logistic regression model with, relating <span class="math notranslate nohighlight">\(X\)</span> to a binary outcome <span class="math notranslate nohighlight">\(Y\)</span> is:</p>
 <div class="math notranslate nohighlight">
-\[\begin{aligned}
-\ell(\beta) &amp;= \sum_{i=1}^n y_i \sum_{k=0}^p \beta_k x_{i,k} - \log(1+\exp(\beta^{\top}x_i))
-\end{aligned}\]</div>
-<p>By maximizing this log-likelihood over <span class="math notranslate nohighlight">\(\beta\)</span>, we can estimate the parameters. Note that, contrarily to the simple linear model, the maximisation over <span class="math notranslate nohighlight">\(\beta\)</span> is done numerically as there exist no closed-form solution to this optimisation problem. Once the optimisation algorithm has converged, we obtain a vector of estimates <span class="math notranslate nohighlight">\(\hat{\beta}=(\hat{\beta}_k)_{k=0,\dots,p}\)</span> and a vector of estimated standard errors <span class="math notranslate nohighlight">\(\hat{se}(\hat{\beta})\)</span>. We know from maximum likelihood theory that, from these, we can compute a <span class="math notranslate nohighlight">\(95\%\)</span> confidence interval for the parameters: $<span class="math notranslate nohighlight">\(\left[\hat{\beta}_k - 1.96\hat{se}(\hat{\beta}_k) ;~ \hat{\beta}_k + 1.96\hat{se}(\hat{\beta}_k)\right].\)</span>$</p>
-<p>Because the model is estimated using maximum likelihood theory, we can use the three likelihood based tests on the estimated parameters: the Wald test, the score test and the likelihood ratio test. From the likelihood theory, we know that these tests are asymptotically equivalent. The likelihood ratio test is often used to compare nested models and for null hypothesis that entails testing the nullity of several parameters simultaneously. The Wald test is often used to test separately the nullity of each parameter and both its statistics and p-value are often given as an output of the estimation of a logistic model.</p>
+\[
+logit(\pi_x) = \beta_0 + \beta_1 X
+\]</div>
+<p>Note that, unlike linear regression, there is no explicit error term in the logistic regression model.</p>
+<div class="section" id="interpreting-the-parameters">
+<h3>Interpreting the parameters<a class="headerlink" href="#interpreting-the-parameters" title="Permalink to this headline">¶</a></h3>
+<p>Suppose that our single covariate <span class="math notranslate nohighlight">\(X\)</span> is binary, taking values 1 (exposed, say) and 0 (unexposed). Our model is then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+logit(\pi_x) =
+\begin{cases} \beta_0 &amp;\text{when $X$=0 (unexposed group)} \\
+\beta_0 + \beta_1 &amp;\text{when $X$=1 (exposed group)}
+\end{cases}
+\end{split}\]</div>
+<p>In other words, we have:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\beta_0 &amp;\qquad \text{is the log-odds of the outcome in the unexposed group} \\
+\beta_0 + \beta_1 &amp;\qquad \text{is the log-odds of the outcome in the exposed group}
+\end{align*}
+\end{split}\]</div>
+<p>Taking the exponential, we have</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+e^{\beta_0} &amp;\qquad \text{is the odds of the outcome in the unexposed group} \\
+e^{\beta_0 + \beta_1} &amp;\qquad \text{is the odds of the outcome in the exposed group}
+\end{align*}
+\end{split}\]</div>
+<p>Now we have that <span class="math notranslate nohighlight">\(e^{\beta_0 + \beta_1}  = e^{\beta_0} \times e^{\beta_1}\)</span>. Therefore, <span class="math notranslate nohighlight">\(e^{\beta_1}\)</span> also represents the multiplicative increase in the odds, going from the unexposed group to the exposed group. This multiplicative increase is known as the <strong>odds ratio</strong>.  Therefore,  we can also write:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+e^{\beta_0} &amp;\qquad \text{is the odds of the outcome in the unexposed group} \\
+e^{\beta_1} &amp;\qquad \text{is the odds ratio of the outcome, comparing the exposed group to the unexposed group}
+\end{align*}
+\end{split}\]</div>
+</div>
+<div class="section" id="general-interpretation">
+<h3>General interpretation<a class="headerlink" href="#general-interpretation" title="Permalink to this headline">¶</a></h3>
+<p>This leads us to the following interpretation of the model:</p>
+<div class="math notranslate nohighlight">
+\[
+logit(\pi_x) = \beta_0 + \beta_1 X
+\]</div>
+<ul class="simple">
+<li><p>The intercept, <span class="math notranslate nohighlight">\(\beta_0\)</span> is the log-odds among those with <span class="math notranslate nohighlight">\(X=0\)</span>. This is often called the <strong>baseline log-odds</strong>. Alternatively, the exponential <span class="math notranslate nohighlight">\(e^{\beta_0}\)</span> is the odds among those with <span class="math notranslate nohighlight">\(X=0\)</span>.</p></li>
+<li><p>The slope, <span class="math notranslate nohighlight">\(\beta_1\)</span>, is the difference in the log-odds associated with a one-unit increase in <span class="math notranslate nohighlight">\(X\)</span>. Equivalently, <span class="math notranslate nohighlight">\(e^{\beta_1}\)</span> is the odds ratio associated with a one-unit increase in <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+</ul>
+</div>
 </div>
 </div>
 
@@ -1045,8 +1124,8 @@ L(\beta) &amp;= \prod_{i=1}^n Pr(Y_i = y_i|X_i=x_i) \\
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="15.c.%20Logistic%20Regression.html" title="previous page">15.2 The dementia dataset</a>
-    <a class='right-next' id="next-link" href="15.e.%20Logistic%20Regression.html" title="next page">15.4 Interpretation of the parameters</a>
+    <a class='left-prev' id="prev-link" href="15.c.%20Logistic%20Regression.html" title="previous page">15.2 Data used in our examples</a>
+    <a class='right-next' id="next-link" href="15.e.%20Logistic%20Regression.html" title="next page">15.4 Estimating the parameters</a>
 
         </div>
         

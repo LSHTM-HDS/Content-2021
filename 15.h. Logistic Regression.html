@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15.7 Example 2: Dementia &#8212; Statistics for Health Data Science</title>
+    <title>15.7 Multivariable logistic regression &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -53,8 +53,8 @@
     <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15.8 Interactions" href="15.i.%20Logistic%20Regression.html" />
-    <link rel="prev" title="15.6 Interpretation when \(X_i\) is a continuous variable" href="15.g.%20Logistic%20Regression.html" />
+    <link rel="next" title="15.8 Interactions and higher-order terms" href="15.i.%20Logistic%20Regression.html" />
+    <link rel="prev" title="15.6 Inference" href="15.g.%20Logistic%20Regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -723,12 +723,12 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="15.b.%20Logistic%20Regression.html">
-     15.1 Introduction: linear vs. logistic regression
+     15.1 Regression modelling for binary outcomes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.c.%20Logistic%20Regression.html">
-     15.2 The dementia dataset
+     15.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -738,56 +738,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
-     15.4 Interpretation of the parameters
+     15.4 Estimating the parameters
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
-     15.5 Example 1: Dementia
+     15.5 Examples
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
-     15.6 Interpretation when
-     <span class="math notranslate nohighlight">
-      \(X_i\)
-     </span>
-     is a continuous variable
+     15.6 Inference
     </a>
    </li>
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     15.7 Example 2: Dementia
+     15.7 Multivariable logistic regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
-     15.8 Interactions
+     15.8 Interactions and higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
-     15.9 Example 3: Dementia
+     15.9 Model diagnostics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
-     15.10 Diagnosis for the logistic regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
-     15.11 Adequacy of the logistic regression model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
      15.12 Common pitfalls
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
-     15.13 Optional Reading
+    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
+     15.13 Further resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.14 Additional reading
     </a>
    </li>
   </ul>
@@ -943,6 +934,19 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#example">
+   15.7.1 Example
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -951,73 +955,95 @@
         
               <div>
                 
-  <div class="section" id="example-2-dementia">
-<h1>15.7 Example 2: Dementia<a class="headerlink" href="#example-2-dementia" title="Permalink to this headline">¶</a></h1>
-<p>Let see a second example with several variables to see how to interpret the results. This time, our interest lies in modeling the probability of developing dementia during the follow-up according to sex, age at inclusion and bmi at inclusion.</p>
+  <div class="section" id="multivariable-logistic-regression">
+<h1>15.7 Multivariable logistic regression<a class="headerlink" href="#multivariable-logistic-regression" title="Permalink to this headline">¶</a></h1>
+<p>Suppose we wish to relate a binary outcome (<span class="math notranslate nohighlight">\(Y\)</span>) to <span class="math notranslate nohighlight">\(p\)</span> predictor variables <span class="math notranslate nohighlight">\((X_1, X_2, ..., X_p)\)</span>. The appropriate multivariable logistic regression model is a straightforward extension of the simple logistic regression model:</p>
 <div class="math notranslate nohighlight">
-\[\mathrm{logit}(\pi_i) = \beta_0 + \beta_1sex_i + \beta_2 age_i + \beta_3 bmi_i\]</div>
+\[
+\mathrm{logit}(\pi_i) = \beta_0 + \beta_1 x_{1i} + \beta_2 x_{2i} + ,..., \beta_p x_{ip}
+\]</div>
+<p>where, <span class="math notranslate nohighlight">\(x_{ji}\)</span> is the value of the jth predictor variable for the ith participant and <span class="math notranslate nohighlight">\(\pi_i = P(Y_i = 1 | X_1=x_1, ..., X_p=x_p)\)</span>.</p>
+<p>The parameters in the model are interpreted as follows:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(\beta_0\)</span> is the intercept. It is the estimated log-odds of <span class="math notranslate nohighlight">\(Y\)</span> when all the <span class="math notranslate nohighlight">\(X_j\)</span>’s are zero.</p></li>
+<li><p><span class="math notranslate nohighlight">\(\beta_j\)</span> is the expected change in the log-odds of <span class="math notranslate nohighlight">\(Y\)</span> for a 1 unit increase in <span class="math notranslate nohighlight">\(X_j\)</span> <em>with all the other covariates held constant</em>.</p></li>
+</ul>
+<p>The <span class="math notranslate nohighlight">\(\beta_j\)</span>’s are the <strong>regression coefficients</strong> (otherwise known as <strong>partial regression coefficients</strong>). Each one measures the effect of one covariate controlled (or adjusted) for all of the others.</p>
+<p>The maximum likelihood estimation process outlined earlier can be naturally extended to the multivariable model above.</p>
+<div class="section" id="example">
+<h2>15.7.1 Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>We consider an example using the dementia dataset. This time, our interest lies in modeling the relationship between the odds of being diagnosed with dementia during study follow-up and to sex (<span class="math notranslate nohighlight">\(S\)</span>), age (<span class="math notranslate nohighlight">\(A\)</span>) and BMI (<span class="math notranslate nohighlight">\(B\)</span>) at study baseline.</p>
+<p>Our multivariable logistic regression model is:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathrm{logit}(\pi_i) = \beta_0 + \beta_1 s_i + \beta_2 a_i + \beta_3 b_i
+\]</div>
 <p>This model can be estimated in <code class="docutils literal notranslate"><span class="pre">R</span></code>using the <code class="docutils literal notranslate"><span class="pre">glm</span></code> function</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dementia2</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">dementia</span> <span class="o">~</span> <span class="n">sex</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">dementia</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;Practicals/Datasets/Dementia/dementia2.csv&quot;</span><span class="p">)</span>
+<span class="n">dementia2</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">dementia</span> <span class="o">~</span> <span class="n">sex</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="nf">binomial</span><span class="p">(</span><span class="n">link</span><span class="o">=</span><span class="s">&quot;logit&quot;</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">dementia2</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="ow">is</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">data</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;dementia&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
+glm(formula = dementia ~ sex + age + bmi, family = binomial(link = &quot;logit&quot;), 
+    data = dementia)
 
-<span class="mi">1</span><span class="o">.</span> <span class="n">glm</span><span class="p">(</span><span class="n">dementia</span> <span class="o">~</span> <span class="n">sex</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> <span class="n">family</span> <span class="o">=</span> <span class="n">binomial</span><span class="p">(</span><span class="n">link</span> <span class="o">=</span> <span class="s2">&quot;logit&quot;</span><span class="p">))</span>
-<span class="mi">2</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">frame</span><span class="p">())</span>
-<span class="mi">3</span><span class="o">.</span> <span class="nb">eval</span><span class="p">(</span><span class="n">mf</span><span class="p">,</span> <span class="n">parent</span><span class="o">.</span><span class="n">frame</span><span class="p">())</span>
-<span class="mi">4</span><span class="o">.</span> <span class="n">stats</span><span class="p">::</span><span class="n">model</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">dementia</span> <span class="o">~</span> <span class="n">sex</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">drop</span><span class="o">.</span><span class="n">unused</span><span class="o">.</span><span class="n">levels</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-<span class="mi">5</span><span class="o">.</span> <span class="n">model</span><span class="o">.</span><span class="n">frame</span><span class="o">.</span><span class="n">default</span><span class="p">(</span><span class="n">formula</span> <span class="o">=</span> <span class="n">dementia</span> <span class="o">~</span> <span class="n">sex</span> <span class="o">+</span> <span class="n">age</span> <span class="o">+</span> <span class="n">bmi</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">dementia</span><span class="p">,</span> 
- <span class="o">.</span>     <span class="n">drop</span><span class="o">.</span><span class="n">unused</span><span class="o">.</span><span class="n">levels</span> <span class="o">=</span> <span class="n">TRUE</span><span class="p">)</span>
-<span class="mi">6</span><span class="o">.</span> <span class="ow">is</span><span class="o">.</span><span class="n">data</span><span class="o">.</span><span class="n">frame</span><span class="p">(</span><span class="n">data</span><span class="p">)</span>
+Deviance Residuals: 
+    Min       1Q   Median       3Q      Max  
+-1.1067  -0.1959  -0.1134  -0.0732   3.6917  
+
+Coefficients:
+             Estimate Std. Error z value Pr(&gt;|z|)    
+(Intercept) -9.783837   0.152138 -64.309  &lt; 2e-16 ***
+sex          0.306798   0.033773   9.084  &lt; 2e-16 ***
+age          0.098682   0.001413  69.826  &lt; 2e-16 ***
+bmi         -0.025619   0.003596  -7.124 1.05e-12 ***
+---
+Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
+
+(Dispersion parameter for binomial family taken to be 1)
+
+    Null deviance: 38333  on 199999  degrees of freedom
+Residual deviance: 31732  on 199996  degrees of freedom
+AIC: 31740
+
+Number of Fisher Scoring iterations: 8
 </pre></div>
 </div>
 </div>
 </div>
-<p>As usually, let us print the results that have been stored in the <code class="docutils literal notranslate"><span class="pre">R</span></code>object <code class="docutils literal notranslate"><span class="pre">dementia2</span></code>.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">summary</span><span class="p">(</span><span class="n">dementia2</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">cbind</span><span class="p">(</span><span class="nf">exp</span><span class="p">(</span><span class="nf">coefficients</span><span class="p">(</span><span class="n">dementia2</span><span class="p">)),</span> <span class="nf">exp</span><span class="p">(</span><span class="nf">confint</span><span class="p">(</span><span class="n">dementia2</span><span class="p">)))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">summary</span><span class="p">(</span><span class="n">dementia2</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;dementia2&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">summary</span><span class="p">(</span><span class="n">dementia2</span><span class="p">)</span>
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Waiting for profiling to be done...
 </pre></div>
 </div>
+<div class="output text_html"><table>
+<thead><tr><th></th><th scope=col></th><th scope=col>2.5 %</th><th scope=col>97.5 %</th></tr></thead>
+<tbody>
+	<tr><th scope=row>(Intercept)</th><td>5.635516e-05</td><td>4.179134e-05</td><td>7.587428e-05</td></tr>
+	<tr><th scope=row>sex</th><td>1.359066e+00</td><td>1.272090e+00</td><td>1.452170e+00</td></tr>
+	<tr><th scope=row>age</th><td>1.103716e+00</td><td>1.100675e+00</td><td>1.106790e+00</td></tr>
+	<tr><th scope=row>bmi</th><td>9.747061e-01</td><td>9.678335e-01</td><td>9.815740e-01</td></tr>
+</tbody>
+</table>
+</div></div>
 </div>
-</div>
-<p>We compute the exponential of the estimated coefficients and will interpret each.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">exp</span><span class="p">(</span><span class="nf">coefficients</span><span class="p">(</span><span class="n">dementia2</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">coefficients</span><span class="p">(</span><span class="n">dementia2</span><span class="p">):</span> <span class="nb">object</span> <span class="s1">&#39;dementia2&#39;</span> <span class="ow">not</span> <span class="n">found</span>
-<span class="ne">Traceback</span>:
-
-<span class="mi">1</span><span class="o">.</span> <span class="n">coefficients</span><span class="p">(</span><span class="n">dementia2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-</div>
-<p>Contrarily to the previous model, here we do not interpret the intercept. Indeed, if we were doing so, it would be the prevalence of dementia among men with age and bmi at inclusion of 0 which obviously does not make any clinical sense. We can interpret the other parameters</p>
+<p>We can interpret the parameters as follows:</p>
 <ul class="simple">
-<li><p><em>sex</em>: there is an association between sex and the dementia status and the odds of dementia are multiplied by <span class="math notranslate nohighlight">\(1.36\)</span> for women compared to men having same age and bmi at inclusion</p></li>
-<li><p><em>age</em>: there is an association between age and the dementia status and the odds of dementia are multiplied by <span class="math notranslate nohighlight">\(1.10\)</span> when age increases by <span class="math notranslate nohighlight">\(1\)</span> year assuming sex and bmi at inclusion remain unchanged</p></li>
-<li><p><em>bmi</em>: there is an association between bmi and the dementia status and the odds of dementia are multiplied by <span class="math notranslate nohighlight">\(0.97\)</span> when bmi increases by <span class="math notranslate nohighlight">\(1\)</span> unit assuming sex and age at inclusion remain unchanged</p></li>
+<li><p><em>sex</em>: Females are estimated to have 1.36 times higher odds of being diagnosed with dementia than men <em>who have the same age and BMI at study baseline</em>. The data are consistent with the true odds ratio lying between 1.27 and 1.45. The p-value, <span class="math notranslate nohighlight">\(p&lt;0.001\)</span>, provides strong evidence against the null hypothesis of no association between sex and dementia <em>after adjusting for age and BMI</em>. <br><br></p></li>
+<li><p><em>age</em>: The odds of being diagnosed with dementia is estimated to increase 1.1-fold for each increase in year of age at study baseline. The data are consistent with the true odds ratio lying between 1.1006 and 1.107.  The p-value, <span class="math notranslate nohighlight">\(p&lt;0.001\)</span>, provides strong evidence against the null hypothesis of no association between age and dementia <em>after adjusting for sex and BMI</em>. <br><br></p></li>
+<li><p><em>bmi</em>: The odds of being diagnosed with dementia is estimated to reduce by 0.97 times for each increase in unit of BMI, suggesting an inverse association between BMI and odds of dementia diagnosis.  The p-value, <span class="math notranslate nohighlight">\(p&lt;0.001\)</span>, provides strong evidence against the null hypothesis of no association between BMI and dementia <em>after adjusting for sex and age</em>. <br><br></p></li>
 </ul>
-<p>By including these variables into this new model, we only added two parameters but we can see that the deviance decreased slightly. It was <span class="math notranslate nohighlight">\(38143\)</span> on the first simple model and now equals <span class="math notranslate nohighlight">\(31732\)</span>. The quality of this new model is confirmed by the AIC which was <span class="math notranslate nohighlight">\(38147\)</span> for the previous model and decreases to <span class="math notranslate nohighlight">\(31740\)</span> for the new model.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1045,8 +1071,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="15.g.%20Logistic%20Regression.html" title="previous page">15.6 Interpretation when <span class="math notranslate nohighlight">\(X_i\)</span> is a continuous variable</a>
-    <a class='right-next' id="next-link" href="15.i.%20Logistic%20Regression.html" title="next page">15.8 Interactions</a>
+    <a class='left-prev' id="prev-link" href="15.g.%20Logistic%20Regression.html" title="previous page">15.6 Inference</a>
+    <a class='right-next' id="next-link" href="15.i.%20Logistic%20Regression.html" title="next page">15.8 Interactions and higher-order terms</a>
 
         </div>
         

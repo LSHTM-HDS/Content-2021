@@ -723,12 +723,12 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="15.b.%20Logistic%20Regression.html">
-     15.1 Introduction: linear vs. logistic regression
+     15.1 Regression modelling for binary outcomes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.c.%20Logistic%20Regression.html">
-     15.2 The dementia dataset
+     15.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -738,56 +738,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
-     15.4 Interpretation of the parameters
+     15.4 Estimating the parameters
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
-     15.5 Example 1: Dementia
+     15.5 Examples
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
-     15.6 Interpretation when
-     <span class="math notranslate nohighlight">
-      \(X_i\)
-     </span>
-     is a continuous variable
+     15.6 Inference
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.h.%20Logistic%20Regression.html">
-     15.7 Example 2: Dementia
+     15.7 Multivariable logistic regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
-     15.8 Interactions
+     15.8 Interactions and higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
-     15.9 Example 3: Dementia
+     15.9 Model diagnostics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
-     15.10 Diagnosis for the logistic regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
-     15.11 Adequacy of the logistic regression model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
      15.12 Common pitfalls
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
-     15.13 Optional Reading
+    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
+     15.13 Further resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.14 Additional reading
     </a>
    </li>
   </ul>
@@ -990,7 +981,12 @@ Y = \beta_0 + \beta_1 X + \epsilon
 <p>The subsequent two sections take a closer look at the linear predictor and error term, respectively.</p>
 <div class="section" id="the-linear-predictor">
 <h2>12.3.1 The linear predictor<a class="headerlink" href="#the-linear-predictor" title="Permalink to this headline">¶</a></h2>
-<p>The linear predictor is the algebraic relationship between the mean of the outcome and the independent variable. When <span class="math notranslate nohighlight">\(X\)</span> takes a particular value, <span class="math notranslate nohighlight">\(X=x\)</span>, the value of the linear predictor, <span class="math notranslate nohighlight">\(\beta_0+\beta_1x\)</span>, is interpreted as the expected value of <span class="math notranslate nohighlight">\(Y\)</span> when <span class="math notranslate nohighlight">\(X\)</span> takes the value <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<p>The linear predictor is an additive function of the independent variables. With a single variable, it is simply:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_0 + \beta_1 X
+\]</div>
+<p>In linear regression, the linear predictor represents the algebraic relationship between the mean of the outcome and the independent variable. When <span class="math notranslate nohighlight">\(X\)</span> takes a particular value, <span class="math notranslate nohighlight">\(X=x\)</span>, the value of the linear predictor, <span class="math notranslate nohighlight">\(\beta_0+\beta_1x\)</span>, is interpreted as the expected value of <span class="math notranslate nohighlight">\(Y\)</span> when <span class="math notranslate nohighlight">\(X\)</span> takes the value <span class="math notranslate nohighlight">\(x\)</span>:</p>
 <div class="math notranslate nohighlight">
 \[
 E(Y|X=x) = \beta_0 + \beta_1 x.
@@ -1064,8 +1060,8 @@ y_i = \beta_0 + \beta_1 x_{i}+ \epsilon_i \text{ where } \epsilon_i \overset{\sm
 <p>It is worth emphasising the four key assumptions that we have made in the simple linear regression model:</p>
 <ol class="simple">
 <li><p><strong>Linearity</strong>: The relationship between <span class="math notranslate nohighlight">\(X\)</span> and the mean of <span class="math notranslate nohighlight">\(Y\)</span> is linear.</p></li>
-<li><p><strong>Normality</strong>: The residuals are normally distributed.</p></li>
-<li><p><strong>Homoscedasticity</strong>: The variance of residuals are constant across all values of <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
+<li><p><strong>Normality</strong>: The errors follow a normal distribution.</p></li>
+<li><p><strong>Homoscedasticity</strong>: The variance of error terms are constant across all values of <span class="math notranslate nohighlight">\(X\)</span>.</p></li>
 <li><p><strong>Independence</strong>: All observations are independent of each other.</p></li>
 </ol>
 </div>

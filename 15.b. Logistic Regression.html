@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15.1 Introduction: linear vs. logistic regression &#8212; Statistics for Health Data Science</title>
+    <title>15.1 Regression modelling for binary outcomes &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,11 +49,9 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15.2 The dementia dataset" href="15.c.%20Logistic%20Regression.html" />
+    <link rel="next" title="15.2 Data used in our examples" href="15.c.%20Logistic%20Regression.html" />
     <link rel="prev" title="15 Logistic Regression" href="15.a.%20Logistic%20Regression.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -723,12 +721,12 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     15.1 Introduction: linear vs. logistic regression
+     15.1 Regression modelling for binary outcomes
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.c.%20Logistic%20Regression.html">
-     15.2 The dementia dataset
+     15.2 Data used in our examples
     </a>
    </li>
    <li class="toctree-l2">
@@ -738,56 +736,47 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.e.%20Logistic%20Regression.html">
-     15.4 Interpretation of the parameters
+     15.4 Estimating the parameters
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.f.%20Logistic%20Regression.html">
-     15.5 Example 1: Dementia
+     15.5 Examples
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.g.%20Logistic%20Regression.html">
-     15.6 Interpretation when
-     <span class="math notranslate nohighlight">
-      \(X_i\)
-     </span>
-     is a continuous variable
+     15.6 Inference
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.h.%20Logistic%20Regression.html">
-     15.7 Example 2: Dementia
+     15.7 Multivariable logistic regression
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.i.%20Logistic%20Regression.html">
-     15.8 Interactions
+     15.8 Interactions and higher-order terms
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.j.%20Logistic%20Regression.html">
-     15.9 Example 3: Dementia
+     15.9 Model diagnostics
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="15.k.%20Logistic%20Regression.html">
-     15.10 Diagnosis for the logistic regression
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
-     15.11 Adequacy of the logistic regression model
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
      15.12 Common pitfalls
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="15.n.%20Logistic%20Regression.html">
-     15.13 Optional Reading
+    <a class="reference internal" href="15.l.%20Logistic%20Regression.html">
+     15.13 Further resources
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="15.m.%20Logistic%20Regression.html">
+     15.14 Additional reading
     </a>
    </li>
   </ul>
@@ -943,6 +932,24 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   15.1 Regression modelling for binary outcomes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-cant-we-just-use-linear-regression">
+   15.1.2 Why can’t we just use Linear Regression?
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -951,11 +958,19 @@
         
               <div>
                 
-  <div class="section" id="introduction-linear-vs-logistic-regression">
-<h1>15.1 Introduction: linear vs. logistic regression<a class="headerlink" href="#introduction-linear-vs-logistic-regression" title="Permalink to this headline">¶</a></h1>
-<p>We have already learned how to estimate linear regression models and we also know in which conditions we can use such a model. In particular, let us assume that the outcome we are interested in, <span class="math notranslate nohighlight">\(Y\)</span>, is a binary variable. It could be, for example, a survival indicator, <span class="math notranslate nohighlight">\(1\)</span> being indicator of death and <span class="math notranslate nohighlight">\(0\)</span> of survival. It could be the indicator of a specific disease, <span class="math notranslate nohighlight">\(1\)</span> being indicator of the presence of the disease and <span class="math notranslate nohighlight">\(0\)</span> of its absence. What if we were using the classic linear model we have just studied to model such an outcome?</p>
-<p>We would model <span class="math notranslate nohighlight">\(\pi_i=E(Y_i|X_i)\)</span> by the linear predictor <span class="math notranslate nohighlight">\(\eta_i = \beta_0 + \sum_{k=1}^p \beta_k X_{i,k}\)</span> where <span class="math notranslate nohighlight">\(X_i=(X_{i,k})\)</span> are some dependent variables including a residual error <span class="math notranslate nohighlight">\(\varepsilon_i\)</span>. In the case of <span class="math notranslate nohighlight">\(Y_i\)</span> being a binary variable <span class="math notranslate nohighlight">\(Y_i|X_i\)</span> follows a Bernouilli distribution and <span class="math notranslate nohighlight">\(\pi_i = E(Y_i|X_i) = P(Y_i=1|X_i)\)</span> is a probability. However, <span class="math notranslate nohighlight">\(\eta_i\)</span>, the linear predictor, can take values in the whole real space <span class="math notranslate nohighlight">\(\mathbb{R}\)</span> and therefore can not be used to model the probability <span class="math notranslate nohighlight">\(\pi_i\)</span> whose range is constrained to <span class="math notranslate nohighlight">\((0;1)\)</span>. Hence, it makes the classic linear model not suitable for binary outcomes. From now on, we note <span class="math notranslate nohighlight">\(\eta_i = \sum_{k=0}^p \beta_k X_{i,k}\)</span> where <span class="math notranslate nohighlight">\(X_{i,0}=1\)</span>.</p>
-<p>The solution to this issue is to link the linear predictor <span class="math notranslate nohighlight">\(\eta_i\)</span> and the probability <span class="math notranslate nohighlight">\(\pi_i\)</span> using a link function. The <span class="math notranslate nohighlight">\(\mathrm{logit}\)</span> function (see Section III) is the most widely used and is at the basis of the <em>logistic regression model</em>. In the following section, we describe the dementia dataset which is used as an illustration all along this lecture. In the third section, we describe the logistic model and how it can be estimated. In the fourth section, diagnosic tools for logistic regression are presented and in the fifth section, some additional notes are given.</p>
+  <div class="section" id="regression-modelling-for-binary-outcomes">
+<h1>15.1 Regression modelling for binary outcomes<a class="headerlink" href="#regression-modelling-for-binary-outcomes" title="Permalink to this headline">¶</a></h1>
+<p>In many health applications, the outcome of interest is a binary outcome. Examples are 30-day mortality following surgery, 5-year survival following diagnosis of breast cancer, whether or not a particular side effect was experienced after taking a particular.</p>
+<p>In this session, we explore a very commonly used technique in health data science: logistic regression. This can be seen as an extension of the linear regression model we have been exploring in the last few sessions. We will see that many aspects of linear regression modelling extend quite naturally to logistic regression modelling.</p>
+</div>
+<div class="section" id="why-cant-we-just-use-linear-regression">
+<h1>15.1.2 Why can’t we just use Linear Regression?<a class="headerlink" href="#why-cant-we-just-use-linear-regression" title="Permalink to this headline">¶</a></h1>
+<p>We developed our linear regression model for a continuous outcome. As we have seen, the linear regression model relies on a number of assumptions. Two of them, normality of residuals and homoscedasticity (constant residual variance) are particularly relevant to this discussion.</p>
+<p><strong>Normality of errors:</strong> The usual inference procedures (calculating confidence intervals and p-values) for linear regression assume that the errors follow a normal distribution. This assumption will be violated with binary outcome data.</p>
+<p><strong>Homoscedasticity:</strong> The error variance is constant. With binary data the variance is a function of the mean. Therefore, the variance would change as the mean changes. Therefore, this assumption is unlikely to hold.</p>
+<p>An additional problem arises when we attempt to use linear regression to model binary outcome data, which relates to the fitted values.</p>
+<p><strong>Fitted values can be impossible:</strong> The mean of a binary outcome is the probability that it is a “success”, using the terminology of Bernoulli trials. This mean, because it is a probability, must lie between 0 and 1. If we tried to use linear regression to model our binary outcome we may find that some of the fitted values are below 0 or greater than 1. This problem arises largely because of the assumption that the mean is modelled by the linear predictor, an additive function of the covariates. This assumption is unlikely to be valid.</p>
+<p>Logistic regression avoids these problems by relating the covariates (through the linear predictor) to a <em>function of</em> the mean, instead of the mean.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -984,7 +999,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="15.a.%20Logistic%20Regression.html" title="previous page">15 Logistic Regression</a>
-    <a class='right-next' id="next-link" href="15.c.%20Logistic%20Regression.html" title="next page">15.2 The dementia dataset</a>
+    <a class='right-next' id="next-link" href="15.c.%20Logistic%20Regression.html" title="next page">15.2 Data used in our examples</a>
 
         </div>
         
