@@ -83,7 +83,7 @@ parts:
       sections: 
       - file: 10.b. Bayesian Statistics II
       - file: 10.c. Bayesian Statistics II
-        title: Calculating the posterior
+        title: 10.2 Calculating the posterior
       - file: 10.d. Bayesian Statistics II
       - file: 10.e. Bayesian Statistics II
       - file: 10.f. Bayesian Statistics II
