@@ -148,17 +148,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -424,7 +424,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -439,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -657,11 +657,6 @@
      13.7  Modelling interaction terms
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -784,8 +779,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -794,28 +789,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -937,25 +947,25 @@
 \[
 P(\theta \in [\theta_L,\theta_U])= 0.95 \mbox{ such that for all } \theta_O \notin  [\theta_L,\theta_U] \mbox{ and all  } \theta_I\in[\theta_L,\theta_U], p(\theta_O|y) &lt; p(\theta_I|y).
 \]</div>
-<p>In our previous example, when we used the asymmetrical <span class="math notranslate nohighlight">\(Beta(2, 9)\)</span> prior, our posterior was <span class="math notranslate nohighlight">\(Beta(6, 15)\)</span>. The posterior mean is  <span class="math notranslate nohighlight">\(\frac{6}{6+15}=0.286\)</span>. The <span class="math notranslate nohighlight">\(90\%\)</span> HPDI is <span class="math notranslate nohighlight">\((0.13, 0.44)\)</span>. We plot the distribution below and check that the area between these two values gives us 0.9. Now, note that the interval (0.144, 0.47) also gives us an area of 0.9, but this interval is wider. In a sense, the HPDI is the “tightest” interval so that the area under the posterior distribution is <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>In our previous example, when we used the asymmetrical <span class="math notranslate nohighlight">\(Beta(2, 9)\)</span> prior, our posterior was <span class="math notranslate nohighlight">\(Beta(6, 15)\)</span>. The posterior mean is  <span class="math notranslate nohighlight">\(\frac{6}{6+15}=0.286\)</span>. The 95% HPDI is (0.107,0.475). We plot the distribution below and check that the area between these two values gives us 0.95. Now, note that the interval (0.09, 0.465) also gives us an area of 0.95, but this interval is wider. In a sense, the HPDI is the “tightest” interval so that the area under the posterior distribution is 0.95.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.01</span><span class="p">)</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">7</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nf">dbeta</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Beta(6, 15) Distribution  \n with 90% credible interval&quot;</span><span class="p">,</span>  <span class="n">xlab</span><span class="o">=</span><span class="nf">expression</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;density&quot;</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.44</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.13</span><span class="p">,</span>  <span class="n">lty</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nf">dbeta</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Beta(6, 15) Distribution  \n with 95% credible interval&quot;</span><span class="p">,</span>  <span class="n">xlab</span><span class="o">=</span><span class="nf">expression</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;density&quot;</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.475</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.107</span><span class="p">,</span>  <span class="n">lty</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span>
 
-<span class="c1">#Area under the 90% HDPI</span>
-<span class="nf">pbeta</span><span class="p">(</span><span class="m">0.44</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span><span class="o">-</span><span class="nf">pbeta</span><span class="p">(</span><span class="m">0.13</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
+<span class="c1">#Area under the 95% HDPI</span>
+<span class="nf">pbeta</span><span class="p">(</span><span class="m">0.475</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span><span class="o">-</span><span class="nf">pbeta</span><span class="p">(</span><span class="m">0.107</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
 
-<span class="c1">#The interval (0.47. 0.144) also a 90% credible interval </span>
-<span class="nf">pbeta</span><span class="p">(</span><span class="m">0.47</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span><span class="o">-</span><span class="nf">pbeta</span><span class="p">(</span><span class="m">0.144</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
+<span class="c1">#The interval (0.09, 0.465) also a 95% credible interval </span>
+<span class="nf">pbeta</span><span class="p">(</span><span class="m">0.465</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span><span class="o">-</span><span class="nf">pbeta</span><span class="p">(</span><span class="m">0.09</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">0.897009716676625</div><div class="output text_html">0.90491783788117</div><img alt="_images/09.g. Bayesian Statistics I_1_2.png" src="_images/09.g. Bayesian Statistics I_1_2.png" />
+<div class="output text_html">0.949975144544822</div><div class="output text_html">0.951266598161814</div><img alt="_images/09.g. Bayesian Statistics I_1_2.png" src="_images/09.g. Bayesian Statistics I_1_2.png" />
 </div>
 </div>
 <blockquote>

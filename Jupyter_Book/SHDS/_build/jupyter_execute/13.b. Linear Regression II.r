@@ -17,4 +17,9 @@ summary(model3)
 
 confint(model3, level=0.95)
 
+# Remove maternal BMI from the model (i.e. a constant-only model)
+model3_without<-lm(Birth.Weight~1, data=data)
+
+anova(model3, model3_without)
+
 

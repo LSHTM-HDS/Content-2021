@@ -146,17 +146,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -422,7 +422,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -437,7 +437,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -655,11 +655,6 @@
      13.7  Modelling interaction terms
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -782,8 +777,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -792,28 +787,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -955,7 +965,7 @@
 <p>The first session introduces the concept of <strong>statistical inference</strong>, defining populations, samples and estimators. The second half of the session introduces the idea of <strong>sampling distributions</strong>, a fundamental building block for frequentist inference. The sampling distribution gives us information about how different our estimate of the unknown population quantity of interest might have been, had we selected a different sample. In other words, the sampling distribution describes how our estimate behaves under <strong>repeated sampling</strong>. One particular feature of the sampling distribution, the <strong>standard error</strong>, gives us information about the amount we might expect our estimate to change if we took a different sample (i.e. it describes the variability of the estimate between different samples).</p>
 <p>The idea of sampling distributions is crucial to frequentist inference, but while it gives us important information about how our estimate behaves under repeated sampling, it does not provide a recipe for choosing an estimator. <strong>Maximum likelihood estimation</strong> (MLE), the subject of the following two sessions, does exactly this. Given a statistical model for the data, MLE provides a method for choosing an estimator with desirable statistical properties.</p>
 <p>Having explored MLE to obtain our estimator, we return to the idea of sampling distributions in the following two frequentist inference sessions. We see how the idea of sampling distributions allows us to create <strong>confidence intervals</strong>, which are ranges of values of the population quantity which we believe are consistent with the observed data. A complementary frequentist inference tool, hypothesis testing, allows us to assess the evidence against a <strong>null hypothesis</strong> which proposes a specific value for the unknown population parameter.</p>
-<p>Thus far, our attention has been largely on the frequentist paradigm. The last two sessions focus instead on an important alternative approach, <strong>Bayesian inference</strong>. In this paradigm we do not base our inference on the idea of repeated sampling. Instead, we use the likelihood to update prior beliefs about the unknown parameter, to provide a <strong>posterior distribution</strong> for the unknown parameter. The posterior is used to obtain estimates of the parameter (e.g. the mean of the posterior is often used as the estimate) and <strong>credible intervals</strong> (intervals within which  the unknown parameter falls with particular probability).</p>
+<p>Thus far, our attention has been largely on the frequentist paradigm. The last two sessions focus instead on an important alternative approach, <strong>Bayesian inference</strong>. In this paradigm we do not base our inference on the idea of repeated sampling. Instead, we use the likelihood to update prior beliefs about the unknown parameter, to provide a <strong>posterior distribution</strong> for the unknown parameter. The posterior can be summarised by obtaining its mean, or a <strong>credible interval</strong> (interval within which  the unknown parameter falls with a particular probability).</p>
 </div>
 </div>
 

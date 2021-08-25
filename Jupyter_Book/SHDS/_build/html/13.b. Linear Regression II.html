@@ -148,17 +148,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -424,7 +424,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -439,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -657,11 +657,6 @@
      13.7  Modelling interaction terms
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -784,8 +779,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -794,28 +789,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -1111,6 +1121,33 @@ F-statistic: 2.414 on 3 and 1170 DF,  p-value: 0.06511
 </table>
 </div></div>
 </div>
+<p>The R output from the model provides p-values for each of the three coefficients relating maternal BMI to birth weight. However, we are typically interested in the broad question of whether maternal BMI is related to birth weight, rather than whether an individual dummy variable is related to the outcome.</p>
+<p>Therefore, when we have a categorical variable in a regression model, the hypothesis of interest usually relates to the combination of all dummy variables representing the categorical variable. An appropriate hypothesis test jointly tests the hypothesis that all coefficients for dummy variables are zero, i.e.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(H_0: \beta_1 = 0, \beta_2 = 0, \beta_3 = 0\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(H_1: \text{at least one of } \ \beta_1, \beta_2, \beta_3 \neq 0\)</span></p></li>
+</ul>
+<p>We use a partial <span class="math notranslate nohighlight">\(F\)</span>-test to test this hypothesis. Details are beyond the scope of the course, but are outlined in the appendix to this session. The R code to obtain the joint p-value is shown below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Remove maternal BMI from the model (i.e. a constant-only model)</span>
+<span class="n">model3_without</span><span class="o">&lt;-</span><span class="nf">lm</span><span class="p">(</span><span class="n">Birth.Weight</span><span class="o">~</span><span class="m">1</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">data</span><span class="p">)</span>
+
+<span class="nf">anova</span><span class="p">(</span><span class="n">model3</span><span class="p">,</span> <span class="n">model3_without</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table>
+<thead><tr><th scope=col>Res.Df</th><th scope=col>RSS</th><th scope=col>Df</th><th scope=col>Sum of Sq</th><th scope=col>F</th><th scope=col>Pr(&gt;F)</th></tr></thead>
+<tbody>
+	<tr><td>1170      </td><td>391633.5  </td><td>NA        </td><td>       NA </td><td>      NA  </td><td>        NA</td></tr>
+	<tr><td>1173      </td><td>394057.9  </td><td>-3        </td><td>-2424.344 </td><td>2.414232  </td><td>0.06510651</td></tr>
+</tbody>
+</table>
+</div></div>
+</div>
+<p>In this case we have a p-value of p=0.065, indicating some evidence against the null hypothesis of no association bewteen maternal BMI category and the baby’s birthweight.</p>
 </div>
 <div class="section" id="categorising-continuous-variables">
 <h2>13.1.2 Categorising continuous variables<a class="headerlink" href="#categorising-continuous-variables" title="Permalink to this headline">¶</a></h2>

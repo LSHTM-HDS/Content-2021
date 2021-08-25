@@ -51,7 +51,7 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="Part 1: 9.1 Introduction to Bayesian Inference" href="09.b.%20Bayesian%20Statistics%20I.html" />
+    <link rel="next" title="9.1 Introduction to Bayesian Inference" href="09.b.%20Bayesian%20Statistics%20I.html" />
     <link rel="prev" title="Further resources" href="08.g.%20Frequentist%20II.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
@@ -146,17 +146,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -422,7 +422,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -437,7 +437,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -655,11 +655,6 @@
      13.7  Modelling interaction terms
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -782,8 +777,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -792,28 +787,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -929,20 +939,14 @@
 <h1>9. Bayesian Statistics I<a class="headerlink" href="#bayesian-statistics-i" title="Permalink to this headline">¶</a></h1>
 <p>So far in this module, we have looked at frequentist or classical statistical ideas, such as maximum likelihood estimation, hypothesis testing and p-values. Underlying the frequentist approach is the belief that there is a true state of reality, and that parameters have a fixed and true value. Probabilities are long-run frequencies; for example, the probability of a driver in London having a car accident is a fixed value between 0 and 1. A typical way of estimating this value is to take a sample of observations, construct a likelihood function for these observations, and to obtain the parameter value that maximizes the likelihood. When we take a Bayesian approach, the parameter we wish to estimate is considered to be a random variable, and probabilities may represent a subjective belief about the state of uncertainty, or there may be a data generating distribution underlying the random parameter. For example, you may have a prior belief about the probability of a driver in London having a car accident, and after collecting a sample of data, you combine your prior beliefs with the likelihood for those observations to construct an updated belief - the posterior. Your belief may change in light of the data.</p>
 <p>Bayesian methods sometimes require numerical integration, and cheaper computing has made Bayesian approaches more feasible in the last 20 years. Bayesian approaches are likely to be an important part of working in Health Data Science. In the next two sessions, we introduce the fundamental principles.</p>
-<p>The current session is split into two separate parts. The first introduces the basic concepts underlying Bayesian inference and the second applies the basic principles to a simple example using proportions.</p>
+<p>The current session introduces the basic concepts underlying Bayesian inference and then applies the basic principles to a simple example using proportions.</p>
 <div class="alert alert-block alert-warning">
 <b> Intended learning outcomes</b> 
-<p><b> Part 1: </b></p>
 <p>By the end of this session you will be able to:</p>
 <ul class="simple">
 <li><p>compare the notions of probability and likelihood in Bayesian and Frequentist paradigms</p></li>
 <li><p>explain the notions of prior and posterior distributions</p></li>
 <li><p>apply Bayes Theorem in the discrete case</p></li>
-</ul>
-<p></b> </b></p>
-<p><b> Part 2</b></p>
-<p>By the end of this session you will be able to:</p>
-<ul class="simple">
 <li><p>Understand and apply the basic principles of Bayesian analysis using proportions, specifically:</p>
 <ul>
 <li><p>use the beta distribution as a prior and derive the posterior distribution</p></li>
@@ -983,7 +987,7 @@
         <div class='prev-next-bottom'>
             
     <a class='left-prev' id="prev-link" href="08.g.%20Frequentist%20II.html" title="previous page">Further resources</a>
-    <a class='right-next' id="next-link" href="09.b.%20Bayesian%20Statistics%20I.html" title="next page">Part 1: 9.1 Introduction to Bayesian Inference</a>
+    <a class='right-next' id="next-link" href="09.b.%20Bayesian%20Statistics%20I.html" title="next page">9.1 Introduction to Bayesian Inference</a>
 
         </div>
         

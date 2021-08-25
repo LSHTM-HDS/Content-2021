@@ -148,17 +148,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -424,7 +424,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -439,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -657,11 +657,6 @@
      13.7  Modelling interaction terms
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -784,8 +779,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -794,28 +789,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -1002,13 +1012,13 @@ SS_{RES} = \sum_{i=1}^n \hat{\epsilon}_i^2 = \sum_{i=1}^n (y_i - \hat{\beta_0} -
 <p>It can be shown that an unbiased estimator of the residual variance in the simple linear regression model is given by:</p>
 <div class="math notranslate nohighlight">
 \[
-\hat{\sigma}^2  = \sum_{i=1}^n \frac{\hat{\epsilon_i}^2}{n-1}=\sum_{i=1}^n \frac{(y_i-\hat{\beta}_0-\hat{\beta}_1 x_i)^2}{(n-2)}
+\hat{\sigma}^2  = \sum_{i=1}^n \frac{\hat{\epsilon_i}^2}{n-2}=\sum_{i=1}^n \frac{(y_i-\hat{\beta}_0-\hat{\beta}_1 x_i)^2}{n-2}
 \]</div>
 <p>This quantity is referred to as the residual mean square. It is often denoted by <span class="math notranslate nohighlight">\(MS_{RES}\)</span>, where “MS” stands for Mean Square and “RES” is shorthand for residual. The denominator is <span class="math notranslate nohighlight">\((n-2)\)</span> because fitting the model first requires the estimation of two parameters (<span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>) and the estimation of these parameters is said to reduce the information about the variance by two degrees of freedom.</p>
 </div>
 <div class="section" id="maximum-likelihood-estimation">
 <h2>12.4.4 Maximum likelihood estimation<a class="headerlink" href="#maximum-likelihood-estimation" title="Permalink to this headline">¶</a></h2>
-<p>An alternative approach to estimating the model parameters is maximum likelihood estimation. This approach selects the estimates which maximise the likelihood (or equivalently, the log-likelihood) of the parameter values. It can be shown that the ordinary least square estimates for <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> are also the maximum likelihood estimates (a proof of this result is at the end of the lesson).</p>
+<p>An alternative approach to estimating the model parameters is maximum likelihood estimation. This approach selects the estimates which maximise the likelihood (or equivalently, the log-likelihood) of the parameter values. It can be shown that the ordinary least square estimates for <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> are also the maximum likelihood estimates (a proof of this result is at the end of the session).</p>
 <p>The maximum likelihood estimate of <span class="math notranslate nohighlight">\(\sigma^2\)</span> is equal to the biased estimate given above, obtained by dividing the residual sum of squares by the number of observations.</p>
 </div>
 </div>

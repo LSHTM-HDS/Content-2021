@@ -3,9 +3,9 @@
 
 # # Acknowledgements
 
-# Many people have contributed to this document over time, including a large number of previous and current members of the Department of Medical Statistics at the London School of Hygiene and Tropical Medicine. In particular, we would like to acknowledge contributions from Corentin Segalas, Elizabeth Williamson, Emily Granger, Emily Nightingale, Linda Sharlples, Kathleen O'Reilly, Melanie Smuk, Mia Tackney, Nicholasa Jewell and Ruth Keogh.
+# Many people have contributed to this document over time, including a large number of previous and current members of the Department of Medical Statistics at the London School of Hygiene and Tropical Medicine. In particular, we would like to acknowledge contributions from Corentin Segalas, Elizabeth Williamson, Emily Granger, Emily Nightingale, Kathleen O'Reilly, Linda Sharples, Melanie Smuk, Mia Tackney, Nicholas Jewell and Ruth Keogh.
 # 
-# We thank Jennifer Nicholas and Chris Frost, whose notes  were particularly useful in the development of the linear regression sessions. 
+# We thank Jennifer Nicholas and Chris Frost, whose notes  were particularly useful in the development of the linear regression sessions.  We thank Katy Morgan for notes which helped inform the development of the section about inference for maximum likelihood models.
 # 
 # The notes for the Bayesian Inference sessions are heavily based on the Foundations course material created by Alex Lewin and Alexina Mason, which was previously developed by James Carpenter, Marcel Zwahlen and Beat Neuenschwander. Some sections are inspired also by notes from Michail Papathomas. We are grateful for their work and permission to re-use. 
 # 

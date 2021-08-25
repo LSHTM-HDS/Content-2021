@@ -148,17 +148,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -424,7 +424,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -439,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -657,11 +657,6 @@
      13.7  Modelling interaction terms
     </a>
    </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
-    </a>
-   </li>
   </ul>
  </li>
  <li class="toctree-l1 has-children">
@@ -784,8 +779,8 @@
   </ul>
  </li>
  <li class="toctree-l1 has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -794,28 +789,43 @@
   </label>
   <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
@@ -936,8 +946,8 @@
 <li><p>Can we predict the risk of heart disease for our patients?</p></li>
 </ul>
 <p>In the above examples, the outcome variables are birthweight, inflammation and heart disease. In the first two examples, the length of pregnancy and drug use are covariates. In the third example, no covariates are explicitly mentioned. However, when answering the third question, researchers may want to consider a range of patient characteristics that are associated with the risk of heart disease as covariates in their model, for example: diet, exercise, comorbodities, medications etc.</p>
-<p>Statistical models contain <strong>population parameters</strong> and representations of <strong>uncertainty</strong>. The population parameters are unknown quantities that we want to estimate from our sample and the uncertainty is a measure of the variability in the outcome variable that is not explained by the covariates.</p>
-<p>This is the first of two lessons on linear regression. In this lesson, we will learn how to define linear regression models, how to estimate their population parameters and how to estimate measures of uncertainty. We begin by introducing the <strong>simple linear regression model</strong> which includes one outcome and one covariate. We then introduce the <strong>multivariable linear regression model</strong>, which is an extension of the simple linear regression model to situations with multiple covariates. In the third session, we discuss the key assumptions underlying linear regression models and important model diagnostics. Finally, we learn how to conduct an <strong>analysis of variance</strong> of statistical models.</p>
+<p>Recall that statistical models contain <strong>population parameters</strong> and representations of <strong>uncertainty</strong>. The population parameters are unknown quantities that we want to estimate from our sample and the uncertainty is a measure of the variability in the outcome variable that is not explained by the covariates.</p>
+<p>This is the first ofthe sessions on linear regression. In this session, we will learn how to define linear regression models, how to estimate their population parameters and how to estimate measures of uncertainty. We begin by introducing the <strong>simple linear regression model</strong> which includes one outcome and one covariate. In the second session, we introduce the <strong>multivariable linear regression model</strong>, which is an extension of the simple linear regression model to situations with multiple covariates. We explore linear regression models with categorical variables, interactions and non-linear terms. In the third session, we discuss the key assumptions underlying linear regression models and important model diagnostics. The optional material to the session explores how to conduct an <strong>analysis of variance</strong> of statistical models.</p>
 <p>Before delving in, it is worth making a note of the different terminologies that you may come across in the medical literature. Here, I have already used the terms: outcome and covariates. Table 1 summarises alternatives terms that may be used to describe the same concepts.</p>
 <table class="colwidths-auto table">
 <thead>
