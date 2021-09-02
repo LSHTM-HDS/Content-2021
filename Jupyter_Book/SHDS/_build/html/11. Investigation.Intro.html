@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15.5 Zero Inflated Poisson Regression Example &#8212; Statistics for Health Data Science</title>
+    <title>Investigations and the role of regression modelling &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -51,7 +51,8 @@
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="prev" title="15.4 How to fit a Poisson Regression in R" href="16.e.%20Poisson%20Regression%20Model.html" />
+    <link rel="next" title="11. Types of Investigation" href="11.a.%20Types%20of%20Investigation.html" />
+    <link rel="prev" title="Further Resources" href="10.g.%20Bayesian%20Statistics%20II.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -145,17 +146,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -421,7 +422,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -436,7 +437,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -510,6 +511,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -547,17 +553,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
      11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
-     References
     </a>
    </li>
   </ul>
@@ -652,11 +653,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
      13.7  Modelling interaction terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
     </a>
    </li>
   </ul>
@@ -780,42 +776,67 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLMs)
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.d.%20Poisson%20Regression%20Model.html">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
     </a>
    </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     15.5 Zero Inflated Poisson Regression Example
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -858,7 +879,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/16.f. Poisson Regression Model.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/11. Investigation.Intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -878,7 +899,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F16.f. Poisson Regression Model.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F11. Investigation.Intro.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -899,7 +920,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/16.f. Poisson Regression Model.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/11. Investigation.Intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -916,19 +937,6 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
-            <div class="tocsection onthispage pt-5 pb-3">
-                <i class="fas fa-list"></i> Contents
-            </div>
-            <nav id="bd-toc-nav">
-                <ul class="visible nav section-nav flex-column">
- <li class="toc-h2 nav-item toc-entry">
-  <a class="reference internal nav-link" href="#vuong-test-optional-reading">
-   15.5.1 Vuong test (Optional Reading)
-  </a>
- </li>
-</ul>
-
-            </nav>
         </div>
     </div>
 </div>
@@ -937,288 +945,13 @@
         
               <div>
                 
-  <div class="section" id="zero-inflated-poisson-regression-example">
-<h1>15.5 Zero Inflated Poisson Regression Example<a class="headerlink" href="#zero-inflated-poisson-regression-example" title="Permalink to this headline">¶</a></h1>
-<p>As we discussed in section 14.3.4, often we are faced with a distribution which is looks like a Poisson distribution but has an inflated zero count. In this situation Poisson Regression would not be suitable however we can fit a Zero Inflated Poisson Regression, unfortunately the glm() function is incapable of this modelling approach so we need different package called pscl.</p>
-<p>Below we simulate data using a similar example to section 14.5.1 but instead of hospital admissions count we are interested in number of alcoholic drinks drunk in a day (treatment and country remain the same). The count for alcoholic drinks has a large number of zeros and thus is suitable to model with a Zero Inflated Poisson Regression.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Install package</span>
-<span class="c1">#install.packages(&quot;VGAM&quot;)</span>
-<span class="c1">#install.packages(&quot;pscl&quot;)</span>
-<span class="nf">library</span><span class="p">(</span><span class="s">&quot;VGAM&quot;</span><span class="p">)</span>
-<span class="nf">library</span><span class="p">(</span><span class="n">pscl</span><span class="p">)</span>
-
-<span class="c1">#Number of data points to simulate</span>
-<span class="n">n</span><span class="o">=</span><span class="m">100</span>
-<span class="c1">#Shape</span>
-<span class="n">lambda</span><span class="o">=</span><span class="m">3</span>
-<span class="c1">#Probability of drawing a zero</span>
-<span class="n">p</span><span class="o">=</span><span class="m">0.5</span>
-<span class="c1">#Create data</span>
-<span class="n">alcohol_count</span><span class="o">&lt;-</span><span class="nf">rzipois</span><span class="p">(</span><span class="n">n</span><span class="p">,</span> <span class="n">lambda</span> <span class="o">=</span> <span class="n">lambda</span><span class="p">,</span> <span class="n">pstr0</span> <span class="o">=</span> <span class="n">p</span><span class="p">)</span>
-<span class="n">country</span> <span class="o">&lt;-</span>  <span class="nf">factor</span><span class="p">(</span><span class="nf">sample</span><span class="p">(</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="n">n</span><span class="p">,</span> <span class="n">replace</span><span class="o">=</span><span class="bp">T</span><span class="p">),</span> <span class="n">levels</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">4</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;England&quot;</span><span class="p">,</span><span class="s">&quot;Northern Ireland&quot;</span><span class="p">,</span><span class="s">&quot;Scotland&quot;</span><span class="p">,</span><span class="s">&quot;Wales&quot;</span><span class="p">))</span>
-<span class="n">treatment</span> <span class="o">&lt;-</span> <span class="nf">factor</span><span class="p">(</span><span class="nf">gl</span><span class="p">(</span><span class="m">2</span><span class="p">,</span><span class="n">n</span><span class="o">/</span><span class="m">2</span><span class="p">),</span> <span class="n">levels</span><span class="o">=</span><span class="m">1</span><span class="o">:</span><span class="m">2</span><span class="p">,</span> <span class="n">labels</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="s">&quot;Placebo Arm&quot;</span><span class="p">,</span><span class="s">&quot;Active Arm&quot;</span><span class="p">))</span>
-<span class="nf">print</span><span class="p">(</span><span class="n">df</span> <span class="o">&lt;-</span> <span class="nf">data.frame</span><span class="p">(</span><span class="n">treatment</span><span class="p">,</span> <span class="n">country</span><span class="p">,</span> <span class="n">alcohol_count</span><span class="p">))</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">df</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">m1</span> <span class="o">&lt;-</span> <span class="nf">zeroinfl</span><span class="p">(</span><span class="n">alcohol_count</span> <span class="o">~</span> <span class="n">country</span> <span class="o">+</span> <span class="n">treatment</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">))</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Classes and Methods for R developed in the
-Political Science Computational Laboratory
-Department of Political Science
-Stanford University
-Simon Jackman
-hurdle and zeroinfl functions by Achim Zeileis
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>      treatment          country alcohol_count
-1   Placebo Arm          England             4
-2   Placebo Arm            Wales             0
-3   Placebo Arm Northern Ireland             4
-4   Placebo Arm            Wales             0
-5   Placebo Arm          England             0
-6   Placebo Arm          England             0
-7   Placebo Arm Northern Ireland             6
-8   Placebo Arm         Scotland             0
-9   Placebo Arm          England             0
-10  Placebo Arm Northern Ireland             0
-11  Placebo Arm Northern Ireland             1
-12  Placebo Arm Northern Ireland             2
-13  Placebo Arm Northern Ireland             0
-14  Placebo Arm            Wales             0
-15  Placebo Arm         Scotland             0
-16  Placebo Arm Northern Ireland             4
-17  Placebo Arm         Scotland             1
-18  Placebo Arm Northern Ireland             0
-19  Placebo Arm          England             1
-20  Placebo Arm          England             4
-21  Placebo Arm         Scotland             0
-22  Placebo Arm         Scotland             0
-23  Placebo Arm          England             1
-24  Placebo Arm Northern Ireland             6
-25  Placebo Arm          England             0
-26  Placebo Arm Northern Ireland             3
-27  Placebo Arm          England             0
-28  Placebo Arm Northern Ireland             0
-29  Placebo Arm            Wales             0
-30  Placebo Arm          England             0
-31  Placebo Arm         Scotland             0
-32  Placebo Arm            Wales             0
-33  Placebo Arm Northern Ireland             0
-34  Placebo Arm         Scotland             0
-35  Placebo Arm Northern Ireland             8
-36  Placebo Arm Northern Ireland             3
-37  Placebo Arm Northern Ireland             0
-38  Placebo Arm            Wales             4
-39  Placebo Arm            Wales             1
-40  Placebo Arm         Scotland             0
-41  Placebo Arm          England             0
-42  Placebo Arm         Scotland             1
-43  Placebo Arm          England             0
-44  Placebo Arm         Scotland             0
-45  Placebo Arm Northern Ireland             1
-46  Placebo Arm          England             0
-47  Placebo Arm Northern Ireland             0
-48  Placebo Arm            Wales             0
-49  Placebo Arm Northern Ireland             0
-50  Placebo Arm Northern Ireland             5
-51   Active Arm          England             0
-52   Active Arm         Scotland             0
-53   Active Arm            Wales             0
-54   Active Arm Northern Ireland             1
-55   Active Arm Northern Ireland             0
-56   Active Arm          England             3
-57   Active Arm         Scotland             0
-58   Active Arm         Scotland             1
-59   Active Arm Northern Ireland             1
-60   Active Arm         Scotland             2
-61   Active Arm          England             3
-62   Active Arm         Scotland             0
-63   Active Arm         Scotland             0
-64   Active Arm            Wales             5
-65   Active Arm          England             0
-66   Active Arm            Wales             0
-67   Active Arm Northern Ireland             4
-68   Active Arm Northern Ireland             0
-69   Active Arm          England             5
-70   Active Arm Northern Ireland             4
-71   Active Arm         Scotland             0
-72   Active Arm          England             3
-73   Active Arm Northern Ireland             0
-74   Active Arm         Scotland             0
-75   Active Arm          England             4
-76   Active Arm            Wales             0
-77   Active Arm          England             0
-78   Active Arm Northern Ireland             0
-79   Active Arm         Scotland             0
-80   Active Arm          England             0
-81   Active Arm Northern Ireland             0
-82   Active Arm            Wales             0
-83   Active Arm Northern Ireland             0
-84   Active Arm         Scotland             6
-85   Active Arm         Scotland             0
-86   Active Arm Northern Ireland             0
-87   Active Arm            Wales             0
-88   Active Arm          England             0
-89   Active Arm         Scotland             0
-90   Active Arm Northern Ireland             0
-91   Active Arm          England             4
-92   Active Arm          England             3
-93   Active Arm          England             0
-94   Active Arm Northern Ireland             0
-95   Active Arm         Scotland             0
-96   Active Arm Northern Ireland             0
-97   Active Arm         Scotland             3
-98   Active Arm Northern Ireland             2
-99   Active Arm         Scotland             0
-100  Active Arm         Scotland             0
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>       treatment              country   alcohol_count 
- Placebo Arm:50   England         :26   Min.   :0.00  
- Active Arm :50   Northern Ireland:34   1st Qu.:0.00  
-                  Scotland        :26   Median :0.00  
-                  Wales           :14   Mean   :1.14  
-                                        3rd Qu.:2.00  
-                                        Max.   :8.00  
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-zeroinfl(formula = alcohol_count ~ country + treatment, data = df)
-
-Pearson residuals:
-    Min      1Q  Median      3Q     Max 
--0.7880 -0.7227 -0.4582  0.4130  4.6787 
-
-Count model coefficients (poisson with log link):
-                        Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)              1.03937    0.24093   4.314  1.6e-05 ***
-countryNorthern Ireland  0.12880    0.24890   0.517    0.605    
-countryScotland         -0.40356    0.37120  -1.087    0.277    
-countryWales             0.08974    0.39442   0.228    0.820    
-treatmentActive Arm      0.09866    0.22040   0.448    0.654    
-
-Zero-inflation model coefficients (binomial with logit link):
-                        Estimate Std. Error z value Pr(&gt;|z|)
-(Intercept)               0.1425     0.4828   0.295    0.768
-countryNorthern Ireland  -0.1511     0.5520  -0.274    0.784
-countryScotland           0.7827     0.6597   1.186    0.235
-countryWales              1.0468     0.7850   1.333    0.182
-treatmentActive Arm       0.1377     0.4545   0.303    0.762
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
-
-Number of iterations in BFGS optimization: 15 
-Log-likelihood: -130.1 on 10 Df
-</pre></div>
-</div>
-</div>
-</div>
-<p>The model fits a glm with a binomial logit link to predict the excess zeros and a glm with a Possion log link to model the rest of the distribution. In both models the variables (country and treatment) have been included however you could use different variables in the two models. Unfortunately the models do not combine the estimates from each model however we can use the coefficients to make predictions.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">df</span><span class="o">$</span><span class="n">pred</span> <span class="o">&lt;-</span> <span class="nf">predict</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;response&quot;</span><span class="p">)</span>
-<span class="c1"># Create the plot</span>
-<span class="nf">ggplot</span><span class="p">(</span><span class="n">df</span><span class="p">,</span> <span class="nf">aes</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">country</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pred</span><span class="p">,</span> <span class="n">colour</span> <span class="o">=</span> <span class="n">treatment</span><span class="p">))</span> <span class="o">+</span>
-  <span class="nf">geom_point</span><span class="p">(</span><span class="nf">aes</span><span class="p">(</span><span class="n">y</span> <span class="o">=</span> <span class="n">pred</span><span class="p">))</span> <span class="o">+</span>
-  <span class="nf">labs</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="s">&quot;Treatment Arm&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s">&quot;Expected number of drinks in a day&quot;</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<img alt="_images/16.f. Poisson Regression Model_3_0.png" src="_images/16.f. Poisson Regression Model_3_0.png" />
-</div>
-</div>
-<p>The graph shows the expected number of drinks in a day for each country and treatment group, from this we would expect the most number of drinks to be drunk in a day to be for people in the Placebo arm living in Wales, with the fewest from the Active arm people living in Northern Ireland.</p>
-<div class="section" id="vuong-test-optional-reading">
-<h2>15.5.1 Vuong test (Optional Reading)<a class="headerlink" href="#vuong-test-optional-reading" title="Permalink to this headline">¶</a></h2>
-<p>To check if the zero inflated Poisson regression models the data better than the straight forward  Poisson regression we can run a Vuong test. A Vuong test is a likelihood ratio test used for model selection when the models are nested, non-nested or overlapping. The null hypothesis is that the two models supplied are equally close to the true data generation structure, against the alternative that one model is closer. To run a Vuong test in R we simple use the vuong() function and supply the two models we wish to compare in our case it is the zero inflated Poisson verses the Poisson model.</p>
-<div class="cell docutils container">
-<div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">#Zero inflated model</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">m1</span> <span class="o">&lt;-</span> <span class="nf">zeroinfl</span><span class="p">(</span><span class="n">alcohol_count</span> <span class="o">~</span> <span class="n">treatment</span> <span class="o">+</span> <span class="n">country</span> <span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">df</span><span class="p">))</span>
-<span class="c1">#Poisson regression</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">m2</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">alcohol_count</span> <span class="o">~</span> <span class="n">treatment</span> <span class="o">+</span> <span class="n">country</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&quot;poisson&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">))</span>
-<span class="c1">#Vuong test</span>
-<span class="nf">vuong</span><span class="p">(</span><span class="n">m1</span><span class="p">,</span> <span class="n">m2</span><span class="p">)</span>
-</pre></div>
-</div>
-</div>
-<div class="cell_output docutils container">
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-zeroinfl(formula = alcohol_count ~ treatment + country, data = df)
-
-Pearson residuals:
-    Min      1Q  Median      3Q     Max 
--0.7880 -0.7227 -0.4582  0.4130  4.6787 
-
-Count model coefficients (poisson with log link):
-                        Estimate Std. Error z value Pr(&gt;|z|)    
-(Intercept)              1.03937    0.24093   4.314  1.6e-05 ***
-treatmentActive Arm      0.09866    0.22040   0.448    0.654    
-countryNorthern Ireland  0.12880    0.24890   0.517    0.605    
-countryScotland         -0.40356    0.37120  -1.087    0.277    
-countryWales             0.08974    0.39442   0.228    0.820    
-
-Zero-inflation model coefficients (binomial with logit link):
-                        Estimate Std. Error z value Pr(&gt;|z|)
-(Intercept)               0.1425     0.4828   0.295    0.768
-treatmentActive Arm       0.1377     0.4545   0.303    0.762
-countryNorthern Ireland  -0.1511     0.5520  -0.274    0.784
-countryScotland           0.7827     0.6597   1.186    0.235
-countryWales              1.0468     0.7850   1.333    0.182
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1 
-
-Number of iterations in BFGS optimization: 15 
-Log-likelihood: -130.1 on 10 Df
-</pre></div>
-</div>
-<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = alcohol_count ~ treatment + country, family = &quot;poisson&quot;, 
-    data = df)
-
-Deviance Residuals: 
-    Min       1Q   Median       3Q      Max  
--1.8081  -1.6505  -1.0453   0.5542   4.2552  
-
-Coefficients:
-                        Estimate Std. Error z value Pr(&gt;|z|)   
-(Intercept)              0.30905    0.19307   1.601  0.10945   
-treatmentActive Arm     -0.02373    0.18885  -0.126  0.90000   
-countryNorthern Ireland  0.18233    0.21651   0.842  0.39972   
-countryScotland         -0.91355    0.31698  -2.882  0.00395 **
-countryWales            -0.63542    0.35882  -1.771  0.07658 . 
----
-Signif. codes:  0 &#39;***&#39; 0.001 &#39;**&#39; 0.01 &#39;*&#39; 0.05 &#39;.&#39; 0.1 &#39; &#39; 1
-
-(Dispersion parameter for poisson family taken to be 1)
-
-    Null deviance: 270.46  on 99  degrees of freedom
-Residual deviance: 250.66  on 95  degrees of freedom
-AIC: 364.19
-
-Number of Fisher Scoring iterations: 6
-</pre></div>
-</div>
-<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Vuong Non-Nested Hypothesis Test-Statistic: 
-(test-statistic is asymptotically distributed N(0,1) under the
- null that the models are indistinguishible)
--------------------------------------------------------------
-              Vuong z-statistic             H_A    p-value
-Raw                    4.474813 model1 &gt; model2 3.8239e-06
-AIC-corrected          3.998462 model1 &gt; model2 3.1878e-05
-BIC-corrected          3.377975 model1 &gt; model2 0.00036511
-</pre></div>
-</div>
-</div>
-</div>
-<p>The output shows three z-statistics, the raw, the AIC-corrected and the BIC-corrected. In brief, the AIC (Akaike information criterion) and BIC (Bayesian information criterion) introduce a penalty term to reduce the likelihood of overfitting. When adding parameters to models it is possible to increase the likelihood, the penalty term adjusts for this increase; the penalty term is larger in BIC than in the AIC.</p>
-<p>We can see in the output that for all three p values there is significantly strong evidence that model 1, the zero inflated Poisson regression fits the data far better than model 2 the Poisson regression. If however the p values did not agree then the data scientist would have to think about the affects of each method and decide if the raw, AIC or BIC would be the most appropriate in the setting being looked at. There is a debate about the use of Vuong test for this type of comparison, if you wish to read more there is a good paper which can be found here (<a class="reference external" href="https://www.sciencedirect.com/science/article/abs/pii/S016517651400490X">https://www.sciencedirect.com/science/article/abs/pii/S016517651400490X</a>).</p>
-</div>
+  <div class="section" id="investigations-and-the-role-of-regression-modelling">
+<h1>Investigations and the role of regression modelling<a class="headerlink" href="#investigations-and-the-role-of-regression-modelling" title="Permalink to this headline">¶</a></h1>
+<p>Data scientists don’t do statistics just for fun (although, clearly statistics is indeed fun!).  At the heart of each data science project is a question to be answered.</p>
+<p>This section of the notes begins by thinking about the different types of investigation that might be carried out within a data science project. We consider three important classes of investigation type: <strong>description</strong>, <strong>prediction</strong> and <strong>causal</strong>.</p>
+<p>We then move on to consider a commonly used family of statistical analysis: <strong>regression modelling</strong>.  Three sessions introduce linear regression, beginning with the simplest type which we call <strong>simple linear regression</strong> involving a single explanatory variable. We then extend this to incorporate multiple explanatory variables, through <strong>multivariable linear regression</strong> modelling. We explore how to model various types of explanatory variables, including continuous, binary and categorical covariates and discover how to include interactions and higher-order terms (which are need to model non-linear relationships) in the regression model. The last of the linear regression sessions explores diagnostics to assess whether the underlying assumptions of the linear model hold in a particular dataset.</p>
+<p>These ideas are then extended to other settings in the remaining two sessions. First, we meet <strong>logistic regression</strong>, an extension of linear regression modelling to settings where the outcome variable is binary. Finally, we define the <strong>Generalised Linear Model (GLM)</strong>, which is a generalisation of linear regression to a wide range of settings and can be seen as a way of unifying linear, logistic and Poisson regression models, as well as many other types of regression model. We explore <strong>Poisson regression</strong> as an important example of a GLM.</p>
+<p>We conclude this section of the notes by returning to the idea of investigations and – armed with our new knowledge about regression modelling – consider the role of regression modelling in different types of investigations.</p>
 </div>
 
     <script type="text/x-thebe-config">
@@ -1246,7 +979,8 @@ BIC-corrected          3.377975 model1 &gt; model2 0.00036511
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="16.e.%20Poisson%20Regression%20Model.html" title="previous page">15.4 How to fit a Poisson Regression in R</a>
+    <a class='left-prev' id="prev-link" href="10.g.%20Bayesian%20Statistics%20II.html" title="previous page">Further Resources</a>
+    <a class='right-next' id="next-link" href="11.a.%20Types%20of%20Investigation.html" title="next page">11. Types of Investigation</a>
 
         </div>
         

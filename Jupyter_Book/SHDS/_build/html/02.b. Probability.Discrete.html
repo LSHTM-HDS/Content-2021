@@ -513,6 +513,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -550,17 +555,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
      11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
-     References
     </a>
    </li>
   </ul>
@@ -780,7 +780,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +790,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -829,6 +829,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -1060,8 +1070,8 @@ P(C|M) = \frac{0.25\times 0.1}{0.25\times 0.1 + 0.1\times 0.9}=0.22
 <p>We can obtain estimates of various useful quantities from this matrix. We will use the following notation: <span class="math notranslate nohighlight">\(O\)</span> represents being, in truth, positive for the outcome of interest, and <span class="math notranslate nohighlight">\(\bar{O}\)</span> represents being truly negative. <span class="math notranslate nohighlight">\(P\)</span> represents being classified as positive and <span class="math notranslate nohighlight">\(\bar{P}\)</span> being classified as negative.</p>
 <p>The tabs below show various useful quantities.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="87145b4c-e3cc-44bf-89cb-ce4b180497ea" name="9b506c05-502d-42e2-9280-8e1244d7268d" type="radio">
-</input><label class="tabbed-label" for="87145b4c-e3cc-44bf-89cb-ce4b180497ea">
+<input checked="checked" id="b4bf63bb-c64d-4aa6-a297-27492eff8718" name="c769a279-b2b8-45f6-8ba8-a99f75d8b0b7" type="radio">
+</input><label class="tabbed-label" for="b4bf63bb-c64d-4aa6-a297-27492eff8718">
 Outcome prevalence</label><div class="tabbed-content docutils">
 <p>The prevalence of the outcome is:</p>
 <div class="math notranslate nohighlight">
@@ -1070,8 +1080,8 @@ P(O) = \frac{p_A+p_C}{p_A+p_B+p_C+p_D}
 \]</div>
 <p>Prevalence is another word for risk or proportion. It tells us the fraction of the population of interest who have the outcome.</p>
 </div>
-<input id="324c7a3e-120b-40af-9992-d477324185d4" name="9b506c05-502d-42e2-9280-8e1244d7268d" type="radio">
-</input><label class="tabbed-label" for="324c7a3e-120b-40af-9992-d477324185d4">
+<input id="08f982eb-a3b1-4d9b-97da-942b2377cf0f" name="c769a279-b2b8-45f6-8ba8-a99f75d8b0b7" type="radio">
+</input><label class="tabbed-label" for="08f982eb-a3b1-4d9b-97da-942b2377cf0f">
 Sensitivity</label><div class="tabbed-content docutils">
 <p>This is a property of the test. The sensitivity of the test remains the same, irrespective of how common or rare the outcome is.</p>
 <p>The sensitivity is:</p>
@@ -1082,8 +1092,8 @@ P(P|O)=\frac{p_A}{p_A+p_C}
 <p>The terminology comes from the setting of clinical tests, i.e. how sensitive this test is to the presence of the disease. It is also often called the recall in the fields of machine learning and computer science.</p>
 <p>This is also sometimes referred to as the true positive rate.</p>
 </div>
-<input id="eaced959-91ca-48b7-86bc-efb69aa0e1a3" name="9b506c05-502d-42e2-9280-8e1244d7268d" type="radio">
-</input><label class="tabbed-label" for="eaced959-91ca-48b7-86bc-efb69aa0e1a3">
+<input id="e399b58c-2632-4cd0-8e8e-07708a39de55" name="c769a279-b2b8-45f6-8ba8-a99f75d8b0b7" type="radio">
+</input><label class="tabbed-label" for="e399b58c-2632-4cd0-8e8e-07708a39de55">
 Specificity</label><div class="tabbed-content docutils">
 <p>This is a property of the test. The specificity of the test remains the same, irrespective of how common or rare the outcome is.</p>
 <p>The specificity is:</p>
@@ -1094,8 +1104,8 @@ P(\bar{P}|\bar{O})=\frac{p_D}{p_B+p_D}
 <p>As for the sensitivity, this terminology comes from the setting of clinical tests, i.e. how specific  this test is to the presence of this disease (versus other diseases). So a test which is only positive for this specific disease is very specific. A test which picks up the presence of this disease, and other similar diseases, is not very specific.</p>
 <p>This is sometimes called the selectivity or true negative rate.</p>
 </div>
-<input id="ee94ae54-179d-4818-b76b-47c63538124e" name="9b506c05-502d-42e2-9280-8e1244d7268d" type="radio">
-</input><label class="tabbed-label" for="ee94ae54-179d-4818-b76b-47c63538124e">
+<input id="064cfbc1-19a1-43e8-92b8-60733a0f9d56" name="c769a279-b2b8-45f6-8ba8-a99f75d8b0b7" type="radio">
+</input><label class="tabbed-label" for="064cfbc1-19a1-43e8-92b8-60733a0f9d56">
 PPV</label><div class="tabbed-content docutils">
 <p>PPV stands for Positive Predictive Value, which is shorthand for the predictive value of a positive classification. This is very common terminology in clinical settings.</p>
 <p>This quantity is often of most interest to the person having the test. It answers the question: “what is the probability that I have (or will have) the outcome, given that I have just received a positive classification?”</p>
@@ -1106,8 +1116,8 @@ P(O|P) = \frac{p_A}{p_A+p_B}
 \]</div>
 <p>In machine learning, it is typically called the precision.</p>
 </div>
-<input id="cd96db44-917b-4735-bc3a-60ab4c29658c" name="9b506c05-502d-42e2-9280-8e1244d7268d" type="radio">
-</input><label class="tabbed-label" for="cd96db44-917b-4735-bc3a-60ab4c29658c">
+<input id="f68a805a-a735-47bc-b044-7175e6aed90f" name="c769a279-b2b8-45f6-8ba8-a99f75d8b0b7" type="radio">
+</input><label class="tabbed-label" for="f68a805a-a735-47bc-b044-7175e6aed90f">
 Accuracy</label><div class="tabbed-content docutils">
 <p>The accuracy is:</p>
 <div class="math notranslate nohighlight">

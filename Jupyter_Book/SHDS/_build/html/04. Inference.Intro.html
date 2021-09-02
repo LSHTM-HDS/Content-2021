@@ -511,6 +511,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -548,17 +553,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
      11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
-     References
     </a>
    </li>
   </ul>
@@ -778,7 +778,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -788,7 +788,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -827,6 +827,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -964,8 +974,8 @@
 </ul>
 <p>The first session introduces the concept of <strong>statistical inference</strong>, defining populations, samples and estimators. The second half of the session introduces the idea of <strong>sampling distributions</strong>, a fundamental building block for frequentist inference. The sampling distribution gives us information about how different our estimate of the unknown population quantity of interest might have been, had we selected a different sample. In other words, the sampling distribution describes how our estimate behaves under <strong>repeated sampling</strong>. One particular feature of the sampling distribution, the <strong>standard error</strong>, gives us information about the amount we might expect our estimate to change if we took a different sample (i.e. it describes the variability of the estimate between different samples).</p>
 <p>The idea of sampling distributions is crucial to frequentist inference, but while it gives us important information about how our estimate behaves under repeated sampling, it does not provide a recipe for choosing an estimator. <strong>Maximum likelihood estimation</strong> (MLE), the subject of the following two sessions, does exactly this. Given a statistical model for the data, MLE provides a method for choosing an estimator with desirable statistical properties.</p>
-<p>Having explored MLE to obtain our estimator, we return to the idea of sampling distributions in the following two frequentist inference sessions. We see how the idea of sampling distributions allows us to create <strong>confidence intervals</strong>, which are ranges of values of the population quantity which we believe are consistent with the observed data. A complementary frequentist inference tool, hypothesis testing, allows us to assess the evidence against a <strong>null hypothesis</strong> which proposes a specific value for the unknown population parameter.</p>
-<p>Thus far, our attention has been largely on the frequentist paradigm. The last two sessions focus instead on an important alternative approach, <strong>Bayesian inference</strong>. In this paradigm we do not base our inference on the idea of repeated sampling. Instead, we use the likelihood to update prior beliefs about the unknown parameter, to provide a <strong>posterior distribution</strong> for the unknown parameter. The posterior can be summarised by obtaining its mean, or a <strong>credible interval</strong> (interval within which  the unknown parameter falls with a particular probability).</p>
+<p>Having explored MLE to obtain our estimator, we return to the idea of sampling distributions in the following two frequentist inference sessions. We see how the idea of sampling distributions allows us to create <strong>confidence intervals</strong>, which are ranges of values of the population quantity which we believe are consistent with the observed data. A complementary frequentist inference tool, hypothesis testing, allows us to assess the evidence against a <strong>null hypothesis</strong>, which proposes a specific value (or range of values) for the unknown population parameter.</p>
+<p>Thus far, our attention has been largely on the frequentist paradigm. The last two sessions focus instead on an important alternative approach, <strong>Bayesian inference</strong>. In this paradigm we do not base our inference on the idea of repeated sampling. Instead, we use the likelihood to update prior information (in the form of a probability distribution) about the unknown parameter, to provide a <strong>posterior distribution</strong> for the unknown parameter. The posterior can be summarised by obtaining its mean, or a <strong>credible interval</strong> (interval within which  the unknown parameter falls with a particular probability).</p>
 </div>
 </div>
 

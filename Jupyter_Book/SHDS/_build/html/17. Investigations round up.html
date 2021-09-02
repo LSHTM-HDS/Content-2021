@@ -5,7 +5,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>15.3 Poisson regression in health data science &#8212; Statistics for Health Data Science</title>
+    <title>17. The role of regression in different types of investigation &#8212; Statistics for Health Data Science</title>
     
   <link href="_static/css/theme.css" rel="stylesheet" />
   <link href="_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
@@ -49,10 +49,12 @@
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
-    <link rel="next" title="15.4 How to fit a Poisson Regression in R" href="16.e.%20Poisson%20Regression%20Model.html" />
-    <link rel="prev" title="15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)" href="16.c.%20Poisson%20Regression%20Model.html" />
+    <link rel="next" title="Statistics and Health Data Science" href="18.%20Statistics%20for%20HDS%20round%20up.html" />
+    <link rel="prev" title="16.8 Common Problems in Poisson Regression" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -146,17 +148,17 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -422,7 +424,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -437,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -511,6 +513,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -548,17 +555,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
      11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
-     References
     </a>
    </li>
   </ul>
@@ -653,11 +655,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
      13.7  Modelling interaction terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
     </a>
    </li>
   </ul>
@@ -781,42 +778,67 @@
    </li>
   </ul>
  </li>
- <li class="toctree-l1 current active has-children">
-  <a class="reference internal" href="16.a.%20Poisson%20Regression%20Model.html">
-   15. Generalised Linear Models: Poisson Regression for Count Variables
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+   16. Generalised Linear Models (GLMs)
   </a>
-  <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
+  <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
    <i class="fas fa-chevron-down">
    </i>
   </label>
-  <ul class="current">
+  <ul>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.b.%20Poisson%20Regression%20Model.html">
-     15.1 Introduction to Count Data and Poisson Distribution:
+    <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.c.%20Poisson%20Regression%20Model.html">
-     15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)
-    </a>
-   </li>
-   <li class="toctree-l2 current active">
-    <a class="current reference internal" href="#">
-     15.3 Poisson regression in health data science
+    <a class="reference internal" href="16.c.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.2 Generalised Linear Model Components
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.e.%20Poisson%20Regression%20Model.html">
-     15.4 How to fit a Poisson Regression in R
+    <a class="reference internal" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.3 GLM Assumptions
     </a>
    </li>
    <li class="toctree-l2">
-    <a class="reference internal" href="16.f.%20Poisson%20Regression%20Model.html">
-     15.5 Zero Inflated Poisson Regression Example
+    <a class="reference internal" href="16.e.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.4 Link Functions
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.5 Programming GLM’s in R
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.g.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.7 Poisson Regression Example
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html">
+     16.8 Common Problems in Poisson Regression
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -859,7 +881,7 @@
         <!-- ipynb file if we had a myst markdown file -->
         
         <!-- Download raw file -->
-        <a class="dropdown-buttons" href="_sources/16.d. Poisson Regression Model.ipynb"><button type="button"
+        <a class="dropdown-buttons" href="_sources/17. Investigations round up.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
                 data-placement="left">.ipynb</button></a>
         <!-- Download PDF via print -->
@@ -879,7 +901,7 @@
                 data-toggle="tooltip" data-placement="left" title="Source repository"><i
                     class="fab fa-github"></i>repository</button></a>
         <a class="issues-button"
-            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F16.d. Poisson Regression Model.html&body=Your%20issue%20content%20here."><button
+            href="https//github.com//LSHTM-HDS//Content-2021/issues/new?title=Issue%20on%20page%20%2F17. Investigations round up.html&body=Your%20issue%20content%20here."><button
                 type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
                 title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
         
@@ -900,7 +922,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/16.d. Poisson Regression Model.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/17. Investigations round up.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -917,6 +939,39 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#simple-example">
+   17.1  Simple example
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#prediction">
+   17.2 Prediction
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#causality-and-explanation">
+   17.3 Causality and explanation
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-table-2-fallacy">
+   17.4 The “Table 2 Fallacy”
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-analysis-approaches">
+   17.5 Other analysis approaches
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -925,9 +980,59 @@
         
               <div>
                 
-  <div class="section" id="poisson-regression-in-health-data-science">
-<h1>15.3 Poisson regression in health data science<a class="headerlink" href="#poisson-regression-in-health-data-science" title="Permalink to this headline">¶</a></h1>
-<p>Poisson regression without adjustments to data or method, is of limited use in health data science due to the constraint that the mean and variance need to be the same. This is a characteristic which is often not adhered to in real data sets and usually a data scientist turns to other methods, for example negative binomial regression or generalised Poisson regression. Also when the expected counts (lambda) is large (which often arises in health data science) a normal approximation of the distribution will often give equivocal results. However, it is very important to understand Poisson regression if you are planning on doing health data science on rare events as it will increase the likelihood that a Poisson distribution is observed.</p>
+  <div class="section" id="the-role-of-regression-in-different-types-of-investigation">
+<h1>17. The role of regression in different types of investigation<a class="headerlink" href="#the-role-of-regression-in-different-types-of-investigation" title="Permalink to this headline">¶</a></h1>
+<p>At the start of this section of the notes, we considered different types of investigation that might be of interest within a health data science project. We grouped these investigations into three classes: descriptive, predictive and causal.</p>
+<p>Having explored various types of regression modelling, we now revisit the idea of the underlying investigation and consider the role of the regression model in different types of investigation.</p>
+<p>We often use the same statistical tools to address research questions for investigations of different types. Regression is a key tool for analyses in all the types of investigation. In this short session we illustrate how the same regression model could be used in prediction and causal investigations, but that the output from the regression should be used and interpreted differently.</p>
+<div class="section" id="simple-example">
+<h2>17.1  Simple example<a class="headerlink" href="#simple-example" title="Permalink to this headline">¶</a></h2>
+<p>We focus on a simple (fictitious) observational study involving three variables: two binary explanatory variables ‘maternal smoking status’ (<span class="math notranslate nohighlight">\(X_{1}\)</span> = 1: smoker, <span class="math notranslate nohighlight">\(X_{1}\)</span> = 0: non-smoker) and maternal socioeconomic status (<span class="math notranslate nohighlight">\(X_{2}\)</span> = 1: low, <span class="math notranslate nohighlight">\(X_{2}\)</span> = 0: high), and a continuous outcome ‘birth weight’ (measured in grams). The assumed relationships between the three variables are summarised in the causal diagram in the figure below.</p>
+<p>For the purposes of a simple illustration, we suppose that these are the only three variables at play in this ‘system’. In reality of course there are many other maternal and other characteristics that affect a baby’s birthweight, such as genetics, maternal diet and alcohol consumption, mother’s access to prenatal care, and other features of the environment.</p>
+<p>Consider a linear regression of <span class="math notranslate nohighlight">\(Y\)</span> on <span class="math notranslate nohighlight">\(X_{1}\)</span>, <span class="math notranslate nohighlight">\(X_{2}\)</span>, i.e.</p>
+<div class="math notranslate nohighlight">
+\[
+Y = \beta_{0} + \beta_{1}X_{1} + \beta_{2}X_{2} + \epsilon
+\]</div>
+<div style="text-align: right"> (1) </div>
+<p>The estimated regression coefficients and corresponding 95% confidence intervals for this fictitious example are:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\hat{\beta_{0}} &amp;= 3227 \ \ (95\% \text{CI}:   \  1603, 4851) \\
+\hat{\beta_{1}} &amp;= −341 \ \  (95\% \text{CI}:  \  −513, −169) \\
+\hat{\beta_{2}} &amp;= −214 \ \  (95\%  \text{CI}:  \  −410, −18)
+\end{align*}
+\end{split}\]</div>
+<p>We now consider how the output from this regression could be used in different investigation types.</p>
+</div>
+<div class="section" id="prediction">
+<h2>17.2 Prediction<a class="headerlink" href="#prediction" title="Permalink to this headline">¶</a></h2>
+<p>If the aim is to predict birth weight based on the two characteristics of the mother, this model allows us to do this. We could obtain the expected value of <span class="math notranslate nohighlight">\(Y\)</span> given <span class="math notranslate nohighlight">\(X_{1}\)</span> and <span class="math notranslate nohighlight">\(X_{2}\)</span> (in this very simple example there are only 4 possible combinations).</p>
+<p>In this prediction setting we do not, however, particularly care about the estimates of the regression coefficients. We should instead be concerned with the predictive performance of the model. This could be measured, for example, using <span class="math notranslate nohighlight">\(R^2\)</span>, which measures the proportion of variability in the outcome that is explained by the statistical model.</p>
+<p>There are many details about how to appropriately assess and quantify the predictive performance of a prediction model which we do not discuss here.</p>
+</div>
+<div class="section" id="causality-and-explanation">
+<h2>17.3 Causality and explanation<a class="headerlink" href="#causality-and-explanation" title="Permalink to this headline">¶</a></h2>
+<p>Suppose instead that the aim is to assess the causal effect of maternal smoking (<span class="math notranslate nohighlight">\(X_{1}\)</span>) on birth weight (<span class="math notranslate nohighlight">\(Y\)</span>). In the simple setting shown in the causal diagram above, maternal socioeconomic status (<span class="math notranslate nohighlight">\(X_{2}\)</span>) is the only confounder of the association between <span class="math notranslate nohighlight">\(X_{1}\)</span> and <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<p>The regression model in equation (1) adjusts for <span class="math notranslate nohighlight">\(X_{2}\)</span> and hence the coefficient for <span class="math notranslate nohighlight">\(X_{1}\)</span> can be interpreted as the conditional causal effect of <span class="math notranslate nohighlight">\(X_{1}\)</span> on <span class="math notranslate nohighlight">\(Y\)</span>.</p>
+<p>We can make the interpretation that if all mothers in the study population had smoked, the mean birthweight would have been 341 grams lower than had all mothers in the study population not smoked. This is referred to as an ‘average causal effect’. The 95% confidence interval can be used to provide information about how precisely we believe we have estimated this causal effect. In this case, the 95% confidence interval excludes 0 and includes only negative numbers, running from -513 to -169.</p>
+<p>Here, we have not given any interpretation of the estimate of <span class="math notranslate nohighlight">\(\beta_{2}\)</span> because it wasn’t relevant for our research question, even though it was important to adjust for <span class="math notranslate nohighlight">\(X_{2}\)</span> to adjust for confounding. In a more realistic setting, there will be many other variables that confound the association between <span class="math notranslate nohighlight">\(X_{1}\)</span> and <span class="math notranslate nohighlight">\(Y\)</span> and which would need to be accounted for to enable a causal interpretation of <span class="math notranslate nohighlight">\(\beta_{1}\)</span>.</p>
+</div>
+<div class="section" id="the-table-2-fallacy">
+<h2>17.4 The “Table 2 Fallacy”<a class="headerlink" href="#the-table-2-fallacy" title="Permalink to this headline">¶</a></h2>
+<p>After adjusting for maternal socioeconomic status, maternal smoking was associated with a lowering of 341 grams in mean birthweight. After adjusting for maternal smoking, low maternal socioeconomic status was associated with a lowering of 214 grams in mean birthweight. However, <span class="math notranslate nohighlight">\(\beta_{1}\)</span> and <span class="math notranslate nohighlight">\(\beta_{2}\)</span> in model (1) do not have the same type of interpretation. This  is due to the relationships between the three variables.</p>
+<ul class="simple">
+<li><p><em>Interpreting <span class="math notranslate nohighlight">\(\beta_2\)</span></em>: According to the causal diagram above, maternal smoking status is on the causal pathway from socioeconomic status to birth weight. Hence the parameter <span class="math notranslate nohighlight">\(\beta_2\)</span> represents the effect of socioeconomic status on birth weight that does not go through smoking status - this is a ‘direct effect’ rather than a ‘total effect’. <br><br></p></li>
+<li><p><em>Interpreting <span class="math notranslate nohighlight">\(\beta_1\)</span></em>: By contrast, <span class="math notranslate nohighlight">\(\beta_{1}\)</span> represents the total effect of smoking status on birth weight. We do not go into details about definitions of different types of effect. The aim here is simply to point out that the correct interpretation of the coefficients in the regression model in (1) depends on assumptions about the inter-relationships between the three variables, including how they are ordered in time.</p></li>
+</ul>
+<p>In some (or perhaps many) epidemiological investigations that involve exploration of risk factors, estimates of regression coefficients from multivariable models such as that in (1) (and versions with many more explanatory variables) are presented alongside one another in a table, together with confidence intervals and p-values. They may then be interpreted as though all coefficients had the same meaning, ignoring possible inter-relationships between the variables and temporal ordering. As we have seen from the above example, this could be misleading. This problem has been referred to in the literature the ‘Table 2 fallacy’, because the estimates of regression coefficients are often presented in ‘Table 2’ in a paper (where ‘Table 1’ is usually a table of descriptive statistics). See Westreich and Greenland (2013) for a description of the Table 2 fallacy. Bandoli et al. (2018) provide an example in the context of preeclampsia and preterm birth.</p>
+</div>
+<div class="section" id="other-analysis-approaches">
+<h2>17.5 Other analysis approaches<a class="headerlink" href="#other-analysis-approaches" title="Permalink to this headline">¶</a></h2>
+<p>Regression modelling is a fundamental part of the statistician’s toolbox and is used in many investigations of different types.  We have used regression modelling to illustrate the connection between the analysis method and the underlying aim of the investigation.</p>
+<p>However, regression models are not the only tool available. You will come across many other types of analysis method, such as clustering or neural networks, which can also be used in various types of investigation.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -955,8 +1060,8 @@
         
         <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="16.c.%20Poisson%20Regression%20Model.html" title="previous page">15.2 Introduction to Poisson generalised linear modelling (Poisson Regression)</a>
-    <a class='right-next' id="next-link" href="16.e.%20Poisson%20Regression%20Model.html" title="next page">15.4 How to fit a Poisson Regression in R</a>
+    <a class='left-prev' id="prev-link" href="16.i.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="previous page">16.8 Common Problems in Poisson Regression</a>
+    <a class='right-next' id="next-link" href="18.%20Statistics%20for%20HDS%20round%20up.html" title="next page">Statistics and Health Data Science</a>
 
         </div>
         

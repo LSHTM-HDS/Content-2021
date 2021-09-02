@@ -513,6 +513,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -550,17 +555,12 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
      11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
-     References
     </a>
    </li>
   </ul>
@@ -780,7 +780,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +790,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -829,6 +829,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -973,7 +983,7 @@
 <p>For simple linear regression models, a scatter plot of the outcome against the independent variable can usually make serious violations of assumptions apparent. Such plots are particularly good for identfiying non-linearity, heteroscedasticity and <strong>outliers</strong> (points which lie atypically far from the regression line).</p>
 <p>Let our outcome and independent variable be denoted by <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(X\)</span>, respectively. The figure below depicts four different scenarios where various assumptions are violated. In Scenario A, there is a slight curvature in the scatter of points between <span class="math notranslate nohighlight">\(Y\)</span> and <span class="math notranslate nohighlight">\(X\)</span>, suggesting a non-linear relationship which violates the linearity assumption. In Scenario B, the variance of <span class="math notranslate nohighlight">\(Y\)</span> is larger for larger values of <span class="math notranslate nohighlight">\(X\)</span>, violating the homoscedasticity assumption. In Scenario C, the linearity and homoscedasticity assumptions appear to hold, but there is a possible outlier (circled in red). Scenario D depicts an ideal situation for simple linear regression, where there appears to be no violations.</p>
 <div class="figure align-default" id="simple-plots">
-<a class="reference internal image-reference" href="Images/simple_plots.jpg"><img alt="Images/simple_plots.jpg" src="Images/simple_plots.jpg" style="height: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/simple_plots.png"><img alt="_images/simple_plots.png" src="_images/simple_plots.png" style="height: 600px;" /></a>
 </div>
 <p>For multivariable linear regression, the linearity assumption requires that the relationship between the outcome and each independent variable is linear <em>conditional on the other covariates in the model</em>. So, there is no requirement that the relationship between the outcome and each individual covariate is linear when other covariates are ignored. This means that assessment of the fit of a multivariable linear regression cannot be inferred from a series of scatter plots relating the outcome to each covariate. Such plots can be useful for detecting points with extreme values, but the residual plots considered next are more useful for multivariable models.</p>
 </div>
@@ -982,7 +992,7 @@
 <p>Plots of the observed residuals against the fitted values are useful for investigating the assumptions of linearity and homoscedasticity. For linearity: if a non-linear relationship is present, then the residuals will not be equally distributed above and below zero across the range of fitted values. For homoscedasticity: if there is heterogeneity in the residuals, the variance of residuals will not be constant across the range of fitted values.</p>
 <p>The figure below uses the same data from Scenarios A-D above, but displays the observed residuals against fitted values. We can see that linearity is violated in Scenario A, since the scatter points are not equally distributed above and below the line at <span class="math notranslate nohighlight">\(\epsilon=0\)</span>. Furthermore, in Scenario B we can see that the variance of residuals increase with increasing <span class="math notranslate nohighlight">\(\hat{y}\)</span>, indicating a violation of homoscedasticity.</p>
 <div class="figure align-default" id="residual-plots">
-<a class="reference internal image-reference" href="Images/residual_plots.jpg"><img alt="Images/residual_plots.jpg" src="Images/residual_plots.jpg" style="height: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/residual_plots.png"><img alt="_images/residual_plots.png" src="_images/residual_plots.png" style="height: 600px;" /></a>
 </div>
 <p>It can also be useful to plot residuals against each covariate, as a futher check for a linear relationship between <span class="math notranslate nohighlight">\(Y\)</span> and each of the independent variables (conditional on the other covariates in the model). If there are only a small number of covariates in the model, then these plots can be done for all variables. However, if the model is very complex, it may be judged sufficient to only plot residuals against fitted values and residuals against the most important covariates.</p>
 </div>
@@ -992,7 +1002,7 @@
 <p>As previously mentioned, the observed residuals do not have constant variance even when true residuals do. Therefore, some authors suggest using <strong>standardised</strong> residuals in the normal plots (since standardised residuals do have constant variance). On the other hand, some prefer to work with the observed residuals since these have the same units as the outcome. In practice, the differences between the two approaches are minor.</p>
 <p>The figure below depicts normal Q-Q plots for the standardised residuals in Scenarios A-D. In such plots we might expect to see some deviation from the straight line in the extreme values of the residuals and so the variation in the tails are not of great concern. In Scenario A however, there is deviation away from the line <span class="math notranslate nohighlight">\(Y=X\)</span> towards the middle, indicating a violation of the normality assumption. Furthermore, the outlier in Scenario C may need further investigation (we discuss outliers further in a subsequent section).</p>
 <div class="figure align-default" id="normal-residual-plots">
-<a class="reference internal image-reference" href="Images/normal_residual_plots.jpg"><img alt="Images/normal_residual_plots.jpg" src="Images/normal_residual_plots.jpg" style="height: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/qqplots.png"><img alt="_images/qqplots.png" src="_images/qqplots.png" style="height: 600px;" /></a>
 </div>
 </div>
 <div class="section" id="plots-based-on-cook-s-distance">
@@ -1004,7 +1014,7 @@
 <p>The higher the value of <span class="math notranslate nohighlight">\(D_i\)</span>, the more influential the observation.</p>
 <p>It can be informative to display Cook’s distances graphically. The figure below plots the Cook’s distances for each observation in Scenarios A-D.</p>
 <div class="figure align-default" id="cooks-distance">
-<a class="reference internal image-reference" href="Images/cooks_distance.jpg"><img alt="Images/cooks_distance.jpg" src="Images/cooks_distance.jpg" style="height: 600px;" /></a>
+<a class="reference internal image-reference" href="_images/cooks_distance.png"><img alt="_images/cooks_distance.png" src="_images/cooks_distance.png" style="height: 600px;" /></a>
 </div>
 <p>In Scenario C the outlier identified in the previous plots and potentially problematic has a much higher Cook’s distance than the other observations, indicating that it is highly influential and worth further investigation.</p>
 </div>

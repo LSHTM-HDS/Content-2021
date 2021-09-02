@@ -17,7 +17,6 @@ parts:
     - file: 02.a. Probability.Discrete
       sections: 
       - file: 02.b. Probability.Discrete
-        title: Bayes' Theorem
       - file: 02.c. Probability.Discrete
       - file: 02.d. Probability.Discrete
       - file: 02.e. Probability.Discrete
@@ -90,6 +89,7 @@ parts:
       - file: 10.g. Bayesian Statistics II
   - caption: Statistical modelling
     chapters:
+    - file: 11. Investigation.Intro
     - file: 11.a. Types of Investigation
       sections: 
       - file: 11.b. Types of Investigation
@@ -99,7 +99,6 @@ parts:
       - file: 11.f. Types of Investigation
       - file: 11.g. Types of Investigation
       - file: 11.h. Types of Investigation
-      - file: 11.i. Types of Investigation
     - file: 12.a. Linear Regression I
       sections: 
       - file: 12.b. Linear Regression I
@@ -118,7 +117,6 @@ parts:
       - file: 13.e. Linear Regression II
       - file: 13.f. Linear Regression II
       - file: 13.g. Linear Regression II
-      - file: 13.h. Linear Regression II
     - file: 14.a. Linear Regression III
       sections: 
       - file: 14.b. Linear Regression III
@@ -152,4 +150,6 @@ parts:
       - file: 16.g. Generalised Linear Model (GLM)  
       - file: 16.h. Generalised Linear Model (GLM)  
       - file: 16.i. Generalised Linear Model (GLM)  
+    - file: 17. Investigations round up
+    - file: 18. Statistics for HDS round up
 

@@ -36,7 +36,7 @@
 # 
 # 
 # ## 1.3 Module Content
-# The module is split into 16 sessions, each building statistical knowledge for health data science. The sessions are:
+# The module is split into 16 taught sessions, each building statistical knowledge for health data science. The sessions are:
 # 1. Introduction
 # 2. Probability and Discrete Probability Distributions
 # 3. Continuous Probability Distribution
@@ -50,7 +50,14 @@
 # 11. Types of Investigation
 # 12. Linear Regresion I
 # 13. Linear Regresion II
-# 14. GLM Logistic Regression
-# 15. GLM Poisson Regression
-# 16. Extensions: Confounding, Standardisation and Collapsibility
+# 14. Linear Regresion III
+# 15. Logistic Regression
+# 16. GLMs and Poisson Regression
 # 
+# A final short section (17) connects the regression models to the session regarding types of investigation. This is optional reading and does not have an accompanying taught session. 
+
+# In[ ]:
+
+
+
+
