@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe"
-        const thebe_selector_input = "pre"
-        const thebe_selector_output = ".output"
+        const thebe_selector = ".thebe,.cell"
+        const thebe_selector_input = "pre,.cell_input div.highlight"
+        const thebe_selector_output = ".output,.cell_output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -780,7 +780,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLMs)
+   16. Generalised Linear Models (GLM’s)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +790,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLMs)
+     16.1 Introduction to Generalised Linear Models (GLM’s)
     </a>
    </li>
    <li class="toctree-l2">
@@ -922,7 +922,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/07.e. Frequentist I.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/v2/gh//LSHTM-HDS/main?urlpath=tree/07.e. Frequentist I.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -930,6 +930,9 @@
         
         
         
+        <button type="button" class="btn btn-secondary topbarbtn"
+            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
+                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -1057,8 +1060,8 @@
 </table>
 <p>The three tabs below provide examples of using the formulae above to obtain approximate 95% confidence intervals for proportions and rates.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d478f5d1-6ac0-49fc-be96-5e5e0cd0c75b" name="40336932-24a9-4cf2-860f-c85e5ed6e2e8" type="radio">
-</input><label class="tabbed-label" for="d478f5d1-6ac0-49fc-be96-5e5e0cd0c75b">
+<input checked="checked" id="0fb80493-cf2b-41bd-bbc1-b2ec88e2d000" name="ffdda247-56c3-4295-84a6-21af17fe2bef" type="radio">
+</input><label class="tabbed-label" for="0fb80493-cf2b-41bd-bbc1-b2ec88e2d000">
 Proportion</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>We want to estimate the population proportion of patients who experience a side effect from a particular drug.</p></li>
@@ -1075,8 +1078,8 @@ Proportion</label><div class="tabbed-content docutils">
 <li><p>So our estimate of the proportion of patients who experience a side effect is: 0.25 (95% CI 0.155 to 0.349). Our best guess is that 25% of patients experience a side-effect from this drug. We are 95% confident that the true proportion lies between 15.5% and 34.9%.</p></li>
 </ul>
 </div>
-<input id="b7dfee64-1e53-4648-9711-78880265296d" name="40336932-24a9-4cf2-860f-c85e5ed6e2e8" type="radio">
-</input><label class="tabbed-label" for="b7dfee64-1e53-4648-9711-78880265296d">
+<input id="f5cf7dfc-e5c9-49d5-bcf7-8502f9ec4524" name="ffdda247-56c3-4295-84a6-21af17fe2bef" type="radio">
+</input><label class="tabbed-label" for="f5cf7dfc-e5c9-49d5-bcf7-8502f9ec4524">
 Rate</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>We want to estimate the rate of panic attacks among adults with a mild anxiety disorder.</p></li>
@@ -1092,8 +1095,8 @@ Rate</label><div class="tabbed-content docutils">
 <li><p>This gives a range of -0.0096 to 0.0596. This illustrates an important point - approximate confidence intervals sometimes contain impossible parameter values (the rate <span class="math notranslate nohighlight">\(\lambda\)</span> cannot be negative). To resolve this problem, we will re-do the calculations on the log scale.</p></li>
 </ul>
 </div>
-<input id="0db18606-e11f-4ff5-b177-dc362bca3950" name="40336932-24a9-4cf2-860f-c85e5ed6e2e8" type="radio">
-</input><label class="tabbed-label" for="0db18606-e11f-4ff5-b177-dc362bca3950">
+<input id="3d1e5320-a421-482e-b34d-3abab062ab89" name="ffdda247-56c3-4295-84a6-21af17fe2bef" type="radio">
+</input><label class="tabbed-label" for="3d1e5320-a421-482e-b34d-3abab062ab89">
 Logarithm of the rate</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>The logarithm of the observed rate is <span class="math notranslate nohighlight">\(\nu = log(0.025) = -3.689\)</span>. So this is our estimate of the log rate.</p></li>
@@ -1165,8 +1168,8 @@ given by <span class="math notranslate nohighlight">\(\frac{\sigma}{\sqrt{n}}\)<
 <h2>7.4.3 Comparing two groups<a class="headerlink" href="#comparing-two-groups" title="Permalink to this headline">¶</a></h2>
 <p>There are many ways of comparing outcomes between two groups. Two popular options are the difference in proportions for binary outcomes and the difference in means for continuous outcomes. Confidence intervals for other measures (e.g. the risk ratio, the odds ratio, the difference in medians, etc.) also can be obtained.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="d2788d47-ee4e-4d6b-a1af-92416591a16c" name="76625ed8-68e7-40c8-b3a6-1028aba3cad7" type="radio">
-</input><label class="tabbed-label" for="d2788d47-ee4e-4d6b-a1af-92416591a16c">
+<input checked="checked" id="fafda2a2-1dca-404c-8226-2dc8c6fb53a7" name="a4eee190-06a5-4ac3-93c1-bcb3f90083fc" type="radio">
+</input><label class="tabbed-label" for="fafda2a2-1dca-404c-8226-2dc8c6fb53a7">
 Difference in proportions</label><div class="tabbed-content docutils">
 <p>We are interested in the population difference in proportions from two observations from two binomial distributions. Suppose our observed data consist of two observations from <span class="math notranslate nohighlight">\(X_1 \sim binomial(n_1, \pi_1)\)</span>, with the realised values being <span class="math notranslate nohighlight">\(X_1=k_1\)</span> and <span class="math notranslate nohighlight">\(X_2 = k_2\)</span>. We want to estimate the difference <span class="math notranslate nohighlight">\(\delta = \pi_1 - \pi_2\)</span>.</p>
 <p>We estimate the proportion in the first group by <span class="math notranslate nohighlight">\(\hat{\pi}_1 = \frac{k_1}{n_1}\)</span>. Similarly, we estimate the proportion in the second group by <span class="math notranslate nohighlight">\(\hat{\pi}_2 = \frac{k_2}{n_2}\)</span>. Then our estimate of the difference in proportions is <span class="math notranslate nohighlight">\(\hat{\delta} = \hat{\pi}_1 - \hat{\pi}_2\)</span>.</p>
@@ -1179,8 +1182,8 @@ Difference in proportions</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[\hat{\delta} \pm 1.96 \times \sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1} + \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}}\]</div>
 </div>
-<input id="32caa8be-08d6-4f1c-8623-4b4e7e0156f4" name="76625ed8-68e7-40c8-b3a6-1028aba3cad7" type="radio">
-</input><label class="tabbed-label" for="32caa8be-08d6-4f1c-8623-4b4e7e0156f4">
+<input id="ca0484dd-6e8d-46a7-bc5a-8fe1a89b0392" name="a4eee190-06a5-4ac3-93c1-bcb3f90083fc" type="radio">
+</input><label class="tabbed-label" for="ca0484dd-6e8d-46a7-bc5a-8fe1a89b0392">
 Difference in means</label><div class="tabbed-content docutils">
 <p>We are interested in the difference in population means between two groups from <span class="math notranslate nohighlight">\(n_1\)</span> iid observations from a normal distribution from group 1 and <span class="math notranslate nohighlight">\(n_2\)</span> from group 2. Suppose our observed data are <span class="math notranslate nohighlight">\(n_1\)</span> observations drawn from <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu_1, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> observations drawn from <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu_2, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n_2\)</span>. We want to estimate the difference <span class="math notranslate nohighlight">\(\delta = \mu_1 - \mu_2\)</span></p>
 <p>The sample means are <span class="math notranslate nohighlight">\(\bar{x}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{x}_2\)</span> and the sample standard deviations are <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span>.</p>
@@ -1233,8 +1236,8 @@ SE(\hat{\delta}) =  \sigma \sqrt{\frac{1}{n_1} + \frac{1}{n_2}}
     {
         requestKernel: true,
         binderOptions: {
-            repo: "binder-examples/jupyter-stacks-datascience",
-            ref: "master",
+            repo: "/LSHTM-HDS",
+            ref: "main",
         },
         codeMirrorConfig: {
             theme: "abcdef",

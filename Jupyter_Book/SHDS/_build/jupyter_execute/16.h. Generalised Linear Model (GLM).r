@@ -8,6 +8,6 @@ treatment <- factor(gl(2,n/2), levels=1:2, labels=c("Active Arm", "Placebo Arm")
 df <- data.frame(treatment, country, counts)
 
 set.seed(42)
-summary(m1 <- glm(counts ~ treatment + country, family=poisson, data=df))
+summary(m1 <- glm(counts ~ treatment + country, family="poisson", data=df))
 
 pchisq(m1$deviance, df=m1$df.residual, lower.tail=FALSE)
