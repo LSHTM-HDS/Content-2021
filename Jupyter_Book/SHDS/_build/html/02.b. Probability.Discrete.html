@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -922,7 +922,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/v2/gh//LSHTM-HDS/main?urlpath=tree/02.b. Probability.Discrete.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/02.b. Probability.Discrete.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -930,9 +930,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -1073,8 +1070,8 @@ P(C|M) = \frac{0.25\times 0.1}{0.25\times 0.1 + 0.1\times 0.9}=0.22
 <p>We can obtain estimates of various useful quantities from this matrix. We will use the following notation: <span class="math notranslate nohighlight">\(O\)</span> represents being, in truth, positive for the outcome of interest, and <span class="math notranslate nohighlight">\(\bar{O}\)</span> represents being truly negative. <span class="math notranslate nohighlight">\(P\)</span> represents being classified as positive and <span class="math notranslate nohighlight">\(\bar{P}\)</span> being classified as negative.</p>
 <p>The tabs below show various useful quantities.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b8f4b2d7-3df5-47f8-9657-a588d2547fee" name="74a0fc78-8295-40b7-b1ff-e6f9c6d73bca" type="radio">
-</input><label class="tabbed-label" for="b8f4b2d7-3df5-47f8-9657-a588d2547fee">
+<input checked="checked" id="68b785a9-6cb6-408b-b1ff-20456c790f35" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
+</input><label class="tabbed-label" for="68b785a9-6cb6-408b-b1ff-20456c790f35">
 Outcome prevalence</label><div class="tabbed-content docutils">
 <p>The prevalence of the outcome is:</p>
 <div class="math notranslate nohighlight">
@@ -1083,8 +1080,8 @@ P(O) = \frac{p_A+p_C}{p_A+p_B+p_C+p_D}
 \]</div>
 <p>Prevalence is another word for risk or proportion. It tells us the fraction of the population of interest who have the outcome.</p>
 </div>
-<input id="29c8f7a1-3c82-48be-bd58-6bf63a7ae565" name="74a0fc78-8295-40b7-b1ff-e6f9c6d73bca" type="radio">
-</input><label class="tabbed-label" for="29c8f7a1-3c82-48be-bd58-6bf63a7ae565">
+<input id="a98d9337-ca0c-49d9-8ba6-a92b1da1ed17" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
+</input><label class="tabbed-label" for="a98d9337-ca0c-49d9-8ba6-a92b1da1ed17">
 Sensitivity</label><div class="tabbed-content docutils">
 <p>This is a property of the test. The sensitivity of the test remains the same, irrespective of how common or rare the outcome is.</p>
 <p>The sensitivity is:</p>
@@ -1095,8 +1092,8 @@ P(P|O)=\frac{p_A}{p_A+p_C}
 <p>The terminology comes from the setting of clinical tests, i.e. how sensitive this test is to the presence of the disease. It is also often called the recall in the fields of machine learning and computer science.</p>
 <p>This is also sometimes referred to as the true positive rate.</p>
 </div>
-<input id="1132ef71-942f-439f-a82c-8903ba657da9" name="74a0fc78-8295-40b7-b1ff-e6f9c6d73bca" type="radio">
-</input><label class="tabbed-label" for="1132ef71-942f-439f-a82c-8903ba657da9">
+<input id="570af31a-85cd-429f-b332-210fac0bebcd" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
+</input><label class="tabbed-label" for="570af31a-85cd-429f-b332-210fac0bebcd">
 Specificity</label><div class="tabbed-content docutils">
 <p>This is a property of the test. The specificity of the test remains the same, irrespective of how common or rare the outcome is.</p>
 <p>The specificity is:</p>
@@ -1107,8 +1104,8 @@ P(\bar{P}|\bar{O})=\frac{p_D}{p_B+p_D}
 <p>As for the sensitivity, this terminology comes from the setting of clinical tests, i.e. how specific  this test is to the presence of this disease (versus other diseases). So a test which is only positive for this specific disease is very specific. A test which picks up the presence of this disease, and other similar diseases, is not very specific.</p>
 <p>This is sometimes called the selectivity or true negative rate.</p>
 </div>
-<input id="a5ce134f-6cff-45b7-a8ee-02ffd2b4e3d8" name="74a0fc78-8295-40b7-b1ff-e6f9c6d73bca" type="radio">
-</input><label class="tabbed-label" for="a5ce134f-6cff-45b7-a8ee-02ffd2b4e3d8">
+<input id="c695c523-bd24-4d52-b80e-13b921842795" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
+</input><label class="tabbed-label" for="c695c523-bd24-4d52-b80e-13b921842795">
 PPV</label><div class="tabbed-content docutils">
 <p>PPV stands for Positive Predictive Value, which is shorthand for the predictive value of a positive classification. This is very common terminology in clinical settings.</p>
 <p>This quantity is often of most interest to the person having the test. It answers the question: “what is the probability that I have (or will have) the outcome, given that I have just received a positive classification?”</p>
@@ -1119,8 +1116,8 @@ P(O|P) = \frac{p_A}{p_A+p_B}
 \]</div>
 <p>In machine learning, it is typically called the precision.</p>
 </div>
-<input id="f6870d6e-d984-4098-b0ac-7575eff1c3b2" name="74a0fc78-8295-40b7-b1ff-e6f9c6d73bca" type="radio">
-</input><label class="tabbed-label" for="f6870d6e-d984-4098-b0ac-7575eff1c3b2">
+<input id="eb69fd23-3938-43cf-be52-269604b683f3" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
+</input><label class="tabbed-label" for="eb69fd23-3938-43cf-be52-269604b683f3">
 Accuracy</label><div class="tabbed-content docutils">
 <p>The accuracy is:</p>
 <div class="math notranslate nohighlight">
@@ -1137,8 +1134,8 @@ P(\mbox{correct classification}) = \frac{p_A + p_D}{p_A+p_B+p_C+p_D}
     {
         requestKernel: true,
         binderOptions: {
-            repo: "/LSHTM-HDS",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",

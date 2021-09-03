@@ -44,9 +44,9 @@
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
     <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
     <script >
-        const thebe_selector = ".thebe,.cell"
-        const thebe_selector_input = "pre,.cell_input div.highlight"
-        const thebe_selector_output = ".output,.cell_output"
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
     <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
@@ -922,7 +922,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh/LSHTM-HDS/Content-2021/main?urlpath=rstudio/v2/gh//LSHTM-HDS/main?urlpath=tree/06.c. Maximum Likelihood.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/06.c. Maximum Likelihood.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -930,9 +930,6 @@
         
         
         
-        <button type="button" class="btn btn-secondary topbarbtn"
-            onclick="initThebeSBT()" title="Launch Thebe" data-toggle="tooltip" data-placement="left"><i
-                class="fas fa-play"></i><span style="margin-left: .4em;">Live Code</span></button>
         
     </div>
 </div>
@@ -987,24 +984,24 @@
 <p>You may notice that, as <span class="math notranslate nohighlight">\(n\)</span> becomes large, the distribution of the MLE becomes more and more concentrated around the true value, and the histrogram appears to look more bell-shaped.</p>
 <p>Suppose we denote the parameter of interest as <span class="math notranslate nohighlight">\(\theta\)</span> and its MLE as <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>. The tabs below show some important properties of MLEs.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="f8046176-f8e7-4adb-9309-412ca7f70e98" name="276b3505-5ab4-4792-8289-dea23f6bda06" type="radio">
-</input><label class="tabbed-label" for="f8046176-f8e7-4adb-9309-412ca7f70e98">
+<input checked="checked" id="ea0c1d3f-a3d1-4f2e-8727-3cae239addd7" name="ab550e93-165c-4d2e-bd9a-58513db42b79" type="radio">
+</input><label class="tabbed-label" for="ea0c1d3f-a3d1-4f2e-8727-3cae239addd7">
 Bias</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically unbiased</strong>, i.e. on average we obtain the correct answer as samples become large.</p>
 <p><span class="math notranslate nohighlight">\(\mathbb{E}(\hat{\theta}) \rightarrow \theta\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </div>
 </div>
-<input id="8b76fd63-3332-4486-8c6e-fa81dc9eb1ff" name="276b3505-5ab4-4792-8289-dea23f6bda06" type="radio">
-</input><label class="tabbed-label" for="8b76fd63-3332-4486-8c6e-fa81dc9eb1ff">
+<input id="403bee3b-487f-4a7e-9e8d-7c0f278519b6" name="ab550e93-165c-4d2e-bd9a-58513db42b79" type="radio">
+</input><label class="tabbed-label" for="403bee3b-487f-4a7e-9e8d-7c0f278519b6">
 Consistency</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>consistent</strong>, i.e. the MLE converges towards the correct answer as samples become large.</p>
 <p><span class="math notranslate nohighlight">\(\hat{\theta} \rightarrow \theta\)</span> in probability as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </div>
 </div>
-<input id="d5e26b4a-9365-4f24-9950-ad1702cc3f6e" name="276b3505-5ab4-4792-8289-dea23f6bda06" type="radio">
-</input><label class="tabbed-label" for="d5e26b4a-9365-4f24-9950-ad1702cc3f6e">
+<input id="48859b9a-51b8-4a5f-8f24-6e023be9732e" name="ab550e93-165c-4d2e-bd9a-58513db42b79" type="radio">
+</input><label class="tabbed-label" for="48859b9a-51b8-4a5f-8f24-6e023be9732e">
 Normality</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically normal</strong>.</p>
@@ -1012,8 +1009,8 @@ Normality</label><div class="tabbed-content docutils">
 <p>The approximate normal distribution of the MLE means that confidence intervals and hypothesis tests for the parameters can be constructed easily.</p>
 </div>
 </div>
-<input id="2936a2c1-5912-41f3-bdcd-aa3020874570" name="276b3505-5ab4-4792-8289-dea23f6bda06" type="radio">
-</input><label class="tabbed-label" for="2936a2c1-5912-41f3-bdcd-aa3020874570">
+<input id="84954a38-1add-435f-adde-1efbd0a472f1" name="ab550e93-165c-4d2e-bd9a-58513db42b79" type="radio">
+</input><label class="tabbed-label" for="84954a38-1add-435f-adde-1efbd0a472f1">
 Efficiency</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically efficient</strong>.</p>
@@ -1021,8 +1018,8 @@ Efficiency</label><div class="tabbed-content docutils">
 <p>This means that, for example, confidence intervals constructed around the MLE will be the narrowest amongst confidence intervals of estimators that are linear and unbiased.</p>
 </div>
 </div>
-<input id="edd51840-fc32-40cf-a820-07147b183957" name="276b3505-5ab4-4792-8289-dea23f6bda06" type="radio">
-</input><label class="tabbed-label" for="edd51840-fc32-40cf-a820-07147b183957">
+<input id="b98c83ff-5073-413a-b94b-e9630759d963" name="ab550e93-165c-4d2e-bd9a-58513db42b79" type="radio">
+</input><label class="tabbed-label" for="b98c83ff-5073-413a-b94b-e9630759d963">
 Transformation invariance</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>transformation invariant</strong>.</p>
@@ -1039,8 +1036,8 @@ Transformation invariance</label><div class="tabbed-content docutils">
     {
         requestKernel: true,
         binderOptions: {
-            repo: "/LSHTM-HDS",
-            ref: "main",
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
         },
         codeMirrorConfig: {
             theme: "abcdef",
