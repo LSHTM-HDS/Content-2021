@@ -143,22 +143,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -424,7 +424,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -439,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -513,6 +513,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -550,16 +555,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
      References
     </a>
    </li>
@@ -655,11 +655,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
      13.7  Modelling interaction terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
     </a>
    </li>
   </ul>
@@ -785,7 +780,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -795,7 +790,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -834,6 +829,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -917,7 +922,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/06.c. Maximum Likelihood.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/06.c. Maximum Likelihood.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -979,24 +984,24 @@
 <p>You may notice that, as <span class="math notranslate nohighlight">\(n\)</span> becomes large, the distribution of the MLE becomes more and more concentrated around the true value, and the histrogram appears to look more bell-shaped.</p>
 <p>Suppose we denote the parameter of interest as <span class="math notranslate nohighlight">\(\theta\)</span> and its MLE as <span class="math notranslate nohighlight">\(\hat{\theta}\)</span>. The tabs below show some important properties of MLEs.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="52f217c0-a7b5-4674-8762-afa1c569e547" name="57de2284-ca3b-4cfe-af8b-976dd977c2e9" type="radio">
-</input><label class="tabbed-label" for="52f217c0-a7b5-4674-8762-afa1c569e547">
+<input checked="checked" id="54556c98-f41c-4c62-8f01-f14429738db9" name="4878e605-ad7c-4f0a-b281-b9e1fdfe1fee" type="radio">
+</input><label class="tabbed-label" for="54556c98-f41c-4c62-8f01-f14429738db9">
 Bias</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically unbiased</strong>, i.e. on average we obtain the correct answer as samples become large.</p>
 <p><span class="math notranslate nohighlight">\(\mathbb{E}(\hat{\theta}) \rightarrow \theta\)</span> as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </div>
 </div>
-<input id="6067bb97-9266-4189-a7ab-3d462be928ff" name="57de2284-ca3b-4cfe-af8b-976dd977c2e9" type="radio">
-</input><label class="tabbed-label" for="6067bb97-9266-4189-a7ab-3d462be928ff">
+<input id="51662f41-f8b8-42fd-9f22-67dd85a66257" name="4878e605-ad7c-4f0a-b281-b9e1fdfe1fee" type="radio">
+</input><label class="tabbed-label" for="51662f41-f8b8-42fd-9f22-67dd85a66257">
 Consistency</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>consistent</strong>, i.e. the MLE converges towards the correct answer as samples become large.</p>
 <p><span class="math notranslate nohighlight">\(\hat{\theta} \rightarrow \theta\)</span> in probability as <span class="math notranslate nohighlight">\(n \rightarrow \infty\)</span>.</p>
 </div>
 </div>
-<input id="24b35ef5-7a6c-43b5-a28a-3f37de3497cc" name="57de2284-ca3b-4cfe-af8b-976dd977c2e9" type="radio">
-</input><label class="tabbed-label" for="24b35ef5-7a6c-43b5-a28a-3f37de3497cc">
+<input id="5edfe205-2689-4ad7-8c15-dcc3cfc44bd4" name="4878e605-ad7c-4f0a-b281-b9e1fdfe1fee" type="radio">
+</input><label class="tabbed-label" for="5edfe205-2689-4ad7-8c15-dcc3cfc44bd4">
 Normality</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically normal</strong>.</p>
@@ -1004,8 +1009,8 @@ Normality</label><div class="tabbed-content docutils">
 <p>The approximate normal distribution of the MLE means that confidence intervals and hypothesis tests for the parameters can be constructed easily.</p>
 </div>
 </div>
-<input id="4fed57f7-ffcb-47ab-aafc-4172ad136107" name="57de2284-ca3b-4cfe-af8b-976dd977c2e9" type="radio">
-</input><label class="tabbed-label" for="4fed57f7-ffcb-47ab-aafc-4172ad136107">
+<input id="bd9061b7-24ef-437a-811b-55c4d279dfac" name="4878e605-ad7c-4f0a-b281-b9e1fdfe1fee" type="radio">
+</input><label class="tabbed-label" for="bd9061b7-24ef-437a-811b-55c4d279dfac">
 Efficiency</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>asymptotically efficient</strong>.</p>
@@ -1013,8 +1018,8 @@ Efficiency</label><div class="tabbed-content docutils">
 <p>This means that, for example, confidence intervals constructed around the MLE will be the narrowest amongst confidence intervals of estimators that are linear and unbiased.</p>
 </div>
 </div>
-<input id="c23450af-f030-4a75-a0cc-05a131728c22" name="57de2284-ca3b-4cfe-af8b-976dd977c2e9" type="radio">
-</input><label class="tabbed-label" for="c23450af-f030-4a75-a0cc-05a131728c22">
+<input id="7e0b8a19-4d71-4d88-b288-9b525b6e845a" name="4878e605-ad7c-4f0a-b281-b9e1fdfe1fee" type="radio">
+</input><label class="tabbed-label" for="7e0b8a19-4d71-4d88-b288-9b525b6e845a">
 Transformation invariance</label><div class="tabbed-content docutils">
 <div class="alert alert-success">
 <p>The MLE is <strong>transformation invariant</strong>.</p>

@@ -143,22 +143,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -424,7 +424,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -439,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -513,6 +513,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -550,16 +555,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
      References
     </a>
    </li>
@@ -655,11 +655,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
      13.7  Modelling interaction terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
     </a>
    </li>
   </ul>
@@ -785,7 +780,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -795,7 +790,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -834,6 +829,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -917,7 +922,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/12.b. Linear Regression I.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/12.b. Linear Regression I.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -951,8 +956,8 @@
 <li><p>Can we predict the risk of heart disease for our patients?</p></li>
 </ul>
 <p>In the above examples, the outcome variables are birthweight, inflammation and heart disease. In the first two examples, the length of pregnancy and drug use are covariates. In the third example, no covariates are explicitly mentioned. However, when answering the third question, researchers may want to consider a range of patient characteristics that are associated with the risk of heart disease as covariates in their model, for example: diet, exercise, comorbodities, medications etc.</p>
-<p>Statistical models contain <strong>population parameters</strong> and representations of <strong>uncertainty</strong>. The population parameters are unknown quantities that we want to estimate from our sample and the uncertainty is a measure of the variability in the outcome variable that is not explained by the covariates.</p>
-<p>This is the first of two lessons on linear regression. In this lesson, we will learn how to define linear regression models, how to estimate their population parameters and how to estimate measures of uncertainty. We begin by introducing the <strong>simple linear regression model</strong> which includes one outcome and one covariate. We then introduce the <strong>multivariable linear regression model</strong>, which is an extension of the simple linear regression model to situations with multiple covariates. In the third session, we discuss the key assumptions underlying linear regression models and important model diagnostics. Finally, we learn how to conduct an <strong>analysis of variance</strong> of statistical models.</p>
+<p>Recall that statistical models contain <strong>population parameters</strong> and representations of <strong>uncertainty</strong>. The population parameters are unknown quantities that we want to estimate from our sample and the uncertainty is a measure of the variability in the outcome variable that is not explained by the covariates.</p>
+<p>This is the first ofthe sessions on linear regression. In this session, we will learn how to define linear regression models, how to estimate their population parameters and how to estimate measures of uncertainty. We begin by introducing the <strong>simple linear regression model</strong> which includes one outcome and one covariate. In the second session, we introduce the <strong>multivariable linear regression model</strong>, which is an extension of the simple linear regression model to situations with multiple covariates. We explore linear regression models with categorical variables, interactions and non-linear terms. In the third session, we discuss the key assumptions underlying linear regression models and important model diagnostics. The optional material to the session explores how to conduct an <strong>analysis of variance</strong> of statistical models.</p>
 <p>Before delving in, it is worth making a note of the different terminologies that you may come across in the medical literature. Here, I have already used the terms: outcome and covariates. Table 1 summarises alternatives terms that may be used to describe the same concepts.</p>
 <table class="colwidths-auto table">
 <thead>

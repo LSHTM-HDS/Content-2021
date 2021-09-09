@@ -143,22 +143,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -424,7 +424,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -439,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -513,6 +513,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -550,16 +555,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
      References
     </a>
    </li>
@@ -655,11 +655,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
      13.7  Modelling interaction terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
     </a>
    </li>
   </ul>
@@ -785,7 +780,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -795,7 +790,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -834,6 +829,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -917,7 +922,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/14.h. Linear Regression III.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/14.h. Linear Regression III.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -966,36 +971,61 @@
 <div class="section" id="proof-for-the-ordinary-least-squares-estimates-in-simple-linear-regression">
 <h2>14.7.1 Proof for the ordinary least squares estimates in simple linear regression<a class="headerlink" href="#proof-for-the-ordinary-least-squares-estimates-in-simple-linear-regression" title="Permalink to this headline">¶</a></h2>
 <p>Recall the ordinary least square (OLS) estimates of the intercept (<span class="math notranslate nohighlight">\(\beta_0\)</span>) and slope (<span class="math notranslate nohighlight">\(\beta_1\)</span>) in simple linear regression are:</p>
-<p>\begin{align}
-\hat{\beta_0} &amp;= \bar{y} - \hat{\beta_0}\bar{x} \
-\hat{\beta_1} &amp;= \frac{\sum_{i=1}^2 (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x_i})^2}
-\end{align}</p>
-<p>Proof:</p>
-<p>To solve for the value of <span class="math notranslate nohighlight">\(\beta_0\)</span> that minimises <span class="math notranslate nohighlight">\(SS_{RES}\)</span>, we differentiate <span class="math notranslate nohighlight">\(SS_{RES}\)</span> with respect to <span class="math notranslate nohighlight">\(\hat{\beta}_0\)</span> and set the differential to zero:</p>
 <div class="math notranslate nohighlight">
-\[ \frac{d(SS_{RES})}{d(\hat{\beta}_0)} = \sum_{i=1}^n -2(y_i-\hat{\beta_0}-\hat{\beta_1}x_i)=0\]</div>
+\[\begin{split}
+\begin{align}
+\hat{\beta_0} &amp;= \bar{y} - \hat{\beta_0}\bar{x} \\
+\hat{\beta_1} &amp;= \frac{\sum_{i=1}^2 (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n (x_i-\bar{x_i})^2}
+\end{align}
+\end{split}\]</div>
+<p>Proof:</p>
+<p>To solve for the value of <span class="math notranslate nohighlight">\(\beta_0\)</span> that minimises <span class="math notranslate nohighlight">\(SS_{RES}\)</span>, we differentiate <span class="math notranslate nohighlight">\(SS_{RES}\)</span> with respect to <span class="math notranslate nohighlight">\(\hat{\beta}_0\)</span> and set the derivative to zero:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\frac{d(SS_{RES})}{d(\hat{\beta}_0)} = \sum_{i=1}^n -2(y_i-\hat{\beta_0}-\hat{\beta_1}x_i)=0
+\]</div>
 <p>Since <span class="math notranslate nohighlight">\(\sum_{i=1}^n (y_i)=n\bar{y}\)</span> and <span class="math notranslate nohighlight">\(\sum_{i=1}^n(x_i)=n\bar{x}\)</span>, we can simplify to:</p>
 <div class="math notranslate nohighlight">
-\[-n\bar{y}+n\hat{\beta}_0+n\hat{\beta}_1\bar{x}=0\]</div>
+\[
+-n\bar{y}+n\hat{\beta}_0+n\hat{\beta}_1\bar{x}=0
+\]</div>
 <p>Rearranging the above and divide by <span class="math notranslate nohighlight">\(n\)</span> to give:</p>
 <div class="math notranslate nohighlight">
-\[ \begin{align}\begin{aligned}\hat{\beta}_0=\bar{y}-\hat{\beta}_1\bar{x}$$. \\To solve for the value of $\beta_1$ that minimises $SS_{RES}$, we have to differentiate with respect to $\hat{\beta}_1$. First, we substitute in our solution for $\hat{\beta}_0$ as follows: \\$$SS_{RES}=\sum_{i=1}^n(y_i-(\bar{y}-\hat{\beta}_1\bar{x})-\hat{\beta}_1x_i)^2=\sum_{i=1}^n ((y_i-\bar{y})-\hat{\beta}_1(x_i-\bar{x}))^2\end{aligned}\end{align} \]</div>
+\[
+\hat{\beta}_0=\bar{y}-\hat{\beta}_1\bar{x}.
+\]</div>
+<p>To solve for the value of <span class="math notranslate nohighlight">\(\beta_1\)</span> that minimises <span class="math notranslate nohighlight">\(SS_{RES}\)</span>, we have to differentiate with respect to <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span>. First, we substitute in our solution for <span class="math notranslate nohighlight">\(\hat{\beta}_0\)</span> as follows:</p>
+<div class="math notranslate nohighlight">
+\[
+SS_{RES}=\sum_{i=1}^n(y_i-(\bar{y}-\hat{\beta}_1\bar{x})-\hat{\beta}_1x_i)^2=\sum_{i=1}^n ((y_i-\bar{y})-\hat{\beta}_1(x_i-\bar{x}))^2
+\]</div>
 <p>Now differentiating the above with respect to <span class="math notranslate nohighlight">\(\hat{\beta}_1\)</span> and setting the differential to zero gives:</p>
 <div class="math notranslate nohighlight">
-\[\frac{d(SS_{RES})}{d(\hat{\beta}_1)} = \sum_{i=1}^n -2(x_i-\bar{x})(y_i-\bar{y})+2\hat{\beta}_1(x_i-\bar{x})^2=0\]</div>
+\[
+\frac{d(SS_{RES})}{d(\hat{\beta}_1)} = \sum_{i=1}^n -2(x_i-\bar{x})(y_i-\bar{y})+2\hat{\beta}_1(x_i-\bar{x})^2=0
+\]</div>
 <p>Rearranging gives:</p>
 <div class="math notranslate nohighlight">
-\[\hat{\beta}_1\sum_{i=1}^n (x_i-\bar{x})^2 = \sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})\]</div>
+\[
+\hat{\beta}_1\sum_{i=1}^n (x_i-\bar{x})^2 = \sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})
+\]</div>
 <div class="math notranslate nohighlight">
-\[\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n(x_i-\bar{x})^2}\]</div>
+\[
+\hat{\beta}_1 = \frac{\sum_{i=1}^n (x_i-\bar{x})(y_i-\bar{y})}{\sum_{i=1}^n(x_i-\bar{x})^2}
+\]</div>
 </div>
 <div class="section" id="proof-that-the-ols-estimates-are-also-the-maximum-likelihood-estimates">
 <h2>14.7.2 Proof that the OLS estimates are also the maximum likelihood estimates<a class="headerlink" href="#proof-that-the-ols-estimates-are-also-the-maximum-likelihood-estimates" title="Permalink to this headline">¶</a></h2>
 <p>If <span class="math notranslate nohighlight">\(Y_i \overset{iid}{\sim} N(\mu, \sigma^2)\)</span>, the log likelihood function is:</p>
 <div class="math notranslate nohighlight">
-\[l(\mu | y_1,...,y_n) = -\frac{1}{2\sigma^2}\sum_{i=1}^n (y_i - \mu)^2\]</div>
+\[
+l(\mu | y_1,...,y_n) = -\frac{1}{2\sigma^2}\sum_{i=1}^n (y_i - \mu)^2
+\]</div>
 <p>So, for the simple linear regression model:</p>
-<p>$<span class="math notranslate nohighlight">\(l(\beta_0, \beta_1 | y_1,...,y_n) = -\frac{1}{2\sigma^2}\sum_{i=1}^n (y_i - \beta_1x_i-\beta_0)^2\)</span>$.</p>
+<div class="math notranslate nohighlight">
+\[
+l(\beta_0, \beta_1 | y_1,...,y_n) = -\frac{1}{2\sigma^2}\sum_{i=1}^n (y_i - \beta_1x_i-\beta_0)^2.
+\]</div>
 <p>Therefore, for any fixed positive value for <span class="math notranslate nohighlight">\(\sigma^2\)</span>, maximising the log likelihood function is equivalent to minimising <span class="math notranslate nohighlight">\(SS_{RES}\)</span> and so the OLS estimates are also maximum likelihood estimates of <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>.</p>
 </div>
 </div>

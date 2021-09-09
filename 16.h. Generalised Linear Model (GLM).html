@@ -141,22 +141,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -422,7 +422,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -437,7 +437,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -479,7 +479,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -511,6 +511,11 @@
  </span>
 </p>
 <ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -548,16 +553,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
      References
     </a>
    </li>
@@ -653,11 +653,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
      13.7  Modelling interaction terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
     </a>
    </li>
   </ul>
@@ -783,7 +778,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -793,7 +788,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -832,6 +827,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -915,7 +920,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/16.h. Generalised Linear Model (GLM).ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/16.h. Generalised Linear Model (GLM).ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -967,7 +972,7 @@
 <h1>16.7 Poisson Regression Example<a class="headerlink" href="#poisson-regression-example" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="example-data-set">
 <h2>16.7.1 Example data set<a class="headerlink" href="#example-data-set" title="Permalink to this headline">¶</a></h2>
-<p>For the purpose of illustration, we will simulate some data and pretend it comes from a clinical trial. We generate 100 participants ( 𝑛 ) in three variables. The first is a count variable representing the number of hospital admissions (<em>counts</em>) a participant has had in a year and it is created from a Poisson distribution with  𝑙𝑎𝑚𝑏𝑑𝑎=2 . The second is a categorical variable (<em>country</em>) with 4 groups representing the country a participant lives in (England, Northern Ireland, Scotland, Wales) and the last is a binary variable (<em>treatment</em>) representing which treatment arm the participant was randomised to. Let’s start with simulating the data and looking at some descriptive statistics.</p>
+<p>For the purpose of illustration, we will simulate some data and pretend it comes from a clinical trial. We generate 100 participants ( 𝑛 ) and three variables. The first is a count variable representing the number of hospital admissions (<em>counts</em>) a participant has had in a year and it is created from a Poisson distribution with  𝑙𝑎𝑚𝑏𝑑𝑎=2 . The second is a categorical variable (<em>country</em>) with 4 groups representing the country a participant lives in (England, Northern Ireland, Scotland, Wales) and the last is a binary variable (<em>treatment</em>) representing which treatment arm the participant was randomised to. Let’s start with simulating the data and looking at some descriptive statistics.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1">## Simulate Data</span>
@@ -983,16 +988,17 @@
 </div>
 </div>
 <p>Assume we wish to model <em>counts</em> using a GLM with <em>treatment</em> and <em>country</em> as predictors. We already know the admissions count variable follows a Poisson distribution as we have simulated the data directly from the distribution without adding noise, therefore we know a Poisson regression is suitable. To fit the model, we call the glm() function with the family set to “poisson” and use the summary command to look at the output.</p>
+<p>Note: We have used the option <code class="docutils literal notranslate"><span class="pre">family=poisson</span></code>. We could be more explicit and state the link function we want R to use by replacing this with <code class="docutils literal notranslate"><span class="pre">family=poisson(link=log)</span></code>. Try re-running the command using <code class="docutils literal notranslate"><span class="pre">family=poisson(link=identity)</span></code>. What is this doing? Is this a sensible/useful model?</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">set.seed</span><span class="p">(</span><span class="m">42</span><span class="p">)</span>
-<span class="nf">summary</span><span class="p">(</span><span class="n">m1</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">counts</span> <span class="o">~</span> <span class="n">treatment</span> <span class="o">+</span> <span class="n">country</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="s">&quot;poisson&quot;</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">))</span>
+<span class="nf">summary</span><span class="p">(</span><span class="n">m1</span> <span class="o">&lt;-</span> <span class="nf">glm</span><span class="p">(</span><span class="n">counts</span> <span class="o">~</span> <span class="n">treatment</span> <span class="o">+</span> <span class="n">country</span><span class="p">,</span> <span class="n">family</span><span class="o">=</span><span class="n">poisson</span><span class="p">,</span> <span class="n">data</span><span class="o">=</span><span class="n">df</span><span class="p">))</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
 <div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Call:
-glm(formula = counts ~ treatment + country, family = &quot;poisson&quot;, 
+glm(formula = counts ~ treatment + country, family = poisson, 
     data = df)
 
 Deviance Residuals: 

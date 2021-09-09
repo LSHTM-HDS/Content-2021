@@ -143,22 +143,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -424,7 +424,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -439,7 +439,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +481,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -513,6 +513,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -550,16 +555,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
      References
     </a>
    </li>
@@ -655,11 +655,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
      13.7  Modelling interaction terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
     </a>
    </li>
   </ul>
@@ -785,7 +780,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -795,7 +790,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -834,6 +829,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -917,7 +922,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/09.g. Bayesian Statistics I.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/09.g. Bayesian Statistics I.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -952,25 +957,25 @@
 \[
 P(\theta \in [\theta_L,\theta_U])= 0.95 \mbox{ such that for all } \theta_O \notin  [\theta_L,\theta_U] \mbox{ and all  } \theta_I\in[\theta_L,\theta_U], p(\theta_O|y) &lt; p(\theta_I|y).
 \]</div>
-<p>In our previous example, when we used the asymmetrical <span class="math notranslate nohighlight">\(Beta(2, 9)\)</span> prior, our posterior was <span class="math notranslate nohighlight">\(Beta(6, 15)\)</span>. The posterior mean is  <span class="math notranslate nohighlight">\(\frac{6}{6+15}=0.286\)</span>. The <span class="math notranslate nohighlight">\(90\%\)</span> HPDI is <span class="math notranslate nohighlight">\((0.13, 0.44)\)</span>. We plot the distribution below and check that the area between these two values gives us 0.9. Now, note that the interval (0.144, 0.47) also gives us an area of 0.9, but this interval is wider. In a sense, the HPDI is the “tightest” interval so that the area under the posterior distribution is <span class="math notranslate nohighlight">\(\alpha\)</span>.</p>
+<p>In our previous example, when we used the asymmetrical <span class="math notranslate nohighlight">\(Beta(2, 9)\)</span> prior, our posterior was <span class="math notranslate nohighlight">\(Beta(6, 15)\)</span>. The posterior mean is  <span class="math notranslate nohighlight">\(\frac{6}{6+15}=0.286\)</span>. The 95% HPDI is (0.107,0.475). We plot the distribution below and check that the area between these two values gives us 0.95. Now, note that the interval (0.09, 0.465) also gives us an area of 0.95, but this interval is wider. In a sense, the HPDI is the “tightest” interval so that the area under the posterior distribution is 0.95.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="n">p</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">1</span><span class="p">,</span> <span class="m">0.01</span><span class="p">)</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">7</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nf">dbeta</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Beta(6, 15) Distribution  \n with 90% credible interval&quot;</span><span class="p">,</span>  <span class="n">xlab</span><span class="o">=</span><span class="nf">expression</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;density&quot;</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.44</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span>
-<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.13</span><span class="p">,</span>  <span class="n">lty</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="nf">dbeta</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Beta(6, 15) Distribution  \n with 95% credible interval&quot;</span><span class="p">,</span>  <span class="n">xlab</span><span class="o">=</span><span class="nf">expression</span><span class="p">(</span><span class="n">theta</span><span class="p">),</span> <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;density&quot;</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.475</span><span class="p">,</span> <span class="n">lty</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span>
+<span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="m">0.107</span><span class="p">,</span>  <span class="n">lty</span><span class="o">=</span><span class="s">&quot;dashed&quot;</span><span class="p">)</span>
 
-<span class="c1">#Area under the 90% HDPI</span>
-<span class="nf">pbeta</span><span class="p">(</span><span class="m">0.44</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span><span class="o">-</span><span class="nf">pbeta</span><span class="p">(</span><span class="m">0.13</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
+<span class="c1">#Area under the 95% HDPI</span>
+<span class="nf">pbeta</span><span class="p">(</span><span class="m">0.475</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span><span class="o">-</span><span class="nf">pbeta</span><span class="p">(</span><span class="m">0.107</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
 
-<span class="c1">#The interval (0.47. 0.144) also a 90% credible interval </span>
-<span class="nf">pbeta</span><span class="p">(</span><span class="m">0.47</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span><span class="o">-</span><span class="nf">pbeta</span><span class="p">(</span><span class="m">0.144</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
+<span class="c1">#The interval (0.09, 0.465) also a 95% credible interval </span>
+<span class="nf">pbeta</span><span class="p">(</span><span class="m">0.465</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span><span class="o">-</span><span class="nf">pbeta</span><span class="p">(</span><span class="m">0.09</span><span class="p">,</span> <span class="m">6</span><span class="p">,</span> <span class="m">15</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html">0.897009716676625</div><div class="output text_html">0.90491783788117</div><img alt="_images/09.g. Bayesian Statistics I_1_2.png" src="_images/09.g. Bayesian Statistics I_1_2.png" />
+<div class="output text_html">0.949975144544822</div><div class="output text_html">0.951266598161814</div><img alt="_images/09.g. Bayesian Statistics I_1_2.png" src="_images/09.g. Bayesian Statistics I_1_2.png" />
 </div>
 </div>
 <blockquote>

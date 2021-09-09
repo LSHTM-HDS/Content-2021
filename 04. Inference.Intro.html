@@ -141,22 +141,22 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.c.%20Probability.Discrete.html">
-     The binomial distribution
+     2.2 The binomial distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.d.%20Probability.Discrete.html">
-     The Poisson distribution
+     2.3 The Poisson distribution
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="02.e.%20Probability.Discrete.html">
-     Summary
+     2.4 Summary
     </a>
    </li>
   </ul>
@@ -422,7 +422,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="09.b.%20Bayesian%20Statistics%20I.html">
-     Part 1: 9.1 Introduction to Bayesian Inference
+     9.1 Introduction to Bayesian Inference
     </a>
    </li>
    <li class="toctree-l2">
@@ -437,7 +437,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="09.e.%20Bayesian%20Statistics%20I.html">
-     Part 2:  9.4 Bayes thorem for discrete and continous data
+     9.4 Bayes thorem for discrete and continous data
     </a>
    </li>
    <li class="toctree-l2">
@@ -479,7 +479,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -511,6 +511,11 @@
  </span>
 </p>
 <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="11.%20Investigation.Intro.html">
+   Investigations and the role of regression modelling
+  </a>
+ </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="11.a.%20Types%20of%20Investigation.html">
    11. Types of Investigation
@@ -548,16 +553,11 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.g.%20Types%20of%20Investigation.html">
-     11.6 Example: the role of regression in different types of investigation
+     11.6 Summary
     </a>
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="11.i.%20Types%20of%20Investigation.html">
      References
     </a>
    </li>
@@ -653,11 +653,6 @@
    <li class="toctree-l2">
     <a class="reference internal" href="13.g.%20Linear%20Regression%20II.html">
      13.7  Modelling interaction terms
-    </a>
-   </li>
-   <li class="toctree-l2">
-    <a class="reference internal" href="13.h.%20Linear%20Regression%20II.html">
-     13.8 Summary
     </a>
    </li>
   </ul>
@@ -783,7 +778,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -793,7 +788,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -832,6 +827,16 @@
     </a>
    </li>
   </ul>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="17.%20Investigations%20round%20up.html">
+   17. The role of regression in different types of investigation
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="18.%20Statistics%20for%20HDS%20round%20up.html">
+   Statistics and Health Data Science
+  </a>
  </li>
 </ul>
 
@@ -915,7 +920,7 @@
         aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
     <div class="dropdown-buttons">
         
-        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/Jupyter_Book/SHDS/04. Inference.Intro.ipynb"><button type="button"
+        <a class="binder-button" href="https://mybinder.org/v2/gh//LSHTM-HDS/main?urlpath=tree/04. Inference.Intro.ipynb"><button type="button"
                 class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
                 data-placement="left"><img class="binder-button-logo"
                     src="_static/images/logo_binder.svg"
@@ -969,8 +974,8 @@
 </ul>
 <p>The first session introduces the concept of <strong>statistical inference</strong>, defining populations, samples and estimators. The second half of the session introduces the idea of <strong>sampling distributions</strong>, a fundamental building block for frequentist inference. The sampling distribution gives us information about how different our estimate of the unknown population quantity of interest might have been, had we selected a different sample. In other words, the sampling distribution describes how our estimate behaves under <strong>repeated sampling</strong>. One particular feature of the sampling distribution, the <strong>standard error</strong>, gives us information about the amount we might expect our estimate to change if we took a different sample (i.e. it describes the variability of the estimate between different samples).</p>
 <p>The idea of sampling distributions is crucial to frequentist inference, but while it gives us important information about how our estimate behaves under repeated sampling, it does not provide a recipe for choosing an estimator. <strong>Maximum likelihood estimation</strong> (MLE), the subject of the following two sessions, does exactly this. Given a statistical model for the data, MLE provides a method for choosing an estimator with desirable statistical properties.</p>
-<p>Having explored MLE to obtain our estimator, we return to the idea of sampling distributions in the following two frequentist inference sessions. We see how the idea of sampling distributions allows us to create <strong>confidence intervals</strong>, which are ranges of values of the population quantity which we believe are consistent with the observed data. A complementary frequentist inference tool, hypothesis testing, allows us to assess the evidence against a <strong>null hypothesis</strong> which proposes a specific value for the unknown population parameter.</p>
-<p>Thus far, our attention has been largely on the frequentist paradigm. The last two sessions focus instead on an important alternative approach, <strong>Bayesian inference</strong>. In this paradigm we do not base our inference on the idea of repeated sampling. Instead, we use the likelihood to update prior beliefs about the unknown parameter, to provide a <strong>posterior distribution</strong> for the unknown parameter. The posterior is used to obtain estimates of the parameter (e.g. the mean of the posterior is often used as the estimate) and <strong>credible intervals</strong> (intervals within which  the unknown parameter falls with particular probability).</p>
+<p>Having explored MLE to obtain our estimator, we return to the idea of sampling distributions in the following two frequentist inference sessions. We see how the idea of sampling distributions allows us to create <strong>confidence intervals</strong>, which are ranges of values of the population quantity which we believe are consistent with the observed data. A complementary frequentist inference tool, hypothesis testing, allows us to assess the evidence against a <strong>null hypothesis</strong>, which proposes a specific value (or range of values) for the unknown population parameter.</p>
+<p>Thus far, our attention has been largely on the frequentist paradigm. The last two sessions focus instead on an important alternative approach, <strong>Bayesian inference</strong>. In this paradigm we do not base our inference on the idea of repeated sampling. Instead, we use the likelihood to update prior information (in the form of a probability distribution) about the unknown parameter, to provide a <strong>posterior distribution</strong> for the unknown parameter. The posterior can be summarised by obtaining its mean, or a <strong>credible interval</strong> (interval within which  the unknown parameter falls with a particular probability).</p>
 </div>
 </div>
 
