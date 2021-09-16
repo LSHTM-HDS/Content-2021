@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,15 +42,15 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="15.3 The logistic regression model" href="15.d.%20Logistic%20Regression.html" />
@@ -73,8 +73,6 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.jpg" class="logo" alt="logo">
-      
       
       <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
       
@@ -82,7 +80,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -143,7 +141,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +479,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -560,7 +558,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
+     References
     </a>
    </li>
   </ul>
@@ -780,7 +778,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +788,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -942,7 +940,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h1 nav-item toc-entry">
   <a class="reference internal nav-link" href="#">
@@ -978,15 +976,19 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output text_html"><table>
-<thead><tr><th scope=col>id</th><th scope=col>prac</th><th scope=col>pr_lcd</th><th scope=col>sex</th><th scope=col>age</th><th scope=col>bmi</th><th scope=col>bmi_category</th><th scope=col>consultations</th><th scope=col>agegp</th><th scope=col>alcohol</th><th scope=col>...</th><th scope=col>mortality</th><th scope=col>date_death</th><th scope=col>timetodementia</th><th scope=col>dementia</th><th scope=col>date_dementia</th><th scope=col>end_date</th><th scope=col>dob</th><th scope=col>rsample</th><th scope=col>vitd</th><th scope=col>lp</th></tr></thead>
+<div class="output text_html"><table class="dataframe">
+<caption>A data.frame: 6 × 30</caption>
+<thead>
+	<tr><th></th><th scope=col>id</th><th scope=col>prac</th><th scope=col>pr_lcd</th><th scope=col>sex</th><th scope=col>age</th><th scope=col>bmi</th><th scope=col>bmi_category</th><th scope=col>consultations</th><th scope=col>agegp</th><th scope=col>alcohol</th><th scope=col>⋯</th><th scope=col>mortality</th><th scope=col>date_death</th><th scope=col>timetodementia</th><th scope=col>dementia</th><th scope=col>date_dementia</th><th scope=col>end_date</th><th scope=col>dob</th><th scope=col>rsample</th><th scope=col>vitd</th><th scope=col>lp</th></tr>
+	<tr><th></th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>⋯</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;chr&gt;</th><th scope=col>&lt;int&gt;</th><th scope=col>&lt;dbl&gt;</th><th scope=col>&lt;dbl&gt;</th></tr>
+</thead>
 <tbody>
-	<tr><td> 23189                                                           </td><td>142                                                              </td><td>08dec2009                                                        </td><td>1                                                                </td><td>53                                                               </td><td>20.4                                                             </td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td>12                                                               </td><td>50                                                               </td><td>3-6 units/day                                                    </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>08dec2009                                                        </td><td>01nov1941                                                        </td><td>1                                                                </td><td><span style=white-space:pre-wrap>      NA</span>                 </td><td>-0.8153054                                                       </td></tr>
-	<tr><td> 92186                                                           </td><td>132                                                              </td><td>03feb2003                                                        </td><td>0                                                                </td><td>73                                                               </td><td>21.5                                                             </td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td> 4                                                               </td><td>70                                                               </td><td>&lt;2 units/day                                                  </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>03feb2003                                                        </td><td>16jan1928                                                        </td><td>1                                                                </td><td><span style=white-space:pre-wrap>      NA</span>                 </td><td>-1.2268275                                                       </td></tr>
-	<tr><td>187963                                                           </td><td> 43                                                              </td><td>06jul2001                                                        </td><td>0                                                                </td><td>40                                                               </td><td>27.1                                                             </td><td><span style=white-space:pre-wrap>Overweight (25-&lt;30)   </span></td><td> 0                                                               </td><td>40                                                               </td><td>&lt;2 units/day                                                  </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>06jul2001                                                        </td><td>18jun1961                                                        </td><td>1                                                                </td><td><span style=white-space:pre-wrap>      NA</span>                 </td><td>-0.6602434                                                       </td></tr>
-	<tr><td>148379                                                           </td><td>215                                                              </td><td>08mar2012                                                        </td><td>1                                                                </td><td>40                                                               </td><td>20.9                                                             </td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td> 3                                                               </td><td>40                                                               </td><td>&lt;2 units/day                                                  </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>08mar2012                                                        </td><td>10feb1952                                                        </td><td>1                                                                </td><td>23.22692                                                         </td><td>-0.9507329                                                       </td></tr>
-	<tr><td> 44194                                               </td><td>225                                                  </td><td>02feb2011                                            </td><td>1                                                    </td><td>92                                                   </td><td>32.5                                                 </td><td>Obese class I (30-&lt;35)                            </td><td>10                                                   </td><td>90                                                   </td><td><span style=white-space:pre-wrap>Non drinker  </span></td><td>...                                                  </td><td>0                                                    </td><td>                                                     </td><td>NA                                                   </td><td>0                                                    </td><td>                                                     </td><td>02feb2011                                            </td><td>09dec1912                                            </td><td>1                                                    </td><td><span style=white-space:pre-wrap>      NA</span>     </td><td> 1.0403746                                           </td></tr>
-	<tr><td>169915                                                           </td><td>175                                                              </td><td>02nov2011                                                        </td><td>1                                                                </td><td>55                                                               </td><td>26.3                                                             </td><td><span style=white-space:pre-wrap>Overweight (25-&lt;30)   </span></td><td> 3                                                               </td><td>55                                                               </td><td>3-6 units/day                                                    </td><td>...                                                              </td><td>0                                                                </td><td>                                                                 </td><td>NA                                                               </td><td>0                                                                </td><td>                                                                 </td><td>02nov2011                                                        </td><td>06oct1946                                                        </td><td>1                                                                </td><td><span style=white-space:pre-wrap>      NA</span>                 </td><td>-0.1080445                                                       </td></tr>
+	<tr><th scope=row>1</th><td> 23189</td><td>142</td><td>08dec2009</td><td>1</td><td>53</td><td>20.4</td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td>12</td><td>50</td><td>3-6 units/day</td><td>⋯</td><td>0</td><td></td><td>NA</td><td>0</td><td></td><td>08dec2009</td><td>01nov1941</td><td>1</td><td><span style=white-space:pre-wrap>      NA</span></td><td>-0.8153054</td></tr>
+	<tr><th scope=row>2</th><td> 92186</td><td>132</td><td>03feb2003</td><td>0</td><td>73</td><td>21.5</td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td> 4</td><td>70</td><td>&lt;2 units/day </td><td>⋯</td><td>0</td><td></td><td>NA</td><td>0</td><td></td><td>03feb2003</td><td>16jan1928</td><td>1</td><td><span style=white-space:pre-wrap>      NA</span></td><td>-1.2268275</td></tr>
+	<tr><th scope=row>3</th><td>187963</td><td> 43</td><td>06jul2001</td><td>0</td><td>40</td><td>27.1</td><td><span style=white-space:pre-wrap>Overweight (25-&lt;30)   </span></td><td> 0</td><td>40</td><td>&lt;2 units/day </td><td>⋯</td><td>0</td><td></td><td>NA</td><td>0</td><td></td><td>06jul2001</td><td>18jun1961</td><td>1</td><td><span style=white-space:pre-wrap>      NA</span></td><td>-0.6602434</td></tr>
+	<tr><th scope=row>4</th><td>148379</td><td>215</td><td>08mar2012</td><td>1</td><td>40</td><td>20.9</td><td><span style=white-space:pre-wrap>Normal (18.5-&lt;25)     </span></td><td> 3</td><td>40</td><td>&lt;2 units/day </td><td>⋯</td><td>0</td><td></td><td>NA</td><td>0</td><td></td><td>08mar2012</td><td>10feb1952</td><td>1</td><td>23.22692</td><td>-0.9507329</td></tr>
+	<tr><th scope=row>5</th><td> 44194</td><td>225</td><td>02feb2011</td><td>1</td><td>92</td><td>32.5</td><td>Obese class I (30-&lt;35)</td><td>10</td><td>90</td><td><span style=white-space:pre-wrap>Non drinker  </span></td><td>⋯</td><td>0</td><td></td><td>NA</td><td>0</td><td></td><td>02feb2011</td><td>09dec1912</td><td>1</td><td><span style=white-space:pre-wrap>      NA</span></td><td> 1.0403746</td></tr>
+	<tr><th scope=row>6</th><td>169915</td><td>175</td><td>02nov2011</td><td>1</td><td>55</td><td>26.3</td><td><span style=white-space:pre-wrap>Overweight (25-&lt;30)   </span></td><td> 3</td><td>55</td><td>3-6 units/day</td><td>⋯</td><td>0</td><td></td><td>NA</td><td>0</td><td></td><td>02nov2011</td><td>06oct1946</td><td>1</td><td><span style=white-space:pre-wrap>      NA</span></td><td>-0.1080445</td></tr>
 </tbody>
 </table>
 </div></div>
@@ -1061,12 +1063,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="15.b.%20Logistic%20Regression.html" title="previous page">15.1 Regression modelling for binary outcomes</a>
-    <a class='right-next' id="next-link" href="15.d.%20Logistic%20Regression.html" title="next page">15.3 The logistic regression model</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="15.b.%20Logistic%20Regression.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">15.1 Regression modelling for binary outcomes</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="15.d.%20Logistic%20Regression.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">15.3 The logistic regression model</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

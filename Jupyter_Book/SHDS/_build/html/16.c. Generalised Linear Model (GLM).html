@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,19 +42,19 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="16.3 GLM Assumptions" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html" />
-    <link rel="prev" title="16.1 Introduction to Generalised Linear Models (GLM’s)" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html" />
+    <link rel="prev" title="16.1 Introduction to Generalised Linear Models (GLMs)" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="docsearch:language" content="en" />
     
@@ -73,8 +73,6 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.jpg" class="logo" alt="logo">
-      
       
       <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
       
@@ -82,7 +80,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -143,7 +141,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +479,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -560,7 +558,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
+     References
     </a>
    </li>
   </ul>
@@ -780,7 +778,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +788,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2 current active">
@@ -939,6 +937,34 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-random-component">
+   A random component
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-systematic-component-the-linear-predictor">
+   A systematic component  (the linear predictor)
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#a-link-function">
+   A link function
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#an-example-logistic-regression">
+   16.2.1 An example - logistic regression
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -950,11 +976,63 @@
   <div class="section" id="generalised-linear-model-components">
 <h1>16.2 Generalised Linear Model Components<a class="headerlink" href="#generalised-linear-model-components" title="Permalink to this headline">¶</a></h1>
 <p>A generalised linear model consists of three components:</p>
-<ol class="simple">
-<li><p><strong>A random component</strong> : This refers to the probability distribution of the outcome variable <span class="math notranslate nohighlight">\(Y_{i}\)</span> (for the ith of n independently sampled observations).  It specifies the conditional distribution of the outcome given the values of the predictors (covariates) in the model. <span class="math notranslate nohighlight">\(Y_{i}\)</span> is generally formulated as distribution from the exponential family, however subsequent work has extended GLMs to multivariate exponential families, to certain non-exponential families and to also to situations where the distribution of <span class="math notranslate nohighlight">\(Y_{i}\)</span> is not completely specified. Within this chapter we will only explore the application to distributions from the exponential family (i.e. Normal, Gamma, Poisson, Bernoulli etc.)</p></li>
-<li><p><strong>A systematic component</strong> : This is the linear function of the predictors (covariates) in the model  <span class="math notranslate nohighlight">\(\eta_{i} = \beta_{0} + \beta_{1}X_{i1} + \beta_{2}X_{i2} + … + \beta_{k}X_{ik}\)</span> , and just like in the linear and logistic regression chapters the predictors (covariates) <span class="math notranslate nohighlight">\(X_{ij}\)</span> may be continuous and/or categorical.</p></li>
-<li><p><strong>The link function</strong>: This function transforms the expectation of the predictors (covariates) to be linear with the outcome variable. If we define the link function as <span class="math notranslate nohighlight">\(g\)</span> and <span class="math notranslate nohighlight">\(\mu_{i} = E[Y_{i}\)</span> then <span class="math notranslate nohighlight">\(g(\mu_{i} ) = \eta_{i} = \beta_{0} + \beta_{1}X_{i1} + \beta_{2}X_{i2} + … + \beta_{k}X_{ik}\)</span>. This can be inverted so <span class="math notranslate nohighlight">\(\mu_{i}  = g^{-1}(\eta_{i}) = g^{-1}(\beta_{0} + \beta_{1}X_{i1} + \beta_{2}X_{i2} + … + \beta_{k}X_{ik})\)</span>. The inverse link <span class="math notranslate nohighlight">\(g^{-1}(.)\)</span> is often called the <em>mean function</em> as it  gives the expected value of the outcome.</p></li>
-</ol>
+<div class="section" id="a-random-component">
+<h2>A random component<a class="headerlink" href="#a-random-component" title="Permalink to this headline">¶</a></h2>
+<p>This refers to the probability distribution of the outcome variable <span class="math notranslate nohighlight">\(Y_{i}\)</span> (for the ith of n independently sampled observations).  It specifies the conditional distribution of the outcome given the values of the predictors (covariates) in the model. <span class="math notranslate nohighlight">\(Y_{i}\)</span> is generally formulated as distribution from the exponential family, however subsequent work has extended GLMs to multivariate exponential families, to certain non-exponential families and to also to situations where the distribution of <span class="math notranslate nohighlight">\(Y_{i}\)</span> is not completely specified. Within this chapter we will only explore the application to distributions from the exponential family (i.e. Normal, Gamma, Poisson, Bernoulli etc.)</p>
+</div>
+<div class="section" id="a-systematic-component-the-linear-predictor">
+<h2>A systematic component  (the linear predictor)<a class="headerlink" href="#a-systematic-component-the-linear-predictor" title="Permalink to this headline">¶</a></h2>
+<p>This is the linear function of the predictors (covariates) in the model</p>
+<div class="math notranslate nohighlight">
+\[
+\eta_{i} = \beta_{0} + \beta_{1}X_{i1} + \beta_{2}X_{i2} + … + \beta_{k}X_{ik}
+\]</div>
+<p>Just as in  linear and logistic regression models, the predictors (covariates) <span class="math notranslate nohighlight">\(X_{ij}\)</span> may be continuous and/or categorical.</p>
+</div>
+<div class="section" id="a-link-function">
+<h2>A link function<a class="headerlink" href="#a-link-function" title="Permalink to this headline">¶</a></h2>
+<p>This function transforms the expectation of the predictors (covariates) to be linear with the outcome variable.</p>
+<p>Suppose we let <span class="math notranslate nohighlight">\(\mu_{i} = E[Y_{i}]\)</span>. Then the <em>link function</em> is a function <span class="math notranslate nohighlight">\(g(.)\)</span> with</p>
+<div class="math notranslate nohighlight">
+\[
+g(\mu_{i} ) = \eta_{i} 
+\]</div>
+<p>Or in other words,</p>
+<div class="math notranslate nohighlight">
+\[
+g(\mu_{i} ) = \beta_{0} + \beta_{1}X_{i1} + \beta_{2}X_{i2} + … + \beta_{k}X_{ik}
+\]</div>
+<p>This can be inverted so</p>
+<div class="math notranslate nohighlight">
+\[
+\mu_{i}  = g^{-1}(\eta_{i}) = g^{-1}(\beta_{0} + \beta_{1}X_{i1} + \beta_{2}X_{i2} + … + \beta_{k}X_{ik}).
+\]</div>
+<p>The inverse link <span class="math notranslate nohighlight">\(g^{-1}(.)\)</span> is often called the <em>mean function</em> as it  gives the expected value of the outcome.</p>
+</div>
+<div class="section" id="an-example-logistic-regression">
+<h2>16.2.1 An example - logistic regression<a class="headerlink" href="#an-example-logistic-regression" title="Permalink to this headline">¶</a></h2>
+<p>Suppose we wish to fit a logistic regression model (which we will see is one particular type of GLM) for a binary outcome <span class="math notranslate nohighlight">\(Y\)</span> and a single covariate <span class="math notranslate nohighlight">\(X\)</span>. Normally we write <span class="math notranslate nohighlight">\(\pi_i\)</span> for the expected outcome but here we will use <span class="math notranslate nohighlight">\(\mu_i\)</span> instead, so you can see how the model we had previously connects with the more general notation above. Thus, we let <span class="math notranslate nohighlight">\(\mu_i = E[Y_i]\)</span> (=<span class="math notranslate nohighlight">\(\pi_i\)</span> in previous sessions). We have:</p>
+<div class="math notranslate nohighlight">
+\[
+Y_i \overset{iid}{\sim} Bernouilli(\mu_i), \qquad \text{for} \ i=1, 2, ..., n
+\]</div>
+<p>The linear predictor is given by:</p>
+<div class="math notranslate nohighlight">
+\[
+\eta_i = \beta_0 + \beta_1 X_i 
+\]</div>
+<p>The link function can be defined generically. In the equation below, <span class="math notranslate nohighlight">\(z\)</span> has no intrinsic meaning; it is just used here to enable us to define a function. The link function for logistic regression is the logit function:</p>
+<div class="math notranslate nohighlight">
+\[
+g(z) = log \left\{ \frac{z}{1-z} \right\}
+\]</div>
+<p>Setting this equal to <span class="math notranslate nohighlight">\(\eta_i\)</span>, as per the definition above, we get:</p>
+<div class="math notranslate nohighlight">
+\[
+g(\mu_i) = log \left\{ \frac{\mu_i}{1-\mu_i} \right\} = \beta_0 + \beta_1 X_i 
+\]</div>
+<p>which is the logistic regression model we met previously.</p>
+</div>
 </div>
 
     <script type="text/x-thebe-config">
@@ -980,12 +1058,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="previous page">16.1 Introduction to Generalised Linear Models (GLM’s)</a>
-    <a class='right-next' id="next-link" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="next page">16.3 GLM Assumptions</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">16.1 Introduction to Generalised Linear Models (GLMs)</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="16.d.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">16.3 GLM Assumptions</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,7 +42,7 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
@@ -71,8 +71,6 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.jpg" class="logo" alt="logo">
-      
       
       <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
       
@@ -80,7 +78,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -141,7 +139,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -479,7 +477,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -558,7 +556,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
+     References
     </a>
    </li>
   </ul>
@@ -778,7 +776,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -788,7 +786,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -937,6 +935,70 @@
         <!-- Table of contents -->
         <div class="d-none d-md-block col-md-2 bd-toc show">
             
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav" aria-label="Page">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-will-learn">
+   1.1 What you will learn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-you-won-t-learn">
+   1.2 What you won’t learn
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#the-data-science-project">
+   1.3 The Data Science Project
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#fig-1-1-the-ppdac-cycle-from-the-art-of-statistics-by-david-spiegelhalter">
+     Fig. 1.1 The PPDAC cycle (From
+     <em>
+      The Art of Statistics
+     </em>
+     by David Spiegelhalter)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#identify-the-problem-and-generate-a-hypothesis">
+     1.3.1 Identify the problem and generate a hypothesis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#develop-a-plan-consider-the-data-design">
+     1.3.2 Develop a plan, consider the data design
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-data">
+     1.3.3 The data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-analysis">
+     1.3.4 Data analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#conclusions">
+     1.3.5 Conclusions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-we-teach-both-frequentist-and-bayesian-statistics">
+   1.6 Why we teach both frequentist and Bayesian statistics
+  </a>
+ </li>
+</ul>
+
+            </nav>
         </div>
     </div>
 </div>
@@ -947,20 +1009,86 @@
                 
   <div class="section" id="introduction">
 <h1>1 Introduction<a class="headerlink" href="#introduction" title="Permalink to this headline">¶</a></h1>
-<p>ADD CONTENT:</p>
-<p>Basically, this lecture wants to give a nice overview of how it all ties in together.</p>
-<ul class="simple">
-<li><p>Basic probability  (lecs 2-3)</p></li>
-<li><p>Statistical inference - what is it, flavours and why they are different (4-10)</p></li>
-<li><p>Statistical modelling - types of investigation (predic, desc, causal inf), types of model (linear, log, Poisson, others!)</p></li>
-</ul>
+<p>Statistics for Health Data Science is the scientific approach behind investigating health. The organisers of this module have been specific in the wording. Of course, we will learn techniques to interogate data using statistics! But also, the focus on the approach is to think about a problem scientifically, for example to consider a research question, or a hypothesis. The scientific approach is important, and is described in more detail in this Introduction and the associated lecture. The scientific inquiry is applied to health data, which can take a number of forms, including ‘found data’. We think this is what makes data science for health unique; found data presents great advantages as there may be a lot of found data avaialble, but also challenges as the origin of the data and the potential for biases in the data can make analysis more challenging.</p>
 <div class="alert alert-block alert-warning">
 <b> Intended learning outcomes</b> 
-<p>By the end of this session you will be able to:</p>
 <ul class="simple">
-<li><p>???</p></li>
+<li><p>consider the concept of Statistics for Health Data Science and the bigger picture of scientific inquiry</p></li>
+<li><p>understand the data by identifying broad issues of structure, type, provenance and design</p></li>
+<li><p>describe variable types</p></li>
+<li><p>understand the concept of selection bias–how and on whom was the data collected: Identify common selection and inference biases</p></li>
+<li><p>think about data summaries using exploratory data analysis and visualizations (simple examples)</p></li>
+<li><p>consider what to measure and why–population parameters and the development of scientific hypotheses responding to the primary question of interest</p></li>
+<li><p>have a basic understanding of the difference between frequentist (Fisher) and Bayesian inference</p></li>
 </ul>
-</div></div>
+</div><div class="section" id="what-you-will-learn">
+<h2>1.1 What you will learn<a class="headerlink" href="#what-you-will-learn" title="Permalink to this headline">¶</a></h2>
+<p>By engaging with module you will acquire skills that a data scientist will need to interogate data to answer a health related question. Much of the focus is on the statistical tools that are most often used, as shown above in the <em>Intended Learning Objectives</em>, and the <em>Module Content</em> in section 1.3. The module is designed towards using statistics within a problem solving cycle (more in Section 1.3).</p>
+<p>Consider this book to be a <em>practical guide</em> in using statistics. Every session provides some statistical theory and examples so you can see the theory in action. Especially in the earlier sessions, some of the examples can be done without using a computer. As the module progresses many of the calculations are carried out using R, and apply most of the concepts to real data. We provide the code for each example.</p>
+<p>As you work through the sessions, your ability to use statistics in health data science should improve. We will begin with relatively simple questions that we want to answer. As the module progresses, the questions will be more relevant to a health, and the steps involved will require more statistical inference and scientific inquiry.</p>
+</div>
+<div class="section" id="what-you-won-t-learn">
+<h2>1.2 What you won’t learn<a class="headerlink" href="#what-you-won-t-learn" title="Permalink to this headline">¶</a></h2>
+<p>We provide important aspects of statistical theory in order for you to understand the reasoning behind the approaches, but there are aspects of statistical theory that are outside of the module scope. In this case, we may provide further reading. Other module within the LSHTM may cover this in more detail, such as <em>Foundations of Medical Statistics</em>.</p>
+<p>This module provides the basics that further modules in the MSc may require, such as <em>Data Challege</em> and <em>Machine Learning</em>. As the name might imply, the statistical techniques used in machine learning are covered in the other module.</p>
+<p>The programming associated with this module is carried out in R. The statistical analysis can be carried out in other software, such as Python. In some of the sessions, we will provide the equivalent Python code, but we do not expect you to use this (and you will not be assessed on this).</p>
+</div>
+<div class="section" id="the-data-science-project">
+<h2>1.3 The Data Science Project<a class="headerlink" href="#the-data-science-project" title="Permalink to this headline">¶</a></h2>
+<p>Once a health related question is posed, this could be the start of a Data Science Project. Typically, we try to frame the question around a scientific hypothesis, identify some data that can be used to address this question/hypothesis, carry out some anlaysis and draw a conclusion. In David Spiegelhalter’s Book <em>The Art of Statistics</em> this process is referred to as the PPDAC cycle (fig. 1.1). If doing data science is new to you, this might be considered a linear process. But, in many circumstances the problem solving process is a cycle, where a problem may be solved using a iterative process. The iterative process doesn’t mean that the first attempt was <em>wrong</em>, but instead this iterative way of thinking enables the data scientist to think critically about each stage of the cycle and identify strengths, weaknesses and opportunities for improvement.</p>
+<p>Note that there are many ways to describe the cycle of a Data Science Project, and more examples are given in the lecture by Prof. Nick Jewell. Some might chime with you more (or less) than the PPDAC presented here.</p>
+<p><img alt="" src="_images/01_intro_PPDAC.png" /></p>
+<div class="section" id="fig-1-1-the-ppdac-cycle-from-the-art-of-statistics-by-david-spiegelhalter">
+<h3>Fig. 1.1 The PPDAC cycle (From <em>The Art of Statistics</em> by David Spiegelhalter)<a class="headerlink" href="#fig-1-1-the-ppdac-cycle-from-the-art-of-statistics-by-david-spiegelhalter" title="Permalink to this headline">¶</a></h3>
+<p>The rest of this section gives an overview of some of the concepts covered in the first lecture, and how they relate to the PPDAC</p>
+</div>
+<div class="section" id="identify-the-problem-and-generate-a-hypothesis">
+<h3>1.3.1 Identify the problem and generate a hypothesis<a class="headerlink" href="#identify-the-problem-and-generate-a-hypothesis" title="Permalink to this headline">¶</a></h3>
+<p>Typically Health Data Science projects start with a question. These questions are typically of three types: descriptive, comparative and relational. When developing a Data Science Project there is a need to create a question that is answerable within the timeframe available, and sufficiently precise. It is also preferbale to frame a question around a hypothesis that can be a testable prediction, and this is where statistics can be used, because a lot of statistics are framed using a hypothesis (this is especialy true of frequentist statistics). However, it is not always necessary to have a hypothesis, for example if the questions is exploratory.</p>
+</div>
+<div class="section" id="develop-a-plan-consider-the-data-design">
+<h3>1.3.2 Develop a plan, consider the data design<a class="headerlink" href="#develop-a-plan-consider-the-data-design" title="Permalink to this headline">¶</a></h3>
+<p>The plan to answer the question/hypothesis will involve some data. For data science it is likely that the data has not been collected specifically for the purposes of answering the question. Examples may include surveillance data for infectious diseases (eg. self-reported cases of influenza-like illness to a public website) or internet searches for “sore throat”. In this case, it is important to recognise specific attributes of the data:</p>
+<ul class="simple">
+<li><p>Where did the data come from? What is its provenance?</p></li>
+<li><p>How and why was the data collected?</p></li>
+<li><p>What kind of individuals provided data, and why were they selected?</p></li>
+</ul>
+<p>These are important questions because they relate to the principles of <em>statistical inference</em>, which is covered in sessions 4-10. Central to using data to draw a conclusion is that your <em>sample</em> data is representive of the <em>population</em>. Consequently, we can carry out an analysis on the data and make statements about the wider population. This is covered in more detail in session 4 (<em>Populations and Samples</em>).</p>
+<p>At this stage it is important to identify the “outcome” variable and the “explanatory variables” present in the dataset, and whether we know already that some explanatory variables are associated with the outcome variable. At this point it is good to idenitfy what type of data each variable corresponds to: continuous, ordinal, categorical.</p>
+<p>The design of the dataset is also important, as this helps us understand the structure of the data, and a framework for analyses on the data. Commonly encountered designs are (note that these are also covered in the <em>Epidemiology for Health Data Science</em> module):</p>
+<ul class="simple">
+<li><p>A cross-sectional design</p></li>
+<li><p>A cohort design</p></li>
+<li><p>An outcome-based design</p></li>
+<li><p>A longitudinal design</p></li>
+</ul>
+<p>At this stage, you may start to consider the appropriate analysis to make considering the data. As the module (and others, for example the <em>Data Challenge</em> module) develops you will identify the analysis steps that can be undertaken according to the question.</p>
+</div>
+<div class="section" id="the-data">
+<h3>1.3.3 The data<a class="headerlink" href="#the-data" title="Permalink to this headline">¶</a></h3>
+<p>There are several aspects of the data that need to be considered, and some of which are covered in the module <em>Health Data Management</em>, such as entering the data, managing the data, and cleaning the data.</p>
+<p>Here we will focus on aspects which might affect the analysis and conclusions that you make later in the PPDAC cycle.</p>
+<p>The first is the presence of potential data filtering, ie. is there any reason to suspect that data are missing or censored, in reference to to wider population? If so, this could result in potential bias. The most commonly encountered bias is <em>selection bias</em>, where extrapolation to the wider population may be challenging. Additionally, <em>collider bias</em> may result in inappropriate conclusions being made on the effect of explanaotry variables on the outcome.</p>
+<p>The second consideration is confounding, where there may be a common cause for both a explanatory variable and the outcome. The result is that an assoication between the explanatory variable and the outcome may be identified, but the relationship is not causal.</p>
+</div>
+<div class="section" id="data-analysis">
+<h3>1.3.4 Data analysis<a class="headerlink" href="#data-analysis" title="Permalink to this headline">¶</a></h3>
+<p>Exploratory data anlaysis, and especially <strong>plotting your data</strong> is a really important part of the Data Science Project. As you progress through the module, this will become more and more familiar. Plotting your data is important to <em>sense check</em> the data and identify any errors, outliers or omissions (this is especially important with found data). Further to this, many statistical anlaysis benefit from plotting od the results, for example by plotting the residuals of a linear model against the outcome to check that the model is correctly specified. Often, suitable plots may carry with them <em>parameter estimates</em> from the data, for example the mean number of influenza-like illnesses reported per week when the data are available daily.</p>
+<p>It is at this stage that you do the analysis. What we want to emphasize here is that this is done while considering all the others factors within the PPDAC cycle.</p>
+</div>
+<div class="section" id="conclusions">
+<h3>1.3.5 Conclusions<a class="headerlink" href="#conclusions" title="Permalink to this headline">¶</a></h3>
+<p>So you’ve gotten this far! An ideal conclusion has brought all the other aspects together, and at most stages some form of statistical inference is considered. The conclusion then needs to consider the statistical result <em>in the context of the other considerations</em>, such as wanting to make inference about the population from the sample of data.</p>
+<p>For example, let’s say the influenza-like illness data from the internet reported 40 cases per 100,000 of the population from November to January. Reporting symptoms might be skewed towards people who regularly use the internet, which might exclude elderly individuals. Consequently, this mean estimate may be an under-estimate of the population incidence due to selection bias.</p>
+</div>
+</div>
+<div class="section" id="why-we-teach-both-frequentist-and-bayesian-statistics">
+<h2>1.6 Why we teach both frequentist and Bayesian statistics<a class="headerlink" href="#why-we-teach-both-frequentist-and-bayesian-statistics" title="Permalink to this headline">¶</a></h2>
+<p>A majority of the module covers statistical inference from the <em>frequentist</em> perspective. Much of frequentist statistical inference was developed by Ronald Fisher, who has been described as the founder of modern statistics, and much of his focus was on experimental design in agriculture. The philosophy behind frequentist statistics is that a fact is either true or not true, and data can be used to assess which of these outcomes can be accepted. In contrast, Bayesian statistics suggests that a probability can be assigned to whether the fact is true. The field of Bayesian statistics is named after Reverend Thomas Bayes, who developed the theory almost 200 years before Fisher was alive.</p>
+<p>Some argue that the philosophies are diametrically opposed to each other, and statisticians should choose a side. This is a strong view (and perhaps not the majority view?), but first it is important to understand the principles behind each approach. We have opted to teach both because of this reason, and leave it up to you to consider the advantages and disadvantages of each approach. Ultimately, both have data central to the approach in making statistical inference, so it is likely that both should be considered as perspectives in a Data Science Project.</p>
+</div>
+</div>
 
     <script type="text/x-thebe-config">
     {
@@ -985,12 +1113,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="00.%20How_to_use.html" title="previous page">How to use this book</a>
-    <a class='right-next' id="next-link" href="02.%20Probability.Intro.html" title="next page">Probability and statistics</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="00.%20How_to_use.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">How to use this book</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="02.%20Probability.Intro.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">Probability and statistics</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

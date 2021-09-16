@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,15 +42,15 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="2.2 The binomial distribution" href="02.c.%20Probability.Discrete.html" />
@@ -73,8 +73,6 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.jpg" class="logo" alt="logo">
-      
       
       <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
       
@@ -82,7 +80,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -143,7 +141,7 @@
   <ul class="current">
    <li class="toctree-l2 current active">
     <a class="current reference internal" href="#">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +479,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -560,7 +558,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
+     References
     </a>
    </li>
   </ul>
@@ -780,7 +778,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +788,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -942,7 +940,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#screening-tests-and-prognostic-scores">
@@ -1070,8 +1068,8 @@ P(C|M) = \frac{0.25\times 0.1}{0.25\times 0.1 + 0.1\times 0.9}=0.22
 <p>We can obtain estimates of various useful quantities from this matrix. We will use the following notation: <span class="math notranslate nohighlight">\(O\)</span> represents being, in truth, positive for the outcome of interest, and <span class="math notranslate nohighlight">\(\bar{O}\)</span> represents being truly negative. <span class="math notranslate nohighlight">\(P\)</span> represents being classified as positive and <span class="math notranslate nohighlight">\(\bar{P}\)</span> being classified as negative.</p>
 <p>The tabs below show various useful quantities.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="68b785a9-6cb6-408b-b1ff-20456c790f35" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
-</input><label class="tabbed-label" for="68b785a9-6cb6-408b-b1ff-20456c790f35">
+<input checked="checked" id="52c35798-c6b7-497b-a78b-ccfc2fdca335" name="8ad5e186-7952-4745-8580-4c20a3454523" type="radio">
+</input><label class="tabbed-label" for="52c35798-c6b7-497b-a78b-ccfc2fdca335">
 Outcome prevalence</label><div class="tabbed-content docutils">
 <p>The prevalence of the outcome is:</p>
 <div class="math notranslate nohighlight">
@@ -1080,8 +1078,8 @@ P(O) = \frac{p_A+p_C}{p_A+p_B+p_C+p_D}
 \]</div>
 <p>Prevalence is another word for risk or proportion. It tells us the fraction of the population of interest who have the outcome.</p>
 </div>
-<input id="a98d9337-ca0c-49d9-8ba6-a92b1da1ed17" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
-</input><label class="tabbed-label" for="a98d9337-ca0c-49d9-8ba6-a92b1da1ed17">
+<input id="df6eb34f-896c-42d2-9560-95d9697c3e45" name="8ad5e186-7952-4745-8580-4c20a3454523" type="radio">
+</input><label class="tabbed-label" for="df6eb34f-896c-42d2-9560-95d9697c3e45">
 Sensitivity</label><div class="tabbed-content docutils">
 <p>This is a property of the test. The sensitivity of the test remains the same, irrespective of how common or rare the outcome is.</p>
 <p>The sensitivity is:</p>
@@ -1092,8 +1090,8 @@ P(P|O)=\frac{p_A}{p_A+p_C}
 <p>The terminology comes from the setting of clinical tests, i.e. how sensitive this test is to the presence of the disease. It is also often called the recall in the fields of machine learning and computer science.</p>
 <p>This is also sometimes referred to as the true positive rate.</p>
 </div>
-<input id="570af31a-85cd-429f-b332-210fac0bebcd" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
-</input><label class="tabbed-label" for="570af31a-85cd-429f-b332-210fac0bebcd">
+<input id="df16fe31-9974-45d8-94fd-427c52c6077f" name="8ad5e186-7952-4745-8580-4c20a3454523" type="radio">
+</input><label class="tabbed-label" for="df16fe31-9974-45d8-94fd-427c52c6077f">
 Specificity</label><div class="tabbed-content docutils">
 <p>This is a property of the test. The specificity of the test remains the same, irrespective of how common or rare the outcome is.</p>
 <p>The specificity is:</p>
@@ -1104,8 +1102,8 @@ P(\bar{P}|\bar{O})=\frac{p_D}{p_B+p_D}
 <p>As for the sensitivity, this terminology comes from the setting of clinical tests, i.e. how specific  this test is to the presence of this disease (versus other diseases). So a test which is only positive for this specific disease is very specific. A test which picks up the presence of this disease, and other similar diseases, is not very specific.</p>
 <p>This is sometimes called the selectivity or true negative rate.</p>
 </div>
-<input id="c695c523-bd24-4d52-b80e-13b921842795" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
-</input><label class="tabbed-label" for="c695c523-bd24-4d52-b80e-13b921842795">
+<input id="5cb53c04-39e6-4f84-a56a-a1fe9b1354fb" name="8ad5e186-7952-4745-8580-4c20a3454523" type="radio">
+</input><label class="tabbed-label" for="5cb53c04-39e6-4f84-a56a-a1fe9b1354fb">
 PPV</label><div class="tabbed-content docutils">
 <p>PPV stands for Positive Predictive Value, which is shorthand for the predictive value of a positive classification. This is very common terminology in clinical settings.</p>
 <p>This quantity is often of most interest to the person having the test. It answers the question: “what is the probability that I have (or will have) the outcome, given that I have just received a positive classification?”</p>
@@ -1116,8 +1114,8 @@ P(O|P) = \frac{p_A}{p_A+p_B}
 \]</div>
 <p>In machine learning, it is typically called the precision.</p>
 </div>
-<input id="eb69fd23-3938-43cf-be52-269604b683f3" name="da1a6545-0aa8-4b5c-a91a-40496c2f8b3c" type="radio">
-</input><label class="tabbed-label" for="eb69fd23-3938-43cf-be52-269604b683f3">
+<input id="9e4df759-c1f8-4f70-a6b7-fc8baac8fc69" name="8ad5e186-7952-4745-8580-4c20a3454523" type="radio">
+</input><label class="tabbed-label" for="9e4df759-c1f8-4f70-a6b7-fc8baac8fc69">
 Accuracy</label><div class="tabbed-content docutils">
 <p>The accuracy is:</p>
 <div class="math notranslate nohighlight">
@@ -1153,12 +1151,32 @@ P(\mbox{correct classification}) = \frac{p_A + p_D}{p_A+p_B+p_C+p_D}
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="02.a.%20Probability.Discrete.html" title="previous page">2. Discrete Distributions</a>
-    <a class='right-next' id="next-link" href="02.c.%20Probability.Discrete.html" title="next page">2.2 The binomial distribution</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="02.a.%20Probability.Discrete.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">2. Discrete Distributions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="02.c.%20Probability.Discrete.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">2.2 The binomial distribution</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
