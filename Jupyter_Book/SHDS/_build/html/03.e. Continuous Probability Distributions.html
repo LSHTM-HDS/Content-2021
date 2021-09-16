@@ -972,12 +972,13 @@
 <h1>3.4 Are the data normally distributed?<a class="headerlink" href="#are-the-data-normally-distributed" title="Permalink to this headline">¶</a></h1>
 <div class="section" id="data-and-their-relationship-with-statistical-distributions">
 <h2>3.4.1 Data and their relationship with statistical distributions<a class="headerlink" href="#data-and-their-relationship-with-statistical-distributions" title="Permalink to this headline">¶</a></h2>
-<p>We often have data on a particular characteristic and want to make general statements about it, such as: the probability of it being greater than or less than something, provide a range in which “most” observations will lie, what is the central value (e.g. mean/median), etc. However,</p>
-<ul class="simple">
-<li><p>we rarely <em>know</em> the true distribution that a variable follows</p></li>
-<li><p>often, a distribution will not quite fit the data but will form a sufficiently good approximation to address the questions above with sufficient accuracy.</p></li>
-</ul>
-<p>So we often want to find a distribution which fits our data well enough. How do we make a decision? Some of this comes with experience, but there are some useful steps to go through when confronted with data (this is covered in more detail in the lecture),</p>
+<p>We often have data on a particular characteristic and want to make general statements about it, such as: the probability of it being greater than or less than something, provide a range in which “most” observations will lie, what is the central value (e.g. mean/median), etc.</p>
+<blockquote>
+<div><p>However,
+<br><br> - we rarely <em>know</em> the true distribution that a variable follows
+<br> - a distribution will not quite fit the data but will form a sufficiently good approximation to address the questions above with sufficient accuracy.</p>
+</div></blockquote>
+<p>So we often want to find a distribution which fits our data well enough. How do we make a decision? Some of this comes with experience, but there are some useful steps to go through when confronted with data (this is covered in more detail in the lecture). Think back to the <strong>PPDAC</strong> cycle in the first session;</p>
 <ul class="simple">
 <li><p>plot your data. What does the data look like? Consider the lower and upper bounds, the most common number, and evidence of symmetry</p></li>
 <li><p>summarise your data. Report the minimum, maximum, mean and mode. This should aid with thinking about the criteria of specific distributions</p></li>
@@ -991,6 +992,7 @@
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># BMI dataset</span>
+<span class="nf">library</span><span class="p">(</span><span class="n">ggplot2</span><span class="p">)</span>
 <span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;Practicals/Datasets/BMI/MindsetMatters.csv&quot;</span><span class="p">)</span>
 <span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat</span><span class="p">[</span><span class="o">!</span><span class="nf">is.na</span><span class="p">(</span><span class="n">dat</span><span class="o">$</span><span class="n">BMI</span><span class="p">),]</span>
 <span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
@@ -999,13 +1001,10 @@
 </div>
 </div>
 <div class="cell_output docutils container">
-<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="n">Error</span> <span class="ow">in</span> <span class="n">ggplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span> <span class="n">aes</span><span class="p">(</span><span class="n">sample</span> <span class="o">=</span> <span class="n">BMI</span><span class="p">)):</span> <span class="n">could</span> <span class="ow">not</span> <span class="n">find</span> <span class="n">function</span> <span class="s2">&quot;ggplot&quot;</span>
-<span class="ne">Traceback</span>:
-</pre></div>
+<img alt="_images/03.e. Continuous Probability Distributions_2_0.png" src="_images/03.e. Continuous Probability Distributions_2_0.png" />
 </div>
 </div>
-</div>
-<p>From the figure you can see that the theoretical quantiles follow the diagonals reasonably well, and especially at the extremes do not move away much from the diagonal. A plot like this would be enough to show that the data approximately follow normally distribution. Looking at plots such as this to assess normality is a <em>judgement</em> which you will build up during this module.</p>
+<p>From the figure you can see that the theoretical quantiles follow the diagonals reasonably well, and especially at the extremes do not move away much from the diagonal. A plot like this would be enough to show that the data approximately follows normally distribution. Looking at plots such as this to assess normality is a <em>judgement</em> which you will build up during this module.</p>
 <p>To formally test for normality we can use the Shapiro-Wilk test, described briefly below.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
@@ -1022,7 +1021,7 @@ W = 0.9692, p-value = 0.06756
 </div>
 </div>
 </div>
-<p>Although we haven’t yet covered hypothesis testing, this is testing the null hypothesis that the data follow a normal distribution. In this case, the test returns a p-value of 0.067. This p-value suggests some, but not strong, evidence against normality of the data.</p>
+<p>Although we haven’t yet covered hypothesis testing (see <em>Session 8</em>), this is testing the null hypothesis that the data follow a normal distribution. In this case, the test returns a p-value of 0.067. This p-value suggests some, but not strong, evidence against normality of the data.</p>
 </div>
 <div class="section" id="approaches-to-non-normally-distributed-data">
 <h2>3.4.3 Approaches to non-normally distributed data<a class="headerlink" href="#approaches-to-non-normally-distributed-data" title="Permalink to this headline">¶</a></h2>
@@ -1036,6 +1035,7 @@ W = 0.9692, p-value = 0.06756
 <span class="c1"># mother-baby dataset</span>
 <span class="n">dat</span> <span class="o">&lt;-</span> <span class="nf">read.csv</span><span class="p">(</span><span class="s">&quot;Practicals/Datasets/MotherBaby/baby.csv&quot;</span><span class="p">)</span>
 <span class="nf">head</span><span class="p">(</span><span class="n">dat</span><span class="p">)</span>
+<span class="n">dat</span> <span class="o">&lt;-</span> <span class="n">dat</span><span class="p">[</span><span class="m">1</span><span class="o">:</span><span class="m">100</span><span class="p">,]</span> <span class="c1"># we will use just the first 100 observations</span>
 
 <span class="c1"># plot the data on maternal age</span>
 <span class="nf">ggplot</span><span class="p">(</span><span class="n">dat</span><span class="p">,</span><span class="nf">aes</span><span class="p">(</span><span class="n">x</span><span class="o">=</span><span class="n">Maternal.Age</span><span class="p">))</span> <span class="o">+</span> <span class="nf">geom_histogram</span><span class="p">(</span><span class="n">bins</span><span class="o">=</span><span class="m">30</span><span class="p">,</span><span class="n">fill</span><span class="o">=</span><span class="s">&quot;steelblue&quot;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;grey80&quot;</span><span class="p">)</span>

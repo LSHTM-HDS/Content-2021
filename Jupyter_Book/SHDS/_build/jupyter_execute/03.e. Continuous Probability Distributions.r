@@ -1,4 +1,5 @@
 # BMI dataset
+library(ggplot2)
 dat <- read.csv("Practicals/Datasets/BMI/MindsetMatters.csv")
 dat <- dat[!is.na(dat$BMI),]
 options(repr.plot.width=4, repr.plot.height=3)
@@ -13,6 +14,7 @@ library(ggplot2)
 # mother-baby dataset
 dat <- read.csv("Practicals/Datasets/MotherBaby/baby.csv")
 head(dat)
+dat <- dat[1:100,] # we will use just the first 100 observations
 
 # plot the data on maternal age
 ggplot(dat,aes(x=Maternal.Age)) + geom_histogram(bins=30,fill="steelblue",col="grey80")

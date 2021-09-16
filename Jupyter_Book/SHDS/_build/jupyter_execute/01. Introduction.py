@@ -11,24 +11,24 @@
 # * consider the concept of Statistics for Health Data Science and the bigger picture of scientific inquiry
 # * understand the data by identifying broad issues of structure, type, provenance and design
 # * describe variable types 
-# * understand the concept of selection bias–how and on whom was the data collected: Identify common selection and inference biases
+# * understand the concept of selection bias
 # * think about data summaries using exploratory data analysis and visualizations (simple examples)
-# * consider what to measure and why–population parameters and the development of scientific hypotheses responding to the primary question of interest
+# * consider what to measure and why in a scientific study 
 # * have a basic understanding of the difference between frequentist (Fisher) and Bayesian inference
 #     
 # </div>
 
 # ## 1.1 What you will learn
 # 
-# By engaging with module you will acquire skills that a data scientist will need to interogate data to answer a health related question. Much of the focus is on the statistical tools that are most often used, as shown above in the *Intended Learning Objectives*, and the *Module Content* in section 1.3. The module is designed towards using statistics within a problem solving cycle (more in Section 1.3).
+# By engaging with module you will acquire skills that a data scientist will need to interogate data to answer a health related question. Much of the focus is on the statistical tools that are most often used, as shown above in the *Intended Learning Objectives*. The module is designed towards using statistics within a problem solving cycle (more in Section 1.3).
 # 
-# Consider this book to be a *practical guide* in using statistics. Every session provides some statistical theory and examples so you can see the theory in action. Especially in the earlier sessions, some of the examples can be done without using a computer. As the module progresses many of the calculations are carried out using R, and apply most of the concepts to real data. We provide the code for each example.
+# Consider this book to be a *practical guide* in using statistics. Every session provides some statistical theory and examples so you can see the theory in action. Especially in the earlier sessions, some of the examples can be done without using a computer. As the module progresses many of the calculations are carried out using R, and we will increasingly apply the concepts to real data. We provide the code for each example.
 # 
 # As you work through the sessions, your ability to use statistics in health data science should improve. We will begin with relatively simple questions that we want to answer. As the module progresses, the questions will be more relevant to a health, and the steps involved will require more statistical inference and scientific inquiry.
 
 # ## 1.2 What you won't learn
 # 
-# We provide important aspects of statistical theory in order for you to understand the reasoning behind the approaches, but there are aspects of statistical theory that are outside of the module scope. In this case, we may provide further reading. Other module within the LSHTM may cover this in more detail, such as *Foundations of Medical Statistics*.
+# We provide important aspects of statistical theory in order for you to understand the reasoning behind the approaches, but there are aspects of statistical theory that are outside of the module scope. In this case, we may provide further reading. Other modules within the LSHTM may cover this in more detail, such as *Foundations of Medical Statistics*.
 # 
 # This module provides the basics that further modules in the MSc may require, such as *Data Challege* and *Machine Learning*. As the name might imply, the statistical techniques used in machine learning are covered in the other module.
 # 
@@ -42,13 +42,14 @@
 
 # ![](Images/01_intro_PPDAC.png)
 
-# #### Fig. 1.1 The PPDAC cycle (From *The Art of Statistics* by David Spiegelhalter)
+#  <b> Fig. 1.1 The PPDAC cycle (From *The Art of Statistics* by David Spiegelhalter) </b> 
+#     
 
 # The rest of this section gives an overview of some of the concepts covered in the first lecture, and how they relate to the PPDAC 
 
 # ### 1.3.1 Identify the problem and generate a hypothesis
 # 
-# Typically Health Data Science projects start with a question. These questions are typically of three types: descriptive, comparative and relational. When developing a Data Science Project there is a need to create a question that is answerable within the timeframe available, and sufficiently precise. It is also preferbale to frame a question around a hypothesis that can be a testable prediction, and this is where statistics can be used, because a lot of statistics are framed using a hypothesis (this is especialy true of frequentist statistics). However, it is not always necessary to have a hypothesis, for example if the questions is exploratory. 
+# Typically Health Data Science projects start with a question. These questions are typically of three types: descriptive, comparative and relational. When developing a Data Science Project there is a need to create a question that is answerable within the timeframe available, and sufficiently precise. It is also preferbale to frame a question around a hypothesis that can be a testable prediction, and this is where statistics can be used, because a lot of statistics are framed using a hypothesis (this is especialy true of frequentist statistics). However, it is not always necessary to have a hypothesis, for example if the question is exploratory. 
 
 # ### 1.3.2 Develop a plan, consider the data design
 # 
@@ -60,7 +61,7 @@
 # 
 # These are important questions because they relate to the principles of *statistical inference*, which is covered in sessions 4-10. Central to using data to draw a conclusion is that your *sample* data is representive of the *population*. Consequently, we can carry out an analysis on the data and make statements about the wider population. This is covered in more detail in session 4 (*Populations and Samples*).
 # 
-# At this stage it is important to identify the "outcome" variable and the "explanatory variables" present in the dataset, and whether we know already that some explanatory variables are associated with the outcome variable. At this point it is good to idenitfy what type of data each variable corresponds to: continuous, ordinal, categorical.
+# At this stage it is important to identify the "outcome" variable and the "explanatory variables" present in the dataset, and whether we know already that some explanatory variables are associated with the outcome variable. It is also a good idea to idenitfy what type of data each variable corresponds to: continuous, ordinal, categorical.
 # 
 # The design of the dataset is also important, as this helps us understand the structure of the data, and a framework for analyses on the data. Commonly encountered designs are (note that these are also covered in the *Epidemiology for Health Data Science* module):
 # 
@@ -83,9 +84,9 @@
 
 # ### 1.3.4 Data analysis
 # 
-# Exploratory data anlaysis, and especially **plotting your data** is a really important part of the Data Science Project. As you progress through the module, this will become more and more familiar. Plotting your data is important to *sense check* the data and identify any errors, outliers or omissions (this is especially important with found data). Further to this, many statistical anlaysis benefit from plotting od the results, for example by plotting the residuals of a linear model against the outcome to check that the model is correctly specified. Often, suitable plots may carry with them *parameter estimates* from the data, for example the mean number of influenza-like illnesses reported per week when the data are available daily.
+# Exploratory data anlaysis, and especially **plotting your data** is a really important part of the Data Science Project. As you progress through the module, this will become more and more familiar. Plotting your data is important to *sense check* the data and identify any errors, outliers or omissions (this is especially important with found data). Further to this, many statistical anlaysis benefit from plotting the results, for example by plotting the residuals of a linear model against the outcome to check that the model is correctly specified. Often, suitable plots may carry with them *parameter estimates* from the data, for example the mean number of influenza-like illnesses reported per week when the data are available daily.
 # 
-# It is at this stage that you do the analysis. What we want to emphasize here is that this is done while considering all the others factors within the PPDAC cycle. 
+# It is at this stage that you do the analysis. This is where the concepts covered in this *statistics module* become useful. What we want to emphasize here is that this is done while considering all the others factors within the PPDAC cycle. 
 
 # ### 1.3.5 Conclusions
 # 
@@ -95,7 +96,7 @@
 
 # ## 1.6 Why we teach both frequentist and Bayesian statistics
 # 
-# A majority of the module covers statistical inference from the *frequentist* perspective. Much of frequentist statistical inference was developed by Ronald Fisher, who has been described as the founder of modern statistics, and much of his focus was on experimental design in agriculture. The philosophy behind frequentist statistics is that a fact is either true or not true, and data can be used to assess which of these outcomes can be accepted. In contrast, Bayesian statistics suggests that a probability can be assigned to whether the fact is true. The field of Bayesian statistics is named after Reverend Thomas Bayes, who developed the theory almost 200 years before Fisher was alive. 
+# A majority of the module covers statistical inference from the *frequentist* perspective. Much of frequentist statistical inference was developed by Ronald Fisher, who has been described as the founder of modern statistics, and much of his focus was on experimental design in agriculture. A simple explanation of the philosophy behind frequentist statistics is that a *fact* is either true or not true, and data can be used to assess which of these outcomes can be accepted. In contrast, Bayesian statistics suggests that a probability can be assigned to whether the fact is true. The field of Bayesian statistics is named after Reverend Thomas Bayes, who developed the theory almost 200 years before Fisher was alive. In addition, frequentist statistics makes use of the data available, and there is little (or any) ability to incorporate additional knowledge. Within a Bayesian framework, inclusion of prior knowledge is inherent, and this prior knowledge can be combined with data.
 # 
 # Some argue that the philosophies are diametrically opposed to each other, and statisticians should choose a side. This is a strong view (and perhaps not the majority view?), but first it is important to understand the principles behind each approach. We have opted to teach both because of this reason, and leave it up to you to consider the advantages and disadvantages of each approach. Ultimately, both have data central to the approach in making statistical inference, so it is likely that both should be considered as perspectives in a Data Science Project.
 

@@ -990,11 +990,11 @@
 <li><p><strong>Resampling</strong>. In many situations, we can use a resampling principle to obtain an approximate sampling distribution.</p></li>
 </ol>
 <p>Returning to the question posed at the start of the previous section, those questions can be answered using the sampling distribution:</p>
-<ul class="simple">
-<li><p>How precise do we believe our estimate is?</p></li>
-<li><p>Are we fairly certain that the true parameter is close to the estimate, or do we believe the estimate may well be far from the true value?</p></li>
-</ul>
-<p>The first question asks whether the sampling distribution is centred at the right value (i.e. the population parameter being estimated). If it is, we say the estimator is <strong>unbiased</strong>. In the epidemiology module and earlier in this module, you have already come across how <em>measurements</em> can be biased. Here, we are referring to whether the estimator is biased, which is sometimes referred to as <em>statistical bias</em>. Most estimators are unbiased, and this can be shown using statistical theory. For a small number of estimators it can be shown that they are in fact biased, and sometimes a correction can be applied to account for this. An example of exploring whether estimators are biased is given in the Appendix.</p>
+<blockquote>
+<div><p><br> How precise do we believe our estimate is?
+<br><br> Are we fairly certain that the true parameter is close to the estimate, or do we believe the estimate may well be far from the true value?</p>
+</div></blockquote>
+<p>The first question asks whether the sampling distribution is centred at the right value (i.e. the population parameter being estimated). If it is, we say the estimator is <strong>unbiased</strong>. In the epidemiology module and earlier in this module, you have already come across how the <em>sample</em> can be biased. Here, we are referring to whether the estimator is biased, which is sometimes referred to as <em>statistical bias</em>. Most estimators are unbiased, and this can be shown using statistical theory. For a small number of estimators it can be shown that they are in fact biased, and sometimes a correction can be applied to account for this. An example of exploring whether estimators are biased is given in the Appendix.</p>
 <p>The second question will be examined when looking at the standard error and forms the basis for constructing 95% confidence intervals.</p>
 <div class="section" id="algebraic-calculation">
 <h2>4.4.1 Algebraic calculation<a class="headerlink" href="#algebraic-calculation" title="Permalink to this headline">¶</a></h2>
@@ -1151,8 +1151,9 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <span class="n">r.mean</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">bootstrap_samples</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
 
 <span class="c1"># Draw a histogram with a red vertical line indicating the original sample mean age</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4.5</span><span class="p">)</span>
-<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> 
+     <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">)</span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1161,12 +1162,12 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <img alt="_images/04.e. Population.and.samples_7_0.png" src="_images/04.e. Population.and.samples_7_0.png" />
 </div>
 </div>
-<p>We see a number of features from the graph above.</p>
-<ul class="simple">
-<li><p>The histogram follows an approximately normal distribution (has a symmetric bell-shape)</p></li>
-<li><p>It is centred around the sample mean age (from the original sample, <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>)</p></li>
-<li><p>The code below tells us that the standard deviation of this distribution is 1.51.</p></li>
-</ul>
+<p>We see a number of features from the graph above;</p>
+<blockquote>
+<div><p><br>- The histogram follows an approximately normal distribution (has a symmetric bell-shape)
+<br>- It is centred around the sample mean age (from the original sample, <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>)
+<br>- The code below tells us that the standard deviation of this distribution is 1.51.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="n">r.mean</span><span class="p">))</span>
@@ -1191,7 +1192,7 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram of estimates (sample means) in bootstrap samples</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4.5</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
 <span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
 
 <span class="c1"># Add the normal distribution which most closely follows the histogram</span>

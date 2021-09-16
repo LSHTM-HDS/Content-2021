@@ -1019,7 +1019,7 @@ f _X\left(x \mid \lambda \right)=\lambda e^{-x\lambda} , x &gt; 0, \lambda &gt; 
 <p>We can make a plot of this log-likelihood, using the data from our example with eight observations.</p>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
-<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">3</span><span class="p">)</span>
+<div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4</span><span class="p">)</span>
 
 <span class="c1">#six independent observations for waiting times </span>
 <span class="n">obs</span> <span class="o">&lt;-</span> <span class="nf">c</span><span class="p">(</span><span class="m">8.75</span><span class="p">,</span> <span class="m">10.20</span><span class="p">,</span> <span class="m">15.29</span><span class="p">,</span> <span class="m">7.89</span><span class="p">,</span> <span class="m">7.04</span><span class="p">,</span> <span class="m">12.04</span><span class="p">,</span> <span class="m">19.04</span><span class="p">,</span> <span class="m">17.50</span><span class="p">)</span>
@@ -1029,7 +1029,9 @@ f _X\left(x \mid \lambda \right)=\lambda e^{-x\lambda} , x &gt; 0, \lambda &gt; 
 <span class="n">lambda</span> <span class="o">&lt;-</span> <span class="nf">seq</span><span class="p">(</span><span class="m">0</span><span class="p">,</span> <span class="m">2</span><span class="p">,</span> <span class="m">0.01</span><span class="p">)</span>
 
 <span class="c1">#plot the log-likelihood</span>
-<span class="nf">plot</span><span class="p">(</span><span class="n">lambda</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="nf">log</span><span class="p">(</span><span class="n">lambda</span><span class="p">)</span> <span class="o">-</span> <span class="n">lambda</span><span class="o">*</span><span class="nf">sum</span><span class="p">(</span><span class="n">obs</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="n">lambda</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-100</span><span class="p">,</span><span class="m">0</span><span class="p">),</span><span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Log-likelihood&quot;</span><span class="p">)</span>
+<span class="nf">plot</span><span class="p">(</span><span class="n">lambda</span><span class="p">,</span> <span class="n">n</span><span class="o">*</span><span class="nf">log</span><span class="p">(</span><span class="n">lambda</span><span class="p">)</span> <span class="o">-</span> <span class="n">lambda</span><span class="o">*</span><span class="nf">sum</span><span class="p">(</span><span class="n">obs</span><span class="p">),</span> <span class="n">type</span><span class="o">=</span><span class="s">&quot;l&quot;</span><span class="p">,</span><span class="n">lwd</span><span class="o">=</span><span class="m">2</span><span class="p">,</span> 
+     <span class="n">xlab</span><span class="o">=</span> <span class="nf">expression</span><span class="p">(</span><span class="n">lambda</span><span class="p">),</span> <span class="n">ylim</span><span class="o">=</span><span class="nf">c</span><span class="p">(</span><span class="m">-100</span><span class="p">,</span><span class="m">0</span><span class="p">),</span>
+     <span class="n">ylab</span><span class="o">=</span><span class="s">&quot;Log-likelihood&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </div>
@@ -1086,13 +1088,14 @@ f _X\left(x \mid \lambda \right)=\lambda e^{-x\lambda} , x &gt; 0, \lambda &gt; 
 <div class="section" id="example-normal-distribution">
 <h2>6.1.2 Example: Normal distribution<a class="headerlink" href="#example-normal-distribution" title="Permalink to this headline">¶</a></h2>
 <p>We will now consider the normal distribution. Remember that the normal distribution has two parameters, <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>. We will first obtain the MLE for <span class="math notranslate nohighlight">\(\mu\)</span> (treating <span class="math notranslate nohighlight">\(\sigma^2\)</span> as a constant), and in the practical, we will obtain the MLE for <span class="math notranslate nohighlight">\(\sigma^2\)</span> (treating <span class="math notranslate nohighlight">\(\mu\)</span> as a constant).</p>
-<p>Recall that normal distribution has probability density function given by:</p>
+<p>Recall that normal distribution has probability density function given by*:</p>
 <div class="math notranslate nohighlight">
 \[
 \begin{equation}  
 f_X \left( x \mid \mu, \sigma^2 \right)= (2 \pi \sigma^2)^{-\frac{1}{2}} \exp \left\{-\frac{(x-\mu)^2}{2\sigma^2} \right\}
 \end{equation}
 \]</div>
+<p>(* note that the notation here is slightly different to section 3. Here we are more prescriptive; on the left hand side the notation says that the random variable <span class="math notranslate nohighlight">\(X\)</span> is sampled from parameters <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\sigma^2\)</span>, where the distribution is defined on the right hand side. Both versions of notation are acceptible. Another notation style is to use a semi-colon instead, ie. <span class="math notranslate nohighlight">\(f_X( x ; \mu, \sigma^2)\)</span>).</p>
 <p>We have that the log-likelihood given an i.i.d. sample of size <span class="math notranslate nohighlight">\(n\)</span> is:</p>
 <div class="math notranslate nohighlight">
 \[\begin{split}
