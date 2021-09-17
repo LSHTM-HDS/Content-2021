@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,15 +42,15 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4.5 Summary" href="04.f.%20Population.and.samples.html" />
@@ -73,8 +73,6 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.jpg" class="logo" alt="logo">
-      
       
       <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
       
@@ -82,7 +80,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -143,7 +141,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +479,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -560,7 +558,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
+     References
     </a>
    </li>
   </ul>
@@ -780,7 +778,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +788,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -942,7 +940,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#algebraic-calculation">
@@ -992,11 +990,11 @@
 <li><p><strong>Resampling</strong>. In many situations, we can use a resampling principle to obtain an approximate sampling distribution.</p></li>
 </ol>
 <p>Returning to the question posed at the start of the previous section, those questions can be answered using the sampling distribution:</p>
-<ul class="simple">
-<li><p>How precise do we believe our estimate is?</p></li>
-<li><p>Are we fairly certain that the true parameter is close to the estimate, or do we believe the estimate may well be far from the true value?</p></li>
-</ul>
-<p>The first question asks whether the sampling distribution is centred at the right value (i.e. the population parameter being estimated). If it is, we say the estimator is <strong>unbiased</strong>. In the epidemiology module and earlier in this module, you have already come across how <em>measurements</em> can be biased. Here, we are referring to whether the estimator is biased, which is sometimes referred to as <em>statistical bias</em>. Most estimators are unbiased, and this can be shown using statistical theory. For a small number of estimators it can be shown that they are in fact biased, and sometimes a correction can be applied to account for this. An example of exploring whether estimators are biased is given in the Appendix.</p>
+<blockquote>
+<div><p><br> How precise do we believe our estimate is?
+<br><br> Are we fairly certain that the true parameter is close to the estimate, or do we believe the estimate may well be far from the true value?</p>
+</div></blockquote>
+<p>The first question asks whether the sampling distribution is centred at the right value (i.e. the population parameter being estimated). If it is, we say the estimator is <strong>unbiased</strong>. In the epidemiology module and earlier in this module, you have already come across how the <em>sample</em> can be biased. Here, we are referring to whether the estimator is biased, which is sometimes referred to as <em>statistical bias</em>. Most estimators are unbiased, and this can be shown using statistical theory. For a small number of estimators it can be shown that they are in fact biased, and sometimes a correction can be applied to account for this. An example of exploring whether estimators are biased is given in the Appendix.</p>
 <p>The second question will be examined when looking at the standard error and forms the basis for constructing 95% confidence intervals.</p>
 <div class="section" id="algebraic-calculation">
 <h2>4.4.1 Algebraic calculation<a class="headerlink" href="#algebraic-calculation" title="Permalink to this headline">¶</a></h2>
@@ -1112,54 +1110,36 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 </pre></div>
 </div>
 <div class="output text_html"><ol>
-	<li><ol class=list-inline>
-	<li>27.5</li>
-	<li>29.9</li>
-	<li>28.1</li>
-	<li>27.5</li>
-	<li>29.9</li>
-	<li>21.3</li>
-	<li>27.5</li>
-	<li>28.1</li>
-	<li>29.9</li>
-	<li>30.8</li>
-</ol>
+	<li><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>27.5</li><li>29.9</li><li>28.1</li><li>27.5</li><li>29.9</li><li>21.3</li><li>27.5</li><li>28.1</li><li>29.9</li><li>30.8</li></ol>
 </li>
 </ol>
 </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;Third bootstrap sample:&quot;
 </pre></div>
 </div>
 <div class="output text_html"><ol>
-	<li><ol class=list-inline>
-	<li>30.8</li>
-	<li>28.1</li>
-	<li>21.3</li>
-	<li>29.9</li>
-	<li>39.9</li>
-	<li>21.3</li>
-	<li>27.5</li>
-	<li>29.9</li>
-	<li>29.9</li>
-	<li>29.7</li>
-</ol>
+	<li><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>30.8</li><li>28.1</li><li>21.3</li><li>29.9</li><li>39.9</li><li>21.3</li><li>27.5</li><li>29.9</li><li>29.9</li><li>29.7</li></ol>
 </li>
 </ol>
 </div><div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[1] &quot;500th bootstrap sample:&quot;
 </pre></div>
 </div>
 <div class="output text_html"><ol>
-	<li><ol class=list-inline>
-	<li>21.3</li>
-	<li>29.9</li>
-	<li>39.9</li>
-	<li>29.9</li>
-	<li>29.9</li>
-	<li>27.5</li>
-	<li>29.9</li>
-	<li>29.9</li>
-	<li>29.9</li>
-	<li>21.3</li>
-</ol>
+	<li><style>
+.list-inline {list-style: none; margin:0; padding: 0}
+.list-inline>li {display: inline-block}
+.list-inline>li:not(:last-child)::after {content: "\00b7"; padding: 0 .5ex}
+</style>
+<ol class=list-inline><li>21.3</li><li>29.9</li><li>39.9</li><li>29.9</li><li>29.9</li><li>27.5</li><li>29.9</li><li>29.9</li><li>29.9</li><li>21.3</li></ol>
 </li>
 </ol>
 </div></div>
@@ -1171,8 +1151,9 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <span class="n">r.mean</span> <span class="o">&lt;-</span> <span class="nf">sapply</span><span class="p">(</span><span class="n">bootstrap_samples</span><span class="p">,</span> <span class="n">mean</span><span class="p">)</span>
 
 <span class="c1"># Draw a histogram with a red vertical line indicating the original sample mean age</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4.5</span><span class="p">)</span>
-<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
+<span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> 
+     <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">,</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;cornflowerblue&quot;</span><span class="p">)</span>
 <span class="nf">abline</span><span class="p">(</span><span class="n">v</span><span class="o">=</span><span class="nf">mean</span><span class="p">(</span><span class="n">ages</span><span class="p">),</span><span class="n">col</span><span class="o">=</span><span class="s">&quot;red&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
@@ -1181,12 +1162,12 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <img alt="_images/04.e. Population.and.samples_7_0.png" src="_images/04.e. Population.and.samples_7_0.png" />
 </div>
 </div>
-<p>We see a number of features from the graph above.</p>
-<ul class="simple">
-<li><p>The histogram follows an approximately normal distribution (has a symmetric bell-shape)</p></li>
-<li><p>It is centred around the sample mean age (from the original sample, <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>)</p></li>
-<li><p>The code below tells us that the standard deviation of this distribution is 1.51.</p></li>
-</ul>
+<p>We see a number of features from the graph above;</p>
+<blockquote>
+<div><p><br>- The histogram follows an approximately normal distribution (has a symmetric bell-shape)
+<br>- It is centred around the sample mean age (from the original sample, <span class="math notranslate nohighlight">\(\hat{\mu} = 29.57\)</span>)
+<br>- The code below tells us that the standard deviation of this distribution is 1.51.</p>
+</div></blockquote>
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="nf">sqrt</span><span class="p">(</span><span class="nf">var</span><span class="p">(</span><span class="n">r.mean</span><span class="p">))</span>
@@ -1211,7 +1192,7 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
 <div class="cell docutils container">
 <div class="cell_input docutils container">
 <div class="highlight-r notranslate"><div class="highlight"><pre><span></span><span class="c1"># Histogram of estimates (sample means) in bootstrap samples</span>
-<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">4.5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">4.5</span><span class="p">)</span>
+<span class="nf">options</span><span class="p">(</span><span class="n">repr.plot.width</span><span class="o">=</span><span class="m">5</span><span class="p">,</span> <span class="n">repr.plot.height</span><span class="o">=</span><span class="m">5</span><span class="p">)</span>
 <span class="nf">hist</span><span class="p">(</span><span class="n">r.mean</span><span class="p">,</span> <span class="n">freq</span><span class="o">=</span><span class="kc">FALSE</span><span class="p">,</span> <span class="n">main</span><span class="o">=</span><span class="s">&quot;Distribution of sample means \n across the bootstrap samples&quot;</span><span class="p">,</span> <span class="n">xlab</span><span class="o">=</span><span class="s">&quot;Bootstrap sample means&quot;</span><span class="p">)</span>
 
 <span class="c1"># Add the normal distribution which most closely follows the histogram</span>
@@ -1269,12 +1250,32 @@ S^*_2 = \{ x_5, x_9, x_4, x_7, x_{10}, x_9, x_3, x_4, x_6, x_2 \}
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="04.d.%20Population.and.samples.html" title="previous page">4.3 Sampling distributions</a>
-    <a class='right-next' id="next-link" href="04.f.%20Population.and.samples.html" title="next page">4.5 Summary</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="04.d.%20Population.and.samples.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">4.3 Sampling distributions</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="04.f.%20Population.and.samples.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">4.5 Summary</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

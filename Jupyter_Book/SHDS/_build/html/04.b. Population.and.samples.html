@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,15 +42,15 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="4.2 Statistical models" href="04.c.%20Population.and.samples.html" />
@@ -73,8 +73,6 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.jpg" class="logo" alt="logo">
-      
       
       <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
       
@@ -82,7 +80,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -143,7 +141,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +479,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -560,7 +558,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
+     References
     </a>
    </li>
   </ul>
@@ -780,7 +778,7 @@
  </li>
  <li class="toctree-l1 has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +788,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -942,7 +940,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#parameters-and-estimators">
@@ -974,7 +972,7 @@
 <div class="section" id="parameters-and-estimators">
 <h2>4.1.1 Parameters and estimators<a class="headerlink" href="#parameters-and-estimators" title="Permalink to this headline">¶</a></h2>
 <p>In statistical inference, the aim is to make statements about certain features of the population, using the information contained in the sample data. Typically, we quantify the features of interest in terms of unknown population quantities (some examples might be a population mean, standard deviation, proportion, or risk ratio) and attempt to <strong>estimate</strong> these population quantities. We call these unknown population quantities population <strong>parameters</strong>. Parameters are typically denoted using Greek letters. Often, certain letters tend to be used for certain types of quantities. For instance, <span class="math notranslate nohighlight">\(\mu\)</span> will often denote a population mean and <span class="math notranslate nohighlight">\(\pi\)</span> will often denote a population proportion. When we are talking about a general “parameter of interest”, we often use the letter <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
-<p>A <strong>statistic</strong>, is any quantity that can be calculated from the known measurements on the sample data. It can be any function or combination of random variables that does not depend on unknown parameters for its calculation. As for population parameters, certain letters tend to be used for certain sample statistics. For instance, <span class="math notranslate nohighlight">\(\bar{x}\)</span> will often denote a sample mean and <span class="math notranslate nohighlight">\(p\)</span> a sample proportion.</p>
+<p>A <strong>statistic</strong>, is any quantity that can be calculated from the known measurements on the sample data. It can be any function or combination of random variables that does not depend on unknown parameters for its calculation. As for population parameters, certain letters tend to be used for certain sample statistics. For instance, <span class="math notranslate nohighlight">\(\bar{x}\)</span> (“x bar”) will often denote a sample mean and <span class="math notranslate nohighlight">\(p\)</span> a sample proportion.</p>
 <p>We often want to estimate a population parameter from the sample. We do this by using sample statistics to estimate population parameters. For example, the obvious statistic to use to estimate a population mean is the sample mean.  When a sample statistic is used for the purpose of estimating a population parameter it is known as an <strong>estimator</strong>.  So an estimator is a statistic that is  designed to be a “guess” at a particular parameter of a population.  When we use a sample statistic to esitmate a population parameter we use a “hat” to denote the estimator, e.g. <span class="math notranslate nohighlight">\(\hat{\mu}\)</span> is an estimator for the population quantity <span class="math notranslate nohighlight">\(\mu\)</span> and <span class="math notranslate nohighlight">\(\hat{\theta}\)</span> is an estimator for the population quantity <span class="math notranslate nohighlight">\(\theta\)</span>.</p>
 <p>Once we have drawn our sample of data and calculated the value of the estimator in that sample, we refer to this as the <strong>estimate</strong>. In other words, the term estimate is used for the value obtained by substituting sample data values into the formula for the estimator.</p>
 <p>The basic structure of frequentist inference can be represented diagrammatically as follows:</p>
@@ -1003,10 +1001,12 @@
 \bar{x} = \frac{1}{10} \sum_{i=1}^n x_i = \mbox{sample mean age} = 29.75
 \]</div>
 <p>The estimate is the sample mean age, which is the realisation of <span class="math notranslate nohighlight">\(\bar{X}\)</span> in the observed data. Since we are now viewing this as an estimate of <span class="math notranslate nohighlight">\(\mu\)</span>, we can also write <span class="math notranslate nohighlight">\(\hat{\mu} = \bar{x}\)</span>.</p>
-<p><strong>Discussion question</strong></p>
-<p>From above, our “best guess” at (our estimate of) the population mean age is 29.75.</p>
-<p>Is this estimate a “good” estimate of the population mean? Do we think it is close to being correct?</p>
-<p>If we sampled a different 10 researchers would we be likely to see a similar sample mean age? Or could we see a very different sample mean? Is it possible that, just by chance, this is a particularly old (or young) group of researchers?</p>
+<blockquote>
+<div><p><strong>Discussion question</strong>
+<br><br> - From above, our “best guess” at (our estimate of) the population mean age is 29.75.
+<br> - Is this estimate a “good” estimate of the population mean? Do we think it is close to being correct?
+<br> - If we sampled a different 10 researchers would we be likely to see a similar sample mean age? Or could we see a very different sample mean? Is it possible that, just by chance, this is a particularly old (or young) group of researchers?</p>
+</div></blockquote>
 </div>
 </div>
 
@@ -1033,12 +1033,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="04.a.%20Population.and.samples.html" title="previous page">4. Populations and Samples</a>
-    <a class='right-next' id="next-link" href="04.c.%20Population.and.samples.html" title="next page">4.2 Statistical models</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="04.a.%20Population.and.samples.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">4. Populations and Samples</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="04.c.%20Population.and.samples.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">4.2 Statistical models</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>

@@ -12,7 +12,7 @@
 
 # ## Version
 # 
-# This document was last updated: 2021
+# This document was last updated: September 2021
 # 
 # Inevitably there will be some typos in these notes. Please do let us know any you spot (at: <mscHDS@lshtm.ac.uk>) and we will correct them. 
 

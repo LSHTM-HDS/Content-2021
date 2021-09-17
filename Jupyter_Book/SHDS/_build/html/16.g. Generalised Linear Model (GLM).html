@@ -23,7 +23,7 @@
 
     
     <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    <link rel="stylesheet" href="_static/sphinx-book-theme.e8e5499552300ddf5d7adccae7cc3b70.css" type="text/css" />
+    <link rel="stylesheet" href="_static/sphinx-book-theme.e8f53015daec13862f6db5e763c41738.css" type="text/css" />
     <link rel="stylesheet" type="text/css" href="_static/togglebutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/copybutton.css" />
     <link rel="stylesheet" type="text/css" href="_static/mystnb.css" />
@@ -42,15 +42,15 @@
     <script src="_static/copybutton.js"></script>
     <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
     <script src="_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
-    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebe@0.5.1/lib/index.js"></script>
     <script >
         const thebe_selector = ".thebe"
         const thebe_selector_input = "pre"
         const thebe_selector_output = ".output"
     </script>
     <script async="async" src="_static/sphinx-thebe.js"></script>
-    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
-    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="16.7 Poisson Regression Example" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html" />
@@ -73,8 +73,6 @@
         <div class="navbar-brand-box">
     <a class="navbar-brand text-wrap" href="index.html">
       
-      <img src="_static/logo.jpg" class="logo" alt="logo">
-      
       
       <h1 class="site-logo" id="site-title">Statistics for Health Data Science</h1>
       
@@ -82,7 +80,7 @@
 </div><form class="bd-search d-flex align-items-center" action="search.html" method="get">
   <i class="icon fas fa-search"></i>
   <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
-</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main">
     <div class="bd-toc-item active">
         <ul class="nav bd-sidenav">
  <li class="toctree-l1">
@@ -143,7 +141,7 @@
   <ul>
    <li class="toctree-l2">
     <a class="reference internal" href="02.b.%20Probability.Discrete.html">
-     Bayes' Theorem
+     2.1 Application of Bayes’ Theorem
     </a>
    </li>
    <li class="toctree-l2">
@@ -481,7 +479,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="10.c.%20Bayesian%20Statistics%20II.html">
-     Calculating the posterior
+     10.2 Calculating the posterior
     </a>
    </li>
    <li class="toctree-l2">
@@ -560,7 +558,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="11.h.%20Types%20of%20Investigation.html">
-     11.7 Summary
+     References
     </a>
    </li>
   </ul>
@@ -780,7 +778,7 @@
  </li>
  <li class="toctree-l1 current active has-children">
   <a class="reference internal" href="16.a.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-   16. Generalised Linear Models (GLM’s)
+   16. Generalised Linear Models (GLMs)
   </a>
   <input checked="" class="toctree-checkbox" id="toctree-checkbox-15" name="toctree-checkbox-15" type="checkbox"/>
   <label for="toctree-checkbox-15">
@@ -790,7 +788,7 @@
   <ul class="current">
    <li class="toctree-l2">
     <a class="reference internal" href="16.b.%20Generalised%20Linear%20Model%20%28GLM%29.html">
-     16.1 Introduction to Generalised Linear Models (GLM’s)
+     16.1 Introduction to Generalised Linear Models (GLMs)
     </a>
    </li>
    <li class="toctree-l2">
@@ -942,7 +940,7 @@
             <div class="tocsection onthispage pt-5 pb-3">
                 <i class="fas fa-list"></i> Contents
             </div>
-            <nav id="bd-toc-nav">
+            <nav id="bd-toc-nav" aria-label="Page">
                 <ul class="visible nav section-nav flex-column">
  <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#poisson-distribution-recap">
@@ -958,6 +956,43 @@
   <a class="reference internal nav-link" href="#poisson-regression">
    16.6.3 Poisson Regression
   </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#random-component">
+     Random component
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#systematic-component-linear-predictor">
+     Systematic component (linear predictor)
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#link-function">
+     Link function
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#regression-coefficients">
+     Regression coefficients
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#eestimating-the-regression-coefficients">
+     Eestimating the regression coefficients
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-mean-and-variance">
+     The mean and variance
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#offsets-optional">
+   16.6.4 Offsets  [optional]
+  </a>
  </li>
 </ul>
 
@@ -972,6 +1007,7 @@
                 
   <div class="section" id="introduction-to-poisson-generalised-linear-modelling-poisson-regression">
 <h1>16.6 Introduction to Poisson Generalised Linear Modelling (Poisson Regression)<a class="headerlink" href="#introduction-to-poisson-generalised-linear-modelling-poisson-regression" title="Permalink to this headline">¶</a></h1>
+<p>In the previous session we met an important type of GLM - logistic regression. Now we will now consider another important GLM - Poisson regression.</p>
 <div class="section" id="poisson-distribution-recap">
 <h2>16.6.1 Poisson Distribution Recap<a class="headerlink" href="#poisson-distribution-recap" title="Permalink to this headline">¶</a></h2>
 <p>The Poisson distribution was first published by Siméon Denis Poisson in 1838. Poisson was a French mathematician, engineer, and physicist, his name is one of 72 engraved on the Eiffel Tower in Paris. The Poisson distribution is a skewed, discrete distribution restricted to non-negative numbers. The shape of the distribution is defined by the shape parameter <span class="math notranslate nohighlight">\(\lambda\)</span> which represents the average number of events in the given time interval. As <span class="math notranslate nohighlight">\(\lambda\)</span> increases the distribution looks more and more like the normal distribution. When <span class="math notranslate nohighlight">\(\lambda\)</span> is about 10 or greater, then a normal distribution is a good approximation.</p>
@@ -983,16 +1019,123 @@
 <div class="section" id="poisson-regression">
 <h2>16.6.3 Poisson Regression<a class="headerlink" href="#poisson-regression" title="Permalink to this headline">¶</a></h2>
 <p>A GLM for Poisson distributed outcome is commonly known as Poisson regression but is sometimes referred to as a log-linear model.</p>
-<p>Say we want to model <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> using Poisson Regression so <span class="math notranslate nohighlight">\(\mathbf{Y} \sim P(\mu)\)</span> and let the mean <span class="math notranslate nohighlight">\(\mu\)</span> (and therefore the variance) depend on a vector of covariate variables <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>. We will need to take the linear predictor <span class="math notranslate nohighlight">\(\mathbf{X}^T\mathbf{\beta}\)</span> and combine it with a link function (<span class="math notranslate nohighlight">\(g\)</span>) so that the left hand side of the predictor <span class="math notranslate nohighlight">\(\mu\)</span> is always non-negative. We include the link function like this:</p>
-<p><span class="math notranslate nohighlight">\(E[\mathbf{Y}|\mathbf{X}] = \mu = g^{-1} (\mathbf{X}^T\mathbf{\beta})\)</span></p>
-<p>Similarly the variance of <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> (Var<span class="math notranslate nohighlight">\([\mathbf{Y}]\)</span>) is written:</p>
-<p><span class="math notranslate nohighlight">\( Var[\mathbf{Y}|\mathbf{X}] = Var[\mu] =Var[ g^{-1} (\mathbf{X}^T\mathbf{\beta})]\)</span></p>
-<p>The link function for Poisson regression is the logarithm, thus:</p>
-<p><span class="math notranslate nohighlight">\( ln(E[\mathbf{Y} | \mathbf{X}]) = ln(\mu) = \mathbf{X}^T\mathbf{\beta}\)</span></p>
-<p>Here <span class="math notranslate nohighlight">\(\beta\)</span> contains the regression coefficients. An element of <span class="math notranslate nohighlight">\(\beta\)</span> represents the expected change in the natural <span class="math notranslate nohighlight">\(log\)</span> of the mean per unit change of one explanatory variable in <span class="math notranslate nohighlight">\(X\)</span> (constraining the other elements to not change).</p>
-<p>If you wanted to find the expected value of the outcome variable <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span> given <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> then the equation looks like this:</p>
-<p><span class="math notranslate nohighlight">\( E[\mathbf{Y}|\mathbf{X}]  = \mu = e^{\mathbf{X^T\beta}}\)</span>,</p>
-<p>where <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span> can be estimated by the maximum likelihood.</p>
+<div class="section" id="random-component">
+<h3>Random component<a class="headerlink" href="#random-component" title="Permalink to this headline">¶</a></h3>
+<p>Supppose we have an outcome <span class="math notranslate nohighlight">\(Y\)</span> representing counts of events over a fixed time period <span class="math notranslate nohighlight">\(T\)</span>. For simplicity, we will let <span class="math notranslate nohighlight">\(T=1\)</span>, i.e. we have followed our individuals up for a single unit of time (e.g. one year).</p>
+<p>Suppose we are happy to assume that <span class="math notranslate nohighlight">\(Y\)</span> follows a Poisson distribution. We wish to model the relationship between a vector of <span class="math notranslate nohighlight">\(p\)</span> covariates <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> and the expectation of <span class="math notranslate nohighlight">\(Y\)</span> (and therefore also the variance of <span class="math notranslate nohighlight">\(Y\)</span>, since the mean is equal to the variance for a Poisson variable).</p>
+<p>We let <span class="math notranslate nohighlight">\(\mu = E[Y | X]\)</span> and assume:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\mathbf{Y} \overset{iid}{\sim} Poisson(\mu)
+\]</div>
+</div>
+<div class="section" id="systematic-component-linear-predictor">
+<h3>Systematic component (linear predictor)<a class="headerlink" href="#systematic-component-linear-predictor" title="Permalink to this headline">¶</a></h3>
+<p>The linear predictor is a linear function of the covariates <span class="math notranslate nohighlight">\(\mathbf{X}\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[
+\beta_0 + \beta_1 X_1 + \beta_2 X_2 + .... + \beta_p X_p 
+\]</div>
+<p>Using vector notation to simplify the maths, this is equivalent to:</p>
+<div class="math notranslate nohighlight">
+\[
+\mathbf{X}^T\mathbf{\beta}
+\]</div>
+<p>(Note that we assume the vector <span class="math notranslate nohighlight">\(\mathbf{X}\)</span> contains a constant, so <span class="math notranslate nohighlight">\(\mathbf{X}^T = (1, X_1, X_2, ..., X_p)\)</span>.</p>
+</div>
+<div class="section" id="link-function">
+<h3>Link function<a class="headerlink" href="#link-function" title="Permalink to this headline">¶</a></h3>
+<p>We want an equation that connects the expected outcome <span class="math notranslate nohighlight">\(\mu\)</span> (which must be positive) to the linear predictor <span class="math notranslate nohighlight">\(\mathbf{X}^T\mathbf{\beta}\)</span>  (which can be any real value, positive or negative). The link function is applied to the expected outcome, therefore in this case an appropriate link function must map the positive real values to all real values. An obvious candidate is the natural logarithm. This is the default (often called the <em>canonical</em>) link function for Poisson variables. Then, applying the link function to the expected value of the outcome, we have:</p>
+<div class="math notranslate nohighlight">
+\[
+ln(\mu) = \mathbf{X}^T\mathbf{\beta}
+\]</div>
+<p>This is the <strong>Poisson regression</strong> model.</p>
+</div>
+<div class="section" id="regression-coefficients">
+<h3>Regression coefficients<a class="headerlink" href="#regression-coefficients" title="Permalink to this headline">¶</a></h3>
+<p>In the model above, <span class="math notranslate nohighlight">\(\beta\)</span> is a vector of regression coefficients. An element of <span class="math notranslate nohighlight">\(\beta\)</span> represents the expected change in the natural <span class="math notranslate nohighlight">\(log\)</span> of the mean per unit change of one explanatory variable in <span class="math notranslate nohighlight">\(X\)</span> (constraining the other elements to not change).</p>
+<p>We can interpret <span class="math notranslate nohighlight">\(\mu\)</span> as the expected rate of the outcome (remember we assume the fixed time period being considered is <span class="math notranslate nohighlight">\(T=1\)</span>). Consider a simpler example with a single binary covariate <span class="math notranslate nohighlight">\(X\)</span>. Then the model above becomes</p>
+<div class="math notranslate nohighlight">
+\[
+ln(\mu) = \beta_0 + \beta_1 X
+\]</div>
+<p>This says that</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+ln(\mu) &amp;=
+\begin{cases} 
+\beta_0 &amp;\mbox{if } X=0 \\
+\beta_0 + \beta_1  &amp;\mbox{if } X=1 \\
+\end{cases}
+\end{align*}
+\end{split}\]</div>
+<p>The expeted rates in the two groups <span class="math notranslate nohighlight">\((X=0)\)</span> and <span class="math notranslate nohighlight">\((X=1)\)</span> are then:</p>
+<div class="math notranslate nohighlight">
+\[\begin{split}
+\begin{align*}
+\mu &amp;=
+\begin{cases} 
+e^{\beta_0} &amp;\mbox{if } X=0 \\
+e^{\beta_0 + \beta_1}  &amp;\mbox{if } X=1 \\
+\end{cases}
+\end{align*}
+\end{split}\]</div>
+<p>So the rate ratio comparing the rate in the exposed <span class="math notranslate nohighlight">\((X=1)\)</span> with the rate in the unexposed <span class="math notranslate nohighlight">\((X=0)\)</span> is:</p>
+<div class="math notranslate nohighlight">
+\[
+\begin{align*}
+RR = \frac{e^{\beta_0 + \beta_1}}{e^{\beta_0}} = e^{\beta_1}
+\end{align*}
+\]</div>
+<p>Therefore, <span class="math notranslate nohighlight">\(e^{\beta_1}\)</span> can be interpreted as the (incidence) rate ratio comparing the exposed with the unexposed groups. Or <span class="math notranslate nohighlight">\(\beta_1\)</span> can be interpreted as the log rate ratio.</p>
+<p>More generally, a regression coefficient can be intepreted as the log rate ratio associated with a unit change of that covariate. Its exponential is the analogous rate ratio.</p>
+</div>
+<div class="section" id="eestimating-the-regression-coefficients">
+<h3>Eestimating the regression coefficients<a class="headerlink" href="#eestimating-the-regression-coefficients" title="Permalink to this headline">¶</a></h3>
+<p>As for all GLMs, the regression coefficients, <span class="math notranslate nohighlight">\(\mathbf{\beta}\)</span>, are estimated by maximum likelihood estimation.</p>
+</div>
+<div class="section" id="the-mean-and-variance">
+<h3>The mean and variance<a class="headerlink" href="#the-mean-and-variance" title="Permalink to this headline">¶</a></h3>
+<p>To obtain an equation for the mean of the outcome, we need to apply the inverse link function:</p>
+<div class="math notranslate nohighlight">
+\[
+E[\mathbf{Y}|\mathbf{X}] = \mu = g^{-1} (\mathbf{X}^T\mathbf{\beta})
+\]</div>
+<p>Which here is equal to</p>
+<div class="math notranslate nohighlight">
+\[
+E[\mathbf{Y}|\mathbf{X}]  = \mu = e^{\mathbf{X^T\beta}},
+\]</div>
+<p>Similarly the variance of <span class="math notranslate nohighlight">\(\mathbf{Y}\)</span>  is written:</p>
+<div class="math notranslate nohighlight">
+\[ 
+Var[\mathbf{Y}|\mathbf{X}] = Var[\mu] =Var[ g^{-1} (\mathbf{X}^T\mathbf{\beta})].
+\]</div>
+</div>
+</div>
+<div class="section" id="offsets-optional">
+<h2>16.6.4 Offsets  [optional]<a class="headerlink" href="#offsets-optional" title="Permalink to this headline">¶</a></h2>
+<p>In this short sub-section, we explore an extension of the Poisson regression model above which allows us to take into account the fact that the observations in our data may represent counts from different lengths of observation time. This is a common occurrence in practice. We handle this through something called an <strong>offset term</strong>.</p>
+<p>Above, we simplified the model by assuming each individual was observed for the same period of time. But suppose that was not he case. Suppose, for example, we are counting the number of asthma attacks experienced by school-aged children over time. Some children are followed up for one year and others are followed up for up to five years. Naturally, we would expect those followed up for longer to experience more asthma attacks, on average.</p>
+<p>Suppose individual <span class="math notranslate nohighlight">\(i\)</span> is followed up for <span class="math notranslate nohighlight">\(T_i\)</span> years and experiences <span class="math notranslate nohighlight">\(Y_i\)</span> asthma attacks. We have:</p>
+<div class="math notranslate nohighlight">
+\[ 
+\mathbf{Y_i} \overset{iid}{\sim} Poisson(\lambda_i T_i)
+\]</div>
+<p>where <span class="math notranslate nohighlight">\(\lambda_i\)</span> is the annual rate of asthma attacks for individual <span class="math notranslate nohighlight">\(i\)</span>. The expected number of attacks for individual <span class="math notranslate nohighlight">\(i\)</span> is <span class="math notranslate nohighlight">\(\mu_i = \lambda_i T_i\)</span>. We might wish to propose the following model for the rate (based on the Poisson regression model we met previously):</p>
+<div class="math notranslate nohighlight">
+\[
+ln(\lambda_i) = \mathbf{X}_i^T\mathbf{\beta}
+\]</div>
+<p>This implies the following model for the expected number of attacks:</p>
+<div class="math notranslate nohighlight">
+\[
+ln(\mu_i) = ln(\lambda_i T_i) =  \mathbf{X}_i^T\mathbf{\beta} + ln(T_i)
+\]</div>
+<p>This is very similar to our previous model. The only difference is that we now have a covariate (<span class="math notranslate nohighlight">\(ln(T_i)\)</span>) appearing in the model without a regression coefficient. In other words, the regression coefficient for <span class="math notranslate nohighlight">\(ln(T_i)\)</span> is constrained to be equal to 1.</p>
+<p>This is exactly what an offset term is: a covariate in a regression model with its regression coefficient constrained to be equal to 1.</p>
 </div>
 </div>
 
@@ -1019,12 +1162,32 @@
               </div>
               
         
-        <div class='prev-next-bottom'>
             
-    <a class='left-prev' id="prev-link" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="previous page">16.5 Programming GLM’s in R</a>
-    <a class='right-next' id="next-link" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="next page">16.7 Poisson Regression Example</a>
 
-        </div>
+
+
+<div class='prev-next-bottom'>
+    
+    <div id="prev">
+        <a class="left-prev" href="16.f.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="previous page">
+            <i class="prevnext-label fas fa-angle-left"></i>
+            <div class="prevnext-info">
+                <p class="prevnext-label">previous</p>
+                <p class="prevnext-title">16.5 Programming GLM’s in R</p>
+            </div>
+        </a>
+    </div>
+     <div id="next">
+        <a class="right-next" href="16.h.%20Generalised%20Linear%20Model%20%28GLM%29.html" title="next page">
+            <div class="prevnext-info">
+                <p class="prevnext-label">next</p>
+                <p class="prevnext-title">16.7 Poisson Regression Example</p>
+            </div>
+            <i class="prevnext-label fas fa-angle-right"></i>
+        </a>
+     </div>
+
+</div>
         
         </div>
     </div>
