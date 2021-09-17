@@ -249,7 +249,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.g.%20Population.and.samples.html">
-     Appendix: additional reading
+     Appendix: Additional Reading
     </a>
    </li>
   </ul>
@@ -950,19 +950,18 @@
   <div class="section" id="the-p-value">
 <h1>8.2 The p-value<a class="headerlink" href="#the-p-value" title="Permalink to this headline">¶</a></h1>
 <p>The p-value is defined as the probability of observing the sample estimate or a more extreme one (in either direction) given that the null hypothesis is true.</p>
-<p>The smaller the P-value, the lower the chance of getting a difference as big  as the one observed if the null hypothesis is true.</p>
-<p>Therefore, the smaller the P-value,  the stronger the evidence against the null hypothesis.</p>
+<p>The smaller the p-value, the lower the chance of getting a difference as big  as the one observed if the null hypothesis is true.</p>
+<p>Therefore, the smaller the p-value,  the stronger the evidence against the null hypothesis.</p>
 <div class="figure align-default" id="inference">
 <a class="reference internal image-reference" href="_images/pvalues.png"><img alt="_images/pvalues.png" src="_images/pvalues.png" style="height: 400px;" /></a>
 <p class="caption"><span class="caption-number">Fig. 3 </span><span class="caption-text">Interpretation of p-values <a class="reference external" href="https://www.ncbi.nlm.nih.gov/pmc/articles/PMC1119478/">(taken from Sterne &amp; Davey-Smith)</a></span><a class="headerlink" href="#inference" title="Permalink to this image">¶</a></p>
 </div>
 <p>The value of 0.05 has historically been used as a cut-off, with values of <span class="math notranslate nohighlight">\(p&lt;0.05\)</span> deemed “statistically significant” and values of <span class="math notranslate nohighlight">\(p\geq 0.05\)</span> “not significant”. As discussed further in a later sub-section, we do not recommend dichotomising p-values in this way.</p>
 <blockquote>
-<div><p>Notes:   <br /></p>
+<div><p>Note that:<br />
+<br> - We have described what is called a <em>two-sided test</em>. Occasionally, a <em>one-sided test</em> might be used, where the p-value is the probability of results that are as extreme, or more extreme, <em>in the same direction</em> as the observed result. However, it is rare that it is justifiable to ignore sample statistics in one direction, so we will focus on two-sided tests.
+<br><br> - When the sampling distribution is not symmetric, it can be hard to define what is <em>as extreme as</em> the estimate we have seen. In this case, there are various ways of obtaining the two-sided p-value. We do not pursue this further.</p>
 </div></blockquote>
-<ol class="simple">
-<li><p>We have described what is called a <em>two-sided test</em>. Occasionally, a <em>one-sided test</em> might be used, where the p-value is the probability of results that are as extreme, or more extreme, <em>in the same direction</em> as the observed result. However, it is rare that it is justifiable to ignore sample statistics in one direction, so we will focus on two-sided tests. <br /> <br /> 2) When the sampling distribution is not symmetric, it can be hard to define what is <em>as extreme as</em> the estimate we have seen. In this case, there are various ways of obtaining the two-sided p-value. We do not pursue this further.</p></li>
-</ol>
 </div>
 
     <script type="text/x-thebe-config">
