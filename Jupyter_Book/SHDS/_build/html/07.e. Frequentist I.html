@@ -247,7 +247,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.g.%20Population.and.samples.html">
-     Appendix: additional reading
+     Appendix: Additional Reading
     </a>
    </li>
   </ul>
@@ -1055,8 +1055,8 @@
 </table>
 <p>The three tabs below provide examples of using the formulae above to obtain approximate 95% confidence intervals for proportions and rates.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="58dcafd9-91ee-4028-bd1e-87f65cf810b0" name="7cca3cea-74dd-472c-86dc-81fb79c25576" type="radio">
-</input><label class="tabbed-label" for="58dcafd9-91ee-4028-bd1e-87f65cf810b0">
+<input checked="checked" id="3177160f-ac24-4add-beba-e521c28030d9" name="d4e851c8-5b25-41a4-a611-f4117b479cac" type="radio">
+</input><label class="tabbed-label" for="3177160f-ac24-4add-beba-e521c28030d9">
 Proportion</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>We want to estimate the population proportion of patients who experience a side effect from a particular drug.</p></li>
@@ -1073,8 +1073,8 @@ Proportion</label><div class="tabbed-content docutils">
 <li><p>So our estimate of the proportion of patients who experience a side effect is: 0.25 (95% CI 0.155 to 0.349). Our best guess is that 25% of patients experience a side-effect from this drug. We are 95% confident that the true proportion lies between 15.5% and 34.9%.</p></li>
 </ul>
 </div>
-<input id="8197002f-3294-413f-b139-aa84ff323def" name="7cca3cea-74dd-472c-86dc-81fb79c25576" type="radio">
-</input><label class="tabbed-label" for="8197002f-3294-413f-b139-aa84ff323def">
+<input id="871eb9dd-1e66-4ef5-96a2-5822efa0557f" name="d4e851c8-5b25-41a4-a611-f4117b479cac" type="radio">
+</input><label class="tabbed-label" for="871eb9dd-1e66-4ef5-96a2-5822efa0557f">
 Rate</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>We want to estimate the rate of panic attacks among adults with a mild anxiety disorder.</p></li>
@@ -1090,8 +1090,8 @@ Rate</label><div class="tabbed-content docutils">
 <li><p>This gives a range of -0.0096 to 0.0596. This illustrates an important point - approximate confidence intervals sometimes contain impossible parameter values (the rate <span class="math notranslate nohighlight">\(\lambda\)</span> cannot be negative). To resolve this problem, we will re-do the calculations on the log scale.</p></li>
 </ul>
 </div>
-<input id="6ac71ceb-4c0e-4edb-9f54-7ba6e2851039" name="7cca3cea-74dd-472c-86dc-81fb79c25576" type="radio">
-</input><label class="tabbed-label" for="6ac71ceb-4c0e-4edb-9f54-7ba6e2851039">
+<input id="5c198ed8-e6dd-4aa1-8b57-10a3f67148e7" name="d4e851c8-5b25-41a4-a611-f4117b479cac" type="radio">
+</input><label class="tabbed-label" for="5c198ed8-e6dd-4aa1-8b57-10a3f67148e7">
 Logarithm of the rate</label><div class="tabbed-content docutils">
 <ul class="simple">
 <li><p>The logarithm of the observed rate is <span class="math notranslate nohighlight">\(\nu = log(0.025) = -3.689\)</span>. So this is our estimate of the log rate.</p></li>
@@ -1163,8 +1163,8 @@ given by <span class="math notranslate nohighlight">\(\frac{\sigma}{\sqrt{n}}\)<
 <h2>7.4.3 Comparing two groups<a class="headerlink" href="#comparing-two-groups" title="Permalink to this headline">¶</a></h2>
 <p>There are many ways of comparing outcomes between two groups. Two popular options are the difference in proportions for binary outcomes and the difference in means for continuous outcomes. Confidence intervals for other measures (e.g. the risk ratio, the odds ratio, the difference in medians, etc.) also can be obtained.</p>
 <div class="tabbed-set docutils">
-<input checked="checked" id="b3d55a9f-240e-4944-a0ef-c80670b7af7e" name="50ed0161-3e89-45e5-9c23-4f46bdd6b6e7" type="radio">
-</input><label class="tabbed-label" for="b3d55a9f-240e-4944-a0ef-c80670b7af7e">
+<input checked="checked" id="4bc4ca80-9f2f-4434-82e7-5d2fb48f8615" name="1d71e2f4-48b6-4243-bc2d-0e646d484390" type="radio">
+</input><label class="tabbed-label" for="4bc4ca80-9f2f-4434-82e7-5d2fb48f8615">
 Difference in proportions</label><div class="tabbed-content docutils">
 <p>We are interested in the population difference in proportions from two observations from two binomial distributions. Suppose our observed data consist of two observations from <span class="math notranslate nohighlight">\(X_1 \sim binomial(n_1, \pi_1)\)</span>, with the realised values being <span class="math notranslate nohighlight">\(X_1=k_1\)</span> and <span class="math notranslate nohighlight">\(X_2 = k_2\)</span>. We want to estimate the difference <span class="math notranslate nohighlight">\(\delta = \pi_1 - \pi_2\)</span>.</p>
 <p>We estimate the proportion in the first group by <span class="math notranslate nohighlight">\(\hat{\pi}_1 = \frac{k_1}{n_1}\)</span>. Similarly, we estimate the proportion in the second group by <span class="math notranslate nohighlight">\(\hat{\pi}_2 = \frac{k_2}{n_2}\)</span>. Then our estimate of the difference in proportions is <span class="math notranslate nohighlight">\(\hat{\delta} = \hat{\pi}_1 - \hat{\pi}_2\)</span>.</p>
@@ -1177,8 +1177,8 @@ Difference in proportions</label><div class="tabbed-content docutils">
 <div class="math notranslate nohighlight">
 \[\hat{\delta} \pm 1.96 \times \sqrt{\frac{\hat{\pi}_1 (1-\hat{\pi}_1)}{n_1} + \frac{\hat{\pi}_2 (1-\hat{\pi}_2)}{n_2}}\]</div>
 </div>
-<input id="79792b7b-2d3a-4142-8690-433fa6100899" name="50ed0161-3e89-45e5-9c23-4f46bdd6b6e7" type="radio">
-</input><label class="tabbed-label" for="79792b7b-2d3a-4142-8690-433fa6100899">
+<input id="8fa1602c-831a-4f4a-9768-232292678efd" name="1d71e2f4-48b6-4243-bc2d-0e646d484390" type="radio">
+</input><label class="tabbed-label" for="8fa1602c-831a-4f4a-9768-232292678efd">
 Difference in means</label><div class="tabbed-content docutils">
 <p>We are interested in the difference in population means between two groups from <span class="math notranslate nohighlight">\(n_1\)</span> iid observations from a normal distribution from group 1 and <span class="math notranslate nohighlight">\(n_2\)</span> from group 2. Suppose our observed data are <span class="math notranslate nohighlight">\(n_1\)</span> observations drawn from <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu_1, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n_1\)</span> and <span class="math notranslate nohighlight">\(n_2\)</span> observations drawn from <span class="math notranslate nohighlight">\(X_i \sim Normal(\mu_2, \sigma^2),\)</span> for <span class="math notranslate nohighlight">\(i=1,..,n_2\)</span>. We want to estimate the difference <span class="math notranslate nohighlight">\(\delta = \mu_1 - \mu_2\)</span></p>
 <p>The sample means are <span class="math notranslate nohighlight">\(\bar{x}_1\)</span> and <span class="math notranslate nohighlight">\(\bar{x}_2\)</span> and the sample standard deviations are <span class="math notranslate nohighlight">\(s_1\)</span> and <span class="math notranslate nohighlight">\(s_2\)</span>.</p>

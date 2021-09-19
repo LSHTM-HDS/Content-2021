@@ -245,7 +245,7 @@
    </li>
    <li class="toctree-l2">
     <a class="reference internal" href="04.g.%20Population.and.samples.html">
-     Appendix: additional reading
+     Appendix: Additional Reading
     </a>
    </li>
   </ul>
@@ -946,6 +946,11 @@
   </a>
  </li>
  <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#module-layout">
+   Module layout
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
   <a class="reference internal nav-link" href="#what-you-won-t-learn">
    1.2 What you won’t learn
   </a>
@@ -1018,22 +1023,27 @@
 <p>Consider this book to be a <em>practical guide</em> in using statistics. Every session provides some statistical theory and examples so you can see the theory in action. Especially in the earlier sessions, some of the examples can be done without using a computer. As the module progresses many of the calculations are carried out using R, and we will increasingly apply the concepts to real data. We provide the code for each example.</p>
 <p>As you work through the sessions, your ability to use statistics in health data science should improve. We will begin with relatively simple questions that we want to answer. As the module progresses, the questions will be more relevant to a health, and the steps involved will require more statistical inference and scientific inquiry.</p>
 </div>
+<div class="section" id="module-layout">
+<h2>Module layout<a class="headerlink" href="#module-layout" title="Permalink to this headline">¶</a></h2>
+<p>The module is roughly divided into three sections: <strong>Basic Probability</strong>, <strong>Statistical inference</strong> and <strong>Statistical modelling</strong>. Each sections build upon the previous. Probability is perhaps an obvious underpinning of statistics; it gives us the <em>building blocks</em> for both statistical inference and modelling. In probability (sessions 2 and 3) we cover discrete and continuous distributions, and make use of the <em>maths refresher</em> in several sessions. Fundamentally, when dealing with data we often need to make assumptions about what <em>distribution</em> the data is drawn from, and knowing the properties of these distributions then enables us to carry out statistical inference. When we move to statistical inference (sessions 4 to 10) this gives us the understanding of how statistical theory can be used to make statements during our investigations. An important consideration is thinking about the statistical theory that enables us to invesitgate our data, but then use this knowledge to then make statements about the wider population (or target population). With this knowledge we then move to Bayesian statistics, where we apply our knowledge to specific health questions and make use of prior knowledge. We then move onto applications that are more likely to be encountered in health applications; and consider the process of investigation and statistical modelling (sessions 11 to 17). These sessions are linked together because as well as being able to run a model and generate results, it is very important to articulate why it was done, ie. identify the purpose of investigation. In the sessions on regression modelling several classes of model will be described and illustrated in detail.</p>
+<p>At the end of the module there will be a revision session, and an assessment (more detail is provided on Moodle).</p>
+</div>
 <div class="section" id="what-you-won-t-learn">
 <h2>1.2 What you won’t learn<a class="headerlink" href="#what-you-won-t-learn" title="Permalink to this headline">¶</a></h2>
 <p>We provide important aspects of statistical theory in order for you to understand the reasoning behind the approaches, but there are aspects of statistical theory that are outside of the module scope. In this case, we may provide further reading. Other modules within the LSHTM may cover this in more detail, such as <em>Foundations of Medical Statistics</em>.</p>
 <p>This module provides the basics that further modules in the MSc may require, such as <em>Data Challege</em> and <em>Machine Learning</em>. As the name might imply, the statistical techniques used in machine learning are covered in the other module.</p>
-<p>The programming associated with this module is carried out in R. The statistical analysis can be carried out in other software, such as Python. In some of the sessions, we will provide the equivalent Python code, but we do not expect you to use this (and you will not be assessed on this).</p>
+<p>The programming associated with this module is carried out in R. The statistical analysis can be carried out in other software, such as Python. In some of the later sessions, we will provide the equivalent Python code, but we do not expect you to use this (and you will not be assessed on this).</p>
 </div>
 <div class="section" id="the-data-science-project">
 <h2>1.3 The Data Science Project<a class="headerlink" href="#the-data-science-project" title="Permalink to this headline">¶</a></h2>
 <p>Once a health related question is posed, this could be the start of a Data Science Project. Typically, we try to frame the question around a scientific hypothesis, identify some data that can be used to address this question/hypothesis, carry out some anlaysis and draw a conclusion. In David Spiegelhalter’s Book <em>The Art of Statistics</em> this process is referred to as the PPDAC cycle (fig. 1.1). If doing data science is new to you, this might be considered a linear process. But, in many circumstances the problem solving process is a cycle, where a problem may be solved using a iterative process. The iterative process doesn’t mean that the first attempt was <em>wrong</em>, but instead this iterative way of thinking enables the data scientist to think critically about each stage of the cycle and identify strengths, weaknesses and opportunities for improvement.</p>
 <p>Note that there are many ways to describe the cycle of a Data Science Project, and more examples are given in the lecture by Prof. Nick Jewell. Some might chime with you more (or less) than the PPDAC presented here.</p>
-<p><img alt="" src="_images/01_intro_PPDAC.png" /></p>
+<p><img alt="" src="_images/01_intro_PPDAC_adapt.png" /></p>
 <p><b> Fig. 1.1 The PPDAC cycle (From <em>The Art of Statistics</em> by David Spiegelhalter) </b></p>
-<p>The rest of this section gives an overview of some of the concepts covered in the first lecture, and how they relate to the PPDAC</p>
 <div class="section" id="identify-the-problem-and-generate-a-hypothesis">
 <h3>1.3.1 Identify the problem and generate a hypothesis<a class="headerlink" href="#identify-the-problem-and-generate-a-hypothesis" title="Permalink to this headline">¶</a></h3>
-<p>Typically Health Data Science projects start with a question. These questions are typically of three types: descriptive, comparative and relational. When developing a Data Science Project there is a need to create a question that is answerable within the timeframe available, and sufficiently precise. It is also preferbale to frame a question around a hypothesis that can be a testable prediction, and this is where statistics can be used, because a lot of statistics are framed using a hypothesis (this is especialy true of frequentist statistics). However, it is not always necessary to have a hypothesis, for example if the question is exploratory.</p>
+<p>Typically Health Data Science projects start with a question. The question may be framed around one of three investigation types: <strong>description</strong>, <strong>prediction</strong> and <strong>causality and explanation</strong>. The specific of this is explored in more detail in Session 11 (Types of Investigation).</p>
+<p>When developing a Data Science Project there is a need to create a question that is answerable within the timeframe available, and sufficiently precise. It is also preferable to frame a question around a hypothesis that can be a testable prediction, and this is where statistics can be used, because a lot of statistics are framed using a hypothesis (this is especialy true of frequentist statistics). However, it is not always necessary to have a hypothesis, for example if the question is exploratory.</p>
 </div>
 <div class="section" id="develop-a-plan-consider-the-data-design">
 <h3>1.3.2 Develop a plan, consider the data design<a class="headerlink" href="#develop-a-plan-consider-the-data-design" title="Permalink to this headline">¶</a></h3>
@@ -1074,7 +1084,7 @@
 </div>
 <div class="section" id="why-we-teach-both-frequentist-and-bayesian-statistics">
 <h2>1.6 Why we teach both frequentist and Bayesian statistics<a class="headerlink" href="#why-we-teach-both-frequentist-and-bayesian-statistics" title="Permalink to this headline">¶</a></h2>
-<p>A majority of the module covers statistical inference from the <em>frequentist</em> perspective. Much of frequentist statistical inference was developed by Ronald Fisher, who has been described as the founder of modern statistics, and much of his focus was on experimental design in agriculture. A simple explanation of the philosophy behind frequentist statistics is that a <em>fact</em> is either true or not true, and data can be used to assess which of these outcomes can be accepted. In contrast, Bayesian statistics suggests that a probability can be assigned to whether the fact is true. The field of Bayesian statistics is named after Reverend Thomas Bayes, who developed the theory almost 200 years before Fisher was alive. In addition, frequentist statistics makes use of the data available, and there is little (or any) ability to incorporate additional knowledge. Within a Bayesian framework, inclusion of prior knowledge is inherent, and this prior knowledge can be combined with data.</p>
+<p>A majority of the module covers statistical inference from the <em>frequentist</em> perspective. Much of frequentist statistical inference was developed by Ronald Fisher, who has been described as the founder of modern statistics, and much of his focus was on experimental design in agriculture. A simple explanation of the philosophy behind frequentist statistics is that a <em>fact</em> is either true or not true, and data can be used to assess which of these outcomes can be accepted. In contrast, Bayesian statistics suggests that a probability can be assigned to whether the fact is true. The field of Bayesian statistics is named after Reverend Thomas Bayes, who developed the theory almost 200 years before Fisher was alive (and owing to improvements in computation the theory is now much more accessible and has overtaken frequentist approaches in some scientific fields). In addition, frequentist statistics makes use of the data available, and there is little (or any) ability to incorporate additional knowledge. Within a Bayesian framework, inclusion of prior knowledge is inherent, and this prior knowledge can be combined with data.</p>
 <p>Some argue that the philosophies are diametrically opposed to each other, and statisticians should choose a side. This is a strong view (and perhaps not the majority view?), but first it is important to understand the principles behind each approach. We have opted to teach both because of this reason, and leave it up to you to consider the advantages and disadvantages of each approach. Ultimately, both have data central to the approach in making statistical inference, so it is likely that both should be considered as perspectives in a Data Science Project.</p>
 </div>
 </div>
